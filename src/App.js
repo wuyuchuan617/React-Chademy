@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import MyNavbar from './common_components/MyNavbar'
 import MainContent from './common_components/MainContent'
 import MyFooter from './common_components/MyFooter'
+import NotFoundPage from './common_components/NotFoundPage'
 
 // ---------------------以下import 首頁頁面--------------------
 
@@ -41,7 +42,7 @@ function App() {
           <Switch>
             {/* 首頁頁面 */}
 
-            <Route exact path="/">
+            <Route exact path="/counterredux">
               <Home />
             </Route>
 
@@ -105,7 +106,7 @@ function App() {
 
             {/* 404找不到網頁，需要放在switch路由表最後一個 */}
             <Route path="*">
-              <Home />
+              <NotFoundPage />
             </Route>
           </Switch>
         </MainContent>
