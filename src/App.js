@@ -18,6 +18,9 @@ import Home from './home/pages/Home'
 
 // ---------------------以下import 產品頁面--------------------
 
+import Product from './product/pages/Product'
+import ProductList from './product/pages/ProductList'
+
 // ---------------------以下import 二手頁面--------------------
 
 // ---------------------以下import 募資頁面--------------------
@@ -54,12 +57,12 @@ function App() {
 
             {/* 產品頁面 */}
 
-            <Route exact path="/counter">
-              <Home />
+            <Route exact path="/productlist">
+              <ProductList />
             </Route>
 
             <Route path="/product/:id?">
-              <Home />
+              <Product />
             </Route>
 
             {/* 二手頁面 */}
