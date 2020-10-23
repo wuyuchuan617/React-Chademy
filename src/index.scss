@@ -1,10 +1,14 @@
 body {
   margin: 0;
+<<<<<<< HEAD
   // width: 1440px;
 <<<<<<< HEAD
 =======
   height: 100%;
 >>>>>>> 9a33ac640ae70c86d922f246e9959081309fc9d5
+=======
+  width: 1440px;
+>>>>>>> fdd289fde132111d7f57de25d05f9624893a8ad4
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -24,5 +28,9 @@ code {
 
 h5{
   font-size: 24px;
+  font-family: 'Noto Serif TC';
+}
+h6{
+  font-size: 18px;
   font-family: 'Noto Serif TC';
 }
