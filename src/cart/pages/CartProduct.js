@@ -38,6 +38,17 @@ function CartProduct(props) {
         <div className="defaultlable">中古商品</div>
         <div className="defaultlable">體驗課程</div>
       </div>
+      <hr />
+      <div className="wrap">
+        <div className="layoutdiv1">
+          <h6>單價</h6>
+        </div>
+
+        <h6>數量</h6>
+        <h6>總計</h6>
+        <h6>操作</h6>
+      </div>
+      <hr />
     </>
   )
 }

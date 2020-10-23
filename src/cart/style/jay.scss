@@ -158,10 +158,26 @@
     background-color: #C77334;
     color: white;
     line-height: 40px;
+    letter-spacing: 3px;
   } 
   .defaultlable{
     width: 225px;
     height: 40px;
     text-align: center;
     line-height: 40px;
+    background-color: white;
+    // margin-bottom: 50px;
+    letter-spacing: 3px;
+  }
+  hr{
+    width: 1200px;
+    margin-top: 30px;
+  }
+
+  .wrap{
+    margin-left: 780px;
+    display: flex;
+  }
+  .layoutdiv1{
+
   }
