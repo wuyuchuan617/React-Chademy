@@ -1,0 +1,157 @@
+.colsecartdiv{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.6);
+    z-index: 3;
+}
+
+.closecartbox{
+    margin-top: 52px;
+    width: 550px;
+    height: 100vh;
+    position:absolute;
+    right:-550px;
+    background-color: #F3F4F4;
+    animation-name:closecart;
+    animation-duration:  .5s;
+    z-index: 5;
+  }
+.showcartbox{
+    width: 550px;
+    height: 100vh;
+    position:absolute;
+    right:0px;
+    background-color: #F3F4F4;
+    animation-name:showcart;
+    animation-duration:  .5s;
+    z-index: 5;
+  }
+  @keyframes showcart{
+    from{
+        right:-550px;
+    }
+    to{
+        right:0px;
+    }
+  }
+  @keyframes closecart{
+    from{
+        right:0px;
+    }
+    to{
+        right:-550px;
+    }
+  }
+  .btn1{
+    position: absolute;
+    bottom: 0;
+    width: 550px;
+    height: 50px;
+    background-color: #C67334;
+    z-index: 6;
+
+  }
+  ul{
+    list-style-type: none;
+  }
+  .carousel{
+    width: 100vw;
+    height: 100vh;
+    background-color: pink;
+    position: relative;
+    overflow: hidden;
+  }
+  .carousel ul{
+    width: 500vh;
+    display: flex;
+    position: absolute;
+  }
+  .carousel li div {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color:black;
+  
+  }
+  .slider-dots{
+    margin: 0 auto;
+    bottom: 0;
+  }
+  
+  //progress bar
+  .myprogress{
+    width: 650px;
+    height: 95px;
+    margin: 0 auto 0 auto;
+    position: relative;
+  }
+  .progressbar{
+    width: 600px;
+    height: 25px;
+    margin: 0 auto;
+    padding: 0 0px;
+    border-radius: 25px;
+    background-color: #C77334;
+    display: flex;
+    justify-content: space-between;
+  }
+  .activecircle{
+    // position: absolute;
+    margin-top: -12.5px;
+    width: 45px;
+    height: 45px;
+    border-radius: 45px;
+    background-color: #436464;
+  }
+  .defaultcircle{
+    // position: absolute;
+    margin-top: 4px;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    background-color: #fff;
+  }
+  .progresstitle{
+    margin-top: 20px;
+    width: 680px;
+    display: flex;
+    // justify-content: space-between;
+  }
+  .titlecenter1{
+    padding-left: 15px;
+    width: 200px;
+    // text-align: center;
+  }
+  .titlecenter2{
+    width: 180px;
+    // text-align: center;
+  }
+  .titlecenter3{
+    width: 180px;
+    // text-align: center;
+  }
+  
+  //cartlable
+  .lablebox{
+    width: 900px;
+    height: 40px;
+    margin: 10px auto;
+    display: flex;
+  }
+  .activelable{
+    width: 225px;
+    height: 40px;
+    border: 1px solid black;
+    text-align: center;
+    background-color: #C77334;
+    color: white;
+    line-height: 40px;
+  } 
+  .defaultlable{
+    width: 225px;
+    height: 40px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 40px;
+  }
