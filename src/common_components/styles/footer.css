@@ -1,0 +1,82 @@
+.icons {
+    width: 35px;
+    height: 35px;
+    margin-right: 20px;
+    margin-top: 25px;
+    align-items: center;
+    color: #4D4848;
+}
+
+.icons img {
+    height: 100%;
+}
+
+.icon-area {
+    padding-right: 70px;
+}
+
+.subtitle {
+    border-bottom: 1px solid black;
+    margin-left: 70px;
+}
+
+.subtitle p {
+    margin-right: 20px;
+    font-size: 14px;
+    color: #4D4848;
+}
+
+.subtitle2 {
+    margin-left: 70px;
+    margin-top: 20px;
+}
+
+.subtitle2 p {
+    margin-right: 33px;
+    font-size: 14px;
+    color: #707070;
+    margin-bottom: 8px;
+}
+
+.logo-img {
+    width: 150px;
+}
+
+.logo-img img {
+    width: 100%;
+}
+
+.logo {
+    margin-bottom: 100px;
+    padding-top: 70px;
+    padding-left: 70px;
+}
+
+.footer {
+    background-color: #DED5C6;
+}
+
+.company {
+    margin-left: 70px;
+    margin-top: 100px;
+    font-size: 14px;
+}
+
+.rules {
+    margin-top: 100px;
+    margin-right: 70px;
+}
+
+.rules p {
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+
+.inner-img {
+    width: 50px;
+}
+
+.inner-img img {
+    width: 100%;
+}

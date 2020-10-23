@@ -1,0 +1,272 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #EDECE8;
+}
+
+
+.context1 {
+    width: 100%-80px;
+}
+
+.sidebar {
+    display: block;
+    position: fixed;
+    z-index: 3;
+    width: 80px;
+    background-color: #DED5C6;
+    top: 0;
+    bottom: 0;
+    overflow: scroll;
+    color: #475050;
+    font-family: Noto Sans TC;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+#close {
+    text-align: end;
+    margin-top: 20px;
+    margin-right: 20px;
+    color: #1A1818;
+
+}
+
+.clearFilter {
+    text-align: center;
+    margin: 40px 30px;
+    padding: 5px 5px;
+    font-size: 12px;
+    color: #1A1818;
+    background-color: #F3F4F4;
+
+}
+
+.filterTag {
+    text-align: start;
+    margin: 0px 30px;
+    font-size: 12px;
+    color: #475050;
+}
+
+p {
+    color: black;
+}
+
+#seats1 {
+    display: none;
+}
+
+#seats1 li {
+    list-style-type: none;
+    margin-left: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: #707070;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 4px;
+}
+
+.chooseRadio {
+    text-decoration: none;
+    color: #707070;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    margin-right: 3px;
+}
+
+.plus {
+
+    margin: 20px 20px;
+    border-bottom: 1px solid #A7A49F;
+    padding: 15px;
+
+
+}
+
+.refinement-title {
+    color: #475050;
+    font-family: Noto Sans TC;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 5px;
+}
+
+.filterText {
+    position: absolute;
+    position: fixed;
+    left: 7px;
+    top: 50%;
+    transform: translate(0%, -50%);
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    z-index: 10;
+    display: block;
+
+
+}
+
+.sidebarContent {
+    display: none;
+}
+
+.searchButton {
+    border: none;
+    width: 200px;
+    height: 40px;
+    background-color: #C77334;
+    color: #FFFFFF;
+    letter-spacing: 5px;
+    display: block;
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: 50px;
+
+}
+
+
+/* 以上為filter bar  */
+
+
+.productCard {
+    margin: 0px 0px 60px 0px;
+}
+
+.productCard p {
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-align: center;
+    display: block;
+    margin: 5px;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 500;
+}
+
+.productCardImg {
+
+    height: 250px;
+    overflow: hidden;
+
+}
+
+img {
+    max-width: 100%;
+    /* object-position: 10% -300%; */
+}
+
+/* ____________________________________________ */
+.popularImg {
+    width: 228px;
+    height: 228px;
+    overflow: hidden;
+}
+
+.popular2 {
+    width: 40%;
+    background-color: #F7F1ED;
+    padding: 15px;
+    margin: 50px -30px 50px 0px;
+}
+
+
+.popularText {
+    text-align: center;
+    display: block;
+    margin-left: 65px;
+}
+
+.popularButton {
+    border: none;
+    width: 200px;
+    height: 40px;
+    background-color: #D9C7AA;
+    color: #FFFFFF;
+    letter-spacing: 5px;
+    font-size: 14px;
+    font-weight: 300;
+    display: block;
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+.classic {
+    font-family: 'Noto Serif TC', serif;
+    color: #38393C;
+    letter-spacing: 5px;
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 43px;
+
+}
+
+.bestSell {
+
+    color: #D9C7AA;
+    letter-spacing: 5px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.loadButton {
+    border: none;
+    width: 200px;
+    height: 40px;
+    background-color: #C77334;
+    color: #FFFFFF;
+    letter-spacing: 5px;
+    font-size: 14px;
+    display: block;
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+/* ------------------------------------- */
+
+.subtitle1 {
+    font-family: 'Noto Serif TC', serif;
+    color: #38393C;
+    letter-spacing: 5px;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.seriesTitle {
+    font-family: 'Noto Serif TC', serif;
+    color: #F3F4F4;
+    letter-spacing: 5px;
+    font-size: 18px;
+    font-weight: 300;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    z-index: 10;
+}
+
+.seriePhoto {
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.seriePhoto img {
+    width: 100%;
+}
+
+
+/* 以上為產品系列區塊 */
+
+p {
+    color: #707070;
+    font-family: Noto Sans TC;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 4px;
+}
