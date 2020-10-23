@@ -34,6 +34,7 @@ import ProductList from './product/pages/ProductList'
 // ---------------------以下import 會員頁面--------------------
 
 // ---------------------以下import 購物車頁面------------------
+import CartProduct from './cart/pages/CartProduct'
 
 function App() {
   return (
@@ -103,8 +104,8 @@ function App() {
 
             {/* 購物車頁面 */}
 
-            <Route path="/productlist">
-              <Home />
+            <Route path="/cartproduct">
+              <CartProduct />
             </Route>
 
             {/* 404找不到網頁，需要放在switch路由表最後一個 */}

@@ -83,7 +83,7 @@
   .myprogress{
     width: 650px;
     height: 95px;
-    margin: 0 auto 0 auto;
+    margin: 70px auto 0 auto;
     position: relative;
   }
   .progressbar{
@@ -104,9 +104,16 @@
     border-radius: 45px;
     background-color: #436464;
   }
+  .layoutcircle{
+         // position: absolute;
+    margin-top: -12.5px;
+    width: 45px;
+    height: 45px;
+    border-radius: 45px;
+  }
   .defaultcircle{
     // position: absolute;
-    margin-top: 4px;
+    margin-top: 15px;
     width: 15px;
     height: 15px;
     border-radius: 15px;
@@ -120,15 +127,15 @@
   }
   .titlecenter1{
     padding-left: 15px;
-    width: 200px;
+    width: 165px;
     // text-align: center;
   }
   .titlecenter2{
-    width: 180px;
+    width: 185px;
     // text-align: center;
   }
   .titlecenter3{
-    width: 180px;
+    width: 188px;
     // text-align: center;
   }
   
