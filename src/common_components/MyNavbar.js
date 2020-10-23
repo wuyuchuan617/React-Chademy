@@ -45,9 +45,7 @@ function MyNavbar(props) {
             <Nav.Link as={NavLink} to="/productlist">
               產品列表
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/cart" onClick={() => setShowCart(true)}>
-              購物車
-            </Nav.Link>
+            <Nav onClick={() => setShowCart(true)}>購物車</Nav>
             <Nav.Link as={NavLink} to="/counterredux">
               CounterRedux
             </Nav.Link>
