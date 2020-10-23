@@ -1,4 +1,5 @@
 import React from 'react'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 // import './style/jay.scss'
 
 function CartArea(props) {
@@ -9,7 +10,13 @@ function CartArea(props) {
         onClick={() => props.setShowCart(false)}
       ></div>
       <div className={props.showCart ? 'showcartbox' : 'closecartbox'}>
-        <button className="btn1">前往購物車</button>
+        <Link
+          to="/cartproduct"
+          className="btn1"
+          onClick={() => props.setShowCart(false)}
+        >
+          前往購物車
+        </Link>
       </div>
     </>
   )

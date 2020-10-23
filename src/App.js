@@ -9,7 +9,6 @@ import MyNavbar from './common_components/MyNavbar'
 import MainContent from './common_components/MainContent'
 import MyFooter from './common_components/MyFooter'
 import NotFoundPage from './common_components/NotFoundPage'
-import Filter from './common_components/Filter'
 
 // ---------------------以下import 首頁頁面--------------------
 
@@ -35,12 +34,13 @@ import ProductList from './product/pages/ProductList'
 // ---------------------以下import 會員頁面--------------------
 
 // ---------------------以下import 購物車頁面------------------
+import CartProduct from './cart/pages/CartProduct'
 
 function App() {
   return (
     <Router>
       <>
-        {/* <MyNavbar /> */}
+        <MyNavbar />
 
         <Switch>
           {/* 首頁頁面 */}
@@ -103,8 +103,8 @@ function App() {
 
           {/* 購物車頁面 */}
 
-          <Route path="/productlist">
-            <Home />
+          <Route path="/cartproduct">
+            <CartProduct />
           </Route>
 
           {/* 404找不到網頁，需要放在switch路由表最後一個 */}

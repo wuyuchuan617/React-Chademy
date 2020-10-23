@@ -1,16 +1,19 @@
 .colsecartdiv{
     width: 100vw;
-    height: 100vh;
-    position: absolute;
+    top: 0;
+    bottom: 0;
+    position: fixed;
     background-color: rgba(255, 255, 255, 0.6);
     z-index: 3;
+    overflow: hidden;
 }
 
 .closecartbox{
     margin-top: 52px;
     width: 550px;
-    height: 100vh;
-    position:absolute;
+    top: 0;
+    bottom: 0;
+    position:fixed;
     right:-550px;
     background-color: #F3F4F4;
     animation-name:closecart;
@@ -19,8 +22,9 @@
   }
 .showcartbox{
     width: 550px;
-    height: 100vh;
-    position:absolute;
+    top: 0;
+    bottom: 0;
+    position:fixed;
     right:0px;
     background-color: #F3F4F4;
     animation-name:showcart;
@@ -50,7 +54,8 @@
     height: 50px;
     background-color: #C67334;
     z-index: 6;
-
+    text-align: center;
+    line-height: 50px;
   }
   ul{
     list-style-type: none;
@@ -83,7 +88,7 @@
   .myprogress{
     width: 650px;
     height: 95px;
-    margin: 0 auto 0 auto;
+    margin: 70px auto 0 auto;
     position: relative;
   }
   .progressbar{
@@ -104,9 +109,16 @@
     border-radius: 45px;
     background-color: #436464;
   }
+  .layoutcircle{
+         // position: absolute;
+    margin-top: -12.5px;
+    width: 45px;
+    height: 45px;
+    border-radius: 45px;
+  }
   .defaultcircle{
     // position: absolute;
-    margin-top: 4px;
+    margin-top: 15px;
     width: 15px;
     height: 15px;
     border-radius: 15px;
@@ -120,15 +132,15 @@
   }
   .titlecenter1{
     padding-left: 15px;
-    width: 200px;
+    width: 165px;
     // text-align: center;
   }
   .titlecenter2{
-    width: 180px;
+    width: 185px;
     // text-align: center;
   }
   .titlecenter3{
-    width: 180px;
+    width: 188px;
     // text-align: center;
   }
   
@@ -142,7 +154,6 @@
   .activelable{
     width: 225px;
     height: 40px;
-    border: 1px solid black;
     text-align: center;
     background-color: #C77334;
     color: white;
@@ -151,7 +162,6 @@
   .defaultlable{
     width: 225px;
     height: 40px;
-    border: 1px solid black;
     text-align: center;
     line-height: 40px;
   }
