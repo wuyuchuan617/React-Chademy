@@ -1,11 +1,12 @@
 import React from 'react'
-import Filter from '../../common_components/Filter'
+import ProductFirst from '../components/ProductFirst'
+
+import '../styles/product.css'
 
 function Product(props) {
   return (
     <>
-      <Filter />
-      <h1>hello world</h1>
+      <ProductFirst />
     </>
   )
 }
