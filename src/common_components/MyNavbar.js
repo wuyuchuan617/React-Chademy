@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Navbar, Nav } from 'react-bootstrap'
+import CartArea from '../cart/components/CartArea'
 
 function MyNavbar(props) {
+  //控制購物車是否出現
+  const [showCart, setShowCart] = useState(false)
   return (
     <>
       <Navbar
@@ -42,7 +45,7 @@ function MyNavbar(props) {
             <Nav.Link as={NavLink} to="/productlist">
               產品列表
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/cart">
+            <Nav.Link as={NavLink} to="/cart" onClick={() => setShowCart(true)}>
               購物車
             </Nav.Link>
             <Nav.Link as={NavLink} to="/counterredux">
@@ -57,6 +60,7 @@ function MyNavbar(props) {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+      <CartArea showCart={showCart} setShowCart={setShowCart} />
     </>
   )
 }
