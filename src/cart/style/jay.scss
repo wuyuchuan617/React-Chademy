@@ -1,7 +1,8 @@
 .colsecartdiv{
     width: 100vw;
-    height: 100vh;
-    position: absolute;
+    top: 0;
+    bottom: 0;
+    position: fixed;
     background-color: rgba(255, 255, 255, 0.6);
     z-index: 3;
     overflow: hidden;
@@ -10,8 +11,9 @@
 .closecartbox{
     margin-top: 52px;
     width: 550px;
-    height: 100vh;
-    position:absolute;
+    top: 0;
+    bottom: 0;
+    position:fixed;
     right:-550px;
     background-color: #F3F4F4;
     animation-name:closecart;
@@ -20,8 +22,9 @@
   }
 .showcartbox{
     width: 550px;
-    height: 100vh;
-    position:absolute;
+    top: 0;
+    bottom: 0;
+    position:fixed;
     right:0px;
     background-color: #F3F4F4;
     animation-name:showcart;
@@ -151,7 +154,6 @@
   .activelable{
     width: 225px;
     height: 40px;
-    border: 1px solid black;
     text-align: center;
     background-color: #C77334;
     color: white;
@@ -160,7 +162,6 @@
   .defaultlable{
     width: 225px;
     height: 40px;
-    border: 1px solid black;
     text-align: center;
     line-height: 40px;
   }

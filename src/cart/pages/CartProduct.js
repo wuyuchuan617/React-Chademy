@@ -19,16 +19,16 @@ function CartProduct(props) {
         </div>
         <div className="progresstitle">
           <div className="titlecenter1">
-            <h4>購物車</h4>
+            <h5>購物車</h5>
           </div>
           <div className="titlecenter2">
-            <h4>物流資訊</h4>
+            <h5>物流資訊</h5>
           </div>
           <div className="titlecenter3">
-            <h4>付款資訊</h4>
+            <h5>付款資訊</h5>
           </div>
           <div className="titlecenter4">
-            <h4>成功付款</h4>
+            <h5>成功付款</h5>
           </div>
         </div>
       </div>
