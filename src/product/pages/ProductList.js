@@ -23,7 +23,7 @@ function ProductList(props) {
     const response = await fetch(request)
     const data = await response.json()
     const newData = [...data]
-    console.log(newData)
+    console.log('newData' + newData)
     console.log(Array.isArray(data))
     setProduct(newData.slice(30, 40))
   }

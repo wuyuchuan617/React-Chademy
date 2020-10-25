@@ -1,4 +1,5 @@
 import React from 'react'
+import { withRouter, useHistory } from 'react-router-dom'
 
 function ProductCard(props) {
   const { product, item } = props
@@ -8,7 +9,13 @@ function ProductCard(props) {
     <>
       <div class="productCard col-lg-4 col-md-6 col-sm-12">
         <div class="productCardImg">
-          <img src={require('../../img/' + item.photo)} alt="" />
+          <img
+            src={require('../../img/' + item.photo)}
+            alt=""
+            onClick={() => {
+              props.history.push('/product/' + item.sid)
+            }}
+          />
         </div>
         <p>{item.product_name}</p>
         <p>${item.price}</p>
@@ -17,4 +24,4 @@ function ProductCard(props) {
   )
 }
 
-export default ProductCard
+export default withRouter(ProductCard)

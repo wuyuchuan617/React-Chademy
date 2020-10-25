@@ -31,8 +31,8 @@ p {
   text-align: center;
 }
 
-.right-part{
-    padding-left: 40px;
+.right-part {
+  padding-left: 40px;
 }
 
 .bigDesc {
@@ -54,6 +54,9 @@ p {
 
 .product_photo img {
   width: 100%;
+  height: 120%;
+  object-fit: cover;
+  object-position: 50% 90%;
 }
 
 .product_photo_small {
@@ -69,6 +72,9 @@ p {
 
 .product_photo_small img {
   width: 100%;
+  height: 100px;
+  object-fit: cover;
+  object-position: 50% 50%;
 }
 
 .product-name {
@@ -111,6 +117,7 @@ p {
 
 .second-photo img {
   width: 100%;
+  object-fit: cover;
 }
 
 /* second container finish here! */

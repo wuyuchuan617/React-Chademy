@@ -1,15 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import series from '../images/series.jpg'
 import { BsStarFill } from 'react-icons/bs'
 
 function ProductFirst(props) {
+  const { item } = props
+
+  const [mycart, setMycart] = useState([])
+  const [show, setShow] = useState(false)
+  const [productName, setProductName] = useState('')
+
+  const updateCartToLocalStorage = (value) => {
+    // 從localstorage得到cart(json字串)
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || []
+
+    console.log('currentCart', currentCart)
+
+    // 把得到的cart(json字串)轉為陣列值，然後和新加入的物件值合併為新陣列
+    const newCart = [...currentCart, value]
+
+    // 設定回localstorage中(記得轉回json字串)
+    localStorage.setItem('cart', JSON.stringify(newCart))
+
+    console.log('newCart', newCart)
+    // 設定資料
+    // 設定至元件的狀態中
+    setMycart(newCart)
+    setProductName(value.name)
+  }
+
   return (
     <>
       <div class="container">
         <div class="row justify-content-between">
           <div class="col-8">
             <div class="product_photo">
-              <img src={series} alt="" />
+              <img src={require('../../img/' + item.photo)} alt="" />
             </div>
             <div class="d-flex justify-content-between smallPhotos">
               <div class="product_photo_small">
@@ -28,7 +53,7 @@ function ProductFirst(props) {
           </div>
           <div class="col-4 right-part">
             <div class="d-flex product-name justify-content-between">
-              <div class="subtitle3">歐洲銀行扶手沙發型餐椅</div>
+              <div class="subtitle3">{item.product_name}</div>
               <div>
                 <i class="fas fa-heart"></i>
               </div>
@@ -76,7 +101,20 @@ function ProductFirst(props) {
                 </div>
               </div>
 
-              <button class="cart-btn">加入購物車</button>
+              <button
+                class="cart-btn"
+                onClick={() => {
+                  updateCartToLocalStorage({
+                    product_no: item.product_no,
+                    product_name: item.product_name,
+                    product_photo: item.photo,
+                    amount: 1,
+                    price: item.price,
+                  })
+                }}
+              >
+                加入購物車
+              </button>
             </div>
           </div>
         </div>
