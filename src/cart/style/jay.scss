@@ -175,9 +175,40 @@
   }
 
   .wrap{
-    margin-left: 780px;
+    height: 21px;
+    // margin-left: 780px;
     display: flex;
+    margin-bottom: 10px;
   }
-  .layoutdiv1{
-
+  .wrap>h6{
+    position: absolute;
+  }
+  .cartlist{
+    width: 1200px;
+    height: 220px;
+    background-color: white;
+    margin: 0 auto;
+  }
+  .cartlist>ul{
+    margin: 0;
+    padding: 0;
+  }
+  .cartlist>li{
+    margin: 0;
+    padding: 0;
+  }
+  .listitem{
+    width: 100%;
+    height: 220px;
+    display: flex;
+    // line-height: 220px;
+  }
+  .listitem h6{
+    line-height: 220px;
+  }
+  .cartlist img{
+    margin-right: 15px;
+    object-fit: cover;
+    width: 300px;
+    height: 220px;
   }

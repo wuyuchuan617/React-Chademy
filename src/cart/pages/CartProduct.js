@@ -1,4 +1,6 @@
 import React from 'react'
+import CartList from '../components/CartList'
+
 // import './style/jay.scss'
 
 function CartProduct(props) {
@@ -40,14 +42,12 @@ function CartProduct(props) {
       </div>
       <hr />
       <div className="wrap">
-        <div className="layoutdiv1">
-          <h6>單價</h6>
-        </div>
-
-        <h6>數量</h6>
-        <h6>總計</h6>
-        <h6>操作</h6>
+        <h6 style={{ left: '780px' }}>單價</h6>
+        <h6 style={{ left: '940px' }}>數量</h6>
+        <h6 style={{ left: '1100px' }}>總計</h6>
+        <h6 style={{ left: '1210px' }}>操作</h6>
       </div>
+      <CartList />
       <hr />
     </>
   )
