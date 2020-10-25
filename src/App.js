@@ -35,6 +35,9 @@ import ProductList from './product/pages/ProductList'
 
 // ---------------------以下import 購物車頁面------------------
 import CartProduct from './cart/pages/CartProduct'
+import CartBid from './cart/pages/CartBid'
+import CartSecondHand from './cart/pages/CartSecondHand'
+import CartClass from './cart/pages/CartClass'
 
 function App() {
   return (
@@ -105,6 +108,18 @@ function App() {
 
           <Route path="/cartproduct">
             <CartProduct />
+          </Route>
+
+          <Route path="/cartbid">
+            <CartBid />
+          </Route>
+
+          <Route path="/cartsecondhand">
+            <CartSecondHand />
+          </Route>
+
+          <Route path="/cartclass">
+            <CartClass />
           </Route>
 
           {/* 404找不到網頁，需要放在switch路由表最後一個 */}

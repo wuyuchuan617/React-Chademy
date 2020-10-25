@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
 // import './style/jay.scss'
 
-function CartProduct(props) {
+function CartClass(props) {
   return (
     <>
       <div className="myprogress">
@@ -36,7 +36,7 @@ function CartProduct(props) {
         </div>
       </div>
       <div className="lablebox">
-        <Link to="/cartproduct" className="activelable">
+        <Link to="/cartproduct" className="defaultlable">
           產品
         </Link>
         <Link to="/cartbid" className="defaultlable">
@@ -45,7 +45,7 @@ function CartProduct(props) {
         <Link to="/cartsecondhand" className="defaultlable">
           中古商品
         </Link>
-        <Link to="/cartclass" className="defaultlable">
+        <Link to="/cartclass" className="activelable">
           體驗課程
         </Link>
       </div>
@@ -90,16 +90,6 @@ function CartProduct(props) {
               確定
             </Link>
           </div>
-          <h6 style={{ color: '#C67334' }}>$0</h6>
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            letterSpacing: '3px',
-            justifyContent: 'space-between',
-          }}
-        >
-          <h6>寄送方式</h6>
           <h6 style={{ color: '#C67334' }}>$0</h6>
         </div>
 
@@ -149,4 +139,4 @@ function CartProduct(props) {
   )
 }
 
-export default CartProduct
+export default CartClass

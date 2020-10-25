@@ -19,6 +19,7 @@
     animation-name:closecart;
     animation-duration:  .5s;
     z-index: 5;
+    // background-color: transparent
   }
 .showcartbox{
     width: 550px;
@@ -283,4 +284,8 @@
     height: 430px;
     position: relative;
     left: 580px;
+  }
+  .submit input{
+    background-color: transparent;
+    border: 0.5px solid black;
   }
