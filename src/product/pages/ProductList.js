@@ -8,6 +8,15 @@ import bannerVideo from '../images/The-Passion-of-Making.mp4'
 
 function ProductList(props) {
   const [product, setProduct] = useState([])
+  const [viewProduct, setViewProduct] = useState(15)
+
+  const handleClick = () => {
+    let preViewProduct = viewProduct
+    let newViewProduct = preViewProduct + 15
+
+    console.log(newViewProduct)
+    setViewProduct(newViewProduct)
+  }
 
   async function getTotalFromSQL() {
     const url = 'http://localhost:3001/man_product/reactlist'
@@ -25,7 +34,7 @@ function ProductList(props) {
     const newData = [...data]
     console.log('newData' + newData)
     console.log(Array.isArray(data))
-    setProduct(newData.slice(30, 40))
+    setProduct(newData)
   }
 
   useEffect(() => {
@@ -62,7 +71,7 @@ function ProductList(props) {
             </p>
           </div>
           <div class="row justify-content-center">
-            {product.map((item, index) => {
+            {product.slice(0, viewProduct).map((item, index) => {
               return <ProductCard key={index} item={item} product={product} />
             })}
           </div>
@@ -71,7 +80,9 @@ function ProductList(props) {
 
       <div class="container">
         <div class="row">
-          <button class="loadButton">LOAD MORE</button>
+          <button class="loadButton" onClick={handleClick}>
+            LOAD MORE
+          </button>
         </div>
       </div>
     </>
