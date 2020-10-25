@@ -25,7 +25,7 @@ function CartList(props) {
                   <FiMinus />
                 </h6>
               </div>
-              <h6 style={{ left: '330px' }}>$2500</h6>
+              <h6 style={{ left: '330px', color: '#C67334' }}>$2500</h6>
               <h6 style={{ left: '400px' }}>
                 <BsTrash />
               </h6>
@@ -45,7 +45,7 @@ function CartList(props) {
                   <FiMinus />
                 </h6>
               </div>
-              <h6 style={{ left: '330px' }}>$2500</h6>
+              <h6 style={{ left: '330px', color: '#C67334' }}>$2500</h6>
               <h6 style={{ left: '400px' }}>
                 <BsTrash />
               </h6>

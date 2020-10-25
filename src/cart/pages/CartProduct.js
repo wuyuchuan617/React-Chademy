@@ -58,6 +58,93 @@ function CartProduct(props) {
       </div>
       <CartList />
       <hr />
+      <div className="submit">
+        <div
+          style={{
+            display: 'flex',
+            letterSpacing: '3px',
+            justifyContent: 'space-between',
+            marginBottom: '30px',
+          }}
+        >
+          <h6>小計(共3項)</h6>
+          <h6 style={{ color: '#C67334' }}>$ 75,000</h6>
+        </div>
+        <h6>折扣券</h6>
+        <div
+          style={{
+            display: 'flex',
+            letterSpacing: '3px',
+            justifyContent: 'space-between',
+            marginBottom: '30px',
+          }}
+        >
+          <div
+            style={{
+              display: 'flex',
+              letterSpacing: '3px',
+            }}
+          >
+            <input type="text"></input>
+            <Link className="btn2" to="#">
+              確定
+            </Link>
+          </div>
+          <h6 style={{ color: '#C67334' }}>$0</h6>
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            letterSpacing: '3px',
+            justifyContent: 'space-between',
+          }}
+        >
+          <h6>寄送方式</h6>
+          <h6 style={{ color: '#C67334' }}>$0</h6>
+        </div>
+
+        <select
+          style={{
+            fontSize: '18px',
+            width: '275px',
+            height: '40px',
+          }}
+        >
+          <option>到店取貨(Free)</option>
+          <option>宅配到府(+$500)</option>
+        </select>
+        <div
+          style={{
+            display: 'flex',
+            letterSpacing: '3px',
+            justifyContent: 'space-between',
+            marginTop: '30px',
+          }}
+        >
+          <div></div>
+          <div
+            style={{
+              backgroundColor: 'black',
+              width: '250px',
+              height: '1px',
+            }}
+          ></div>
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            letterSpacing: '3px',
+            justifyContent: 'space-between',
+            // marginTop: '30px',
+          }}
+        >
+          <div></div>
+          <h6 style={{ color: '#C67334' }}>$</h6>
+        </div>
+        <Link to="#" className="btn3">
+          買單
+        </Link>
+      </div>
     </>
   )
 }
