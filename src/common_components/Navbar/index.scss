@@ -1,0 +1,76 @@
+// @import '../../styles/custom.scss';
+
+// .show_bg {
+//   background-color: #dbd9d5;
+// }
+
+.navbar_contanier {
+  z-index: 1;
+  font-family: 'Josefin Sans';
+
+  background-color: orange;
+  // width: 100%;
+  // max-width: 700px;
+  // margin: 0 auto;
+  // 透明
+  background-color: rgba(255, 255, 255, 0);
+
+  top: 0;
+  transition: top 0.8s;
+
+  // navbar 有選項時的顏色
+  &.show_bg {
+    background-color: #dbd9d5;
+    opacity: 0.9;
+  }
+
+  // .navbar-collapse {
+  //   margin-left: 40px;
+  //   margin-right: 40px;
+  // }
+
+  .navbar_list {
+    color: #1a1818;
+
+    // outline: orange 1px dashed;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .navbar-nav .nav-link {
+    // color: #1a1818;
+    color: #ffffff;
+    font-size: 12px;
+  }
+
+  &.show_bg .navbar-nav .nav-link {
+    color: #1a1818;
+    // color: #ffffff;
+    font-size: 12px;
+
+    // outline: 1px orange dashed;
+  }
+
+  .navbar_item_is_active {
+    border-bottom: 2px solid gray;
+  }
+
+  .logo_brand {
+    margin-left: 80px;
+    // margin-right: 80px;
+    //color: #1a1818;
+  }
+}
+
+.icon {
+  width: 21px;
+  height: 21px;
+}
+
+.icon_con {
+  margin-right: 70px;
+}

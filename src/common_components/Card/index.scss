@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  min-width: 600px;
+  max-width: 100%;
+}
+
+// 產品系列
+.product_list {
+  width: 130px;
+  min-width: 100px;
+}
+
+.product_item_list {
+  list-style: none;
+  cursor: pointer;
+
+  li {
+    padding-left: 10px;
+  }
+
+  li + li {
+    margin-top: 10px;
+  }
+}
+
+.product_title {
+  font-size: 24px;
+  padding: 15px 0;
+}
+
+// 圖片們
+.img_list {
+  max-width: 80%;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.img_item {
+  width: 30%;
+}
+
+.img_title {
+  padding: 10px 0;
+}
+
+.fuck {
+  width: 100%;
+  max-width: 228px;
+  height: 228px;
+  //background-color: orange;
+}
+
+// 768px 以下
+@media (max-wdith: 768px) {
+}
+
+// 375px 以下
+@media (max-wdith: 375px) {
+}
