@@ -70,7 +70,9 @@ function CartClass(props) {
           <h6>小計(共3項)</h6>
           <h6 style={{ color: '#C67334' }}>$ 75,000</h6>
         </div>
-        <h6>折扣券</h6>
+        <label for="discount">
+          <h6>折扣券</h6>
+        </label>
         <div
           style={{
             display: 'flex',
@@ -85,7 +87,7 @@ function CartClass(props) {
               letterSpacing: '3px',
             }}
           >
-            <input type="text"></input>
+            <input type="text" name="discount" id="discount"></input>
             <Link className="btn2" to="#">
               確定
             </Link>
