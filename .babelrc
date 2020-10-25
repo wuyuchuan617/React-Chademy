@@ -1,0 +1,10 @@
+{
+  "plugins": [
+    [
+      "babel-plugin-react-scoped-css",
+      {
+        "include": ".scpoed.(sa|sc|c)ss$"
+      }
+    ]
+  ]
+}

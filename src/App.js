@@ -44,14 +44,14 @@ import CartClass from './cart/pages/CartClass'
 function App() {
   const [activaName, setActivaName] = useState('')
 
-  const closeNavbar = () => console.log(333) || setActivaName('')
+  const closeNavbar = () => setActivaName('')
   return (
     <Router>
       <>
         <MyNavbar />
         <CHNavbar activaName={activaName} setActivaName={setActivaName} />
 
-        <Container className="adjcjhacjjscjasjjasc" onClick={closeNavbar}>
+        <Container onClick={closeNavbar}>
           <Switch>
             {/* 首頁頁面 */}
 
