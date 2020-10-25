@@ -159,7 +159,16 @@
     color: white;
     line-height: 40px;
     letter-spacing: 3px;
+    font-size: 16px;
   } 
+  .activelable:hover{
+    text-decoration: none;
+    color: white;
+  }
+  .defaultlable:hover{
+    text-decoration: none;
+    color: black;
+  }
   .defaultlable{
     width: 225px;
     height: 40px;
@@ -168,6 +177,8 @@
     background-color: white;
     // margin-bottom: 50px;
     letter-spacing: 3px;
+    font-size: 16px;
+    color: black;
   }
   hr{
     width: 1200px;
