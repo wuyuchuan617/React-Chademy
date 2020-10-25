@@ -159,7 +159,16 @@
     color: white;
     line-height: 40px;
     letter-spacing: 3px;
+    font-size: 16px;
   } 
+  .activelable:hover{
+    text-decoration: none;
+    color: white;
+  }
+  .defaultlable:hover{
+    text-decoration: none;
+    color: black;
+  }
   .defaultlable{
     width: 225px;
     height: 40px;
@@ -168,6 +177,8 @@
     background-color: white;
     // margin-bottom: 50px;
     letter-spacing: 3px;
+    font-size: 16px;
+    color: black;
   }
   hr{
     width: 1200px;
@@ -175,9 +186,56 @@
   }
 
   .wrap{
-    margin-left: 780px;
+    height: 21px;
+    // margin-left: 780px;
     display: flex;
+    margin-bottom: 10px;
   }
-  .layoutdiv1{
+  .wrap>h6{
+    position: absolute;
+  }
+  .cartlist{
+    width: 1200px;
+    // height: 220px;
+    // background-color: white;
+    margin: 0 auto;
+  }
+  .cartlist>ul{
+    margin: 0;
+    padding: 0;
+  }
+  .cartlist>li{
+    margin-bottom: 0;
+    padding: 0;
+  }
+  .listitem{
+    width: 100%;
+    height: 220px;
+    display: flex;
+    margin-bottom: 20px;
+    // line-height: 220px;
+  }
+  .listitem h6{
+    position: relative;
+    line-height: 220px;
+  }
+  .cartlist img{
+    object-fit: cover;
+    width: 300px;
+    height: 220px;
+  }
 
+  .listqty{
+    margin: auto 0;
+    position: relative;
+    width: 140px;
+    height: 40px;
+    border: 1px solid black;
+    left: 260px;
+    display: flex;
+
+  }
+  .listqty h6{
+    position: relative;
+    line-height: 30px;
   }
