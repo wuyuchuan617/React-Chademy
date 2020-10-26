@@ -1,5 +1,5 @@
 import React from 'react'
-import './index.scss'
+import './index.scoped.scss'
 
 // ref: https://medium.com/itsoktomakemistakes/react-create-react-app-import-images-with-webpack-372e6ea19e2a
 import imageChpr from '../images/chpr.png'
@@ -32,7 +32,8 @@ function Card(props) {
                 <ListGroup.Item>沙發椅</ListGroup.Item>
                 <ListGroup.Item>吧台椅</ListGroup.Item>
               </ListGroup> */}
-      <div className="container img_list">
+
+      <div className="img_list">
         {['新品上市', '創意客製', '專屬推薦'].map((item, index) => (
           <div className="img_item text-center" key={index}>
             <figure className="fuck">

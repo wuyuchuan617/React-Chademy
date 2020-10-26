@@ -1,19 +1,7 @@
 import React from 'react'
-import './index.scss'
+import './index.scoped.scss'
+
 import Card from '../Card'
-
-// import {
-//   // Navbar,
-//   // Nav,
-//   //   Form,
-//   //   FormControl,
-//   Button,
-//   Accordion,
-//   Card,
-//   ListGroup,
-
-//   //   NavDropdown,
-// } from 'react-bootstrap'
 
 export default function NavbarPerview(props) {
   const { activaName, navbarHeight } = props
@@ -22,9 +10,7 @@ export default function NavbarPerview(props) {
 
   return (
     <section
-      className={`navbarPerview_container container ${
-        activaName ? 'isActive' : ''
-      }`}
+      className={`navbarPerview_container ${activaName ? 'isActive' : ''}`}
       style={{ top: `${navbarHeight}px` }}
     >
       {[

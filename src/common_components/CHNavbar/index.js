@@ -6,7 +6,6 @@ import NavbarPerview from '../NavbarPerview'
 import useWindowScroll from '../../utils/scroll'
 
 export default function CHNavbar(props) {
-  console.log(11111, props)
   const { activaName, setActivaName } = props
   // <CHNavbar />   =>   wrong/你在 App 老爸沒給 CHNavbar兒子東西, 所以沒東西
   // <CHNavbar  setActivaName={setActivaName} />   =>   right

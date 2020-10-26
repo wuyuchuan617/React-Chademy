@@ -1,7 +1,5 @@
-// import React from 'react'
 import React from 'react'
-
-import './index.scss'
+import './index.scoped.scss'
 
 import { Navbar, Nav } from 'react-bootstrap'
 
@@ -10,6 +8,8 @@ import logo from '../images/logo.svg'
 
 // 選單連結要使用NavLink取代Link
 import { NavLink } from 'react-router-dom'
+
+// TODO: https://reedbarger.com/how-to-create-a-usewindowsize-react-hook/
 
 function MyNavbar(props) {
   const {
@@ -20,8 +20,6 @@ function MyNavbar(props) {
     scrollY,
     scrollDirection,
   } = props
-
-  console.log(props)
 
   const isDown = scrollDirection === 'DOWN'
   const over100px = scrollY < -100

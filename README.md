@@ -1,3 +1,55 @@
+## [how-to-scope-your-css-scss-in-react-js](https://dev.to/viclafouch/how-to-scope-your-css-scss-in-react-js-271a)
+
+> NOTE: 第三方組件若吃不到樣式，使用 /deep/
+> ref: https://zhuanlan.zhihu.com/p/47870721
+
+1. 安裝 craco - `yarn add @craco/craco`
+   > https://github.com/gsoft-inc/craco/blob/master/packages/craco/README.md#installation
+
+```json
+(module.exports = {
+  "plugins": [
+    {
+      "plugin": require("craco-plugin-scoped-css")
+    }
+  ]
+})
+```
+
+1-2. 更改 package.json 的 script
+
+/_ package.json _/
+
+```json
+"scripts": {
+-   "start": "react-scripts start",
++   "start": "craco start",
+-   "build": "react-scripts build",
++   "build": "craco build"
+-   "test": "react-scripts test",
++   "test": "craco test"
+}
+```
+
+2. `yarn add craco-plugin-scoped-css --dev`
+
+3. `yarn add babel-plugin-react-scoped-css --dev`
+
+> https://github.com/gaoxiaoliangz/react-scoped-css
+
+```
+{
+  "plugins": [
+    [
+      "babel-plugin-react-scoped-css",
+      {
+        "include": ".scpoed.(sa|sc|c)ss$"
+      }
+    ]
+  ]
+}
+```
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
