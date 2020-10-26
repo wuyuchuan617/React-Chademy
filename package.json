@@ -3,19 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-    "@material-ui/core": "^4.11.0",
-=======
     "@craco/craco": "^5.7.0",
->>>>>>> d8497b7e262a1c298a47f3de0c8f61a4e295a812
+    "@material-ui/core": "^4.11.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "antd": "^4.7.3",
     "bootstrap": "^4.5.3",
-    "eslint-config-react-app": "^5.2.1",
+    "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-jsx-a11y": "^6.4.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",

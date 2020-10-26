@@ -16,6 +16,7 @@ import NotFoundPage from './common_components/NotFoundPage'
 
 import Home from './home/pages/Home'
 
+
 // ---------------------以下import 品牌故事頁面----------------
 
 // ---------------------以下import 產品頁面--------------------
@@ -51,13 +52,9 @@ function App() {
         <MyNavbar />
         {/* <CHNavbar activaName={activaName} setActivaName={setActivaName} /> */}
 
-<<<<<<< HEAD
-        {/* <Container className="adjcjhacjjscjasjjasc" onClick={closeNavbar}> */}
-=======
         <Container onClick={closeNavbar}>
           <Switch>
             {/* 首頁頁面 */}
->>>>>>> d8497b7e262a1c298a47f3de0c8f61a4e295a812
 
         <Switch>
           {/* 首頁頁面 */}
@@ -141,6 +138,7 @@ function App() {
             <NotFoundPage />
           </Route>
         </Switch>
+
         {/* </Container> */}
 
         <MyFooter onClick={closeNavbar} />
