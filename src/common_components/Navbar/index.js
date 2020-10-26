@@ -132,10 +132,10 @@ function MyNavbar(props) {
           </Nav>
 
           <Nav className="icon_con">
-            <Nav.Link href="#car">
+            <Nav.Link as={NavLink} to="/car">
               <AiOutlineShoppingCart className="icon" />
             </Nav.Link>
-            <Nav.Link href="#members" as={NavLink} to="/login">
+            <Nav.Link as={NavLink} to="/login">
               <AiOutlineUser className="icon" />
             </Nav.Link>
           </Nav>

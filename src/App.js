@@ -50,85 +50,87 @@ function App() {
     <Router>
       <>
         <MyNavbar />
-        {/* <CHNavbar activaName={activaName} setActivaName={setActivaName} /> */}
+        <CHNavbar activaName={activaName} setActivaName={setActivaName} />
 
         <Container onClick={closeNavbar}>
           <Switch>
             {/* 首頁頁面 */}
 
-        <Switch>
-          {/* 首頁頁面 */}
+            <Route exact path="/counterredux">
+              <Home />
+            </Route>
 
-          <Route exact path="/counterredux">
-            <Home />
-          </Route>
+            {/* 品牌故事頁面 */}
 
-          {/* 品牌故事頁面 */}
+            <Route exact path="/">
+              <Home />
+            </Route>
 
-          <Route exact path="/">
-            <Home />
-          </Route>
+            {/* 產品頁面 */}
 
-          {/* 產品頁面 */}
+            <Route exact path="/productlist">
+              <ProductList />
+            </Route>
 
-          <Route exact path="/productlist">
-            <ProductList />
-          </Route>
+            <Route path="/product/:sid?">
+              <Product />
+            </Route>
 
-          <Route path="/product/:sid?">
-            <Product />
-          </Route>
+            {/* 二手頁面 */}
 
-          {/* 二手頁面 */}
+            <Route exact path="/counterredux">
+              <Home />
+            </Route>
 
-          <Route exact path="/counterredux">
-            <Home />
-          </Route>
+            {/* 募資頁面 */}
 
-          {/* 募資頁面 */}
+            <Route path="/login">
+              <Home />
+            </Route>
 
-          <Route path="/login">
-            <Home />
-          </Route>
+            {/* 競標頁面 */}
 
-          {/* 競標頁面 */}
+            <Route path="/register">
+              <Home />
+            </Route>
 
-          <Route path="/register">
-            <Home />
-          </Route>
+            {/* 課程頁面 */}
 
-          {/* 課程頁面 */}
+            <Route path="/profile">
+              <Home />
+            </Route>
 
-          <Route path="/profile">
-            <Home />
-          </Route>
+            {/* 部落格頁面 */}
 
-          {/* 部落格頁面 */}
+            <Route path="/todo">
+              <Home />
+            </Route>
 
-          <Route path="/todo">
-            <Home />
-          </Route>
+            {/* 會員頁面 */}
 
-          {/* 會員頁面 */}
+            <Route path="/about">
+              <Home />
+            </Route>
 
-          <Route path="/about">
-            <Home />
-          </Route>
+            {/* 購物車頁面 */}
 
-          {/* 購物車頁面 */}
+            <Route path="/cartproduct">
+              <CartProduct />
+            </Route>
 
-          <Route path="/cartproduct">
-            <CartProduct />
-          </Route>
+            <Route path="/cartbid">
+              <CartBid />
+            </Route>
 
-          <Route path="/cartbid">
-            <CartBid />
-          </Route>
+            <Route path="/cartsecondhand">
+              <CartSecondHand />
+            </Route>
 
-          <Route path="/cartsecondhand">
-            <CartSecondHand />
-          </Route>
+            <Route path="/cartclass">
+              <CartClass />
+            </Route>
 
+<<<<<<< HEAD
           <Route path="/cartclass">
             <CartClass />
           </Route>
@@ -140,6 +142,14 @@ function App() {
         </Switch>
 
         {/* </Container> */}
+=======
+            {/* 404找不到網頁，需要放在switch路由表最後一個 */}
+            <Route path="*">
+              <NotFoundPage />
+            </Route>
+          </Switch>
+        </Container>
+>>>>>>> 3f0bf6af95c43fcf056e6fde4c4cef60a2dca487
 
         <MyFooter onClick={closeNavbar} />
       </>
