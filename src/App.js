@@ -16,7 +16,6 @@ import NotFoundPage from './common_components/NotFoundPage'
 
 import Home from './home/pages/Home'
 
-
 // ---------------------以下import 品牌故事頁面----------------
 
 // ---------------------以下import 產品頁面--------------------
@@ -49,7 +48,7 @@ function App() {
   return (
     <Router>
       <>
-        <MyNavbar />
+        {/* <MyNavbar /> */}
         <CHNavbar activaName={activaName} setActivaName={setActivaName} />
 
         <Container onClick={closeNavbar}>
@@ -130,26 +129,12 @@ function App() {
               <CartClass />
             </Route>
 
-<<<<<<< HEAD
-          <Route path="/cartclass">
-            <CartClass />
-          </Route>
-
-          {/* 404找不到網頁，需要放在switch路由表最後一個 */}
-          <Route path="*">
-            <NotFoundPage />
-          </Route>
-        </Switch>
-
-        {/* </Container> */}
-=======
             {/* 404找不到網頁，需要放在switch路由表最後一個 */}
             <Route path="*">
               <NotFoundPage />
             </Route>
           </Switch>
         </Container>
->>>>>>> 3f0bf6af95c43fcf056e6fde4c4cef60a2dca487
 
         <MyFooter onClick={closeNavbar} />
       </>

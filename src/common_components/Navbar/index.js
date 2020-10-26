@@ -82,7 +82,8 @@ function MyNavbar(props) {
             </Nav.Link>
 
             <Nav.Link
-              href="#product"
+              as={NavLink}
+              to="/productlist"
               onClick={() => setActivaName('product')}
               className={['text-center', activeState('product')]}
             >
