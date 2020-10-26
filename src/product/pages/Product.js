@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import ProductFirst from '../components/ProductFirst'
+import ProductSecond from '../components/ProductSecond'
+import ProductThird from '../components/ProductThird'
+import ProductFour from '../components/ProductFour'
+import ProductFive from '../components/ProductFive'
+import ProductSix from '../components/ProductSix'
 import { withRouter, useParams } from 'react-router-dom'
 
 import '../styles/product.css'
@@ -38,6 +43,26 @@ function Product(props) {
     <>
       {product.map((item, index) => {
         return <ProductFirst key={index} item={item} product={product} />
+      })}
+
+      {product.map((item, index) => {
+        return <ProductSecond key={index} item={item} product={product} />
+      })}
+
+      {product.map((item, index) => {
+        return <ProductThird key={index} item={item} product={product} />
+      })}
+
+      {product.map((item, index) => {
+        return <ProductFour key={index} item={item} product={product} />
+      })}
+
+      {product.map((item, index) => {
+        return <ProductFive key={index} item={item} product={product} />
+      })}
+
+      {product.map((item, index) => {
+        return <ProductSix key={index} item={item} product={product} />
       })}
     </>
   )

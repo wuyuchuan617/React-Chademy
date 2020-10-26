@@ -9,6 +9,7 @@ import bannerVideo from '../images/The-Passion-of-Making.mp4'
 function ProductList(props) {
   const [product, setProduct] = useState([])
   const [viewProduct, setViewProduct] = useState(15)
+  const [lastProductId, setLastProductId] = useState(0)
 
   const handleClick = () => {
     let preViewProduct = viewProduct
@@ -16,7 +17,29 @@ function ProductList(props) {
 
     console.log(newViewProduct)
     setViewProduct(newViewProduct)
+    //const arr = product.slice(0, preViewProduct)
+    //setLastProductId(arr[arr.length - 1].sid)
+    if (document.getElementById(lastProductId)) {
+      //alert(lastProductId)
+      document
+        .getElementById(lastProductId)
+        .scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
   }
+
+  useEffect(() => {
+    const arr = product.slice(0, viewProduct)
+    if (arr.length > 0) setLastProductId(arr[arr.length - 1].sid)
+  }, [viewProduct, product])
+
+  // useEffect(() => {
+  //   if (document.getElementById(lastProductId)) {
+  //     alert(lastProductId)
+  //     document
+  //       .getElementById(lastProductId)
+  //       .scrollIntoView({ behavior: 'smooth' })
+  //   }
+  // }, [lastProductId])
 
   async function getTotalFromSQL() {
     const url = 'http://localhost:3001/man_product/reactlist'
@@ -41,7 +64,7 @@ function ProductList(props) {
     getTotalFromSQL()
   }, [])
 
-  console.log('product' + product)
+  //console.log('product' + product)
 
   return (
     <>

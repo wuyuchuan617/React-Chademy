@@ -57,8 +57,16 @@ p {
     color: black;
 }
 
-#seats1 {
+.seats1 {
     display: none;
+    margin: 10px -10px 10px 40px;
+
+}
+
+.seats2 {
+    display: none;
+    margin: 10px -10px 10px 20px;
+
 }
 
 #seats1 li {
@@ -128,4 +136,29 @@ a {
     margin-top: 70px;
     margin-bottom: 50px;
 
+}
+
+.circleColor {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 10px 10px 10px 0px;
+
+    padding: 15px;
+}
+
+.ant-checkbox-wrapper {
+    margin: 10px -10px 10px 20px;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #C77334;
+    border-color: #C77334;
+
+}
+
+.ant-checkbox-group-item {
+    display: block;
+    margin-right: 0;
 }

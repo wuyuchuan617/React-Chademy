@@ -113,11 +113,18 @@ p {
 
 .second-photo {
   width: 600px;
+  height: 400px;
+  overflow: hidden;
+  object-fit: cover;
 }
 
 .second-photo img {
   width: 100%;
   object-fit: cover;
+}
+
+.second-text{
+  vertical-align:middle;
 }
 
 /* second container finish here! */
