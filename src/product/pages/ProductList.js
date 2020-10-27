@@ -3,6 +3,7 @@ import Filter from '../../common_components/Filter'
 import ProductPopular from '../components/ProductPopular'
 import ProductSeries from '../components/ProductSeries'
 import ProductCard from '../components/ProductCard'
+import CouponModal from '../components/CouponModal'
 import '../styles/productlist.css'
 import bannerVideo from '../images/The-Passion-of-Making.mp4'
 
@@ -65,6 +66,9 @@ function ProductList(props) {
     getTotalFromSQL()
   }, [])
 
+  useEffect(() => {
+    setTimeout(() => {}, 1000)
+  }, [])
   //console.log('product' + product)
 
   return (
@@ -109,6 +113,8 @@ function ProductList(props) {
           </button>
         </div>
       </div>
+
+      <CouponModal />
     </>
   )
 }

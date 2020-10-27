@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import series from '../images/series.jpg'
 import { BsStarFill } from 'react-icons/bs'
 import { BsFillHeartFill } from 'react-icons/bs'
@@ -10,6 +10,7 @@ function ProductFirst(props) {
   const [show, setShow] = useState(false)
   const [productName, setProductName] = useState('')
   const [heart, setHeart] = useState(false)
+  const [heartItem, setHeartItem] = useState({})
 
   const heartFill = {
     color: '#C77334',
@@ -33,6 +34,64 @@ function ProductFirst(props) {
     setMycart(newCart)
     setProductName(value.name)
   }
+
+  async function updateTotalToServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = 'http://localhost:3001/man_product/addheart'
+
+    const request = new Request(url, {
+      method: 'POST',
+      body: JSON.stringify(heartItem),
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+
+    // try {
+    const response = await fetch(request)
+    const data = await response.json()
+    // data會是一個物件值
+    console.log(data)
+
+    //   // 驗証成功後再設定…
+    //   setTotal(total + value)
+    // } catch (error) {
+    //   setError(error)
+    // }
+  }
+
+  async function deleteHeartToServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = 'http://localhost:3001/man_product/del/' + item.product_name
+
+    const request = new Request(url, {
+      method: 'DELETE',
+
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+
+    // try {
+    const response = await fetch(request)
+    const data = await response.json()
+    // data會是一個物件值
+    console.log(data)
+
+    //   // 驗証成功後再設定…
+    //   setTotal(total + value)
+    // } catch (error) {
+    //   setError(error)
+    // }
+  }
+
+  useEffect(() => {
+    updateTotalToServer()
+  }, [heartItem.follow_status])
 
   return (
     <>
@@ -72,8 +131,20 @@ function ProductFirst(props) {
             </div>
             <div class="heart justify-content-end">
               <BsFillHeartFill
-                onClick={() => {
-                  setHeart(!heart)
+                onClick={async () => {
+                  await setHeart(!heart)
+                  if (heart === false) {
+                    const newHeartItem = {
+                      follow_product: item.product_name,
+                      member_id: 'AMY',
+                      follow_status: 1,
+                    }
+                    await setHeartItem(newHeartItem)
+                  } else {
+                    deleteHeartToServer()
+                    setHeart(false)
+                    setHeartItem({})
+                  }
                 }}
                 style={heart ? heartFill : ''}
               />
@@ -122,6 +193,7 @@ function ProductFirst(props) {
                     product_photo: item.photo,
                     amount: 1,
                     price: item.price,
+                    category: 1,
                   })
                 }}
               >
