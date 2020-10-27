@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import './index.scoped.scss'
 
 import { Navbar, Nav } from 'react-bootstrap'
@@ -135,7 +135,7 @@ function MyNavbar(props) {
           </Nav>
 
           <Nav className="icon_con">
-            <Nav.Link as={NavLink} to="#" onClick={()=>setShowCart(true)}>
+            <Nav.Link as={NavLink} to="#" onClick={() => setShowCart(true)}>
               <AiOutlineShoppingCart className="icon" />
             </Nav.Link>
             <Nav.Link as={NavLink} to="/login">

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import series from '../images/series.jpg'
 import { BsStarFill } from 'react-icons/bs'
+import { BsFillHeartFill } from 'react-icons/bs'
 
 function ProductFirst(props) {
   const { item } = props
@@ -8,6 +9,11 @@ function ProductFirst(props) {
   const [mycart, setMycart] = useState([])
   const [show, setShow] = useState(false)
   const [productName, setProductName] = useState('')
+  const [heart, setHeart] = useState(false)
+
+  const heartFill = {
+    color: '#C77334',
+  }
 
   const updateCartToLocalStorage = (value) => {
     // 從localstorage得到cart(json字串)
@@ -54,10 +60,8 @@ function ProductFirst(props) {
           <div class="col-4 right-part">
             <div class="d-flex product-name justify-content-between">
               <div class="subtitle3">{item.product_name}</div>
-              <div>
-                <i class="fas fa-heart"></i>
-              </div>
             </div>
+
             <div class="stars d-flex">
               <BsStarFill />
               <BsStarFill />
@@ -65,6 +69,14 @@ function ProductFirst(props) {
               <BsStarFill />
               <BsStarFill />
               <p> （ 300則評論 ）</p>
+            </div>
+            <div class="heart justify-content-end">
+              <BsFillHeartFill
+                onClick={() => {
+                  setHeart(!heart)
+                }}
+                style={heart ? heartFill : ''}
+              />
             </div>
             <div class="bigDesc">
               <div class="product-desc">

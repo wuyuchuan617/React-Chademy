@@ -6,10 +6,9 @@ function ProductThird(props) {
   // 0 : close 1 : open
   const [viewFilter, setViewFilter] = useState(0)
 
-  const [viewSpread, setViewSpread] = useState(false)
+  const [viewSpread, setViewSpread] = useState(true)
   const [viewSpread1, setViewSpread1] = useState(false)
   const [viewSpread2, setViewSpread2] = useState(false)
-  const [viewSpread3, setViewSpread3] = useState(false)
 
   // seats1 //sidebarContent
   let sidebarContentShow = {
@@ -40,7 +39,6 @@ function ProductThird(props) {
                     setViewSpread(!viewSpread)
                     setViewSpread1(false)
                     setViewSpread2(false)
-                    setViewSpread3(false)
                   }}
                 >
                   <div className="refinement-title">產品類別</div>
@@ -48,36 +46,19 @@ function ProductThird(props) {
                 </div>
               </div>
               <ul
-                className="refinement-list scrollable seats2"
+                className="refinement-list scrollable seats3"
                 id="seats1"
                 aria-hidden="false"
                 style={viewSpread ? sidebarContentShow : sidebarContentHide}
               >
-                <li data-refinement-value="4">
-                  <a className="refinement-link" rel="nofollow" href="#">
-                    單椅
-                  </a>
-                </li>
-                <li data-refinement-value="6">
-                  <a className="refinement-link" rel="nofollow" href="#">
-                    扶手椅
-                  </a>
-                </li>
-                <li data-refinement-value="8">
-                  <a className="refinement-link" rel="nofollow" href="#">
-                    餐椅
-                  </a>
-                </li>
-                <li data-refinement-value="10">
-                  <a className="refinement-link" rel="nofollow" href="#">
-                    沙發椅
-                  </a>
-                </li>
-                <li data-refinement-value="12">
-                  <a className="refinement-link" rel="nofollow" href="">
-                    吧台椅
-                  </a>
-                </li>
+                <p>
+                  柔軟的設計、細微的細節以及曲線造型使其不存在視覺欣賞的死角。Henrik
+                  Pedersen
+                  的有機設計通過精美的工藝設計加以呈現，將成為您起居室中的標誌性家居。
+                  扶手椅採用高支腿設計，突出柔和優雅的表達。也可以選擇旋轉底座，讓您在不起身的情況下朝不同方向轉動椅子。
+                  為了確保其始終處於最佳狀態且實現極致舒適度，座墊上貼有 Velcro
+                  魔術貼以防止滑動。
+                </p>
               </ul>
             </div>
 
@@ -93,7 +74,6 @@ function ProductThird(props) {
                     setViewSpread1(!viewSpread1)
                     setViewSpread(false)
                     setViewSpread2(false)
-                    setViewSpread3(false)
                   }}
                 >
                   <div className="refinement-title">產品類別</div>
@@ -101,36 +81,19 @@ function ProductThird(props) {
                 </div>
               </div>
               <ul
-                className="refinement-list scrollable seats2"
+                className="refinement-list scrollable seats3"
                 id="seats1"
                 aria-hidden="false"
                 style={viewSpread1 ? sidebarContentShow : sidebarContentHide}
               >
-                <li data-refinement-value="4">
-                  <a className="refinement-link" rel="nofollow" href="#">
-                    單椅
-                  </a>
-                </li>
-                <li data-refinement-value="6">
-                  <a className="refinement-link" rel="nofollow" href="#">
-                    扶手椅
-                  </a>
-                </li>
-                <li data-refinement-value="8">
-                  <a className="refinement-link" rel="nofollow" href="#">
-                    餐椅
-                  </a>
-                </li>
-                <li data-refinement-value="10">
-                  <a className="refinement-link" rel="nofollow" href="#">
-                    沙發椅
-                  </a>
-                </li>
-                <li data-refinement-value="12">
-                  <a className="refinement-link" rel="nofollow" href="">
-                    吧台椅
-                  </a>
-                </li>
+                <p>
+                  柔軟的設計、細微的細節以及曲線造型使其不存在視覺欣賞的死角。Henrik
+                  Pedersen
+                  的有機設計通過精美的工藝設計加以呈現，將成為您起居室中的標誌性家居。
+                  扶手椅採用高支腿設計，突出柔和優雅的表達。也可以選擇旋轉底座，讓您在不起身的情況下朝不同方向轉動椅子。
+                  為了確保其始終處於最佳狀態且實現極致舒適度，座墊上貼有 Velcro
+                  魔術貼以防止滑動。
+                </p>
               </ul>
             </div>
 
@@ -146,7 +109,6 @@ function ProductThird(props) {
                     setViewSpread2(!viewSpread2)
                     setViewSpread(false)
                     setViewSpread1(false)
-                    setViewSpread3(false)
                   }}
                 >
                   <div className="refinement-title">產品類別</div>
@@ -154,36 +116,19 @@ function ProductThird(props) {
                 </div>
               </div>
               <ul
-                className="refinement-list scrollable seats2"
+                className="refinement-list scrollable seats3"
                 id="seats1"
                 aria-hidden="false"
                 style={viewSpread2 ? sidebarContentShow : sidebarContentHide}
               >
-                <li data-refinement-value="4">
-                  <a className="refinement-link" rel="nofollow" href="#">
-                    單椅
-                  </a>
-                </li>
-                <li data-refinement-value="6">
-                  <a className="refinement-link" rel="nofollow" href="#">
-                    扶手椅
-                  </a>
-                </li>
-                <li data-refinement-value="8">
-                  <a className="refinement-link" rel="nofollow" href="#">
-                    餐椅
-                  </a>
-                </li>
-                <li data-refinement-value="10">
-                  <a className="refinement-link" rel="nofollow" href="#">
-                    沙發椅
-                  </a>
-                </li>
-                <li data-refinement-value="12">
-                  <a className="refinement-link" rel="nofollow" href="">
-                    吧台椅
-                  </a>
-                </li>
+                <p>
+                  柔軟的設計、細微的細節以及曲線造型使其不存在視覺欣賞的死角。Henrik
+                  Pedersen
+                  的有機設計通過精美的工藝設計加以呈現，將成為您起居室中的標誌性家居。
+                  扶手椅採用高支腿設計，突出柔和優雅的表達。也可以選擇旋轉底座，讓您在不起身的情況下朝不同方向轉動椅子。
+                  為了確保其始終處於最佳狀態且實現極致舒適度，座墊上貼有 Velcro
+                  魔術貼以防止滑動。
+                </p>
               </ul>
             </div>
           </div>

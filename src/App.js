@@ -46,13 +46,12 @@ function App() {
 
   const closeNavbar = () => console.log(333) || setActivaName('')
   return (
-    
     <Router>
       <>
         {/* <MyNavbar /> */}
 
         {/* <Switch> */}
-          {/* 首頁頁面 */}
+        {/* 首頁頁面 */}
         <CHNavbar activaName={activaName} setActivaName={setActivaName} />
         {/* <Container onClick={closeNavbar}> */}
         <Switch>
@@ -135,7 +134,7 @@ function App() {
           <Route path="/deliveryinfo">
             <DeliveryInfo />
           </Route>
-          
+
           <Route path="/checkinfo">
             <CheckInfo />
           </Route>

@@ -22,11 +22,10 @@ function ProductFive(props) {
           <div class="sec-area"></div>
           <div class="sec-area">
             <p>
-              Founded in 2013 by friends and university classmates Jasper
-              Overgaard and Christian Dyrman, the Overgaard & Dyrman studio
-              exists as a collaborative platform for creating original and
-              meaningful lifestyle objects. At the core of every O&D project,
-              there is a spirit of shared curiosity and creative partnership.{' '}
+              柔軟的設計、細微的細節以及曲線造型使其不存在視覺欣賞的死角。Henrik
+              Pedersen
+              的有機設計通過精美的工藝設計加以呈現，將成為您起居室中的標誌性家居。
+              扶手椅採用高支腿設計，突出柔和優雅的表達。也可以選擇旋轉底座，讓您在不起身的情況下朝不同方向轉動椅子。
             </p>
           </div>
         </div>
