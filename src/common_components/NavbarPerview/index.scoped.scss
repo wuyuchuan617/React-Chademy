@@ -17,3 +17,18 @@
     opacity: 0.9;
   }
 }
+
+.shit {
+  display: none;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+
+  &.isActive {
+    display: block;
+  }
+}

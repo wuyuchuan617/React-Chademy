@@ -15,8 +15,8 @@ import CartArea from '../../cart/components/CartArea'
 
 function MyNavbar(props) {
   const {
-    activaName,
-    setActivaName,
+    activeName,
+    setActiveName,
     navbarHeight,
     setNavbarHeight,
     scrollY,
@@ -26,12 +26,12 @@ function MyNavbar(props) {
   const isDown = scrollDirection === 'DOWN'
   const over100px = scrollY < -100
   const navbarPosition =
-    !activaName && isDown && over100px ? `-${navbarHeight}px` : 0
+    !activeName && isDown && over100px ? `-${navbarHeight}px` : 0
 
   // console.log(scrollY, scrollDirection, isDown && over100px)
 
   const activeState = (name) =>
-    name === activaName ? 'navbar_item_is_active' : ''
+    name === activeName ? 'navbar_item_is_active' : ''
 
   return (
     <>
@@ -50,10 +50,10 @@ function MyNavbar(props) {
         collapseOnSelect
         expand="lg"
         fixed="top"
-        className={`navbar_contanier ${activaName ? 'show_bg' : ''}`}
+        className={`navbar_contanier ${activeName ? 'show_bg' : ''}`}
       >
         <Navbar.Brand
-          onClick={() => setActivaName('')}
+          onClick={() => setActiveName('')}
           href="#home"
           className="logo_brand"
         >
@@ -75,7 +75,7 @@ function MyNavbar(props) {
               href="#about"
               onClick={() => {
                 console.log(' click ')
-                setActivaName('about')
+                setActiveName('about')
               }}
               className={['text-center', activeState('about')]}
             >
@@ -86,7 +86,7 @@ function MyNavbar(props) {
             <Nav.Link
               as={NavLink}
               to="/productlist"
-              onClick={() => setActivaName('product')}
+              onClick={() => setActiveName('product')}
               className={['text-center', activeState('product')]}
             >
               <div>經典產品</div>
@@ -94,7 +94,7 @@ function MyNavbar(props) {
             </Nav.Link>
             <Nav.Link
               href="#antique"
-              onClick={() => setActivaName('antique')}
+              onClick={() => setActiveName('antique')}
               className={['text-center', activeState('antique')]}
             >
               <div>中古市集</div>
@@ -102,7 +102,7 @@ function MyNavbar(props) {
             </Nav.Link>
             <Nav.Link
               href="#bidding"
-              onClick={() => setActivaName('bidding')}
+              onClick={() => setActiveName('bidding')}
               className={['text-center', activeState('bidding')]}
             >
               <div>精品競標</div>
@@ -110,7 +110,7 @@ function MyNavbar(props) {
             </Nav.Link>
             <Nav.Link
               href="#workshop"
-              onClick={() => setActivaName('workshop')}
+              onClick={() => setActiveName('workshop')}
               className={['text-center', activeState('workshop')]}
             >
               <div>設計學院</div>
@@ -118,7 +118,7 @@ function MyNavbar(props) {
             </Nav.Link>
             <Nav.Link
               href="#funding"
-              onClick={() => setActivaName('funding')}
+              onClick={() => setActiveName('funding')}
               className={['text-center', activeState('funding')]}
             >
               <div>新創募資</div>
@@ -126,7 +126,7 @@ function MyNavbar(props) {
             </Nav.Link>
             <Nav.Link
               href="#blog"
-              onClick={() => setActivaName('blog')}
+              onClick={() => setActiveName('blog')}
               className={['text-center', activeState('blog')]}
             >
               <div>靈感探索</div>

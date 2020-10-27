@@ -42,18 +42,14 @@ import DeliveryInfo from './cart/pages/DeliveryInfo'
 import CheckInfo from './cart/pages/CheckInfo'
 //-----------------------------------------------------------
 function App() {
-  const [activaName, setActivaName] = useState('')
+  const [activeName, setActiveName] = useState('')
 
-  const closeNavbar = () => console.log(333) || setActivaName('')
   return (
     <Router>
       <>
         {/* <MyNavbar /> */}
+        <CHNavbar activeName={activeName} setActiveName={setActiveName} />
 
-        {/* <Switch> */}
-        {/* 首頁頁面 */}
-        <CHNavbar activaName={activaName} setActivaName={setActivaName} />
-        {/* <Container onClick={closeNavbar}> */}
         <Switch>
           {/* 首頁頁面 */}
 
