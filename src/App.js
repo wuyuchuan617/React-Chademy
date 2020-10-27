@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-
+import CHNavbar from './common_components/CHNavbar'
 // ------------------以下import common components--------------------
 
 import MyNavbar from './common_components/MyNavbar'
@@ -42,14 +42,18 @@ import DeliveryInfo from './cart/pages/DeliveryInfo'
 import CheckInfo from './cart/pages/CheckInfo'
 //-----------------------------------------------------------
 function App() {
+  const [activaName, setActivaName] = useState('')
+
+  const closeNavbar = () => console.log(333) || setActivaName('')
   return (
+    
     <Router>
       <>
-        <MyNavbar />
+        {/* <MyNavbar /> */}
 
-        <Switch>
+        {/* <Switch> */}
           {/* 首頁頁面 */}
-
+        <CHNavbar activaName={activaName} setActivaName={setActivaName} />
         {/* <Container onClick={closeNavbar}> */}
         <Switch>
           {/* 首頁頁面 */}
