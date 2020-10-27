@@ -132,6 +132,14 @@ function App() {
             <CartClass />
           </Route>
 
+          <Route path="/deliveryinfo">
+            <DeliveryInfo />
+          </Route>
+          
+          <Route path="/checkinfo">
+            <CheckInfo />
+          </Route>
+
           {/* 404找不到網頁，需要放在switch路由表最後一個 */}
           <Route path="*">
             <NotFoundPage />

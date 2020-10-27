@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './index.scoped.scss'
 
 import { Navbar, Nav } from 'react-bootstrap'
@@ -8,6 +8,8 @@ import logo from '../images/logo.svg'
 
 // 選單連結要使用NavLink取代Link
 import { NavLink } from 'react-router-dom'
+
+import CartArea from '../../cart/components/CartArea'
 
 // TODO: https://reedbarger.com/how-to-create-a-usewindowsize-react-hook/
 
@@ -20,7 +22,7 @@ function MyNavbar(props) {
     scrollY,
     scrollDirection,
   } = props
-
+  const [showCart, setShowCart] = useState(false)
   const isDown = scrollDirection === 'DOWN'
   const over100px = scrollY < -100
   const navbarPosition =
@@ -133,7 +135,7 @@ function MyNavbar(props) {
           </Nav>
 
           <Nav className="icon_con">
-            <Nav.Link as={NavLink} to="/car">
+            <Nav.Link as={NavLink} to="#" onClick={()=>setShowCart(true)}>
               <AiOutlineShoppingCart className="icon" />
             </Nav.Link>
             <Nav.Link as={NavLink} to="/login">
@@ -142,6 +144,7 @@ function MyNavbar(props) {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+      <CartArea showCart={showCart} setShowCart={setShowCart} />
     </>
   )
 }
