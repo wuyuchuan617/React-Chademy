@@ -123,18 +123,33 @@ p {
   object-fit: cover;
 }
 
-.second-text{
-  vertical-align:middle;
+.second-text p {
+  vertical-align: middle;
 }
 
 /* second container finish here! */
 
 .third-photo {
   width: 620px;
+  height: 400px;
+  overflow: hidden;
+  object-fit: cover;
 }
 
 .third-photo img {
   width: 100%;
+}
+
+.seats {
+  width: 100%;
+
+}
+
+.plus1 {
+  background-color: #B7BDB3;
+  margin: 20px 20px;
+  border-bottom: 1px solid #A7A49F;
+  padding: 15px;
 }
 
 /* third container finish here! */

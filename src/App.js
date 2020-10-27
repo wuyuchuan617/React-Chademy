@@ -50,6 +50,10 @@ function App() {
         <Switch>
           {/* 首頁頁面 */}
 
+        {/* <Container onClick={closeNavbar}> */}
+        <Switch>
+          {/* 首頁頁面 */}
+
           <Route exact path="/counterredux">
             <Home />
           </Route>
@@ -124,18 +128,12 @@ function App() {
             <CartClass />
           </Route>
 
-          <Route path="/deliveryinfo">
-            <DeliveryInfo />
-          </Route>
-          <Route path="/checkinfo">
-            <CheckInfo />
-          </Route>
-
           {/* 404找不到網頁，需要放在switch路由表最後一個 */}
           <Route path="*">
             <NotFoundPage />
           </Route>
         </Switch>
+        {/* </Container> */}
 
         <MyFooter />
       </>

@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { withRouter, useHistory } from 'react-router-dom'
 
 function ProductThird(props) {
   const { product, item } = props
-  console.log(product)
+  // 0 : close 1 : open
+  const [viewFilter, setViewFilter] = useState(0)
+
+  const [viewSpread, setViewSpread] = useState(false)
+  const [viewSpread1, setViewSpread1] = useState(false)
+  const [viewSpread2, setViewSpread2] = useState(false)
+  const [viewSpread3, setViewSpread3] = useState(false)
+
+  // seats1 //sidebarContent
+  let sidebarContentShow = {
+    display: 'block',
+  }
+
+  let sidebarContentHide = {
+    display: 'none',
+  }
 
   return (
     <>
@@ -12,98 +27,164 @@ function ProductThird(props) {
           <div class="col-sm-12 col-lg-6 third-photo">
             <img src={require('../../img/' + item.photo)} alt="" />
           </div>
-          <div class="col">
-            <div class="accordion" id="accordionExample">
-              <div class="card">
-                <div class="card-header" id="headingOne">
-                  <h2 class="mb-0">
-                    <button
-                      class="btn btn-link"
-                      type="button"
-                      data-toggle="collapse"
-                      data-target="#collapseOne"
-                      aria-expanded="true"
-                      aria-controls="collapseOne"
-                    >
-                      材質 +
-                    </button>
-                  </h2>
+          <div class="col-sm-12 col-lg-6 ">
+            <div className=" refinement seats  " data-refinement-id="seats">
+              <div
+                className="refinement-toggle js-slide-toggle  is-active"
+                data-toggle-element="#seats"
+                data-toggle-duration="800"
+              >
+                <div
+                  className="plus1 d-flex justify-content-between"
+                  onClick={() => {
+                    setViewSpread(!viewSpread)
+                    setViewSpread1(false)
+                    setViewSpread2(false)
+                    setViewSpread3(false)
+                  }}
+                >
+                  <div className="refinement-title">產品類別</div>
+                  <div className="spreadPlus">+</div>
                 </div>
+              </div>
+              <ul
+                className="refinement-list scrollable seats2"
+                id="seats1"
+                aria-hidden="false"
+                style={viewSpread ? sidebarContentShow : sidebarContentHide}
+              >
+                <li data-refinement-value="4">
+                  <a className="refinement-link" rel="nofollow" href="#">
+                    單椅
+                  </a>
+                </li>
+                <li data-refinement-value="6">
+                  <a className="refinement-link" rel="nofollow" href="#">
+                    扶手椅
+                  </a>
+                </li>
+                <li data-refinement-value="8">
+                  <a className="refinement-link" rel="nofollow" href="#">
+                    餐椅
+                  </a>
+                </li>
+                <li data-refinement-value="10">
+                  <a className="refinement-link" rel="nofollow" href="#">
+                    沙發椅
+                  </a>
+                </li>
+                <li data-refinement-value="12">
+                  <a className="refinement-link" rel="nofollow" href="">
+                    吧台椅
+                  </a>
+                </li>
+              </ul>
+            </div>
 
+            <div className=" refinement seats  " data-refinement-id="seats">
+              <div
+                className="refinement-toggle js-slide-toggle  is-active"
+                data-toggle-element="#seats"
+                data-toggle-duration="800"
+              >
                 <div
-                  id="collapseOne"
-                  class="collapse show"
-                  aria-labelledby="headingOne"
-                  data-parent="#accordionExample"
+                  className="plus1 d-flex justify-content-between"
+                  onClick={() => {
+                    setViewSpread1(!viewSpread1)
+                    setViewSpread(false)
+                    setViewSpread2(false)
+                    setViewSpread3(false)
+                  }}
                 >
-                  <div class="card-body">
-                    <div class="inner-img">
-                      <img src={require('../../img/' + item.photo)} alt="" />
-                    </div>
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life
-                    accusamus terry richardson ad squid.tainable VHS.n't heard
-                    of them accusamus labore sustainablenable VHS.ainable
-                    VHS.n't heard of them accusamus labore sustainablenable VHS.
-                  </div>
+                  <div className="refinement-title">產品類別</div>
+                  <div className="spreadPlus">+</div>
                 </div>
               </div>
-              <div class="card">
-                <div class="card-header" id="headingTwo">
-                  <h2 class="mb-0">
-                    <button
-                      class="btn btn-link collapsed"
-                      type="button"
-                      data-toggle="collapse"
-                      data-target="#collapseTwo"
-                      aria-expanded="false"
-                      aria-controls="collapseTwo"
-                    >
-                      Collapsible Group Item #2
-                    </button>
-                  </h2>
-                </div>
+              <ul
+                className="refinement-list scrollable seats2"
+                id="seats1"
+                aria-hidden="false"
+                style={viewSpread1 ? sidebarContentShow : sidebarContentHide}
+              >
+                <li data-refinement-value="4">
+                  <a className="refinement-link" rel="nofollow" href="#">
+                    單椅
+                  </a>
+                </li>
+                <li data-refinement-value="6">
+                  <a className="refinement-link" rel="nofollow" href="#">
+                    扶手椅
+                  </a>
+                </li>
+                <li data-refinement-value="8">
+                  <a className="refinement-link" rel="nofollow" href="#">
+                    餐椅
+                  </a>
+                </li>
+                <li data-refinement-value="10">
+                  <a className="refinement-link" rel="nofollow" href="#">
+                    沙發椅
+                  </a>
+                </li>
+                <li data-refinement-value="12">
+                  <a className="refinement-link" rel="nofollow" href="">
+                    吧台椅
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div className=" refinement seats  " data-refinement-id="seats">
+              <div
+                className="refinement-toggle js-slide-toggle  is-active"
+                data-toggle-element="#seats"
+                data-toggle-duration="800"
+              >
                 <div
-                  id="collapseTwo"
-                  class="collapse"
-                  aria-labelledby="headingTwo"
-                  data-parent="#accordionExample"
+                  className="plus1 d-flex justify-content-between"
+                  onClick={() => {
+                    setViewSpread2(!viewSpread2)
+                    setViewSpread(false)
+                    setViewSpread1(false)
+                    setViewSpread3(false)
+                  }}
                 >
-                  <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim e probably haven't
-                    heard of them accusamus labore sustainable VHS.n't heard of
-                    them accusamus labore sustainable VHS.
-                  </div>
+                  <div className="refinement-title">產品類別</div>
+                  <div className="spreadPlus">+</div>
                 </div>
               </div>
-              <div class="card">
-                <div class="card-header" id="headingThree">
-                  <h2 class="mb-0">
-                    <button
-                      class="btn btn-link collapsed"
-                      type="button"
-                      data-toggle="collapse"
-                      data-target="#collapseThree"
-                      aria-expanded="false"
-                      aria-controls="collapseThree"
-                    >
-                      Collapsible Group Item #3
-                    </button>
-                  </h2>
-                </div>
-                <div
-                  id="collapseThree"
-                  class="collapse"
-                  aria-labelledby="headingThree"
-                  data-parent="#accordionExample"
-                >
-                  <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life
-                    accusamus terry richardson ad t you probably haven't heard
-                    of them accusamus labore sustainable VHS.n't heard of them
-                    accusamus labore sustainable VHS.
-                  </div>
-                </div>
-              </div>
+              <ul
+                className="refinement-list scrollable seats2"
+                id="seats1"
+                aria-hidden="false"
+                style={viewSpread2 ? sidebarContentShow : sidebarContentHide}
+              >
+                <li data-refinement-value="4">
+                  <a className="refinement-link" rel="nofollow" href="#">
+                    單椅
+                  </a>
+                </li>
+                <li data-refinement-value="6">
+                  <a className="refinement-link" rel="nofollow" href="#">
+                    扶手椅
+                  </a>
+                </li>
+                <li data-refinement-value="8">
+                  <a className="refinement-link" rel="nofollow" href="#">
+                    餐椅
+                  </a>
+                </li>
+                <li data-refinement-value="10">
+                  <a className="refinement-link" rel="nofollow" href="#">
+                    沙發椅
+                  </a>
+                </li>
+                <li data-refinement-value="12">
+                  <a className="refinement-link" rel="nofollow" href="">
+                    吧台椅
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

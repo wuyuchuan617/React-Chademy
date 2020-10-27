@@ -6,6 +6,8 @@ import { IntegerStep, DecimalStep } from './components/IntegerStep'
 import { Checkbox } from 'antd'
 
 function Filter(props) {
+  const { showFilter } = props
+
   // 0 : close 1 : open
   const [viewFilter, setViewFilter] = useState(0)
 

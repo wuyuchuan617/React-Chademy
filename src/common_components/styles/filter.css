@@ -66,7 +66,7 @@ p {
 
 .seats2 {
     display: none;
-    margin: 10px -10px 10px 20px;
+    margin: 10px 0px 10px 20px;
 
 }
 
@@ -112,7 +112,7 @@ a {
 .filterText {
     position: absolute;
     position: fixed;
-    left: 7px;
+    left: 25px;
     top: 50%;
     transform: translate(0%, -50%);
     writing-mode: vertical-lr;

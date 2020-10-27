@@ -3,7 +3,7 @@ import { withRouter, useHistory } from 'react-router-dom'
 
 function ProductCard(props) {
   const { product, item } = props
-  console.log(product)
+  // console.log(product)
 
   return (
     <>

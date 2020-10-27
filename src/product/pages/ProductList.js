@@ -10,6 +10,7 @@ function ProductList(props) {
   const [product, setProduct] = useState([])
   const [viewProduct, setViewProduct] = useState(15)
   const [lastProductId, setLastProductId] = useState(0)
+  const [showFilter, setShowFilter] = useState(false)
 
   const handleClick = () => {
     let preViewProduct = viewProduct
@@ -32,14 +33,14 @@ function ProductList(props) {
     if (arr.length > 0) setLastProductId(arr[arr.length - 1].sid)
   }, [viewProduct, product])
 
-  // useEffect(() => {
-  //   if (document.getElementById(lastProductId)) {
-  //     alert(lastProductId)
-  //     document
-  //       .getElementById(lastProductId)
-  //       .scrollIntoView({ behavior: 'smooth' })
-  //   }
-  // }, [lastProductId])
+  useEffect(() => {
+    console.log('scrol' + document.querySelector('#productCards').offsetTop)
+    console.log('now' + document.documentElement.scrollTop)
+    const scrol = document.querySelector('#productCards').offsetTop
+    let nowscrol = document.documentElement.scrollTop
+
+    if (nowscrol > scrol) setShowFilter(true)
+  }, [document.documentElement.scrollTop])
 
   async function getTotalFromSQL() {
     const url = 'http://localhost:3001/man_product/reactlist'
@@ -68,24 +69,24 @@ function ProductList(props) {
 
   return (
     <>
-      <Filter />
+      <Filter showFilter={showFilter} />
 
-      <div class="container-fluid">
-        <video
-          src={bannerVideo}
-          class="w-100"
-          autoplay="autoplay"
-          muted="true"
-          preload="auto"
-        ></video>
-      </div>
+      {/* <div class="container-fluid"> */}
+      <video
+        src={bannerVideo}
+        class="w-100"
+        autoplay="autoplay"
+        muted="true"
+        preload="auto"
+      ></video>
+      {/* </div> */}
 
       <ProductPopular />
 
       <ProductSeries />
 
       <div class="context1">
-        <div class="container">
+        <div class="container" id="productCards">
           <div class="row d-flex justify-content-center">
             <p class="col-4 subtitle1">全部產品</p>
 

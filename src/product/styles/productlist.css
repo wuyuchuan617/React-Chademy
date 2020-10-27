@@ -6,7 +6,8 @@ body {
 
 
 .context1 {
-    width: 100%-80px;
+    width: calc(100% - 80px);
+    margin-left: 80px;
 }
 
 .sidebar {
@@ -100,7 +101,7 @@ a {
 .filterText {
     position: absolute;
     position: fixed;
-    left: 7px;
+    left: 25px;
     top: 50%;
     transform: translate(0%, -50%);
     writing-mode: vertical-lr;
