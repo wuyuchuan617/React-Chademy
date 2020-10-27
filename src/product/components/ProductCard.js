@@ -7,7 +7,7 @@ function ProductCard(props) {
 
   return (
     <>
-      <div class="productCard col-lg-4 col-md-6 col-sm-12">
+      <div class="productCard col-lg-4 col-md-6 col-sm-12" id={item.sid}>
         <div class="productCardImg">
           <img
             src={require('../../img/' + item.photo)}

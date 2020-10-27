@@ -1,0 +1,42 @@
+// $primary:        purple ;
+// $secondary:     yellow;
+
+// Import Bootstrap and its default variables
+//@import '~bootstrap/scss/bootstrap.scss';
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+
+// 預設變數覆蓋需要在導入Bootstrap之前
+// $primary: #dbd9d5;
+// $secondary: #1a1818;
+//#DBD9D5,#1A1818
+
+// Reset CSS
+// https://gist.github.com/DavidWells/18e73022e723037a50d6#file-reset-css
+// @import './reset.scss';
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+// //
+// body {
+//   font-family: 'Josefin Sans';
+// }
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+main > .container {
+  padding: 60px 15px 0;
+}
+
+.footer {
+  background-color: #f5f5f5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

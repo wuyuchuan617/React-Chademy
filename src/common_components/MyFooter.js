@@ -11,7 +11,7 @@ import logo from './images/8be4c66-2.svg'
 function MyFooter(props) {
   return (
     <>
-      <div className="container-fluid footer">
+      <div onClick={props.onClick} className="container-fluid footer">
         <div className="row logo">
           <div className="logo-img">
             <img src={logo} alt="" />

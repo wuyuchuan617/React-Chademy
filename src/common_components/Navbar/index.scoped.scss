@@ -1,0 +1,68 @@
+.navbar_contanier {
+  z-index: 1;
+  font-family: 'Josefin Sans';
+
+  background-color: orange;
+  // width: 100%;
+  // max-width: 700px;
+  // margin: 0 auto;
+  // 透明
+  background-color: rgba(255, 255, 255, 0);
+
+  top: 0;
+  transition: top 0.8s;
+
+  // navbar 有選項時的顏色
+  &.show_bg {
+    background-color: #dbd9d5;
+    opacity: 0.9;
+  }
+
+  // navbar 隱藏時消除 navbar.active 預設字變深色的狀態
+  &:not(.show_bg) /deep/ .navbar-nav .nav-link.active {
+    color: rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .navbar_list {
+    color: #1a1818;
+
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .navbar-nav .nav-link {
+    // color: #1a1818;
+    color: #ffffff;
+    font-size: 12px;
+  }
+
+  /**
+  > NOTE: 第三方組件若吃不到樣式，使用 /deep/
+  > ref: https://zhuanlan.zhihu.com/p/47870721
+  */
+  /deep/ {
+    &.show_bg .navbar-nav .nav-link {
+      color: #1a1818;
+      font-size: 12px;
+    }
+
+    .navbar_item_is_active {
+      border-bottom: 2px solid gray;
+    }
+    .logo_brand {
+      margin-left: 80px;
+    }
+  }
+  .icon {
+    width: 21px;
+    height: 21px;
+  }
+
+  .icon_con {
+    margin-right: 70px;
+  }
+}

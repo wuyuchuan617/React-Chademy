@@ -8,6 +8,38 @@ import bannerVideo from '../images/The-Passion-of-Making.mp4'
 
 function ProductList(props) {
   const [product, setProduct] = useState([])
+  const [viewProduct, setViewProduct] = useState(15)
+  const [lastProductId, setLastProductId] = useState(0)
+
+  const handleClick = () => {
+    let preViewProduct = viewProduct
+    let newViewProduct = preViewProduct + 15
+
+    console.log(newViewProduct)
+    setViewProduct(newViewProduct)
+    //const arr = product.slice(0, preViewProduct)
+    //setLastProductId(arr[arr.length - 1].sid)
+    if (document.getElementById(lastProductId)) {
+      //alert(lastProductId)
+      document
+        .getElementById(lastProductId)
+        .scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
+  }
+
+  useEffect(() => {
+    const arr = product.slice(0, viewProduct)
+    if (arr.length > 0) setLastProductId(arr[arr.length - 1].sid)
+  }, [viewProduct, product])
+
+  // useEffect(() => {
+  //   if (document.getElementById(lastProductId)) {
+  //     alert(lastProductId)
+  //     document
+  //       .getElementById(lastProductId)
+  //       .scrollIntoView({ behavior: 'smooth' })
+  //   }
+  // }, [lastProductId])
 
   async function getTotalFromSQL() {
     const url = 'http://localhost:3001/man_product/reactlist'
@@ -25,14 +57,14 @@ function ProductList(props) {
     const newData = [...data]
     console.log('newData' + newData)
     console.log(Array.isArray(data))
-    setProduct(newData.slice(30, 40))
+    setProduct(newData)
   }
 
   useEffect(() => {
     getTotalFromSQL()
   }, [])
 
-  console.log('product' + product)
+  //console.log('product' + product)
 
   return (
     <>
@@ -62,7 +94,7 @@ function ProductList(props) {
             </p>
           </div>
           <div class="row justify-content-center">
-            {product.map((item, index) => {
+            {product.slice(0, viewProduct).map((item, index) => {
               return <ProductCard key={index} item={item} product={product} />
             })}
           </div>
@@ -71,7 +103,9 @@ function ProductList(props) {
 
       <div class="container">
         <div class="row">
-          <button class="loadButton">LOAD MORE</button>
+          <button class="loadButton" onClick={handleClick}>
+            LOAD MORE
+          </button>
         </div>
       </div>
     </>
