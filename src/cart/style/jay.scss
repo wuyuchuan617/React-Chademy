@@ -95,6 +95,20 @@
     text-decoration: none;
     color: white;
   }
+  .btn4{
+    margin: 0 auto 30px auto;
+    width: 400px;
+    height: 50px;
+    background-color: #C67334;
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+    color: white;
+}
+.btn4:hover{
+  text-decoration: none;
+  color: white;
+}
   ul{
     list-style-type: none;
   }
@@ -156,7 +170,7 @@
   }
   .defaultcircle{
     // position: absolute;
-    margin-top: 15px;
+    margin: 15px auto 0 auto;
     width: 15px;
     height: 15px;
     border-radius: 15px;
@@ -170,7 +184,7 @@
   }
   .titlecenter1{
     padding-left: 15px;
-    width: 165px;
+    width: 175px;
     // text-align: center;
   }
   .titlecenter2{
@@ -288,4 +302,17 @@
   .submit input{
     background-color: transparent;
     border: 0.5px solid black;
+  }
+
+  .deliveryform{
+    width:600px;
+    margin: 0 auto;
+    // display: block;
+  }
+  .deliveryform input{
+    border: none;
+  }
+
+  .deliveryform select{
+    border: none;
   }

@@ -38,7 +38,9 @@ import CartProduct from './cart/pages/CartProduct'
 import CartBid from './cart/pages/CartBid'
 import CartSecondHand from './cart/pages/CartSecondHand'
 import CartClass from './cart/pages/CartClass'
-
+import DeliveryInfo from './cart/pages/DeliveryInfo'
+import CheckInfo from './cart/pages/CheckInfo'
+//-----------------------------------------------------------
 function App() {
   return (
     <Router>
@@ -120,6 +122,13 @@ function App() {
 
           <Route path="/cartclass">
             <CartClass />
+          </Route>
+
+          <Route path="/deliveryinfo">
+            <DeliveryInfo />
+          </Route>
+          <Route path="/checkinfo">
+            <CheckInfo />
           </Route>
 
           {/* 404找不到網頁，需要放在switch路由表最後一個 */}

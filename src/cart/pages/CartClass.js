@@ -133,7 +133,7 @@ function CartClass(props) {
           <div></div>
           <h6 style={{ color: '#C67334' }}>$</h6>
         </div>
-        <Link to="#" className="btn3">
+        <Link to="deliveryinfo" className="btn3">
           買單
         </Link>
       </div>
