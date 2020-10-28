@@ -35,6 +35,36 @@ function ProductFirst(props) {
     setProductName(value.name)
   }
 
+  async function getHeartFromServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = 'http://localhost:3001/man_product/heart/' + item.product_name
+
+    const request = new Request(url, {
+      method: 'GET',
+
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+
+    // try {
+    const response = await fetch(request)
+    const data = await response.json()
+
+    console.log(data)
+    if (data.length > 0) {
+      setHeart(true)
+    }
+
+    //   // 驗証成功後再設定…
+    //   setTotal(total + value)
+    // } catch (error) {
+    //   setError(error)
+    // }
+  }
+
   async function updateTotalToServer(value) {
     // const newTotal = { total: total + value }
 
@@ -53,7 +83,8 @@ function ProductFirst(props) {
     const response = await fetch(request)
     const data = await response.json()
     // data會是一個物件值
-    console.log(data)
+    console.log(data.success)
+    setHeart(data.success)
 
     //   // 驗証成功後再設定…
     //   setTotal(total + value)
@@ -92,6 +123,10 @@ function ProductFirst(props) {
   useEffect(() => {
     updateTotalToServer()
   }, [heartItem.follow_status])
+
+  useEffect(() => {
+    getHeartFromServer()
+  }, [])
 
   return (
     <>
