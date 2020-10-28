@@ -110,10 +110,12 @@ function MyNavbar(props) {
               <div className="text-center">BIDDING</div>
             </Nav.Link>
             <Nav.Link
-              href="#workshop"
-              onClick={() => setActiveName('workshop')}
-              className={['text-center', activeState('workshop')]}
+              as={NavLink}
+              to="/Workshop"
+              onClick={() => setActiveName('Workshop')}
+              className={['text-center', activeState('Workshop')]}
             >
+            
               <div>設計學院</div>
               <div className="text-center">WORKSHOP</div>
             </Nav.Link>
