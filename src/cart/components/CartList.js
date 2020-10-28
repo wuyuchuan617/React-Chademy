@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import img1 from '../../product/images/777.jpg'
 import { MdAdd } from 'react-icons/md'
@@ -7,6 +7,11 @@ import { BsTrash } from 'react-icons/bs'
 // import './style/jay.scss'
 
 function CartList(props) {
+  const [mycart, setMycart] = useState('[]')
+  function getCartFromLocalStorage (){
+    const newCart = localStorage.getItem('cart') || '[]'
+    setMycart(JSON.parse(newCart))
+  }
   return (
     <>
       <div className="cartlist">
@@ -26,7 +31,7 @@ function CartList(props) {
                 </h6>
               </div>
               <h6 style={{ left: '330px', color: '#C67334' }}>$2500</h6>
-              <h6 style={{ left: '400px' }}>
+              <h6 style={{ left: '420px' }}>
                 <BsTrash />
               </h6>
             </div>
@@ -46,7 +51,7 @@ function CartList(props) {
                 </h6>
               </div>
               <h6 style={{ left: '330px', color: '#C67334' }}>$2500</h6>
-              <h6 style={{ left: '400px' }}>
+              <h6 style={{ left: '420px' }}>
                 <BsTrash />
               </h6>
             </div>

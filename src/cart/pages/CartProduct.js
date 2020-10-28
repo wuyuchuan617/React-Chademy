@@ -88,7 +88,9 @@ function CartProduct(props) {
             }}
           >
             <input type="text" name="discount" id="discount"></input>
-            <Link className="btn2" to="#">
+            <Link className="btn2" to="#" onClick={()=>{
+              localStorage.setItem('cart', {img:'img1',id:'歐洲銀行扶手沙發型餐椅<',price:'$2000',qty:1});
+            }}>
               確定
             </Link>
           </div>
