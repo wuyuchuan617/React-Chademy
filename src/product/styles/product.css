@@ -12,13 +12,13 @@ body {
   padding-bottom: 50px;
 }
 
-p {
+/* p {
   color: #707070;
   font-family: Noto Sans TC;
   font-size: 14px;
   font-weight: 300;
   letter-spacing: 4px;
-}
+} */
 
 /* common use finish here! */
 
@@ -274,7 +274,7 @@ p {
 }
 
 .right-img {
-  min-width: 800px;
+  /* min-width: 800px;x */
   background-size: cover;
 }
 

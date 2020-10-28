@@ -15,6 +15,7 @@ function ProductSix(props) {
           <div class="col">
             <p>Miramonti Boutique Hotel</p>
             <p>HAFLING-MERAN, ITALY</p>
+
             <div class="left-icon">
               <img src={require('../../img/' + item.photo)} alt="" />
             </div>
