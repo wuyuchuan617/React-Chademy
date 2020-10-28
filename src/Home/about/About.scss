@@ -1,0 +1,84 @@
+// .row {
+//   margin-top: 100px;
+//   margin-bottom: 100px;
+//   height: 550px;
+//   background-color: #deddda;
+//   width: 100%;
+//   display: flex;
+
+//   .aboutcompany {
+//     img {
+//       width: 100%;
+//     }
+//   }
+// }
+
+// .companytext {
+//   max-width: 400px;
+//   height: 550px;
+//   padding-top: 60px;
+//   padding-left: 20px;
+//   padding-right: 20px;
+// }
+
+// .companytext .p14 {
+//   font-size: 14px;
+//   margin: 70px 0;
+//   letter-spacing: 5px;
+// }
+
+// .p14 {
+//   font-size: 14px;
+//   font-weight: 200;
+//   letter-spacing: 2px;
+// }
+.row {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  width: 100%;
+}
+
+.aboutcompany {
+  max-width: 800px;
+  height: 550px;
+  background-color: #deddda;
+}
+
+.aboutcompany img {
+  width: 100%;
+}
+
+.companytext {
+  max-width: 400px;
+  height: 550px;
+  background-color: #deddda;
+  padding-top: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.companytext .p14 {
+  font-size: 14px;
+  margin: 70px 0;
+  letter-spacing: 5px;
+}
+
+.p14 {
+  font-size: 14px;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+
+.abouttitle {
+  font-size: 42px;
+}
+
+.noto-serif {
+  font-family: 'Noto Serif TC', serif;
+  letter-spacing: 2px;
+}
+
+.noto-sans {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: lighter;
+}

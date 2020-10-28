@@ -1,0 +1,52 @@
+.row {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  width: 100%;
+}
+
+.title {
+  width: 100%;
+  position: relative;
+}
+
+.titleset {
+  margin-left: 60px;
+  margin-top: 15px;
+}
+
+.titlech {
+  font-size: 32px;
+}
+
+.titleEN {
+  font-size: 12px;
+}
+
+.bidtext {
+  width: 80%;
+}
+
+.p14 {
+  font-size: 14px;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+
+.btn_auto {
+  width: 130px;
+  height: 40px;
+  margin: 50px auto;
+  background-color: #ded5c6;
+}
+
+.more {
+  line-height: 40px;
+  text-align: center;
+  font-size: 12px;
+  color: #707070;
+  cursor: pointer;
+}
+
+.bid img {
+  width: 100%;
+}

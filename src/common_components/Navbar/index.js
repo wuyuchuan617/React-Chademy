@@ -54,7 +54,8 @@ function MyNavbar(props) {
       >
         <Navbar.Brand
           onClick={() => setActiveName('')}
-          href="#home"
+          as={NavLink}
+          to="/"
           className="logo_brand"
         >
           <img

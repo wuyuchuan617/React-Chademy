@@ -1,0 +1,68 @@
+.title {
+  width: 100%;
+  position: relative;
+}
+
+.titleset {
+  margin-left: 60px;
+  margin-top: 15px;
+}
+
+.titlech {
+  font-size: 32px;
+}
+
+.titleEN {
+  font-size: 12px;
+}
+
+.imgarea img {
+  width: 100%;
+  margin-top: 153px;
+}
+
+.newsset {
+  font-size: 16px;
+}
+
+.noto-serif {
+  font-family: 'Noto Serif TC', serif;
+  letter-spacing: 2px;
+}
+
+.straight {
+  height: 120px;
+  border-left: 2px solid #436464;
+  position: absolute;
+  top: 0px;
+  left: 40px;
+}
+
+.cross {
+  width: 250px;
+  border-bottom: 2px solid #436464;
+  position: absolute;
+  top: 90px;
+  left: 0px;
+}
+
+.row {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  width: 100%;
+}
+
+.lora {
+  font-family: 'Lora', serif;
+}
+
+.noto-sans {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: lighter;
+}
+
+.p14 {
+  font-size: 14px;
+  font-weight: 200;
+  letter-spacing: 2px;
+}

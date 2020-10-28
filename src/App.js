@@ -12,7 +12,7 @@ import NotFoundPage from './common_components/NotFoundPage'
 
 // ---------------------以下import 首頁頁面--------------------
 
-import Home from './home/pages/Home'
+import Home from './Home'
 
 // ---------------------以下import 品牌故事頁面----------------
 
@@ -22,6 +22,7 @@ import Product from './product/pages/Product'
 import ProductList from './product/pages/ProductList'
 
 // ---------------------以下import 二手頁面--------------------
+import SecondhandList from './secondhand/pages/SecondhandList'
 
 // ---------------------以下import 募資頁面--------------------
 
@@ -53,13 +54,13 @@ function App() {
         <Switch>
           {/* 首頁頁面 */}
 
-          <Route exact path="/counterredux">
+          <Route exact path="/">
             <Home />
           </Route>
 
           {/* 品牌故事頁面 */}
 
-          <Route exact path="/">
+          <Route path="/brand">
             <Home />
           </Route>
 
@@ -75,8 +76,8 @@ function App() {
 
           {/* 二手頁面 */}
 
-          <Route exact path="/counterredux">
-            <Home />
+          <Route path="/secondhand_list">
+            <SecondhandList />
           </Route>
 
           {/* 募資頁面 */}
