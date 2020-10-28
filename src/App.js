@@ -25,14 +25,13 @@ import ProductList from './product/pages/ProductList'
 import SecondhandList from './secondhand/pages/SecondhandList'
 
 // ---------------------以下import 募資頁面--------------------
+import FundHomepage from './fund/pages/FundHomepage'
 
 // ---------------------以下import 競標頁面--------------------
 
 // ---------------------以下import 課程頁面--------------------
 import Workshop from './workshop/pages/Workshop'
 import WorkshopList from './workshop/pages/WorkshopList'
-
-
 
 // ---------------------以下import 部落格頁面------------------
 
@@ -50,7 +49,6 @@ function App() {
   const [activeName, setActiveName] = useState('')
 
   return (
-    
     <Router>
       <>
         {/* <MyNavbar /> */}
@@ -87,8 +85,8 @@ function App() {
 
           {/* 募資頁面 */}
 
-          <Route path="/login">
-            <Home />
+          <Route path="/fundhomepage">
+            <FundHomepage />
           </Route>
 
           {/* 競標頁面 */}
@@ -136,7 +134,7 @@ function App() {
           <Route path="/deliveryinfo">
             <DeliveryInfo />
           </Route>
-          
+
           <Route path="/checkinfo">
             <CheckInfo />
           </Route>
