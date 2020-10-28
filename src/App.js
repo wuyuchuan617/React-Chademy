@@ -32,8 +32,6 @@ import SecondhandList from './secondhand/pages/SecondhandList'
 import Workshop from './workshop/pages/Workshop'
 import WorkshopList from './workshop/pages/WorkshopList'
 
-
-
 // ---------------------以下import 部落格頁面------------------
 
 // ---------------------以下import 會員頁面--------------------
@@ -50,7 +48,6 @@ function App() {
   const [activeName, setActiveName] = useState('')
 
   return (
-    
     <Router>
       <>
         {/* <MyNavbar /> */}
@@ -136,7 +133,7 @@ function App() {
           <Route path="/deliveryinfo">
             <DeliveryInfo />
           </Route>
-          
+
           <Route path="/checkinfo">
             <CheckInfo />
           </Route>
