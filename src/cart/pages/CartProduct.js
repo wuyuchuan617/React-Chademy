@@ -73,7 +73,7 @@ function CartProduct(props) {
       </div>
       <CartList />
       <hr style={{ margin: '30px auto 30px auto' }} />
-      <div className="submit">
+      <div className="jsubmit">
         <div
           style={{
             display: 'flex',

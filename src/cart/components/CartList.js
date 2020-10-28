@@ -48,6 +48,7 @@ function CartList(props) {
     <>
       <div className="cartlist">
         <div>{myCart && myCart[0] ? myCart[0].id : ''}</div>
+        {/* <div>{myCart[0] ? myCart[0] : ''}</div> */}
         <ul>
           {/* {myCart.map(() => {
             return (
