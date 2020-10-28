@@ -1,0 +1,515 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background-color: #edece8;
+  color: #1a1818;
+}
+
+/*導覽列*/
+
+.logo {
+  width: 20%;
+  margin-left: 5rem;
+  color: white;
+}
+
+.navbar1 {
+  background-color: #475050;
+  text-align: center;
+}
+
+.nav-item {
+  font-size: 0.875rem;
+}
+
+.box20 {
+  width: 2%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5rem;
+}
+
+.box20 img {
+  margin-left: 2rem;
+}
+
+/*大螢幕*/
+.b1 {
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 0%;
+  padding: 4rem 0;
+  width: 100%;
+}
+
+.w1 {
+  margin: auto;
+  padding: 5rem;
+  text-align: center;
+  color: #f3f4f4;
+}
+
+.w13 {
+  font-size: 3rem;
+  margin-bottom: 50rem;
+}
+
+/*一日木工體驗*/
+.wrapper2 {
+  padding-left: 7.5rem;
+  padding-right: 7.5rem;
+  margin-top: 3rem;
+  background-color: #edece8;
+  margin-bottom: 6rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+  margin-bottom: 4.375rem;
+  margin-top: 6.25rem;
+  letter-spacing: 0.2rem;
+}
+
+.title01 {
+  text-align: center;
+}
+
+.word1oneday h4 {
+  font-size: 1.125rem;
+  letter-spacing: 0.2rem;
+  color: #1a1818;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: normal;
+}
+
+.word1oneday h6 {
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.2rem;
+  color: #1a1818;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: normal;
+}
+
+.price h4 {
+  font-size: 1.125rem;
+  letter-spacing: 0.2rem;
+  color: #1a1818;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: normal;
+}
+
+.boxoneday {
+  overflow: hidden;
+  background-color: #ffffff !important;
+  transition: 0.5s;
+  width: 21.25rem;
+}
+
+.boxoneday:hover {
+  box-shadow: 3px 3px 10px gainsboro;
+}
+
+img {
+  max-width: 100%;
+}
+
+.wordoneday {
+  padding: 1rem;
+}
+
+.price {
+  text-align: right;
+}
+
+.upper1 {
+  position: relative;
+  width: 21.25rem;
+  height: 232px;
+}
+
+.boxoneday .upper1 p {
+  background-color: #c77334;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  color: white;
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+}
+
+.box100:hover {
+  transition: 0.5s;
+  width: 21.25rem;
+  height: 232px;
+  background: linear-gradient(to bottom, rgba(0, 0, 255, 0), rgb(0, 0, 0, 0.8));
+  position: absolute;
+  top: 0;
+}
+
+.box100 img:hover {
+  width: 10%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 0.5rem;
+  filter: opacity(1);
+}
+
+.box100 img {
+  width: 10%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 0.5rem;
+  filter: opacity(0.5);
+}
+
+.box100 {
+  width: 21.25rem;
+  height: 232px;
+  background: linear-gradient(to bottom, rgba(0, 0, 255, 0), rgb(0, 0, 0, 0));
+  position: absolute;
+  top: 0;
+}
+
+/*職人養成班-長條圖*/
+.wrapper3 {
+  padding-left: 7.5rem;
+  padding-right: 7.5rem;
+  margin-top: 3rem;
+  background-color: #edece8;
+  margin-bottom: 6rem;
+}
+
+.wordtrain {
+  padding: 1rem;
+}
+
+.box2train {
+  overflow: hidden;
+  background-color: #ffffff !important;
+  transition: 0.5s;
+  width: 44.75rem;
+}
+
+.box2train:hover {
+  box-shadow: 3px 3px 10px gainsboro;
+}
+
+.upper2 {
+  position: relative;
+  width: 44.75rem;
+  height: 347px;
+}
+
+.box2train .upper2 p {
+  background-color: #c77334;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  color: white;
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+}
+
+.box200:hover {
+  transition: 0.5s;
+  width: 44.75rem;
+  height: 347px;
+  background: linear-gradient(to bottom, rgba(0, 0, 255, 0), rgb(0, 0, 0, 0.8));
+  position: absolute;
+  top: 0;
+}
+
+.box200 img:hover {
+  width: 5%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 0.5rem;
+  filter: opacity(1);
+}
+
+.box200 img {
+  width: 5%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 0.5rem;
+  filter: opacity(0.5);
+}
+
+.box200 {
+  width: 44.75rem;
+  height: 347px;
+  background: linear-gradient(to bottom, rgba(0, 0, 255, 0), rgb(0, 0, 0, 0));
+  position: absolute;
+  top: 0;
+}
+
+.word1train h4 {
+  font-size: 1.125rem;
+  letter-spacing: 0.2rem;
+  color: #1a1818;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: normal;
+}
+
+.word1train h6 {
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.2rem;
+  color: #1a1818;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: normal;
+}
+
+/*職人養成班-窄圖*/
+.box3train {
+  overflow: hidden;
+  background-color: #ffffff !important;
+  transition: 0.5s;
+  width: 22.1875rem;
+  margin-bottom: 3.3125rem;
+}
+
+.box3train:hover {
+  box-shadow: 3px 3px 10px gainsboro;
+}
+
+.upper3 {
+  position: relative;
+  width: 22.1875rem;
+  height: 347px;
+}
+
+.box3train .upper3 p {
+  background-color: #c77334;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  color: white;
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+}
+
+.box300:hover {
+  transition: 0.5s;
+  width: 22.1875rem;
+  height: 347px;
+  background: linear-gradient(to bottom, rgba(0, 0, 255, 0), rgb(0, 0, 0, 0.8));
+  position: absolute;
+  top: 0;
+}
+
+.box300 img:hover {
+  width: 10%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 0.5rem;
+  filter: opacity(1);
+}
+
+.box300 img {
+  width: 10%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 0.5rem;
+  filter: opacity(0.5);
+}
+
+.box300 {
+  width: 22.1875rem;
+  height: 347px;
+  background: linear-gradient(to bottom, rgba(0, 0, 255, 0), rgb(0, 0, 0, 0));
+  position: absolute;
+  top: 0;
+}
+
+/*展覽活動*/
+
+.upper4 {
+  position: relative;
+  width: 21.25rem;
+  height: 232px;
+}
+
+.boxexhibition .upper4 p {
+  background-color: #c77334;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  color: white;
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+}
+
+.boxexhibition {
+  overflow: hidden;
+  background-color: #ffffff !important;
+  transition: 0.5s;
+  width: 21.25rem;
+}
+
+.boxexhibition:hover {
+  box-shadow: 3px 3px 10px gainsboro;
+}
+
+.word1exhibition h4 {
+  font-size: 1.125rem;
+  letter-spacing: 0.2rem;
+  color: #1a1818;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: normal;
+}
+
+.word1exhibition h6 {
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.2rem;
+  color: #1a1818;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: normal;
+}
+
+.wordexhibition {
+  padding: 1rem;
+}
+
+.box400:hover {
+  transition: 0.5s;
+  width: 21.25rem;
+  height: 232px;
+  background: linear-gradient(to bottom, rgba(0, 0, 255, 0), rgb(0, 0, 0, 0.8));
+  position: absolute;
+  top: 0;
+}
+
+.box400 img:hover {
+  width: 10%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 0.5rem;
+  filter: opacity(1);
+}
+
+.box400 img {
+  width: 10%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 0.5rem;
+  filter: opacity(0.5);
+}
+
+.box400 {
+  width: 21.25rem;
+  height: 232px;
+  background: linear-gradient(to bottom, rgba(0, 0, 255, 0), rgb(0, 0, 0, 0));
+  position: absolute;
+  top: 0;
+}
+
+/*木工創客*/
+
+.box5worker {
+  overflow: hidden;
+  background-color: #ffffff !important;
+  transition: 0.5s;
+  width: 100%;
+  margin-bottom: 3.3125rem;
+}
+
+.box5worker:hover {
+  box-shadow: 3px 3px 10px gainsboro;
+}
+
+.upper5 {
+  position: relative;
+  width: 100%;
+}
+
+.word1worker h4 {
+  font-size: 1.125rem;
+  letter-spacing: 0.2rem;
+  color: #1a1818;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: normal;
+}
+
+.word1worker h6 {
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.2rem;
+  color: #1a1818;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: normal;
+}
+
+.wordworker {
+  padding: 1rem;
+}
+
+/*文章特集*/
+.box6title {
+  overflow: hidden;
+  background-color: #ffffff !important;
+  transition: 0.5s;
+  width: 100%;
+  height: 211px;
+  margin-bottom: 3.3125rem;
+}
+
+.box6title:hover {
+  box-shadow: 3px 3px 10px gainsboro;
+}
+
+.word1title h4 {
+  font-size: 1.125rem;
+  letter-spacing: 0.2rem;
+  color: #1a1818;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: normal;
+}
+
+.word1title h6 {
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.2rem;
+  color: #1a1818;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: normal;
+}
+
+.wordtitle {
+  padding: 1rem;
+}
+
+.more-btn {
+  display: block;
+  width: 9.375rem;
+  height: 2.5rem;
+  border: none;
+  background-color: #edece8;
+  color: #38393c;
+  letter-spacing: 0.2rem;
+  margin-top: 2.5rem;
+  margin-right: 3rem;
+  border-radius: 0% !important;
+}

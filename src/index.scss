@@ -1,3 +1,5 @@
+@import './common_components/styles/custom.scss';
+
 body {
   margin: 0;
   // width: 1440px;
@@ -26,5 +28,3 @@ h6 {
   font-size: 18px;
   font-family: 'Noto Serif TC';
 }
-
-@import './common_components/styles/custom.scss';

@@ -1,0 +1,320 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background-color: #edece8;
+  color: #1a1818;
+}
+
+/*導覽列*/
+
+.logo {
+  width: 20%;
+  margin-left: 5rem;
+  color: white;
+}
+
+.navbar1 {
+  background-color: #475050;
+  text-align: center;
+}
+
+.nav-item {
+  font-size: 0.875rem;
+}
+
+.box20 {
+  width: 2%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5rem;
+}
+
+.box20 img {
+  margin-left: 2rem;
+}
+
+/*第一頁*/
+
+.container {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.workshop_photo {
+  width: 670px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 0.5rem;
+}
+
+.workshop_photo img {
+  width: 100%;
+}
+
+.workshop_photo_small {
+  width: 160px;
+}
+
+.workshop_photo_small img {
+  width: 100%;
+}
+
+.workshop-name {
+  font-size: 24px;
+  margin-top: 0.2rem;
+  letter-spacing: 0.2rem;
+}
+
+.workshop-desc {
+  margin-top: 60px;
+  margin-bottom: 80px;
+  color: #707070;
+  letter-spacing: 0.2rem;
+}
+
+h6 {
+  color: #c77334;
+  letter-spacing: 0.2rem;
+  font-size: 14px;
+  margin-bottom: 100px;
+}
+
+h1 {
+  color: #1a1818;
+  letter-spacing: 0.2rem;
+  font-size: 24px;
+  margin-bottom: 100px;
+}
+
+.cart-btn {
+  width: 395px;
+  height: 50px;
+  border: none;
+  background-color: #c77334;
+  margin: auto;
+  color: white;
+}
+
+/*第二頁*/
+
+.workshop_image {
+  width: 820px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 0.5rem;
+}
+
+.workshop_image img {
+  width: 100%;
+}
+
+/*第三頁_豐富的木頭材料*/
+
+.wrapper3 {
+  padding-left: 7.5rem;
+  padding-right: 7.5rem;
+  margin-top: 3rem;
+  background-color: #edece8;
+  margin-bottom: 6rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+  margin-bottom: 4.375rem;
+  margin-top: 6.25rem;
+  letter-spacing: 0.2rem;
+}
+
+.title01 {
+  text-align: center;
+}
+
+h4 {
+  font-size: 18px;
+  letter-spacing: 0.2rem;
+  color: #707070;
+}
+
+p {
+  font-size: 14px;
+  letter-spacing: 0.2rem;
+  color: #707070;
+}
+
+img {
+  max-width: 100%;
+}
+
+.boxwood {
+  overflow: hidden;
+  background-color: none;
+  transition: 0.5s;
+  width: 100%;
+  margin-bottom: 3.3125rem;
+}
+
+.word2 {
+  padding-top: 1rem;
+}
+
+.upper5 {
+  position: relative;
+  width: 100%;
+}
+
+/*第四頁_師資*/
+.a-top-area {
+  height: 500px;
+  background-color: transparent;
+  width: 550px;
+  padding-left: 2rem;
+}
+
+.a-top-area h3 {
+  font-size: 36px;
+  margin-top: 0.2rem;
+  letter-spacing: 0.2rem;
+  margin-top: 150px;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.a-top-area p {
+  align-items: center;
+  line-height: 25px;
+  font-size: 14px;
+  margin-bottom: 68px;
+}
+
+.a-top-area img {
+  width: 50%;
+  float: left;
+  padding: 1rem;
+}
+
+.a-sec-area {
+  background-color: #436464;
+  width: 1920px;
+  height: 120px;
+}
+
+.a-post-abs {
+  position: relative;
+}
+
+.a-designer-photo {
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  left: 50px;
+  top: 30px;
+}
+
+.a-designer-photo img {
+  width: 100%;
+}
+
+/*第五頁_課程訓練*/
+.wrapper2 {
+  padding-left: 7.5rem;
+  padding-right: 7.5rem;
+  margin-top: 3rem;
+  background-color: #edece8;
+  margin-bottom: 6rem;
+}
+
+.boxtrain {
+  overflow: hidden;
+  background-color: none;
+  transition: 0.5s;
+  width: 100%;
+  margin-bottom: 3.3125rem;
+}
+
+/*第六頁_歷年成果*/
+
+.box7 {
+  overflow: hidden;
+  background-color: none;
+  transition: 0.5s;
+  width: 100%;
+  margin-bottom: 3.3125rem;
+}
+
+.word2 {
+  padding-top: 1rem;
+}
+
+/*第七頁_課程評價*/
+
+.more-btn {
+  display: block;
+  width: 9.375rem;
+  height: 2.5rem;
+  border: none;
+  background-color: #deddda;
+  color: #38393c;
+  letter-spacing: 0.2rem;
+}
+
+.title01 {
+  text-align: center;
+}
+
+h5 {
+  font-size: 1.125rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  letter-spacing: 0.3rem;
+}
+
+.box {
+  padding: 2.5rem;
+}
+
+.upper {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/*第八頁_課程推薦*/
+
+.new-activity {
+  position: relative;
+  margin-bottom: 45px;
+  margin-top: 45px;
+}
+
+.home-carousel {
+  height: 300px;
+  margin-bottom: 15px;
+}
+
+.slides-lbtn {
+  display: inline-block;
+  background-color: rgba(51, 51, 51, 0.2);
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  padding: 13.5px 12px 10px 10px;
+  margin-top: 50px;
+}
+.slides-rbtn {
+  display: inline-block;
+  background-color: rgba(51, 51, 51, 0.2);
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  padding: 13.5px 8px 10px 10px;
+  margin-top: 50px;
+}
+
+.home-carousel2 {
+  height: 150px;
+  margin-bottom: 15px;
+}
