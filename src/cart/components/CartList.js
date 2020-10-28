@@ -44,10 +44,11 @@ function CartList(props) {
   // }
   // console.log(newMycartDisplay)
   // setMycartDisplay(newMycartDisplay)
+
   return (
     <>
       <div className="cartlist">
-        <div>{myCart && myCart[0] ? myCart[0].id : ''}</div>
+        {/* <div>{myCart && myCart[0] ? myCart[0].id : ''}</div> */}
         {/* <div>{myCart[0] ? myCart[0] : ''}</div> */}
         <ul>
           {/* {myCart.map(() => {
@@ -99,5 +100,4 @@ function CartList(props) {
     </>
   )
 }
-
 export default CartList
