@@ -97,8 +97,12 @@ function App() {
 
           {/* 課程頁面 */}
 
-          <Route path="/Workshop">
+          <Route exact path="/Workshop">
             <Workshop />
+          </Route>
+
+          <Route exact path="/WorkshopList">
+            <WorkshopList />
           </Route>
 
           {/* 部落格頁面 */}

@@ -6,7 +6,7 @@ import imagemaintwe from '../images/33.png'
 
 
 
-function ItemFour(props) {
+function WorkshopFour(props) {
   return (
     
      <div class="container">
@@ -38,4 +38,4 @@ function ItemFour(props) {
   )
 }
 
-export default ItemFour
+export default WorkshopFour

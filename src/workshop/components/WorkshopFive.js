@@ -10,7 +10,7 @@ import imagetrainsix from '../images/27.png'
 
 
 
-function ItemFive(props) {
+function WorkshopFive(props) {
   return (
     
      <div class="container-fluid">
@@ -123,4 +123,4 @@ function ItemFive(props) {
   )
 }
 
-export default ItemFive
+export default WorkshopFive
