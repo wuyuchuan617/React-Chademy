@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { withRouter, useHistory } from 'react-router-dom'
+import popularImg from '../images/777.jpg'
 
 function ProductCard(props) {
   const { product, item } = props
-  // console.log(product)
 
   return (
     <>
@@ -17,6 +17,17 @@ function ProductCard(props) {
             }}
           />
         </div>
+
+        <div className="productCardImgHover">
+          <img
+            src={popularImg}
+            alt=""
+            onClick={() => {
+              props.history.push('/product/' + item.sid)
+            }}
+          />
+        </div>
+
         <p>{item.product_name}</p>
         <p>${item.price}</p>
       </div>

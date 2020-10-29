@@ -20,6 +20,7 @@ import Home from './Home'
 
 import Product from './product/pages/Product'
 import ProductList from './product/pages/ProductList'
+import Review from './product/pages/Review'
 
 // ---------------------以下import 二手頁面--------------------
 import SecondhandList from './secondhand/pages/SecondhandList'
@@ -75,6 +76,10 @@ function App() {
 
           <Route path="/product/:sid?">
             <Product />
+          </Route>
+
+          <Route path="/review">
+            <Review />
           </Route>
 
           {/* 二手頁面 */}

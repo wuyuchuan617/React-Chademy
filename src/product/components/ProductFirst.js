@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import series from '../images/series.jpg'
 import { BsStarFill } from 'react-icons/bs'
 import { BsFillHeartFill } from 'react-icons/bs'
+import ProductModal from '../components/ProductModal'
 
 function ProductFirst(props) {
   const { item } = props
@@ -11,6 +12,7 @@ function ProductFirst(props) {
   const [productName, setProductName] = useState('')
   const [heart, setHeart] = useState(false)
   const [heartItem, setHeartItem] = useState({})
+  const [visible, setVisible] = useState(false)
 
   const heartFill = {
     color: '#C77334',
@@ -130,10 +132,11 @@ function ProductFirst(props) {
 
   return (
     <>
+      <ProductModal visible={visible} setVisible={setVisible} item={item} />
       <div class="container">
         <div class="row justify-content-between">
           <div class="col-8">
-            <div class="product_photo">
+            <div class="product_photo" onClick={() => setVisible(true)}>
               <img src={require('../../img/' + item.photo)} alt="" />
             </div>
             <div class="d-flex justify-content-between smallPhotos">
