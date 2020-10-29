@@ -1,0 +1,159 @@
+body {
+  background-color: #edece8 !important;
+  color: #475050 !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container.custom-container-width {
+  max-width: 1030px;
+}
+
+.fv {
+  width: 100%;
+  position: relative;
+}
+
+.fv img {
+  width: 100%;
+}
+
+.fv_text {
+  width: 100%;
+  position: absolute;
+  top: 30%;
+  left: 0%;
+}
+
+.fv_text {
+  color: white;
+  font-family: "Lora", serif;
+}
+
+.slogan {
+  font-size: 48px;
+}
+
+.subslogan {
+  font-size: 24px;
+}
+
+/* .title h1 {
+  font-size: 42px;
+  font-family: "Noto Serif TC", serif;
+} */
+
+/* .title p {
+  font-size: 14px;
+  font-family: "Lora", serif;
+} */
+
+/* upload css */
+.upload {
+  width: 400px;
+  height: 270px;
+  background-color: #f3f4f4;
+  position: relative;
+}
+
+.btn2 {
+  width: 130px;
+  height: 40px;
+  margin: auto;
+  background-color: #ded5c6;
+  line-height: 40px;
+  letter-spacing: 2px;
+  font-size: 14px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.notice {
+  width: 400px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.upload_img {
+  width: 400px;
+}
+
+.upload_img img {
+  width: 100%;
+}
+
+/* form css */
+.formstyle {
+  border: none;
+  margin-bottom: 15px;
+}
+
+.formset label {
+  margin-bottom: 3px;
+  display: block;
+}
+
+.formwidthw {
+  width: 100%;
+  height: 40px;
+}
+
+.radiomargin {
+  margin-right: 5px;
+}
+
+.radioset {
+  margin-right: 10px;
+  display: inline;
+}
+
+.formcss {
+  width: 500px;
+}
+
+.radiostyle {
+  background-color: red;
+  color: red;
+}
+
+hr {
+  margin: 5px 0 10px;
+  color: #deddda;
+}
+
+.btnReview {
+  width: 100%;
+  height: 50px;
+  background-color: #C77334;
+  line-height: 50px;
+  letter-spacing: 2px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #FFFFFF;
+
+
+}
+
+.commentw {
+  width: 100%;
+}
+
+
+.reviewInput {
+  width: 230px;
+}
+
+.textareaRewiew {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.reviewStars {
+  margin: 25px 0px;
+}

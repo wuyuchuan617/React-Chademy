@@ -7,6 +7,7 @@ import castle3 from '../images/castle3.svg'
 import '../styles/FundHomepage.scss'
 // import 'react-bootstrap'
 import { Container, Row, Col } from 'react-bootstrap'
+import BookMark from '../components/BookMark'
 
 function FundHomepage() {
   return (
@@ -49,8 +50,9 @@ function FundHomepage() {
         <img src={castle3} alt="" />
       </figure>
 
-      {/* 頁籤 */}
+      <BookMark />
       
+
     </>
   )
 }

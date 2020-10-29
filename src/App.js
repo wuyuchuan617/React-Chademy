@@ -20,12 +20,18 @@ import Home from './Home'
 
 import Product from './product/pages/Product'
 import ProductList from './product/pages/ProductList'
+import Review from './product/pages/Review'
 
 // ---------------------以下import 二手頁面--------------------
 import SecondhandList from './secondhand/pages/SecondhandList'
 
 // ---------------------以下import 募資頁面--------------------
 import FundHomepage from './fund/pages/FundHomepage'
+
+import NewFundProject from './fund/components/NewFundProject '
+
+import EndSoonFund from './fund/components/EndSoonFund'
+
 
 // ---------------------以下import 競標頁面--------------------
 import Bid from './bid/pages/Bid'
@@ -80,6 +86,10 @@ function App() {
             <Product />
           </Route>
 
+          <Route path="/review">
+            <Review />
+          </Route>
+
           {/* 二手頁面 */}
 
           <Route path="/secondhand_list">
@@ -90,6 +100,14 @@ function App() {
 
           <Route path="/fundhomepage">
             <FundHomepage />
+          </Route>
+
+          <Route path="/newfundproject">
+            <NewFundProject />
+          </Route>
+
+          <Route path="/endsoonfund">
+            <EndSoonFund />
           </Route>
 
           {/* 競標頁面 */}
@@ -105,8 +123,12 @@ function App() {
 
           {/* 課程頁面 */}
 
-          <Route path="/Workshop">
+          <Route exact path="/Workshop">
             <Workshop />
+          </Route>
+
+          <Route exact path="/WorkshopList">
+            <WorkshopList />
           </Route>
 
           {/* 部落格頁面 */}

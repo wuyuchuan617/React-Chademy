@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import series from '../images/series.jpg'
 import { BsStarFill } from 'react-icons/bs'
 import { BsFillHeartFill } from 'react-icons/bs'
+import ProductModal from '../components/ProductModal'
+import popularImg from '../images/777.jpg'
 
 function ProductFirst(props) {
   const { item } = props
@@ -11,6 +13,9 @@ function ProductFirst(props) {
   const [productName, setProductName] = useState('')
   const [heart, setHeart] = useState(false)
   const [heartItem, setHeartItem] = useState({})
+  const [visible, setVisible] = useState(false)
+
+  const [photo1, setPhoto1] = useState(require('../../img/' + item.photo))
 
   const heartFill = {
     color: '#C77334',
@@ -130,24 +135,50 @@ function ProductFirst(props) {
 
   return (
     <>
+      <ProductModal visible={visible} setVisible={setVisible} photo1={photo1} />
       <div class="container">
         <div class="row justify-content-between">
           <div class="col-8">
-            <div class="product_photo">
-              <img src={require('../../img/' + item.photo)} alt="" />
+            <div class="product_photo" onClick={() => setVisible(true)}>
+              <img src={photo1} alt="" />
             </div>
             <div class="d-flex justify-content-between smallPhotos">
               <div class="product_photo_small">
-                <img src={series} alt="" />
+                {/* <img src={require('../../img/' + item.photo)} alt="" /> */}
+                <img
+                  src={require('../../img/' + item.photo)}
+                  alt=""
+                  onClick={(e) => {
+                    setPhoto1(e.target.src)
+                  }}
+                />
               </div>
               <div class="product_photo_small">
-                <img src={series} alt="" />
+                <img
+                  src={series}
+                  alt=""
+                  onClick={(e) => {
+                    setPhoto1(e.target.src)
+                  }}
+                />
               </div>
               <div class="product_photo_small">
-                <img src={series} alt="" />
+                <img
+                  src={popularImg}
+                  alt=""
+                  onClick={(e) => {
+                    setPhoto1(e.target.src)
+                  }}
+                />
               </div>
               <div class="product_photo_small">
-                <img src={series} alt="" />
+                <img
+                  src={series}
+                  alt=""
+                  onClick={(e) => {
+                    setPhoto1(e.target.src)
+                  }}
+                />
               </div>
             </div>
           </div>
