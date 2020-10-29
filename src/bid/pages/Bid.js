@@ -68,12 +68,6 @@ function Bid() {
                 </Card.Text>
               </Card.Body>
             </Card>
-<<<<<<< Updated upstream
-            
-            <Card className="col-6 rounded-0 p-0">
-              <div className="grace-tag grace-tag-time d-flex align-items-center justify-content-center rounded-0"><span>16:10:11</span></div>
-              <div className="grace-tag-time d-flex align-items-center justify-content-center rounded-0 grace-tag-p"><span>$27,000</span></div>
-=======
             <Card className="col-5 m-3 rounded-0 p-0">
               <div className="btn grace-tag grace-tag-time rounded-0">
                 16:10:11
@@ -81,7 +75,6 @@ function Bid() {
               <div className="btn grace-tag-time rounded-0 grace-tag-p">
                 $27,000
               </div>
->>>>>>> Stashed changes
               <Card.Img className="rounded-0" variant="top" src={chair} />
               <Card.Body>
                 <Card.Text>
@@ -111,30 +104,20 @@ function Bid() {
                   </div>
                   <div className="card-body p-0 py-2 align-self-end d-flex justify-content-end">
                     <button className="grace-btn2 rounded-0 ">
-<<<<<<< Updated upstream
-                    <span>下標</span>
-=======
                       <span>下標</span>
->>>>>>> Stashed changes
                     </button>
                   </div>
                 </Card.Text>
               </Card.Body>
             </Card>
-<<<<<<< Updated upstream
-            
+
             <Card className="col-6 rounded-0 p-0">
-              <div className="grace-tag grace-tag-time d-flex align-items-center justify-content-center rounded-0"><span>16:10:11</span></div>
-              <div className="grace-tag-time d-flex align-items-center justify-content-center rounded-0 grace-tag-p"><span>$27,000</span></div>
-=======
-            <Card className="col-5 m-3 rounded-0 p-0">
-              <div className="btn grace-tag grace-tag-time rounded-0">
-                16:10:11
+              <div className="grace-tag grace-tag-time d-flex align-items-center justify-content-center rounded-0">
+                <span>16:10:11</span>
               </div>
-              <div className="btn grace-tag-time rounded-0 grace-tag-p">
-                $27,000
+              <div className="grace-tag-time d-flex align-items-center justify-content-center rounded-0 grace-tag-p">
+                <span>$27,000</span>
               </div>
->>>>>>> Stashed changes
               <Card.Img className="rounded-0" variant="top" src={chair} />
               <Card.Body>
                 <Card.Text>
@@ -164,18 +147,13 @@ function Bid() {
                   </div>
                   <div className="card-body p-0 py-2 align-self-end d-flex justify-content-end">
                     <button className="grace-btn2 rounded-0 ">
-<<<<<<< Updated upstream
-                    <span>下標</span>
-=======
                       <span>下標</span>
->>>>>>> Stashed changes
                     </button>
                   </div>
                 </Card.Text>
               </Card.Body>
             </Card>
-            
-        </div>
+          </div>
         </div>
       </div>
     </>
