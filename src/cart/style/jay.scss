@@ -294,6 +294,10 @@
     position: relative;
     left: 580px;
   }
+ hr{
+    margin: 30px auto;
+    width: 1200px;
+  }
   .submit input{
     background-color: transparent;
     border: 0.5px solid black;
@@ -302,7 +306,7 @@
   .deliveryform{
     width:600px;
     margin: 0 auto;
-    // display: block;
+    display: block;
   }
   .deliveryform input{
     border: none;

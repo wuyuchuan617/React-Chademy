@@ -1,0 +1,44 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+body{
+    background-color: #EDECE8;
+}
+.designer-des {
+    width: 712px;
+    height: 504px;
+    background-color: #D6D7D1;            
+}
+.designer-img{
+    width: 488px;
+    height: 674px;
+    background: url(https://330827-1014958-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2019/09/LookbookATD.01.11.184844-1429x2000.jpg) center no-repeat;
+    background-size: cover;
+}
+.design{
+    font-family: Assistant;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 5px;
+}
+.name{
+    font-family: Lora;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 5px;
+}
+.brief{
+    font-family: Assistant;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+}
+.text-center span a{
+    font-family: Assistant;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: underline;
+    ;
+}
+.designer-des a{
+    color: black
+}

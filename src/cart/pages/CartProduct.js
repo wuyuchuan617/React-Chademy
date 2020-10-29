@@ -64,7 +64,7 @@ function CartProduct(props) {
           體驗課程
         </Link>
       </div>
-      <hr style={{ margin: '30px auto 30px auto' }} />
+      <hr />
       <div className="wrap">
         <h6 style={{ left: '780px' }}>單價</h6>
         <h6 style={{ left: '940px' }}>數量</h6>
@@ -72,7 +72,7 @@ function CartProduct(props) {
         <h6 style={{ left: '1210px' }}>操作</h6>
       </div>
       <CartList />
-      <hr style={{ margin: '30px auto 30px auto' }} />
+      <hr />
       <div className="submit">
         <div
           style={{

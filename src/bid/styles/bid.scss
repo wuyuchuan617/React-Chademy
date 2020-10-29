@@ -1,0 +1,119 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+body{
+    background-color: #EDECE8;
+}
+
+.grace-text{
+    width: 600px;
+    
+}
+.grace-text h5{
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Assistant', sans-serif;
+    margin-top: 20px;
+    line-height: 25px;
+
+}
+.grace-text span{
+    text-align: left;
+    font-family: 'Lora', serif;
+    letter-spacing: 1.2px;
+    color: #272525;
+    font-size: 14px;
+}
+.grace-chair{
+    width: 200px;
+}
+.grace-title{
+    font-family: assistant;
+    font-size: 18px;
+    color: #707070;
+    letter-spacing: 5px;
+    margin: 4px 0px;
+}
+
+.card-text{
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 14px;
+    // color: #a7a4a4;
+    letter-spacing: 3px;
+}        
+.grace-context{
+    text-align: right;
+    color: #707070;
+    // width: 50%;
+}
+.grace-btn2{
+    width: 100px;
+    height: 40px;
+    border: 1px solid #707070;
+    text-align: center;
+    transition: .5s ease-in;
+    cursor: pointer;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    color: #707070;;
+    font-size: 14px;
+    background-color: #fff;
+}
+.grace-btn2:hover{
+    /* 顏色由左到右變 */
+    background-color: #000;
+    color: #fff;
+              
+}
+.grace-btn2 span{
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    color: #707070;
+    font-size: 12px;
+}
+.grace-btn2:hover span{    
+    color: #fff;     
+}
+.grace-point{
+    color:#C77334;
+    text-align: left;
+}
+
+.grace-tag{
+    width: 110px;
+    height: 40px;
+    background-color: #C77334;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.5;
+}
+.grace-tag-p{
+    position: absolute;
+    left:110px;
+    background-color: #436464 ;
+    width: 110px;
+    height: 40px;           
+    text-align: center;
+    color: #fff;
+  
+}
+.grace-time{
+    font-family: 'Assistant', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    
+}
+.grace-tag-time{
+    font-family: 'Assistant', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    
+}
+.grace-filter{
+    // width: 300px;
+    height: 200px;
+    border: 1px solid black;    
+}
+

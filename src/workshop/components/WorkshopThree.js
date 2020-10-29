@@ -5,7 +5,7 @@ import imagemaineight from '../images/37.png'
 
 
 
-function ItemThree(props) {
+function WorkshopThree(props) {
   return (
     
       <div class="container-fluid">
@@ -57,4 +57,4 @@ function ItemThree(props) {
   )
 }
 
-export default ItemThree
+export default WorkshopThree
