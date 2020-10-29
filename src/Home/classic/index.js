@@ -4,18 +4,20 @@ import Img from '../img/Cover_CircleDiningChairs_OvergaardDyrman_studio.jpg'
 
 function classNameic() {
   return (
+
+
     
     <div className="row">
             <div className="col-lg-8 classic">
                 <img src={Img} alt="" className="mt-5" />
             </div>
             <div className="col-lg-4">
-                <div className="title classictext">
+                <div className="title1 classictext">
                     <div className="straight2"></div>
                     <div className="cross2"></div>
                     <div className="titleset flex-end text-right mr-3">
                         <div className="titlech noto-serif">經典產品</div>
-                        <div className="titleEN lora">classNameic</div>
+                        <div className="titleEN lora">classic</div>
                     </div>
                 </div>
                 <div className="titleslogan mt-5"></div>

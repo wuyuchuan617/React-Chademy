@@ -6,28 +6,28 @@ body {
 }
 
 .josefin {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .lora {
-  font-family: "Lora", serif;
+  font-family: 'Lora', serif;
 }
 .lora-lighter {
-  font-family: "Lora", serif;
+  font-family: 'Lora', serif;
   font-weight: lighter;
 }
 .lora-italic {
-  font-family: "Lora", serif;
+  font-family: 'Lora', serif;
   font-style: italic;
 }
 
 .noto-sans {
-  font-family: "Noto Sans TC", sans-serif;
+  font-family: 'Noto Sans TC', sans-serif;
   font-weight: lighter;
 }
 
 .noto-serif {
-  font-family: "Noto Serif TC", serif;
+  font-family: 'Noto Serif TC', serif;
   letter-spacing: 2px;
 }
 
@@ -250,7 +250,7 @@ video {
 
 .noto-serif_p18 {
   font-size: 18px;
-  font-family: "Noto Serif TC", serif;
+  font-family: 'Noto Serif TC', serif;
 }
 
 .bidtext {
