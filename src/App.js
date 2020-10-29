@@ -28,7 +28,10 @@ import SecondhandList from './secondhand/pages/SecondhandList'
 import FundHomepage from './fund/pages/FundHomepage'
 
 // ---------------------以下import 競標頁面--------------------
-
+import Bid from './bid/pages/Bid'
+import Desc from './bid/pages/Desc'
+import Designer from './bid/pages/Designer'
+import Slider from './bid/pages/Slider'
 // ---------------------以下import 課程頁面--------------------
 import Workshop from './workshop/pages/Workshop'
 import WorkshopList from './workshop/pages/WorkshopList'
@@ -91,8 +94,13 @@ function App() {
 
           {/* 競標頁面 */}
 
-          <Route path="/register">
-            <Home />
+          <Route path="/bid">
+            <Bid />
+          </Route>
+          <Route path="/desc">
+            <Desc />
+            <Designer />
+            <Slider />
           </Route>
 
           {/* 課程頁面 */}
