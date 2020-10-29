@@ -13,7 +13,7 @@ function CartList(props) {
 
   //拿資料時載入loading
   const loading = <></>
-
+  //從local storage 拿資料放在myCart
   function getCartFromLocalStorage() {
     setShowLoading(true)
     const newCart = localStorage.getItem('cart') || '[]'
@@ -21,6 +21,7 @@ function CartList(props) {
     setMycart(JSON.parse(newCart))
     console.log(JSON.parse(newCart))
   }
+  //載入時拿local storage資料
   useEffect(() => {
     getCartFromLocalStorage()
   }, [])
@@ -28,19 +29,19 @@ function CartList(props) {
   useEffect(() => {
     setTimeout(() => {
       setShowLoading(false)
-    }, 1000)
+    }, 500)
   }, [myCart])
   const display = (
     <>
       <div className="cartlist">
         <ul>
-          {myCart.map(() => {
+          {myCart.map((v, i) => {
             return (
               <li>
                 <div className="listitem">
-                  <img src={img1} />
-                  <h6 style={{ left: '30px' }}>歐洲銀行扶手沙發型餐椅</h6>
-                  <h6 style={{ left: '120px' }}>$</h6>
+                  <img src={v.img} />
+                  <h6 style={{ left: '30px' }}>{v.id}</h6>
+                  <h6 style={{ left: '120px' }}>${v.price}</h6>
                   <div className="listqty">
                     <h6 style={{ left: '10px' }}>
                       <MdAdd />
@@ -51,9 +52,11 @@ function CartList(props) {
                     </h6>
                   </div>
                   <h6 style={{ left: '330px', color: '#C67334' }}>$2500</h6>
-                  <h6 style={{ left: '420px' }}>
-                    <BsTrash />
-                  </h6>
+                  <Link to="#" onClick={() => handleDelete(v.id)}>
+                    <h6 style={{ left: '420px' }}>
+                      <BsTrash />
+                    </h6>
+                  </Link>
                 </div>
               </li>
             )
@@ -62,6 +65,10 @@ function CartList(props) {
       </div>
     </>
   )
+  const handleDelete = (id) => {
+    const newCart = myCart.filter((item, index) => item.id !== id)
+    setMycart(newCart)
+  }
   return showLoading ? loading : display
   // <>
   //   <div className="cartlist">
