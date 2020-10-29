@@ -5,7 +5,7 @@ import '../styles/couponModal.css'
 import popularImg from '../images/777.jpg'
 
 function ProductModal(props) {
-  const { visible, setVisible, item } = props
+  const { visible, setVisible, photo1 } = props
   return (
     <>
       <Modal
@@ -21,7 +21,7 @@ function ProductModal(props) {
       >
         <div className="row modalOut d-flex">
           <div className="col modalproduct ">
-            <img src={require('../../img/' + item.photo)} alt="" />
+            <img src={photo1} alt="" />
           </div>
         </div>
       </Modal>
