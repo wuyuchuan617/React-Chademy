@@ -30,7 +30,7 @@ function CartList(props) {
     setTimeout(() => {
       setShowLoading(false)
     }, 500)
-  }, [myCart])
+  }, [])
   const display = (
     <>
       <div className="cartlist">
