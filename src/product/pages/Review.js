@@ -4,6 +4,13 @@ import { Rate, Upload, Button } from 'antd'
 import { UploadOutlined } from '@ant-design/icons'
 
 function Review() {
+  const [orderProductNo, setOrderProductNo] = useState('')
+  const [orderProduct, setOrderProduct] = useState('')
+  const [orderNo, setOrderNo] = useState('')
+  const [orderDate, setOrderDate] = useState('')
+  const [reviewTitle, setReviewTitle] = useState('')
+  const [reviewComment, setReviewComment] = useState('')
+
   const [photo, setPhoto] = useState({})
   // const [previewPhoto, setPreviewPhoto] = useState({})
   console.log('photo' + JSON.stringify(photo))
@@ -91,6 +98,19 @@ function Review() {
                 }}
               />
             </div>
+            <div
+              class="btnDemo text-center mt-4"
+              onClick={() => {
+                setOrderProductNo('CH29')
+                setOrderProduct('經典丹麥椅')
+                setOrderNo('OVER1234')
+                setOrderDate('2020.08.31')
+                setReviewTitle('質感非常好！')
+                setReviewComment('非常推薦～～～')
+              }}
+            >
+              DEMO
+            </div>
           </div>
           <div class="col-lg-6 col-sm-12">
             <form class="formcss" action="">
@@ -100,7 +120,7 @@ function Review() {
                   <input
                     type="text"
                     class="formstyle formwidthw"
-                    value=""
+                    value={orderProduct}
                     id="productname"
                   />
                 </div>
@@ -109,7 +129,7 @@ function Review() {
                   <input
                     type="text"
                     class="formstyle formwidthw"
-                    value=""
+                    value={orderDate}
                     id="product_no"
                   />
                 </div>
@@ -121,7 +141,7 @@ function Review() {
                   <input
                     type="text"
                     class="formstyle formwidthw"
-                    value=""
+                    value={orderProductNo}
                     id="productname"
                   />
                 </div>
@@ -130,7 +150,7 @@ function Review() {
                   <input
                     type="text"
                     class="formstyle formwidthw"
-                    value=""
+                    value={orderNo}
                     id="product_no"
                   />
                 </div>
@@ -145,7 +165,7 @@ function Review() {
                 <input
                   type="text"
                   class="formstyle formwidthw"
-                  value=""
+                  value={reviewTitle}
                   id="price"
                 />
               </div>
@@ -155,8 +175,9 @@ function Review() {
                 <textarea
                   rows="10"
                   style={{ resize: 'none' }}
-                  cols="69"
-                  class="formstyle "
+                  cols="54"
+                  class="formstyle"
+                  value={reviewComment}
                 ></textarea>
               </div>
               <div class="btnReview text-center mt-4">新增評論</div>
@@ -169,3 +190,10 @@ function Review() {
 }
 
 export default Review
+
+// const [orderProductNo, setOrderProductNo] = useState('')
+// const [orderProduct, setOrderProduct] = useState('')
+// const [orderNo, setOrderNo] = useState('')
+// const [orderDate, setOrderDate] = useState('')
+// const [reviewTitle, setReviewTitle] = useState('')
+// const [reviewComment, setReviewComment] = useState('')

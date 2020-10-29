@@ -69,6 +69,7 @@ body {
   background-size: cover;
   background-position: center;
   overflow: hidden;
+  transition: .5s;
 }
 
 .product_photo img {
@@ -83,6 +84,7 @@ body {
   width: 176px;
   height: 112px;
   overflow: hidden;
+  transition: .5s;
 }
 
 .smallPhotos {
