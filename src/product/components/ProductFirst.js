@@ -136,7 +136,7 @@ function ProductFirst(props) {
   return (
     <>
       <ProductModal visible={visible} setVisible={setVisible} photo1={photo1} />
-      <div class="container">
+      <div class="container firstTop">
         <div class="row justify-content-between">
           <div class="col-8">
             <div class="product_photo" onClick={() => setVisible(true)}>

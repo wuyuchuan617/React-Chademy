@@ -175,7 +175,7 @@ function Review() {
                 <textarea
                   rows="10"
                   style={{ resize: 'none' }}
-                  cols="54"
+                  cols="65"
                   class="formstyle"
                   value={reviewComment}
                 ></textarea>

@@ -92,6 +92,7 @@ body {
 .formstyle {
   border: none;
   margin-bottom: 15px;
+  padding: 20px 15px;
 }
 
 .formset label {
