@@ -7,9 +7,9 @@ import { BsTrash } from 'react-icons/bs'
 // import './style/jay.scss'
 
 function CartList(props) {
-  const [myCart, setMycart] = useState([])
+  const [myCart, setmyCart] = useState([])
   const [showLoading, setShowLoading] = useState(false)
-  const [mycartDisplay, setMycartDisplay] = useState([])
+  const [myCartDisplay, setMyCartDisplay] = useState([])
 
   //拿資料時載入loading
   const loading = <></>
@@ -17,9 +17,9 @@ function CartList(props) {
   function getCartFromLocalStorage() {
     setShowLoading(true)
     const newCart = localStorage.getItem('cart') || '[]'
-    console.log(newCart)
-    setMycart(JSON.parse(newCart))
-    console.log(JSON.parse(newCart))
+    // console.log(newCart)
+    setmyCart(JSON.parse(newCart))
+    // console.log(JSON.parse(newCart))
   }
   //載入時拿local storage資料
   useEffect(() => {
@@ -30,12 +30,34 @@ function CartList(props) {
     setTimeout(() => {
       setShowLoading(false)
     }, 500)
-  }, [])
+    let newMyCartDisplay = []
+
+    //尋找myCartDisplay
+    for (let i = 0; i < myCart.length; i++) {
+      //尋找myCartDisplay中有沒有此myCart[i].id
+      //有找到會返回陣列成員的索引值
+      //沒找到會返回-1
+      const index = newMyCartDisplay.findIndex((v) => v.id === myCart[i].id)
+      //有的話就數量+1
+      if (index !== -1) {
+        //每次只有加1個數量
+        //newmyCartDisplay[index].amount++
+        //假設是加數量的
+        newMyCartDisplay[index].amount += myCart[i].amount
+      } else {
+        //沒有的話就把項目加入，數量為1
+        const newItem = { ...myCart[i] }
+        newMyCartDisplay = [...newMyCartDisplay, newItem]
+      }
+    }
+    console.log(newMyCartDisplay)
+    setMyCartDisplay(newMyCartDisplay)
+  }, [myCart])
   const display = (
     <>
       <div className="cartlist">
         <ul>
-          {myCart.map((v, i) => {
+          {myCartDisplay.map((v, i) => {
             return (
               <li>
                 <div className="listitem">
@@ -46,7 +68,7 @@ function CartList(props) {
                     <h6 style={{ left: '10px' }}>
                       <MdAdd />
                     </h6>
-                    <h6 style={{ left: '50px' }}>1</h6>
+                    <h6 style={{ left: '50px' }}>{v.amount}</h6>
                     <h6 style={{ left: '80px' }}>
                       <FiMinus />
                     </h6>
@@ -67,7 +89,7 @@ function CartList(props) {
   )
   const handleDelete = (id) => {
     const newCart = myCart.filter((item, index) => item.id !== id)
-    setMycart(newCart)
+    setmyCart(newCart)
   }
   return showLoading ? loading : display
   // <>
