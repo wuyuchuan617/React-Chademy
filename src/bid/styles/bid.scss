@@ -33,11 +33,13 @@ body{
     letter-spacing: 5px;
     margin: 4px 0px;
 }
-
+.grace-margin{
+    margin: 0px -50px;
+}
 .card-text{
     font-family: 'Noto Sans TC', sans-serif;
     font-size: 14px;
-    // color: #a7a4a4;
+    color: #a7a4a4;
     letter-spacing: 3px;
 }        
 .grace-context{
@@ -107,13 +109,8 @@ body{
 }
 .grace-tag-time{
     font-family: 'Assistant', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     
-}
-.grace-filter{
-    // width: 300px;
-    height: 200px;
-    border: 1px solid black;    
 }
 
