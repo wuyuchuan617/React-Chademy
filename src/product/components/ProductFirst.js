@@ -8,7 +8,7 @@ import popularImg from '../images/777.jpg'
 function ProductFirst(props) {
   const { item } = props
 
-  const [mycart, setMycart] = useState([])
+  const [myCart, setMyCart] = useState([])
   const [show, setShow] = useState(false)
   const [productName, setProductName] = useState('')
   const [heart, setHeart] = useState(false)
@@ -20,25 +20,45 @@ function ProductFirst(props) {
   const heartFill = {
     color: '#C77334',
   }
-
-  const updateCartToLocalStorage = (value) => {
-    // 從localstorage得到cart(json字串)
+  const updateCartToLocalStorage = (item, isAdded = true) => {
+    console.log(item, isAdded)
     const currentCart = JSON.parse(localStorage.getItem('cart')) || []
 
-    console.log('currentCart', currentCart)
+    // find if the product in the localstorage with its id
+    const index = currentCart.findIndex((v) => v.id === item.id)
 
-    // 把得到的cart(json字串)轉為陣列值，然後和新加入的物件值合併為新陣列
-    const newCart = [...currentCart, value]
+    console.log('index', index)
+    // found: index! == -1
+    if (index > -1) {
+      currentCart[index].amount++
+    } else {
+      currentCart.push(item)
+    }
 
-    // 設定回localstorage中(記得轉回json字串)
-    localStorage.setItem('cart', JSON.stringify(newCart))
+    localStorage.setItem('cart', JSON.stringify(currentCart))
 
-    console.log('newCart', newCart)
     // 設定資料
-    // 設定至元件的狀態中
-    setMycart(newCart)
-    setProductName(value.name)
+    setMyCart(currentCart)
   }
+
+  // const updateCartToLocalStorage = (value) => {
+  //   // 從localstorage得到cart(json字串)
+  //   const currentCart = JSON.parse(localStorage.getItem('cart')) || []
+
+  //   console.log('currentCart', currentCart)
+
+  //   // 把得到的cart(json字串)轉為陣列值，然後和新加入的物件值合併為新陣列
+  //   const newCart = [...currentCart, value]
+
+  //   // 設定回localstorage中(記得轉回json字串)
+  //   localStorage.setItem('cart', JSON.stringify(newCart))
+
+  //   console.log('newCart', newCart)
+  //   // 設定資料
+  //   // 設定至元件的狀態中
+  //   setMycart(newCart)
+  //   setProductName(value.name)
+  // }
 
   async function getHeartFromServer(value) {
     // const newTotal = { total: total + value }
