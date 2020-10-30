@@ -6,9 +6,9 @@ import './Header.css'
 function Header() {
   return (
     <header>
-      <div className="slogan">
+      <div className="i_homeslogan">
         <p className="lora">Thinking learning and design.</p>
-        <p className="subslogan lora">
+        <p className="i_homesubslogan lora">
           Create your own fascinating masterpiece.
         </p>
       </div>

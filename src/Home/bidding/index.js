@@ -5,9 +5,9 @@ import Img from '../img/Cover_CircleDiningChair_22.jpg'
 function Bidding() {
   return (
     
-    <div className="row no-gutters">
+    <div className="row no-gutters mt_mb_100">
             <div className="col-lg-6 col-sm-12">
-                <div className="title">
+                <div className="title1">
                     <div className="titlech noto-serif text-center">精品競標</div>
                     <div className="titleEN lora text-center">Bidding</div>
                 </div>

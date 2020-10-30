@@ -6,7 +6,7 @@ header {
   width: 100% !important;
 }
 
-.slogan {
+.i_homeslogan {
   width: 100%;
   text-align: center;
   color: white;
@@ -15,6 +15,10 @@ header {
   top: 30%;
 }
 
-.subslogan {
+.i_homeslogan p{
+  color :white;
+}
+
+.i_homesubslogan {
   font-size: 24px;
 }

@@ -1,0 +1,138 @@
+body {
+    background-color: #edece8 !important;
+    color: #475050 !important;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container.custom-container-width {
+    max-width: 1030px;
+  }
+  
+  .i_fv {
+    width: 100%;
+    position: relative;
+  }
+  
+  .i_fv img {
+    width: 100%;
+  }
+  
+  .i_fv_text {
+    width: 100%;
+    position: absolute;
+    top: 30%;
+    left: 0%;
+  }
+  
+  .i_fv_text {
+    color: white;
+    font-family: "Lora", serif;
+  }
+  
+  .i_slogan {
+    font-size: 48px;
+  }
+  
+  .i_subslogan {
+    font-size: 24px;
+  }
+  
+  .i_title h1 {
+    font-size: 42px;
+    font-family: "Noto Serif TC", serif;
+  }
+  
+  .i_title p {
+    font-size: 14px;
+    font-family: "Lora", serif;
+  }
+  
+  /* upload css */
+  .i_upload {
+    width: 400px;
+    height: 270px;
+    background-color: #f3f4f4;
+    position: relative;
+  }
+  
+  .i_btn2 {
+    width: 130px;
+    height: 40px;
+    margin: auto;
+    background-color: #ded5c6;
+    line-height: 40px;
+    letter-spacing: 2px;
+    font-size: 14px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .i_notice {
+    width: 400px;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  
+  .i_upload_img {
+    width: 400px;
+  }
+  .i_upload_img img {
+    width: 100%;
+  }
+  
+  /* form css */
+  .i_formstyle {
+    border: none;
+    margin-bottom: 15px;
+  }
+  
+  .i_formset label {
+    margin-bottom: 3px;
+    display: block;
+  }
+  
+  .i_formwidth {
+    width: 500px;
+    height: 40px;
+  }
+  
+  .i_radiomargin {
+    margin-right: 5px;
+  }
+  
+  .i_radioset {
+    margin-right: 10px;
+    display: inline;
+  }
+  
+  .i_formcss {
+    width: 500px;
+  }
+  
+  .i_radiostyle {
+    background-color: red;
+    color: red;
+  }
+  
+  hr {
+    /* margin: 5px 0 10px; */
+    color: #deddda;
+  }
+  
+  .i_btn3 {
+    width: 100%;
+    height: 50px;
+    background-color: #c77334;
+    line-height: 50px;
+    letter-spacing: 2px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  

@@ -6,8 +6,8 @@ import Img2 from '../img/ATD_Retail_2020_Flowerpot_VP7_The-Moor_AP5_Rely_HW9_Lin
 function Courses() {
   return (
     
-    <div className="row no-gutters">
-            <div className="title mb-3">
+    <div className="row no-gutters mt_mb_100">
+            <div className="title1 mb-3">
                 <div className="titlech noto-serif text-center">椅子學院</div>
                 <div className="titleEN lora text-center">New Courses</div>
             </div>

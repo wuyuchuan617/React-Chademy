@@ -4,32 +4,40 @@
 //   width: 100%;
 // }
 
-.part {
+.i_homepart {
   margin: 200px auto;
+  color:#475050;
 }
 
-.info {
+.i_homepart p{
+  color:#475050;
+}
+
+.i_homeinfo {
   text-align: center;
   font-size: 48px;
   width: 630px;
+  color:#475050;
 }
 
-.info .subinfo {
+.i_homeinfo .i_homesubinfo {
   font-size: 14px;
+  color:#475050;
 }
 
-.p14 {
+.i_homep14 {
   font-size: 14px;
   font-weight: 200;
   letter-spacing: 2px;
+  color:#475050;
 }
 
-.lora-lighter {
+.i_homelora-lighter {
   font-family: 'Lora', serif;
   font-weight: lighter;
 }
 
-.noto-sans {
+.i_homenoto-sans {
   font-family: 'Noto Sans TC', sans-serif;
   font-weight: lighter;
 }

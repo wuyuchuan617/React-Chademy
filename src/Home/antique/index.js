@@ -8,8 +8,8 @@ import BeforeAfterReact from 'before-after-react'
 
 function Antique() {
   return (
-    <div className="row justify-content-center no-gutters">
-      <div className="title">
+    <div className="row justify-content-center no-gutters mt_mb_100">
+      <div className="title1">
         <div className="titlech noto-serif text-center">中古市集</div>
         <div className="titleEN lora text-center">Antique</div>
       </div>

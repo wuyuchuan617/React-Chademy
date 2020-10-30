@@ -7,7 +7,7 @@ function classNameic() {
 
 
     
-    <div className="row">
+    <div className="row mt_mb_100">
             <div className="col-lg-8 classic">
                 <img src={Img} alt="" className="mt-5" />
             </div>
