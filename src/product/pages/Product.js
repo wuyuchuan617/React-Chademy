@@ -5,6 +5,9 @@ import ProductThird from '../components/ProductThird'
 import ProductFour from '../components/ProductFour'
 import ProductFive from '../components/ProductFive'
 import ProductSix from '../components/ProductSix'
+import ProductSeven from '../components/ProductSeven'
+import ProductEight from '../components/ProductEight'
+import ProductNine from '../components/ProductNine'
 import { withRouter, useParams } from 'react-router-dom'
 
 import '../styles/product.css'
@@ -64,6 +67,10 @@ function Product(props) {
       {product.map((item, index) => {
         return <ProductSix key={index} item={item} product={product} />
       })}
+
+      <ProductSeven />
+      <ProductEight />
+      <ProductNine />
     </>
   )
 }

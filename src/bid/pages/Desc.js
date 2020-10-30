@@ -1,7 +1,12 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { connect } from 'react-redux'
 import '../styles/desc.scss'
-function Desc() {
+import {
+  getBidDataAsync
+} from '../../actions/index'
+function Desc(props) {
+  console.log('props', props)
   return (
     <>
       {/* countdown */}

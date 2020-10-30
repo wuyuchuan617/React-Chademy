@@ -7,9 +7,16 @@ import { BsTrash } from 'react-icons/bs'
 // import './style/jay.scss'
 
 function CartList(props) {
-  const [myCart, setmyCart] = useState([])
-  const [showLoading, setShowLoading] = useState(false)
-  const [myCartDisplay, setMyCartDisplay] = useState([])
+  const {
+    myCart,
+    setMyCart,
+    showLoading,
+    setShowLoading,
+    myCartDisplay,
+    setMyCartDisplay,
+  } = props
+  // const [showLoading, setShowLoading] = useState(false)
+  // const [myCartDisplay, setMyCartDisplay] = useState([])
 
   //拿資料時載入loading
   const loading = <></>
@@ -18,7 +25,7 @@ function CartList(props) {
     setShowLoading(true)
     const newCart = localStorage.getItem('cart') || '[]'
     // console.log(newCart)
-    setmyCart(JSON.parse(newCart))
+    setMyCart(JSON.parse(newCart))
     // console.log(JSON.parse(newCart))
   }
   //載入時拿local storage資料
@@ -26,55 +33,57 @@ function CartList(props) {
     getCartFromLocalStorage()
   }, [])
 
-  useEffect(() => {
-    setTimeout(() => {
-      setShowLoading(false)
-    }, 500)
-    let newMyCartDisplay = []
+  const updateCartToLocalStorage = (item, isAdded = true) => {
+    console.log(item, isAdded)
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || []
 
-    //尋找myCartDisplay
-    for (let i = 0; i < myCart.length; i++) {
-      //尋找myCartDisplay中有沒有此myCart[i].id
-      //有找到會返回陣列成員的索引值
-      //沒找到會返回-1
-      const index = newMyCartDisplay.findIndex((v) => v.id === myCart[i].id)
-      //有的話就數量+1
-      if (index !== -1) {
-        //每次只有加1個數量
-        //newmyCartDisplay[index].amount++
-        //假設是加數量的
-        newMyCartDisplay[index].amount += myCart[i].amount
-      } else {
-        //沒有的話就把項目加入，數量為1
-        const newItem = { ...myCart[i] }
-        newMyCartDisplay = [...newMyCartDisplay, newItem]
-      }
+    // find if the product in the localstorage with its id
+    const index = currentCart.findIndex((v) => v.id === item.id)
+
+    console.log('index', index)
+    // found: index! == -1
+    if (index > -1) {
+      isAdded ? currentCart[index].amount++ : currentCart[index].amount--
     }
-    console.log(newMyCartDisplay)
-    setMyCartDisplay(newMyCartDisplay)
-  }, [myCart])
+
+    localStorage.setItem('cart', JSON.stringify(currentCart))
+
+    // 設定資料
+    setMyCart(currentCart)
+  }
   const display = (
     <>
       <div className="cartlist">
         <ul>
-          {myCartDisplay.map((v, i) => {
+          {myCart.map((item, i) => {
             return (
               <li>
                 <div className="listitem">
-                  <img src={v.img} />
-                  <h6 style={{ left: '30px' }}>{v.id}</h6>
-                  <h6 style={{ left: '120px' }}>${v.price}</h6>
+                  <img src={item.img} />
+                  <h6 style={{ left: '30px' }}>{item.id}</h6>
+                  <h6 style={{ left: '120px' }}>${item.price}</h6>
                   <div className="listqty">
-                    <h6 style={{ left: '10px' }}>
+                    <h6
+                      style={{ left: '10px' }}
+                      onClick={() => updateCartToLocalStorage(item)}
+                    >
                       <MdAdd />
                     </h6>
-                    <h6 style={{ left: '50px' }}>{v.amount}</h6>
-                    <h6 style={{ left: '80px' }}>
+                    <h6 style={{ left: '50px' }}>{item.amount}</h6>
+                    <h6
+                      style={{ left: '80px' }}
+                      onClick={() => {
+                        if (item.amount === 1) return
+                        updateCartToLocalStorage(item, false)
+                      }}
+                    >
                       <FiMinus />
                     </h6>
                   </div>
-                  <h6 style={{ left: '330px', color: '#C67334' }}>$2500</h6>
-                  <Link to="#" onClick={() => handleDelete(v.id)}>
+                  <h6 style={{ left: '330px', color: '#C67334' }}>
+                    ${item.price * item.amount}
+                  </h6>
+                  <Link to="#" onClick={() => handleDelete(item.id)}>
                     <h6 style={{ left: '420px' }}>
                       <BsTrash />
                     </h6>
@@ -87,9 +96,12 @@ function CartList(props) {
       </div>
     </>
   )
+  // const handleAdd = (id) => {
+  //   const index = myCart.findIndex((v) => myCart.id === )
+  // }
   const handleDelete = (id) => {
     const newCart = myCart.filter((item, index) => item.id !== id)
-    setmyCart(newCart)
+    setMyCart(newCart)
   }
   return showLoading ? loading : display
   // <>

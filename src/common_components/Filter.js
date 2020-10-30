@@ -4,6 +4,7 @@ import { Slider } from 'antd'
 import 'antd/dist/antd.css'
 import { IntegerStep, DecimalStep } from './components/IntegerStep'
 import { Checkbox } from 'antd'
+import { Tag } from 'antd'
 
 function Filter(props) {
   const { showFilter } = props
@@ -15,6 +16,7 @@ function Filter(props) {
   const [viewSpread1, setViewSpread1] = useState(false)
   const [viewSpread2, setViewSpread2] = useState(false)
   const [viewSpread3, setViewSpread3] = useState(false)
+  const [viewSpread4, setViewSpread4] = useState(false)
 
   console.log(viewFilter)
 
@@ -59,6 +61,15 @@ function Filter(props) {
 
   function onChange(e) {
     console.log(`checked = ${e.target.checked}`)
+  }
+
+  function log(e) {
+    console.log(e)
+  }
+
+  function preventDefault(e) {
+    e.preventDefault()
+    console.log('Clicked! But prevent default.')
   }
 
   // const plus = document.querySelectorAll('.plus')
@@ -111,15 +122,22 @@ function Filter(props) {
             <p id="close" onClick={() => setViewFilter(0)}>
               close
             </p>
+
+            <input type="text" class="filterSearch" placeholder="SEARCH" />
+
             <p className="clearFilter">Restart your filter</p>
-            <p className="filterTag">
-              {' '}
-              <span>x</span> 白色
-            </p>
-            <p className="filterTag">
-              {' '}
-              <span>x</span> 餐椅
-            </p>
+            <div class="filterTag">
+              <Tag closable onClose={log}>
+                白色
+              </Tag>
+
+              <Tag closable onClose={log}>
+                單椅
+              </Tag>
+              <Tag closable onClose={preventDefault}>
+                木頭
+              </Tag>
+            </div>
           </div>
           <div className="refinement seats  " data-refinement-id="seats">
             <div
@@ -134,6 +152,7 @@ function Filter(props) {
                   setViewSpread1(false)
                   setViewSpread2(false)
                   setViewSpread3(false)
+                  setViewSpread4(false)
                 }}
               >
                 <div className="refinement-title">產品類別</div>
@@ -187,6 +206,7 @@ function Filter(props) {
                   setViewSpread(false)
                   setViewSpread2(false)
                   setViewSpread3(false)
+                  setViewSpread4(false)
                 }}
               >
                 <div className="refinement-title ">椅身材值</div>
@@ -231,6 +251,7 @@ function Filter(props) {
               </Checkbox>
             </ul>
           </div>
+
           <div className="refinement seats  " data-refinement-id="seats">
             <div
               className="refinement-toggle js-slide-toggle  is-active"
@@ -244,6 +265,7 @@ function Filter(props) {
                   setViewSpread(false)
                   setViewSpread1(false)
                   setViewSpread3(false)
+                  setViewSpread4(false)
                 }}
               >
                 <div className="refinement-title ">顏色</div>
@@ -283,6 +305,7 @@ function Filter(props) {
                   setViewSpread(false)
                   setViewSpread1(false)
                   setViewSpread2(false)
+                  setViewSpread4(false)
                 }}
               >
                 <div className="refinement-title ">價格</div>
@@ -323,6 +346,65 @@ function Filter(props) {
                   9000以上
                 </a>
               </li>
+            </ul>
+          </div>
+
+          <div className="refinement seats  " data-refinement-id="seats">
+            <div
+              className="refinement-toggle js-slide-toggle  is-active"
+              data-toggle-element="#seats"
+              data-toggle-duration="800"
+            >
+              <div
+                className="plus d-flex justify-content-between"
+                onClick={() => {
+                  setViewSpread1(false)
+                  setViewSpread(false)
+                  setViewSpread2(false)
+                  setViewSpread3(false)
+                  setViewSpread4(!viewSpread4)
+                }}
+              >
+                <div className="refinement-title ">排列順序</div>
+                <div className="spreadPlus">+</div>
+              </div>
+            </div>
+            <ul
+              className="refinement-list scrollable seats1"
+              id="seats1"
+              aria-hidden="false"
+              style={viewSpread4 ? sidebarContentShow : sidebarContentHide}
+            >
+              <Checkbox
+                onChange={onChange}
+                style={{ display: 'block', marginLeft: 0 }}
+              >
+                單椅
+              </Checkbox>
+              <Checkbox
+                onChange={onChange}
+                style={{ display: 'block', marginLeft: 0 }}
+              >
+                扶手椅
+              </Checkbox>
+              <Checkbox
+                onChange={onChange}
+                style={{ display: 'block', marginLeft: 0 }}
+              >
+                餐椅
+              </Checkbox>
+              <Checkbox
+                onChange={onChange}
+                style={{ display: 'block', marginLeft: 0 }}
+              >
+                沙發椅
+              </Checkbox>
+              <Checkbox
+                onChange={onChange}
+                style={{ display: 'block', marginLeft: 0 }}
+              >
+                吧台椅
+              </Checkbox>
             </ul>
           </div>
 

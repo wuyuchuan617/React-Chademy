@@ -12,6 +12,7 @@ function ProductList(props) {
   const [viewProduct, setViewProduct] = useState(15)
   const [lastProductId, setLastProductId] = useState(0)
   const [showFilter, setShowFilter] = useState(false)
+  const [visible, setVisible] = useState(false)
 
   const handleClick = () => {
     let preViewProduct = viewProduct
@@ -71,10 +72,17 @@ function ProductList(props) {
   }, [])
   //console.log('product' + product)
 
+  useEffect(() => {
+    setTimeout(() => {
+      console.log('This will run after 1 second!')
+      setVisible(true)
+    }, 1000)
+    // return () => clearTimeout()
+  }, [])
+
   return (
     <>
       <Filter showFilter={showFilter} />
-
       {/* <div class="container-fluid"> */}
       <video
         src={bannerVideo}
@@ -84,11 +92,8 @@ function ProductList(props) {
         preload="auto"
       ></video>
       {/* </div> */}
-
       <ProductPopular />
-
       <ProductSeries />
-
       <div class="context1">
         <div class="container" id="productCards">
           <div class="row d-flex justify-content-center">
@@ -105,7 +110,6 @@ function ProductList(props) {
           </div>
         </div>
       </div>
-
       <div class="container">
         <div class="row">
           <button class="loadButton" onClick={handleClick}>
@@ -113,8 +117,7 @@ function ProductList(props) {
           </button>
         </div>
       </div>
-
-      <CouponModal />
+      <CouponModal visible={visible} setVisible={setVisible} />
     </>
   )
 }

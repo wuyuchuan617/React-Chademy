@@ -15,6 +15,7 @@ import NotFoundPage from './common_components/NotFoundPage'
 import Home from './Home'
 
 // ---------------------以下import 品牌故事頁面----------------
+import Brand from './about/pages/Brand'
 
 // ---------------------以下import 產品頁面--------------------
 
@@ -29,6 +30,7 @@ import SecondhandProduct from './secondhand/pages/SecondhandProduct'
 
 // ---------------------以下import 募資頁面--------------------
 import FundHomepage from './fund/pages/FundHomepage'
+import FundList from './fund/pages/FundList'
 
 import NewFundProject from './fund/components/NewFundProject '
 
@@ -75,7 +77,7 @@ function App() {
           {/* 品牌故事頁面 */}
 
           <Route path="/brand">
-            <Home />
+            <Brand />
           </Route>
 
           {/* 產品頁面 */}
@@ -110,6 +112,10 @@ function App() {
 
           <Route path="/fundhomepage">
             <FundHomepage />
+          </Route>
+
+          <Route path="/fundlist">
+            <FundList />
           </Route>
 
           <Route path="/newfundproject">

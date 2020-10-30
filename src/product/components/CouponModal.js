@@ -5,12 +5,13 @@ import '../styles/couponModal.css'
 import popularImg from '../images/777.jpg'
 
 function CouponModal(props) {
-  const [visible, setVisible] = useState(false)
+  // const [visible, setVisible] = useState(false)
+  const { visible, setVisible } = props
   return (
     <>
-      <Button type="primary" onClick={() => setVisible(true)}>
+      {/* <Button type="primary" onClick={() => setVisible(true)}>
         Open Modal of 1000px width
-      </Button>
+      </Button> */}
       <Modal
         title="  "
         centered
@@ -30,19 +31,13 @@ function CouponModal(props) {
             </p>
             <div class="formset">
               <label for="productname"> 姓名</label>
-              <input
-                type="text"
-                class="formstyle formwidth"
-                value=""
-                id="productname"
-              />
+              <input type="text" class="formstyle formwidth" id="productname" />
             </div>
             <div class="formset">
               <label for="password">Email</label>
               <input
                 type="password"
                 class="formstyle formwidth"
-                value=""
                 id="password"
               />
             </div>

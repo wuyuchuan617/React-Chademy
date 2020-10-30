@@ -1,24 +1,47 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import CartList from '../components/CartList'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import img1 from '../../product/images/777.jpg'
 // import './style/jay.scss'
 
 function CartProduct(props) {
-  const [mycart, setMycart] = useState([])
-  const [show, setShow] = useState(false)
-  const [productName, setProductName] = useState('')
-  const handleShow = () => setShow(true)
-  const updateCartToLocalStorage = (value) => {
-    const currentCart = JSON.parse(localStorage.getItem('cart')) || []
+  const [myCart, setMyCart] = useState([])
+  const [showLoading, setShowLoading] = useState(false)
+  const [myCartDisplay, setMyCartDisplay] = useState([])
 
-    const newCart = [...currentCart, value]
-    localStorage.setItem('cart', JSON.stringify(newCart))
+  useEffect(() => {
+    setTimeout(() => {
+      setShowLoading(false)
+    }, 500)
+    let newMyCartDisplay = []
 
-    // 設定資料
-    setMycart(newCart)
-    setProductName(value.name)
-    handleShow()
+    //尋找myCartDisplay
+    for (let i = 0; i < myCart.length; i++) {
+      //尋找myCartDisplay中有沒有此myCart[i].id
+      //有找到會返回陣列成員的索引值
+      //沒找到會返回-1
+      const index = newMyCartDisplay.findIndex((v) => v.id === myCart[i].id)
+      //有的話就數量+1
+      if (index !== -1) {
+        //每次只有加1個數量
+        //newmyCartDisplay[index].amount++
+        //假設是加數量的
+        newMyCartDisplay[index].amount += myCart[i].amount
+      } else {
+        //沒有的話就把項目加入，數量為1
+        const newItem = { ...myCart[i] }
+        newMyCartDisplay = [...newMyCartDisplay, newItem]
+      }
+    }
+    console.log(newMyCartDisplay)
+    setMyCartDisplay(newMyCartDisplay)
+  }, [myCart])
+  const sum = (items) => {
+    let total = 0
+    for (let i = 0; i < items.length; i++) {
+      total += items[i].amount * items[i].price
+    }
+    return total
   }
   return (
     <>
@@ -51,7 +74,7 @@ function CartProduct(props) {
         </div>
       </div>
       <div className="lablebox">
-        <Link to="/cartproduct" className="activelable">
+        <Link to="/cartproduct" className="defaultlable">
           產品
         </Link>
         <Link to="/cartbid" className="defaultlable">
@@ -60,19 +83,26 @@ function CartProduct(props) {
         <Link to="/cartsecondhand" className="defaultlable">
           中古商品
         </Link>
-        <Link to="/cartclass" className="defaultlable">
+        <Link to="/cartclass" className="activelable">
           體驗課程
         </Link>
       </div>
-      <hr />
+      <hr className="jhr" />
       <div className="wrap">
         <h6 style={{ left: '780px' }}>單價</h6>
         <h6 style={{ left: '940px' }}>數量</h6>
         <h6 style={{ left: '1100px' }}>總計</h6>
         <h6 style={{ left: '1210px' }}>操作</h6>
       </div>
-      <CartList />
-      <hr />
+      <CartList
+        myCart={myCart}
+        setMyCart={setMyCart}
+        showLoading={showLoading}
+        setShowLoading={setShowLoading}
+        myCartDisplay={myCartDisplay}
+        setMyCartDisplay={setMyCartDisplay}
+      />
+      <hr className="jhr" />
       <div className="submit">
         <div
           style={{
@@ -83,7 +113,7 @@ function CartProduct(props) {
           }}
         >
           <h6>小計(共3項)</h6>
-          <h6 style={{ color: '#C67334' }}>$ 75,000</h6>
+          <h6 style={{ color: '#C67334' }}>${sum(myCart)}</h6>
         </div>
         <label for="discount">
           <h6>折扣券</h6>
@@ -103,31 +133,10 @@ function CartProduct(props) {
             }}
           >
             <input type="text" name="discount" id="discount"></input>
-            <Link
-              className="btn2"
-              to="#"
-              onClick={() =>
-                updateCartToLocalStorage({
-                  img: img1,
-                  id: '歐洲銀行扶手沙發型餐椅',
-                  amount: 1,
-                  price: 25000,
-                })
-              }
-            >
+            <Link className="j_btn2" to="#">
               確定
             </Link>
           </div>
-          <h6 style={{ color: '#C67334' }}>$0</h6>
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            letterSpacing: '3px',
-            justifyContent: 'space-between',
-          }}
-        >
-          <h6>寄送方式</h6>
           <h6 style={{ color: '#C67334' }}>$0</h6>
         </div>
 

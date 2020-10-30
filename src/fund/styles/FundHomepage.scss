@@ -11,13 +11,12 @@
   color: #eef3f5;
 }
 
-
 .p_video {
   position: absolute;
   font-family: NotoSerifTC;
   font-size: 16px;
   font-weight: 300;
-  color: #eef3f5;
+  color: #ffffff;
   top: 350px;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -46,7 +45,6 @@
   left: -3%;
   width: 16%;
   height: 15%;
-
 }
 
 .castle2 {
@@ -65,23 +63,21 @@
   height: 30%;
 }
 
-
-
 // 頁籤
 .e_lablebox {
   width: 600px;
   height: 40px;
-  margin:  auto;
+  margin: auto;
   margin-top: -100px;
   display: flex;
-
+  // border: 1px solid #BDC5C7;
 }
 
 .e_activelable {
   width: 600px;
   height: 40px;
   text-align: center;
-  background-color: #BDC5C7;
+  background-color: #bdc5c7;
   color: #707070;
   line-height: 40px;
   letter-spacing: 3px;
@@ -91,7 +87,6 @@
 .e_activelable:hover {
   text-decoration: none;
   color: black;
-
 }
 
 .e_defaultlable:hover {
@@ -102,48 +97,51 @@
 .e_defaultlable {
   width: 600px;
   height: 40px;
-  border: 5px #BDC5C7;
+  border: 5px #bdc5c7;
   text-align: center;
   line-height: 40px;
-  background-color: #EDECE8;
+  background-color: #edece8;
   // margin-bottom: 50px;
   letter-spacing: 3px;
   font-size: 16px;
   color: #707070;
+  border: 1px solid #bdc5c7;
 }
-
 
 // 椅子圖示頁籤
 
-.icon{
+.icon {
   margin: auto;
   justify-content: center;
+  z-index: 5;
 }
 
-.icon_img{
+.icon_img {
   margin: auto;
   justify-content: center;
   text-align: center;
-  transition: .1;
+  transition: 0.1;
+  z-index: 5;
 }
 
-.icon_img:hover{
-transform: translateY(-8px);
+.icon_img:hover {
+  transform: translateY(-8px);
+  z-index: 5;
 }
 
 .chair_icon {
   width: 10%;
   height: 35%;
   // margin-top: 50px;
-  
+  z-index: 5;
 }
-.chair_icon_sofa{
+.chair_icon_sofa {
   width: 13%;
   height: 25%;
   // margin-top: 70px;
   // text-align: center;
+  z-index: 5;
 }
-
 
 .chair_p {
   text-align: center;
@@ -151,5 +149,189 @@ transform: translateY(-8px);
   color: #222222;
   font-size: 14px;
   padding-top: 7px;
+  z-index: 5;
+}
 
+// 輪播卡牌
+.ant-carousel .slick-dots-bottom {
+  bottom: -30px;
+}
+
+.ant-carousel .slick-dots li button {
+  width: 90%;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #C77334;
+  margin-bottom: 10rem;
+}
+
+.ant-carousel{
+  margin-top: 0;
+  padding-top: 0;
+  transform: translateY(-120px);
+  z-index: -1;
+}
+
+
+
+// 卡牌
+.e_card {
+ 
+  height: 560px;
+  position: relative;
+  margin-top: 3rem;
+
+}
+
+.e_card_bg {
+  background: rgb(249, 246, 246);
+  padding: 5px;
+  border-radius: 4px;
+
+}
+
+.e_wrap img {
+  background-size: cover;
+  width: 100%;
+}
+
+.e_card_title{
+  font-size: 24px;
+  font-family: NotoSansTC;
+  color: #464747;
+  line-height: 0;
+  margin: 25px 10px;
+}
+
+.e_maker {
+  font-family: NotoSansTC;
+  font-size: 14px;
+  color: #1e1f1f;
+  text-align: right;
+  margin-right: 7%;
+
+}
+
+.e_intro {
+  font-family: NotoSansTC;
+  font-size: 14px;
+  color: #707070;
+  padding: 0 10px;
+
+}
+
+.e_date {
+  font-family: NotoSansTC;
+  font-size: 24px;
+  color: #c77334;
+  font-weight: 500;
+  text-align: right;
+  margin-right: 5%;
+  // padding-top: 5px;
+}
+
+.e_price {
+  font-family: NotoSansTC;
+  font-size: 18px;
+  color: #403e3e;
+  padding: 0 10px;
+  margin-top: 4rem;
+
+}
+
+.fund {
+  width: 95px;
+  height: 40px;
+  border: none;
+  font-family: NotoSansTC;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  color: #707070;
+  position: absolute;
+  right: 35px;
+  top: 520px;
+  
+ 
+}
+
+.e_card .e_card_bg button{
+  background-color: #D9C7AA;
+  
+}
+
+.e_more{
+  width: 150px;
+            height: 40px;
+            border: solid 1px #585858;
+            font-family: NotoSansTC;
+            font-size: 14px;
+            font-weight: 500;
+            text-align: center;
+            color: #575555;
+            position: absolute;
+            
+            left: 75%;
+            top:242%;
+            background-color:#edece8;
+}
+
+// 熱門募資專案
+
+.e_popular{
+  font-family: NotoSerifTC;
+  font-size: 32px;
+  text-align: center;
+  color: #474745;
+  padding-top: 8rem;
+}
+
+
+// 熱門募資專案
+.e_lablebox2{
+  width: 600px;
+  height: 40px;
+  margin: auto;
+  margin-top: 100px;
+  display: flex;
+}
+
+
+// 設計學院
+.green {
+  // width:  80%;
+  height: 20rem;
+  background-color: #b7bdb3;
+  opacity: 0.76;
+  text-align: center;
+}
+.p_stu {
+  font-family: NotoSerifTC;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fcfcfc;
+  padding-top: 20%;
+  
+}
+.wrap1 img {
+  width: 100%;
+  height: 20rem;
+}
+
+.orange {
+
+  width: 100%;
+  height: 20rem;
+  background-color: #d9c7aa;
+  opacity: 0.76;
+  text-align: center;
+}
+
+.blue {
+
+  width:  100%;
+  height: 20rem;
+  background-color: #9caab2;
+  opacity: 0.76;
+  text-align: center;
 }
