@@ -38,11 +38,9 @@ function FundHomepage() {
 
       <Container>
         <Col>
-          <Link to="/fundlist">
-            <button name="explore" className="explore" >
-              探索
-            </button>
-          </Link>
+          <button name="explore" className="explore">
+            探索
+          </button>
         </Col>
       </Container>
 
