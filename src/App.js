@@ -36,7 +36,6 @@ import NewFundProject from './fund/components/NewFundProject '
 
 import EndSoonFund from './fund/components/EndSoonFund'
 
-
 // ---------------------以下import 競標頁面--------------------
 import Bid from './bid/pages/Bid'
 import Desc from './bid/pages/Desc'
