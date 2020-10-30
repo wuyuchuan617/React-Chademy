@@ -14,6 +14,12 @@ function ProductList(props) {
   const [showFilter, setShowFilter] = useState(false)
   const [visible, setVisible] = useState(false)
 
+  // 以下為filter狀態
+  const [category, setCategory] = useState([])
+
+  let categoryUrl = '?category=' + category.join(',')
+  console.log(categoryUrl)
+
   const handleClick = () => {
     let preViewProduct = viewProduct
     let newViewProduct = preViewProduct + 15
@@ -36,13 +42,33 @@ function ProductList(props) {
   }, [viewProduct, product])
 
   useEffect(() => {
-    console.log('scrol' + document.querySelector('#productCards').offsetTop)
+    console.log('scrol' + document.querySelector('#productCards').scrollTop)
     console.log('now' + document.documentElement.scrollTop)
     const scrol = document.querySelector('#productCards').offsetTop
     let nowscrol = document.documentElement.scrollTop
 
-    if (nowscrol > scrol) setShowFilter(true)
-  }, [document.documentElement.scrollTop])
+    if (nowscrol < 1600) setShowFilter(true)
+  }, [])
+
+  // 篩選資料庫
+  async function getFilterFromSQL() {
+    const url = 'http://localhost:3001/man_product/reactfilter' + categoryUrl
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+
+    const response = await fetch(request)
+    const data = await response.json()
+    const newData = [...data]
+    console.log('newData' + newData)
+    console.log(Array.isArray(data))
+    setProduct(newData)
+  }
 
   async function getTotalFromSQL() {
     const url = 'http://localhost:3001/man_product/reactlist'
@@ -72,17 +98,23 @@ function ProductList(props) {
   }, [])
   //console.log('product' + product)
 
-  useEffect(() => {
-    setTimeout(() => {
-      console.log('This will run after 1 second!')
-      setVisible(true)
-    }, 1000)
-    // return () => clearTimeout()
-  }, [])
+  // 彈跳視窗
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     console.log('This will run after 1 second!')
+  //     setVisible(true)
+  //   }, 1000)
+  //   // return () => clearTimeout()
+  // }, [])
 
   return (
     <>
-      <Filter showFilter={showFilter} />
+      <Filter
+        showFilter={showFilter}
+        category={category}
+        setCategory={setCategory}
+        getFilterFromSQL={getFilterFromSQL}
+      />
       {/* <div class="container-fluid"> */}
       <video
         src={bannerVideo}

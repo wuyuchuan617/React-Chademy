@@ -7,7 +7,7 @@ import { Checkbox } from 'antd'
 import { Tag } from 'antd'
 
 function Filter(props) {
-  const { showFilter } = props
+  const { showFilter, category, setCategory, getFilterFromSQL } = props
 
   // 0 : close 1 : open
   const [viewFilter, setViewFilter] = useState(0)
@@ -220,31 +220,31 @@ function Filter(props) {
               style={viewSpread1 ? sidebarContentShow : sidebarContentHide}
             >
               <Checkbox
-                onChange={onChange}
+                onChange={() => setCategory(['chair', ...category])}
                 style={{ display: 'block', marginLeft: 0 }}
               >
                 單椅
               </Checkbox>
               <Checkbox
-                onChange={onChange}
+                onChange={() => setCategory(['armchair', ...category])}
                 style={{ display: 'block', marginLeft: 0 }}
               >
                 扶手椅
               </Checkbox>
               <Checkbox
-                onChange={onChange}
+                onChange={() => setCategory(['dining', ...category])}
                 style={{ display: 'block', marginLeft: 0 }}
               >
                 餐椅
               </Checkbox>
               <Checkbox
-                onChange={onChange}
+                onChange={() => setCategory(['lounge', ...category])}
                 style={{ display: 'block', marginLeft: 0 }}
               >
                 沙發椅
               </Checkbox>
               <Checkbox
-                onChange={onChange}
+                onChange={() => setCategory(['stool', ...category])}
                 style={{ display: 'block', marginLeft: 0 }}
               >
                 吧台椅
@@ -408,7 +408,14 @@ function Filter(props) {
             </ul>
           </div>
 
-          <button className="searchButton">SEARCH</button>
+          <button
+            className="searchButton"
+            onClick={() => {
+              getFilterFromSQL()
+            }}
+          >
+            SEARCH
+          </button>
         </div>
       </div>
 

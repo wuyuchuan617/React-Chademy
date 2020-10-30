@@ -153,6 +153,11 @@ a {
     height: 250px;
     overflow: hidden;
     position: relative;
+    object-fit: contain;
+}
+
+.productCardImg {
+    width: 100%;
 
 }
 
@@ -216,7 +221,7 @@ img {
     display: block;
     margin: auto;
     margin-top: 70px;
-    margin-bottom: 50px;
+
 }
 
 .classic {

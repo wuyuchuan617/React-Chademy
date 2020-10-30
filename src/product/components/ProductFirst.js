@@ -217,13 +217,13 @@ function ProductFirst(props) {
             </div>
             <div class="bigDesc">
               <div class="product-desc">
-                <p>
+                <p className="w_comP">
                   Adelaide是一款優雅的小傑作，無論從哪個角度看都美貌不減，而且無比舒適。纖細的有機線條營造了輕盈有機外觀，邀請您坐下來欣賞精緻的丹麥設計。
                 </p>
               </div>
 
               <div class="product-desc">
-                <p>
+                <p className="w_comP">
                   Adelaide是一款優雅的小傑作，無論從哪個角度看都美貌不減，而且無比舒適。纖細的有機線條營造了輕盈有機外觀，邀請您坐下來欣賞精緻的丹麥設計。
                 </p>
               </div>
@@ -255,8 +255,8 @@ function ProductFirst(props) {
                 onClick={() => {
                   updateCartToLocalStorage({
                     product_no: item.product_no,
-                    product_name: item.product_name,
-                    product_photo: item.photo,
+                    id: item.product_name,
+                    img: item.photo,
                     amount: 1,
                     price: item.price,
                     category: 1,

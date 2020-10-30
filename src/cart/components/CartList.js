@@ -59,7 +59,8 @@ function CartList(props) {
             return (
               <li>
                 <div className="listitem">
-                  <img src={item.img} />
+                  {/* src={require('../../img/' + item.photo)} */}
+                  <img src={require('../../img/' + item.img)} alt="" />
                   <h6 style={{ left: '30px' }}>{item.id}</h6>
                   <h6 style={{ left: '120px' }}>${item.price}</h6>
                   <div className="listqty">

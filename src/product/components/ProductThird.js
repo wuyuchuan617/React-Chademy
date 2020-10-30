@@ -51,7 +51,7 @@ function ProductThird(props) {
                 aria-hidden="false"
                 style={viewSpread ? sidebarContentShow : sidebarContentHide}
               >
-                <p>
+                <p className="w_comP">
                   柔軟的設計、細微的細節以及曲線造型使其不存在視覺欣賞的死角。Henrik
                   Pedersen
                   的有機設計通過精美的工藝設計加以呈現，將成為您起居室中的標誌性家居。
@@ -86,7 +86,7 @@ function ProductThird(props) {
                 aria-hidden="false"
                 style={viewSpread1 ? sidebarContentShow : sidebarContentHide}
               >
-                <p>
+                <p className="w_comP">
                   柔軟的設計、細微的細節以及曲線造型使其不存在視覺欣賞的死角。Henrik
                   Pedersen
                   的有機設計通過精美的工藝設計加以呈現，將成為您起居室中的標誌性家居。
@@ -121,7 +121,7 @@ function ProductThird(props) {
                 aria-hidden="false"
                 style={viewSpread2 ? sidebarContentShow : sidebarContentHide}
               >
-                <p>
+                <p className="w_comP">
                   柔軟的設計、細微的細節以及曲線造型使其不存在視覺欣賞的死角。Henrik
                   Pedersen
                   的有機設計通過精美的工藝設計加以呈現，將成為您起居室中的標誌性家居。

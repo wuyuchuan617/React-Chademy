@@ -21,7 +21,7 @@ function ProductFive(props) {
         <div class="row">
           <div class="sec-area"></div>
           <div class="sec-area">
-            <p>
+            <p className="w_comP">
               柔軟的設計、細微的細節以及曲線造型使其不存在視覺欣賞的死角。Henrik
               Pedersen
               的有機設計通過精美的工藝設計加以呈現，將成為您起居室中的標誌性家居。
