@@ -1,0 +1,152 @@
+body {
+    background-color: #edece8 !important;
+    color: #475050 !important;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .i_fv {
+    width: 100%;
+    position: relative;
+  }
+  
+  .i_fv img {
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .i_slogan {
+    font-family: "Noto Serif TC", serif;
+    color: white;
+    position: absolute;
+    letter-spacing: 2px;
+    top: 30%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .i_title1 {
+    font-size: 48px;
+    letter-spacing: 2px;
+  }
+  
+  .i_subtitle {
+    font-size: 24px;
+  }
+  
+  .container.custom-container-width {
+    max-width: 1230px;
+  }
+  
+  /* filter */
+  .i_filter_list {
+    width: 270px;
+    cursor: pointer;
+  }
+  
+  .i_product {
+    width: 930px;
+  }
+  
+  .i_list {
+    width: 100%;
+    height: 70px;
+    border-top: 1px solid #c5c5c5;
+  }
+  
+  .i_border_bottom {
+    border-bottom: 1px solid #c5c5c5;
+  }
+  
+  .i_list p {
+    display: inline-block;
+    line-height: 70px;
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+  
+  .i_filter ul li {
+    list-style-type: none;
+    font-size: 14px;
+    margin: 10px auto 10px 40px;
+  }
+  /* product css */
+  .i_card {
+    width: 430px;
+    margin-left: 35px;
+    height: 500px;
+    margin-bottom: 200px;
+  }
+  
+  .i_card_img {
+    width: 100%;
+    height: 500px;
+  }
+  
+  .i_card_img img {
+    width: 100%;
+    background-color: #edece8;
+  }
+  
+  .i_user_name img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    vertical-align: bottom;
+  }
+  
+  .i_user {
+    font-family: "Noto Sans TC", sans-serif;
+  }
+  
+  .i_user_name p {
+    display: inline;
+    font-size: 16px;
+    vertical-align: text-bottom;
+  }
+  
+  .i_card_info {
+    background-color: #edece8;
+  }
+  
+  .i_item {
+    font-size: 16px;
+    font-family: "Noto Sans TC", sans-serif;
+  }
+  
+  .i_item_name {
+    display: inline;
+    margin-top: 13px;
+    vertical-align: text-bottom;
+  }
+  
+  .i_item_name p {
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-top: 17px;
+  }
+  
+  .i_item_price {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .i_end {
+    width: 100%;
+  }
+  
+  .i_btn1 {
+    width: 30%;
+    height: 50px;
+    background-color: #ded5c6;
+    line-height: 50px;
+    letter-spacing: 2px;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 0 auto;
+  }
+  

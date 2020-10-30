@@ -23,7 +23,9 @@ import ProductList from './product/pages/ProductList'
 import Review from './product/pages/Review'
 
 // ---------------------以下import 二手頁面--------------------
+import SecondhandForm from './secondhand/pages/SecondhandForm'
 import SecondhandList from './secondhand/pages/SecondhandList'
+import SecondhandProduct from './secondhand/pages/SecondhandProduct'
 
 // ---------------------以下import 募資頁面--------------------
 import FundHomepage from './fund/pages/FundHomepage'
@@ -92,8 +94,16 @@ function App() {
 
           {/* 二手頁面 */}
 
+          <Route path="/secondhand_form">
+            <SecondhandForm />
+          </Route>
+
           <Route path="/secondhand_list">
             <SecondhandList />
+          </Route>
+
+          <Route path="/secondhand_product/:sid?">
+            <SecondhandProduct />
           </Route>
 
           {/* 募資頁面 */}

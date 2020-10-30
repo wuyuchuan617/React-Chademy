@@ -21,17 +21,6 @@
 //   padding-right: 20px;
 // }
 
-// .companytext .p14 {
-//   font-size: 14px;
-//   margin: 70px 0;
-//   letter-spacing: 5px;
-// }
-
-// .p14 {
-//   font-size: 14px;
-//   font-weight: 200;
-//   letter-spacing: 2px;
-// }
 // .row {
 //   margin-top: 100px;
 //   margin-bottom: 100px;
@@ -42,6 +31,7 @@
   max-width: 800px;
   height: 550px;
   background-color: #deddda;
+  color: #475050;
 }
 
 .aboutcompany img {
@@ -55,12 +45,18 @@
   padding-top: 60px;
   padding-left: 20px;
   padding-right: 20px;
+  color: #475050;
+}
+
+.companytext p{
+  color: #475050;
 }
 
 .companytext .p14 {
   font-size: 14px;
   margin: 70px 0;
   letter-spacing: 5px;
+  color: #475050;
 }
 
 .p14 {

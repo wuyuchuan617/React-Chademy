@@ -6,8 +6,8 @@ import Img2 from '../img/ATD_Retail_2020_Rely_HW6_Object_SC42_Candleholder_SC40-
 function Blogs() {
   return (
     
-    <div className="row no-gutters">
-            <div className="title mb-3">
+    <div className="row no-gutters mt_mb_100">
+            <div className="title1 mb-3">
                 <div className="titlech noto-serif text-center">靈感探索</div>
                 <div className="titleEN lora text-center">Blogs</div>
             </div>
