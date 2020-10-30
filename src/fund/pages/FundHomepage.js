@@ -8,6 +8,10 @@ import '../styles/FundHomepage.scss'
 // import 'react-bootstrap'
 import { Container, Row, Col } from 'react-bootstrap'
 import BookMark from '../components/BookMark'
+import BookMarkTwo from '../components/BookMarkTwo'
+
+import CarouselE from '../components/CarouselE'
+import Edesign from '../components/Edesign'
 
 function FundHomepage() {
   return (
@@ -34,9 +38,11 @@ function FundHomepage() {
 
       <Container>
         <Col>
-          <button name="explore" className="explore">
-            探索
-          </button>
+          <Link to="/fundlist">
+            <button name="explore" className="explore" >
+              探索
+            </button>
+          </Link>
         </Col>
       </Container>
 
@@ -51,8 +57,13 @@ function FundHomepage() {
       </figure>
 
       <BookMark />
-      
+      <CarouselE />
+      <button className="e_more">more</button>
 
+      <h1 className="e_popular">熱門募資專案</h1>
+      <BookMarkTwo />
+      <h1 className="e_popular">設計學院</h1>
+      <Edesign />
     </>
   )
 }
