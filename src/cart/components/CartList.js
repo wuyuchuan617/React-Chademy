@@ -7,9 +7,16 @@ import { BsTrash } from 'react-icons/bs'
 // import './style/jay.scss'
 
 function CartList(props) {
-  const [myCart, setMyCart] = useState([])
-  const [showLoading, setShowLoading] = useState(false)
-  const [myCartDisplay, setMyCartDisplay] = useState([])
+  const {
+    myCart,
+    setMyCart,
+    showLoading,
+    setShowLoading,
+    myCartDisplay,
+    setMyCartDisplay,
+  } = props
+  // const [showLoading, setShowLoading] = useState(false)
+  // const [myCartDisplay, setMyCartDisplay] = useState([])
 
   //拿資料時載入loading
   const loading = <></>
@@ -26,33 +33,6 @@ function CartList(props) {
     getCartFromLocalStorage()
   }, [])
 
-  useEffect(() => {
-    setTimeout(() => {
-      setShowLoading(false)
-    }, 500)
-    let newMyCartDisplay = []
-
-    //尋找myCartDisplay
-    for (let i = 0; i < myCart.length; i++) {
-      //尋找myCartDisplay中有沒有此myCart[i].id
-      //有找到會返回陣列成員的索引值
-      //沒找到會返回-1
-      const index = newMyCartDisplay.findIndex((v) => v.id === myCart[i].id)
-      //有的話就數量+1
-      if (index !== -1) {
-        //每次只有加1個數量
-        //newmyCartDisplay[index].amount++
-        //假設是加數量的
-        newMyCartDisplay[index].amount += myCart[i].amount
-      } else {
-        //沒有的話就把項目加入，數量為1
-        const newItem = { ...myCart[i] }
-        newMyCartDisplay = [...newMyCartDisplay, newItem]
-      }
-    }
-    console.log(newMyCartDisplay)
-    setMyCartDisplay(newMyCartDisplay)
-  }, [myCart])
   const updateCartToLocalStorage = (item, isAdded = true) => {
     console.log(item, isAdded)
     const currentCart = JSON.parse(localStorage.getItem('cart')) || []
@@ -75,7 +55,7 @@ function CartList(props) {
     <>
       <div className="cartlist">
         <ul>
-          {myCartDisplay.map((item, i) => {
+          {myCart.map((item, i) => {
             return (
               <li>
                 <div className="listitem">
@@ -92,12 +72,17 @@ function CartList(props) {
                     <h6 style={{ left: '50px' }}>{item.amount}</h6>
                     <h6
                       style={{ left: '80px' }}
-                      onClick={() => updateCartToLocalStorage(item, false)}
+                      onClick={() => {
+                        if (item.amount === 1) return
+                        updateCartToLocalStorage(item, false)
+                      }}
                     >
                       <FiMinus />
                     </h6>
                   </div>
-                  <h6 style={{ left: '330px', color: '#C67334' }}>$2500</h6>
+                  <h6 style={{ left: '330px', color: '#C67334' }}>
+                    ${item.price * item.amount}
+                  </h6>
                   <Link to="#" onClick={() => handleDelete(item.id)}>
                     <h6 style={{ left: '420px' }}>
                       <BsTrash />
