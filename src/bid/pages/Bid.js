@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { connect } from 'react-redux'
+import {  
+  initValueAsync,
+} from '../actions/index'
+
 import { Button, Card } from 'react-bootstrap'
 import chair from '../myfile/The Canvas Chair/Fredericia-The-Canvas-Chair-Natural-Canvas-Soaped-Oak-Close-Up2.jpg'
 import '../styles/bid.scss'
 function Bid() {
+
+  useEffect(() => {
+    props.initValueAsync()
+  }, [])
   return (
     <>
       <div className="container">
@@ -26,8 +35,9 @@ function Bid() {
           </div>
         </div>
         <div className="row">          
-          <div className="d-flex flex-wrap">            
-            <Card className="col-6 rounded-0 p-0">
+          <div className="d-flex flex-wrap">
+          <div className="col-6">            
+            <Card className="m-1 rounded-0 p-0">
               <div className="grace-tag grace-tag-time d-flex align-items-center justify-content-center rounded-0">
                 <span>16:10:11</span>
               </div>
@@ -69,7 +79,9 @@ function Bid() {
                 </Card.Text>
               </Card.Body>
             </Card>         
-            <Card className="col-6 rounded-0 p-0">
+            </div>
+            <div className="col-6">            
+            <Card className="m-1 rounded-0 p-0">
               <div className="grace-tag grace-tag-time d-flex align-items-center justify-content-center rounded-0">
                 <span>16:10:11</span>
               </div>
@@ -110,7 +122,8 @@ function Bid() {
                   </div>
                 </Card.Text>
               </Card.Body>
-            </Card>
+            </Card>          
+          </div>
           </div>
         </div>
       </div>
