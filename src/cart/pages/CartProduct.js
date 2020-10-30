@@ -9,16 +9,34 @@ function CartProduct(props) {
   const [show, setShow] = useState(false)
   const [productName, setProductName] = useState('')
   const handleShow = () => setShow(true)
-  const updateCartToLocalStorage = (value) => {
+  // const updateCartToLocalStorage = (value) => {
+  //   const currentCart = JSON.parse(localStorage.getItem('cart')) || []
+
+  //   const newCart = [...currentCart, value]
+  //   localStorage.setItem('cart', JSON.stringify(newCart))
+
+  //   // 設定資料
+  //   setMycart(newCart)
+  //   setProductName(value.name)
+  //   handleShow()
+  // }
+  const updateCartToLocalStorage = (item) => {
     const currentCart = JSON.parse(localStorage.getItem('cart')) || []
 
-    const newCart = [...currentCart, value]
-    localStorage.setItem('cart', JSON.stringify(newCart))
+    // find if the product in the localstorage with its id
+    const index = currentCart.findIndex((v) => v.id === item.id)
+
+    // found: index! == -1
+    if (index > -1) {
+      currentCart[index].amount++
+    } else {
+      currentCart.push(item)
+    }
+
+    localStorage.setItem('cart', JSON.stringify(currentCart))
 
     // 設定資料
-    setMycart(newCart)
-    setProductName(value.name)
-    handleShow()
+    setMycart(currentCart)
   }
   return (
     <>
@@ -104,7 +122,7 @@ function CartProduct(props) {
           >
             <input type="text" name="discount" id="discount"></input>
             <Link
-              className="btn2"
+              className="j_btn2"
               to="#"
               onClick={() =>
                 updateCartToLocalStorage({

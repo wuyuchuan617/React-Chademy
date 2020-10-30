@@ -7,7 +7,7 @@ import { BsTrash } from 'react-icons/bs'
 // import './style/jay.scss'
 
 function CartList(props) {
-  const [myCart, setmyCart] = useState([])
+  const [myCart, setMyCart] = useState([])
   const [showLoading, setShowLoading] = useState(false)
   const [myCartDisplay, setMyCartDisplay] = useState([])
 
@@ -18,7 +18,7 @@ function CartList(props) {
     setShowLoading(true)
     const newCart = localStorage.getItem('cart') || '[]'
     // console.log(newCart)
-    setmyCart(JSON.parse(newCart))
+    setMyCart(JSON.parse(newCart))
     // console.log(JSON.parse(newCart))
   }
   //載入時拿local storage資料
@@ -53,28 +53,52 @@ function CartList(props) {
     console.log(newMyCartDisplay)
     setMyCartDisplay(newMyCartDisplay)
   }, [myCart])
+  const updateCartToLocalStorage = (item, isAdded = true) => {
+    console.log(item, isAdded)
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || []
+
+    // find if the product in the localstorage with its id
+    const index = currentCart.findIndex((v) => v.id === item.id)
+
+    console.log('index', index)
+    // found: index! == -1
+    if (index > -1) {
+      isAdded ? currentCart[index].amount++ : currentCart[index].amount--
+    }
+
+    localStorage.setItem('cart', JSON.stringify(currentCart))
+
+    // 設定資料
+    setMyCart(currentCart)
+  }
   const display = (
     <>
       <div className="cartlist">
         <ul>
-          {myCartDisplay.map((v, i) => {
+          {myCartDisplay.map((item, i) => {
             return (
               <li>
                 <div className="listitem">
-                  <img src={v.img} />
-                  <h6 style={{ left: '30px' }}>{v.id}</h6>
-                  <h6 style={{ left: '120px' }}>${v.price}</h6>
+                  <img src={item.img} />
+                  <h6 style={{ left: '30px' }}>{item.id}</h6>
+                  <h6 style={{ left: '120px' }}>${item.price}</h6>
                   <div className="listqty">
-                    <h6 style={{ left: '10px' }}>
+                    <h6
+                      style={{ left: '10px' }}
+                      onClick={() => updateCartToLocalStorage(item)}
+                    >
                       <MdAdd />
                     </h6>
-                    <h6 style={{ left: '50px' }}>{v.amount}</h6>
-                    <h6 style={{ left: '80px' }}>
+                    <h6 style={{ left: '50px' }}>{item.amount}</h6>
+                    <h6
+                      style={{ left: '80px' }}
+                      onClick={() => updateCartToLocalStorage(item, false)}
+                    >
                       <FiMinus />
                     </h6>
                   </div>
                   <h6 style={{ left: '330px', color: '#C67334' }}>$2500</h6>
-                  <Link to="#" onClick={() => handleDelete(v.id)}>
+                  <Link to="#" onClick={() => handleDelete(item.id)}>
                     <h6 style={{ left: '420px' }}>
                       <BsTrash />
                     </h6>
@@ -87,9 +111,12 @@ function CartList(props) {
       </div>
     </>
   )
+  // const handleAdd = (id) => {
+  //   const index = myCart.findIndex((v) => myCart.id === )
+  // }
   const handleDelete = (id) => {
     const newCart = myCart.filter((item, index) => item.id !== id)
-    setmyCart(newCart)
+    setMyCart(newCart)
   }
   return showLoading ? loading : display
   // <>

@@ -88,7 +88,7 @@ function CartClass(props) {
             }}
           >
             <input type="text" name="discount" id="discount"></input>
-            <Link className="btn2" to="#">
+            <Link className="j_btn2" to="#">
               確定
             </Link>
           </div>
