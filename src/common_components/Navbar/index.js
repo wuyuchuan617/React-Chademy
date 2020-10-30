@@ -73,12 +73,10 @@ function MyNavbar(props) {
           {/* <Nav className="m-auto justify-content-between"> */}
           <Nav className="navbar_list  justify-content-between text">
             <Nav.Link
-              href="#about"
-              onClick={() => {
-                console.log(' click ')
-                setActiveName('about')
-              }}
-              className={['text-center', activeState('about')]}
+              as={NavLink}
+              to="/Brand"
+              onClick={() => setActiveName('Brand')}
+              className={['text-center', activeState('Brand')]}
             >
               <div>品牌故事</div>
               <div className="text-center">ABOUT</div>

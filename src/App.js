@@ -15,6 +15,7 @@ import NotFoundPage from './common_components/NotFoundPage'
 import Home from './Home'
 
 // ---------------------以下import 品牌故事頁面----------------
+import Brand from './about/pages/Brand'
 
 // ---------------------以下import 產品頁面--------------------
 
@@ -74,7 +75,7 @@ function App() {
           {/* 品牌故事頁面 */}
 
           <Route path="/brand">
-            <Home />
+            <Brand />
           </Route>
 
           {/* 產品頁面 */}
