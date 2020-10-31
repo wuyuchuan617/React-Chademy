@@ -1,24 +1,51 @@
+// ------------------以下引入套件----------------------------
+
 import React, { useEffect, useState } from 'react'
+
+// ------------------以下引入Components----------------------------
+
 import Filter from '../../common_components/Filter'
 import ProductPopular from '../components/ProductPopular'
 import ProductSeries from '../components/ProductSeries'
 import ProductCard from '../components/ProductCard'
 import CouponModal from '../components/CouponModal'
+
+// ------------------以下引入樣式----------------------------
+
 import '../styles/productlist.css'
+
+// ------------------以下引入images----------------------------
+
 import bannerVideo from '../images/The-Passion-of-Making.mp4'
 
+// ---------------以下開始Component ProductList-----------------
+
 function ProductList(props) {
+  // ---------------以下開始useState狀態設定-----------------
+
+  // 存從資料庫拿到的資料
   const [product, setProduct] = useState([])
+
+  // 存要顯示幾筆資料
   const [viewProduct, setViewProduct] = useState(15)
   const [lastProductId, setLastProductId] = useState(0)
+
+  // 存filter打開關閉狀態
   const [showFilter, setShowFilter] = useState(false)
+
+  // 存filter滑到產品高度顯示狀態
   const [visible, setVisible] = useState(false)
 
   // 以下為filter狀態
   const [category, setCategory] = useState([])
 
+  // ---------------以下開始component內變數-----------------
+
+  // 抓篩選條件
   let categoryUrl = 'category=' + category.join(',')
   console.log(categoryUrl)
+
+  // ---------------以下開始component內function-----------------
 
   const handleClick = () => {
     let preViewProduct = viewProduct
@@ -49,6 +76,8 @@ function ProductList(props) {
 
     if (nowscrol < 1600) setShowFilter(true)
   }, [])
+
+  // ---------------以下開始fetch SQL get data function-----------------
 
   // 篩選資料庫
   async function getFilterFromSQL() {
@@ -89,6 +118,8 @@ function ProductList(props) {
     setProduct(newData)
   }
 
+  // ---------------以下開始useEffect-----------------
+
   useEffect(() => {
     getTotalFromSQL()
   }, [])
@@ -100,16 +131,17 @@ function ProductList(props) {
   useEffect(() => {
     setTimeout(() => {}, 1000)
   }, [])
-  //console.log('product' + product)
 
   // 彈跳視窗
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     console.log('This will run after 1 second!')
-  //     setVisible(true)
-  //   }, 1000)
-  //   // return () => clearTimeout()
-  // }, [])
+  useEffect(() => {
+    setTimeout(() => {
+      console.log('This will run after 1 second!')
+      setVisible(true)
+    }, 10000)
+    // return () => clearTimeout()
+  }, [])
+
+  // ---------------以下開始 JSX 畫面-----------------
 
   return (
     <>
@@ -157,5 +189,7 @@ function ProductList(props) {
     </>
   )
 }
+
+// ---------------以下輸出component-----------------
 
 export default ProductList
