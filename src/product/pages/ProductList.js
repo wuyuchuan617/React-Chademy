@@ -17,7 +17,7 @@ function ProductList(props) {
   // 以下為filter狀態
   const [category, setCategory] = useState([])
 
-  let categoryUrl = '?category=' + category.join(',')
+  let categoryUrl = 'category=' + category.join(',')
   console.log(categoryUrl)
 
   const handleClick = () => {
@@ -52,7 +52,7 @@ function ProductList(props) {
 
   // 篩選資料庫
   async function getFilterFromSQL() {
-    const url = 'http://localhost:3001/man_product/reactfilter' + categoryUrl
+    const url = 'http://localhost:3001/man_product/reactfilter?' + categoryUrl
 
     const request = new Request(url, {
       method: 'GET',
@@ -91,6 +91,10 @@ function ProductList(props) {
 
   useEffect(() => {
     getTotalFromSQL()
+  }, [])
+
+  useEffect(() => {
+    if (category.length > 1) getFilterFromSQL()
   }, [])
 
   useEffect(() => {
