@@ -1,12 +1,12 @@
 import { GET_DATA, INIT_ACT } from './actionTypes'
 
 // action creator 動作建立器
-// export const swipeLeft = (value) => {
-//   return {
-//     type: SWIPE_LEFT,
-//     value,
-//   }
-// }
+export const getData = (data) => {
+  return {
+    type: GET_DATA,
+    data,
+  }
+}
 
 // export const getBidDataAsync = (value) => {
 //   return async function updateTotalToServer(dispatch, getState) {
@@ -46,14 +46,14 @@ import { GET_DATA, INIT_ACT } from './actionTypes'
 
 
 // 初始化值的動作建立器
-export const initAct = (value) => {
-  return { type: INIT_ACT, value }
+export const initAct = (data) => {
+  return { type: INIT_ACT, data }
 }
 
 // 對應初始化值，向伺服器get資料的動作建立器
-export const initValueAsync = (value) => {
+export const initActAsync = (data) => {
   return async function getTotalFromServer(dispatch) {
-    const url = 'http://localhost:5555/product/api/list'
+    const url = 'http://localhost:3000/product/api/list'
 
     const request = new Request(url, {
       method: 'GET',
@@ -71,6 +71,6 @@ export const initValueAsync = (value) => {
 
     //setTotal(data.total)
     // 最後得到資料，然後發送動作到reducer
-    dispatch(initValue(data.total))
+    dispatch(initAct(data))
   }
 }

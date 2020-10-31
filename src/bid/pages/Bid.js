@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import {  
-  initValueAsync,
-} from '../actions/index'
+  initAct,
+  initActAsync,
+} from '../../actions'
 
 import { Button, Card } from 'react-bootstrap'
 import chair from '../myfile/The Canvas Chair/Fredericia-The-Canvas-Chair-Natural-Canvas-Soaped-Oak-Close-Up2.jpg'
 import '../styles/bid.scss'
-function Bid() {
+function Bid(props) {
+  console.log(props)
 
   useEffect(() => {
-    props.initValueAsync()
+    props.initActAsync()
   }, [])
   return (
     <>
@@ -131,4 +133,10 @@ function Bid() {
   )
 }
 
-export default Bid
+const mapStateToProps = (store) => {
+  return { bid: store.bid }
+}
+export default connect(mapStateToProps, {
+  initActAsync,
+})(Bid)
+// export default Bid
