@@ -296,13 +296,13 @@ function Filter(props) {
             >
               <Checkbox
                 onChange={() => {
-                  if (chairSeat.indexOf('leather') !== -1) {
+                  if (chairSeat.indexOf('皮革') !== -1) {
                     let newCate = chairSeat.filter((item) => {
-                      return item !== 'leather'
+                      return item !== '皮革'
                     })
                     setChairSeat(newCate)
                   } else {
-                    setChairSeat(['leather', ...chairSeat])
+                    setChairSeat(['皮革', ...chairSeat])
                   }
                 }}
                 style={{ display: 'block', marginLeft: 0 }}
@@ -311,63 +311,63 @@ function Filter(props) {
               </Checkbox>
               <Checkbox
                 onChange={() => {
-                  if (category.indexOf('armchair') !== -1) {
-                    let newCate = category.filter((item) => {
-                      return item !== 'armchair'
+                  if (chairSeat.indexOf('布料') !== -1) {
+                    let newCate = chairSeat.filter((item) => {
+                      return item !== '布料'
                     })
-                    setCategory(newCate)
+                    setChairSeat(newCate)
                   } else {
-                    setCategory(['armchair', ...category])
+                    setChairSeat(['布料', ...chairSeat])
                   }
                 }}
                 style={{ display: 'block', marginLeft: 0 }}
               >
-                扶手椅
+                布料
               </Checkbox>
               <Checkbox
                 onChange={() => {
-                  if (category.indexOf('dining') !== -1) {
-                    let newCate = category.filter((item) => {
-                      return item !== 'dining'
+                  if (chairSeat.indexOf('藤編') !== -1) {
+                    let newCate = chairSeat.filter((item) => {
+                      return item !== '藤編'
                     })
-                    setCategory(newCate)
+                    setChairSeat(newCate)
                   } else {
-                    setCategory(['dining', ...category])
+                    setChairSeat(['藤編', ...chairSeat])
                   }
                 }}
                 style={{ display: 'block', marginLeft: 0 }}
               >
-                餐椅
+                藤編
               </Checkbox>
               <Checkbox
                 onChange={() => {
-                  if (category.indexOf('lounge') !== -1) {
-                    let newCate = category.filter((item) => {
-                      return item !== 'lounge'
+                  if (chairSeat.indexOf('木頭') !== -1) {
+                    let newCate = chairSeat.filter((item) => {
+                      return item !== '木頭'
                     })
-                    setCategory(newCate)
+                    setChairSeat(newCate)
                   } else {
-                    setCategory(['lounge', ...category])
+                    setChairSeat(['木頭', ...chairSeat])
                   }
                 }}
                 style={{ display: 'block', marginLeft: 0 }}
               >
-                沙發椅
+                木頭
               </Checkbox>
               <Checkbox
                 onChange={() => {
-                  if (category.indexOf('stool') !== -1) {
-                    let newCate = category.filter((item) => {
-                      return item !== 'stool'
+                  if (chairSeat.indexOf('塑膠') !== -1) {
+                    let newCate = chairSeat.filter((item) => {
+                      return item !== '塑膠'
                     })
-                    setCategory(newCate)
+                    setChairSeat(newCate)
                   } else {
-                    setCategory(['stool', ...category])
+                    setChairSeat(['塑膠', ...chairSeat])
                   }
                 }}
                 style={{ display: 'block', marginLeft: 0 }}
               >
-                吧台椅
+                塑膠
               </Checkbox>
             </ul>
           </div>

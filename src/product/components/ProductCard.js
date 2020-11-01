@@ -3,7 +3,7 @@ import { withRouter, useHistory } from 'react-router-dom'
 import popularImg from '../images/777.jpg'
 
 function ProductCard(props) {
-  const { product, item } = props
+  const { item } = props
 
   return (
     <>

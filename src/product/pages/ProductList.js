@@ -44,11 +44,16 @@ function ProductList(props) {
   // ---------------以下開始component內變數-----------------
 
   // 抓篩選條件
+
   let categoryUrl = 'category=' + category.join(',')
   console.log(categoryUrl)
 
   let chairSeatUrl = 'chairSeat=' + chairSeat.join(',')
   console.log(chairSeatUrl)
+
+  let allUrl = []
+  if (category.length > 0) allUrl.push(categoryUrl)
+  if (chairSeat.length > 0) allUrl.push(chairSeatUrl)
 
   // ---------------以下開始component內function-----------------
 
@@ -87,9 +92,7 @@ function ProductList(props) {
   // 篩選資料庫
   async function getFilterFromSQL() {
     const url =
-      'http://localhost:3001/man_product/reactfilter?' +
-      categoryUrl +
-      (chairSeat.length > 0 ? '&' + `${chairSeatUrl}` : '')
+      'http://localhost:3001/man_product/reactfilter?' + allUrl.join('&')
 
     const request = new Request(url, {
       method: 'GET',
@@ -101,7 +104,7 @@ function ProductList(props) {
 
     const response = await fetch(request)
     const data = await response.json()
-    const newData = [...data]
+    const newData = await [...data]
     console.log('newData' + newData)
     console.log(Array.isArray(data))
     setProduct(newData)
@@ -132,9 +135,10 @@ function ProductList(props) {
     getTotalFromSQL()
   }, [])
 
-  useEffect(() => {
-    if (category.length > 1) getFilterFromSQL()
-  }, [])
+  // useEffect(() => {
+  //   if (category.length > 1) getFilterFromSQL()
+  //   if (chairSeat.length > 1) getFilterFromSQL()
+  // }, [category,chairSeat])
 
   useEffect(() => {
     setTimeout(() => {}, 1000)
@@ -169,9 +173,9 @@ function ProductList(props) {
         preload="auto"
       ></video>
       {/* </div> */}
-      <LazyLoad height={200} offset={100}>
-        <ProductPopular />
-      </LazyLoad>
+      {/* <LazyLoad height={200} offset={100}> */}
+      <ProductPopular />
+      {/* </LazyLoad> */}
       <ProductSeries />
       <div class="context1">
         <div class="container" id="productCards">
@@ -182,13 +186,13 @@ function ProductList(props) {
               在與人談論到居家靈感佈置陳列的時候，推崇自然風格的我們，總是鼓勵大家回到原點，以自己的角度出發，親自去挑選符合自己生活使用習慣的古董老件，而非跟隨流行的風格。
             </p>
           </div>
-          <LazyLoad height={2000} offset={100} once={true}>
-            <div class="row justify-content-center">
-              {product.slice(0, viewProduct).map((item, index) => {
-                return <ProductCard key={index} item={item} product={product} />
-              })}
-            </div>
-          </LazyLoad>
+          {/* <LazyLoad height={2000} offset={100} once={true}> */}
+          <div class="row justify-content-center">
+            {product.slice(0, viewProduct).map((item, index) => {
+              return <ProductCard key={index} item={item} />
+            })}
+          </div>
+          {/* </LazyLoad> */}
         </div>
       </div>
       <div class="container">
