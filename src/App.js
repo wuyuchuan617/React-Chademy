@@ -46,6 +46,7 @@ import WorkshopList from './workshop/pages/WorkshopList'
 
 // ---------------------以下import 會員頁面--------------------
 import Login from './member/Login'
+import Register from './member/Register'
 import MemberCenter from './member/MemberCenter'
 
 // ---------------------以下import 購物車頁面------------------
@@ -75,6 +76,11 @@ function App() {
             {/* 登入 */}
             <Route path="/login">
               <Login />
+            </Route>
+
+            {/* 註冊 */}
+            <Route path="/register">
+              <Register />
             </Route>
 
             {/* 會員中心 */}

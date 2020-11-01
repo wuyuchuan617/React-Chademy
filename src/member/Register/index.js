@@ -6,6 +6,8 @@ import { Form, Button, Col, Container, Modal } from 'react-bootstrap'
 
 import { useHistory } from 'react-router-dom'
 
+import request from '../../utils/request'
+
 // //註冊
 
 // if (register.name === "") {
@@ -138,10 +140,20 @@ function Register(props) {
     msg: '',
     data: {},
   })
+
   const [smShow, setSmShow] = useState(false)
   let history = useHistory()
 
   const [validated, setValidated] = useState(false)
+
+  // 函式參數解構 developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+  // ref: https://blog.stvmlbrn.com/2017/01/16/form-validation-with-react.html
+  // const handleChange = (event) => {
+  // 從 event.target 解構取出 name, value
+  const handleChange = ({ target: { name, value } }) => {
+    console.log(name, value)
+    setRegister({ ...register, [name]: value })
+  }
 
   const handleSubmit = (event) => {
     const form = event.currentTarget
@@ -150,10 +162,9 @@ function Register(props) {
 
     console.log('form.checkValidity()', form.checkValidity())
     if (form.checkValidity() === false) {
-      // event.preventDefault()
-      // event.stopPropagation()
+      console.log('驗證失敗')
     } else {
-      // api
+      // call api
       registerApi()
     }
 
@@ -161,69 +172,46 @@ function Register(props) {
   }
 
   async function registerApi() {
-    const url = 'http://localhost:3001/members/register'
+    const { password2, ...realRegister } = register
 
-    // const response = await fetch(request).then((v) => console.log(v))
-    const response = await fetch(url, {
+    const response = await request({
+      url: 'members/register',
       method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email: register.email,
-        password: register.password,
-        mobile: register.mobile,
-
-        // email: email,
-        // password: password,
-      }),
+      data: { ...realRegister },
     })
 
-    // if (!response) throw new Error(response.statusText)
+    const { success, msg, data } = response
 
-    let res
+    // 如果成功
+    if (success) {
+      // 資料（物件）轉成 JSON，儲存登入資訊
+      // localStorage.setItem('userInfo', JSON.stringify(data))
 
-    try {
-      // 試著解析
-      res = await response.json()
-      console.log(res)
+      // 設定小彈窗的內容
+      setReg({
+        success: success,
+        title: '註冊成功',
+        msg: msg,
+      })
 
-      const { success, msg, data } = res
+      // 顯示小彈窗
+      setSmShow(true)
 
-      // 如果成功
-      if (success) {
-        // 資料（物件）轉成 JSON，儲存登入資訊
-        // localStorage.setItem('userInfo', JSON.stringify(data))
+      // n 秒後轉導至 /
+      setTimeout(() => {
+        history.push('/')
+      }, 2000)
 
-        // 設定小彈窗的內容
-        setReg({
-          success: success,
-          title: '註冊成功',
-          msg: msg,
-        })
-
-        // 顯示小彈窗
-        setSmShow(true)
-
-        // n 秒後轉導至 /
-        setTimeout(() => {
-          history.push('/')
-        }, 2000)
-
-        // alert(msg)
-      } else {
-        // alert(msg)
-        setReg({
-          success: success,
-          title: '註冊失敗',
-          msg: msg,
-          data: data,
-        })
-        setSmShow(true)
-      }
-    } catch (error) {
-      console.log(error)
+      // alert(msg)
+    } else {
+      // alert(msg)
+      setReg({
+        success: success,
+        title: '註冊失敗',
+        msg: msg,
+        data: data,
+      })
+      setSmShow(true)
     }
   }
 
@@ -248,67 +236,109 @@ function Register(props) {
           </Modal.Body>
         </Modal>
 
-        <Form noValidate validated={validated} onSubmit={handleSubmit}>
-          <div className="text-center title">註冊</div>
-          <div className="title2">個人資料</div>
-          <Form.Group as={Col} controlId="formGridEmail">
+        <div className="text-center title">註冊</div>
+        <Form
+          className="register_form"
+          noValidate
+          validated={validated}
+          onSubmit={handleSubmit}
+        >
+          <div className="sub_title">個人資料</div>
+          <Form.Group as={Col} controlId="name">
             <Form.Label>姓名</Form.Label>
             <Form.Control
+              onChange={handleChange}
+              placeholder="請輸入姓名"
+              name="name"
               type="text"
-              placeholder="Username"
               aria-describedby="inputGroupPrepend"
               required
             />
             <Form.Control.Feedback type="invalid">
-              此欄不得為空
+              請輸入正確格式
             </Form.Control.Feedback>
           </Form.Group>
 
-          <Form.Group as={Col} controlId="email">
-            <Form.Label>郵件</Form.Label>
+          <Form.Group as={Col} controlId="mobile">
+            <Form.Label>電話</Form.Label>
             <Form.Control
-              onChange={(event) => {
-                setRegister({
-                  ...register,
-                  email: event.target.value,
-                })
-              }}
-              type="email"
-              placeholder="郵件"
+              onChange={handleChange}
+              type="text"
+              name="mobile"
+              placeholder="請輸入電話"
               required
             />
             <Form.Control.Feedback type="invalid">
-              請輸入正確電子郵件
+              請輸入正確的格式
             </Form.Control.Feedback>
           </Form.Group>
-          {/* <Form.Group as={Col} controlId="formGridPassword">
-            <Form.Label>名</Form.Label>
-            <Form.Control type="password" className="reg" />
-          </Form.Group> */}
-          {/* <Form.Group as={Col} controlId="formGridAddress1">
-            <Form.Label>電話</Form.Label>
-            <Form.Control type="text" className="reg" />
-          </Form.Group>
-          <Form.Group as={Col} controlId="formGridAddress2">
+
+          <Form.Group as={Col} controlId="address">
             <Form.Label>地址</Form.Label>
-            <Form.Control className="reg" />
+            <Form.Control
+              onChange={handleChange}
+              name="address"
+              type="text"
+              placeholder="請輸入地址"
+              required
+            />
+            <Form.Control.Feedback type="invalid">
+              請輸入正確格式
+            </Form.Control.Feedback>
           </Form.Group>
-          <div className="title2">帳戶密碼</div>
+
+          <div className="sub_title2">帳戶密碼</div>
+
           <Form.Group as={Col} controlId="formGridCity">
             <Form.Label>電子郵件</Form.Label>
-            <Form.Control className="reg" />
+            <Form.Control
+              onChange={handleChange}
+              name="email"
+              type="text"
+              placeholder="請輸入電子郵件"
+              required
+            />
+
+            <Form.Control.Feedback type="invalid">
+              請輸入正確格式
+            </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} controlId="formGridState">
+
+          <Form.Group as={Col} controlId="password">
             <Form.Label>密碼</Form.Label>
-            <Form.Control className="reg" />
+            <Form.Control
+              onChange={handleChange}
+              name="password"
+              type="password"
+              isValid={register.password.length >= 6}
+              placeholder="請輸入密碼"
+              required
+            />
+            <Form.Control.Feedback type="invalid">
+              請輸入密碼
+            </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} controlId="formGridZip">
+
+          <Form.Group as={Col} controlId="password2">
             <Form.Label>確認密碼</Form.Label>
-            <Form.Control className="reg" />
-          </Form.Group> */}
-          {/* <Form.Group id="formGridCheckbox">
-            <Form.Check type="checkbox" label="記住我" />
-          </Form.Group> */}
+            <Form.Control
+              isValid={
+                register.password && register.password === register.password2
+              }
+              isInvalid={
+                register.password.length === register.password2.length &&
+                register.password !== register.password2
+              }
+              onChange={handleChange}
+              name="password2"
+              type="password"
+              placeholder="請輸入確認密碼"
+              required
+            />
+            <Form.Control.Feedback type="invalid">
+              確認密碼錯誤
+            </Form.Control.Feedback>
+          </Form.Group>
 
           <Button variant="primary" type="submit" className="reg_btn">
             註冊
@@ -320,55 +350,3 @@ function Register(props) {
 }
 
 export default Register
-
-// function Register(props) {
-//   const [register, setRegister] = useState({
-//     name: '',
-//     address: '',
-//     mobile: '',
-//     mail: '',
-//     password: '',
-//     password2: '',
-//   })
-//   const [validated, setValidated] = useState(false)
-
-//   const handleSubmit = (event) => {
-//     const form = event.currentTarget
-//     if (form.checkValidity() === false) {
-//       event.preventDefault()
-//       event.stopPropagation()
-//     } else {
-//       // api
-//     }
-
-//     setValidated(true)
-//   }
-//   return (
-//     <>
-//       <Container className="Register_container con">
-//         <Form noValidate validated={validated} onSubmit={handleSubmit}>
-//         <Form.Row>
-//             <Form.Group as={Col} md="4" controlId="validationCustom05">
-//               <Form.Label>郵件</Form.Label>
-//               <Form.Control type="mail" placeholder="郵件" required />
-//               <Form.Control.Feedback type="invalid">
-//                 請輸入電郵
-//               </Form.Control.Feedback>
-//             </Form.Group>
-//           </Form.Row>
-
-//           <Form.Group>
-//             <Form.Check
-//               required
-//               label="Agree to terms and conditions"
-//               feedback="You must agree before submitting."
-//             />
-//           </Form.Group>
-//           <Button type="submit">Submit form</Button>
-//         </Form>
-//       </Container>
-//     </>
-//   )
-// }
-
-// export default Register

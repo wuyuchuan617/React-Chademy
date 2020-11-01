@@ -11,7 +11,7 @@ import { Form, Button, Container, Row, Modal } from 'react-bootstrap'
 import {
   // BrowserRouter as Router,
   // Route,
-  // Link,
+  Link,
   // Switch,
   useHistory,
 } from 'react-router-dom'
@@ -37,7 +37,7 @@ function Login(props) {
     history.push('/')
   }
 
-  async function getLoginsqlApi(event) {
+  async function loginApi(event) {
     // 阻止預設的行為
     event.preventDefault()
 
@@ -45,14 +45,11 @@ function Login(props) {
       url: '/members/login',
       method: 'post',
       data: {
+        // 登入先寫死 方便測試
         email: 'zzfegfc76@agzwfwsn.com',
         password: '123456',
-        // email: email,
-        // password: password,
       },
     })
-
-    console.log(123)
 
     const { success, msg, data } = response
 
@@ -96,7 +93,7 @@ function Login(props) {
   return (
     <>
       <Container className="row login_container">
-        <div>
+        {/* <div>
           <Button
             variant="primary"
             type="submit"
@@ -137,7 +134,7 @@ function Login(props) {
           >
             TEST
           </Button>
-        </div>
+        </div> */}
 
         <img src={imageLogin} alt="login" className="login_img" />
         <Form className="form">
@@ -185,11 +182,17 @@ function Login(props) {
           <Button
             variant="primary"
             type="submit"
-            onClick={getLoginsqlApi}
+            onClick={loginApi}
             className="log_in"
           >
             登入
           </Button>
+
+          <Row className="justify-content-center">
+            <Link to="/register" className="register_link">
+              尚未成為會員？前往註冊
+            </Link>
+          </Row>
         </Form>
 
         {/* ref: https://github.com/react-bootstrap/react-bootstrap/issues/3518 */}

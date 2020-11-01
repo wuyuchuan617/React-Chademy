@@ -10,7 +10,7 @@ import { message, Button, Space } from 'antd'
 const service = axios.create({
   baseURL: '/api', // url = base url + request url
   // withCredentials: true, // send cookies when cross-domain requests
-  timeout: 5000, // request timeout
+  timeout: 50000, // request timeout
 })
 
 // request interceptor
@@ -34,6 +34,7 @@ service.interceptors.request.use(
 )
 
 // response interceptor
+// 伺服器回傳後的攔截器
 service.interceptors.response.use(
   /**
    * If you want to get http information such as headers or status
