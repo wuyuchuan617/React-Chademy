@@ -13,6 +13,8 @@ function Filter(props) {
     setCategory,
     chairSeat,
     setChairSeat,
+    chairColor,
+    setChairColor,
     getFilterFromSQL,
   } = props
 
@@ -66,6 +68,13 @@ function Filter(props) {
     display: 'none',
   }
 
+  let colorBorder = {
+    border: 3 + 'px solid #c77334',
+  }
+  let colorBorder2 = {
+    border: '3px solid #EDECE8',
+  }
+
   function onChange(e) {
     console.log(`checked = ${e.target.checked}`)
   }
@@ -78,35 +87,6 @@ function Filter(props) {
     e.preventDefault()
     console.log('Clicked! But prevent default.')
   }
-
-  // const plus = document.querySelectorAll('.plus')
-  // const seats1 = document.querySelectorAll('.seats1')
-  // const spreadPlus = document.querySelectorAll('.spreadPlus')
-
-  // 內容下拉 querySelectorAll
-  // for (let i = 0; i < plus.length; i++) {
-  //   plus[i].addEventListener('click', () => {
-  //     if (seats1[i].style.display !== 'none') {
-  //       seats1[i].style.display = 'none'
-  //       spreadPlus[i].innerHTML = '+'
-  //     } else {
-  //       seats1[i].style.display = 'block'
-  //       spreadPlus[i].innerHTML = 'x'
-
-  //       let others = [...seats1].filter((item, index, array) => index !== i)
-  //       let othersX = [...spreadPlus].filter(
-  //         (item, index, array) => index !== i
-  //       )
-
-  //       console.log(others)
-
-  //       for (let i = 0; i < others.length; i++) {
-  //         others[i].style.display = 'none'
-  //         othersX[i].innerHTML = '+'
-  //       }
-  //     }
-  //   })
-  // }
 
   return (
     <>
@@ -147,6 +127,20 @@ function Filter(props) {
                     //     setCategory(newCate)
                     //   }}
                   >
+                    {item}
+                  </Tag>
+                )
+              })}
+              {chairSeat.map((item, index) => {
+                return (
+                  <Tag closable key={index} onClose={log}>
+                    {item}
+                  </Tag>
+                )
+              })}
+              {chairColor.map((item, index) => {
+                return (
+                  <Tag closable key={index} onClose={log}>
                     {item}
                   </Tag>
                 )
@@ -289,7 +283,7 @@ function Filter(props) {
               </div>
             </div>
             <ul
-              className="refinement-list scrollable seats2"
+              className="refinement-list scrollable seats1"
               id="seats1"
               aria-hidden="false"
               style={viewSpread ? sidebarContentShow : sidebarContentHide}
@@ -399,16 +393,72 @@ function Filter(props) {
               style={viewSpread2 ? sidebarContentShow : sidebarContentHide}
             >
               <div className="d-flex">
-                <div className="circleColor"></div>
-                <div className="circleColor"></div>
-                <div className="circleColor"></div>
-                <div className="circleColor"></div>
+                <div
+                  className="circleColor"
+                  onClick={() => {
+                    if (chairColor.indexOf('白') !== -1) {
+                      let newCate = chairColor.filter((item) => {
+                        return item !== '白'
+                      })
+                      setChairColor(newCate)
+                    } else {
+                      setChairColor(['白', ...chairColor])
+                    }
+                  }}
+                  // style={chairColor.indexOf('白') !== -1 ? colorBorder : ''}
+                ></div>
+                <div
+                  className="circleColor"
+                  style={{ backgroundColor: '#C9B7A0' }}
+                  onClick={() => {
+                    if (chairColor.indexOf('米') !== -1) {
+                      let newCate = chairColor.filter((item) => {
+                        return item !== '米'
+                      })
+                      setChairColor(newCate)
+                    } else {
+                      setChairColor(['米', ...chairColor])
+                    }
+                  }}
+                  // style={chairColor.includes('米') !== -1 ? colorBorder2 : ''}
+                ></div>
+                <div
+                  className="circleColor"
+                  style={{ backgroundColor: '#C5872D' }}
+                  onClick={() => {
+                    if (chairColor.indexOf('橘') !== -1) {
+                      let newCate = chairColor.filter((item) => {
+                        return item !== '橘'
+                      })
+                      setChairColor(newCate)
+                    } else {
+                      setChairColor(['橘', ...chairColor])
+                    }
+                  }}
+                  // style={chairColor.includes('橘') !== -1 ? colorBorder2 : ''}
+                ></div>
+                <div
+                  className="circleColor"
+                  style={{ backgroundColor: '#7B0318' }}
+                ></div>
               </div>
               <div className="d-flex">
-                <div className="circleColor"></div>
-                <div className="circleColor"></div>
-                <div className="circleColor"></div>
-                <div className="circleColor"></div>
+                <div
+                  className="circleColor"
+                  style={{ backgroundColor: '#432601' }}
+                ></div>
+                <div
+                  className="circleColor"
+                  style={{ backgroundColor: '#214F3D' }}
+                ></div>
+                <div
+                  className="circleColor"
+                  style={{ backgroundColor: '#737272' }}
+                ></div>
+                <div
+                  className="circleColor"
+                  style={{ backgroundColor: '#000000' }}
+                ></div>
               </div>
             </ul>
           </div>

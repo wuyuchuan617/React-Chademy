@@ -2,7 +2,7 @@ header {
   position: relative;
 }
 
-.video {
+.i_video {
   width: 100% !important;
 }
 
@@ -15,8 +15,8 @@ header {
   top: 30%;
 }
 
-.i_homeslogan p{
-  color :white;
+.i_homeslogan p {
+  color: white;
 }
 
 .i_homesubslogan {

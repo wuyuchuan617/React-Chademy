@@ -11,6 +11,7 @@ import Bidding from './bidding'
 
 import Courses from './courses'
 import Blogs from './blogs'
+import EntryAnimation from './components/EntryAnimation'
 
 function Home(props) {
   return (

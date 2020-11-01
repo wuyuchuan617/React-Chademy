@@ -40,6 +40,7 @@ function ProductList(props) {
   // 以下為filter狀態
   const [category, setCategory] = useState([])
   const [chairSeat, setChairSeat] = useState([])
+  const [chairColor, setChairColor] = useState([])
 
   // ---------------以下開始component內變數-----------------
 
@@ -51,9 +52,13 @@ function ProductList(props) {
   let chairSeatUrl = 'chairSeat=' + chairSeat.join(',')
   console.log(chairSeatUrl)
 
+  let chairColorUrl = 'chairColor=' + chairColor.join(',')
+  console.log(chairColorUrl)
+
   let allUrl = []
   if (category.length > 0) allUrl.push(categoryUrl)
   if (chairSeat.length > 0) allUrl.push(chairSeatUrl)
+  if (chairColor.length > 0) allUrl.push(chairColorUrl)
 
   // ---------------以下開始component內function-----------------
 
@@ -104,10 +109,10 @@ function ProductList(props) {
 
     const response = await fetch(request)
     const data = await response.json()
-    const newData = await [...data]
-    console.log('newData' + newData)
-    console.log(Array.isArray(data))
-    setProduct(newData)
+    // const newData = await [...data]
+    // console.log('newData' + newData)
+    // console.log(Array.isArray(data))
+    setProduct(data)
   }
 
   async function getTotalFromSQL() {
@@ -162,6 +167,8 @@ function ProductList(props) {
         setCategory={setCategory}
         chairSeat={chairSeat}
         setChairSeat={setChairSeat}
+        chairColor={chairColor}
+        setChairColor={setChairColor}
         getFilterFromSQL={getFilterFromSQL}
       />
       {/* <div class="container-fluid"> */}
