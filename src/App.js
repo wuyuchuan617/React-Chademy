@@ -9,6 +9,7 @@ import MyNavbar from './common_components/MyNavbar'
 import MainContent from './common_components/MainContent'
 import MyFooter from './common_components/MyFooter'
 import NotFoundPage from './common_components/NotFoundPage'
+import ScrollToTop from './common_components/ScrollToTop'
 
 // ---------------------以下import 首頁頁面--------------------
 
@@ -65,130 +66,131 @@ function App() {
       <>
         {/* <MyNavbar /> */}
         <CHNavbar activeName={activeName} setActiveName={setActiveName} />
+        <ScrollToTop>
+          <Switch>
+            {/* 首頁頁面 */}
 
-        <Switch>
-          {/* 首頁頁面 */}
+            <Route exact path="/">
+              <Home />
+            </Route>
 
-          <Route exact path="/">
-            <Home />
-          </Route>
+            {/* 品牌故事頁面 */}
 
-          {/* 品牌故事頁面 */}
+            <Route path="/brand">
+              <Brand />
+            </Route>
 
-          <Route path="/brand">
-            <Brand />
-          </Route>
+            {/* 產品頁面 */}
 
-          {/* 產品頁面 */}
+            <Route exact path="/productlist">
+              <ProductList />
+            </Route>
 
-          <Route exact path="/productlist">
-            <ProductList />
-          </Route>
+            <Route path="/product/:sid?">
+              <Product />
+            </Route>
 
-          <Route path="/product/:sid?">
-            <Product />
-          </Route>
+            <Route path="/review">
+              <Review />
+            </Route>
 
-          <Route path="/review">
-            <Review />
-          </Route>
+            {/* 二手頁面 */}
 
-          {/* 二手頁面 */}
+            <Route path="/secondhand_form">
+              <SecondhandForm />
+            </Route>
 
-          <Route path="/secondhand_form">
-            <SecondhandForm />
-          </Route>
+            <Route path="/secondhand_list">
+              <SecondhandList />
+            </Route>
 
-          <Route path="/secondhand_list">
-            <SecondhandList />
-          </Route>
+            <Route path="/secondhand_product/:sid?">
+              <SecondhandProduct />
+            </Route>
 
-          <Route path="/secondhand_product/:sid?">
-            <SecondhandProduct />
-          </Route>
+            {/* 募資頁面 */}
 
-          {/* 募資頁面 */}
+            <Route path="/fundhomepage">
+              <FundHomepage />
+            </Route>
 
-          <Route path="/fundhomepage">
-            <FundHomepage />
-          </Route>
+            <Route path="/fundlist">
+              <FundList />
+            </Route>
 
-          <Route path="/fundlist">
-            <FundList />
-          </Route>
+            <Route path="/newfundproject">
+              <NewFundProject />
+            </Route>
 
-          <Route path="/newfundproject">
-            <NewFundProject />
-          </Route>
+            <Route path="/endsoonfund">
+              <EndSoonFund />
+            </Route>
 
-          <Route path="/endsoonfund">
-            <EndSoonFund />
-          </Route>
+            {/* 競標頁面 */}
 
-          {/* 競標頁面 */}
+            <Route path="/bid">
+              <Bid />
+            </Route>
+            <Route path="/desc">
+              <Desc />
+              <Designer />
+              <Slider />
+            </Route>
 
-          <Route path="/bid">
-            <Bid />
-          </Route>
-          <Route path="/desc">
-            <Desc />
-            <Designer />
-            <Slider />
-          </Route>
+            {/* 課程頁面 */}
 
-          {/* 課程頁面 */}
+            <Route exact path="/Workshop">
+              <Workshop />
+            </Route>
 
-          <Route exact path="/Workshop">
-            <Workshop />
-          </Route>
+            <Route exact path="/WorkshopList">
+              <WorkshopList />
+            </Route>
 
-          <Route exact path="/WorkshopList">
-            <WorkshopList />
-          </Route>
+            {/* 部落格頁面 */}
 
-          {/* 部落格頁面 */}
+            <Route path="/todo">
+              <Home />
+            </Route>
 
-          <Route path="/todo">
-            <Home />
-          </Route>
+            {/* 會員頁面 */}
 
-          {/* 會員頁面 */}
+            <Route path="/about">
+              <Home />
+            </Route>
 
-          <Route path="/about">
-            <Home />
-          </Route>
+            {/* 購物車頁面 */}
 
-          {/* 購物車頁面 */}
+            <Route path="/cartproduct">
+              <CartProduct />
+            </Route>
 
-          <Route path="/cartproduct">
-            <CartProduct />
-          </Route>
+            <Route path="/cartbid">
+              <CartBid />
+            </Route>
 
-          <Route path="/cartbid">
-            <CartBid />
-          </Route>
+            <Route path="/cartsecondhand">
+              <CartSecondHand />
+            </Route>
 
-          <Route path="/cartsecondhand">
-            <CartSecondHand />
-          </Route>
+            <Route path="/cartclass">
+              <CartClass />
+            </Route>
 
-          <Route path="/cartclass">
-            <CartClass />
-          </Route>
+            <Route path="/deliveryinfo">
+              <DeliveryInfo />
+            </Route>
 
-          <Route path="/deliveryinfo">
-            <DeliveryInfo />
-          </Route>
+            <Route path="/checkinfo">
+              <CheckInfo />
+            </Route>
 
-          <Route path="/checkinfo">
-            <CheckInfo />
-          </Route>
-
-          {/* 404找不到網頁，需要放在switch路由表最後一個 */}
-          <Route path="*">
-            <NotFoundPage />
-          </Route>
-        </Switch>
+            {/* 404找不到網頁，需要放在switch路由表最後一個 */}
+            <Route path="*">
+              <NotFoundPage />
+            </Route>
+          </Switch>
+        </ScrollToTop>
         {/* </Container> */}
 
         <MyFooter />

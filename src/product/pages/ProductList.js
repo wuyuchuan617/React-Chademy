@@ -39,12 +39,16 @@ function ProductList(props) {
 
   // 以下為filter狀態
   const [category, setCategory] = useState([])
+  const [chairSeat, setChairSeat] = useState([])
 
   // ---------------以下開始component內變數-----------------
 
   // 抓篩選條件
   let categoryUrl = 'category=' + category.join(',')
   console.log(categoryUrl)
+
+  let chairSeatUrl = 'chairSeat=' + chairSeat.join(',')
+  console.log(chairSeatUrl)
 
   // ---------------以下開始component內function-----------------
 
@@ -82,7 +86,10 @@ function ProductList(props) {
 
   // 篩選資料庫
   async function getFilterFromSQL() {
-    const url = 'http://localhost:3001/man_product/reactfilter?' + categoryUrl
+    const url =
+      'http://localhost:3001/man_product/reactfilter?' +
+      categoryUrl +
+      (chairSeat.length > 0 ? '&' + `${chairSeatUrl}` : '')
 
     const request = new Request(url, {
       method: 'GET',
@@ -149,6 +156,8 @@ function ProductList(props) {
         showFilter={showFilter}
         category={category}
         setCategory={setCategory}
+        chairSeat={chairSeat}
+        setChairSeat={setChairSeat}
         getFilterFromSQL={getFilterFromSQL}
       />
       {/* <div class="container-fluid"> */}

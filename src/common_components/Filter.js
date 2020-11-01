@@ -7,7 +7,14 @@ import { Checkbox } from 'antd'
 import { Tag } from 'antd'
 
 function Filter(props) {
-  const { showFilter, category, setCategory, getFilterFromSQL } = props
+  const {
+    showFilter,
+    category,
+    setCategory,
+    chairSeat,
+    setChairSeat,
+    getFilterFromSQL,
+  } = props
 
   // 0 : close 1 : open
   const [viewFilter, setViewFilter] = useState(0)
@@ -127,7 +134,24 @@ function Filter(props) {
 
             <p className="clearFilter">Restart your filter</p>
             <div class="filterTag">
-              <Tag closable onClose={log}>
+              {category.map((item, index) => {
+                return (
+                  <Tag
+                    closable
+                    key={index}
+                    onClose={log}
+                    //   onClose={(e) => {
+                    //     let newCate = category.filter((el) => {
+                    //       return el !== item
+                    //     })
+                    //     setCategory(newCate)
+                    //   }}
+                  >
+                    {item}
+                  </Tag>
+                )
+              })}
+              {/* <Tag closable onClose={log}>
                 白色
               </Tag>
 
@@ -136,61 +160,8 @@ function Filter(props) {
               </Tag>
               <Tag closable onClose={preventDefault}>
                 木頭
-              </Tag>
+              </Tag> */}
             </div>
-          </div>
-          <div className="refinement seats  " data-refinement-id="seats">
-            <div
-              className="refinement-toggle js-slide-toggle  is-active"
-              data-toggle-element="#seats"
-              data-toggle-duration="800"
-            >
-              <div
-                className="plus d-flex justify-content-between"
-                onClick={() => {
-                  setViewSpread(!viewSpread)
-                  setViewSpread1(false)
-                  setViewSpread2(false)
-                  setViewSpread3(false)
-                  setViewSpread4(false)
-                }}
-              >
-                <div className="refinement-title">產品類別</div>
-                <div className="spreadPlus">+</div>
-              </div>
-            </div>
-            <ul
-              className="refinement-list scrollable seats2"
-              id="seats1"
-              aria-hidden="false"
-              style={viewSpread ? sidebarContentShow : sidebarContentHide}
-            >
-              <li data-refinement-value="4">
-                <a className="refinement-link" rel="nofollow" href="#">
-                  單椅
-                </a>
-              </li>
-              <li data-refinement-value="6">
-                <a className="refinement-link" rel="nofollow" href="#">
-                  扶手椅
-                </a>
-              </li>
-              <li data-refinement-value="8">
-                <a className="refinement-link" rel="nofollow" href="#">
-                  餐椅
-                </a>
-              </li>
-              <li data-refinement-value="10">
-                <a className="refinement-link" rel="nofollow" href="#">
-                  沙發椅
-                </a>
-              </li>
-              <li data-refinement-value="12">
-                <a className="refinement-link" rel="nofollow" href="">
-                  吧台椅
-                </a>
-              </li>
-            </ul>
           </div>
 
           <div className="refinement seats  " data-refinement-id="seats">
@@ -209,7 +180,7 @@ function Filter(props) {
                   setViewSpread4(false)
                 }}
               >
-                <div className="refinement-title ">椅身材值</div>
+                <div className="refinement-title ">椅身類別</div>
                 <div className="spreadPlus">+</div>
               </div>
             </div>
@@ -233,6 +204,110 @@ function Filter(props) {
                 style={{ display: 'block', marginLeft: 0 }}
               >
                 單椅
+              </Checkbox>
+              <Checkbox
+                onChange={() => {
+                  if (category.indexOf('armchair') !== -1) {
+                    let newCate = category.filter((item) => {
+                      return item !== 'armchair'
+                    })
+                    setCategory(newCate)
+                  } else {
+                    setCategory(['armchair', ...category])
+                  }
+                }}
+                style={{ display: 'block', marginLeft: 0 }}
+              >
+                扶手椅
+              </Checkbox>
+              <Checkbox
+                onChange={() => {
+                  if (category.indexOf('dining') !== -1) {
+                    let newCate = category.filter((item) => {
+                      return item !== 'dining'
+                    })
+                    setCategory(newCate)
+                  } else {
+                    setCategory(['dining', ...category])
+                  }
+                }}
+                style={{ display: 'block', marginLeft: 0 }}
+              >
+                餐椅
+              </Checkbox>
+              <Checkbox
+                onChange={() => {
+                  if (category.indexOf('lounge') !== -1) {
+                    let newCate = category.filter((item) => {
+                      return item !== 'lounge'
+                    })
+                    setCategory(newCate)
+                  } else {
+                    setCategory(['lounge', ...category])
+                  }
+                }}
+                style={{ display: 'block', marginLeft: 0 }}
+              >
+                沙發椅
+              </Checkbox>
+              <Checkbox
+                onChange={() => {
+                  if (category.indexOf('stool') !== -1) {
+                    let newCate = category.filter((item) => {
+                      return item !== 'stool'
+                    })
+                    setCategory(newCate)
+                  } else {
+                    setCategory(['stool', ...category])
+                  }
+                }}
+                style={{ display: 'block', marginLeft: 0 }}
+              >
+                吧台椅
+              </Checkbox>
+            </ul>
+          </div>
+
+          <div className="refinement seats  " data-refinement-id="seats">
+            <div
+              className="refinement-toggle js-slide-toggle  is-active"
+              data-toggle-element="#seats"
+              data-toggle-duration="800"
+            >
+              <div
+                className="plus d-flex justify-content-between"
+                onClick={() => {
+                  setViewSpread(!viewSpread)
+                  setViewSpread1(false)
+                  setViewSpread2(false)
+                  setViewSpread3(false)
+                  setViewSpread4(false)
+                }}
+              >
+                <div className="refinement-title">產品材質</div>
+                <div className="spreadPlus">+</div>
+              </div>
+            </div>
+            <ul
+              className="refinement-list scrollable seats2"
+              id="seats1"
+              aria-hidden="false"
+              style={viewSpread ? sidebarContentShow : sidebarContentHide}
+            >
+              <Checkbox
+                onChange={() => {
+                  if (chairSeat.indexOf('leather') !== -1) {
+                    let newCate = chairSeat.filter((item) => {
+                      return item !== 'leather'
+                    })
+                    setChairSeat(newCate)
+                  } else {
+                    setChairSeat(['leather', ...chairSeat])
+                  }
+                }}
+                style={{ display: 'block', marginLeft: 0 }}
+              >
+                皮革
               </Checkbox>
               <Checkbox
                 onChange={() => {
