@@ -1,6 +1,7 @@
 // ------------------以下引入套件----------------------------
 
 import React, { useEffect, useState } from 'react'
+import LazyLoad from 'react-lazyload'
 
 // ------------------以下引入Components----------------------------
 
@@ -133,13 +134,12 @@ function ProductList(props) {
   }, [])
 
   // 彈跳視窗
-  useEffect(() => {
-    setTimeout(() => {
-      console.log('This will run after 1 second!')
-      setVisible(true)
-    }, 10000)
-    // return () => clearTimeout()
-  }, [])
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     console.log('This will run after 1 second!')
+  //     setVisible(true)
+  //   }, 10000)
+  // }, [])
 
   // ---------------以下開始 JSX 畫面-----------------
 
@@ -160,7 +160,9 @@ function ProductList(props) {
         preload="auto"
       ></video>
       {/* </div> */}
-      <ProductPopular />
+      <LazyLoad height={200} offset={100}>
+        <ProductPopular />
+      </LazyLoad>
       <ProductSeries />
       <div class="context1">
         <div class="container" id="productCards">
@@ -171,11 +173,13 @@ function ProductList(props) {
               在與人談論到居家靈感佈置陳列的時候，推崇自然風格的我們，總是鼓勵大家回到原點，以自己的角度出發，親自去挑選符合自己生活使用習慣的古董老件，而非跟隨流行的風格。
             </p>
           </div>
-          <div class="row justify-content-center">
-            {product.slice(0, viewProduct).map((item, index) => {
-              return <ProductCard key={index} item={item} product={product} />
-            })}
-          </div>
+          <LazyLoad height={2000} offset={100} once={true}>
+            <div class="row justify-content-center">
+              {product.slice(0, viewProduct).map((item, index) => {
+                return <ProductCard key={index} item={item} product={product} />
+              })}
+            </div>
+          </LazyLoad>
         </div>
       </div>
       <div class="container">

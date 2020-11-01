@@ -220,31 +220,76 @@ function Filter(props) {
               style={viewSpread1 ? sidebarContentShow : sidebarContentHide}
             >
               <Checkbox
-                onChange={() => setCategory(['chair', ...category])}
+                onChange={() => {
+                  if (category.indexOf('chair') !== -1) {
+                    let newCate = category.filter((item) => {
+                      return item !== 'chair'
+                    })
+                    setCategory(newCate)
+                  } else {
+                    setCategory(['chair', ...category])
+                  }
+                }}
                 style={{ display: 'block', marginLeft: 0 }}
               >
                 單椅
               </Checkbox>
               <Checkbox
-                onChange={() => setCategory(['armchair', ...category])}
+                onChange={() => {
+                  if (category.indexOf('armchair') !== -1) {
+                    let newCate = category.filter((item) => {
+                      return item !== 'armchair'
+                    })
+                    setCategory(newCate)
+                  } else {
+                    setCategory(['armchair', ...category])
+                  }
+                }}
                 style={{ display: 'block', marginLeft: 0 }}
               >
                 扶手椅
               </Checkbox>
               <Checkbox
-                onChange={() => setCategory(['dining', ...category])}
+                onChange={() => {
+                  if (category.indexOf('dining') !== -1) {
+                    let newCate = category.filter((item) => {
+                      return item !== 'dining'
+                    })
+                    setCategory(newCate)
+                  } else {
+                    setCategory(['dining', ...category])
+                  }
+                }}
                 style={{ display: 'block', marginLeft: 0 }}
               >
                 餐椅
               </Checkbox>
               <Checkbox
-                onChange={() => setCategory(['lounge', ...category])}
+                onChange={() => {
+                  if (category.indexOf('lounge') !== -1) {
+                    let newCate = category.filter((item) => {
+                      return item !== 'lounge'
+                    })
+                    setCategory(newCate)
+                  } else {
+                    setCategory(['lounge', ...category])
+                  }
+                }}
                 style={{ display: 'block', marginLeft: 0 }}
               >
                 沙發椅
               </Checkbox>
               <Checkbox
-                onChange={() => setCategory(['stool', ...category])}
+                onChange={() => {
+                  if (category.indexOf('stool') !== -1) {
+                    let newCate = category.filter((item) => {
+                      return item !== 'stool'
+                    })
+                    setCategory(newCate)
+                  } else {
+                    setCategory(['stool', ...category])
+                  }
+                }}
                 style={{ display: 'block', marginLeft: 0 }}
               >
                 吧台椅
