@@ -5,12 +5,12 @@ import './index.scoped.scss'
 import imageChpr from '../images/chpr.png'
 
 function Card(props) {
-  // const { activeName } = props
+  // const { activaName } = props
 
-  // console.log('Card', activeName)
+  // console.log('Card', activaName)
 
   //   let className = 'section_container'
-  //   className += activeName ? ' isActive ' + activeName : ''
+  //   className += activaName ? ' isActive ' + activaName : ''
 
   return (
     <>

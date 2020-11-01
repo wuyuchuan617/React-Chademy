@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './index.scss'
 
 import Navbar from '../Navbar'
@@ -7,8 +7,7 @@ import NavbarPerview from '../NavbarPerview'
 import useWindowScroll from '../../utils/scroll'
 
 export default function CHNavbar(props) {
-  const { activeName, setActiveName } = props
-
+  const [activeName, setActiveName] = useState('')
   const [navbarHeight, setNavbarHeight] = useState(0)
 
   // 處理滾動

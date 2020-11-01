@@ -1,0 +1,46 @@
+.memberCenter_container {
+  background: #edece8;
+  padding: 100px;
+
+  /deep/ .hander_container {
+    margin-bottom: 40px;
+
+    .title {
+      font-size: 32px;
+      padding: initial;
+    }
+  }
+
+  .sider_container {
+    position: absolute;
+  }
+
+  /deep/ .form_container {
+    .ant-form-item {
+      width: 337px;
+      margin: 0 auto;
+
+      .ant-input {
+        height: 40px;
+      }
+
+      .ant-btn {
+        margin-top: 31px;
+        width: 337px;
+        height: 40px;
+        background: #c77334;
+        border-color: #c77334;
+      }
+    }
+  }
+
+  .ant-layout-header {
+    text-align: center;
+  }
+
+  .ant-layout,
+  .ant-layout-header,
+  .ant-layout-content {
+    background: #edece8;
+  }
+}

@@ -1,25 +1,20 @@
 // ------------------以下import 套件-------------------------
-
-import React, { useState } from 'react'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import React from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import CHNavbar from './common_components/CHNavbar'
-// ------------------以下import common components--------------------
 
-import MyNavbar from './common_components/MyNavbar'
-import MainContent from './common_components/MainContent'
+// ------------------以下import common components--------------------
 import MyFooter from './common_components/MyFooter'
 import NotFoundPage from './common_components/NotFoundPage'
 import ScrollToTop from './common_components/ScrollToTop'
 
 // ---------------------以下import 首頁頁面--------------------
-
 import Home from './Home'
 
 // ---------------------以下import 品牌故事頁面----------------
 import Brand from './about/pages/Brand'
 
 // ---------------------以下import 產品頁面--------------------
-
 import Product from './product/pages/Product'
 import ProductList from './product/pages/ProductList'
 import Review from './product/pages/Review'
@@ -42,6 +37,7 @@ import Bid from './bid/pages/Bid'
 import Desc from './bid/pages/Desc'
 import Designer from './bid/pages/Designer'
 import Slider from './bid/pages/Slider'
+
 // ---------------------以下import 課程頁面--------------------
 import Workshop from './workshop/pages/Workshop'
 import WorkshopList from './workshop/pages/WorkshopList'
@@ -49,6 +45,8 @@ import WorkshopList from './workshop/pages/WorkshopList'
 // ---------------------以下import 部落格頁面------------------
 
 // ---------------------以下import 會員頁面--------------------
+import Login from './member/Login'
+import MemberCenter from './member/MemberCenter'
 
 // ---------------------以下import 購物車頁面------------------
 import CartProduct from './cart/pages/CartProduct'
@@ -57,31 +55,38 @@ import CartSecondHand from './cart/pages/CartSecondHand'
 import CartClass from './cart/pages/CartClass'
 import DeliveryInfo from './cart/pages/DeliveryInfo'
 import CheckInfo from './cart/pages/CheckInfo'
-//-----------------------------------------------------------
-function App() {
-  const [activeName, setActiveName] = useState('')
 
+//-----------------------------------------------------------
+
+function App() {
   return (
     <Router>
       <>
-        {/* <MyNavbar /> */}
-        <CHNavbar activeName={activeName} setActiveName={setActiveName} />
+        <CHNavbar />
+
         <ScrollToTop>
           <Switch>
             {/* 首頁頁面 */}
-
             <Route exact path="/">
               <Home />
             </Route>
 
-            {/* 品牌故事頁面 */}
+            {/* 登入 */}
+            <Route path="/login">
+              <Login />
+            </Route>
 
+            {/* 會員中心 */}
+            <Route path="/member-center">
+              <MemberCenter />
+            </Route>
+
+            {/* 品牌故事頁面 */}
             <Route path="/brand">
               <Brand />
             </Route>
 
             {/* 產品頁面 */}
-
             <Route exact path="/productlist">
               <ProductList />
             </Route>
@@ -95,7 +100,6 @@ function App() {
             </Route>
 
             {/* 二手頁面 */}
-
             <Route path="/secondhand_form">
               <SecondhandForm />
             </Route>
@@ -109,7 +113,6 @@ function App() {
             </Route>
 
             {/* 募資頁面 */}
-
             <Route path="/fundhomepage">
               <FundHomepage />
             </Route>
@@ -127,7 +130,6 @@ function App() {
             </Route>
 
             {/* 競標頁面 */}
-
             <Route path="/bid">
               <Bid />
             </Route>
@@ -138,7 +140,6 @@ function App() {
             </Route>
 
             {/* 課程頁面 */}
-
             <Route exact path="/Workshop">
               <Workshop />
             </Route>
@@ -148,19 +149,16 @@ function App() {
             </Route>
 
             {/* 部落格頁面 */}
-
             <Route path="/todo">
               <Home />
             </Route>
 
             {/* 會員頁面 */}
-
             <Route path="/about">
               <Home />
             </Route>
 
             {/* 購物車頁面 */}
-
             <Route path="/cartproduct">
               <CartProduct />
             </Route>
@@ -191,7 +189,6 @@ function App() {
             </Route>
           </Switch>
         </ScrollToTop>
-        {/* </Container> */}
 
         <MyFooter />
       </>

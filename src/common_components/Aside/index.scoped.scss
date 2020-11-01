@@ -1,0 +1,86 @@
+.aside_container {
+  /deep/ .ant-menu {
+    border-right: none;
+    background-color: #edece8;
+    // border-right-width: 1px;
+    // border-right-style: solid;
+    // border-right-color: rgb(240, 240, 240);
+  }
+
+  // .ant-menu-submenu-title {
+  //   background: orange;
+  // }
+
+  // /deep/.ant-menu-vertical .ant-menu-item::after,
+  // .ant-menu-vertical-left .ant-menu-item::after,
+  // .ant-menu-vertical-right .ant-menu-item::after,
+  // .ant-menu-inline .ant-menu-item::after {
+  //   border-bottom: 3px solid lawngreen;
+  // }
+
+  /deep/ {
+    // 選到的過渡效果
+    .ant-menu-item,
+    .ant-menu-submenu-title {
+      > div {
+        cursor: pointer;
+        transition: color 0.5s cubic-bezier(0.645, 0.045, 0.355, 1),
+          border-color 0.5s cubic-bezier(0.645, 0.045, 0.355, 1),
+          background 0.5s cubic-bezier(0.645, 0.045, 0.355, 1),
+          padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+    }
+
+    // 選到的顏色
+    .ant-menu-item-selected {
+      color: red;
+
+      > div {
+        display: inline-block;
+        line-height: 1;
+        padding: 5px 0;
+
+        // 選到的底線
+        border-bottom: 2px solid red;
+      }
+    }
+
+    // hover 的字體顏色
+    .ant-menu-item:hover,
+    .ant-menu-item-active,
+    .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open,
+    .ant-menu-submenu-active,
+    .ant-menu-submenu-title:hover {
+      color: green;
+    }
+
+    // 消除 active 背景色
+    .ant-menu-item:active,
+    .ant-menu-submenu-title:active {
+      // background: #e6f7ff;
+      background-color: initial;
+    }
+
+    // 消除 active 背景色
+    .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+      background-color: initial;
+    }
+
+    // 消除右側 border
+    .ant-menu-inline .ant-menu-selected::after,
+    .ant-menu-inline .ant-menu-item-selected::after {
+      display: none;
+      // border-right: none;
+    }
+
+    //title的顏色
+    .ant-menu-submenu-selected {
+      color: black;
+    }
+  }
+}
+
+/**
+ant-menu ant-menu-light ant-menu-root ant-menu-inline
+
+*/

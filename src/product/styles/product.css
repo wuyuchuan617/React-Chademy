@@ -35,13 +35,12 @@ body {
   object-fit: cover;
   width: 100%;
   /* height: 800px; */
-
 }
 
 .heart svg {
   width: 25px;
   height: 25px;
-  color: #B7BDB3;
+  color: #b7bdb3;
 }
 
 .subtitle3 {
@@ -72,7 +71,7 @@ body {
   background-size: cover;
   background-position: center;
   overflow: hidden;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .product_photo img {
@@ -87,7 +86,7 @@ body {
   width: 176px;
   height: 112px;
   overflow: hidden;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .smallPhotos {
@@ -167,19 +166,18 @@ body {
 
 .seats {
   width: 100%;
-
 }
 
 .seats3 p {
   list-style-type: none;
   margin: 40px 50px;
-  color: #707070
+  color: #707070;
 }
 
 .plus1 {
-  background-color: #B7BDB3;
+  background-color: #b7bdb3;
   margin: 0px 20px;
-  border-bottom: 1px solid #EDECE8;
+  border-bottom: 1px solid #edece8;
   padding: 15px;
 }
 
@@ -259,7 +257,7 @@ body {
 
 .sec-area p {
   padding: 40px 80px;
-  color: #F3F4F4;
+  color: #f3f4f4;
   line-height: 30px;
 }
 
@@ -321,10 +319,9 @@ body {
 
 /* roll container finish here! */
 .review {
-  background-color: #D6D7D1;
+  background-color: #d6d7d1;
 
   padding: 50px;
-
 }
 
 .review-photo {
@@ -386,13 +383,12 @@ body {
 }
 
 .more-btn {
-
   display: block;
   width: 250px;
   height: 60px;
   border: none;
   border-radius: 10px;
-  background-color: #C77334;
+  background-color: #c77334;
   margin-bottom: 50px;
   margin-top: 50px;
   color: white;
@@ -400,7 +396,7 @@ body {
 
 /* eight container finish here! */
 .related-product {
-  background-color: #EAE1D8;
+  background-color: #eae1d8;
   padding-bottom: 50px;
 }
 

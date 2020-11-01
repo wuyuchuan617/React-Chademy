@@ -101,8 +101,8 @@ function MyNavbar(props) {
               <div className="text-center">ANTIQUE</div>
             </Nav.Link>
             <Nav.Link
-            as={NavLink}
-              to="/bid"              
+              as={NavLink}
+              to="/bid"
               onClick={() => setActiveName('bidding')}
               className={['text-center', activeState('bidding')]}
             >
@@ -142,6 +142,11 @@ function MyNavbar(props) {
               <AiOutlineShoppingCart className="icon" />
             </Nav.Link>
             <Nav.Link as={NavLink} to="/login">
+              <AiOutlineUser className="icon" />
+            </Nav.Link>
+
+            {/* 暫時 */}
+            <Nav.Link as={NavLink} to="/member-center">
               <AiOutlineUser className="icon" />
             </Nav.Link>
           </Nav>
