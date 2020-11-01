@@ -42,7 +42,8 @@ function Login(props) {
     event.preventDefault()
 
     const response = await request({
-      url: 'api/members/login',
+      url: '/members/login',
+      method: 'post',
       data: {
         email: 'zzfegfc76@agzwfwsn.com',
         password: '123456',
@@ -101,7 +102,7 @@ function Login(props) {
             type="submit"
             onClick={async () => {
               const response = await request({
-                url: `api/members/getTest?test=${encodeURI('中文')}`,
+                url: `/members/getTest?test=${encodeURI('中文')}`,
                 method: 'GET',
               })
 
@@ -121,7 +122,8 @@ function Login(props) {
             type="submit"
             onClick={async () => {
               const response = await request({
-                url: 'api/members/loginTest',
+                url: '/members/loginTest',
+                method: 'POST',
                 data: { teste: 'REACT TEST 123' },
               })
 
