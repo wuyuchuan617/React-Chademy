@@ -21,6 +21,12 @@ body {
   .i_text_area {
     width: 29%;
     margin-left: 2%;
+    color: #475050;
+  }
+
+  .i_text p {
+   
+    color: #475050;
   }
   
   .i_btn5 {
@@ -41,10 +47,23 @@ body {
   .i_product_description {
     font-size: 14px;
   }
+
+  .i_product_description p{
+    color:#475050;
+  }
   
   .i_price_name {
     font-size: 22px;
     font-weight: bold;
+    color:#475050;
+  }
+
+  .i_price_name p{
+    color:#475050;
+  }
+
+  .i_product_no{
+    color:#475050;
   }
   
   .i_price {
@@ -52,6 +71,16 @@ body {
     font-weight: bold;
     color: #c77334;
     font-family: "Noto Sans TC", sans-serif;
+  }
+  .i_price p{
+    font-size: 22px;
+    font-weight: bold;
+    color: #c77334;
+    font-family: "Noto Sans TC", sans-serif;
+  }
+
+  .i_like{
+    color:#475050;
   }
   /* fiter css */
   .i_detail {
