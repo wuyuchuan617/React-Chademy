@@ -141,7 +141,7 @@
   height: 15px;
   border-radius: 50%;
   background-color: #C77334;
-  margin-bottom: 10rem;
+  margin-bottom: 0rem;
 }
 
 .ant-carousel {
@@ -231,6 +231,8 @@
 
 .btn_div{
   text-align: right;
+
+
 }
 
 .fund {
@@ -243,6 +245,8 @@
   text-align: center;
   color: #707070;
   transition: .2s;
+  margin-top: -50px; 
+  
  
 
 
@@ -272,8 +276,9 @@
   background-color: #edece8;
 }
 
-.explore_col{
+.explore_div{
   text-align: right;
+  margin-top: -10px ;
 }
 
 .e_more:hover{

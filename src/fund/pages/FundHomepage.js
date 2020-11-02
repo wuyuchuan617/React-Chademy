@@ -35,7 +35,7 @@ function FundHomepage() {
       </header>
 
       <Container>
-        <Col className="">
+        <Col className="explore_div">
           <button name="explore" className="explore">
             探索
           </button>

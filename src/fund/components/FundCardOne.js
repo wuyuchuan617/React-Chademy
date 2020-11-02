@@ -90,7 +90,7 @@ function FundCardOne() {
 
               <p className="e_price">$23,000</p>
 
-              <div className="btn_div">
+              <div className="btn_div ">
                 <button className="fund">贊助</button>
               </div>
             </div>
