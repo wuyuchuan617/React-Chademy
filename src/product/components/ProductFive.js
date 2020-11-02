@@ -7,20 +7,20 @@ function ProductFive(props) {
 
   return (
     <>
-      <div class="container">
-        <div class="row post-abs">
-          <div class="top-area"></div>
-          <div class="top-area">
+      <div className="container">
+        <div className="row post-abs">
+          <div className="top-area"></div>
+          <div className="top-area">
             <h3>WHO WE ARE</h3>
             <p>Founded On Friendship, Guided By Curiosity</p>
           </div>
-          <div class="designer-photo">
+          <div className="designer-photo">
             <img src={require('../../img/' + item.photo)} alt="" />
           </div>
         </div>
-        <div class="row">
-          <div class="sec-area"></div>
-          <div class="sec-area">
+        <div className="row">
+          <div className="sec-area"></div>
+          <div className="sec-area">
             <p className="w_comP">
               柔軟的設計、細微的細節以及曲線造型使其不存在視覺欣賞的死角。Henrik
               Pedersen

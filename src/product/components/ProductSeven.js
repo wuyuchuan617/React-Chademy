@@ -17,7 +17,7 @@ function ProductSeven(props) {
           <div className="col-7">
             <div className="d-flex justify-content-between ">
               <div>
-                {/* <div class="stars "> */}
+                {/* <div className="stars "> */}
                 <Rate
                   disabled
                   allowHalf
@@ -25,13 +25,13 @@ function ProductSeven(props) {
                   defaultValue={4.5}
                 />
                 {/* </div> */}
-                <p class="w_reviewSub">把喜歡的美感傳達出去</p>
+                <p className="w_reviewSub">把喜歡的美感傳達出去</p>
               </div>
               <div>
                 <div className="memberPhoto align-items-end">
                   <img src={popularImg} alt="" />
                 </div>
-                <p class="w_comP w_review_date">2020.08.08</p>
+                <p className="w_comP w_review_date">2020.08.08</p>
               </div>
             </div>
             <p className="w_review_comm">

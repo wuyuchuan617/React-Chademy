@@ -156,14 +156,14 @@ function ProductFirst(props) {
   return (
     <>
       <ProductModal visible={visible} setVisible={setVisible} photo1={photo1} />
-      <div class="container firstTop">
-        <div class="row justify-content-between">
-          <div class="col-8">
-            <div class="product_photo" onClick={() => setVisible(true)}>
+      <div className="container firstTop">
+        <div className="row justify-content-between">
+          <div className="col-8">
+            <div className="product_photo" onClick={() => setVisible(true)}>
               <img src={photo1} alt="" />
             </div>
-            <div class="d-flex justify-content-between smallPhotos">
-              <div class="product_photo_small">
+            <div className="d-flex justify-content-between smallPhotos">
+              <div className="product_photo_small">
                 {/* <img src={require('../../img/' + item.photo)} alt="" /> */}
                 <img
                   src={require('../../img/' + item.photo)}
@@ -173,7 +173,7 @@ function ProductFirst(props) {
                   }}
                 />
               </div>
-              <div class="product_photo_small">
+              <div className="product_photo_small">
                 <img
                   src={series}
                   alt=""
@@ -182,7 +182,7 @@ function ProductFirst(props) {
                   }}
                 />
               </div>
-              <div class="product_photo_small">
+              <div className="product_photo_small">
                 <img
                   src={popularImg}
                   alt=""
@@ -191,7 +191,7 @@ function ProductFirst(props) {
                   }}
                 />
               </div>
-              <div class="product_photo_small">
+              <div className="product_photo_small">
                 <img
                   src={series}
                   alt=""
@@ -202,12 +202,12 @@ function ProductFirst(props) {
               </div>
             </div>
           </div>
-          <div class="col-4 right-part">
-            <div class="d-flex product-name justify-content-between">
-              <div class="subtitle3">{item.product_name}</div>
+          <div className="col-4 right-part">
+            <div className="d-flex product-name justify-content-between">
+              <div className="subtitle3">{item.product_name}</div>
             </div>
 
-            <div class="stars d-flex">
+            <div className="stars d-flex">
               <BsStarFill />
               <BsStarFill />
               <BsStarFill />
@@ -215,7 +215,7 @@ function ProductFirst(props) {
               <BsStarFill />
               <p> （ 300則評論 ）</p>
             </div>
-            <div class="heart justify-content-end">
+            <div className="heart justify-content-end">
               <BsFillHeartFill
                 onClick={async () => {
                   await setHeart(!heart)
@@ -235,43 +235,43 @@ function ProductFirst(props) {
                 style={heart ? heartFill : ''}
               />
             </div>
-            <div class="bigDesc">
-              <div class="product-desc">
+            <div className="bigDesc">
+              <div className="product-desc">
                 <p className="w_comP">
                   Adelaide是一款優雅的小傑作，無論從哪個角度看都美貌不減，而且無比舒適。纖細的有機線條營造了輕盈有機外觀，邀請您坐下來欣賞精緻的丹麥設計。
                 </p>
               </div>
 
-              <div class="product-desc">
+              <div className="product-desc">
                 <p className="w_comP">
                   Adelaide是一款優雅的小傑作，無論從哪個角度看都美貌不減，而且無比舒適。纖細的有機線條營造了輕盈有機外觀，邀請您坐下來欣賞精緻的丹麥設計。
                 </p>
               </div>
 
-              <div class="choose-area">
+              <div className="choose-area">
                 <p>選擇木頭：</p>
-                <div class="d-flex">
-                  <div class="choose-wood"></div>
-                  <div class="choose-wood"></div>
-                  <div class="choose-wood"></div>
-                  <div class="choose-wood"></div>
-                  <div class="choose-wood"></div>
+                <div className="d-flex">
+                  <div className="choose-wood"></div>
+                  <div className="choose-wood"></div>
+                  <div className="choose-wood"></div>
+                  <div className="choose-wood"></div>
+                  <div className="choose-wood"></div>
                 </div>
               </div>
 
-              <div class="choose-area">
+              <div className="choose-area">
                 <p>選擇皮革：</p>
-                <div class="d-flex">
-                  <div class="choose-wood"></div>
-                  <div class="choose-wood"></div>
-                  <div class="choose-wood"></div>
-                  <div class="choose-wood"></div>
-                  <div class="choose-wood"></div>
+                <div className="d-flex">
+                  <div className="choose-wood"></div>
+                  <div className="choose-wood"></div>
+                  <div className="choose-wood"></div>
+                  <div className="choose-wood"></div>
+                  <div className="choose-wood"></div>
                 </div>
               </div>
 
               <button
-                class="cart-btn"
+                className="cart-btn"
                 onClick={() => {
                   updateCartToLocalStorage({
                     product_no: item.product_no,

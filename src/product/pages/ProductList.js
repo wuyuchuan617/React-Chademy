@@ -108,9 +108,11 @@ function ProductList(props) {
     })
 
     const response = await fetch(request)
-    const data = await response.json()
+    let data = await response.text()
     // const newData = await [...data]
-    // console.log('newData' + newData)
+    // console.log('data: ' + data)
+    data = JSON.parse(data)
+    console.log('data: ' + data)
     // console.log(Array.isArray(data))
     setProduct(data)
   }
@@ -171,10 +173,10 @@ function ProductList(props) {
         setChairColor={setChairColor}
         getFilterFromSQL={getFilterFromSQL}
       />
-      {/* <div class="container-fluid"> */}
+      {/* <div className="container-fluid"> */}
       <video
         src={bannerVideo}
-        class="w-100"
+        className="w-100"
         autoplay="autoplay"
         muted="true"
         preload="auto"
@@ -184,17 +186,17 @@ function ProductList(props) {
       <ProductPopular />
       {/* </LazyLoad> */}
       <ProductSeries />
-      <div class="context1">
-        <div class="container" id="productCards">
-          <div class="row d-flex justify-content-center">
-            <p class="col-4 subtitle1">全部產品</p>
+      <div className="context1">
+        <div className="container" id="productCards">
+          <div className="row d-flex justify-content-center">
+            <p className="col-4 subtitle1">全部產品</p>
 
-            <p class="col-8">
+            <p className="col-8">
               在與人談論到居家靈感佈置陳列的時候，推崇自然風格的我們，總是鼓勵大家回到原點，以自己的角度出發，親自去挑選符合自己生活使用習慣的古董老件，而非跟隨流行的風格。
             </p>
           </div>
           {/* <LazyLoad height={2000} offset={100} once={true}> */}
-          <div class="row justify-content-center">
+          <div className="row justify-content-center">
             {product.slice(0, viewProduct).map((item, index) => {
               return <ProductCard key={index} item={item} />
             })}
@@ -202,9 +204,9 @@ function ProductList(props) {
           {/* </LazyLoad> */}
         </div>
       </div>
-      <div class="container">
-        <div class="row">
-          <button class="loadButton" onClick={handleClick}>
+      <div className="container">
+        <div className="row">
+          <button className="loadButton" onClick={handleClick}>
             LOAD MORE
           </button>
         </div>

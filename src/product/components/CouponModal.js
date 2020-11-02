@@ -29,15 +29,19 @@ function CouponModal(props) {
             <p className="modalSmallTitle ">
               我同意....為了確保其始終處於最佳狀態且實現極致舒適度，保其始終處於最佳狀態且實
             </p>
-            <div class="formset">
+            <div className="formset">
               <label for="productname"> 姓名</label>
-              <input type="text" class="formstyle formwidth" id="productname" />
+              <input
+                type="text"
+                className="formstyle formwidth"
+                id="productname"
+              />
             </div>
-            <div class="formset">
+            <div className="formset">
               <label for="password">Email</label>
               <input
                 type="password"
-                class="formstyle formwidth"
+                className="formstyle formwidth"
                 id="password"
               />
             </div>
@@ -47,7 +51,7 @@ function CouponModal(props) {
                 我同意....為了確保其始終處於最佳狀態且實現極致舒適度，保其始終處於最佳狀
               </p>
             </div>
-            <button class="coupon-btn">領取折扣碼</button>
+            <button className="coupon-btn">領取折扣碼</button>
           </div>
           <div className="col-6 modalRight d-flex">
             <img src={popularImg} alt="" />

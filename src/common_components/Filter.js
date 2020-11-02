@@ -110,19 +110,19 @@ function Filter(props) {
               close
             </p>
 
-            <input type="text" class="filterSearch" placeholder="SEARCH" />
+            <input type="text" className="filterSearch" placeholder="SEARCH" />
 
             <p className="clearFilter">Restart your filter</p>
-            <div class="filterTag">
-              {category.map((item, index) => {
+            <div className="filterTag">
+              {/* {category.map((item, index) => {
                 return (
                   <Tag
                     closable
                     key={index}
-                    onClose={log}
-                    //   onClose={(e) => {
-                    //     let newCate = category.filter((el) => {
-                    //       return el !== item
+                    onClose={log} */}
+              {/* //   onClose={(e) => { */}
+              {/* //     let newCate = category.filter((el) => { */}
+              {/* //       return el !== item
                     //     })
                     //     setCategory(newCate)
                     //   }}
@@ -144,7 +144,7 @@ function Filter(props) {
                     {item}
                   </Tag>
                 )
-              })}
+              })} */}
               {/* <Tag closable onClose={log}>
                 白色
               </Tag>
@@ -402,7 +402,11 @@ function Filter(props) {
                       })
                       setChairColor(newCate)
                     } else {
-                      setChairColor(['白', ...chairColor])
+                      if (chairColor.length) {
+                        setChairColor(['白', ...chairColor])
+                      } else {
+                        setChairColor(['白'])
+                      }
                     }
                   }}
                   // style={chairColor.indexOf('白') !== -1 ? colorBorder : ''}

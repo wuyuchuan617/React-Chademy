@@ -7,9 +7,9 @@ function ProductSecond(props) {
 
   return (
     <>
-      <div class="container">
-        <div class="row">
-          <div class="col second-text">
+      <div className="container">
+        <div className="row">
+          <div className="col second-text">
             <p className="w_comP">
               柔軟的設計、細微的細節以及曲線造型使其不存在視覺欣賞的死角。Henrik
               Pedersen
@@ -23,7 +23,7 @@ function ProductSecond(props) {
               魔術貼以防止滑動。
             </p>
           </div>
-          <div class="col-sm-12 col-lg-6 second-photo">
+          <div className="col-sm-12 col-lg-6 second-photo">
             <img src={require('../../img/' + item.photo)} alt="" />
           </div>
         </div>

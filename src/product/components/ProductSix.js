@@ -7,20 +7,20 @@ function ProductSix(props) {
 
   return (
     <>
-      <div class="container">
-        <div class="row justify-content-center title">
+      <div className="container">
+        <div className="row justify-content-center title">
           <p>Boutique Hotel Project</p>
         </div>
-        <div class="row">
-          <div class="col hotel-left">
+        <div className="row">
+          <div className="col hotel-left">
             <p>Miramonti Boutique Hotel</p>
             <p>HAFLING-MERAN, ITALY</p>
 
-            <div class="left-icon">
+            <div className="left-icon">
               <img src={hotel} alt="" />
             </div>
           </div>
-          <div class="col right-img">
+          <div className="col right-img">
             <img src={require('../../img/' + item.photo)} alt="" />
           </div>
         </div>

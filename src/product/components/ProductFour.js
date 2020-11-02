@@ -7,19 +7,19 @@ function ProductFour(props) {
 
   return (
     <>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-lg-6 fourth-photo">
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-12 col-lg-6 fourth-photo">
             <img src={require('../../img/' + item.photo)} alt="" />
           </div>
-          <div class="col">
-            <div class="quote">
+          <div className="col">
+            <div className="quote">
               <p>
                 “Creating a space that feels comfortably and authentically you
                 is to create a home that tells a story of you.”
               </p>
             </div>
-            <div class="author">
+            <div className="author">
               <p>Alper Hermann</p>
             </div>
           </div>

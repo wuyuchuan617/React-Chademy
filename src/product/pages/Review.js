@@ -52,16 +52,16 @@ function Review() {
 
   return (
     <>
-      <div class="container custom-container-width">
-        <div class=" text-center m-5">
+      <div className="container custom-container-width">
+        <div className=" text-center m-5">
           <p>新增評論</p>
           <p>您好，Amy 感謝您的購買</p>
         </div>
-        <div class="row no-gutters">
-          <div class="col-lg-6 col-sm-12">
-            <div class="upload">
+        <div className="row no-gutters">
+          <div className="col-lg-6 col-sm-12">
+            <div className="upload">
               <div
-                class="btn2 text-center"
+                className="btn2 text-center"
                 onClick={() => {
                   // updateReviewToServer()
                 }}
@@ -69,16 +69,16 @@ function Review() {
                 上傳照片
               </div>
             </div>
-            <p class="text-center notice">＊可以點選或拖曳上傳圖片</p>
+            <p className="text-center notice">＊可以點選或拖曳上傳圖片</p>
             <Upload name="logo" action="/upload.do" listType="picture">
               <Button icon={<UploadOutlined />}>Click to upload</Button>
             </Upload>
-            <div class="upload_img">
+            <div className="upload_img">
               <input
                 type="hidden"
                 id="photo"
                 name="photo"
-                class="form-control"
+                className="form-control"
               />
               {/* <img
                 src={require('../../../public/images/' + previewPhoto)}
@@ -99,7 +99,7 @@ function Review() {
               />
             </div>
             <div
-              class="btnDemo text-center mt-4"
+              className="btnDemo text-center mt-4"
               onClick={() => {
                 setOrderProductNo('CH29')
                 setOrderProduct('經典丹麥椅')
@@ -112,23 +112,23 @@ function Review() {
               DEMO
             </div>
           </div>
-          <div class="col-lg-6 col-sm-12">
-            <form class="formcss" action="">
+          <div className="col-lg-6 col-sm-12">
+            <form className="formcss" action="">
               <div className="d-flex justify-content-between">
-                <div class="formset reviewInput">
+                <div className="formset reviewInput">
                   <label for="productname">商品名稱</label>
                   <input
                     type="text"
-                    class="formstyle formwidthw"
+                    className="formstyle formwidthw"
                     value={orderProduct}
                     id="productname"
                   />
                 </div>
-                <div class="formset reviewInput">
+                <div className="formset reviewInput">
                   <label for="product_no">購買日期</label>
                   <input
                     type="text"
-                    class="formstyle formwidthw"
+                    className="formstyle formwidthw"
                     value={orderDate}
                     id="product_no"
                   />
@@ -136,51 +136,51 @@ function Review() {
               </div>
 
               <div className="d-flex justify-content-between">
-                <div class="formset reviewInput">
+                <div className="formset reviewInput">
                   <label for="productname">商品編號</label>
                   <input
                     type="text"
-                    class="formstyle formwidthw"
+                    className="formstyle formwidthw"
                     value={orderProductNo}
                     id="productname"
                   />
                 </div>
-                <div class="formset reviewInput">
+                <div className="formset reviewInput">
                   <label for="product_no">訂單編號</label>
                   <input
                     type="text"
-                    class="formstyle formwidthw"
+                    className="formstyle formwidthw"
                     value={orderNo}
                     id="product_no"
                   />
                 </div>
               </div>
 
-              <div class="reviewStars d-flex">
+              <div className="reviewStars d-flex">
                 <Rate style={{ color: '#C77334' }} defaultValue={5} />
               </div>
 
-              <div class="formset">
+              <div className="formset">
                 <label for="price">評論標題</label>
                 <input
                   type="text"
-                  class="formstyle formwidthw"
+                  className="formstyle formwidthw"
                   value={reviewTitle}
                   id="price"
                 />
               </div>
 
-              <div class="formset textareaRewiew">
+              <div className="formset textareaRewiew">
                 <label for="description">商品評論</label>
                 <textarea
                   rows="10"
                   style={{ resize: 'none' }}
                   cols="65"
-                  class="formstyle"
+                  className="formstyle"
                   value={reviewComment}
                 ></textarea>
               </div>
-              <div class="btnReview text-center mt-4">新增評論</div>
+              <div className="btnReview text-center mt-4">新增評論</div>
             </form>
           </div>
         </div>
