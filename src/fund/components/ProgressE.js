@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import 'antd/dist/antd.css'
 import { Progress } from 'antd'
 
-function ProgressE(props) {
-  const { item } = props
+function ProgressE() {
+ 
   return (
     <>
       <div style={{ width: 330 }}>
