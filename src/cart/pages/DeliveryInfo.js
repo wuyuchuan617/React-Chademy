@@ -38,7 +38,7 @@ function DeliveryInfo(props) {
           </div>
         </div>
       </div>
-      <hr />
+      <hr className="jhr" />
       <div className="wrap">
         <h6 style={{ left: '780px' }}>單價</h6>
         <h6 style={{ left: '940px' }}>數量</h6>
@@ -66,7 +66,7 @@ function DeliveryInfo(props) {
           </li>
         </ul>
       </div>
-      <hr />
+      <hr className="jhr" />
       <div className="deliveryform">
         <label>
           <h5>寄送地址</h5>

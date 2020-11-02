@@ -315,3 +315,55 @@
   .deliveryform select{
     border: none;
   }
+
+  .checkinfo{
+    margin: 0 auto;
+    width: 1200px;
+    display: flex;
+  }
+
+  .creditcard{
+    width: 600px;
+    height: 120px;
+    background-color: black;
+  }
+  .inputcheckinfo{
+    width: 600px;
+    height: 500px;
+    // background-color: #ccc
+  }
+
+  
+  .inputcheckinfo .activelable{
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    background-color: #C77334;
+    color: white;
+    line-height: 40px;
+    letter-spacing: 3px;
+    font-size: 16px;
+    cursor: pointer
+  } 
+  .inputcheckinfo .defaultlable{
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: white;
+    // margin-bottom: 50px;
+    letter-spacing: 3px;
+    font-size: 16px;
+    color: black;
+    cursor: pointer
+  }
+  .inputcheckinfo h6{
+    position: relative;
+    line-height: 40px;
+  }
+  .inputcheckinfo input{
+    width: 100%;
+    height: 40px;
+    border: none;
+    margin-bottom: 20px;
+  }

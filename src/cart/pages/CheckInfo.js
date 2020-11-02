@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import Cards from 'react-credit-cards'
 // import './style/jay.scss'
 
 function CheckInfo(props) {
+  const [showCreditCard, setShowCreditCard] = useState(true)
+  const [showATM, setShowATM] = useState(false)
+  const [showIns, setShowIns] = useState(false)
   return (
     <>
       <div className="myprogress">
@@ -41,133 +43,71 @@ function CheckInfo(props) {
           </div>
         </div>
       </div>
-      <hr />
-      <div className="deliveryform">
-        <label>
-          <h5>寄送地址</h5>
-        </label>
-        <input
-          type="text"
-          style={{
-            width: '600px',
-            height: '40px',
-            marginBottom: '30px',
-          }}
-          placeholder="姓名"
-        />
-        <input
-          type="text"
-          style={{
-            width: '600px',
-            height: '40px',
-            marginBottom: '30px',
-          }}
-          placeholder="手機"
-        />
-        <select
-          style={{
-            width: '290px',
-            height: '40px',
-            marginBottom: '30px',
-            marginRight: '20px',
-          }}
-        >
-          <option>城市</option>
-        </select>
-        <select
-          style={{
-            width: '290px',
-            height: '40px',
-            marginBottom: '30px',
-          }}
-        >
-          <option>區域</option>
-        </select>
-        <input
-          type="text"
-          style={{
-            width: '600px',
-            height: '40px',
-            marginBottom: '30px',
-          }}
-          placeholder="地址"
-        />
-        <label>
-          <h5>發票地址</h5>
-        </label>
-        <input
-          type="radio"
-          name="sameabove"
-          style={{
-            marginLeft: '10px',
-          }}
-        />
-        同寄送地址
-        <input
-          type="radio"
-          name="sameabove"
-          style={{
-            marginLeft: '10px',
-          }}
-        />
-        手機載具
-        <input
-          type="radio"
-          name="sameabove"
-          style={{
-            marginLeft: '10px',
-          }}
-        />
-        捐贈發票
-        <input
-          type="text"
-          style={{
-            width: '600px',
-            height: '40px',
-            marginBottom: '30px',
-          }}
-          placeholder="姓名"
-        />
-        <input
-          type="text"
-          style={{
-            width: '600px',
-            height: '40px',
-            marginBottom: '30px',
-          }}
-          placeholder="手機"
-        />
-        <select
-          style={{
-            width: '290px',
-            height: '40px',
-            marginBottom: '30px',
-            marginRight: '20px',
-          }}
-        >
-          <option>城市</option>
-        </select>
-        <select
-          style={{
-            width: '290px',
-            height: '40px',
-            marginBottom: '30px',
-          }}
-        >
-          <option>區域</option>
-        </select>
-        <input
-          type="text"
-          style={{
-            width: '600px',
-            height: '40px',
-            marginBottom: '30px',
-          }}
-          placeholder="地址"
-        />
-        <Link to="/checkinfo" className="btn4">
-          <div className="btn4">下一步</div>
-        </Link>
+      <hr className="jhr" />
+      <div className="checkinfo">
+        <div className="creditcard"></div>
+        <div className="inputcheckinfo">
+          <div style={{ display: 'flex' }}>
+            <div
+              className={showCreditCard ? 'activelable' : 'defaultlable'}
+              onClick={() => {
+                setShowCreditCard(true)
+                setShowATM(false)
+                setShowIns(false)
+              }}
+            >
+              <h6>信用卡</h6>
+            </div>
+            <div
+              className={showATM ? 'activelable' : 'defaultlable'}
+              onClick={() => {
+                setShowCreditCard(false)
+                setShowATM(true)
+                setShowIns(false)
+              }}
+            >
+              <h6>ATM轉帳</h6>
+            </div>
+            <div
+              className={showIns ? 'activelable' : 'defaultlable'}
+              onClick={() => {
+                setShowCreditCard(false)
+                setShowATM(false)
+                setShowIns(true)
+              }}
+            >
+              <h6>分期付款</h6>
+            </div>
+          </div>
+          <input
+            type="text"
+            style={{
+              marginTop: '30px',
+            }}
+            placeholder="卡號"
+          />
+          <input
+            type="text"
+            style={{
+              marginTop: '30px',
+            }}
+            placeholder="持卡人"
+          />
+          <input
+            type="text"
+            style={{
+              marginTop: '30px',
+            }}
+            placeholder="到期日"
+          />
+          <input
+            type="text"
+            style={{
+              marginTop: '30px',
+            }}
+            placeholder="安全碼"
+          />
+        </div>
       </div>
     </>
   )

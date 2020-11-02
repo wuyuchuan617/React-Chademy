@@ -65,14 +65,14 @@ function CartList(props) {
                   <h6 style={{ left: '120px' }}>${item.price}</h6>
                   <div className="listqty">
                     <h6
-                      style={{ left: '10px' }}
+                      style={{ left: '10px', cursor: 'pointer' }}
                       onClick={() => updateCartToLocalStorage(item)}
                     >
                       <MdAdd />
                     </h6>
                     <h6 style={{ left: '50px' }}>{item.amount}</h6>
                     <h6
-                      style={{ left: '80px' }}
+                      style={{ left: '80px', cursor: 'pointer' }}
                       onClick={() => {
                         if (item.amount === 1) return
                         updateCartToLocalStorage(item, false)
