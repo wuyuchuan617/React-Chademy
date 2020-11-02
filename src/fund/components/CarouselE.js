@@ -7,6 +7,7 @@ import FundCardOne from './FundCardOne'
 import 'antd/dist/antd.css'
 import { Carousel } from 'antd'
 
+
 function CarouselE() {
   function onChange(a, b, c) {
     console.log(a, b, c)
@@ -34,6 +35,7 @@ function CarouselE() {
           <h3 style={contentStyle}><FundCardOne /></h3>
         </div>
       </Carousel>
+      
     </>
   )
 }

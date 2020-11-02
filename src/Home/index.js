@@ -16,6 +16,7 @@ import EntryAnimation from './components/EntryAnimation'
 function Home(props) {
   return (
     <>
+      <EntryAnimation />
       <Header />
       <body className="container ">
         <Catchcopy />

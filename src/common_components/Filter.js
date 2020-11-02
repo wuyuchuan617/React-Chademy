@@ -174,7 +174,7 @@ function Filter(props) {
                   setViewSpread4(false)
                 }}
               >
-                <div className="refinement-title ">椅身類別</div>
+                <div className="refinement-title ">產品類別</div>
                 <div className="spreadPlus">+</div>
               </div>
             </div>

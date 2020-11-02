@@ -135,4 +135,18 @@ body {
     font-size: 14px;
     cursor: pointer;
   }
+
+  .file_upload{
+    width: 400px;
+    height: 270px;
+    position: absolute;
+    cursor:pointer;
+    top: -115px;
+    left: -135px;
+    opacity: 0;
+  }
+
+  .ml100{
+    margin-left: 100px;
+  }
   

@@ -27,6 +27,16 @@ body {
     left: 40%;
     transform: translate(-50%, -50%);
   }
+
+  .i_slogan p{
+    font-family: "Noto Serif TC", serif;
+    color: white;
+    
+    letter-spacing: 2px;
+    top: 30%;
+    left: 40%;
+
+  }
   
   .i_title1 {
     font-size: 48px;
@@ -127,7 +137,7 @@ body {
   .i_item_name p {
     display: inline-block;
     margin-bottom: 10px;
-    margin-top: 17px;
+    margin-top: 15px;
   }
   
   .i_item_price {
@@ -149,4 +159,31 @@ body {
     cursor: pointer;
     margin: 0 auto;
   }
+
+  .ant-rate-star-second{
+    color:#B7BDB3;
+  }
+
+  .i_user_name p{
+    color: #475050;
+  }
+
+  .i_item_price p{
+    color: #475050;
+  }
+
+  .i_item_name p{
+    color: #475050;
+  }
+
+  .i_list p{
+    color: #475050;
+  }
   
+  .i_card_img{
+    cursor:pointer;
+  }
+
+  .i_item_name{
+    cursor:pointer;
+  }

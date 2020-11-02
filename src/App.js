@@ -7,7 +7,7 @@ import CHNavbar from './common_components/CHNavbar'
 import MyFooter from './common_components/MyFooter'
 import NotFoundPage from './common_components/NotFoundPage'
 import ScrollToTop from './common_components/ScrollToTop'
-import EntryAnimation from './Home/components/EntryAnimation'
+
 // ---------------------以下import 首頁頁面--------------------
 import Home from './Home'
 
@@ -63,7 +63,6 @@ function App() {
   return (
     <Router>
       <>
-        <EntryAnimation />
         <CHNavbar />
 
         <ScrollToTop>

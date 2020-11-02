@@ -5,9 +5,20 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import stu1 from '../images/stu1.png'
 import stu2 from '../images/stu2.png'
 import stu3 from '../images/stu3.jpeg'
+import stu4 from '../images/stu4.png'
 
+import { Carousel } from 'antd'
+import 'antd/dist/antd.css'
 
 function Edesign() {
+  const contentStyle = {
+    height: '20rem',
+    // color: '#fff',
+    // lineHeight: '160px',
+    // textAlign: 'center',
+    // background: '#364d79',
+  }
+
   return (
     <>
       <Container className="justify-content-center ">
@@ -32,7 +43,9 @@ function Edesign() {
 
           <Col>
             <div className="wrap1">
-              <img src={stu1} alt="" />
+              {/* <img src={stu4} alt="" className="stu4" /> */}
+
+              <img src={stu1} alt="" className="stu1" />
             </div>
             <div className="blue">
               <p className="p_stu">
