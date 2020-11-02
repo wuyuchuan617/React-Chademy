@@ -7,7 +7,6 @@ import WorkshopFour from '../components/WorkshopFour'
 import WorkshopFive from '../components/WorkshopFive'
 import WorkshopSix from '../components/WorkshopSix'
 import WorkshopSeven from '../components/WorkshopSeven'
-import Test from '../components/Test'
 
 function WorkshopList(props) {
   return (
@@ -19,8 +18,6 @@ function WorkshopList(props) {
       <WorkshopFive />
       <WorkshopSix />
       <WorkshopSeven />
-      <Test />
-    
     </>
   )
 }
