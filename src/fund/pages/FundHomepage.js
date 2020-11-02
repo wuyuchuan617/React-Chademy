@@ -1,8 +1,6 @@
 import React from 'react'
 import e_video from '../images/oljn5-343em.mp4'
-import castle1 from '../images/castle1.svg'
-import castle2 from '../images/castle2.svg'
-import castle3 from '../images/castle3.svg'
+
 
 import '../styles/FundHomepage.scss'
 // import 'react-bootstrap'
@@ -37,22 +35,14 @@ function FundHomepage() {
       </header>
 
       <Container>
-        <Col>
+        <Col className="">
           <button name="explore" className="explore">
             探索
           </button>
         </Col>
       </Container>
 
-      <figure className="castle1">
-        <img src={castle1} alt="" />
-      </figure>
-      <figure className="castle2">
-        <img src={castle2} alt="" />
-      </figure>
-      <figure className="castle3">
-        <img src={castle3} alt="" />
-      </figure>
+      
 
       <BookMark />
       <CarouselE />
