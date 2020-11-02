@@ -16,6 +16,7 @@ body {
     width: 100%;
     position: relative;
   }
+
   
   .i_fv img {
     width: 100%;
@@ -32,12 +33,17 @@ body {
     color: white;
     font-family: "Lora", serif;
   }
+
+  .i_fv p{
+    color: white;
+    font-family: "Lora", serif;
+  }
   
-  .i_slogan {
+  .i_slogan_form {
     font-size: 48px;
   }
   
-  .i_subslogan {
+  .i_subslogan_form {
     font-size: 24px;
   }
   
@@ -149,4 +155,6 @@ body {
   .ml100{
     margin-left: 100px;
   }
+
+  
   

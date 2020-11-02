@@ -6,8 +6,8 @@ function Firstview() {
     <div className="i_fv">
       <img src={Img} alt="" />
       <div className="i_fv_text text-center">
-        <p className="i_slogan">Thinking learning and design.</p>
-        <p className="i_subslogan lora">
+        <p className="i_slogan_form">Thinking learning and design.</p>
+        <p className="i_subslogan_form lora">
           Create your own fascinating masterpiece.
         </p>
       </div>

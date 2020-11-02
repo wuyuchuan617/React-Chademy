@@ -9,7 +9,6 @@ function TextArea() {
           <input
             type="text"
             className="i_formstyle i_formwidth"
-            value=""
             id="productname"
           />
         </div>
@@ -18,27 +17,16 @@ function TextArea() {
           <input
             type="text"
             className="i_formstyle i_formwidth"
-            value=""
             id="product_no"
           />
         </div>
         <div className="i_formset">
           <label for="price">價錢</label>
-          <input
-            type="text"
-            className="i_formstyle i_formwidth"
-            value=""
-            id="price"
-          />
+          <input type="text" className="i_formstyle i_formwidth" id="price" />
         </div>
         <div className="i_formset">
           <label for="stock">商品數量</label>
-          <input
-            type="text"
-            className="i_formstyle i_formwidth"
-            value=""
-            id="stock"
-          />
+          <input type="text" className="i_formstyle i_formwidth" id="stock" />
         </div>
         <div className="i_formset">
           <label for="description">商品描述</label>

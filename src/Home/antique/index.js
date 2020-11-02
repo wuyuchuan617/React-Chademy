@@ -4,7 +4,6 @@ import Img from '../img/fixbefore.jpg'
 import Img2 from '../img/fixedafter.jpg'
 import Img3 from '../img/180.png'
 import './Antique.css'
-import BeforeAfterReact from 'before-after-react'
 
 function Antique() {
   return (
@@ -15,13 +14,7 @@ function Antique() {
       </div>
       <div className="antique justify-content-center">
         <img src={Img} alt="" />
-        <BeforeAfterReact
-          firstImgSrc={Img}
-          secondImgSrc={Img2}
-          cursor="pointer"
-          containerClass="add-my-class"
-          seperatorImg={Img3}
-        />
+
         <p className="text-center p14 m-2 ">中古售出</p>
         <p className="text-center p14 m-2  ">
           不小心弄壞椅子了嗎？別擔心，我們也有提供維修服務，

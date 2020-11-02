@@ -9,7 +9,7 @@ import '../styles/secondhandList.css'
 function SecondhandList() {
   const [product, setProduct] = useState([])
   const [viewProduct, setViewProduct] = useState(8)
-  const [lastProductId, setLastProductId] = useState(8)
+  const [lastProductId, setLastProductId] = useState(0)
 
   const handleClick = () => {
     let preViewProduct = viewProduct
@@ -63,7 +63,7 @@ function SecondhandList() {
         <div className="row mt-5">
           <Filter />
           <div className="i_product d-flex flex-wrap">
-            {product.map((item, index) => {
+            {product.slice(0, viewProduct).map((item, index) => {
               return <ProductList key={index} item={item} />
             })}
             <div className="i_end">

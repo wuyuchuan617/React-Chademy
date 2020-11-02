@@ -2823,7 +2823,7 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
-before-after-react@1.0.5:
+before-after-react@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/before-after-react/-/before-after-react-1.0.5.tgz#a6d31811e6cbcb6d6f7539de6f650b574d14e9e7"
   integrity sha512-E03Acwi7cYFBWXMm5gYFCW9slBgEGJ6ma5FTntlklgrZoQrk8KF7vt0nO/tEijVtPKuBNpBG4cOpwt8q8TeNjw==
