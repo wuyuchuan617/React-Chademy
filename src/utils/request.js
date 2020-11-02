@@ -58,7 +58,7 @@ service.interceptors.response.use(
     console.log(res)
 
     // if the custom code is not 20000, it is judged as an error.
-    if (!res.success) {
+    if (res.code) {
       /**
        * example
        {
@@ -67,13 +67,12 @@ service.interceptors.response.use(
           data: null,
         }
        */
-      message.error((res && res.message) || 'Error')
+      // message.error((res && res.message) || 'Error')
 
       // 50008: Illegal token; 50012: Other clients logged in; 50014: Token expired;
       if (res.code === 50008 || res.code === 50012 || res.code === 50014) {
         // to re-login
-
-        message.error('This is an error message')
+        // message.error('This is an error message')
         // MessageBox.confirm(
         //   'You have been logged out, you can cancel to stay on this page, or log in again',
         //   'Confirm logout',

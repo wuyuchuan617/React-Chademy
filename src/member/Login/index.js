@@ -45,9 +45,11 @@ function Login(props) {
       url: '/members/login',
       method: 'post',
       data: {
+        email,
+        password,
         // 登入先寫死 方便測試
-        email: 'zzfegfc76@agzwfwsn.com',
-        password: '123456',
+        // email: 'zzfegfc76@agzwfwsn.com',
+        // password: '123456',
       },
     })
 
