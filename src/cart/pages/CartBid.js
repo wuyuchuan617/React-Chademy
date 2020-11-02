@@ -77,13 +77,13 @@ function CartBid(props) {
         <Link to="/cartproduct" className="defaultlable">
           產品
         </Link>
-        <Link to="/cartbid" className="defaultlable">
+        <Link to="/cartbid" className="activelable">
           競標
         </Link>
         <Link to="/cartsecondhand" className="defaultlable">
           中古商品
         </Link>
-        <Link to="/cartclass" className="activelable">
+        <Link to="/cartclass" className="defaultlable">
           體驗課程
         </Link>
       </div>

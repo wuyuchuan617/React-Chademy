@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import img1 from '../../product/images/777.jpg'
+import Cards from 'react-credit-cards'
 // import './style/jay.scss'
 
 function CheckInfo(props) {

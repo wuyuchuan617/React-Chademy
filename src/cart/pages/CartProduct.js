@@ -74,7 +74,7 @@ function CartProduct(props) {
         </div>
       </div>
       <div className="lablebox">
-        <Link to="/cartproduct" className="defaultlable">
+        <Link to="/cartproduct" className="activelable">
           產品
         </Link>
         <Link to="/cartbid" className="defaultlable">
@@ -83,7 +83,7 @@ function CartProduct(props) {
         <Link to="/cartsecondhand" className="defaultlable">
           中古商品
         </Link>
-        <Link to="/cartclass" className="activelable">
+        <Link to="/cartclass" className="defaultlable">
           體驗課程
         </Link>
       </div>

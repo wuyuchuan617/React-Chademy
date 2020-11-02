@@ -80,10 +80,10 @@ function CartSecondHand(props) {
         <Link to="/cartbid" className="defaultlable">
           競標
         </Link>
-        <Link to="/cartsecondhand" className="defaultlable">
+        <Link to="/cartsecondhand" className="activelable">
           中古商品
         </Link>
-        <Link to="/cartclass" className="activelable">
+        <Link to="/cartclass" className="defaultlable">
           體驗課程
         </Link>
       </div>

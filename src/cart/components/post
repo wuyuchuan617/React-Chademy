@@ -1,0 +1,27 @@
+async function updateTotalToServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = 'http://localhost:3001/j_cart/add'
+
+    const request = new Request(url, {
+      method: 'POST',
+      body: JSON.stringify(heartItem),
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+
+    // try {
+    const response = await fetch(request)
+    const data = await response.json()
+    // data會是一個物件值
+    console.log(data.success)
+    setHeart(data.success)
+
+    //   // 驗証成功後再設定…
+    //   setTotal(total + value)
+    // } catch (error) {
+    //   setError(error)
+    // }
+  }
