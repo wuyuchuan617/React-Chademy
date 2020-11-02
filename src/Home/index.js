@@ -21,7 +21,7 @@ function Home(props) {
     <>
       <EntryAnimation />
       <Header />
-      <body className="container ">
+      <div className="container ">
         <FadeIn delay="5000">
           <Catchcopy />
         </FadeIn>
@@ -59,7 +59,7 @@ function Home(props) {
             />
           </div>
         </BackTop>
-      </body>
+      </div>
     </>
   )
 }
