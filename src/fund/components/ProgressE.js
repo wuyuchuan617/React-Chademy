@@ -4,8 +4,9 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import 'antd/dist/antd.css'
 import { Progress } from 'antd'
 
-function ProgressE() {
- 
+function ProgressE(props) {
+  const { item } = props
+  // const Umber = Number.parseInt(item.e_progress)
   return (
     <>
       <div style={{ width: 330 }}>

@@ -50,7 +50,9 @@ function FundListCard(props) {
 
               <p className="e_price">${item.e_lowprice}</p>
 
-              <button className="fund">贊助</button>
+              <div className="btn_div">
+                <button className="fund">贊助</button>
+              </div>
             </div>
           </div>
         </Row>

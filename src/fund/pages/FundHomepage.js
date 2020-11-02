@@ -1,7 +1,6 @@
 import React from 'react'
 import e_video from '../images/oljn5-343em.mp4'
 
-
 import '../styles/FundHomepage.scss'
 // import 'react-bootstrap'
 import { Container, Row, Col } from 'react-bootstrap'
@@ -35,18 +34,20 @@ function FundHomepage() {
       </header>
 
       <Container>
-        <Col className="explore_div">
-          <button name="explore" className="explore">
-            探索
-          </button>
+        <Col>
+          <Row>
+            <button name="explore" className="explore">
+              探索
+            </button>
+          </Row>
         </Col>
       </Container>
 
-      
-
       <BookMark />
       <CarouselE />
+      <div className="e_more_div">
       <button className="e_more">more</button>
+      </div>
 
       <h1 className="e_popular">熱門募資專案</h1>
       <BookMarkTwo />
