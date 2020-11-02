@@ -1,139 +1,39 @@
-import React, { useState } from 'react'
-
-import './index.scoped.scss'
-
-import { Form, Button, Col, Container, Modal } from 'react-bootstrap'
-
+import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 
+import './index.scoped.scss'
 import request from '../../utils/request'
 
-// //註冊
+import {
+  Typography,
+  Layout,
+  Form,
+  Input,
+  Modal,
+  DatePicker,
+  Button,
+} from 'antd'
 
-// if (register.name === "") {
-//   setRegister({
-//     name: '',}
-// }
+const { Title } = Typography
 
-//   if (this.checkEmail(email) === false) {
-//     //驗證信箱錯誤時的訊息
-//     let email = document.querySelector('#email')
-//     let err_email = document.querySelector('#err_email')
-//     email.classList.add('err_border')
-//     err_email.classList.add('err_text')
-//     this.setState({ err_email: '信箱格式有誤' })
-//     // return
-//   }
-//   // console.log(1, isPass);
+const { Content } = Layout
 
-//   if (this.checkName(name) === false) {
-//     //驗證名稱錯誤時的訊息
-//     let name = document.querySelector('#name')
-//     let err_username = document.querySelector('#err_username')
-//     name.classList.add('err_border')
-//     err_username.classList.add('err_text')
-//     this.setState({ err_username: '使用者姓名字太少' })
-//     //  return
-//   }
-//   //  console.log(2, isPass);
-//   if (this.checkPassword(password, password2) === false) {
-//     let password = document.querySelector('#password')
-//     let password2 = document.querySelector('#password2')
-//     let err_password = document.querySelector('#err_password')
-//     // password.type = (password.type === "text") ;
-//     // password2.type = (password2.type === "text") ;
-//     password.classList.add('err_border')
-//     password2.classList.add('err_border')
-//     err_password.classList.add('err_text')
-//     this.setState({ err_password: '密碼格式不正確或輸入錯誤' })
-//     // return
-//   }
-//   console.log(3, isPass);
-//   if (captcha1 !== captcha2) {
-//     let captcha2 = document.querySelector('#captcha2')
-//     let err_captcha = document.querySelector('#err_captcha')
-//     captcha2.classList.add('err_border')
-//     err_captcha.classList.add('err_text')
-//     this.setState({ err_captcha: '驗證碼有誤' })
-//     return
-//   } else {
-//     isPass = true
-//   }
-//   // this.setState({name: "字數太少囉",password: "格式或密碼有誤", password2: "請再重新輸入"})
-//   console.log("isPass",isPass);
-
-//   const formData = new FormData()
-//   let fileField = document.querySelector("input[type='file']")
-//   formData.append('avatar', fileField.files[0])
-//   console.log(4, isPass, formData);
-
-//   if (isPass) {
-//     let imgFile = ''
-//     //目前想說新增完圖片再塞入修改資料
-//     fetch('http://localhost:5555/member/upload', {
-//       method: 'POST',
-//       body: formData,
-//     })
-//       .then(res => {
-//         // console.log("res:", res);
-//         return res.json()
-//       })
-//       .then(img => {
-//         if (img.filename === '') {
-//           imgFile = '品書印章.png'
-//         } else {
-//           imgFile = img.filename
-//         }
-
-//         fetch('http://localhost:5555/member/register', {
-//           method: 'POST',
-//           credentials: 'include', //跨網域取得session資訊
-//           headers: {
-//             'Content-Type': 'application/json',
-//           },
-//           body: JSON.stringify({
-//             name: this.state.name,
-//             nickname: this.state.nickname,
-//             email: this.state.email,
-//             password: this.state.password,
-//             filename: imgFile,
-//           }),
-//         })
-//           .then(response => {
-//             if (!response) throw new Error(response.statusText)
-//             // console.log('3'+response);
-
-//             return response.json()
-//           })
-//           .then(data => {
-//             let status = data.status
-//             let message = data.message
-//             console.log('註冊', data)
-//             if (data.status === '註冊成功') {
-//               this.success(status, message)
-//               // setTimeout(() => {
-//               //   window.location = window.location.href
-//               //  }, 1000)
-//             } else {
-//               this.fail(status, message)
-//             }
-//           })
-//           .catch(error => {
-//             console.log('error = ' + error)
-//           })
-//       })
-//   }
-// }
+const validateMessages = {
+  required: '${label} is required!',
+  types: {
+    email: '${label} is not validate email!',
+    number: '${label} is not a validate number!',
+  },
+  number: {
+    range: '${label} must be between ${min} and ${max}',
+  },
+}
 
 function Register(props) {
-  const [register, setRegister] = useState({
-    name: '',
-    address: '',
-    mobile: '',
-    email: '',
-    password: '',
-    password2: '',
-  })
+  // 表單元素
+  const [form] = Form.useForm()
+
+  // const [register, setRegister] = useState({})
 
   const [reg, setReg] = useState({
     title: '',
@@ -144,35 +44,20 @@ function Register(props) {
   const [smShow, setSmShow] = useState(false)
   let history = useHistory()
 
-  const [validated, setValidated] = useState(false)
-
-  // 函式參數解構 developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
-  // ref: https://blog.stvmlbrn.com/2017/01/16/form-validation-with-react.html
-  // const handleChange = (event) => {
-  // 從 event.target 解構取出 name, value
-  const handleChange = ({ target: { name, value } }) => {
-    console.log(name, value)
-    setRegister({ ...register, [name]: value })
-  }
-
-  const handleSubmit = (event) => {
-    const form = event.currentTarget
-    event.preventDefault() //阻止預設行為
-    event.stopPropagation() //停止向上傳送
-
-    console.log('form.checkValidity()', form.checkValidity())
-    if (form.checkValidity() === false) {
-      console.log('驗證失敗')
-    } else {
-      // call api
-      registerApi()
+  // 表單方法
+  const onFinish = (fieldsValue) => {
+    const registerValue = {
+      ...fieldsValue,
+      birthday: fieldsValue['birthday'].format('YYYY-MM-DD'), // 組件格式化日期
     }
 
-    setValidated(true)
+    registerApi(registerValue)
   }
 
-  async function registerApi() {
+  async function registerApi(register) {
     const { password2, ...realRegister } = register
+
+    console.log('register', register)
 
     const response = await request({
       url: 'members/register',
@@ -197,155 +82,195 @@ function Register(props) {
       // 顯示小彈窗
       setSmShow(true)
 
-      // n 秒後轉導至 /
-      setTimeout(() => {
-        history.push('/')
-      }, 2000)
-
-      // alert(msg)
+      // // n 秒後轉導至 /
+      // setTimeout(() => {
+      //   history.push('/')
+      // }, 2000)
     } else {
-      // alert(msg)
       setReg({
         success: success,
         title: '註冊失敗',
         msg: msg,
         data: data,
       })
+
       setSmShow(true)
     }
   }
 
   return (
-    <>
-      <Container className="Register_container con">
-        <Modal
-          size="sm"
-          show={smShow}
-          onHide={() => setSmShow(false)}
-          aria-labelledby="example-modal-sizes-title-sm"
-        >
-          <Modal.Header closeButton>
-            <Modal.Title id="example-modal-sizes-title-sm">
-              {reg.title}
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            {reg.success && <div>{reg.msg}</div>}
-            {reg.data && reg.data.noEmail && <div>{reg.data.noEmail}</div>}
-            {reg.data && reg.data.noMobile && <div>{reg.data.noMobile}</div>}
-          </Modal.Body>
-        </Modal>
+    <Layout className="register_container">
+      <Title style={{ textAlign: 'center' }} level={2}>
+        註冊
+      </Title>
 
-        <div className="text-center title">註冊</div>
+      <Content style={{ padding: '0 50px' }}>
         <Form
-          className="register_form"
-          noValidate
-          validated={validated}
-          onSubmit={handleSubmit}
+          form={form}
+          layout="vertical"
+          name="basic"
+          initialValues={{
+            name: '',
+            address: '',
+            mobile: '',
+            email: '',
+            password: '',
+            password2: '',
+            birthday: '',
+          }}
+          onFinish={onFinish}
+          validateMessages={validateMessages}
+          onValuesChange={(changedValues, allValues) => {
+            console.log(' allValues ', allValues)
+            form.setFieldsValue(allValues)
+          }}
+          className="form_container"
         >
-          <div className="sub_title">個人資料</div>
-          <Form.Group as={Col} controlId="name">
-            <Form.Label>姓名</Form.Label>
-            <Form.Control
-              onChange={handleChange}
-              placeholder="請輸入姓名"
-              name="name"
-              type="text"
-              aria-describedby="inputGroupPrepend"
-              required
+          <Title level={4}>個人資料</Title>
+
+          <Form.Item
+            label="請輸入姓名"
+            name="name"
+            rules={[{ required: true, message: '此欄不得為空' }]}
+          >
+            <Input size="large" placeholder="請輸入姓名" />
+          </Form.Item>
+
+          <Form.Item
+            label="請輸入電話"
+            name="mobile"
+            hasFeedback
+            rules={[
+              {
+                required: true,
+                message: '此欄不得為空',
+              },
+
+              () => ({
+                validator(rule, value) {
+                  const mobileReg = /^09\d{2}-?\d{3}-?\d{3}$/
+
+                  // 沒有值不驗證
+                  if (!value) return Promise.resolve()
+
+                  // 不是 09 開頭
+                  if (!value.startsWith('09')) {
+                    return Promise.reject('手機格式錯誤')
+                  }
+
+                  // 不符合手機格式
+                  if (!mobileReg.test(value)) {
+                    return Promise.reject('手機格式錯誤')
+                  }
+
+                  // 最後給過
+                  return Promise.resolve()
+                },
+              }),
+            ]}
+          >
+            <Input size="large" placeholder="請輸入電話" />
+          </Form.Item>
+
+          <Form.Item
+            label="生日"
+            name="birthday"
+            rules={[{ required: true, message: '此欄不得為空' }]}
+          >
+            <DatePicker
+              format="YYYY-MM-DD"
+              size="large"
+              className="date_input"
+              placeholder="請選擇生日"
+              rules={[
+                {
+                  type: 'object',
+                  required: true,
+                  message: '請選擇生日',
+                },
+              ]}
             />
-            <Form.Control.Feedback type="invalid">
-              請輸入正確格式
-            </Form.Control.Feedback>
-          </Form.Group>
+          </Form.Item>
 
-          <Form.Group as={Col} controlId="mobile">
-            <Form.Label>電話</Form.Label>
-            <Form.Control
-              onChange={handleChange}
-              type="text"
-              name="mobile"
-              placeholder="請輸入電話"
-              required
-            />
-            <Form.Control.Feedback type="invalid">
-              請輸入正確的格式
-            </Form.Control.Feedback>
-          </Form.Group>
+          <Form.Item
+            label="請輸入地址"
+            name="address"
+            rules={[{ required: true, message: '此欄不得為空' }]}
+          >
+            <Input size="large" placeholder="請輸入地址" />
+          </Form.Item>
 
-          <Form.Group as={Col} controlId="address">
-            <Form.Label>地址</Form.Label>
-            <Form.Control
-              onChange={handleChange}
-              name="address"
-              type="text"
-              placeholder="請輸入地址"
-              required
-            />
-            <Form.Control.Feedback type="invalid">
-              請輸入正確格式
-            </Form.Control.Feedback>
-          </Form.Group>
+          <Title level={4}>帳戶密碼</Title>
 
-          <div className="sub_title2">帳戶密碼</div>
+          <Form.Item
+            label="電子郵件"
+            name="email"
+            rules={[
+              { required: true, message: '此欄不得為空' },
+              { type: 'email' },
+            ]}
+          >
+            <Input size="large" placeholder="請輸入電子郵件" />
+          </Form.Item>
 
-          <Form.Group as={Col} controlId="formGridCity">
-            <Form.Label>電子郵件</Form.Label>
-            <Form.Control
-              onChange={handleChange}
-              name="email"
-              type="text"
-              placeholder="請輸入電子郵件"
-              required
-            />
+          <Form.Item
+            name="password"
+            label="請輸入密碼"
+            rules={[
+              {
+                required: true,
+                message: 'Please input your password!',
+              },
+            ]}
+            hasFeedback
+          >
+            <Input.Password size="large" />
+          </Form.Item>
 
-            <Form.Control.Feedback type="invalid">
-              請輸入正確格式
-            </Form.Control.Feedback>
-          </Form.Group>
+          <Form.Item
+            name="password2"
+            label="請輸入確認密碼"
+            dependencies={['password']}
+            hasFeedback
+            rules={[
+              {
+                required: true,
+                message: 'Please confirm your password!',
+              },
+              ({ getFieldValue }) => ({
+                validator(rule, value) {
+                  if (!value || getFieldValue('password') === value) {
+                    return Promise.resolve()
+                  }
+                  return Promise.reject(
+                    'The two passwords that you entered do not match!'
+                  )
+                },
+              }),
+            ]}
+          >
+            <Input.Password size="large" />
+          </Form.Item>
 
-          <Form.Group as={Col} controlId="password">
-            <Form.Label>密碼</Form.Label>
-            <Form.Control
-              onChange={handleChange}
-              name="password"
-              type="password"
-              isValid={register.password.length >= 6}
-              placeholder="請輸入密碼"
-              required
-            />
-            <Form.Control.Feedback type="invalid">
-              請輸入密碼
-            </Form.Control.Feedback>
-          </Form.Group>
-
-          <Form.Group as={Col} controlId="password2">
-            <Form.Label>確認密碼</Form.Label>
-            <Form.Control
-              isValid={
-                register.password && register.password === register.password2
-              }
-              isInvalid={
-                register.password.length === register.password2.length &&
-                register.password !== register.password2
-              }
-              onChange={handleChange}
-              name="password2"
-              type="password"
-              placeholder="請輸入確認密碼"
-              required
-            />
-            <Form.Control.Feedback type="invalid">
-              確認密碼錯誤
-            </Form.Control.Feedback>
-          </Form.Group>
-
-          <Button variant="primary" type="submit" className="reg_btn">
-            註冊
-          </Button>
+          <Form.Item>
+            <Button type="primary" htmlType="submit">
+              註冊
+            </Button>
+          </Form.Item>
         </Form>
-      </Container>
-    </>
+
+        <Modal
+          title={reg.title}
+          visible={smShow}
+          onCancel={() => setSmShow(false)}
+          okText="確認"
+        >
+          {reg.success && <div>{reg.msg}</div>}
+          {reg.data && reg.data.noEmail && <div>{reg.data.noEmail}</div>}
+          {reg.data && reg.data.noMobile && <div>{reg.data.noMobile}</div>}
+        </Modal>
+      </Content>
+    </Layout>
   )
 }
 

@@ -1,0 +1,34 @@
+$formWidth: 358px;
+$btnColor: #c77334;
+$contentBg: #edece8;
+
+// the :export directive is the magic sauce for webpack
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+// 引入 scss 地方可以使用這些變數 e.g. $formWidth
+:export {
+  formwidth: $formWidth;
+  btnColor: $btnColor;
+  contentBg: $contentBg;
+}
+
+// 覆蓋 ant 樣式
+.ant-btn {
+  margin-top: 50px;
+  width: $formWidth;
+  height: 40px;
+  background: $btnColor;
+  border-color: $btnColor;
+  border-radius: 0px;
+
+  outline: 1px orange dashed;
+}
+
+.ant-layout-header {
+  text-align: center;
+}
+
+.ant-layout,
+.ant-layout-header,
+.ant-layout-content {
+  background: $contentBg;
+}

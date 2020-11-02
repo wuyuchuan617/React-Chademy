@@ -15,7 +15,7 @@ import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 
 // 第二部：寫出reducer
-import { rootReducer } from './reducers'
+import rootReducer from './reducers'
 
 // 在建立store時要加入中介軟體
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose

@@ -1,9 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import './index.scoped.scss'
 
-import { Navbar, Nav } from 'react-bootstrap'
+import { useSelector, useDispatch } from 'react-redux'
 
-import { AiOutlineShoppingCart, AiOutlineUser } from 'react-icons/ai'
+import { Navbar, Nav, Button, Overlay, Tooltip } from 'react-bootstrap'
+
+import {
+  AiOutlineShoppingCart,
+  AiOutlineUser,
+  AiOutlineUserSwitch,
+} from 'react-icons/ai'
 import logo from '../images/logo.svg'
 
 // 選單連結要使用NavLink取代Link
@@ -32,6 +38,14 @@ function MyNavbar(props) {
 
   const activeState = (name) =>
     name === activeName ? 'navbar_item_is_active' : ''
+
+  // 登入的狀態
+  const isLogged = useSelector((state) => state.isLogged)
+
+  console.log(' 是否登入: ', isLogged)
+
+  // 改變登出登入
+  const dispatch = useDispatch()
 
   return (
     <>
@@ -141,14 +155,28 @@ function MyNavbar(props) {
             <Nav.Link as={NavLink} to="#" onClick={() => setShowCart(true)}>
               <AiOutlineShoppingCart className="icon" />
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/login">
-              <AiOutlineUser className="icon" />
-            </Nav.Link>
 
-            {/* 暫時 */}
-            <Nav.Link as={NavLink} to="/member-center">
-              <AiOutlineUser className="icon" />
-            </Nav.Link>
+            {/* 是否登入 ？ 會員中心 : 登入頁 */}
+            {isLogged ? (
+              <Nav.Link as={NavLink} to="/member-center">
+                <AiOutlineUser className="icon" />
+              </Nav.Link>
+            ) : (
+              <Nav.Link as={NavLink} to="/login">
+                <AiOutlineUser className="icon" />
+              </Nav.Link>
+            )}
+
+            {/*  */}
+
+            <AiOutlineUserSwitch
+              className="icon"
+              onClick={() => {
+                dispatch({ type: 'SIGN_IN' })
+              }}
+            />
+
+            {/*  */}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

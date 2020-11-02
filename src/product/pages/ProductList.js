@@ -1,6 +1,8 @@
 // ------------------以下引入套件----------------------------
 
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
+
 import LazyLoad from 'react-lazyload'
 
 // ------------------以下引入Components----------------------------
@@ -23,6 +25,10 @@ import bannerVideo from '../images/The-Passion-of-Making.mp4'
 // ---------------以下開始Component ProductList-----------------
 
 function ProductList(props) {
+  // 判斷登入的狀態
+  const isLogged = useSelector((state) => state.isLogged)
+  console.log('會員是否登入: ', isLogged)
+
   // ---------------以下開始useState狀態設定-----------------
 
   // 存從資料庫拿到的資料
