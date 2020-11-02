@@ -1,9 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import popularImg from '../images/777.jpg'
 import { BsStarFill } from 'react-icons/bs'
 import { Rate } from 'antd'
+import series from '../images/series.jpg'
 
 function ProductSeven(props) {
+  const [review, setReview] = useState([])
+
+  async function getItemFromSQL() {
+    const url = 'http://localhost:3001/man_product/review'
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    // const response = await fetch(request).then((v) => console.log(v))
+    const response = await fetch(request)
+    const data = await response.json()
+
+    console.log('response' + response) // [object Response]
+    console.log('data' + data) // [object Object]
+
+    setReview(data)
+  }
+
+  useEffect(() => {
+    getItemFromSQL()
+  }, [])
+
   return (
     <>
       <div className="container ">
@@ -12,31 +39,46 @@ function ProductSeven(props) {
         </div>
         <div className="row review justify-content-between d-flex">
           <div className="review-photo justify-content-center col-4">
-            <img src={popularImg} alt="" />
+            {review.map((item, index) => {
+              return (
+                <img src={`http://localhost:3001/img/` + item.photo} alt="" />
+              )
+            })}
           </div>
           <div className="col-7">
             <div className="d-flex justify-content-between ">
               <div>
                 {/* <div className="stars "> */}
-                <Rate
-                  disabled
-                  allowHalf
-                  style={{ color: '#C77334', fontSize: 24 + 'px' }}
-                  defaultValue={4.5}
-                />
+                {review.map((item, index) => {
+                  return (
+                    <Rate
+                      disabled
+                      // allowHalf
+                      style={{ color: '#C77334', fontSize: 24 + 'px' }}
+                      defaultValue={item.stars}
+                    />
+                  )
+                })}
+
                 {/* </div> */}
-                <p className="w_reviewSub">把喜歡的美感傳達出去</p>
+                {review.map((item, index) => {
+                  return <p className="w_reviewSub">{item.review_title}</p>
+                })}
               </div>
               <div>
                 <div className="memberPhoto align-items-end">
-                  <img src={popularImg} alt="" />
+                  <img src={series} alt="" />
                 </div>
-                <p className="w_comP w_review_date">2020.08.08</p>
+                {review.map((item, index) => {
+                  return (
+                    <p className="w_comP w_review_date">{item.review_time}</p>
+                  )
+                })}
               </div>
             </div>
-            <p className="w_review_comm">
-              過去幾年來，我們創作了幾個空間，秉持著NV一向自然、原始、純粹的風格，希望讓大家拋開過去非得要”裝潢”的概念，讓空間載體本身回歸乾淨簡單，再佐上我們為您搭配的歐洲經典傢俱家飾物件，由我們親自設計施作的木作，就是要讓您展現任性、自豪又絕對脫俗的居家品味。“把喜歡的美感傳達出去”
-            </p>
+            {review.map((item, index) => {
+              return <p className="w_review_comm">{item.review_comment}</p>
+            })}
           </div>
         </div>
         <div className="row justify-content-center">

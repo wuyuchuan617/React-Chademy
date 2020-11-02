@@ -155,7 +155,9 @@ function Review() {
                   setOrderNo('OVER1234')
                   setOrderDate('2020.08.31')
                   setReviewTitle('質感非常好！')
-                  setReviewComment('非常推薦～～～')
+                  setReviewComment(
+                    `過去幾年來，我們創作了幾個空間，秉持著NV一向自然、原始、純粹的風格，希望讓大家拋開過去非得要”裝潢”的概念，讓空間載體本身回歸乾淨簡單，再佐上我們為您搭配的歐洲經典傢俱家飾物件，由我們親自設計施作的木作，就是要讓您展現任性、自豪又絕對脫俗的居家品味。“把喜歡的美感傳達出去`
+                  )
                 }}
               >
                 DEMO

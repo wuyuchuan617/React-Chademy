@@ -10,6 +10,7 @@ import ProductPopular from '../components/ProductPopular'
 import ProductSeries from '../components/ProductSeries'
 import ProductCard from '../components/ProductCard'
 import CouponModal from '../components/CouponModal'
+import Breadcrumb from '../../common_components/Breadcrumb'
 
 // ------------------以下引入樣式----------------------------
 
@@ -181,6 +182,7 @@ function ProductList(props) {
         muted="true"
         preload="auto"
       ></video>
+      <Breadcrumb />
       {/* </div> */}
       {/* <LazyLoad height={200} offset={100}> */}
       <ProductPopular />
