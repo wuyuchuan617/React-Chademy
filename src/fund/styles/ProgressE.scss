@@ -1,0 +1,32 @@
+.ant-progress-inner {
+    border-radius: 10px;
+    overflow: visible;
+    background-color: transparent;
+    width: 300px;
+    height: 20px;
+}
+
+.ant-progress-bg {
+    background: #c77334;
+    -webkit-transition: width 1.5s ease-in-out;
+    transition: width 1.5s ease-in-out;
+    width: 300px;
+    height: 12px;
+    border-radius: 10px;
+    padding: 0 13px;
+    margin-top: 2px;
+
+
+}
+
+.ant-progress-text {
+    font-family: Noto Sans TC;
+    font-weight: 400;
+    color: #c77334;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    // font-size: 20px;
+    // z-index: 5;
+  
+}
+
