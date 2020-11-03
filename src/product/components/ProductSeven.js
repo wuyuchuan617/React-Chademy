@@ -5,10 +5,11 @@ import { Rate } from 'antd'
 import series from '../images/series.jpg'
 
 function ProductSeven(props) {
+  const { item } = props
   const [review, setReview] = useState([])
 
   async function getItemFromSQL() {
-    const url = 'http://localhost:3001/man_product/review'
+    const url = 'http://localhost:3001/man_product/review/' + item.product_name
 
     const request = new Request(url, {
       method: 'GET',
@@ -71,7 +72,9 @@ function ProductSeven(props) {
                 </div>
                 {review.map((item, index) => {
                   return (
-                    <p className="w_comP w_review_date">{item.review_time}</p>
+                    <p className="w_comP w_review_date text-right">
+                      {item.review_time}
+                    </p>
                   )
                 })}
               </div>

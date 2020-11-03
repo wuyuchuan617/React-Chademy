@@ -6,6 +6,7 @@ import ProductFour from '../components/ProductFour'
 import ProductFive from '../components/ProductFive'
 import ProductSix from '../components/ProductSix'
 import ProductSeven from '../components/ProductSeven'
+import Slider from '../components/Slider'
 import ProductEight from '../components/ProductEight'
 import ProductNine from '../components/ProductNine'
 import { withRouter, useParams } from 'react-router-dom'
@@ -67,9 +68,12 @@ function Product(props) {
       {product.map((item, index) => {
         return <ProductSix key={index} item={item} product={product} />
       })}
-
-      <ProductSeven />
-      <ProductEight />
+      <div class="w_rew_scroll">
+        {product.map((item, index) => {
+          return <ProductSeven key={index} item={item} />
+        })}
+      </div>
+      <Slider />
       <ProductNine />
     </>
   )

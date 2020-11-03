@@ -3,7 +3,7 @@ import '../styles/review.css'
 import { Rate, Upload, Button } from 'antd'
 import { UploadOutlined } from '@ant-design/icons'
 
-function Review() {
+function Review(props) {
   const [orderProductNo, setOrderProductNo] = useState('')
   const [orderProduct, setOrderProduct] = useState('')
   const [orderNo, setOrderNo] = useState('')
@@ -23,7 +23,7 @@ function Review() {
     fd.append('myfile', photo)
     console.log('fd' + JSON.stringify(fd))
     console.log('photo' + JSON.stringify(photo))
-    const url = 'http://localhost:3001/man_product/try-upload'
+    const url = 'http://localhost:3001/man_product/try-upload/'
 
     const request = new Request(url, {
       method: 'POST',
@@ -151,7 +151,7 @@ function Review() {
                 className="btnDemo text-center mt-4"
                 onClick={() => {
                   setOrderProductNo('CH29')
-                  setOrderProduct('經典丹麥椅')
+                  setOrderProduct('214K')
                   setOrderNo('OVER1234')
                   setOrderDate('2020.08.31')
                   setReviewTitle('質感非常好！')
