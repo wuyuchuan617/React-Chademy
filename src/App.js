@@ -1,5 +1,5 @@
 // ------------------以下import 套件-------------------------
-import React from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import CHNavbar from './common_components/CHNavbar'
 

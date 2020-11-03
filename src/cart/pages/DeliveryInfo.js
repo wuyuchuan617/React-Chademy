@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import img1 from '../../product/images/777.jpg'
+import SameAdress from '../components/SameAdress'
+import { countries, townships, postcodes } from '../components/Data'
 // import './style/jay.scss'
 
 function DeliveryInfo(props) {
+  const [name, setName] = useState('')
+  const [phone, setPhone] = useState('')
+  const [city, setCity] = useState(-1)
+  const [area, setArea] = useState(-1)
+  const [adress, setAdress] = useState('')
+  const [showadress, setShowAdress] = useState(false)
   return (
     <>
       <div className="myprogress">
@@ -79,6 +87,7 @@ function DeliveryInfo(props) {
             marginBottom: '30px',
           }}
           placeholder="姓名"
+          onChange={(e) => setName(e.target.value)}
         />
         <input
           type="text"
@@ -88,6 +97,7 @@ function DeliveryInfo(props) {
             marginBottom: '30px',
           }}
           placeholder="手機"
+          onChange={(e) => setPhone(e.target.value)}
         />
         <select
           style={{
@@ -96,8 +106,18 @@ function DeliveryInfo(props) {
             marginBottom: '30px',
             marginRight: '20px',
           }}
+          value={city}
+          onChange={(e) => {
+            setCity(+e.target.value)
+            setArea(-1)
+          }}
         >
-          <option>城市</option>
+          <option value={-1}>城市</option>
+          {countries.map((v, i) => (
+            <option key={i} value={i}>
+              {v}
+            </option>
+          ))}
         </select>
         <select
           style={{
@@ -105,8 +125,17 @@ function DeliveryInfo(props) {
             height: '40px',
             marginBottom: '30px',
           }}
+          onChange={(e) => {
+            setArea(+e.target.value)
+          }}
         >
-          <option>區域</option>
+          <option value={-1}>區域</option>
+          {city > -1 &&
+            townships[city].map((v, i) => (
+              <option key={i} value={i}>
+                {v}
+              </option>
+            ))}
         </select>
         <input
           type="text"
@@ -116,20 +145,24 @@ function DeliveryInfo(props) {
             marginBottom: '30px',
           }}
           placeholder="地址"
+          onChange={(e) => setAdress(e.target.value)}
         />
         <label>
           <h5>發票地址</h5>
         </label>
         <input
-          type="radio"
+          type="checkbox"
           name="sameabove"
           style={{
             marginLeft: '10px',
           }}
+          onClick={(e) => {
+            e.target.checked ? setShowAdress(true) : setShowAdress(false)
+          }}
         />
         同寄送地址
         <input
-          type="radio"
+          type="checkbox"
           name="sameabove"
           style={{
             marginLeft: '10px',
@@ -137,59 +170,29 @@ function DeliveryInfo(props) {
         />
         手機載具
         <input
-          type="radio"
+          type="checkbox"
           name="sameabove"
           style={{
             marginLeft: '10px',
           }}
         />
         捐贈發票
-        <input
-          type="text"
-          style={{
-            width: '600px',
-            height: '40px',
-            marginBottom: '30px',
-          }}
-          placeholder="姓名"
-        />
-        <input
-          type="text"
-          style={{
-            width: '600px',
-            height: '40px',
-            marginBottom: '30px',
-          }}
-          placeholder="手機"
-        />
-        <select
-          style={{
-            width: '290px',
-            height: '40px',
-            marginBottom: '30px',
-            marginRight: '20px',
-          }}
-        >
-          <option>城市</option>
-        </select>
-        <select
-          style={{
-            width: '290px',
-            height: '40px',
-            marginBottom: '30px',
-          }}
-        >
-          <option>區域</option>
-        </select>
-        <input
-          type="text"
-          style={{
-            width: '600px',
-            height: '40px',
-            marginBottom: '30px',
-          }}
-          placeholder="地址"
-        />
+        {showadress ? (
+          <SameAdress
+            name={name}
+            setName={setName}
+            phone={phone}
+            setPhone={setPhone}
+            city={city}
+            setCity={setCity}
+            area={area}
+            setArea={setArea}
+            adress={adress}
+            setAdress={setAdress}
+          />
+        ) : (
+          <SameAdress />
+        )}
         <Link to="/checkinfo" className="btn4">
           <div className="btn4">下一步</div>
         </Link>
