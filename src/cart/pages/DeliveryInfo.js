@@ -2,16 +2,30 @@ import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import img1 from '../../product/images/777.jpg'
 import SameAdress from '../components/SameAdress'
+import DefaultAddress from '../components/DefualtAddress'
+import PhoneDrive from '../components/PhoneDrive'
+
 import { countries, townships, postcodes } from '../components/Data'
+import Donated from '../components/Donated'
 // import './style/jay.scss'
 
 function DeliveryInfo(props) {
-  const [name, setName] = useState('')
-  const [phone, setPhone] = useState('')
-  const [city, setCity] = useState(-1)
-  const [area, setArea] = useState(-1)
-  const [adress, setAdress] = useState('')
   const [showadress, setShowAdress] = useState(false)
+  const [phoneDrive, setPhoneDrive] = useState(false)
+  const [donated, setDonaeted] = useState(false)
+  const [defaultform, setDefaultForm] = useState(true)
+  const {
+    name,
+    setName,
+    phone,
+    setPhone,
+    city,
+    setCity,
+    area,
+    setArea,
+    adress,
+    setAdress,
+  } = props
   return (
     <>
       <div className="myprogress">
@@ -157,26 +171,54 @@ function DeliveryInfo(props) {
             marginLeft: '10px',
           }}
           onClick={(e) => {
-            e.target.checked ? setShowAdress(true) : setShowAdress(false)
+            if (e.target.checked) {
+              setShowAdress(true)
+              setPhoneDrive(false)
+              setDonaeted(false)
+              setDefaultForm(false)
+            } else {
+              setShowAdress(false)
+              setDefaultForm(true)
+            }
           }}
+          checked={showadress}
         />
         同寄送地址
         <input
-          type="checkbox"
+          type="radio"
           name="sameabove"
           style={{
             marginLeft: '10px',
+          }}
+          checked={phoneDrive}
+          onClick={(e) => {
+            if (e.target.checked) {
+              setShowAdress(false)
+              setPhoneDrive(true)
+              setDonaeted(false)
+              setDefaultForm(false)
+            }
           }}
         />
         手機載具
         <input
-          type="checkbox"
+          type="radio"
           name="sameabove"
           style={{
             marginLeft: '10px',
           }}
+          checked={donated}
+          onClick={(e) => {
+            if (e.target.checked) {
+              setShowAdress(false)
+              setPhoneDrive(false)
+              setDonaeted(true)
+              setDefaultForm(false)
+            }
+          }}
         />
         捐贈發票
+        {defaultform ? <DefaultAddress /> : ''}
         {showadress ? (
           <SameAdress
             name={name}
@@ -191,8 +233,10 @@ function DeliveryInfo(props) {
             setAdress={setAdress}
           />
         ) : (
-          <SameAdress />
+          ''
         )}
+        {phoneDrive ? <PhoneDrive /> : ''}
+        {donated ? <Donated /> : ''}
         <Link to="/checkinfo" className="btn4">
           <div className="btn4">下一步</div>
         </Link>

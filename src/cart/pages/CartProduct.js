@@ -5,9 +5,17 @@ import img1 from '../../product/images/777.jpg'
 // import './style/jay.scss'
 
 function CartProduct(props) {
-  const [myCart, setMyCart] = useState([])
-  const [showLoading, setShowLoading] = useState(false)
-  const [myCartDisplay, setMyCartDisplay] = useState([])
+  const {
+    myCart,
+    setMyCart,
+    showLoading,
+    setShowLoading,
+    myCartDisplay,
+    setMyCartDisplay,
+  } = props
+  // const [myCart, setMyCart] = useState([])
+  // const [showLoading, setShowLoading] = useState(false)
+  // const [myCartDisplay, setMyCartDisplay] = useState([])
 
   useEffect(() => {
     setTimeout(() => {

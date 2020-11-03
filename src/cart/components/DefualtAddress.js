@@ -1,7 +1,7 @@
 import React from 'react'
 import { countries, townships, postcodes } from '../components/Data'
 
-function SameAdress(props) {
+function DefaultAddress(props) {
   const { name, phone, city, area, adress } = props
   return (
     <>
@@ -13,8 +13,6 @@ function SameAdress(props) {
           marginBottom: '30px',
         }}
         placeholder="姓名"
-        value={name}
-        readOnly
       />
       <input
         type="text"
@@ -24,8 +22,6 @@ function SameAdress(props) {
           marginBottom: '30px',
         }}
         placeholder="手機"
-        value={phone}
-        readOnly
       />
       <select
         style={{
@@ -34,8 +30,6 @@ function SameAdress(props) {
           marginBottom: '30px',
           marginRight: '20px',
         }}
-        value={city}
-        readOnly
       >
         <option value={-1}>城市</option>
         {countries.map((v, i) => (
@@ -50,8 +44,6 @@ function SameAdress(props) {
           height: '40px',
           marginBottom: '30px',
         }}
-        value={area}
-        readOnly
       >
         <option value={-1}>區域</option>
         {city > -1 &&
@@ -70,10 +62,8 @@ function SameAdress(props) {
           marginBottom: '30px',
         }}
         placeholder="地址"
-        value={adress}
-        readOnly
       />
     </>
   )
 }
-export default SameAdress
+export default DefaultAddress

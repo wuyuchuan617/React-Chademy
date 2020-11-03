@@ -5,9 +5,17 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 // import './style/jay.scss'
 
 function CartClass(props) {
-  const [myCart, setMyCart] = useState([])
-  const [showLoading, setShowLoading] = useState(false)
-  const [myCartDisplay, setMyCartDisplay] = useState([])
+  const {
+    myCart,
+    setMyCart,
+    showLoading,
+    setShowLoading,
+    myCartDisplay,
+    setMyCartDisplay,
+  } = props
+  // const [myCart, setMyCart] = useState([])
+  // const [showLoading, setShowLoading] = useState(false)
+  // const [myCartDisplay, setMyCartDisplay] = useState([])
 
   useEffect(() => {
     setTimeout(() => {

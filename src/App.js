@@ -60,6 +60,16 @@ import CheckInfo from './cart/pages/CheckInfo'
 //-----------------------------------------------------------
 
 function App() {
+  //---------------購物車使用變數--------------------------------
+  const [myCart, setMyCart] = useState([])
+  const [showLoading, setShowLoading] = useState(false)
+  const [myCartDisplay, setMyCartDisplay] = useState([])
+  const [name, setName] = useState('')
+  const [phone, setPhone] = useState('')
+  const [city, setCity] = useState(-1)
+  const [area, setArea] = useState(-1)
+  const [adress, setAdress] = useState('')
+  //-----------------------------------------------------------
   return (
     <Router>
       <>
@@ -166,23 +176,62 @@ function App() {
 
             {/* 購物車頁面 */}
             <Route path="/cartproduct">
-              <CartProduct />
+              <CartProduct
+                myCart={myCart}
+                setMyCart={setMyCart}
+                showLoading={showLoading}
+                setShowLoading={setShowLoading}
+                myCartDisplay={myCartDisplay}
+                setMyCartDisplay={setMyCartDisplay}
+              />
             </Route>
 
             <Route path="/cartbid">
-              <CartBid />
+              <CartBid
+                myCart={myCart}
+                setMyCart={setMyCart}
+                showLoading={showLoading}
+                setShowLoading={setShowLoading}
+                myCartDisplay={myCartDisplay}
+                setMyCartDisplay={setMyCartDisplay}
+              />
             </Route>
 
             <Route path="/cartsecondhand">
-              <CartSecondHand />
+              <CartSecondHand
+                myCart={myCart}
+                setMyCart={setMyCart}
+                showLoading={showLoading}
+                setShowLoading={setShowLoading}
+                myCartDisplay={myCartDisplay}
+                setMyCartDisplay={setMyCartDisplay}
+              />
             </Route>
 
             <Route path="/cartclass">
-              <CartClass />
+              <CartClass
+                myCart={myCart}
+                setMyCart={setMyCart}
+                showLoading={showLoading}
+                setShowLoading={setShowLoading}
+                myCartDisplay={myCartDisplay}
+                setMyCartDisplay={setMyCartDisplay}
+              />
             </Route>
 
             <Route path="/deliveryinfo">
-              <DeliveryInfo />
+              <DeliveryInfo
+                name={name}
+                setName={setName}
+                phone={phone}
+                setPhone={setPhone}
+                city={city}
+                setCity={setCity}
+                area={area}
+                setArea={setArea}
+                adress={adress}
+                setAdress={setAdress}
+              />
             </Route>
 
             <Route path="/checkinfo">
