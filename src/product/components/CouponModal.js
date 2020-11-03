@@ -22,6 +22,7 @@ function CouponModal(props) {
         headStyle={{ backgroundColor: '#EDECE8' }}
         bodyStyle={{ backgroundColor: '#EDECE8' }}
         footer={null}
+        className="modal_wrapper"
       >
         <div className="row modalOut d-flex">
           <div className="col-6 modalLeft ">
