@@ -1,9 +1,12 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import './index.scoped.scss'
 
 import { useSelector, useDispatch } from 'react-redux'
 
-import { Navbar, Nav, Button, Overlay, Tooltip } from 'react-bootstrap'
+import { Navbar, Nav } from 'react-bootstrap'
+
+import { Menu, Dropdown } from 'antd'
+import { LogoutOutlined, UserOutlined } from '@ant-design/icons'
 
 import {
   AiOutlineShoppingCart,
@@ -155,28 +158,44 @@ function MyNavbar(props) {
             <Nav.Link as={NavLink} to="#" onClick={() => setShowCart(true)}>
               <AiOutlineShoppingCart className="icon" />
             </Nav.Link>
-
-            {/* 是否登入 ？ 會員中心 : 登入頁 */}
+            {/* 是否登入 ？ 下拉選單(會員中心/登出) : 登入頁 */}
             {isLogged ? (
-              <Nav.Link as={NavLink} to="/member-center">
-                <AiOutlineUser className="icon" />
-              </Nav.Link>
+              <Dropdown
+                overlay={
+                  <Menu>
+                    <Menu.Item>
+                      <Nav.Link as={NavLink} to="/member-center">
+                        <AiOutlineUser />
+                        會員中心
+                      </Nav.Link>
+                    </Menu.Item>
+                    <Menu.Item>
+                      <Nav.Link as={NavLink} to="/member-center">
+                        <LogoutOutlined />
+                        登出
+                      </Nav.Link>
+                    </Menu.Item>
+                  </Menu>
+                }
+              >
+                <AiOutlineUser
+                  className="icon"
+                  style={{ margin: '8px' }}
+                  onClick={(e) => e.preventDefault()}
+                />
+              </Dropdown>
             ) : (
               <Nav.Link as={NavLink} to="/login">
                 <AiOutlineUser className="icon" />
               </Nav.Link>
             )}
-
             {/*  */}
-
             <AiOutlineUserSwitch
               className="icon"
               onClick={() => {
                 dispatch({ type: 'SIGN_IN' })
               }}
             />
-
-            {/*  */}
           </Nav>
         </Navbar.Collapse>
       </Navbar>
