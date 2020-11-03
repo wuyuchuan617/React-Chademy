@@ -320,7 +320,7 @@ body {
 /* roll container finish here! */
 .review {
   background-color: #d6d7d1;
-
+  margin-bottom: 30px;
   padding: 50px;
 }
 
@@ -340,7 +340,7 @@ body {
 }
 
 .w_rew_scroll {
-  height: 800px;
+  height: 408px;
   overflow: scroll;
 }
 

@@ -68,10 +68,15 @@ function Product(props) {
       {product.map((item, index) => {
         return <ProductSix key={index} item={item} product={product} />
       })}
-      <div class="w_rew_scroll">
-        {product.map((item, index) => {
-          return <ProductSeven key={index} item={item} />
-        })}
+      <div className="container ">
+        <div className="row justify-content-center title">
+          <h3>產品評價</h3>
+        </div>
+        <div class="w_rew_scroll">
+          {product.map((item, index) => {
+            return <ProductSeven key={index} item={item} />
+          })}
+        </div>
       </div>
       <Slider />
       <ProductNine />
