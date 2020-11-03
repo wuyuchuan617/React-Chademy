@@ -11,16 +11,15 @@ $contentBg: #edece8;
   contentBg: $contentBg;
 }
 
-// 覆蓋 ant 樣式
-.ant-btn {
+// 你給 button  type="chademy"   組件會生成 ant-btn-chademy  的 className，提供自定義樣式
+.ant-btn-chademy {
   margin-top: 50px;
   width: $formWidth;
   height: 40px;
   background: $btnColor;
   border-color: $btnColor;
   border-radius: 0px;
-
-  outline: 1px orange dashed;
+  // outline: 1px orange dashed;
 }
 
 .ant-layout-header {

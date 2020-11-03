@@ -253,17 +253,27 @@ function Register(props) {
           </Form.Item>
 
           <Form.Item>
-            <Button type="primary" htmlType="submit">
+            <Button type="chademy" htmlType="submit">
               註冊
             </Button>
           </Form.Item>
         </Form>
 
         <Modal
+          className="reset_modal"
           title={reg.title}
           visible={smShow}
+          onOk={() => setSmShow(false)}
           onCancel={() => setSmShow(false)}
-          okText="確認"
+          footer={[
+            <Button
+              key="submit"
+              type="primary"
+              onClick={() => setSmShow(false)}
+            >
+              確認
+            </Button>,
+          ]}
         >
           {reg.success && <div>{reg.msg}</div>}
           {reg.data && reg.data.noEmail && <div>{reg.data.noEmail}</div>}

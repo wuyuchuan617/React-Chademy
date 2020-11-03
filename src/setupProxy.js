@@ -1,14 +1,13 @@
 const { createProxyMiddleware } = require('http-proxy-middleware')
 
 module.exports = function (app) {
-  console.log('app: ', app)
   app.use(
-    '/api',
+    '/api', // 代理 /api 開頭的請求
     createProxyMiddleware({
-      target: 'http://localhost:3080',
+      target: 'http://localhost:3001', // 打去的後端 host
       changeOrigin: true,
       pathRewrite: {
-        '^/api': '',
+        '^/api': '', // 去除 api
       },
     })
   )
