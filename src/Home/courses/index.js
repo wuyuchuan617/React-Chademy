@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Courses.css'
 import Img from '../img/sub_lightyourlife_20aw.jpg'
 import Img2 from '../img/ATD_Retail_2020_Flowerpot_VP7_The-Moor_AP5_Rely_HW9_Linen-Cushion__In-Between__-1500x2000.jpg'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function Courses() {
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
   return (
-    <div className="row no-gutters mt_mb_100">
+    <div className="row no-gutters mt_mb_100" data-aos="fade-up">
       <div className="title1 mb-3">
         <div className="titlech noto-serif text-center">椅子學院</div>
         <div className="titleEN lora text-center">New Courses</div>

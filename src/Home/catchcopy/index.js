@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Catchcopy.scss'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function Catchcopy() {
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
   return (
-    <div className="row no-gutters mt_mb_100">
+    <div className="row no-gutters mt_mb_100" data-aos="fade-up">
       <div className="i_homeinfo i_homepart">
         <p className="i_homelora-lighter">CHADEMY 椅子學院</p>
         <p className="i_homesubinfo i_homenoto-sans i_homep14">

@@ -8,26 +8,26 @@ import Antique from './antique'
 import News from './news'
 import Classic from './classic'
 import Bidding from './bidding'
-
 import Courses from './courses'
 import Blogs from './blogs'
 import EntryAnimation from './components/EntryAnimation'
-import FadeIn from 'react-fade-in'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function Home(props) {
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
   return (
     <>
       <EntryAnimation />
       <Header />
       <div className="container ">
-        <FadeIn delay="5000">
-          <Catchcopy />
-        </FadeIn>
-        <FadeIn transitionDuration="5000">
-          <About />
-        </FadeIn>
+        <Catchcopy />
+        <About />
         <News />
         <Classic />
         <Antique />

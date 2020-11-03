@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import OurApproach from '../img/OurApproach_OvergaardDyrman-1.jpg'
 import './About.scss'
-
-// import classNameNames from "classNamenames/bind";
-// import classNamees from "./style.module.scss";
-// const cx = classNameNames.bind(classNamees);
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function About() {
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
   return (
-    <div className="row no-gutters mt_mb_100">
+    <div className="row no-gutters mt_mb_100" data-aos="fade-up">
       <div className="col-lg-8 col-md-10 col-sm-12">
         <div className="aboutcompany">
           <img src={OurApproach} alt="" />

@@ -4,6 +4,7 @@ import TextArea from '../components/SecondhandProduct/TextArea'
 import Filter from '../components/SecondhandProduct/Filter'
 import '../styles/secondhandProduct.css'
 import { withRouter, useParams } from 'react-router-dom'
+import Breadcrumb from '../components/Breadcrumb'
 
 function SecondhandProduct(props) {
   const [product, setProduct] = useState([])
@@ -37,7 +38,9 @@ function SecondhandProduct(props) {
   return (
     <>
       <div class="container custom-container-width">
-        <div class="row mt-5">麵包屑</div>
+        <div class="row mt-5 mb-4">
+          <Breadcrumb />
+        </div>
         <div class="row d-flex flex-wrap">
           {product.map((item, index) => {
             return <ImgArea key={index} item={item} product={product} />

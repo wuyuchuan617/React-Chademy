@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './News.css'
 import Img from '../img/References.jpg'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function About() {
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
   return (
-    <div className="row mt_mb_100">
+    <div className="row mt_mb_100" data-aos="fade-up">
       <div className="title3">
         <div className="straight"></div>
         <div className="cross"></div>
