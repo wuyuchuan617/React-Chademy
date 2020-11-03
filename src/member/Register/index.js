@@ -82,10 +82,10 @@ function Register(props) {
       // 顯示小彈窗
       setSmShow(true)
 
-      // // n 秒後轉導至 /
-      // setTimeout(() => {
-      //   history.push('/')
-      // }, 2000)
+      // n 秒後轉導至 /
+      setTimeout(() => {
+        history.push('/')
+      }, 2000)
     } else {
       setReg({
         success: success,

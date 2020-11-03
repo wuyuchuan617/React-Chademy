@@ -2,17 +2,16 @@ import React, { useState } from 'react'
 import './index.scoped.scss'
 
 import { useSelector, useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
 import { Navbar, Nav } from 'react-bootstrap'
 
 import { Menu, Dropdown } from 'antd'
-import { LogoutOutlined, UserOutlined } from '@ant-design/icons'
+import { LogoutOutlined } from '@ant-design/icons'
 
-import {
-  AiOutlineShoppingCart,
-  AiOutlineUser,
-  AiOutlineUserSwitch,
-} from 'react-icons/ai'
+import { AiOutlineShoppingCart, AiOutlineUser } from 'react-icons/ai'
+
+import request from '../../utils/request'
 import logo from '../images/logo.svg'
 
 // 選單連結要使用NavLink取代Link
@@ -20,9 +19,9 @@ import { NavLink } from 'react-router-dom'
 
 import CartArea from '../../cart/components/CartArea'
 
-// TODO: https://reedbarger.com/how-to-create-a-usewindowsize-react-hook/
-
 function MyNavbar(props) {
+  const dispatch = useDispatch()
+
   const {
     activeName,
     setActiveName,
@@ -37,18 +36,28 @@ function MyNavbar(props) {
   const navbarPosition =
     !activeName && isDown && over100px ? `-${navbarHeight}px` : 0
 
-  // console.log(scrollY, scrollDirection, isDown && over100px)
-
   const activeState = (name) =>
     name === activeName ? 'navbar_item_is_active' : ''
 
   // 登入的狀態
-  const isLogged = useSelector((state) => state.isLogged)
+  const isLogged = useSelector((state) => state.user.logged)
 
-  console.log(' 是否登入: ', isLogged)
+  let history = useHistory()
 
-  // 改變登出登入
-  const dispatch = useDispatch()
+  const handleLogout = () => {
+    // 登出
+    const logout = () => {
+      dispatch({ type: 'SIGN_OUT' })
+
+      setTimeout(() => {
+        history.push('/')
+      }, 300)
+    }
+
+    request({ url: 'members/logout', method: 'POST' })
+      .then(() => logout())
+      .catch(() => logout())
+  }
 
   return (
     <>
@@ -75,6 +84,7 @@ function MyNavbar(props) {
           to="/"
           className="logo_brand"
         >
+          <div className="logologo"></div>
           <img
             className="navbar_logo"
             src={logo}
@@ -155,9 +165,27 @@ function MyNavbar(props) {
           </Nav>
 
           <Nav className="icon_con">
+            <Nav.Link
+              style={{ display: 'none' }}
+              as={NavLink}
+              to="#"
+              onClick={async () => {
+                const response = await request({
+                  url: 'members/loginTest',
+                  method: 'POST',
+                  data: {},
+                })
+
+                console.log(' 測試 response:', response)
+              }}
+            >
+              <AiOutlineShoppingCart className="icon" />
+            </Nav.Link>
+
             <Nav.Link as={NavLink} to="#" onClick={() => setShowCart(true)}>
               <AiOutlineShoppingCart className="icon" />
             </Nav.Link>
+
             {/* 是否登入 ？ 下拉選單(會員中心/登出) : 登入頁 */}
             {isLogged ? (
               <Dropdown
@@ -169,11 +197,9 @@ function MyNavbar(props) {
                         會員中心
                       </Nav.Link>
                     </Menu.Item>
-                    <Menu.Item>
-                      <Nav.Link as={NavLink} to="/member-center">
-                        <LogoutOutlined />
-                        登出
-                      </Nav.Link>
+                    <Menu.Item onClick={handleLogout}>
+                      <LogoutOutlined />
+                      登出
                     </Menu.Item>
                   </Menu>
                 }
@@ -189,13 +215,6 @@ function MyNavbar(props) {
                 <AiOutlineUser className="icon" />
               </Nav.Link>
             )}
-            {/*  */}
-            <AiOutlineUserSwitch
-              className="icon"
-              onClick={() => {
-                dispatch({ type: 'SIGN_IN' })
-              }}
-            />
           </Nav>
         </Navbar.Collapse>
       </Navbar>

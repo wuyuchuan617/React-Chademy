@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import './index.scss'
 
-import { Form, Button, Col, Container, Modal } from 'react-bootstrap'
+import request from '../../utils/request'
+
+import { Form, Button, Col, Modal } from 'react-bootstrap'
+
+import { message } from 'antd'
 
 function Forget(props) {
+  const [email, setEmail] = useState('')
   return (
     <Modal
       {...props}
@@ -20,9 +25,32 @@ function Forget(props) {
         <p>請提供您的帳戶電郵，收發電子郵件，來重置您的密碼。</p>
         <Form.Group as={Col} controlId="formGridAddress1">
           <Form.Label>電子信箱</Form.Label>
-          <Form.Control type="text" className="for_in" />
+          <Form.Control
+            type="email"
+            className="for_in"
+            onChange={(e) => {
+              setEmail(e.target.value)
+            }}
+          />
         </Form.Group>
-        <Button variant="primary" type="submit" className="for_btn">
+        <Button
+          variant="primary"
+          type="submit"
+          className="for_btn"
+          onClick={async () => {
+            const response = await request({
+              url: `/members/forgetPwd`,
+              method: 'POST',
+              data: { email },
+            })
+
+            if (!response.success) {
+              message.error(response.msg)
+            } else {
+              message.success(response.msg)
+            }
+          }}
+        >
           發送
         </Button>
       </Modal.Body>

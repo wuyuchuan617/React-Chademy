@@ -62,17 +62,17 @@ service.interceptors.response.use(
       /**
        * example
        {
+          code: 999
           success: false,
-          msg: "請輸入正確的帳號或密碼",
+          msg: '時間過長，請重新登入',
           data: null,
         }
        */
       // message.error((res && res.message) || 'Error')
 
-      // 50008: Illegal token; 50012: Other clients logged in; 50014: Token expired;
-      if (res.code === 50008 || res.code === 50012 || res.code === 50014) {
+      if (res.code === 999) {
         // to re-login
-        // message.error('This is an error message')
+        message.error(res.msg)
         // MessageBox.confirm(
         //   'You have been logged out, you can cancel to stay on this page, or log in again',
         //   'Confirm logout',

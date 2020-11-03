@@ -48,6 +48,7 @@ import WorkshopList from './workshop/pages/WorkshopList'
 import Login from './member/Login'
 import Register from './member/Register'
 import MemberCenter from './member/MemberCenter'
+import Resetpassword from './member/Resetpassword'
 
 // ---------------------以下import 購物車頁面------------------
 import CartProduct from './cart/pages/CartProduct'
@@ -90,6 +91,10 @@ function App() {
             {/* 註冊 */}
             <Route path="/register">
               <Register />
+            </Route>
+
+            <Route path="/reset-password">
+              <Resetpassword />
             </Route>
 
             {/* 會員中心 */}

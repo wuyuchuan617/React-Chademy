@@ -1,0 +1,25 @@
+@import '../../common_components/styles/ant_custom.scss';
+
+.register_container {
+  padding: 100px;
+  background: $contentBg;
+
+  /deep/ {
+    .form_container {
+      width: $formWidth;
+      margin: 0 auto;
+
+      input {
+        border-radius: 0;
+      }
+
+      .form-group.col {
+        padding: 0;
+      }
+
+      .date_input {
+        width: 100%;
+      }
+    }
+  }
+}
