@@ -61,8 +61,8 @@ function CartList(props) {
                 <div className="listitem">
                   {/* src={require('../../img/' + item.photo)} */}
                   <img src={require('../../img/' + item.img)} alt="" />
-                  <h6 style={{ left: '30px' }}>{item.id}</h6>
-                  <h6 style={{ left: '120px' }}>${item.price}</h6>
+                  <h6 style={{ left: '450px' }}>{item.id}</h6>
+                  <h6 style={{ left: '750px' }}>${item.price}</h6>
                   <div className="listqty">
                     <h6
                       style={{ left: '10px', cursor: 'pointer' }}
@@ -81,11 +81,11 @@ function CartList(props) {
                       <FiMinus />
                     </h6>
                   </div>
-                  <h6 style={{ left: '330px', color: '#C67334' }}>
+                  <h6 style={{ left: '1100px', color: '#C67334' }}>
                     ${item.price * item.amount}
                   </h6>
                   <Link to="#" onClick={() => handleDelete(item.id)}>
-                    <h6 style={{ left: '420px' }}>
+                    <h6 style={{ left: '1220px' }}>
                       <BsTrash />
                     </h6>
                   </Link>

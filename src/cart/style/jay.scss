@@ -263,7 +263,7 @@
     // line-height: 220px;
   }
   .listitem h6{
-    position: relative;
+    position: absolute;
     line-height: 220px;
   }
   .cartlist img{
@@ -273,12 +273,12 @@
   }
 
   .listqty{
-    margin: auto 0;
-    position: relative;
+    margin-top: 90px;
+    position: absolute;
     width: 140px;
     height: 40px;
     border: 1px solid black;
-    left: 260px;
+    left: 890px;
     display: flex;
 
   }
