@@ -1,0 +1,123 @@
+header {
+  position: relative;
+}
+
+.a_video {
+  width: 100% !important;
+}
+
+.a_homeslogan {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 48px;
+  position: absolute;
+  top: 30%;
+}
+
+.a_homeslogan p {
+  color: white;
+}
+
+.a_homesubslogan {
+  font-size: 24px;
+}
+
+
+/*news*/
+.title {
+  width: 100%;
+  position: relative;
+}
+
+.a_blogtitleset {
+  margin-left: 60px;
+  margin-top: 15px;
+}
+
+.a_blogtitlech {
+  font-size: 32px;
+  margin-top: 80px;
+}
+
+.a_blogtitleEN {
+  font-size: 12px;
+}
+
+.a_blogtext {
+  width: 80%;
+}
+
+.a_blogp14 {
+  font-size: 14px;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+
+.btn_a_blog {
+  width: 130px;
+  height: 40px;
+  margin: 50px auto;
+  background-color: #ded5c6;
+}
+
+.more {
+  line-height: 40px;
+  text-align: center;
+  font-size: 12px;
+  color: #707070;
+  cursor: pointer;
+}
+
+.a_blog img {
+  width: 100%;
+  margin-top:50px;
+}
+
+/*masonry*/
+
+ .a_list {
+            column-count: 3;
+            /* column-rule: 1px dashed lightblue; */
+        }
+
+        .a_list .item {
+            -webkit-column-break-inside: avoid;
+            /*Chrome, Safari, Opera */
+            page-break-inside: avoid;
+            /* Firefox */
+            break-inside: avoid;
+            /* IE 10+ */
+
+            padding:10px;
+            background-color:#edece8;
+            margin-bottom: 15px;
+           
+        }
+
+        .a_list .item img {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .a_list .item h4 {
+           font-size: 1.125rem;
+  letter-spacing: 0.2rem;
+  color: #1a1818;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: normal;
+        }
+
+                .a_list .item p {
+           font-size: 14px;
+  font-weight: 200;
+  letter-spacing: 2px;
+        }
+
+        .annie_title01 h2 {
+  font-size: 2.25rem;
+  margin-bottom: 4.375rem;
+  letter-spacing: 0.2rem;
+  text-align: center;
+}
+

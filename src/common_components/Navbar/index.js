@@ -155,9 +155,10 @@ function MyNavbar(props) {
               <div className="text-center">FUNDING</div>
             </Nav.Link>
             <Nav.Link
-              href="#blog"
-              onClick={() => setActiveName('blog')}
-              className={['text-center', activeState('blog')]}
+              as={NavLink}
+              to="/Blog"
+              onClick={() => setActiveName('Blog')}
+              className={['text-center', activeState('Blog')]}
             >
               <div>靈感探索</div>
               <div>BLOG</div>
