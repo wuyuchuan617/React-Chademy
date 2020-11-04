@@ -128,8 +128,13 @@ function MyNavbar(props) {
               <div className="text-center">ANTIQUE</div>
             </Nav.Link>
             <Nav.Link
+<<<<<<< Updated upstream
               as={NavLink}
               to="/bid"
+=======
+            as={NavLink}
+              to="/pages/bid"              
+>>>>>>> Stashed changes
               onClick={() => setActiveName('bidding')}
               className={['text-center', activeState('bidding')]}
             >

@@ -8,8 +8,29 @@ export const getData = (data) => {
   }
 }
 
-// export const getBidDataAsync = (value) => {
-//   return async function updateTotalToServer(dispatch, getState) {
+export const getBidData = (data) => {
+    return async function getTotalFromServer(dispatch) {
+      const url = 'http://localhost:3009/product/api/bid'
+  
+      const request = new Request(url, {
+        method: 'GET',
+        headers: new Headers({
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        }),
+      })
+  
+      const response = await fetch(request)
+      const data = await response.json()
+      // data會是一個物件值
+      console.log(data)
+      
+  
+      //setTotal(data.total)
+      // 最後得到資料，然後發送動作到reducer
+      dispatch(getData(data))
+    }
+  }
 //     // 開啟載入的指示圖示
 //     //setDataLoading(true)
 
@@ -53,7 +74,7 @@ export const initAct = (data) => {
 // 對應初始化值，向伺服器get資料的動作建立器
 export const initActAsync = (data) => {
   return async function getTotalFromServer(dispatch) {
-    const url = 'http://localhost:3000/product/api/list'
+    const url = 'http://localhost:3009/product/api/list'
 
     const request = new Request(url, {
       method: 'GET',

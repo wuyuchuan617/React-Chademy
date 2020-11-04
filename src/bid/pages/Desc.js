@@ -1,12 +1,91 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import Designer from '../component/Designer'
+import Slider from '../component/Slider'
 import { connect } from 'react-redux'
+import Bookmark from '../component/Bookmark'
+import Record from '../component/Record'
+import Chatroom from '../component/Chatroom'
+import Spec from '../component/Spec'
+import BpCard from '../component/BpCard'
 import '../styles/desc.scss'
-import {
-  getBidDataAsync
-} from '../../actions/index'
+// import { BsFillHeartFill } from 'react-icons/bs'
+
+// import { HeartOutlined } from '@ant-design/icons';
+// import {  
+//   getData,
+//   getBidData,
+//   initAct,
+//   initActAsync,
+// } from '../../actions'
+
 function Desc(props) {
-  console.log('props', props)
+//<3 css
+  const heartFill = {
+    color: '#C77334',
+  }
+  const {price, setPrice} = props
+  const [desc, setDesc] = useState('')
+  const [material, setMaterial] = useState('')
+  const [dimensions, setDimensions] = useState('')
+  const [heart, setHeart] = useState(false)
+  const [heartItem, setHeartItem] = useState({})
+
+  async function initData() {
+    const url = 'http://localhost:3001/product/api/bid/4' 
+
+    // const newPrice = { startedPrice : price}
+    const request = new Request(url, {
+      method: 'GET',
+      // body: JSON.stringify(newPrice),
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    // const response = await fetch(request).then((v) => console.log(v))
+    const response = await fetch(request)
+    const data = await response.json()
+
+    // console.log(price+ value)
+    console.log('data:' , data) // [object Object]
+    // console.log(data.startedPrice , value) // [object Object]
+    // setPrice(data.startedPrice*1 + value*1)
+    setPrice(data.startedPrice)
+    setDesc(data.description)
+    setMaterial(data.material)
+    setDimensions(data.dimensions)
+  }
+
+  async function addprice(value){
+    const url = 'http://localhost:3001/product/api/record' 
+
+    const newPrice = { 
+      'price' : value,
+      'total_price' : price,  
+    }
+    const request = new Request(url, {
+      method: 'POST',
+      body: JSON.stringify(newPrice),
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    // const response = await fetch(request).then((v) => console.log(v))
+    const response = await fetch(request)
+    const data = await response.json()
+
+    console.log('data:' , data) 
+    
+    const copyPrice = price
+    setPrice(+copyPrice + value*1)
+  }
+
+  useEffect(() => {
+    initData()
+  }, [])
+  
   return (
     <>
       {/* countdown */}
@@ -42,11 +121,7 @@ function Desc(props) {
             <div className="info">
               <h4>產品簡介</h4>
               <div className="line2"></div>
-              <p>
-                坐進 Charlotte 扶手椅，仿佛置身於一個溫暖懷抱。Charlotte
-                兼具舒適耐用和美觀設計的特性使其能夠輕鬆融入任何一個房間。設計師
-                Henrik Pedersen
-                著眼于自然形態、簡潔線條和舒適性，打造出一款具有突出個性的小巧扶手椅。
+              <p>{desc}
               </p>
             </div>
             <div className="info">
@@ -55,10 +130,12 @@ function Desc(props) {
               <div className="justify-content-center d-flex">
                 <div className="col-6">
                   <h4 className="text-center">尺寸</h4>
-                  <table className="mx-auto">
+                  <p>{dimensions}</p>
+                  
+                  {/* <table className="mx-auto">
                     <tbody className="text-right justify-content-center ">
                       <tr>
-                        <th>Height</th>
+                        <th></th>
                         <td>76cm</td>
                       </tr>
                       <tr>
@@ -78,17 +155,12 @@ function Desc(props) {
                         <td>54cm</td>
                       </tr>
                     </tbody>
-                  </table>
+                  </table> */}
                 </div>
                 <div className="col-6">
                   <h4 className="text-center">材質</h4>
                   <p className="text-center">
-                    Solid soaped oak frame with seat and back in natural
-                    canvas.Solid soaped oak frame with seat and back in natural
-                    canvas.Solid soaped oak frame with seat and back in natural
-                    canvas.Solid soaped oak frame with seat and back in natural
-                    canvas.Solid soaped oak frame with seat and back in natural
-                    canvas.
+                    {material}
                   </p>
                 </div>
               </div>
@@ -99,11 +171,35 @@ function Desc(props) {
             <h1>帆布椅</h1>
             <h4>目前金額</h4>
             <div className="line3 my-4"></div>
-            <h2>$123,000</h2>
+            <h2 className="g-bidprice">${price}</h2>
+            {/* <BsFillHeartFill
+                onClick={async () => {
+                  await setHeart(!heart)
+                  if (heart === false) {
+                    const newHeartItem = {
+                      follow_product: item.product_name,
+                      member_id: 'AMY',
+                      follow_status: 1,
+                    }
+                    await setHeartItem(newHeartItem)
+                  } else {
+                    deleteHeartToServer()
+                    setHeart(false)
+                    setHeartItem({})
+                  }
+                }}
+                style={heart ? heartFill : ''}
+              /> */}
+
+
+            {/* <HeartOutlined className="g-heart" style={{ fontSize: '18px', color: '#707070', fill: '#707070'}}/> */}
             <p>出價</p>
-            <button className="price">$1,000</button>
-            <button className="price">$5,000</button>
-            <button className="price">$10,000</button>
+            <button onClick={()=>addprice(1000)}
+             className="g-price">$1,000</button>
+            <button onClick={()=>addprice(5000)}
+            className="g-price">$5,000</button>
+            <button onClick={()=>addprice(10000)}
+            className="g-price">$10,000</button>
             <h4>競標資訊</h4>
             <div className="line3 my-4"></div>
             <table>
@@ -133,8 +229,33 @@ function Desc(props) {
             <button className="chat">進入競標聊天室</button>
           </div>
         </div>
+      
+      <Bookmark />
+      <Switch>
+      <Route path="/pages/desc/record">
+        <Record/>
+      </Route>
+      <Route path="/pages/desc/chatroom">
+        <Chatroom/>
+      </Route>
+      <Route path="/pages/desc/spec">
+        <Spec/>
+      </Route>
+      </Switch>
+      <Designer />
+      <Slider />
       </div>
     </>
   )
 }
+
+// const mapStateToProps = (store) => {
+//   return { desc: store.bid}
+// }
+// export default connect(mapStateToProps, {
+//   getData,
+//   getBidData,
+//   initAct,
+//   initActAsync,
+// })(Desc)
 export default Desc

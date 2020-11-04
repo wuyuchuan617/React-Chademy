@@ -1,0 +1,45 @@
+.g-bg{
+    background-color: #bdc5c7;
+    height: 500px;
+    margin-top: 80px;
+    // padding: 0 15px;
+}
+.g-list{
+    height: 40px;
+    // width: 600px;
+    // background-color: #b6b4b4;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    
+    
+}
+.g-b-pic{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    // background-color: #fff;
+    margin-left: 20px;
+    overflow: hidden;
+}
+.g-b-pic img{
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.g-line{
+    height: 1px;
+    // width: 90%;
+    background-color: #707070;
+    // margin: 10px;
+}
+.g-b-name{
+    margin-left: 10px;
+}
+.g-b-total{
+    // margin-right: 20px;
+}
+.g-b-time{
+    margin-right: 20px;
+    font-size: 12px;
+}

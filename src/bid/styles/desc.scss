@@ -42,7 +42,7 @@
         }
         .line{
             width: 1px;
-            height: 1400px;
+            height: 1200px;
             background-color: #707070;
             opacity: 0.4;          
             margin-bottom: 20px;  
@@ -108,7 +108,7 @@
             font-weight: 600;
             color: #707070;
         }
-        .bidinfo .price{
+        .bidinfo .g-price{
             font-family: assistant;
             font-size: 16px;
             font-weight: 700;
@@ -153,5 +153,11 @@
             height: 40px;
             border-radius: 0;
             margin-top: 40px;
+        }
+        .g-bidprice{
+            margin: 0px ;
+        }
+        .g-heart:hover{
+            color: #000;
         }
   
