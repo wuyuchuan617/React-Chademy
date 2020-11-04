@@ -37,6 +37,8 @@ function MyNavbar(props) {
   const dispatch = useDispatch()
 
   const {
+    cartamount,
+    setCartAmount,
     activeName,
     setActiveName,
     navbarHeight,
@@ -45,7 +47,6 @@ function MyNavbar(props) {
     scrollDirection,
   } = props
   const [showCart, setShowCart] = useState(false)
-  const [cartamount, setCartAmount] = useState(0)
   const isDown = scrollDirection === 'DOWN'
   const over100px = scrollY < -100
   const navbarPosition =
