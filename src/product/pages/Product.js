@@ -16,6 +16,7 @@ import '../styles/product.css'
 
 function Product(props) {
   const [product, setProduct] = useState([])
+  const { setCartAmount, cartamount } = props
 
   let { sid } = useParams()
   console.log('sid' + sid)
@@ -56,6 +57,8 @@ function Product(props) {
             product={product}
             sid={sid}
             review={review}
+            setCartAmount={setCartAmount}
+            cartamount={cartamount}
           />
         )
       })}

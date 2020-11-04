@@ -7,7 +7,7 @@ import popularImg from '../images/777.jpg'
 import { Rate } from 'antd'
 
 function ProductFirst(props) {
-  const { item, review, sid } = props
+  const { item, review, sid, cartamount, setCartAmount } = props
 
   const [myCart, setMyCart] = useState([])
   const [show, setShow] = useState(false)
@@ -296,6 +296,7 @@ function ProductFirst(props) {
               <button
                 className="cart-btn"
                 onClick={() => {
+                  setCartAmount(cartamount + 1)
                   updateCartToLocalStorage({
                     product_no: item.product_no,
                     id: item.product_name,

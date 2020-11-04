@@ -68,11 +68,12 @@ function App() {
   const [city, setCity] = useState(-1)
   const [area, setArea] = useState(-1)
   const [adress, setAdress] = useState('')
+  const [cartamount, setCartAmount] = useState(0)
   //-----------------------------------------------------------
   return (
     <Router>
       <>
-        <CHNavbar />
+        <CHNavbar cartamount={cartamount} setCartAmount={setCartAmount} />
 
         <ScrollToTop>
           <Switch>
@@ -107,11 +108,14 @@ function App() {
 
             {/* 產品頁面 */}
             <Route exact path="/productlist">
-              <ProductList />
+              <ProductList
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+              />
             </Route>
 
             <Route path="/product/:sid?">
-              <Product />
+              <Product cartamount={cartamount} setCartAmount={setCartAmount} />
             </Route>
 
             <Route path="/review">
