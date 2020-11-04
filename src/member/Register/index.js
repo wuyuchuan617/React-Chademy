@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 
 import './index.scoped.scss'
 import request from '../../utils/request'
@@ -30,6 +31,8 @@ const validateMessages = {
 }
 
 function Register(props) {
+  const dispatch = useDispatch()
+
   // 表單元素
   const [form] = Form.useForm()
 
@@ -57,8 +60,6 @@ function Register(props) {
   async function registerApi(register) {
     const { password2, ...realRegister } = register
 
-    console.log('register', register)
-
     const response = await request({
       url: 'members/register',
       method: 'POST',
@@ -71,6 +72,9 @@ function Register(props) {
     if (success) {
       // 資料（物件）轉成 JSON，儲存登入資訊
       // localStorage.setItem('userInfo', JSON.stringify(data))
+
+      // 3. 調用 dispatch => 觸發 store.subscribe
+      dispatch({ type: 'SIGN_IN', payload: data })
 
       // 設定小彈窗的內容
       setReg({
