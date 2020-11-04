@@ -8,12 +8,14 @@ function CheckInfo(props) {
   const [showATM, setShowATM] = useState(false)
   const [showIns, setShowIns] = useState(false)
   const { myCart, name, phone, city, area, adress } = props
+  const city2 = city === -1 ? 0 : city
+  const area2 = area === -1 ? 0 : area
   let date = new Date()
   let year = date.getFullYear()
   let month = date.getMonth() + 1
   let day = date.getDay()
-  const newcity = countries[city]
-  const newarea = townships[city][area]
+  const newcity = countries[city2]
+  const newarea = townships[city2][area2]
   const submitData = {
     PO_NO: `PO${year}${month}${day}`,
     member: name,

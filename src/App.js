@@ -235,6 +235,7 @@ function App() {
 
             <Route path="/checkinfo">
               <CheckInfo
+                myCart={myCart}
                 name={name}
                 phone={phone}
                 city={city}
