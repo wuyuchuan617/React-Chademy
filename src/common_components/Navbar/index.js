@@ -58,6 +58,10 @@ function MyNavbar(props) {
   // 登入的狀態
   const isLogged = useSelector((state) => state.user.logged)
 
+  // 使用者物件
+  const user = useSelector((state) => state.user)
+  const { name } = user.users || {}
+
   let history = useHistory()
 
   const handleLogout = () => {
@@ -225,11 +229,15 @@ function MyNavbar(props) {
                   </Menu>
                 }
               >
-                <AiOutlineUser
-                  className="icon"
-                  style={{ margin: '8px' }}
-                  onClick={(e) => e.preventDefault()}
-                />
+                <div>
+                  <AiOutlineUser
+                    className="icon"
+                    style={{ margin: '8px' }}
+                    onClick={(e) => e.preventDefault()}
+                  />
+                  {/* 使用者 name */}
+                  {name}
+                </div>
               </Dropdown>
             ) : (
               <Nav.Link as={NavLink} to="/login">
