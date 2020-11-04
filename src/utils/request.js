@@ -18,7 +18,7 @@ service.interceptors.request.use(
   (config) => {
     // do something before request is sent
 
-    const { user } = JSON.parse(localStorage['reduxState'])
+    const { user = {} } = JSON.parse(localStorage['reduxState'] || '{}')
     const { authToken } = user.users || {}
 
     if (authToken) {
