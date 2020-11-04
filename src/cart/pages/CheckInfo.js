@@ -1,11 +1,46 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { countries, townships, postcodes } from '../components/Data'
 // import './style/jay.scss'
 
 function CheckInfo(props) {
   const [showCreditCard, setShowCreditCard] = useState(true)
   const [showATM, setShowATM] = useState(false)
   const [showIns, setShowIns] = useState(false)
+  const { myCart, name, phone, city, area, adress } = props
+  let date = new Date()
+  let year = date.getFullYear()
+  let month = date.getMonth() + 1
+  let day = date.getDay()
+  const newcity = countries[city]
+  const newarea = townships[city][area]
+  const submitData = {
+    PO_NO: `PO${year}${month}${day}`,
+    member: name,
+    qualify: 1,
+    delivery_adress: `${newcity}${newarea}${adress}`,
+    invoice_adress: `${newcity}${newarea}${adress}`,
+    order_date: `${year}-${month}-${day}`,
+    order_status: 1,
+    delivery_status: 1,
+    point: 20,
+    total: 200,
+  }
+  async function updateTotalToServer(value) {
+    const url = 'http://localhost:3001/j_cart/addorder'
+    const request = new Request(url, {
+      method: 'POST',
+      body: JSON.stringify(submitData),
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+
+    // try {
+    const response = await fetch(request)
+    const data = await response.json()
+  }
   return (
     <>
       <div className="myprogress">
@@ -107,6 +142,9 @@ function CheckInfo(props) {
             }}
             placeholder="安全碼"
           />
+          <Link to="#" onClick={() => updateTotalToServer()}>
+            <div className="j_btn5">完成付款</div>
+          </Link>
         </div>
       </div>
     </>

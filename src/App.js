@@ -234,7 +234,13 @@ function App() {
             </Route>
 
             <Route path="/checkinfo">
-              <CheckInfo />
+              <CheckInfo
+                name={name}
+                phone={phone}
+                city={city}
+                area={area}
+                adress={adress}
+              />
             </Route>
 
             {/* 404找不到網頁，需要放在switch路由表最後一個 */}

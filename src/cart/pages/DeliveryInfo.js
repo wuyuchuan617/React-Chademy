@@ -61,34 +61,6 @@ function DeliveryInfo(props) {
         </div>
       </div>
       <hr className="jhr" />
-      <div className="wrap">
-        <h6 style={{ left: '780px' }}>單價</h6>
-        <h6 style={{ left: '940px' }}>數量</h6>
-        <h6 style={{ left: '1100px' }}>總計</h6>
-      </div>
-      <div className="cartlist">
-        <ul>
-          <li>
-            <div className="listitem">
-              <img src={img1} />
-              <h6 style={{ left: '30px' }}>歐洲銀行扶手沙發型餐椅</h6>
-              <h6 style={{ left: '120px' }}>$</h6>
-              <h6 style={{ left: '330px' }}>1</h6>
-              <h6 style={{ left: '450px', color: '#C67334' }}>$2500</h6>
-            </div>
-          </li>
-          <li>
-            <div className="listitem">
-              <img src={img1} />
-              <h6 style={{ left: '30px' }}>歐洲銀行扶手沙發型餐椅</h6>
-              <h6 style={{ left: '120px' }}>$</h6>
-              <h6 style={{ left: '330px' }}>1</h6>
-              <h6 style={{ left: '450px', color: '#C67334' }}>$2500</h6>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <hr className="jhr" />
       <div className="deliveryform">
         <label>
           <h5>寄送地址</h5>
