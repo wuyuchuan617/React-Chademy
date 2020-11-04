@@ -68,11 +68,12 @@ function App() {
   const [city, setCity] = useState(-1)
   const [area, setArea] = useState(-1)
   const [adress, setAdress] = useState('')
+  const [cartamount, setCartAmount] = useState(0)
   //-----------------------------------------------------------
   return (
     <Router>
       <>
-        <CHNavbar />
+        <CHNavbar cartamount={cartamount} setCartAmount={setCartAmount} />
 
         <ScrollToTop>
           <Switch>
@@ -107,11 +108,14 @@ function App() {
 
             {/* 產品頁面 */}
             <Route exact path="/productlist">
-              <ProductList />
+              <ProductList
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+              />
             </Route>
 
             <Route path="/product/:sid?">
-              <Product />
+              <Product cartamount={cartamount} setCartAmount={setCartAmount} />
             </Route>
 
             <Route path="/review">
@@ -159,7 +163,7 @@ function App() {
               <Workshop />
             </Route>
 
-            <Route exact path="/WorkshopList">
+            <Route exact path="/WorkshopList/:sid?">
               <WorkshopList />
             </Route>
 
@@ -234,7 +238,14 @@ function App() {
             </Route>
 
             <Route path="/checkinfo">
-              <CheckInfo />
+              <CheckInfo
+                myCart={myCart}
+                name={name}
+                phone={phone}
+                city={city}
+                area={area}
+                adress={adress}
+              />
             </Route>
 
             {/* 404找不到網頁，需要放在switch路由表最後一個 */}

@@ -23,6 +23,8 @@ function ProductSix(props) {
           <div className="col right-img">
             <img src={require('../../img/' + item.photo)} alt="" />
           </div>
+          <img src={require('../../img/' + item.photo)} alt="" />
+          <img src={require('../../img/' + item.photo)} alt="" />
         </div>
       </div>
     </>

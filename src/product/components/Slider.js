@@ -1,10 +1,41 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 // import { connect } from 'react-redux'
 // import { IoIosArrowDropleft, IoIosArrowDropright } from 'react-icons/io'
 import Carousel from 'react-elastic-carousel'
 import '../styles/slider.scss'
+import { withRouter, useHistory } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 
 function Slider(props) {
+  const { item } = props
+
+  const [relateProducts, setEelateProducts] = useState([])
+
+  async function getItemFromSQL() {
+    const url =
+      'http://localhost:3001/man_product/relate?category=' + item.category
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    // const response = await fetch(request).then((v) => console.log(v))
+    const response = await fetch(request)
+    const data = await response.json()
+
+    console.log('response' + response) // [object Response]
+    console.log('data' + data) // [object Object]
+
+    setEelateProducts(data)
+  }
+
+  useEffect(() => {
+    getItemFromSQL()
+  }, [])
+
   return (
     <>
       <h2 className="grace-related-product text-center">相關產品</h2>
@@ -20,52 +51,29 @@ function Slider(props) {
             </a>
           </div> */}
           {/* <div className="styling"> */}
+
           <Carousel itemsToScroll={3} itemsToShow={3}>
-            <div className="col grace-wrap mx-1">
-              <div className="grace-pic"></div>
-              <div className="d-flex flex-column grace-slider-text">
-                <span>Wooden Chair</span>
-                <span>$10,000</span>
-                <span>Jimmy Choo</span>
-              </div>
-            </div>
-
-            <div className="col grace-wrap mx-1">
-              <div className="grace-pic"></div>
-              <div className="d-flex flex-column grace-slider-text">
-                <span>Wooden Chair</span>
-                <span>$20,000</span>
-                <span>Jimmy Choo</span>
-              </div>
-            </div>
-
-            <div className="col grace-wrap mx-1">
-              <div className="grace-pic"></div>
-              <div className="d-flex flex-column grace-slider-text">
-                <span>Wooden Chair</span>
-                <span>$30,000</span>
-                <span>Jimmy Choo</span>
-              </div>
-            </div>
-
-            <div className="col grace-wrap mx-1">
-              <div className="grace-pic"></div>
-              <div className="d-flex flex-column grace-slider-text">
-                <span>Wooden Chair</span>
-                <span>$30,000</span>
-                <span>Jimmy Choo</span>
-              </div>
-            </div>
-
-            <div className="col grace-wrap mx-1">
-              <div className="grace-pic"></div>
-              <div className="d-flex flex-column grace-slider-text">
-                <span>Wooden Chair</span>
-                <span>$30,000</span>
-                <span>Jimmy Choo</span>
-              </div>
-            </div>
+            {relateProducts.map((item, index) => {
+              return (
+                <div className="col grace-wrap mx-1">
+                  <div className="productCardImg">
+                    <img
+                      src={require('../../img/' + item.photo)}
+                      alt=""
+                      onClick={() => {
+                        props.history.push('/product/' + item.sid)
+                      }}
+                    />
+                  </div>
+                  <div className="d-flex flex-column grace-slider-text">
+                    <span>{item.product_name}</span>
+                    <span>${item.price}</span>
+                  </div>
+                </div>
+              )
+            })}
           </Carousel>
+
           {/* </div> */}
           {/* <div className="arrow col-sm-1">
             <a
@@ -86,4 +94,4 @@ function Slider(props) {
 //   swipeRight,
 //   initAct,
 // })(Slider)
-export default Slider
+export default withRouter(Slider)

@@ -51,6 +51,7 @@ function CartList(props) {
     // 設定資料
     setMyCart(currentCart)
   }
+  console.log('myCart', myCart)
   const display = (
     <>
       <div className="cartlist">

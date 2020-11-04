@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../styles/productlist.css'
 import popularImg from '../images/777.jpg'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function ProductPopular(props) {
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
   return (
     <>
-      <div className="container">
+      <div
+        className="container"
+        data-aos="zoom-out-up"
+        data-aos-duration="4000"
+      >
         <div className="row popular justify-content-between">
           <div className="popular2  col-lg-6 col-sm-12 d-flex ">
             <div className="popularImg">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './index.scoped.scss'
 
 import { useSelector, useDispatch } from 'react-redux'
@@ -18,11 +18,27 @@ import logo from '../images/logo.svg'
 import { NavLink } from 'react-router-dom'
 
 import CartArea from '../../cart/components/CartArea'
+//購物車數字
+import { Badge } from 'antd'
+import { ClockCircleOutlined } from '@ant-design/icons'
 
 function MyNavbar(props) {
+  function getCartFromLocalStorage() {
+    const newCart = localStorage.getItem('cart') || '[]'
+    // console.log(JSON.parse(newCart))
+    const newCart2 = JSON.parse(newCart)
+    console.log(newCart2.length)
+    setCartAmount(newCart2.length)
+  }
+  useEffect(() => {
+    getCartFromLocalStorage()
+  }, [])
+
   const dispatch = useDispatch()
 
   const {
+    cartamount,
+    setCartAmount,
     activeName,
     setActiveName,
     navbarHeight,
@@ -128,8 +144,8 @@ function MyNavbar(props) {
               <div className="text-center">ANTIQUE</div>
             </Nav.Link>
             <Nav.Link
-            as={NavLink}
-              to="/pages/bid"              
+              as={NavLink}
+              to="/pages/bid"
               onClick={() => setActiveName('bidding')}
               className={['text-center', activeState('bidding')]}
             >
@@ -182,10 +198,11 @@ function MyNavbar(props) {
             >
               <AiOutlineShoppingCart className="icon" />
             </Nav.Link>
-
-            <Nav.Link as={NavLink} to="#" onClick={() => setShowCart(true)}>
-              <AiOutlineShoppingCart className="icon" />
-            </Nav.Link>
+            <Badge count={cartamount}>
+              <Nav.Link as={NavLink} to="#" onClick={() => setShowCart(true)}>
+                <AiOutlineShoppingCart className="icon" />
+              </Nav.Link>
+            </Badge>
 
             {/* 是否登入 ？ 下拉選單(會員中心/登出) : 登入頁 */}
             {isLogged ? (

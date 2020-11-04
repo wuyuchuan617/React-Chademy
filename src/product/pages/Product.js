@@ -9,12 +9,14 @@ import ProductSeven from '../components/ProductSeven'
 import Slider from '../components/Slider'
 import ProductEight from '../components/ProductEight'
 import ProductNine from '../components/ProductNine'
+import PurchaseInfo from '../components/PurchaseInfo'
 import { withRouter, useParams } from 'react-router-dom'
 
 import '../styles/product.css'
 
 function Product(props) {
   const [product, setProduct] = useState([])
+  const { setCartAmount, cartamount } = props
 
   let { sid } = useParams()
   console.log('sid' + sid)
@@ -41,7 +43,7 @@ function Product(props) {
 
   useEffect(() => {
     getItemFromSQL()
-  }, [])
+  }, [sid])
 
   const [review, setReview] = useState([])
 
@@ -53,7 +55,10 @@ function Product(props) {
             key={index}
             item={item}
             product={product}
+            sid={sid}
             review={review}
+            setCartAmount={setCartAmount}
+            cartamount={cartamount}
           />
         )
       })}
@@ -96,8 +101,14 @@ function Product(props) {
           })}
         </div>
       </div>
-      <Slider />
-      <ProductNine />
+      {product.map((item, index) => {
+        return <Slider key={index} item={item} />
+      })}
+      <div className="container">
+        <div className="row">
+          <PurchaseInfo />
+        </div>
+      </div>
     </>
   )
 }
