@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom'
 
 import { Navbar, Nav } from 'react-bootstrap'
 
-import { Menu, Dropdown } from 'antd'
+import { Menu, Dropdown, message } from 'antd'
 import { LogoutOutlined } from '@ant-design/icons'
 
 import { AiOutlineShoppingCart, AiOutlineUser } from 'react-icons/ai'
@@ -71,7 +71,10 @@ function MyNavbar(props) {
     }
 
     request({ url: 'members/logout', method: 'POST' })
-      .then(() => logout())
+      .then(() => {
+        message.success(' 登出成功 ')
+        logout()
+      })
       .catch(() => logout())
   }
 

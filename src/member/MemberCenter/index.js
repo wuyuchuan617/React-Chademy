@@ -6,7 +6,7 @@ import Aside from '../../common_components/Aside'
 // import { Form, Button, Col, Container, Modal } from 'react-bootstrap'
 import { Layout } from 'antd'
 
-import { Modal, Button, Form, Input, Checkbox } from 'antd'
+import { Modal, Button, Form, Input } from 'antd'
 
 import { useHistory } from 'react-router-dom'
 
