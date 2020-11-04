@@ -26,16 +26,23 @@ import bannerVideo from '../images/The-Passion-of-Making.mp4'
 
 function ProductList(props) {
   // 判斷登入的狀態
-  const isLogged = useSelector((state) => state.isLogged)
-  console.log('會員是否登入: ', isLogged)
+  // const isLogged = useSelector((state) => state.isLogged)
+  // console.log('會員是否登入: ', isLogged)
+
+  const isLogged = useSelector((state) => state.user.logged)
 
   // ---------------以下開始useState狀態設定-----------------
 
   // 存從資料庫拿到的資料
-  const [product, setProduct] = useState([])
+  console.log('cart localstorge', localStorage.getItem('product'))
 
+  const [product, setProduct] = useState(
+    JSON.parse(localStorage.getItem('product')) || []
+  )
+  console.log('product ', product)
   // 存要顯示幾筆資料
   const [viewProduct, setViewProduct] = useState(15)
+
   const [lastProductId, setLastProductId] = useState(0)
 
   // 存filter打開關閉狀態
@@ -122,6 +129,7 @@ function ProductList(props) {
     console.log('data: ' + data)
     // console.log(Array.isArray(data))
     setProduct(data)
+    localStorage.setItem('product', JSON.stringify(data))
   }
 
   async function getTotalFromSQL() {
@@ -141,12 +149,15 @@ function ProductList(props) {
     console.log('newData' + newData)
     console.log(Array.isArray(data))
     setProduct(newData)
+    localStorage.setItem('product', JSON.stringify(newData))
   }
 
   // ---------------以下開始useEffect-----------------
 
   useEffect(() => {
-    getTotalFromSQL()
+    if (product.length === 0) {
+      getTotalFromSQL()
+    }
   }, [])
 
   // useEffect(() => {
@@ -154,9 +165,9 @@ function ProductList(props) {
   //   if (chairSeat.length > 1) getFilterFromSQL()
   // }, [category,chairSeat])
 
-  useEffect(() => {
-    setTimeout(() => {}, 1000)
-  }, [])
+  // useEffect(() => {
+  //   setTimeout(() => {}, 1000)
+  // }, [])
 
   // 彈跳視窗
   // useEffect(() => {

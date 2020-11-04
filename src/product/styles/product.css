@@ -310,6 +310,10 @@ body {
   overflow: scroll;
 }
 
+.w_six_scroll::-webkit-scrollbar {
+  display: none;
+}
+
 /* seventh container finish here! */
 .roll {
   width: 100%;

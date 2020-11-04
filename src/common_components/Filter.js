@@ -114,18 +114,18 @@ function Filter(props) {
 
             <p className="clearFilter">Restart your filter</p>
             <div className="filterTag">
-              {/* {category.map((item, index) => {
+              {category.map((item, index) => {
                 return (
                   <Tag
                     closable
                     key={index}
-                    onClose={log} */}
-              {/* //   onClose={(e) => { */}
-              {/* //     let newCate = category.filter((el) => { */}
-              {/* //       return el !== item
-                    //     })
-                    //     setCategory(newCate)
-                    //   }}
+                    onClose={log}
+                    // onClose={(e) => {
+                    //   let newCate = category.filter((el) => {
+                    //     return el !== item
+                    //   })
+                    //   setCategory(newCate)
+                    // }}
                   >
                     {item}
                   </Tag>
@@ -144,16 +144,9 @@ function Filter(props) {
                     {item}
                   </Tag>
                 )
-              })} */}
+              })}
               {/* <Tag closable onClose={log}>
                 白色
-              </Tag>
-
-              <Tag closable onClose={log}>
-                單椅
-              </Tag>
-              <Tag closable onClose={preventDefault}>
-                木頭
               </Tag> */}
             </div>
           </div>

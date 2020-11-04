@@ -11,10 +11,12 @@ import ProductEight from '../components/ProductEight'
 import ProductNine from '../components/ProductNine'
 import PurchaseInfo from '../components/PurchaseInfo'
 import { withRouter, useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 import '../styles/product.css'
 
 function Product(props) {
+  const isLogged = useSelector((state) => state.user.logged)
   const [product, setProduct] = useState([])
   const { setCartAmount, cartamount } = props
 
@@ -59,6 +61,7 @@ function Product(props) {
             review={review}
             setCartAmount={setCartAmount}
             cartamount={cartamount}
+            isLogged={isLogged}
           />
         )
       })}

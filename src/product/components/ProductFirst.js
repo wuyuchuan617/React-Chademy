@@ -5,9 +5,13 @@ import { BsFillHeartFill } from 'react-icons/bs'
 import ProductModal from '../components/ProductModal'
 import popularImg from '../images/777.jpg'
 import { Rate } from 'antd'
+import { withRouter, useHistory } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 function ProductFirst(props) {
   const { item, review, sid, cartamount, setCartAmount } = props
+
+  const isLogged = useSelector((state) => state.user.logged)
 
   const [myCart, setMyCart] = useState([])
   const [show, setShow] = useState(false)
@@ -293,22 +297,33 @@ function ProductFirst(props) {
                 </div>
               </div>
 
-              <button
-                className="cart-btn"
-                onClick={() => {
-                  setCartAmount(cartamount + 1)
-                  updateCartToLocalStorage({
-                    product_no: item.product_no,
-                    id: item.product_name,
-                    img: item.photo,
-                    amount: 1,
-                    price: item.price,
-                    category: 1,
-                  })
-                }}
-              >
-                加入購物車
-              </button>
+              {isLogged ? (
+                <button
+                  className="cart-btn"
+                  onClick={() => {
+                    setCartAmount(cartamount + 1)
+                    updateCartToLocalStorage({
+                      product_no: item.product_no,
+                      id: item.product_name,
+                      img: item.photo,
+                      amount: 1,
+                      price: item.price,
+                      category: 1,
+                    })
+                  }}
+                >
+                  加入購物車
+                </button>
+              ) : (
+                <button
+                  className="cart-btn"
+                  onClick={() => {
+                    props.history.push('/login')
+                  }}
+                >
+                  加入購物車 請先登入
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -317,4 +332,4 @@ function ProductFirst(props) {
   )
 }
 
-export default ProductFirst
+export default withRouter(ProductFirst)

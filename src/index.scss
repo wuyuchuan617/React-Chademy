@@ -13,6 +13,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   // overflow: hidden;
   overflow-x: hidden;
+
 }
 
 code {
@@ -29,3 +30,37 @@ h6 {
   font-size: 18px;
   font-family: 'Noto Serif TC';
 }
+
+
+
+body::-webkit-scrollbar {
+  background: #c77334;
+  width: 6px;
+}
+
+// ::-webkit-scrollbar-button {
+//   background: #c77334;
+// }
+
+// ::-webkit-scrollbar-track {
+//   background: #ded5c6;
+// }
+
+// scroll底色
+::-webkit-scrollbar-track-piece {
+  background: #edece8;
+}
+
+// scroll顏色
+::-webkit-scrollbar-thumb {
+  background: #ded5c6;
+  border-radius: 20px;
+}
+
+// ::-webkit-scrollbar-corner {
+//   background: #c77334;
+// }
+
+// ::-webkit-resizer {
+//   background: #c77334;
+// }
