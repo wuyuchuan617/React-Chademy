@@ -305,6 +305,11 @@ body {
   width: 100%;
 }
 
+.w_six_scroll {
+  height: 408px;
+  overflow: scroll;
+}
+
 /* seventh container finish here! */
 .roll {
   width: 100%;
@@ -321,6 +326,12 @@ body {
 .review {
   background-color: #d6d7d1;
   margin-bottom: 30px;
+  padding: 50px;
+}
+
+.reviewNO {
+  background-color: #d6d7d1;
+
   padding: 50px;
 }
 
@@ -342,6 +353,7 @@ body {
 .w_rew_scroll {
   height: 408px;
   overflow: scroll;
+  /* border:3px solid white; */
 }
 
 .memberPhoto {

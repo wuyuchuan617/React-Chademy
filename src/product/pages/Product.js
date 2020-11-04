@@ -43,10 +43,19 @@ function Product(props) {
     getItemFromSQL()
   }, [])
 
+  const [review, setReview] = useState([])
+
   return (
     <>
       {product.map((item, index) => {
-        return <ProductFirst key={index} item={item} product={product} />
+        return (
+          <ProductFirst
+            key={index}
+            item={item}
+            product={product}
+            review={review}
+          />
+        )
       })}
 
       {product.map((item, index) => {
@@ -61,20 +70,29 @@ function Product(props) {
         return <ProductFour key={index} item={item} product={product} />
       })}
 
+      <div className="w_six_scroll">
+        {product.map((item, index) => {
+          return <ProductSix key={index} item={item} product={product} />
+        })}
+      </div>
       {product.map((item, index) => {
         return <ProductFive key={index} item={item} product={product} />
       })}
 
-      {product.map((item, index) => {
-        return <ProductSix key={index} item={item} product={product} />
-      })}
       <div className="container ">
         <div className="row justify-content-center title">
           <h3>產品評價</h3>
         </div>
         <div class="w_rew_scroll">
           {product.map((item, index) => {
-            return <ProductSeven key={index} item={item} />
+            return (
+              <ProductSeven
+                key={index}
+                item={item}
+                review={review}
+                setReview={setReview}
+              />
+            )
           })}
         </div>
       </div>

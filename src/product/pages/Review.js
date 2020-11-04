@@ -151,7 +151,7 @@ function Review(props) {
                 className="btnDemo text-center mt-4"
                 onClick={() => {
                   setOrderProductNo('CH29')
-                  setOrderProduct('214K')
+                  setOrderProduct('204RH')
                   setOrderNo('OVER1234')
                   setOrderDate('2020.08.31')
                   setReviewTitle('質感非常好！')

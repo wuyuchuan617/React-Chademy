@@ -4,9 +4,10 @@ import { BsStarFill } from 'react-icons/bs'
 import { BsFillHeartFill } from 'react-icons/bs'
 import ProductModal from '../components/ProductModal'
 import popularImg from '../images/777.jpg'
+import { Rate } from 'antd'
 
 function ProductFirst(props) {
-  const { item } = props
+  const { item, review } = props
 
   const [myCart, setMyCart] = useState([])
   const [show, setShow] = useState(false)
@@ -14,6 +15,19 @@ function ProductFirst(props) {
   const [heart, setHeart] = useState(false)
   const [heartItem, setHeartItem] = useState({})
   const [visible, setVisible] = useState(false)
+  const [avgStar, setAvgStar] = useState(0)
+
+  useEffect(() => {
+    let aveStars = 0
+
+    for (let i = 0; i < review.length; i++) {
+      aveStars += parseInt(review[i].stars)
+    }
+
+    console.log(aveStars, review.length, parseInt(aveStars / review.length))
+
+    if (review.length) setAvgStar(parseInt(aveStars / review.length))
+  }, [review])
 
   const [photo1, setPhoto1] = useState(require('../../img/' + item.photo))
 
@@ -208,12 +222,17 @@ function ProductFirst(props) {
             </div>
 
             <div className="stars d-flex">
-              <BsStarFill />
-              <BsStarFill />
-              <BsStarFill />
-              <BsStarFill />
-              <BsStarFill />
-              <p> （ 300則評論 ）</p>
+              {/* {review.map((item, index, array) => {
+                return ( */}
+              <Rate
+                disabled
+                allowHalf
+                style={{ color: '#C77334', fontSize: 24 + 'px' }}
+                count={avgStar}
+              />
+              {/* )
+              })} */}
+              <p> （ {review.length}則評論 ）</p>
             </div>
             <div className="heart justify-content-end">
               <BsFillHeartFill

@@ -4,10 +4,11 @@ import { BsStarFill } from 'react-icons/bs'
 import { Rate } from 'antd'
 import series from '../images/series.jpg'
 import ReviewCard from '../components/ReviewCard'
+import NoReviewCard from '../components/NoReviewCard'
 
 function ProductSeven(props) {
-  const { item } = props
-  const [review, setReview] = useState([])
+  const { item, review, setReview } = props
+  // const [review, setReview] = useState([])
 
   async function getItemFromSQL() {
     const url = 'http://localhost:3001/man_product/review/' + item.product_name
@@ -39,9 +40,15 @@ function ProductSeven(props) {
         <div className="row justify-content-center title">
           <h3>產品評價</h3>
         </div> */}
-      {review.map((item, index) => {
-        return <ReviewCard item={item} />
-      })}
+
+      {review.length ? (
+        review.map((item, index) => {
+          return <ReviewCard item={item} />
+        })
+      ) : (
+        <NoReviewCard item={item} />
+      )}
+
       {/* </div> */}
     </>
   )
