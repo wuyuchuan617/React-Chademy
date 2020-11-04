@@ -32,7 +32,7 @@ function ProductSeven(props) {
 
   useEffect(() => {
     getItemFromSQL()
-  }, [])
+  }, [item])
 
   return (
     <>

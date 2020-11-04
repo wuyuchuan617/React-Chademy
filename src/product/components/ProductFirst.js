@@ -32,8 +32,8 @@ function ProductFirst(props) {
   const [photo, setPhoto] = useState(`http://localhost:3001/img/${item.photo}`)
 
   useEffect(() => {
-    setPhoto()
-  }, [sid, item.photo])
+    setPhoto(`http://localhost:3001/img/${item.photo}`)
+  }, [item])
 
   const heartFill = {
     color: '#C77334',
