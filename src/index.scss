@@ -36,6 +36,7 @@ h6 {
 body::-webkit-scrollbar {
   background: #c77334;
   width: 6px;
+  height: 200px;
 }
 
 // ::-webkit-scrollbar-button {
@@ -64,3 +65,8 @@ body::-webkit-scrollbar {
 // ::-webkit-resizer {
 //   background: #c77334;
 // }
+
+p::selection {
+  background: #c77334;
+  color: #edece8;
+}

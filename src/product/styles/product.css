@@ -357,7 +357,24 @@ body {
 .w_rew_scroll {
   height: 408px;
   overflow: scroll;
+  overflow-x: hidden;
   /* border:3px solid white; */
+}
+
+.w_rew_scroll::-webkit-scrollbar {
+  background: #c77334;
+  width: 6px;
+}
+
+/* scroll底色 */
+.w_rew_scroll::-webkit-scrollbar-track-piece {
+  background: #edece8;
+}
+
+/* scroll顏色 */
+.w_rew_scroll::-webkit-scrollbar-thumb {
+  background: #707070;
+  border-radius: 20px;
 }
 
 .memberPhoto {
