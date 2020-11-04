@@ -12,22 +12,22 @@ function BlogNewsSlider() {
     console.log(a, b, c)
   }
 
-  const contentStyle = {}
+  const contentStyleannie = { marginBottom: '-50px' }
   return (
     <>
       <Carousel afterChange={onChange}>
         <div>
-          <h3 style={contentStyle}>
+          <h3 style={contentStyleannie}>
             <BlogNews />
           </h3>
         </div>
         <div>
-          <h3 style={contentStyle}>
+          <h3 style={contentStyleannie}>
             <BlogNewsTwo />
           </h3>
         </div>
         <div>
-          <h3 style={contentStyle}>
+          <h3 style={contentStyleannie}>
             <BlogNewsThree />
           </h3>
         </div>

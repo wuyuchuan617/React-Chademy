@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/workshop.css'
 import heart from '../images/heart.svg'
+import { withRouter, useParams } from 'react-router-dom'
 
 function OneWorkShop(props) {
   const { item } = props
   return (
     <>
       <div className="article col-md-4 mb-4">
-        <div className="boxoneday">
+        <div
+          className="boxoneday"
+          onClick={() => {
+            props.history.push('/WorkshopList/' + item.sid)
+          }}
+        >
           <div className="upper1">
             <img src={require('../../img/' + item.images)} />
             <p>HOT</p>
@@ -32,4 +38,4 @@ function OneWorkShop(props) {
   )
 }
 
-export default OneWorkShop
+export default withRouter(OneWorkShop)

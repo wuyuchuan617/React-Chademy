@@ -159,7 +159,7 @@ function App() {
               <Workshop />
             </Route>
 
-            <Route exact path="/WorkshopList">
+            <Route exact path="/WorkshopList/:sid?">
               <WorkshopList />
             </Route>
 
