@@ -41,7 +41,7 @@ function Product(props) {
 
   useEffect(() => {
     getItemFromSQL()
-  }, [])
+  }, [sid])
 
   const [review, setReview] = useState([])
 
@@ -53,6 +53,7 @@ function Product(props) {
             key={index}
             item={item}
             product={product}
+            sid={sid}
             review={review}
           />
         )
@@ -96,7 +97,9 @@ function Product(props) {
           })}
         </div>
       </div>
-      <Slider />
+      {product.map((item, index) => {
+        return <Slider key={index} item={item} />
+      })}
       <ProductNine />
     </>
   )

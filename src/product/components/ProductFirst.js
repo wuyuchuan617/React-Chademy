@@ -7,7 +7,7 @@ import popularImg from '../images/777.jpg'
 import { Rate } from 'antd'
 
 function ProductFirst(props) {
-  const { item, review } = props
+  const { item, review, sid } = props
 
   const [myCart, setMyCart] = useState([])
   const [show, setShow] = useState(false)
@@ -29,7 +29,11 @@ function ProductFirst(props) {
     if (review.length) setAvgStar(parseInt(aveStars / review.length))
   }, [review])
 
-  const [photo1, setPhoto1] = useState(require('../../img/' + item.photo))
+  const [photo, setPhoto] = useState(`http://localhost:3001/img/${item.photo}`)
+
+  useEffect(() => {
+    setPhoto()
+  }, [sid, item.photo])
 
   const heartFill = {
     color: '#C77334',
@@ -169,12 +173,12 @@ function ProductFirst(props) {
 
   return (
     <>
-      <ProductModal visible={visible} setVisible={setVisible} photo1={photo1} />
+      <ProductModal visible={visible} setVisible={setVisible} photo={photo} />
       <div className="container firstTop">
         <div className="row justify-content-between">
           <div className="col-8">
             <div className="product_photo" onClick={() => setVisible(true)}>
-              <img src={photo1} alt="" />
+              <img src={photo} alt="" />
             </div>
             <div className="d-flex justify-content-between smallPhotos">
               <div className="product_photo_small">
@@ -183,7 +187,7 @@ function ProductFirst(props) {
                   src={require('../../img/' + item.photo)}
                   alt=""
                   onClick={(e) => {
-                    setPhoto1(e.target.src)
+                    setPhoto(e.target.src)
                   }}
                 />
               </div>
@@ -192,7 +196,7 @@ function ProductFirst(props) {
                   src={series}
                   alt=""
                   onClick={(e) => {
-                    setPhoto1(e.target.src)
+                    setPhoto(e.target.src)
                   }}
                 />
               </div>
@@ -201,7 +205,7 @@ function ProductFirst(props) {
                   src={popularImg}
                   alt=""
                   onClick={(e) => {
-                    setPhoto1(e.target.src)
+                    setPhoto(e.target.src)
                   }}
                 />
               </div>
@@ -210,7 +214,7 @@ function ProductFirst(props) {
                   src={series}
                   alt=""
                   onClick={(e) => {
-                    setPhoto1(e.target.src)
+                    setPhoto(e.target.src)
                   }}
                 />
               </div>
