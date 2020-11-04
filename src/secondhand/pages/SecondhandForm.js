@@ -1,101 +1,287 @@
 import React, { useState, useEffect } from 'react'
-
-import Firstview from '../components/SecondhandFrom/Firstview'
-import Title from '../components/SecondhandFrom/Title'
-import ImgArea from '../components/SecondhandFrom/ImgArea'
-import TextArea from '../components/SecondhandFrom/TextArea'
+import Img from '../img/WireDiningChair_LeatherSaddle.jpg'
+import Img2 from '../img/Cover_CircleDiningChair_22.jpg'
 
 import '../styles/secondhandForm.css'
+import { Alert } from 'antd'
 
 function SecondhandForm() {
-  const [product, setProduct] = useState([])
-  const [product_no, setProduct_no] = useState('')
-  const [productname, setProductname] = useState('')
-  const [price, setPrice] = useState('')
-  const [stock, setStock] = useState('')
-  const [description, setDescription] = useState('')
-  const [photo, setPhoto] = useState('')
-  const [conditions_sid, setConditions_sid] = useState('')
-  const [framework_sid, setFramework_sid] = useState('')
-  const [material_sid, setMaterial_sid] = useState('')
-  const [categories_sid, setCategories_sid] = useState('')
-  async function getTotalFromSQL(props) {
-    const url = 'http://localhost:3001/man_secondhand/add'
+  //photo
+  const [photo, setPhoto] = useState(null)
+  const [previewPhoto, setPreviewPhoto] = useState({})
 
-    // const obj = {
-    //   product_no: '43254',
-    //   productname: '3245',
-    //   price: '3333',
-    //   stock: '333',
-    //   description: '3333',
-    //   photo: '',
-    //   conditions_sid: '1',
-    //   framework_sid: '1',
-    //   material_sid: '1',
-    //   categories_sid: '1',
-    // }
+  async function updateReviewToServer() {
+    // const newTotal = { total: total + value }
+    const fd = new FormData()
+    fd.append('myfile', photo)
+    console.log('fd' + JSON.stringify(fd))
+    console.log('photo' + JSON.stringify(photo))
+    const url = 'http://localhost:3001/man_product/try-upload'
 
     const request = new Request(url, {
       method: 'POST',
-      body: JSON.stringify({
-        // product_no: '43254',
-        // productname: '3245',
-        // price: '3333',
-        // stock: '333',
-        // description: '3333',
-        // photo: '',
-        // conditions_sid: '1',
-        // framework_sid: '1',
-        // material_sid: '1',
-        // categories_sid: '1',
-      }),
-      headers: new Headers({
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      }),
+      body: fd,
     })
 
+    // try {
     const response = await fetch(request)
     const data = await response.json()
-    const newData = [...data]
-    console.log('newData' + newData)
-    console.log(Array.isArray(data))
-    setProduct(newData)
+    // data會是一個物件值
+    const newData = data
+    console.log(data)
+    console.log(newData.newFileName)
+
+    setPreviewPhoto(newData)
   }
 
   useEffect(() => {
-    getTotalFromSQL()
-  }, [])
+    updateReviewToServer()
+  }, [photo])
+
+  //post form
+  async function handleSubmit(e) {
+    e.preventDefault()
+    const fd = new FormData(document.form2)
+    const url = 'http://localhost:3001/man_secondhand/add'
+
+    const request = new Request(url, {
+      method: 'POST',
+      body: fd,
+    })
+
+    // try {
+    const response = await fetch(request)
+    const data = await response.json()
+    // data會是一個物件值
+    const newData = data
+    console.log(data)
+    console.log(newData.newFileName)
+  }
+
+  const [showAlert, setShowAlert] = useState(false)
+
   return (
     <>
-      <Firstview />
-      <div className="container custom-container-width">
-        <Title />
-        <div class="row no-gutters">
-          <ImgArea />
-          <TextArea
-            product_no={product_no}
-            setProduct_no={setProduct_no}
-            productname={productname}
-            setProductname={setProductname}
-            price={price}
-            setPrice={setPrice}
-            stock={stock}
-            setStock={setStock}
-            description={description}
-            setDescription={setDescription}
-            photo={photo}
-            setPhoto={setPhoto}
-            conditions_sid={conditions_sid}
-            setConditions_sid={setConditions_sid}
-            framework_sid={framework_sid}
-            setFramework_sid={setFramework_sid}
-            material_sid={material_sid}
-            setMaterial_sid={setMaterial_sid}
-            categories_sid={categories_sid}
-            setCategories_sid={setCategories_sid}
-          />
+      <div className="i_fv">
+        <img src={Img} alt="" />
+        <div className="i_fv_text text-center">
+          <p className="i_slogan_form">Thinking learning and design.</p>
+          <p className="i_subslogan_form lora">
+            Create your own fascinating masterpiece.
+          </p>
         </div>
+      </div>
+      <div className="container custom-container-width">
+        <div className="i_title text-center m-5">
+          <h1>新增二手資料</h1>
+          <p>Second Hands Login</p>
+        </div>
+        <form
+          className="row no-gutters"
+          name="form2"
+          novalidate
+          onSubmit={handleSubmit}
+        >
+          <div className="col-lg-6 col-sm-12">
+            <div className="i_upload ml100">
+              <div className="i_btn2 text-center">
+                <input
+                  type="hidden"
+                  className="file_upload"
+                  name="photo"
+                  value={previewPhoto.newFileName}
+                />
+                <input
+                  type="file"
+                  className="file_upload"
+                  onChange={(e) => {
+                    console.log(e.target.files[0])
+                    const newPhoto = e.target.files[0]
+
+                    setPhoto(newPhoto)
+                  }}
+                />
+                上傳圖片
+              </div>
+            </div>
+            <p className="text-center i_notice ml100">
+              ＊可以點選或拖曳上傳圖片
+            </p>
+            <div className="i_upload_img ml100">
+              <img
+                src={`http://localhost:3001/img/` + previewPhoto.newFileName}
+                alt=""
+                id="myimg"
+              />
+            </div>
+          </div>
+          <div className="col-lg-6 col-sm-12">
+            <div className="i_formcss">
+              <div className="i_formset">
+                <label for="productname">商品名稱</label>
+                <input
+                  type="text"
+                  className="i_formstyle i_formwidth"
+                  id="productname"
+                  name="productname"
+                />
+              </div>
+              <div className="i_formset">
+                <label for="product_no">商品編號</label>
+                <input
+                  type="text"
+                  className="i_formstyle i_formwidth"
+                  id="product_no"
+                  name="product_no"
+                />
+              </div>
+              <div className="i_formset">
+                <label for="price">價錢</label>
+                <input
+                  type="text"
+                  className="i_formstyle i_formwidth"
+                  id="price"
+                  name="price"
+                />
+              </div>
+              <div className="i_formset">
+                <label for="stock">商品數量</label>
+                <input
+                  type="text"
+                  className="i_formstyle i_formwidth"
+                  id="stock"
+                  name="stock"
+                />
+              </div>
+              <div className="i_formset">
+                <label for="description">商品描述</label>
+                <textarea
+                  rows="4"
+                  cols="48"
+                  className="i_formstyle"
+                  name="description"
+                ></textarea>
+              </div>
+              <div className="i_formset">
+                <label for="categories">商品種類</label>
+                <select
+                  id="categories"
+                  className="i_formstyle i_formwidth"
+                  name="categories_sid"
+                >
+                  <option value="1">高腳椅</option>
+                  <option value="2">單椅</option>
+                  <option value="3">扶手椅</option>
+                  <option value="4">餐椅</option>
+                  <option value="5">沙發椅</option>
+                </select>
+              </div>
+              <div className="i_formset">
+                <label>骨架</label>
+                <div className="i_radioset">
+                  <input
+                    type="radio"
+                    name="framework_sid"
+                    className="i_formstyle i_radiomargin"
+                    value="1"
+                  />
+                  木頭
+                </div>
+                <div className="i_radioset">
+                  <input
+                    type="radio"
+                    name="framework_sid"
+                    className="i_formstyle i_radiomargin"
+                    value="2"
+                  />
+                  金屬
+                </div>
+                <div className="i_radioset">
+                  <input
+                    type="radio"
+                    name="framework_sid"
+                    className="i_formstyle i_radiomargin"
+                    value="3"
+                  />
+                  塑膠
+                </div>
+              </div>
+              <hr />
+              <div className="i_formset">
+                <label for="material">材質</label>
+                <div className="i_radioset">
+                  <input
+                    type="radio"
+                    name="material_sid"
+                    className="i_formstyle i_radiomargin"
+                    value="1"
+                  />
+                  布料
+                </div>
+                <div className="i_radioset">
+                  <input
+                    type="radio"
+                    name="material_sid"
+                    className="i_formstyle i_radiomargin"
+                    value="2"
+                  />
+                  皮革
+                </div>
+                <div className="i_radioset">
+                  <input
+                    type="radio"
+                    name="material_sid"
+                    className="i_formstyle i_radiomargin"
+                    value="3"
+                  />
+                  木質
+                </div>
+              </div>
+              <hr />
+              <div className="i_formset">
+                <label for="conditions">商品狀況</label>
+                <div className=" i_radioset">
+                  <input
+                    type="radio"
+                    name="conditions_sid"
+                    className="i_formstyle i_radiomargin"
+                    value="1"
+                  />
+                  九成新
+                </div>
+                <div className="i_radioset">
+                  <input
+                    type="radio"
+                    name="conditions_sid"
+                    className="i_formstyle i_radiomargin"
+                    value="2"
+                  />
+                  八成新
+                </div>
+                <div className="i_radioset">
+                  <input
+                    type="radio"
+                    name="conditions_sid"
+                    className="i_formstyle i_radiomargin"
+                    value="3"
+                  />
+                  七成新
+                </div>
+              </div>
+              <button
+                className="i_btn3 text-center mt-4"
+                type="submit"
+                onclick={() => {
+                  setShowAlert(true)
+                }}
+              >
+                新增商品
+              </button>
+            </div>
+
+            {showAlert && <Alert message="Warning Text" type="warning" />}
+          </div>
+        </form>
       </div>
     </>
   )

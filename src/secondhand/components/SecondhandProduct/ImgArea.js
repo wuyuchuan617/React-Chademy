@@ -11,7 +11,7 @@ function ImgArea(props) {
     <div className="i_img_area">
       <div className="i_img_set">
         <img
-          src={require('../../../img/' + item.photo)}
+          src={`http://localhost:3001/img/` + item.photo}
           alt=""
           className="mb-4"
         />

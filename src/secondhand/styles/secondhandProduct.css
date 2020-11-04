@@ -166,6 +166,17 @@ body {
     font-size: 12px;
     text-decoration: underline;
   }
+
+  .i_box a {
+    font-size: 14px;
+    text-decoration: underline;
+    color: #475050;
+  }
+
+  .i_box a:hover {
+    color: #f87d09;
+  }
+  
   
   .i_num a {
     color: #475050;
@@ -173,5 +184,10 @@ body {
   
   .i_num a:hover {
     color: #475050;
+  }
+
+  .i_icon_area p{
+    color: #475050;
+    font-size: 14px;
   }
   

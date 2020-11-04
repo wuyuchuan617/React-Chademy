@@ -10,7 +10,7 @@ function ProductList(props) {
     <div className="i_card" id={item.sid}>
       <div className="i_card_img">
         <img
-          src={require('../../../img/' + item.photo)}
+          src={`http://localhost:3001/img/` + item.photo}
           alt=""
           onClick={() => {
             props.history.push('/secondhand_product/' + item.sid)

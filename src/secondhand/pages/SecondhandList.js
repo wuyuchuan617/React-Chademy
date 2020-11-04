@@ -62,7 +62,6 @@ function SecondhandList() {
         <div className="row mt-5">
           <Breadcrumb />
         </div>
-
         <div className="row mt-5">
           <Filter />
           <div className="i_product d-flex flex-wrap">

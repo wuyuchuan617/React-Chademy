@@ -5,6 +5,8 @@ import Filter from '../components/SecondhandProduct/Filter'
 import '../styles/secondhandProduct.css'
 import { withRouter, useParams } from 'react-router-dom'
 import Breadcrumb from '../components/Breadcrumb'
+import IconArea from '../components/SecondhandProduct/IconArea'
+import Courses2 from '../components/SecondhandProduct/Courses2'
 
 function SecondhandProduct(props) {
   const [product, setProduct] = useState([])
@@ -50,6 +52,10 @@ function SecondhandProduct(props) {
           })}
         </div>
         <Filter />
+      </div>
+      <IconArea />
+      <div class="container custom-container-width">
+        <Courses2 />
       </div>
     </>
   )
