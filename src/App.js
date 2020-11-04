@@ -35,7 +35,6 @@ import EndSoonFund from './fund/components/EndSoonFund'
 // ---------------------以下import 競標頁面--------------------
 import Pages from './bid/pages/Pages'
 
-
 // ---------------------以下import 課程頁面--------------------
 import Workshop from './workshop/pages/Workshop'
 import WorkshopList from './workshop/pages/WorkshopList'
@@ -150,10 +149,10 @@ function App() {
             </Route>
 
             {/* 競標頁面 */}
-            
+
             <Route path="/pages">
-            <Pages />
-          </Route>
+              <Pages />
+            </Route>
 
             {/* 課程頁面 */}
             <Route exact path="/Workshop">
