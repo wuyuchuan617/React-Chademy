@@ -7,6 +7,7 @@ import { withRouter, useParams } from 'react-router-dom'
 import Breadcrumb from '../components/Breadcrumb'
 import IconArea from '../components/SecondhandProduct/IconArea'
 import Courses2 from '../components/SecondhandProduct/Courses2'
+import Slider from '../components/SecondhandProduct/Slider'
 
 function SecondhandProduct(props) {
   const [product, setProduct] = useState([])
@@ -41,7 +42,9 @@ function SecondhandProduct(props) {
     <>
       <div class="container custom-container-width">
         <div class="row mt-5 mb-4">
-          <Breadcrumb />
+          {product.map((item, index) => {
+            return <Breadcrumb key={index} item={item} product={product} />
+          })}
         </div>
         <div class="row d-flex flex-wrap">
           {product.map((item, index) => {
@@ -55,6 +58,9 @@ function SecondhandProduct(props) {
       </div>
       <IconArea />
       <div class="container custom-container-width">
+        {product.map((item, index) => {
+          return <Slider key={index} item={item} />
+        })}
         <Courses2 />
       </div>
     </>

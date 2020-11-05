@@ -11,7 +11,11 @@ function About() {
     AOS.refresh()
   }, [])
   return (
-    <div className="row no-gutters mt_mb_100" data-aos="fade-up">
+    <div
+      className="row no-gutters mt_mb_100"
+      data-aos="fade-up"
+      data-aos-duration="2000"
+    >
       <div className="col-lg-8 col-md-10 col-sm-12">
         <div className="aboutcompany">
           <img src={OurApproach} alt="" />

@@ -3,7 +3,8 @@ import { Link, withRouter } from 'react-router-dom'
 import { Breadcrumb } from 'antd'
 
 function Breadcrumb1(props) {
-  console.log(props)
+  const { item } = props
+  console.log(item)
 
   let path = ''
   const pathname = props.location.pathname
@@ -46,7 +47,9 @@ function Breadcrumb1(props) {
           中古市集
         </Link>
       </Breadcrumb.Item>
-      <Breadcrumb.Item style={{ fontSize: '14px' }}>{path}</Breadcrumb.Item>
+      <Breadcrumb.Item style={{ fontSize: '14px' }}>
+        {item.productname}
+      </Breadcrumb.Item>
     </Breadcrumb>
   )
 }

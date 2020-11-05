@@ -10,7 +10,11 @@ function Bidding() {
     AOS.refresh()
   }, [])
   return (
-    <div className="row no-gutters mt_mb_100" data-aos="fade-up">
+    <div
+      className="row no-gutters mt_mb_100"
+      data-aos="fade-up"
+      data-aos-duration="2000"
+    >
       <div className="col-lg-6 col-sm-12">
         <div className="title1">
           <div className="titlech noto-serif text-center">精品競標</div>

@@ -11,7 +11,11 @@ function Blogs() {
     AOS.refresh()
   }, [])
   return (
-    <div className="row no-gutters mt_mb_100" data-aos="fade-up">
+    <div
+      className="row no-gutters mt_mb_100"
+      data-aos="fade-up"
+      data-aos-duration="2000"
+    >
       <div className="title1 mb-3">
         <div className="titlech noto-serif text-center">靈感探索</div>
         <div className="titleEN lora text-center">Blogs</div>
