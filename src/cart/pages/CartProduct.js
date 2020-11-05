@@ -162,17 +162,16 @@ function CartProduct(props) {
               id="discount"
               onChange={(e) => setInputDiscount(e.target.value)}
             ></input>
-            <Link
+            <div
               className="j_btn2"
-              to="#"
               onClick={() => {
                 if (inputDiscount === 'FREE') {
                   setMyDiscount(-500)
                 }
               }}
             >
-              確定
-            </Link>
+              <h6>確定</h6>
+            </div>
           </div>
           <h6 style={{ color: '#C67334' }}>${myDiscount}</h6>
         </div>

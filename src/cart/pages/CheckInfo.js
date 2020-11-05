@@ -30,7 +30,7 @@ function CheckInfo(props) {
   const newcity = countries[city2]
   const newarea = townships[city2][area2]
   const submitData = {
-    PO_NO: `PO${year}${month}${day}`,
+    PO_NO: `PO${+date}`,
     member: name,
     qualify: 1,
     delivery_adress: `${newcity}${newarea}${adress}`,
@@ -55,6 +55,30 @@ function CheckInfo(props) {
     // try {
     const response = await fetch(request)
     const data = await response.json()
+  }
+  async function updateProductToServer(value) {
+    for (let i = 0; i < myCart.length; i++) {
+      const productData = {
+        PO_NO: `PO${+date}`,
+        product_name: myCart[i].id,
+        quantity: myCart[i].amount,
+        qualify: 1,
+        product_status: 1,
+      }
+      const url = 'http://localhost:3001/j_cart/add'
+      const request = new Request(url, {
+        method: 'POST',
+        body: JSON.stringify(productData),
+        headers: new Headers({
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        }),
+      })
+
+      // try {
+      const response = await fetch(request)
+      const data = await response.json()
+    }
   }
   return (
     <>
@@ -162,7 +186,8 @@ function CheckInfo(props) {
               className="j_btn5"
               onClick={() => {
                 updateTotalToServer()
-                setOrderNo(`PO${year}${month}${day}`)
+                updateProductToServer()
+                setOrderNo(`PO${+date}`)
               }}
             >
               完成付款
