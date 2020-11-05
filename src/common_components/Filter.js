@@ -608,6 +608,7 @@ function Filter(props) {
             className="searchButton"
             onClick={() => {
               getFilterFromSQL()
+              setViewFilter(0)
             }}
           >
             SEARCH

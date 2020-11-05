@@ -47,8 +47,11 @@ function ProductList(props) {
   // 存filter打開關閉狀態
   const [showFilter, setShowFilter] = useState(false)
 
-  // 存filter滑到產品高度顯示狀態
+  // 折價券Modal
   const [visible, setVisible] = useState(false)
+
+  // 存filter滑到產品高度顯示狀態
+  const [scrollFilter, setScrollFilter] = useState(null)
 
   // 以下為filter狀態
   const [category, setCategory] = useState([])
@@ -160,16 +163,16 @@ function ProductList(props) {
 
   // 捲到一定高度再顯示filter，還在測試研究中
   useEffect(() => {
-    console.log('scrol' + document.querySelector('#productCards').scrollTop)
-    console.log('now' + document.documentElement.scrollTop)
-    const scrol = document.querySelector('#productCards').offsetTop
-    let nowscrol = document.documentElement.scrollTop
-
-    if (nowscrol < 1600) setShowFilter(true)
-  }, [])
+    // let scroll = document.getElementById('productCards').offsetTop()
+    // console.log('scrolltop' + scroll)
+    // setScrollFilter(scroll)
+    // let nowscrol = document.documentElement.scrollTop
+    // if (nowscrol < 1600) setShowFilter(true)
+  }, [scrollFilter])
 
   // didmount拿所有資料
   useEffect(() => {
+    localStorage.removeItem('product')
     if (product.length === 0) {
       getTotalFromSQL()
     }
@@ -181,12 +184,12 @@ function ProductList(props) {
   // }, [category,chairSeat])
 
   // 彈跳視窗
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     console.log('This will run after 1 second!')
-  //     setVisible(true)
-  //   }, 10000)
-  // }, [])
+  useEffect(() => {
+    setTimeout(() => {
+      console.log('This will run after 1 second!')
+      setVisible(true)
+    }, 100000)
+  }, [])
 
   // ---------------以下開始 JSX 畫面-----------------
 
