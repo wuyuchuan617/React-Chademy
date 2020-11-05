@@ -1,4 +1,11 @@
+// ------------------------------以下引入套件----------------------------
+
 import React, { useState, useEffect } from 'react'
+import { withRouter, useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+
+// ------------------------以下引入Components----------------------------
+
 import ProductFirst from '../components/ProductFirst'
 import ProductSecond from '../components/ProductSecond'
 import ProductThird from '../components/ProductThird'
@@ -10,19 +17,37 @@ import Slider from '../components/Slider'
 import ProductEight from '../components/ProductEight'
 import ProductNine from '../components/ProductNine'
 import PurchaseInfo from '../components/PurchaseInfo'
-import { withRouter, useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+
+// ------------------------以下引入樣式----------------------------
 
 import '../styles/product.css'
 
+// -----------------------以下開始Component Product-----------------
+
 function Product(props) {
+  // 判斷登入的狀態
   const isLogged = useSelector((state) => state.user.logged)
-  const [product, setProduct] = useState([])
+
+  // props解構
   const { setCartAmount, cartamount } = props
 
+  // -----------------------以下開始useState狀態設定-----------------
+
+  // 存單一筆資料
+  const [product, setProduct] = useState([])
+
+  // 存從資料庫拿到的所有review資料
+  const [review, setReview] = useState([])
+
+  // -------------------------以下開始component內變數-----------------
+
+  // 抓url sid
   let { sid } = useParams()
   console.log('sid' + sid)
 
+  // ---------------以下開始fetch SQL get data function-----------------
+
+  // 到資料庫拿一筆資料
   async function getItemFromSQL() {
     const url = 'http://localhost:3001/man_product/reactitem/' + sid
 
@@ -43,11 +68,13 @@ function Product(props) {
     setProduct(data.slice(0))
   }
 
+  // ---------------------------以下開始useEffect-----------------
+
   useEffect(() => {
     getItemFromSQL()
   }, [sid])
 
-  const [review, setReview] = useState([])
+  // -----------------------------以下開始 JSX 畫面-----------------
 
   return (
     <>
@@ -107,6 +134,7 @@ function Product(props) {
       {product.map((item, index) => {
         return <Slider key={index} item={item} />
       })}
+
       <div className="container">
         <div className="row">
           <PurchaseInfo />
@@ -115,5 +143,7 @@ function Product(props) {
     </>
   )
 }
+
+// ---------------以下輸出component-----------------
 
 export default Product

@@ -1,16 +1,27 @@
+// ------------------------------以下引入套件----------------------------
+
 import React, { useState, useEffect } from 'react'
-// import { connect } from 'react-redux'
-// import { IoIosArrowDropleft, IoIosArrowDropright } from 'react-icons/io'
 import Carousel from 'react-elastic-carousel'
-import '../styles/slider.scss'
 import { withRouter, useHistory } from 'react-router-dom'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 
+// ------------------------以下引入樣式----------------------------
+
+import '../styles/slider.scss'
+
+// -----------------------以下開始Component Slider-----------------
+
 function Slider(props) {
+  // props解構，item是從product傳下來的單一產品{}
   const { item } = props
+
+  // -----------------------以下開始useState狀態設定-----------------
 
   const [relateProducts, setEelateProducts] = useState([])
 
+  // ---------------以下開始fetch SQL get data function-----------------
+
+  // 用此產品分類找到多筆相同分類的產品
   async function getItemFromSQL() {
     const url =
       'http://localhost:3001/man_product/relate?category=' + item.category
@@ -34,7 +45,9 @@ function Slider(props) {
 
   useEffect(() => {
     getItemFromSQL()
-  }, [])
+  }, [item])
+
+  // -----------------------------以下開始 JSX 畫面-----------------
 
   return (
     <>
@@ -42,16 +55,6 @@ function Slider(props) {
 
       <div className="container">
         <div className="row">
-          {/* <div className="arrow col-sm-1">
-            <a
-              role="button"
-              className="relative-btn-right d-flex justify-content-center align-items-center"
-            >
-              <IoIosArrowDropleft color="#707070" size={30} />
-            </a>
-          </div> */}
-          {/* <div className="styling"> */}
-
           <Carousel itemsToScroll={3} itemsToShow={3}>
             {relateProducts.map((item, index) => {
               return (
@@ -73,25 +76,12 @@ function Slider(props) {
               )
             })}
           </Carousel>
-
-          {/* </div> */}
-          {/* <div className="arrow col-sm-1">
-            <a
-              role="button"
-              className="relative-btn-right d-flex justify-content-center align-items-center aaa"
-            >
-              <IoIosArrowDropright color="#707070" size={30} />
-            </a>
-          </div> */}
         </div>
       </div>
     </>
   )
 }
 
-// export default connect(mapStateToProps, {
-//   swipeLeft,
-//   swipeRight,
-//   initAct,
-// })(Slider)
+// ---------------以下輸出component-----------------
+
 export default withRouter(Slider)

@@ -1,4 +1,9 @@
+// ------------------------------以下引入套件--------------------------
+
 import React from 'react'
+
+// ------------------以下引入images---------------------------
+
 import series from '../images/series.jpg'
 
 function ProductSeries(props) {

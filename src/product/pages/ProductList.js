@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-
 import LazyLoad from 'react-lazyload'
 
 // ------------------以下引入Components----------------------------
@@ -26,23 +25,23 @@ import bannerVideo from '../images/The-Passion-of-Making.mp4'
 
 function ProductList(props) {
   // 判斷登入的狀態
-  // const isLogged = useSelector((state) => state.isLogged)
-  // console.log('會員是否登入: ', isLogged)
 
   const isLogged = useSelector((state) => state.user.logged)
 
   // ---------------以下開始useState狀態設定-----------------
 
-  // 存從資料庫拿到的資料
-  console.log('cart localstorge', localStorage.getItem('product'))
+  // 存從資料庫拿到的資料到localstorge
+  console.log('product localstorge', localStorage.getItem('product'))
 
   const [product, setProduct] = useState(
     JSON.parse(localStorage.getItem('product')) || []
   )
   console.log('product ', product)
+
   // 存要顯示幾筆資料
   const [viewProduct, setViewProduct] = useState(15)
 
+  // 存要顯示幾筆資料的最後一個id值
   const [lastProductId, setLastProductId] = useState(0)
 
   // 存filter打開關閉狀態
@@ -69,6 +68,7 @@ function ProductList(props) {
   let chairColorUrl = 'chairColor=' + chairColor.join(',')
   console.log(chairColorUrl)
 
+  // 篩選條件併成一個陣列
   let allUrl = []
   if (category.length > 0) allUrl.push(categoryUrl)
   if (chairSeat.length > 0) allUrl.push(chairSeatUrl)
@@ -76,6 +76,7 @@ function ProductList(props) {
 
   // ---------------以下開始component內function-----------------
 
+  // onClick load more btn 增加15比顯示資料
   const handleClick = () => {
     let preViewProduct = viewProduct
     let newViewProduct = preViewProduct + 15
@@ -96,15 +97,6 @@ function ProductList(props) {
     const arr = product.slice(0, viewProduct)
     if (arr.length > 0) setLastProductId(arr[arr.length - 1].sid)
   }, [viewProduct, product])
-
-  useEffect(() => {
-    console.log('scrol' + document.querySelector('#productCards').scrollTop)
-    console.log('now' + document.documentElement.scrollTop)
-    const scrol = document.querySelector('#productCards').offsetTop
-    let nowscrol = document.documentElement.scrollTop
-
-    if (nowscrol < 1600) setShowFilter(true)
-  }, [])
 
   // ---------------以下開始fetch SQL get data function-----------------
 
@@ -132,6 +124,7 @@ function ProductList(props) {
     localStorage.setItem('product', JSON.stringify(data))
   }
 
+  // 拿所有資料庫
   async function getTotalFromSQL() {
     const url = 'http://localhost:3001/man_product/reactlist'
 
@@ -154,6 +147,17 @@ function ProductList(props) {
 
   // ---------------以下開始useEffect-----------------
 
+  // 捲到一定高度再顯示filter，還在測試研究中
+  useEffect(() => {
+    console.log('scrol' + document.querySelector('#productCards').scrollTop)
+    console.log('now' + document.documentElement.scrollTop)
+    const scrol = document.querySelector('#productCards').offsetTop
+    let nowscrol = document.documentElement.scrollTop
+
+    if (nowscrol < 1600) setShowFilter(true)
+  }, [])
+
+  // didmount拿所有資料
   useEffect(() => {
     if (product.length === 0) {
       getTotalFromSQL()
@@ -164,10 +168,6 @@ function ProductList(props) {
   //   if (category.length > 1) getFilterFromSQL()
   //   if (chairSeat.length > 1) getFilterFromSQL()
   // }, [category,chairSeat])
-
-  // useEffect(() => {
-  //   setTimeout(() => {}, 1000)
-  // }, [])
 
   // 彈跳視窗
   // useEffect(() => {
@@ -191,7 +191,7 @@ function ProductList(props) {
         setChairColor={setChairColor}
         getFilterFromSQL={getFilterFromSQL}
       />
-      {/* <div className="container-fluid"> */}
+
       <video
         src={bannerVideo}
         className="w-100"
@@ -199,12 +199,13 @@ function ProductList(props) {
         muted="true"
         preload="auto"
       ></video>
+
       <Breadcrumb />
-      {/* </div> */}
-      {/* <LazyLoad height={200} offset={100}> */}
+
       <ProductPopular />
-      {/* </LazyLoad> */}
+
       <ProductSeries />
+
       <div className="context1">
         <div className="container" id="productCards">
           <div className="row d-flex justify-content-center">
@@ -214,15 +215,15 @@ function ProductList(props) {
               在與人談論到居家靈感佈置陳列的時候，推崇自然風格的我們，總是鼓勵大家回到原點，以自己的角度出發，親自去挑選符合自己生活使用習慣的古董老件，而非跟隨流行的風格。
             </p>
           </div>
-          {/* <LazyLoad height={2000} offset={100} once={true}> */}
+
           <div className="row justify-content-center">
             {product.slice(0, viewProduct).map((item, index) => {
               return <ProductCard key={index} item={item} />
             })}
           </div>
-          {/* </LazyLoad> */}
         </div>
       </div>
+
       <div className="container">
         <div className="row">
           <button className="loadButton" onClick={handleClick}>
@@ -230,6 +231,7 @@ function ProductList(props) {
           </button>
         </div>
       </div>
+
       <CouponModal visible={visible} setVisible={setVisible} />
     </>
   )

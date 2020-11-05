@@ -1,15 +1,22 @@
+// ------------------------------以下引入套件---------------------------
+
 import React, { useEffect, useState } from 'react'
-import popularImg from '../images/777.jpg'
-import { BsStarFill } from 'react-icons/bs'
-import { Rate } from 'antd'
-import series from '../images/series.jpg'
+
+// ------------------以下引入Components----------------------------
+
 import ReviewCard from '../components/ReviewCard'
 import NoReviewCard from '../components/NoReviewCard'
 
-function ProductSeven(props) {
-  const { item, review, setReview } = props
-  // const [review, setReview] = useState([])
+// -----------------------以下開始Component ProductSeven-----------------
 
+function ProductSeven(props) {
+  // props解構，item是從product傳下來
+  // review, setReview state是從product傳下來
+  const { item, review, setReview } = props
+
+  // ---------------以下開始fetch SQL get data function-----------------
+
+  // 用產品名稱搜尋該筆產品的所有評論
   async function getItemFromSQL() {
     const url = 'http://localhost:3001/man_product/review/' + item.product_name
 
@@ -34,13 +41,10 @@ function ProductSeven(props) {
     getItemFromSQL()
   }, [item])
 
+  // -----------------------------以下開始 JSX 畫面-----------------
+
   return (
     <>
-      {/* <div className="container ">
-        <div className="row justify-content-center title">
-          <h3>產品評價</h3>
-        </div> */}
-
       {review.length ? (
         review.map((item, index) => {
           return <ReviewCard item={item} />
@@ -48,10 +52,10 @@ function ProductSeven(props) {
       ) : (
         <NoReviewCard item={item} />
       )}
-
-      {/* </div> */}
     </>
   )
 }
+
+// ---------------以下輸出component-----------------
 
 export default ProductSeven

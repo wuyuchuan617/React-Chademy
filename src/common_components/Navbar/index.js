@@ -23,19 +23,6 @@ import { Badge } from 'antd'
 import { ClockCircleOutlined } from '@ant-design/icons'
 
 function MyNavbar(props) {
-  function getCartFromLocalStorage() {
-    const newCart = localStorage.getItem('cart') || '[]'
-    // console.log(JSON.parse(newCart))
-    const newCart2 = JSON.parse(newCart)
-    console.log(newCart2.length)
-    setCartAmount(newCart2.length)
-  }
-  useEffect(() => {
-    getCartFromLocalStorage()
-  }, [])
-
-  const dispatch = useDispatch()
-
   const {
     cartamount,
     setCartAmount,
@@ -46,6 +33,23 @@ function MyNavbar(props) {
     scrollY,
     scrollDirection,
   } = props
+
+  function getCartFromLocalStorage() {
+    const newCart = localStorage.getItem('cart') || '[]'
+    // console.log(JSON.parse(newCart))
+    const newCart2 = JSON.parse(newCart)
+    console.log(newCart2.length)
+    setCartAmount(newCart2.length)
+  }
+  useEffect(() => {
+    getCartFromLocalStorage()
+  }, [])
+  useEffect(() => {
+    getCartFromLocalStorage()
+  }, [cartamount])
+
+  const dispatch = useDispatch()
+
   const [showCart, setShowCart] = useState(false)
   const isDown = scrollDirection === 'DOWN'
   const over100px = scrollY < -100

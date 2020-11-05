@@ -1,20 +1,37 @@
+// ------------------------------以下引入套件----------------------------
+
 import React, { useState, useEffect } from 'react'
-import '../styles/review.css'
 import { Rate, Upload, Button } from 'antd'
 import { UploadOutlined } from '@ant-design/icons'
 
+// ------------------------以下引入樣式----------------------------
+
+import '../styles/review.css'
+
+// -----------------------以下開始Component Product-----------------
+
 function Review(props) {
+  // -----------------------以下開始useState狀態設定-----------------
+
+  // 以下六個為demo btn 預設文字
   const [orderProductNo, setOrderProductNo] = useState('')
   const [orderProduct, setOrderProduct] = useState('')
   const [orderNo, setOrderNo] = useState('')
   const [orderDate, setOrderDate] = useState('')
   const [reviewTitle, setReviewTitle] = useState('')
   const [reviewComment, setReviewComment] = useState('')
-  // const [photoReturn, setPhotoReturn] = useState({})
 
+  //  存圖片上傳file檔，要fetch form Data
   const [photo, setPhoto] = useState(null)
+
+  //  存圖片回傳後編碼後檔名
   const [previewPhoto, setPreviewPhoto] = useState({})
   console.log('photo' + JSON.stringify(photo))
+
+  //  存星星數字
+  const [stars, setStars] = useState(5)
+
+  // ---------------以下開始fetch SQL get data function-----------------
 
   // 圖片預覽
   async function updateReviewToServer() {
@@ -58,15 +75,7 @@ function Review(props) {
     updateReviewToServer()
   }, [photo])
 
-  // const [formDone, setFormDone] = useState(false)
-  const [writePhoto, setWritePhoto] = useState('')
-  const [writeProduct, setWriteProduct] = useState('')
-  const [writeOrder, setWriteOrder] = useState('')
-  const [stars, setStars] = useState(5)
-  const [writeTitle, setWriteTitle] = useState('')
-  const [writeComment, setWriteComment] = useState('')
-  const [writeMember, setWriteMember] = useState('AMY')
-
+  // 送出表單
   async function handleSubmit(e) {
     e.preventDefault()
     const fd = new FormData(document.form1)
@@ -89,6 +98,8 @@ function Review(props) {
     console.log(data)
     console.log(newData.newFileName)
   }
+
+  // -----------------------------以下開始 JSX 畫面-----------------
 
   return (
     <>
@@ -125,9 +136,6 @@ function Review(props) {
                   name="photo"
                   value={previewPhoto.newFileName}
                   className="form-control"
-                  onChange={(e) => {
-                    setWritePhoto(e.target.value)
-                  }}
                 />
                 <img
                   src={`http://localhost:3001/img/` + previewPhoto.newFileName}
@@ -174,9 +182,6 @@ function Review(props) {
                     value={orderProduct}
                     id="productname"
                     name="buy_product"
-                    onChange={(e) => {
-                      setWriteProduct(e.target.value)
-                    }}
                   />
                 </div>
                 <div className="formset reviewInput">
@@ -208,9 +213,6 @@ function Review(props) {
                     value={orderNo}
                     id="product_no"
                     name="order_no"
-                    onChange={(e) => {
-                      setWriteOrder(e.target.value)
-                    }}
                   />
                 </div>
               </div>
@@ -240,9 +242,6 @@ function Review(props) {
                   value={reviewTitle}
                   id="price"
                   name="review_title"
-                  onChange={(e) => {
-                    setWriteTitle(e.target.value)
-                  }}
                 />
               </div>
 
@@ -251,9 +250,6 @@ function Review(props) {
                 name="buy_member_id"
                 value="AMY"
                 className="form-control"
-                onChange={(e) => {
-                  setWriteMember(e.target.value)
-                }}
               />
 
               <div className="formset textareaRewiew">
@@ -265,9 +261,6 @@ function Review(props) {
                   className="formstyle"
                   value={reviewComment}
                   name="review_comment"
-                  onChange={(e) => {
-                    setWriteComment(e.target.value)
-                  }}
                 ></textarea>
               </div>
               <input
@@ -283,11 +276,6 @@ function Review(props) {
   )
 }
 
-export default Review
+// ---------------以下輸出component-----------------
 
-// const [orderProductNo, setOrderProductNo] = useState('')
-// const [orderProduct, setOrderProduct] = useState('')
-// const [orderNo, setOrderNo] = useState('')
-// const [orderDate, setOrderDate] = useState('')
-// const [reviewTitle, setReviewTitle] = useState('')
-// const [reviewComment, setReviewComment] = useState('')
+export default Review

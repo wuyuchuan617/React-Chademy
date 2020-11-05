@@ -1,11 +1,19 @@
+// ------------------------------以下引入套件---------------------------
+
 import React, { useEffect, useState } from 'react'
-import popularImg from '../images/777.jpg'
-import { BsStarFill } from 'react-icons/bs'
 import { Rate } from 'antd'
+
+// ------------------以下引入images----------------------------
+
 import series from '../images/series.jpg'
 
-function ProductSeven(props) {
+// -----------------------以下開始Component Slider-----------------
+
+function ReviewCard(props) {
+  // props解構，item是從product傳下來再從ProductSeven傳下來的單一產品{}
   const { item } = props
+
+  // -----------------------------以下開始 JSX 畫面-----------------
 
   return (
     <>
@@ -42,4 +50,6 @@ function ProductSeven(props) {
   )
 }
 
-export default ProductSeven
+// ---------------以下輸出component-----------------
+
+export default ReviewCard
