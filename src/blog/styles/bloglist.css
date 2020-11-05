@@ -203,7 +203,7 @@ width: 60%;
 }
 
 .a_message2 img{
-width: 30%; 
+width: 40%; 
 
 }
 
@@ -212,19 +212,148 @@ width: 30%;
     text-align: center;
 }
 
-.a_message3{
-    padding-top:10px;
-    
+.annie_message04{
+color: #1A1818;
+  letter-spacing: 0.2rem;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 18px;
+  font-weight: normal;    
 }
 
-
-.a_message3 p{
-    color: #707070;
+.annie_message05{
+color: #707070;
   letter-spacing: 0.2rem;
   font-family: 'Noto Sans TC', sans-serif;
   font-size: 14px;
-  font-weight: normal;   
+  font-weight: normal;  
+  margin-bottom: 50px;  
 }
+
+.annie_customer{
+color: #707070;
+  letter-spacing: 0.2rem;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 10px;
+  font-weight: normal; 
+  margin-right: 10px;
+   
+}
+
+
+.annie_time{
+color: #707070;
+  letter-spacing: 0.2rem;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 10px;
+  font-weight: normal;   
+  margin-right: 20px; 
+}
+
+.a_message3{
+    background-color: #DEDDDA;
+    padding:10px !important;
+}
+
+.a_message8{
+    margin-top: 20px;
+}
+
+
+/*留言板_互動表單*/
+.a_messagestart{
+    margin-top: 20px;
+    border-bottom:3px solid #d9c7aa;
+    padding-bottom: 20px;
+
+}
+
+.a_formstyle{
+    border-style: none;
+}
+
+.message-btn{
+
+    display: block;
+  width: 9.375rem;
+  height: 2.5rem;
+  border: none;
+  background-color:  #C77334;
+  color: #DEDDDA;
+  letter-spacing: 0.2rem;
+  margin-top: 0.5rem;
+  margin-right: 15px;
+  border-radius: 0% !important;
+
+
+}
+
+
+/*相關文章*/
+
+
+.wrapper10 {
+  padding-left: 7.5rem;
+  padding-right: 7.5rem;
+  margin-top: 3rem;
+  background-color: #DEDDDA;
+  padding-top: 50px;
+  padding-bottom:150px ;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+
+
+.title0111 h2 {
+  font-size: 2.25rem;
+  margin-bottom: 4.375rem;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+.a_list2 {
+            column-count: 4;
+            /* column-rule: 1px dashed lightblue; */
+        }
+
+        .a_list .item {
+            -webkit-column-break-inside: avoid;
+            /*Chrome, Safari, Opera */
+            page-break-inside: avoid;
+            /* Firefox */
+            break-inside: avoid;
+            /* IE 10+ */
+
+            padding:10px;
+            background-color:#edece8;
+            margin-bottom: 15px;
+           
+        }
+
+        .a_list2 .item img {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .a_list2 .item h4 {
+           font-size: 1.125rem;
+  letter-spacing: 0.2rem;
+  color: #1a1818;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: normal;
+  margin-bottom: 30px;
+        }
+
+
+        .annie_title01 h2 {
+  font-size: 2.25rem;
+  margin-bottom: 4.375rem;
+  letter-spacing: 0.2rem;
+  text-align: center;
+}
+
+
 
 
 
