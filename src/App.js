@@ -253,14 +253,15 @@ function App() {
                 area={area}
                 adress={adress}
                 setOrderNo={setOrderNo}
+                setCartAmount={setCartAmount}
               />
             </Route>
 
             <Route path="/checkfinish">
               <Finish
                 orderNo={orderNo}
-                setCartAmount={setCartAmount}
                 cartamount={cartamount}
+                setCartAmount={setCartAmount}
               />
             </Route>
 

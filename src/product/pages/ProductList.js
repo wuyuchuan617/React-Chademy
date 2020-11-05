@@ -190,6 +190,7 @@ function ProductList(props) {
         chairColor={chairColor}
         setChairColor={setChairColor}
         getFilterFromSQL={getFilterFromSQL}
+        getTotalFromSQL={getTotalFromSQL}
       />
 
       <video

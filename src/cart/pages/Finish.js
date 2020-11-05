@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+
 function Finish(props) {
-  const { orderNo } = props
+  const { orderNo, setCartAmount, cartamount } = props
+  useEffect(() => {
+    localStorage.removeItem('cart')
+    setCartAmount(cartamount + 1)
+  }, [])
+
   return (
     <>
       <div className="myprogress">

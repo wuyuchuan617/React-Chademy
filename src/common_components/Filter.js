@@ -16,6 +16,7 @@ function Filter(props) {
     chairColor,
     setChairColor,
     getFilterFromSQL,
+    getTotalFromSQL,
   } = props
 
   // 0 : close 1 : open
@@ -112,7 +113,18 @@ function Filter(props) {
 
             <input type="text" className="filterSearch" placeholder="SEARCH" />
 
-            <p className="clearFilter">Restart your filter</p>
+            <p
+              className="clearFilter"
+              onClick={() => {
+                setCategory([])
+                setChairSeat([])
+                setChairColor([])
+                localStorage.removeItem('product')
+                getTotalFromSQL()
+              }}
+            >
+              Restart your filter
+            </p>
             <div className="filterTag">
               {category.map((item, index) => {
                 return (

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { withRouter, useHistory } from 'react-router-dom'
 import { countries, townships, postcodes } from '../components/Data'
 // import './style/jay.scss'
 
@@ -155,17 +156,16 @@ function CheckInfo(props) {
             }}
             placeholder="安全碼"
           />
-          <Link
-            className="j_btn5"
-            to="checkfinish"
-            onClick={() => {
-              updateTotalToServer()
-              setOrderNo(`PO${year}${month}${day}`)
-              localStorage.removeItem('cart')
-              setCartAmount(cartamount + 1)
-            }}
-          >
-            <div className="j_btn5">完成付款</div>
+          <Link className="j_btn5" to="checkfinish">
+            <div
+              className="j_btn5"
+              onClick={() => {
+                updateTotalToServer()
+                setOrderNo(`PO${year}${month}${day}`)
+              }}
+            >
+              完成付款
+            </div>
           </Link>
         </div>
       </div>
@@ -173,4 +173,4 @@ function CheckInfo(props) {
   )
 }
 
-export default CheckInfo
+export default withRouter(CheckInfo)
