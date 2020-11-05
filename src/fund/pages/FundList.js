@@ -4,9 +4,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 import Filter from '../../common_components/Filter'
 import FundListCard from '../components/FundListCard'
-
-
-
+import '../styles/FundHomepage.scss'
 
 function FundList(props) {
   const [showFilter, setShowFilter] = useState(false)
@@ -41,8 +39,8 @@ function FundList(props) {
     const scrol = document.querySelector('#productCards').offsetTop
     let nowscrol = document.documentElement.scrollTop
 
-    if (nowscrol > scrol) setShowFilter(true)
-  }, [document.documentElement.scrollTop])
+    if (nowscrol < 1600) setShowFilter(true)
+  }, [])
 
   async function getTotalFromSQL() {
     const url = 'http://localhost:3001/man_fund/fundlistnode'
@@ -67,15 +65,31 @@ function FundList(props) {
     getTotalFromSQL()
   }, [])
 
+  // jsx畫面
+
   return (
     <>
+      
+
       <Filter showFilter={showFilter} />
 
-  
+
+
       <div class="context1">
         <div class="container" id="productCards">
+
+        <div className="e_lablebox mt-5 mb-5">
+        <Link to="/newfundproject" className="e_defaultlable">
+          最新發起
+        </Link>
+        <Link to="/endsoonfund" className="e_activelable">
+          即將結束
+        </Link>
+      </div>
+
+
           <div class="row  justify-content-center">
-            {product.map((item, index) => {
+            {product.slice(0, viewProduct).map((item, index) => {
               return <FundListCard key={index} item={item} />
             })}
           </div>

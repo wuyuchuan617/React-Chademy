@@ -27,10 +27,8 @@ import SecondhandProduct from './secondhand/pages/SecondhandProduct'
 // ---------------------以下import 募資頁面--------------------
 import FundHomepage from './fund/pages/FundHomepage'
 import FundList from './fund/pages/FundList'
+import FundItem from './fund/pages/FundItem'
 
-import NewFundProject from './fund/components/NewFundProject '
-
-import EndSoonFund from './fund/components/EndSoonFund'
 
 // ---------------------以下import 競標頁面--------------------
 import Pages from './bid/pages/Pages'
@@ -149,13 +147,11 @@ function App() {
               <FundList />
             </Route>
 
-            <Route path="/newfundproject">
-              <NewFundProject />
+            <Route path="/funditem">
+              <FundItem />
             </Route>
 
-            <Route path="/endsoonfund">
-              <EndSoonFund />
-            </Route>
+            
 
             {/* 競標頁面 */}
 
