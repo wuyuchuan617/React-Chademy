@@ -5,12 +5,12 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 function classNameic() {
-  //   useEffect(() => {
-  //     AOS.init()
-  //     AOS.refresh()
-  //   }, [])
+  // useEffect(() => {
+  //   AOS.init()
+  //   AOS.refresh()
+  // }, [])
   return (
-    <div className="row mt_mb_100">
+    <div className="row mt_mb_100" data-aos-duration="2000" data-aos="fade-up">
       <div className="col-lg-8 classic">
         <img src={Img} alt="" className="mt-5" />
       </div>

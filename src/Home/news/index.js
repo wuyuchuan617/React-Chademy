@@ -10,7 +10,7 @@ function About() {
     AOS.refresh()
   }, [])
   return (
-    <div className="row mt_mb_100" data-aos="fade-up">
+    <div className="row mt_mb_100" data-aos="fade-up" data-aos-duration="2000">
       <div className="title3">
         <div className="straight"></div>
         <div className="cross"></div>

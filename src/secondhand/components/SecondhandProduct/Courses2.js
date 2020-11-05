@@ -11,7 +11,11 @@ function Courses2() {
     AOS.refresh()
   }, [])
   return (
-    <div className="row no-gutters mt_mb_100" data-aos="fade-up">
+    <div
+      className="row no-gutters mt_mb_100"
+      data-aos="fade-up"
+      data-aos-duration="3000"
+    >
       <div className="col-lg-4 col-sm-12 course">
         <img src={Img} alt="" />
         <p className="noto-serif_p18 mt-3">活動體驗</p>

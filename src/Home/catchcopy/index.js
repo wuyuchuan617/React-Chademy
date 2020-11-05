@@ -9,7 +9,11 @@ function Catchcopy() {
     AOS.refresh()
   }, [])
   return (
-    <div className="row no-gutters mt_mb_100" data-aos="fade-up">
+    <div
+      className="row no-gutters mt_mb_100"
+      data-aos="fade-up"
+      data-aos-duration="3000"
+    >
       <div className="i_homeinfo i_homepart">
         <p className="i_homelora-lighter">CHADEMY 椅子學院</p>
         <p className="i_homesubinfo i_homenoto-sans i_homep14">
