@@ -72,6 +72,8 @@ function App() {
   const [adress, setAdress] = useState('')
   const [cartamount, setCartAmount] = useState(0)
   const [orderNo, setOrderNo] = useState('')
+  const [totalPrice, setTotalPrice] = useState(0)
+  const [subtotal, setSubtoal] = useState(0)
   //-----------------------------------------------------------
   return (
     <Router>
@@ -188,11 +190,16 @@ function App() {
             <Route path="/cartproduct">
               <CartProduct
                 myCart={myCart}
+                cartamount={cartamount}
+                totalPrice={totalPrice}
+                setTotalPrice={setTotalPrice}
                 setMyCart={setMyCart}
                 showLoading={showLoading}
                 setShowLoading={setShowLoading}
                 myCartDisplay={myCartDisplay}
                 setMyCartDisplay={setMyCartDisplay}
+                subtotal={subtotal}
+                setSubtoal={setSubtoal}
               />
             </Route>
 
@@ -246,6 +253,7 @@ function App() {
 
             <Route path="/checkinfo">
               <CheckInfo
+                totalPrice={totalPrice}
                 myCart={myCart}
                 name={name}
                 phone={phone}
@@ -258,15 +266,11 @@ function App() {
             </Route>
 
             <Route path="/checkfinish">
-<<<<<<< Updated upstream
               <Finish
                 orderNo={orderNo}
                 cartamount={cartamount}
                 setCartAmount={setCartAmount}
               />
-=======
-              <Finish orderNo={orderNo} cartamount={cartamount} />
->>>>>>> Stashed changes
             </Route>
 
             {/* 404找不到網頁，需要放在switch路由表最後一個 */}

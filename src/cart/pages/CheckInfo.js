@@ -19,6 +19,7 @@ function CheckInfo(props) {
     setOrderNo,
     cartamount,
     setCartAmount,
+    totalPrice,
   } = props
   const city2 = city === -1 ? 0 : city
   const area2 = area === -1 ? 0 : area
@@ -38,7 +39,7 @@ function CheckInfo(props) {
     order_status: 1,
     delivery_status: 1,
     point: 20,
-    total: 200,
+    total: totalPrice,
   }
   async function updateTotalToServer(value) {
     const url = 'http://localhost:3001/j_cart/addorder'
