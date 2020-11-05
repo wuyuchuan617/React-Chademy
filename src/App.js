@@ -55,6 +55,7 @@ import CartSecondHand from './cart/pages/CartSecondHand'
 import CartClass from './cart/pages/CartClass'
 import DeliveryInfo from './cart/pages/DeliveryInfo'
 import CheckInfo from './cart/pages/CheckInfo'
+import Finish from './cart/pages/Finish'
 
 //-----------------------------------------------------------
 
@@ -69,6 +70,7 @@ function App() {
   const [area, setArea] = useState(-1)
   const [adress, setAdress] = useState('')
   const [cartamount, setCartAmount] = useState(0)
+  const [orderNo, setOrderNo] = useState('')
   //-----------------------------------------------------------
   return (
     <Router>
@@ -245,7 +247,12 @@ function App() {
                 city={city}
                 area={area}
                 adress={adress}
+                setOrderNo={setOrderNo}
               />
+            </Route>
+
+            <Route path="/checkfinish">
+              <Finish orderNo={orderNo} />
             </Route>
 
             {/* 404找不到網頁，需要放在switch路由表最後一個 */}
