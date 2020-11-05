@@ -41,6 +41,7 @@ import WorkshopList from './workshop/pages/WorkshopList'
 
 // ---------------------以下import 部落格頁面------------------
 import Blog from './blog/pages/Blog'
+import BlogList from './blog/pages/BlogList'
 
 // ---------------------以下import 會員頁面--------------------
 import Login from './member/Login'
@@ -170,6 +171,10 @@ function App() {
             {/* 部落格頁面 */}
             <Route path="/blog">
               <Blog />
+            </Route>
+
+            <Route exact path="/BlogList">
+              <BlogList />
             </Route>
 
             {/* 會員頁面 */}

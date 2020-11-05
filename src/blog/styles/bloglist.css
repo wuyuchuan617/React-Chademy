@@ -1,0 +1,236 @@
+/*blog*/
+
+.a_blogwrap {
+  width: 100%;
+  background-color: #edece8;
+  
+}
+
+.a_blogblog{
+    padding-right: 30px;
+}
+
+.a_blog_image {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+}
+
+.a_blog_image img {
+  width: 100%;
+}
+
+.a_blog-name {
+  font-family: 'Lora', serif;
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 25px;
+  letter-spacing: 0.2rem;
+}
+
+.a_blog-desc {
+  margin-top: -15px;
+  color: #707070;
+  letter-spacing: 0.2rem;
+  
+}
+
+.a_blog-desc p {
+  margin-top: 10px;
+  color: #707070;
+  letter-spacing: 0.2rem;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #d9c7aa;
+}
+
+
+.a_blog-name-title{
+    font-family: 'Lora', serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 25px;
+  letter-spacing: 0.2rem;
+
+}
+
+.a_blog-desc-title{
+    margin-top: 15px;
+  color: #707070;
+  letter-spacing: 0.2rem;
+
+}
+
+.a_blog-desc-title p {
+  margin-top: 10px;
+  color: #707070;
+  letter-spacing: 0.2rem;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  padding-bottom: 10px;
+  
+}
+
+.a_blogblog_image{
+    width: 75%;
+  background-size: cover;
+  background-position: center;
+  margin:0 auto;
+  margin-bottom: 3rem;
+}
+
+.a_blog-desc-connectiontitle{
+    font-family: 'Lora', serif;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 100px;
+  letter-spacing: 0.2rem;
+
+}
+
+.a_blog-desc-connection p{
+    color: #c77334;
+  letter-spacing: 0.2rem;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+    float: left;
+   border-bottom: 1px solid #c77334;
+    margin-right: 10px;
+    
+  
+}
+
+.a_blog-desc-writertitle{
+    font-family: 'Lora', serif;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 100px;
+  letter-spacing: 0.2rem;
+  margin-bottom:30px;
+}
+
+
+
+.a_blog2 img{
+width: 60%; 
+
+}
+
+.a_blog2{
+    
+    text-align: center;
+}
+
+.a_blog3{
+    padding-top:10px;
+    
+}
+
+
+.a_blog3 p{
+    color: #707070;
+  letter-spacing: 0.2rem;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 14px;
+  font-weight: normal;   
+}
+
+
+
+/*文章排行*/
+.box3trainblog {
+  overflow: hidden;
+  background-color: #ffffff !important;
+  transition: 0.5s;
+  width: 80%;
+  margin-bottom: 3.3125rem;
+  
+}
+
+.upper3blog {
+  position: relative;
+  width: 100%;
+  margin-top: 2rem;
+  
+}
+
+.upper3blog p {
+  background-color: #c77334;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  color: white;
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+}
+
+.word1trainblog h5{
+    margin-top:10px;
+    border-bottom: 3px solid #d9c7aa;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+
+.a_blog-popular_name{
+    font-family: 'Lora', serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 15px;
+  letter-spacing: 0.2rem;
+
+}
+
+
+/*留言板*/
+.annie_message01 h5{
+    font-family: 'Lora', serif;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  color:#F3F4F4;
+  background-color: #C77334;
+  padding-top:5px;
+  padding-bottom:5px;
+}
+
+.a_message2 img{
+width: 30%; 
+
+}
+
+.a_message2{
+    
+    text-align: center;
+}
+
+.a_message3{
+    padding-top:10px;
+    
+}
+
+
+.a_message3 p{
+    color: #707070;
+  letter-spacing: 0.2rem;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 14px;
+  font-weight: normal;   
+}
+
+
+
+
+
+
+
+
+
