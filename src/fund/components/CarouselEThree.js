@@ -2,14 +2,14 @@ import React from 'react'
 import '../styles/FundHomepage.scss'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import { Container, Row, Col } from 'react-bootstrap'
-import FundCardOne from './fundcard/FundCardOne'
+import FundCardFive from './fundcard/FundCardFive'
+import FundCardSix from './fundcard/FundCardSix'
+import FundCardSeven from './fundcard/FundCardSeven'
 
 import 'antd/dist/antd.css'
 import { Carousel } from 'antd'
 
-
-
-function CarouselE() {
+function CarouselEThree() {
   function onChange(a, b, c) {
     console.log(a, b, c)
   }
@@ -20,26 +20,28 @@ function CarouselE() {
     // lineHeight: '160px',
     // textAlign: 'center',
     background: '#edece8',
-    
   }
   return (
     <>
       <Carousel afterChange={onChange}>
         <div>
           <h3 style={contentStyle}>
-            <FundCardOne />
+            <FundCardFive />
           </h3>
         </div>
         <div>
-          <h3 style={contentStyle}><FundCardOne /></h3>
+          <h3 style={contentStyle}>
+            <FundCardSix />
+          </h3>
         </div>
         <div>
-          <h3 style={contentStyle}><FundCardOne /></h3>
+          <h3 style={contentStyle}>
+            <FundCardSeven />
+          </h3>
         </div>
       </Carousel>
-      
     </>
   )
 }
 
-export default CarouselE
+export default CarouselEThree

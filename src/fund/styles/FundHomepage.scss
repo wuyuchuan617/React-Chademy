@@ -1,6 +1,6 @@
 .e_slogan {
   position: absolute;
-  font-family: NotoSerifTC;
+  font-family: Noto Serif TC;
   font-size: 32px;
 
   /* text-align: center; */
@@ -13,7 +13,7 @@
 
 .p_video {
   position: absolute;
-  font-family: NotoSerifTC;
+  font-family: Noto Serif TC;
   font-size: 16px;
   font-weight: 300;
   color: #ffffff;
@@ -32,7 +32,7 @@
   width: 200px;
   height: 40px;
   background-color: #c77334;
-  font-family: NotoSansTC;
+  font-family: Noto Sans TC;
   font-size: 16px;
   color: #eef3f5;
   text-align: center;
@@ -49,6 +49,7 @@
   margin-top: -100px;
   display: flex;
   // border: 1px solid #BDC5C7;
+  cursor: pointer
 }
 
 .e_activelable {
@@ -92,6 +93,7 @@
   margin: auto;
   justify-content: center;
   // z-index: 5;
+  cursor: pointer
 }
 
 .icon_img {
@@ -112,6 +114,7 @@
   height: 35%;
   // margin-top: 50px;
   // z-index: 5;
+  cursor: pointer
 }
 
 .chair_icon_sofa {
@@ -124,16 +127,24 @@
 
 .chair_p {
   text-align: center;
-  font-family: NotoSansTC;
+  font-family: Noto Sans TC;
   color: #222222;
   font-size: 14px;
   padding-top: 7px;
   // z-index: 5;
 }
 
+.chair_p2 {
+  text-align: center;
+  font-family: Noto Sans TC;
+  color: #4b5454;
+  font-size: 20px;
+  padding-top: 7px;
+}
+
 // 輪播卡牌
 .ant-carousel .slick-dots-bottom {
-  bottom: -30px;
+  bottom: 80px;
 }
 
 .ant-carousel .slick-dots li button {
@@ -147,8 +158,8 @@
 .ant-carousel {
   margin-top: 0;
   padding-top: 0;
-  transform: translateY(-120px);
-  // z-index: -1;
+  transform: translateY(-130px);
+  z-index: -5;
 }
 
 
@@ -170,9 +181,9 @@
 }
 
 .e_wrap{
-  width: 330px;
+  width: 100%;
   margin: 5px auto;
-  height: 280px;
+  height: 230px;
 }
 
 .e_wrap img {
@@ -182,14 +193,14 @@
 
 .e_card_title {
   font-size: 24px;
-  font-family: NotoSansTC;
+  font-family: Noto Sans TC;
   color: #464747;
   line-height: 0;
-  margin: 25px 10px;
+  margin: 15px 10px;
 }
 
 .e_maker {
-  font-family: NotoSansTC;
+  font-family: Noto Sans TC;
   font-size: 14px;
   color: #1e1f1f;
   text-align: right;
@@ -203,7 +214,7 @@
 }
 
 .e_intro {
-  font-family: NotoSansTC;
+  font-family: Noto Sans TC;
   font-size: 14px;
   color: #707070;
   padding: 0 10px;
@@ -211,7 +222,7 @@
 }
 
 .e_date {
-  font-family: NotoSansTC;
+  font-family: Noto Sans TC;
   font-size: 24px;
   color: #c77334;
   font-weight: 500;
@@ -221,16 +232,18 @@
 }
 
 .e_price {
-  font-family: NotoSansTC;
+  font-family: Noto Sans TC;
   font-size: 18px;
   color: #403e3e;
   padding: 0 10px;
   margin-top: 1rem;
+  margin-bottom: -10px;
 
 }
 
 .btn_div{
   text-align: right;
+  margin-top: 0;
 
 
 }
@@ -239,13 +252,13 @@
   width: 95px;
   height: 40px;
   border: none;
-  font-family: NotoSansTC;
+  font-family: Noto Sans TC;
   font-size: 14px;
   font-weight: 500;
   text-align: center;
   color: #707070;
   transition: .2s;
-  margin-top: -50px; 
+  margin-top: -100px; 
   
  
 
@@ -268,31 +281,39 @@
   width: 150px;
   height: 40px;
   border: solid 1px #585858;
-  font-family: NotoSansTC;
+  font-family: Noto Sans TC;
   font-size: 14px;
   font-weight: 500;
   text-align: center;
   color: #575555;
   background-color: #edece8;
+  // z-index: 100;
+  cursor: pointer
+ 
 }
 
 .e_more_div{
   text-align: right;
-  margin-top: -150px ;
+  margin-top: -155px ;
   justify-content: end;
   margin-right: 200px;
+  // z-index: 100;
+  cursor: pointer
+ 
 }
 
 .e_more:hover{
   background-color: #D9C7AA;
   border: none;
+  z-index: 10;
+  cursor: pointer
 }
 
 
 // 熱門募資專案
 
 .e_popular {
-  font-family: NotoSerifTC;
+  font-family: Noto Serif TC;
   font-size: 32px;
   text-align: center;
   color: #474745;
@@ -307,6 +328,7 @@
   margin: auto;
   margin-top: 100px;
   display: flex;
+  cursor: pointer
 }
 
 
@@ -320,7 +342,7 @@
 }
 
 .p_stu {
-  font-family: NotoSerifTC;
+  font-family: Noto Serif TC;
   font-size: 16px;
   font-weight: 500;
   color: #fcfcfc;

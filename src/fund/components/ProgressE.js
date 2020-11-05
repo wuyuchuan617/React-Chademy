@@ -6,12 +6,13 @@ import { Progress } from 'antd'
 
 function ProgressE(props) {
   const { item } = props
-  // const Umber = Number.parseInt(item.e_progress)
+  // let bar = item.e_progress
+  let umber = Number.parseInt(`${item.e_progress}`, 10)
   return (
     <>
       <div style={{ width: 330 }}>
         <Progress
-          percent={50}
+          percent={umber}
           size="small"
           status="active"
           style={{ height: 12 }}

@@ -1,24 +1,51 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../styles/FundHomepage.scss'
 import { Container, Row, Col } from 'react-bootstrap'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import useSelection from 'antd/lib/table/hooks/useSelection'
 
-function BookMarkTwo() {
+function BookMarkTwo(props) {
+  const { setShowProject, setShowColor } = props
+  const [changecolor, setChangeColor] = useState(0)
   return (
     <>
       <div className="e_lablebox2">
-        <Link to="/newfundproject" className="e_defaultlable">
+        <div
+          className={changecolor === 0 ? 'e_activelable' : 'e_defaultlable'}
+          onClick={() => {
+            setShowProject(0)
+            setChangeColor(0)
+          }}
+        >
           專案ㄧ
-        </Link>
-        <Link to="/endsoonfund" className="e_activelable">
-        專案二
-        </Link>
-        <Link to="/endsoonfund" className="e_activelable">
-        專案三
-        </Link>
-        <Link to="/endsoonfund" className="e_activelable">
-        專案四
-        </Link>
+        </div>
+        <div
+          className={changecolor === 1 ? 'e_activelable' : 'e_defaultlable'}
+          onClick={() => {
+            setShowProject(1)
+            setChangeColor(1)
+          }}
+        >
+          專案二
+        </div>
+        <div
+          className={changecolor === 2 ? 'e_activelable' : 'e_defaultlable'}
+          onClick={() => {
+            setShowProject(2)
+            setChangeColor(2)
+          }}
+        >
+          專案三
+        </div>
+        <div
+          className={changecolor === 3 ? 'e_activelable' : 'e_defaultlable'}
+          onClick={() => {
+            setShowProject(3)
+            setChangeColor(3)
+          }}
+        >
+          專案四
+        </div>
       </div>
     </>
   )
