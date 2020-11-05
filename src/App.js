@@ -258,11 +258,15 @@ function App() {
             </Route>
 
             <Route path="/checkfinish">
+<<<<<<< Updated upstream
               <Finish
                 orderNo={orderNo}
                 cartamount={cartamount}
                 setCartAmount={setCartAmount}
               />
+=======
+              <Finish orderNo={orderNo} cartamount={cartamount} />
+>>>>>>> Stashed changes
             </Route>
 
             {/* 404找不到網頁，需要放在switch路由表最後一個 */}
