@@ -5,6 +5,7 @@ import 'antd/dist/antd.css'
 import { IntegerStep, DecimalStep } from './components/IntegerStep'
 import { Checkbox } from 'antd'
 import { Tag } from 'antd'
+import { Radio } from 'antd'
 
 function Filter(props) {
   const {
@@ -15,6 +16,11 @@ function Filter(props) {
     setChairSeat,
     chairColor,
     setChairColor,
+    search,
+    setSearch,
+    price,
+    setPrice,
+    setSort,
     getFilterFromSQL,
     getTotalFromSQL,
   } = props
@@ -111,7 +117,15 @@ function Filter(props) {
               close
             </p>
 
-            <input type="text" className="filterSearch" placeholder="SEARCH" />
+            <input
+              type="text"
+              className="filterSearch"
+              placeholder="SEARCH"
+              onChange={(e) => {
+                console.log(e.target.value)
+                setSearch(e.target.value)
+              }}
+            />
 
             <p
               className="clearFilter"
@@ -498,7 +512,7 @@ function Filter(props) {
               aria-hidden="false"
               style={viewSpread3 ? sidebarContentShow : sidebarContentHide}
             >
-              <IntegerStep style={{ margin: 'auto' }} />
+              <IntegerStep style={{ margin: 'auto' }} setPrice={setPrice} />
 
               <li data-refinement-value="4">
                 <a className="refinement-link" rel="nofollow" href="#">
@@ -554,36 +568,39 @@ function Filter(props) {
               aria-hidden="false"
               style={viewSpread4 ? sidebarContentShow : sidebarContentHide}
             >
-              <Checkbox
-                onChange={onChange}
-                style={{ display: 'block', marginLeft: 0 }}
+              <Radio.Group
+                name="radiogroup"
+                defaultValue={1}
+                onChange={(e) => {
+                  setSort(e.target.value)
+                  console.log('sort' + e.target.value)
+                }}
               >
-                單椅
-              </Checkbox>
-              <Checkbox
-                onChange={onChange}
-                style={{ display: 'block', marginLeft: 0 }}
-              >
-                扶手椅
-              </Checkbox>
-              <Checkbox
-                onChange={onChange}
-                style={{ display: 'block', marginLeft: 0 }}
-              >
-                餐椅
-              </Checkbox>
-              <Checkbox
-                onChange={onChange}
-                style={{ display: 'block', marginLeft: 0 }}
-              >
-                沙發椅
-              </Checkbox>
-              <Checkbox
-                onChange={onChange}
-                style={{ display: 'block', marginLeft: 0 }}
-              >
-                吧台椅
-              </Checkbox>
+                <Radio value={1} style={{ display: 'block', marginLeft: 0 }}>
+                  產品由新到舊
+                </Radio>
+                <Radio
+                  value={2}
+                  onChange={onChange}
+                  style={{ display: 'block', marginLeft: 0 }}
+                >
+                  產品由舊到新
+                </Radio>
+                <Radio
+                  value={3}
+                  onChange={onChange}
+                  style={{ display: 'block', marginLeft: 0 }}
+                >
+                  價格由高到低
+                </Radio>
+                <Radio
+                  value={4}
+                  onChange={onChange}
+                  style={{ display: 'block', marginLeft: 0 }}
+                >
+                  價格由低到高
+                </Radio>
+              </Radio.Group>
             </ul>
           </div>
 

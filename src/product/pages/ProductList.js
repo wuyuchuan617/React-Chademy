@@ -54,6 +54,9 @@ function ProductList(props) {
   const [category, setCategory] = useState([])
   const [chairSeat, setChairSeat] = useState([])
   const [chairColor, setChairColor] = useState([])
+  const [search, setSearch] = useState('')
+  const [price, setPrice] = useState('')
+  const [sort, setSort] = useState(1)
 
   // ---------------以下開始component內變數-----------------
 
@@ -68,11 +71,19 @@ function ProductList(props) {
   let chairColorUrl = 'chairColor=' + chairColor.join(',')
   console.log(chairColorUrl)
 
+  let searchUrl = 'chairSearch=' + search
+  console.log(searchUrl)
+
+  let sortUrl = `sortSearch=${sort}`
+  console.log(sortUrl)
+
   // 篩選條件併成一個陣列
   let allUrl = []
   if (category.length > 0) allUrl.push(categoryUrl)
   if (chairSeat.length > 0) allUrl.push(chairSeatUrl)
   if (chairColor.length > 0) allUrl.push(chairColorUrl)
+  if (search.length > 0) allUrl.push(searchUrl)
+  if (sort) allUrl.push(sortUrl)
 
   // ---------------以下開始component內function-----------------
 
@@ -189,6 +200,11 @@ function ProductList(props) {
         setChairSeat={setChairSeat}
         chairColor={chairColor}
         setChairColor={setChairColor}
+        search={search}
+        setSearch={setSearch}
+        price={price}
+        setPrice={setPrice}
+        setSort={setSort}
         getFilterFromSQL={getFilterFromSQL}
         getTotalFromSQL={getTotalFromSQL}
       />
