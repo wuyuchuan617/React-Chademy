@@ -71,11 +71,11 @@
       text-align: center;
       line-height: 40px;
       text-decoration: none;
-      color: black;
+      color: white;
   }
   .j_btn2:hover{
     text-decoration: none;
-    color: black;
+    color: white;
   }
   .btn3{
     position: absolute;
@@ -130,6 +130,14 @@
   background-color: #C67334;
   text-align: center;
   line-height: 40px;
+  text-decoration: none;
+  color: white;
+}
+.j_btn6:hover{
+  text-decoration: none;
+  color: white;
+}
+.j_btn6:hover{
   text-decoration: none;
   color: white;
 }
@@ -391,16 +399,6 @@
     border: none;
     margin-bottom: 20px;
   }
-  .j_btn5{
-    margin-top: 20px;
-    width: 600px;
-    height: 40px;
-    background-color: #C67334;
-    text-align: center;
-    line-height: 40px;
-    text-decoration: none;
-    color: black;
-}
 .j_showbox{
   margin: 50px auto 30px auto;
   text-align: center;
@@ -408,6 +406,7 @@
   height: 300px;
 }
 .j_wrap{
+  margin-top: 30px;
   display: flex;
   justify-content: space-between;
 }

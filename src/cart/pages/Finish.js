@@ -47,12 +47,14 @@ function Finish(props) {
         <h2>訂單已寄送您的信箱</h2>
         <h3>我們將為您儘快出貨</h3>
         <br />
-        <h6>{orderNo}</h6>
+        <br />
+        <br />
+        <h3>{orderNo}</h3>
         <div className="j_wrap">
-          <Link>
+          <Link to="#" className="j_btn6">
             <div className="j_btn6">繼續購物</div>
           </Link>
-          <Link>
+          <Link tp="#" className="j_btn6">
             <div className="j_btn6">查看訂單</div>
           </Link>
         </div>

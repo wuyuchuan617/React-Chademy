@@ -257,7 +257,11 @@ function App() {
             </Route>
 
             <Route path="/checkfinish">
-              <Finish orderNo={orderNo} />
+              <Finish
+                orderNo={orderNo}
+                setCartAmount={setCartAmount}
+                cartamount={cartamount}
+              />
             </Route>
 
             {/* 404找不到網頁，需要放在switch路由表最後一個 */}

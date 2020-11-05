@@ -8,7 +8,17 @@ function CheckInfo(props) {
   const [showATM, setShowATM] = useState(false)
   const [showIns, setShowIns] = useState(false)
   // const [orderNo, setOrderNo] = useState('')
-  const { myCart, name, phone, city, area, adress, setOrderNo } = props
+  const {
+    myCart,
+    name,
+    phone,
+    city,
+    area,
+    adress,
+    setOrderNo,
+    cartamount,
+    setCartAmount,
+  } = props
   const city2 = city === -1 ? 0 : city
   const area2 = area === -1 ? 0 : area
   let date = new Date()
@@ -146,10 +156,13 @@ function CheckInfo(props) {
             placeholder="安全碼"
           />
           <Link
-            to="#"
+            className="j_btn5"
+            to="checkfinish"
             onClick={() => {
               updateTotalToServer()
               setOrderNo(`PO${year}${month}${day}`)
+              localStorage.removeItem('cart')
+              setCartAmount(cartamount + 1)
             }}
           >
             <div className="j_btn5">完成付款</div>
