@@ -84,7 +84,12 @@ function CartList(props) {
                   <h6 style={{ left: '1100px', color: '#C67334' }}>
                     ${item.price * item.amount}
                   </h6>
-                  <Link to="#" onClick={() => handleDelete(item.id)}>
+                  <Link
+                    to="#"
+                    onClick={() =>
+                      window.confirm('確定刪除？') ? handleDelete(item.id) : ''
+                    }
+                  >
                     <h6 style={{ left: '1220px' }}>
                       <BsTrash />
                     </h6>

@@ -14,6 +14,8 @@ function DeliveryInfo(props) {
   const [phoneDrive, setPhoneDrive] = useState(false)
   const [donated, setDonaeted] = useState(false)
   const [defaultform, setDefaultForm] = useState(true)
+  const [checkName, setCheckName] = useState(false)
+  const [checkPhone, setCheckPhone] = useState(false)
   const {
     name,
     setName,
@@ -70,26 +72,33 @@ function DeliveryInfo(props) {
           style={{
             width: '600px',
             height: '40px',
-            marginBottom: '30px',
           }}
           placeholder="姓名"
-          onChange={(e) => setName(e.target.value)}
+          required
+          onChange={(e) => {
+            setName(e.target.value)
+            e.target.value ? setCheckName(false) : setCheckName(true)
+          }}
         />
+        {checkName ? <small>不可空白</small> : ''}
         <input
-          type="text"
+          type="tel"
           style={{
             width: '600px',
             height: '40px',
-            marginBottom: '30px',
+            marginTop: '30px',
           }}
           placeholder="手機"
-          onChange={(e) => setPhone(e.target.value)}
+          onChange={(e) => {
+            setPhone(e.target.value)
+            e.target.value ? setCheckPhone(false) : setCheckPhone(true)
+          }}
         />
         <select
           style={{
             width: '290px',
             height: '40px',
-            marginBottom: '30px',
+            marginTop: '30px',
             marginRight: '20px',
           }}
           value={city}
@@ -109,7 +118,7 @@ function DeliveryInfo(props) {
           style={{
             width: '290px',
             height: '40px',
-            marginBottom: '30px',
+            marginTop: '30px',
           }}
           onChange={(e) => {
             setArea(+e.target.value)
@@ -128,6 +137,7 @@ function DeliveryInfo(props) {
           style={{
             width: '600px',
             height: '40px',
+            marginTop: '30px',
             marginBottom: '30px',
           }}
           placeholder="地址"

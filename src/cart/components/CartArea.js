@@ -62,9 +62,6 @@ function CartArea(props) {
                         }}
                       >
                         <h5>{item.id}</h5>
-                        <h5 style={{ position: 'relative', right: '25px' }}>
-                          <BsTrash />
-                        </h5>
                       </div>
                       <div
                         style={{
@@ -84,7 +81,6 @@ function CartArea(props) {
                           position: 'relative',
                           display: 'flex',
                           justifyContent: 'space-between',
-                          marginTop: '5px',
                         }}
                       >
                         <h6>數量</h6>
@@ -100,7 +96,13 @@ function CartArea(props) {
                         }}
                       >
                         <h6>小計</h6>
-                        <h6 style={{ position: 'relative', right: '25px' }}>
+                        <h6
+                          style={{
+                            position: 'relative',
+                            right: '25px',
+                            color: '#C67334',
+                          }}
+                        >
                           ${item.price * item.amount}
                         </h6>
                       </div>

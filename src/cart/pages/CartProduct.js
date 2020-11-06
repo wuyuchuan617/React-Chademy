@@ -165,8 +165,8 @@ function CartProduct(props) {
             <div
               className="j_btn2"
               onClick={() => {
-                if (inputDiscount === 'FREE') {
-                  setMyDiscount(-500)
+                if (inputDiscount === 'CHADEMY10') {
+                  setMyDiscount(-subtotal * 0.1)
                 }
               }}
             >
