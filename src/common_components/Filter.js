@@ -465,24 +465,74 @@ function Filter(props) {
                 <div
                   className="circleColor"
                   style={{ backgroundColor: '#7B0318' }}
+                  onClick={() => {
+                    if (chairColor.indexOf('紅') !== -1) {
+                      let newCate = chairColor.filter((item) => {
+                        return item !== '紅'
+                      })
+                      setChairColor(newCate)
+                    } else {
+                      setChairColor(['紅', ...chairColor])
+                    }
+                  }}
                 ></div>
               </div>
               <div className="d-flex">
                 <div
                   className="circleColor"
                   style={{ backgroundColor: '#432601' }}
+                  onClick={() => {
+                    if (chairColor.indexOf('咖啡') !== -1) {
+                      let newCate = chairColor.filter((item) => {
+                        return item !== '咖啡'
+                      })
+                      setChairColor(newCate)
+                    } else {
+                      setChairColor(['咖啡', ...chairColor])
+                    }
+                  }}
                 ></div>
                 <div
                   className="circleColor"
                   style={{ backgroundColor: '#214F3D' }}
+                  onClick={() => {
+                    if (chairColor.indexOf('綠') !== -1) {
+                      let newCate = chairColor.filter((item) => {
+                        return item !== '綠'
+                      })
+                      setChairColor(newCate)
+                    } else {
+                      setChairColor(['綠', ...chairColor])
+                    }
+                  }}
                 ></div>
                 <div
                   className="circleColor"
                   style={{ backgroundColor: '#737272' }}
+                  onClick={() => {
+                    if (chairColor.indexOf('灰') !== -1) {
+                      let newCate = chairColor.filter((item) => {
+                        return item !== '灰'
+                      })
+                      setChairColor(newCate)
+                    } else {
+                      setChairColor(['灰', ...chairColor])
+                    }
+                  }}
                 ></div>
                 <div
                   className="circleColor"
                   style={{ backgroundColor: '#000000' }}
+                  onClick={() => {
+                    if (chairColor.indexOf('黑') !== -1) {
+                      let newCate = chairColor.filter((item) => {
+                        return item !== '黑'
+                      })
+                      setChairColor(newCate)
+                    } else {
+                      setChairColor(['黑', ...chairColor])
+                    }
+                  }}
                 ></div>
               </div>
             </ul>

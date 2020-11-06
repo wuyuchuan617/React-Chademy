@@ -61,6 +61,9 @@ function ProductList(props) {
   const [price, setPrice] = useState('')
   const [sort, setSort] = useState(1)
 
+  // 存系列狀態
+  const [series, setSeries] = useState('')
+
   // ---------------以下開始component內變數-----------------
 
   // 抓篩選條件
@@ -113,6 +116,29 @@ function ProductList(props) {
   }, [viewProduct, product])
 
   // ---------------以下開始fetch SQL get data function-----------------
+
+  // 產品系列
+  async function getSeriesFromSQL() {
+    const url = 'http://localhost:3001/man_product/series?' + series
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+
+    const response = await fetch(request)
+    let data = await response.text()
+    // const newData = await [...data]
+    // console.log('data: ' + data)
+    data = JSON.parse(data)
+    console.log('data: ' + data)
+    // console.log(Array.isArray(data))
+    setProduct(data)
+    localStorage.setItem('product', JSON.stringify(data))
+  }
 
   // 篩選資料庫
   async function getFilterFromSQL() {
@@ -170,6 +196,11 @@ function ProductList(props) {
     // if (nowscrol < 1600) setShowFilter(true)
   }, [scrollFilter])
 
+  // 系列
+  useEffect(() => {
+    getSeriesFromSQL()
+  }, [series])
+
   // didmount拿所有資料
   useEffect(() => {
     localStorage.removeItem('product')
@@ -224,7 +255,7 @@ function ProductList(props) {
 
       <ProductPopular />
 
-      <ProductSeries />
+      <ProductSeries setSeries={setSeries} />
 
       <div className="context1">
         <div className="container" id="productCards">
