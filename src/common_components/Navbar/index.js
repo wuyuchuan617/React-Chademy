@@ -32,6 +32,8 @@ function MyNavbar(props) {
     setNavbarHeight,
     scrollY,
     scrollDirection,
+    resetShow,
+    setResetShow,
   } = props
 
   function getCartFromLocalStorage() {
@@ -251,7 +253,11 @@ function MyNavbar(props) {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      <CartArea showCart={showCart} setShowCart={setShowCart} />
+      <CartArea
+        showCart={showCart}
+        setShowCart={setShowCart}
+        cartamount={cartamount}
+      />
     </>
   )
 }

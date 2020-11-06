@@ -29,7 +29,6 @@ import FundHomepage from './fund/pages/FundHomepage'
 import FundList from './fund/pages/FundList'
 import FundItem from './fund/pages/FundItem'
 
-
 // ---------------------以下import 競標頁面--------------------
 import Pages from './bid/pages/Pages'
 
@@ -72,11 +71,16 @@ function App() {
   const [orderNo, setOrderNo] = useState('')
   const [totalPrice, setTotalPrice] = useState(0)
   const [subtotal, setSubtoal] = useState(0)
+  const [resetShow, setResetShow] = useState(0)
   //-----------------------------------------------------------
   return (
     <Router>
       <>
-        <CHNavbar cartamount={cartamount} setCartAmount={setCartAmount} />
+        <CHNavbar
+          cartamount={cartamount}
+          setCartAmount={setCartAmount}
+          resetShow={resetShow}
+        />
 
         <ScrollToTop>
           <Switch>
@@ -114,6 +118,8 @@ function App() {
               <ProductList
                 cartamount={cartamount}
                 setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setResetShow={setResetShow}
               />
             </Route>
 
@@ -150,8 +156,6 @@ function App() {
             <Route path="/funditem">
               <FundItem />
             </Route>
-
-            
 
             {/* 競標頁面 */}
 

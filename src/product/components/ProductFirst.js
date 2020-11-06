@@ -9,7 +9,15 @@ import { withRouter, useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 function ProductFirst(props) {
-  const { item, review, sid, cartamount, setCartAmount } = props
+  const {
+    item,
+    review,
+    sid,
+    cartamount,
+    setCartAmount,
+    resetShow,
+    setResetShow,
+  } = props
 
   const isLogged = useSelector((state) => state.user.logged)
 
