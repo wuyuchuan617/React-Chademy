@@ -29,6 +29,10 @@ body {
     letter-spacing: 2px;
 }
 
+.sidebar::-webkit-scrollbar {
+    display: none;
+  }
+
 #close {
     text-align: end;
     margin-top: 20px;

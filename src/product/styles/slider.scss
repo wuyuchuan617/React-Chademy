@@ -69,6 +69,12 @@ a:hover {
     box-shadow: 0 0 0px 0px #C77334 !important;
 }
 
+.chowzb:hover:enabled {
+    background-color: #C77334;
+    color: #fff;
+    box-shadow: 0 0 0px 0px #C77334 !important;
+}
+
 .rec.rec-arrow:active {
     background-color: #C77334;
     color: #fff;
@@ -82,10 +88,17 @@ a:hover {
 
 /* disable default outline on focused items */
 /* add custom outline on focused items */
-.rec-carousel-item:focus {
+.rec-carousel-item:focus:enabled {
     outline: none !important;
     box-shadow: inset 0 0 1px 1px lightgrey;
-    background-color: #C77334;
+    background-color: #C77334 !important;
+    box-shadow: 0 0 0px 0px #C77334 !important;
+}
+
+.chowzb:focus {
+    outline: none !important;
+    box-shadow: inset 0 0 1px 1px lightgrey;
+    background-color: #C77334 !important;
     box-shadow: 0 0 0px 0px #C77334 !important;
 }
 

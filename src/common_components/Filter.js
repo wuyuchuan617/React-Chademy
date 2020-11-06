@@ -130,9 +130,11 @@ function Filter(props) {
             <p
               className="clearFilter"
               onClick={() => {
+                setSearch('')
                 setCategory([])
                 setChairSeat([])
                 setChairColor([])
+
                 localStorage.removeItem('product')
                 getTotalFromSQL()
               }}
