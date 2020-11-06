@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import { Container, Row, Col } from 'react-bootstrap'
 import test from '../images/carousel.jpg'
 import ProgressE from '../components/ProgressE'
+import { withRouter, useHistory } from 'react-router-dom'
 
 function FundListCard(props) {
   const { item } = props
@@ -13,10 +14,15 @@ function FundListCard(props) {
         className="col-lg-5 col-md-6 col-sm-12 e_card d-flex"
         id={item.sid}
         onClick={() => {
-          props.history.push('/fund/' + item.sid)
+          props.history.push('/funditem/' + item.sid)
         }}
       >
-        <div className="e_card_bg">
+        <div
+          className="e_card_bg"
+          // onClick={() => {
+          //   props.history.push('/funditem/' + item.sid)
+          // }}
+        >
           <div className="e_wrap">
             <img src={require('../../img/' + item.e_pic)} alt="" />
           </div>
@@ -56,4 +62,4 @@ function FundListCard(props) {
   )
 }
 
-export default FundListCard
+export default withRouter(FundListCard)

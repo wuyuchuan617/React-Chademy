@@ -153,8 +153,8 @@ function App() {
               <FundList />
             </Route>
 
-            <Route path="/funditem">
-              <FundItem />
+            <Route path="/funditem/:sid?">
+              <FundItem cartamount={cartamount} setCartAmount={setCartAmount} />
             </Route>
 
             {/* 競標頁面 */}

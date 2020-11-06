@@ -2,7 +2,7 @@ import '../styles/FundList.scss'
 import { Container, Row, Col } from 'react-bootstrap'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
-import Filter from '../../common_components/Filter'
+
 import FundListCard from '../components/FundListCard'
 import '../styles/FundHomepage.scss'
 
@@ -69,24 +69,16 @@ function FundList(props) {
 
   return (
     <>
-      
-
-      <Filter showFilter={showFilter} />
-
-
-
       <div class="context1">
         <div class="container" id="productCards">
-
-        <div className="e_lablebox mt-5 mb-5">
-        <Link to="/newfundproject" className="e_defaultlable">
-          最新發起
-        </Link>
-        <Link to="/endsoonfund" className="e_activelable">
-          即將結束
-        </Link>
-      </div>
-
+          <div className="e_lablebox mt-5 mb-5">
+            <Link to="/newfundproject" className="e_defaultlable">
+              最新發起
+            </Link>
+            <Link to="/endsoonfund" className="e_activelable">
+              即將結束
+            </Link>
+          </div>
 
           <div class="row  justify-content-center">
             {product.slice(0, viewProduct).map((item, index) => {
