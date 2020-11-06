@@ -18,22 +18,44 @@ import imageblognature from '../images/22_blog.jpeg'
 import imagewriter from '../images/48.png'
 
 function BlogListOne(props) {
+  const { item } = props
+
+  const [mycart, setMycart] = useState([])
+  const [show, setShow] = useState(false)
+  const [workshopName, setWorkshopName] = useState('')
+
+  const updateCartToLocalStorage = (value) => {
+    // 從localstorage得到cart(json字串)
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || []
+
+    console.log('currentCart', currentCart)
+
+    // 把得到的cart(json字串)轉為陣列值，然後和新加入的物件值合併為新陣列
+    const newCart = [...currentCart, value]
+
+    // 設定回localstorage中(記得轉回json字串)
+    localStorage.setItem('cart', JSON.stringify(newCart))
+
+    console.log('newCart', newCart)
+    // 設定資料
+    // 設定至元件的狀態中
+    setMycart(newCart)
+    setWorkshopName(value.name)
+  }
+
   return (
     <div class="a_blogwrap">
       <div class="container">
         <div class="row">
           <div class="a_blogblog col-9">
             <div class="a_blog_image">
-              <img src={imageblog} />
+              <img src={require('../../img/' + item.images)} alt="" />
             </div>
             <div class="d-flex a_blog-name justify-content-between">
-              <div>乾淨潔白的舒適環境</div>
+              <div>{item.title}</div>
             </div>
             <div class="a_blog-desc">
-              <p>
-                以瑞典為基地的跨國居家用品零售企業，據點分布世界多國，販售平整式包裝的傢具、配件、浴室和廚房用品。宜家家居是開創以平實價格銷售自行組裝家具的領導品牌，現已成為全球最大傢具零售企業。
-                宜家家居是在1943年由當時17歲的英格瓦·坎普拉於瑞典阿姆胡特創立。
-              </p>
+              <p>{item.introduction}</p>
             </div>
 
             <div class="d-flex a_blog-name-title justify-content-between">

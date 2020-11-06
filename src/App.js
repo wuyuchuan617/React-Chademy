@@ -169,11 +169,11 @@ function App() {
             </Route>
 
             {/* 部落格頁面 */}
-            <Route path="/blog">
+            <Route exact path="/blog">
               <Blog />
             </Route>
 
-            <Route exact path="/BlogList">
+            <Route exact path="/BlogList/:sid?">
               <BlogList />
             </Route>
 

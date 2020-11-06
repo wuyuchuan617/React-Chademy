@@ -16,19 +16,27 @@ import ImgBlogsixt from '../images/16_blog.jpeg'
 import ImgBlogsevent from '../images/17_blog.jpeg'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import OneBlog from '../components/OneBlog'
 
-function BlogMasonry() {
+function BlogMasonry(props) {
+  const { oneBlog } = props
   useEffect(() => {
     AOS.init()
     AOS.refresh()
   }, [])
+
   return (
     <div className="container">
       <div className="annie_title01">
         <h2>靈感探索</h2>
       </div>
+
       <div className="a_list" data-aos="fade-up">
-        <div className="item">
+        {oneBlog.map((item, index) => {
+          return <OneBlog key={index} item={item} />
+        })}
+
+        {/*<div className="item">
           <img src={ImgBlogfour} alt="" />
           <h4>高級紅木家居</h4>
           <p>
@@ -133,7 +141,7 @@ function BlogMasonry() {
           <p>
             跨國家居企業，是台灣首家大型DIY居家修繕工具與材料販賣連鎖店，公司成立於1995年，並於1996年時以「跨國家居企業」品牌名稱於桃園縣南崁地區成立第一家分店。
           </p>
-        </div>
+        </div>*/}
       </div>
     </div>
   )
