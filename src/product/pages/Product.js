@@ -29,7 +29,7 @@ function Product(props) {
   const isLogged = useSelector((state) => state.user.logged)
 
   // props解構
-  const { setCartAmount, cartamount } = props
+  const { setCartAmount, cartamount, resetShow, setResetShow } = props
 
   // -----------------------以下開始useState狀態設定-----------------
 
@@ -89,6 +89,8 @@ function Product(props) {
             setCartAmount={setCartAmount}
             cartamount={cartamount}
             isLogged={isLogged}
+            resetShow={resetShow}
+            setResetShow={setResetShow}
           />
         )
       })}

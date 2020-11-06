@@ -414,3 +414,12 @@
   display: flex;
   justify-content: space-between;
 }
+.containercart{
+    position: fixed;
+    width: 550px;
+    top: 0;
+    bottom: 50px;
+    background-color: white;
+    z-index: 6;
+    overflow: auto;
+}
