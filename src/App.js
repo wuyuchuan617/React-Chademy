@@ -154,7 +154,11 @@ function App() {
             </Route>
 
             <Route path="/funditem/:sid?">
+<<<<<<< Updated upstream
               <FundItem cartamount={cartamount} setCartAmount={setCartAmount} />
+=======
+              <FundItem cartamount={cartamount} setCartAmount={setCartAmount}/>
+>>>>>>> Stashed changes
             </Route>
 
             {/* 競標頁面 */}
