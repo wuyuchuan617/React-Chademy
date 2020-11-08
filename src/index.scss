@@ -1,6 +1,5 @@
 @import './common_components/styles/custom.scss';
 
-
 body {
   margin: 0;
   // width: 1440px;
@@ -50,8 +49,6 @@ h6 {
   font-family: 'Noto Serif TC';
 }
 
-
-
 body::-webkit-scrollbar {
   background: #c77334;
   width: 6px;
@@ -88,4 +85,12 @@ body::-webkit-scrollbar {
 p::selection {
   background: #c77334;
   color: #edece8;
+}
+
+// 信用卡的 Modal 彈窗背景半透明
+.card_container {
+  .modal-dialog > .modal-content {
+    background-color: transparent;
+    border: none;
+  }
 }

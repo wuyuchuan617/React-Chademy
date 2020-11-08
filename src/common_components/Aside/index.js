@@ -1,6 +1,8 @@
 import React from 'react'
 // import React, { useState, useEffect } from 'react'
 
+import { useHistory } from 'react-router-dom'
+
 import './index.scoped.scss'
 
 import { Menu } from 'antd'
@@ -22,34 +24,44 @@ function Aside() {
   //   const [collapsed, setCollapsed] = useState(false)
   //   const toggleCollapsed = () => setCollapsed(!collapsed)
 
+  const router = useHistory()
+
+  // 點擊的時候，導過去
+  const hanldeClick = ({ key }) => {
+    router.push(key)
+  }
+
   return (
     <>
       <div className="aside_container" style={{ width: 256 }}>
-        <Menu defaultSelectedKeys={['1']} mode="inline">
+        <Menu defaultSelectedKeys={['1']} mode="inline" onClick={hanldeClick}>
           {/* defaultOpenKeys={['sub1']} */}
           {/* theme="dark" */}
           {/* inlineCollapsed={collapsed} */}
 
           <SubMenu key="sub1" title="我的帳戶">
-            {['個人資料', '電子信箱', '信用卡', '地址', '更改密碼'].map(
-              (item) => (
-                <Menu.Item key={item}>
-                  <div>{item}</div>
-                </Menu.Item>
-              )
-            )}
+            {[
+              { path: '/member-center/member-center', name: '個人資料' },
+              { path: '/member-center/member-center', name: '電子信箱' },
+              { path: '/member-center/creditcard', name: '信用卡' },
+              { path: '/member-center/creditcard', name: '地址' },
+              { path: '/member-center/member-center', name: '更改密碼' },
+            ].map((item) => (
+              <Menu.Item key={item.path}>
+                <div>{item.name}</div>
+              </Menu.Item>
+            ))}
           </SubMenu>
 
-          {/* <SubMenu key="sub1" title="我的帳戶">
-            <Menu.Item key="5">個人資料</Menu.Item>
-            <Menu.Item key="6">電子信箱</Menu.Item>
-            <Menu.Item key="7">信用卡</Menu.Item>
-            <Menu.Item key="8">地址</Menu.Item>
-          </SubMenu> */}
-
-          {['訂單', '追蹤清單', '折價券', '評論', '我的評價'].map((item) => (
-            <Menu.Item key={item}>
-              <div>{item}</div>
+          {[
+            { path: '/訂單路徑', name: '訂單' },
+            { path: '/追蹤清單', name: '追蹤清單' },
+            { path: '/member-center/coupon', name: '折價券' },
+            { path: '/評論', name: '評論' },
+            { path: '/我的評價', name: '我的評價' },
+          ].map((item) => (
+            <Menu.Item key={item.path}>
+              <div>{item.name}</div>
             </Menu.Item>
           ))}
         </Menu>

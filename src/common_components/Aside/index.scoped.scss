@@ -1,7 +1,7 @@
 .aside_container {
   /deep/ .ant-menu {
     border-right: none;
-    background-color: #edece8;
+    background-color: #edece800;
     // border-right-width: 1px;
     // border-right-style: solid;
     // border-right-color: rgb(240, 240, 240);
@@ -76,6 +76,10 @@
     //title的顏色
     .ant-menu-submenu-selected {
       color: black;
+    }
+
+    .ant-menu-submenu-arrow {
+      display: none;
     }
   }
 }

@@ -43,8 +43,12 @@ import BlogList from './blog/pages/BlogList'
 // ---------------------以下import 會員頁面--------------------
 import Login from './member/Login'
 import Register from './member/Register'
-import MemberCenter from './member/MemberCenter'
+// import MemberCenter from './member/MemberCenter'
 import Resetpassword from './member/Resetpassword'
+
+import MemberIndex from './member'
+// import Coupon from './member/Coupon'
+// import Creditcard from './member/Creditcard'
 
 // ---------------------以下import 購物車頁面------------------
 import CartProduct from './cart/pages/CartProduct'
@@ -105,7 +109,7 @@ function App() {
 
             {/* 會員中心 */}
             <Route path="/member-center">
-              <MemberCenter />
+              <MemberIndex></MemberIndex>
             </Route>
 
             {/* 品牌故事頁面 */}
