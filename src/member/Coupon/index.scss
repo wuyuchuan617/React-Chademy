@@ -96,13 +96,16 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  width: 20%;
 }
 
 .coupon_detail_list {
+  width: 40%;
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin-bottom: 0;
+  margin-right: 30px;
 
   li + li {
     margin-top: 20px;

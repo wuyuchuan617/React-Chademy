@@ -12,6 +12,10 @@ import Aside from '../common_components/Aside'
 import MemberCenter from './MemberCenter'
 import Coupon from './Coupon'
 import Creditcard from './Creditcard'
+import ResetEmail from './ResetEmail'
+import ResetPass from './ResetPass'
+import MyFav from './MyFav'
+import Address from './Address'
 
 const { Header, Sider, Content } = Layout
 
@@ -26,9 +30,15 @@ function MemberIndex() {
       const titleObj = {
         '/coupon': '折價卷',
         '/creditcard': '信用卡',
+        '/resetemail': '更換電子信箱',
+        '/resetpass': '更改密碼',
+        '/myfav': '追蹤清單',
+        '/address': '地址',
       }
 
       const title = titleObj[location.pathname.replace(path, '')] || '個人資料'
+
+      console.log(location)
       setTitle(title)
 
       console.log(
@@ -79,6 +89,21 @@ function MemberIndex() {
 
               <Route path={`${path}/creditcard`}>
                 <Creditcard />
+              </Route>
+
+              <Route path={`${path}/resetemail`}>
+                <ResetEmail />
+              </Route>
+
+              <Route path={`${path}/resetpass`}>
+                <ResetPass />
+              </Route>
+
+              <Route path={`${path}/myfav`}>
+                <MyFav />
+              </Route>
+              <Route path={`${path}/address`}>
+                <Address />
               </Route>
             </Content>
           </Switch>

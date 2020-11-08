@@ -41,11 +41,11 @@ function Aside() {
 
           <SubMenu key="sub1" title="我的帳戶">
             {[
-              { path: '/member-center/member-center', name: '個人資料' },
-              { path: '/member-center/member-center', name: '電子信箱' },
+              { path: '/member-center', name: '個人資料' },
+              { path: '/member-center/resetemail', name: '電子信箱' },
               { path: '/member-center/creditcard', name: '信用卡' },
-              { path: '/member-center/creditcard', name: '地址' },
-              { path: '/member-center/member-center', name: '更改密碼' },
+              { path: '/member-center/address', name: '地址' },
+              { path: '/member-center/resetpass', name: '更改密碼' },
             ].map((item) => (
               <Menu.Item key={item.path}>
                 <div>{item.name}</div>
@@ -55,7 +55,7 @@ function Aside() {
 
           {[
             { path: '/訂單路徑', name: '訂單' },
-            { path: '/追蹤清單', name: '追蹤清單' },
+            { path: '/member-center/myfav', name: '追蹤清單' },
             { path: '/member-center/coupon', name: '折價券' },
             { path: '/評論', name: '評論' },
             { path: '/我的評價', name: '我的評價' },

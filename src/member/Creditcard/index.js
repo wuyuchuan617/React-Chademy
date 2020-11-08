@@ -21,7 +21,7 @@ function Creditcard() {
 
   return (
     <>
-      <div className="lineee row justify-content-between">
+      <div className="lineee justify-content-between">
         新增信用卡
         <div className="icon_con">
           <AiOutlinePlus className="icon" onClick={handleOpenModal} />
