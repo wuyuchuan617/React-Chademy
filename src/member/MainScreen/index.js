@@ -1,8 +1,10 @@
-import React, { useState, useRef, useCallback } from 'react'
+import React, { useState, useRef, useCallback, useEffect } from 'react'
 import CForm from './components/form'
 import Card from './components/card'
 import { Button, Modal } from 'react-bootstrap'
+
 import './index.scoped.scss'
+import { transCardNumber } from '../../utils'
 
 const initialState = {
   cardNumber: '#### #### #### ####',
@@ -17,12 +19,54 @@ const MainScreen = (props) => {
   const [state, setState] = useState(initialState)
   const [currentFocusedElm, setCurrentFocusedElm] = useState(null)
 
+  // 為了設定有綁定的信用卡，亂寫的
+  const { data } = props
+  useEffect(() => {
+    if (Object.keys(data).length > 0) {
+      setState({
+        isCardFlipped: false,
+        ...data,
+      })
+
+      const target = ['cardNumber', 'cardHolder', 'cardDate', 'cardCvv']
+      Object.entries(data).forEach(([name, value]) => {
+        if (target.includes(name)) {
+          console.log(name, ' => ', formFieldsRefObj[name])
+          if (formFieldsRefObj[name].current) {
+            // 將值透過 ref 直接塞給元素
+            formFieldsRefObj[name].current.value = value
+          }
+        }
+      })
+
+      console.log(
+        '%c DEBUG %cData',
+        'color: #0092FA; font-weight: bold; ',
+        'color: #fff; background: #0092FA; font-weight: bold; padding: 5px; border-radius: 3px'
+      )
+    } else {
+      // 新增 走這邊
+      setState(initialState)
+    }
+  }, [data])
+
+  const handleSubmit = (event) => {
+    props.onSubmit(event, state)
+  }
+
   const updateStateValues = useCallback(
     (keyName, value) => {
       setState({
         ...state,
         [keyName]: value || initialState[keyName],
       })
+
+      console.log(
+        '%c DEBUG %cData => state',
+        'color: #0092FA; font-weight: bold; ',
+        'color: #fff; background: #0092FA; font-weight: bold; padding: 5px; border-radius: 3px',
+        state
+      )
     },
     [state]
   )
@@ -92,7 +136,7 @@ const MainScreen = (props) => {
               cardDateRef={cardElementsRef.cardDate}
             ></Card>
 
-            <Button onClick={props.onSubmit}>提交</Button>
+            <Button onClick={handleSubmit}>提交</Button>
           </CForm>
         </div>
       </Modal.Body>

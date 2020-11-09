@@ -28,12 +28,15 @@ function ResetPass() {
 
   // 表單方法
   const onFinish = (fieldsValue) => {
+    const { user = {} } = JSON.parse(localStorage['reduxState'] || '{}')
+    const { token } = user.users || {}
+
     const fetchData = async () => {
       const response = await request({
         url: `/members/resetPWD`,
         method: 'POST',
         data: {
-          token: window.location.search.replace('?token=', ''),
+          token: token,
           password: fieldsValue.password,
         },
       })

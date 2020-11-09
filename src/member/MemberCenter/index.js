@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import './index.scoped.scss'
 
-import Aside from '../../common_components/Aside'
+// import Aside from '../../common_components/Aside'
 
 // import { Form, Button, Col, Container, Modal } from 'react-bootstrap'
 
-import { Modal, Button, Form, Input, DatePicker, Layout, message } from 'antd'
+import { Modal, Button, Form, Input, DatePicker, message } from 'antd'
 
 import moment from 'moment'
-import { useHistory } from 'react-router-dom'
+// import { useHistory } from 'react-router-dom'
 
-const { Header, Sider, Content } = Layout
+// const { Header, Sider, Content } = Layout
 
 function MemberCenter(props) {
   const [form] = Form.useForm()
@@ -22,8 +22,8 @@ function MemberCenter(props) {
   })
   const [smShow, setSmShow] = useState(false)
 
-  let history = useHistory()
-  const [validated, setValidated] = useState(false)
+  // let history = useHistory()
+  // const [validated, setValidated] = useState(false)
 
   // const handleSubmit = (event) => {
   //   const form = event.currentTarget
@@ -62,7 +62,9 @@ function MemberCenter(props) {
     const res = await response.json()
 
     // 需要轉換為 Moment 物件，不然組件會噴錯而畫面卡住
-    res.data.birthday = moment(res.data.birthday)
+    if (res.data && res.data.birthday) {
+      res.data.birthday = moment(res.data.birthday)
+    }
     // console.log('moment(res.data.birthday): ', moment(res.data.birthday))
     // console.log('response.data ', res.data)
 
