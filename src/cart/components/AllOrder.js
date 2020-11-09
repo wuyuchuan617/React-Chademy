@@ -52,6 +52,7 @@ function AllOrder(props) {
   return (
     <>
       {data.map((item) => {
+        let link = '/review?' + item.PO_NO
         switch (item.order_status) {
           case 1:
             nowstatus = '處理中'
@@ -82,7 +83,8 @@ function AllOrder(props) {
               </Dropdown>
             </div>
             <h6 style={{ marginTop: '30px' }}>
-              訂購日期:{item.order_date.substr(0, 10)}
+              訂購日期:
+              {item.order_date}
             </h6>
             <h6 style={{ marginTop: '30px' }}>訂單狀況:{nowstatus}</h6>
             <div className="j_wrapspace" style={{ marginTop: '40px' }}>
@@ -94,10 +96,12 @@ function AllOrder(props) {
                 }}
               />
               <h6 style={{ lineHeight: '175px' }}>訂單金額:{item.total}</h6>
-              <h6 style={{ lineHeight: '175px', cursor: 'pointer' }}>
-                我要評論
-                <BsPen />
-              </h6>
+              <Link to={link}>
+                <h6 style={{ lineHeight: '175px', cursor: 'pointer' }}>
+                  我要評論
+                  <BsPen />
+                </h6>
+              </Link>
             </div>
           </div>
         )

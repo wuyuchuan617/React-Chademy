@@ -24,9 +24,9 @@ function CheckInfo(props) {
   const city2 = city === -1 ? 0 : city
   const area2 = area === -1 ? 0 : area
   let date = new Date()
-  let year = date.getFullYear()
-  let month = date.getMonth() + 1
-  let day = date.getDay()
+  let jyear = date.getFullYear()
+  let jmonth = date.getMonth() + 1
+  let jday = date.getDate()
   const newcity = countries[city2]
   const newarea = townships[city2][area2]
   const submitData = {
@@ -35,12 +35,17 @@ function CheckInfo(props) {
     qualify: 1,
     delivery_adress: `${newcity}${newarea}${adress}`,
     invoice_adress: `${newcity}${newarea}${adress}`,
-    order_date: `${year}-${month}-${day}`,
+    order_date: `${jyear}-${jmonth}-${jday}`,
     order_status: 1,
     delivery_status: 1,
     point: 20,
     total: totalPrice,
   }
+  console.log(date)
+  console.log(`${jyear}`)
+  console.log(`${jmonth}`)
+  console.log(`${jday}`)
+  console.log(`${jyear}-${jmonth}-${jday}`)
   async function updateTotalToServer(value) {
     const url = 'http://localhost:3001/j_cart/addorder'
     const request = new Request(url, {

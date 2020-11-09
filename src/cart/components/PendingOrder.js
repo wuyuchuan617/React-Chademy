@@ -53,6 +53,7 @@ function PendingOrder(props) {
   return (
     <>
       {data.map((item) => {
+        let link = '/review?' + item.PO_NO
         switch (item.order_status) {
           case 1:
             nowstatus = '處理中'
@@ -95,10 +96,12 @@ function PendingOrder(props) {
                 }}
               />
               <h6 style={{ lineHeight: '175px' }}>訂單金額:{item.total}</h6>
-              <h6 style={{ lineHeight: '175px', cursor: 'pointer' }}>
-                我要評論
-                <BsPen />
-              </h6>
+              <Link to={link}>
+                <h6 style={{ lineHeight: '175px', cursor: 'pointer' }}>
+                  我要評論
+                  <BsPen />
+                </h6>
+              </Link>
             </div>
           </div>
         )
