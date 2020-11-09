@@ -417,6 +417,11 @@
   display: flex;
   justify-content: space-between;
 }
+.j_wrapspace{
+  display: flex;
+  justify-content: space-between;
+}
+
 .containercart{
     position: fixed;
     width: 550px;
@@ -425,4 +430,13 @@
     background-color: white;
     z-index: 6;
     overflow: auto;
+}
+.j_myorderbox{
+  width:715px ;
+  height: 400px;
+  background-color: #fff;
+  padding: 15px;
+}
+.j_myorderbox h4{
+  cursor: pointer
 }

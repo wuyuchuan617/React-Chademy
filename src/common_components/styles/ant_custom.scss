@@ -1,6 +1,7 @@
 $formWidth: 358px;
 $btnColor: #c77334;
 $contentBg: #edece8;
+$footerBg: #ded5c6;
 
 // the :export directive is the magic sauce for webpack
 // https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
@@ -9,6 +10,7 @@ $contentBg: #edece8;
   formwidth: $formWidth;
   btnColor: $btnColor;
   contentBg: $contentBg;
+  footerBg: $footerBg;
 }
 
 // 你給 button  type="chademy"   組件會生成 ant-btn-chademy  的 className，提供自定義樣式
@@ -30,4 +32,12 @@ $contentBg: #edece8;
 .ant-layout-header,
 .ant-layout-content {
   background: $contentBg;
+}
+
+/deep/ {
+  .form_container {
+    .date_input {
+      width: 100%;
+    }
+  }
 }

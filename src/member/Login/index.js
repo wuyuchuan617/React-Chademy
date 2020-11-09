@@ -90,11 +90,14 @@ function Login(props) {
     event.preventDefault()
     event.stopPropagation()
 
+    console.log('Submit')
+
     // 通過驗證
     if (form.checkValidity()) {
       loginApi()
-      setValidated(true)
     }
+
+    setValidated(true)
   }
 
   return (
