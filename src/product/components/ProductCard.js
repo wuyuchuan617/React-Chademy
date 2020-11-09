@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { withRouter, useHistory } from 'react-router-dom'
+import React from 'react'
+import { withRouter } from 'react-router-dom'
 import popularImg from '../images/777.jpg'
 
 function ProductCard(props) {

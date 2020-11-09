@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
-import { Modal, Button } from 'antd'
+import React from 'react'
+import { Modal } from 'antd'
 import 'antd/dist/antd.css'
 import '../styles/couponModal.css'
-import popularImg from '../images/777.jpg'
 
 function ProductModal(props) {
   const { visible, setVisible, photo1 } = props
