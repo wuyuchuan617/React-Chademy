@@ -1,8 +1,7 @@
 // ------------------------------以下引入套件----------------------------
 
 import React, { useState, useEffect } from 'react'
-import { Rate, Upload, Button } from 'antd'
-import { UploadOutlined } from '@ant-design/icons'
+import { Rate } from 'antd'
 import { Layout } from 'antd'
 // ------------------以下引入Components----------------------------
 

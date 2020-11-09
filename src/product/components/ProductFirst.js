@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import series from '../images/series.jpg'
-import { BsStarFill } from 'react-icons/bs'
+
 import { BsFillHeartFill } from 'react-icons/bs'
 import ProductModal from '../components/ProductModal'
 import popularImg from '../images/777.jpg'
 import { Rate } from 'antd'
-import { withRouter, useHistory } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 function ProductFirst(props) {

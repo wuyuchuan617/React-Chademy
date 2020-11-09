@@ -1,8 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import popularImg from '../images/777.jpg'
-import { BsStarFill } from 'react-icons/bs'
-import { Rate } from 'antd'
-import series from '../images/series.jpg'
+import React from 'react'
 
 function NoReviewCard(props) {
   const { item } = props

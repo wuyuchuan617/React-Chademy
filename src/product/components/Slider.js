@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import Carousel from 'react-elastic-carousel'
-import { withRouter, useHistory } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 
 // ------------------------以下引入樣式----------------------------

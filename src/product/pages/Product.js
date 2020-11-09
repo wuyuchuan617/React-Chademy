@@ -1,7 +1,7 @@
 // ------------------------------以下引入套件----------------------------
 
 import React, { useState, useEffect } from 'react'
-import { withRouter, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 // ------------------------以下引入Components----------------------------
