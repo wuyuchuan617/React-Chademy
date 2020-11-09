@@ -18,6 +18,7 @@ import MyFav from './MyFav'
 import Address from './Address'
 // --------------------- 以下 import 訂單頁面 --------------------
 import MemberOrder from '../cart/pages/MemberOrder'
+import ReturnOrder from '../cart/pages/ReturnOrder'
 
 const { Header, Sider, Content } = Layout
 
@@ -36,6 +37,8 @@ function MemberIndex() {
         '/resetpass': '更改密碼',
         '/myfav': '追蹤清單',
         '/address': '地址',
+        '/myorder': '訂單',
+        '/returnorder': '退貨',
       }
 
       const title = titleObj[location.pathname.replace(path, '')] || '個人資料'
@@ -109,6 +112,9 @@ function MemberIndex() {
               </Route>
               <Route path={`${path}/myorder`}>
                 <MemberOrder />
+              </Route>
+              <Route path={`${path}/returnorder`}>
+                <ReturnOrder />
               </Route>
             </Content>
           </Switch>

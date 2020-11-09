@@ -1,0 +1,29 @@
+async function getHeartFromServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = 'http://localhost:3001/j_cart/orderlist' + item.product_name
+
+    const request = new Request(url, {
+      method: 'GET',
+
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+
+    // try {
+    const response = await fetch(request)
+    const data = await response.json()
+
+    console.log(data)
+    if (data.length > 0) {
+      setHeart(true)
+    }
+
+    //   // 驗証成功後再設定…
+    //   setTotal(total + value)
+    // } catch (error) {
+    //   setError(error)
+    // }
+  }

@@ -1,80 +1,76 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Aside from '../../common_components/Aside/index'
-import { GrMore } from 'react-icons/gr'
-import { BsPen } from 'react-icons/bs'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import PendingOrder from '../components/PendingOrder'
+import AllOrder from '../components/AllOrder'
+import CancelOrder from '../components/CancelOrder'
 import { Menu, Dropdown } from 'antd'
 import { DownOutlined } from '@ant-design/icons'
-import { countries, townships, postcodes } from '../components/Data'
+import FinishedOrder from '../components/FinishedOrder'
 
 function MemberOrder(props) {
   const { name, phone, city, area, adress } = props
+  const [filiterState, setFiliterState] = useState('全部')
   const menu = (
     <Menu>
-      <Menu.Item key="0">
-        <a href="http://www.alipay.com/">我要退貨</a>
+      <Menu.Item>
+        <div
+          target="_blank"
+          rel="noopener noreferrer"
+          href="http://www.alipay.com/"
+          onClick={() => setFiliterState('全部')}
+        >
+          全部訂單
+        </div>
+      </Menu.Item>
+      <Menu.Item>
+        <div
+          target="_blank"
+          rel="noopener noreferrer"
+          href="http://www.tmall.com/"
+          onClick={() => setFiliterState('已完成')}
+        >
+          已完成
+        </div>
+      </Menu.Item>
+      <Menu.Item>
+        <div
+          target="_blank"
+          rel="noopener noreferrer"
+          href="http://www.taobao.com/"
+          onClick={() => setFiliterState('運送中')}
+        >
+          運送中
+        </div>
+      </Menu.Item>
+      <Menu.Item>
+        <div
+          target="_blank"
+          rel="noopener noreferrer"
+          href="http://www.tmall.com/"
+          onClick={() => setFiliterState('已取消')}
+        >
+          已取消
+        </div>
       </Menu.Item>
     </Menu>
   )
   return (
     <>
-      <div className="j_myorderbox">
-        <div className="j_wrapspace">
-          <h5>訂單編號:...</h5>
-          <Dropdown
-            overlay={menu}
-            trigger={['click']}
-            placement={'bottomRight'}
-          >
-            <a
-              className="ant-dropdown-link"
-              onClick={(e) => e.preventDefault()}
-            >
-              <h4>
-                <GrMore />
-              </h4>
-            </a>
-          </Dropdown>
-        </div>
-        <h6 style={{ marginTop: '30px' }}>訂購日期:</h6>
-        <h6 style={{ marginTop: '30px' }}>商品種類:</h6>
-        <div className="j_wrapspace" style={{ marginTop: '40px' }}>
-          <img
-            style={{
-              width: '230px',
-              height: '175px',
-              backgroundColor: 'black',
-            }}
-          />
-          <h6 style={{ lineHeight: '175px' }}>訂單金額</h6>
-          <h6 style={{ lineHeight: '175px', cursor: 'pointer' }}>
-            我要評論
-            <BsPen />
-          </h6>
-        </div>
+      <h3>我的訂單/訂單狀況({filiterState})</h3>
+      <hr />
+      <Dropdown overlay={menu}>
+        <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
+          訂單狀況 <DownOutlined />
+        </a>
+      </Dropdown>
+      <div style={{ marginTop: '30px' }}>
+        {filiterState === '全部' ? <AllOrder /> : ''}
+        {filiterState === '已完成' ? <FinishedOrder /> : ''}
+        {filiterState === '運送中' ? <PendingOrder /> : ''}
+        {filiterState === '已取消' ? <CancelOrder /> : ''}
       </div>
     </>
   )
 }
 export default MemberOrder
-
-// const menu = (
-//   <Menu>
-//     <Menu.Item key="0">
-//       <a href="http://www.alipay.com/">1st menu item</a>
-//     </Menu.Item>
-//     <Menu.Item key="1">
-//       <a href="http://www.taobao.com/">2nd menu item</a>
-//     </Menu.Item>
-//     <Menu.Divider />
-//     <Menu.Item key="3">3rd menu item</Menu.Item>
-//   </Menu>
-// );
-
-// ReactDOM.render(
-// <Dropdown overlay={menu} trigger={['click']}>
-//   <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-//     Click me <DownOutlined />
-//   </a>
-// </Dropdown>,
-//   mountNode,
-// );
