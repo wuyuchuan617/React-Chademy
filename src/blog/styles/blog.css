@@ -50,8 +50,9 @@ header {
 
 .a_blogp14 {
   font-size: 14px;
-  font-weight: 200;
   letter-spacing: 2px;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: lighter;
 }
 
 .btn_a_blog {
@@ -88,16 +89,29 @@ header {
             /* Firefox */
             break-inside: avoid;
             /* IE 10+ */
-
             padding:10px;
-            background-color:#edece8;
             margin-bottom: 15px;
+            cursor: pointer;
            
         }
+
+        .a_list .item:hover{
+          transform: translateY(-10px);
+          transition: all .5s ease 0s;
+        }
+
 
         .a_list .item img {
             width: 100%;
             margin-bottom: 10px;
+            transition: all .5s ease 0s;
+            
+        }
+
+        .a_list .item img:hover {
+            filter : brightness(75%);
+            transform: scale(1.02);
+            
         }
 
         .a_list .item h4 {
@@ -106,6 +120,11 @@ header {
   color: #1a1818;
   font-family: 'Noto Sans TC', sans-serif;
   font-weight: normal;
+   transition: all .5s ease 0s;
+        }
+
+.a_list .item h4:hover {
+            color:#C77334;
         }
 
                 .a_list .item p {
@@ -120,4 +139,31 @@ header {
   letter-spacing: 0.2rem;
   text-align: center;
 }
+
+
+/*@media(min-width:375px){
+    .a_homeslogan{
+        width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  position: absolute;
+  top: 30%;
+    }
+
+    .a_homesubslogan {
+  font-size: 12px;
+  margin-top:-20px;
+  color:red;
+}
+
+       
+
+.a_list {
+column-count: 2;
+ }
+}*/
+
+
+
 

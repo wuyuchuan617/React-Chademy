@@ -11,7 +11,12 @@ function BlogNews() {
   }, [])
   return (
     <div className="container">
-      <div className="row no-gutters mt_mb_100" data-aos="fade-up">
+      <div
+        className="row no-gutters mt_mb_100"
+        data-aos="fade-down"
+        data-aos-delay="50000"
+        data-aos-duration="2400"
+      >
         <div className="a_blogbox col-lg-6 col-sm-12">
           <div className="a_blogtitle1">
             <div className="a_blogtitlech noto-serif text-center">

@@ -25,10 +25,16 @@ function BlogListThree(props) {
   return (
     <div className="container-fluid ">
       <div className="wrapper10">
-        <div className="title0111">
+        <div className="annie_title01">
           <h2>相關文章</h2>
         </div>
-        <div className="a_list2" data-aos="fade-up">
+
+        <div
+          className="a_list2"
+          data-aos="fade-down"
+          data-aos-delay="50000"
+          data-aos-duration="2400"
+        >
           <div className="item">
             <img src={ImgBlogfour} alt="" />
             <h4>高級紅木家居</h4>

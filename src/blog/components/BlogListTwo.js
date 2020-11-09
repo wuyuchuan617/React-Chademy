@@ -1,16 +1,52 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/bloglist.css'
 import imagewriter from '../images/48.png'
 import imagedemo from '../images/40.png'
 
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { logRoles } from '@testing-library/react'
 
-function BlogListTwo() {
+function BlogListTwo(props) {
+  const { item } = props
   useEffect(() => {
     AOS.init()
     AOS.refresh()
   }, [])
+  const [message, setMessage] = useState('')
+  const [saveMessage, setSaveMessage] = useState({})
+
+  async function updateTotalToServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = 'http://localhost:3001/a_title_mainlist/message'
+
+    const request = new Request(url, {
+      method: 'POST',
+      body: JSON.stringify(saveMessage),
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+
+    // try {
+    const response = await fetch(request)
+    const data = await response.json()
+    // data會是一個物件值
+    console.log('return' + data.success)
+
+    //   // 驗証成功後再設定…
+    //   setTotal(total + value)
+    // } catch (error) {
+    //   setError(error)
+    // }
+  }
+
+  useEffect(() => {
+    updateTotalToServer()
+  }, [saveMessage])
+
   return (
     <div className="container">
       <div className="annie_message01">
@@ -23,13 +59,30 @@ function BlogListTwo() {
         </p>
         <div class="col-10">
           <textarea
+            onChange={(e) => {
+              console.log(e.target.value)
+              setMessage(e.target.value)
+            }}
             rows="6"
             cols="126"
             className="a_formstyle"
             name="a_description"
           ></textarea>
           <div class="row justify-content-end">
-            <button class="message-btn">留言送出</button>
+            <button
+              class="message-btn"
+              onClick={() => {
+                const newMessage = {
+                  title: item.title,
+                  text_title: '123',
+                  text_content: message,
+                  member_id: '456',
+                }
+                setSaveMessage(newMessage)
+              }}
+            >
+              留言送出
+            </button>
           </div>
         </div>
       </div>

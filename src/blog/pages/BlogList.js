@@ -40,7 +40,10 @@ function BlogList(props) {
         return <BlogListOne key={index} item={item} blog={blog} />
       })}
 
-      <BlogListTwo />
+      {blog.map((item, index) => {
+        return <BlogListTwo key={index} item={item} blog={blog} />
+      })}
+
       <BlogListThree />
     </>
   )

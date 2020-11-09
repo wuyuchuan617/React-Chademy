@@ -26,12 +26,17 @@ function BlogMasonry(props) {
   }, [])
 
   return (
-    <div className="container">
+    <div className="container annie_title">
       <div className="annie_title01">
         <h2>靈感探索</h2>
       </div>
 
-      <div className="a_list" data-aos="fade-up">
+      <div
+        className="a_list"
+        data-aos="fade-down"
+        data-aos-delay="50000"
+        data-aos-duration="2400"
+      >
         {oneBlog.map((item, index) => {
           return <OneBlog key={index} item={item} />
         })}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../styles/blog.css'
 import BlogNews from '../components/BlogNews'
 import BlogNewsTwo from '../components/BlogNewsTwo'
@@ -12,7 +12,7 @@ function BlogNewsSlider() {
     console.log(a, b, c)
   }
 
-  const contentStyleannie = { marginBottom: '-50px' }
+  const contentStyleannie = { marginBottom: '150px' }
   return (
     <>
       <Carousel afterChange={onChange}>
