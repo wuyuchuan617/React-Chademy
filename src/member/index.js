@@ -16,6 +16,8 @@ import ResetEmail from './ResetEmail'
 import ResetPass from './ResetPass'
 import MyFav from './MyFav'
 import Address from './Address'
+// --------------------- 以下 import 訂單頁面 --------------------
+import MemberOrder from '../cart/pages/MemberOrder'
 
 const { Header, Sider, Content } = Layout
 
@@ -104,6 +106,9 @@ function MemberIndex() {
               </Route>
               <Route path={`${path}/address`}>
                 <Address />
+              </Route>
+              <Route path={`${path}/myorder`}>
+                <MemberOrder />
               </Route>
             </Content>
           </Switch>
