@@ -54,7 +54,7 @@ function Aside() {
           </SubMenu>
 
           {[
-            { path: '//member-center/myorder', name: '訂單' },
+            { path: '/member-center/myorder', name: '訂單' },
             { path: '/member-center/myfav', name: '追蹤清單' },
             { path: '/member-center/coupon', name: '折價券' },
             { path: '/評論', name: '評論' },
