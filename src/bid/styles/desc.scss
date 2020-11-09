@@ -1,3 +1,4 @@
+$primary: #707070;
 @import '~bootstrap/scss/bootstrap.scss';
 
         body{
@@ -6,7 +7,7 @@
         .days{
             border: 1px solid black;
             width: 100px;
-            height: 100px;
+            height: 110px;
             background-color:  #fff;
             opacity: .4;
             color: #000;
@@ -26,7 +27,7 @@
             background: url(./Fredericia-The-Canvas-Chair-Natural-Canvas-Soaped-Oak-Main.jpg) center no-repeat;
             background-size: cover;
             width: 722px;
-            height: 557px;
+            height: 537px;
             margin: 0px 20px;
         }
         .pic{
@@ -83,11 +84,20 @@
         }
        
         .bidinfo h1{
-            font-family: serif;
-            font-size: 36px;
+            font-family: assistant;
+            font-size: 32px;
             font-weight: 400;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            letter-spacing: 8px;
+            color: #707070;
         }
+        .g-pDesc{
+            font-family: assistant;
+            font-size: 14px;
+            font-weight: 400;
+            color: #afadad;
+            margin-bottom: 20px;
+          }
         .bidinfo h4{
             font-family: sans-serif;
             font-size: 14px;
@@ -115,8 +125,8 @@
             color: #C77334;
             margin-right: 10px;
             background-color: #DED5C6;
-            border: 0px solid #000;
-            width: 80px;
+            // border: 0px solid #000;
+            width: 80%;
             height: 40px;
             border-radius: 0;
             margin-bottom: 40px;
@@ -160,4 +170,16 @@
         .g-heart:hover{
             color: #000;
         }
-  
+  .g-modal-pic{
+      width: 300px;
+  }
+  .g-modal-pic img{
+      background-size: cover;
+  }
+.g-price {   
+    cursor: pointer;
+    transition: .5 ease-in;
+}
+.g-price:hover{
+    background-color:#ebe5dc;
+}

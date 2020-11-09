@@ -1,116 +1,152 @@
 @import '~bootstrap/scss/bootstrap.scss';
 
-body{
-    background-color: #EDECE8;
+body {
+  background-color: #edece8;
+}
+.container.grace-container{
+    max-width: 1300px;
+ 
 }
 
-.grace-text{
-    width: 600px;
-    
+.grace-text {
+  width: 70%;
+  margin-bottom: 30px;
 }
-.grace-text h5{
-    font-size: 18px;
-    font-weight: 400;
-    font-family: 'Assistant', sans-serif;
-    margin-top: 20px;
-    line-height: 25px;
-
+.grace-text h5 {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: 'Assistant', sans-serif;
+  margin-top: 20px;
+  line-height: 25px;
 }
-.grace-text span{
-    text-align: left;
-    font-family: 'Lora', serif;
-    letter-spacing: 1.2px;
-    color: #272525;
-    font-size: 14px;
+.grace-text span {
+  font-family: serif;
+  letter-spacing: 1.2px;
+  color: #272525;
+  font-size: 32px;
 }
-.grace-chair{
-    width: 200px;
+.grace-chair {
+  width: 200px;
 }
-.grace-title{
-    font-family: assistant;
-    font-size: 18px;
-    color: #707070;
-    letter-spacing: 5px;
-    margin: 4px 0px;
-}
-.grace-margin{
-    margin: 0px -50px;
-}
-.card-text{
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 14px;
-    color: #a7a4a4;
-    letter-spacing: 3px;
-}        
-.grace-context{
-    text-align: right;
-    color: #707070;
-    // width: 50%;
-}
-.grace-btn2{
-    width: 100px;
-    height: 40px;
-    border: 1px solid #707070;
-    text-align: center;
-    transition: .5s ease-in;
-    cursor: pointer;
-    font-family: 'Noto Sans TC', sans-serif;
-    font-weight: 400;
-    color: #707070;;
-    font-size: 14px;
-    background-color: #fff;
-}
-.grace-btn2:hover{
-    /* 顏色由左到右變 */
-    background-color: #000;
-    color: #fff;
-              
-}
-.grace-btn2 span{
-    font-family: 'Noto Sans TC', sans-serif;
-    font-weight: 400;
-    color: #707070;
-    font-size: 14px;
-}
-.grace-btn2:hover span{    
-    color: #fff;     
-}
-.grace-point{
-    color:#C77334;
-    text-align: left;
+.grace-title {
+  font-family: assistant;
+  font-size: 18px;
+  color: #707070;
+  letter-spacing: 5px;
+  margin: 4px 0px;
 }
 
-.grace-tag{
-    width: 110px;
-    height: 40px;
-    background-color: #C77334;
-    text-align: center;
-    color: #fff;
-    position: absolute;
-    display: inline-block;
-    vertical-align: middle;
-    line-height: 1.5;
+.card-text {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 14px;
+  color: #a7a4a4;
+  letter-spacing: 3px;
 }
-.grace-tag-p{
-    position: absolute;
-    left:110px;
-    background-color: #436464 ;
-    width: 110px;
-    height: 40px;           
-    text-align: center;
-    color: #fff;
-  
+.grace-context {
+  text-align: right;
+  color: #707070;
+  // width: 50%;
 }
-.grace-time{
-    font-family: 'Assistant', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    
+.grace-btn2 {
+  width: 100px;
+  height: 40px;
+  border: 1px solid #707070;
+  text-align: center;
+  transition: 0.5s ease-out;
+  cursor: pointer;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 400;
+  color: #707070;
+  font-size: 14px;
+  background-color: #fff;
+  text-decoration: none;
 }
-.grace-tag-time{
-    font-family: 'Assistant', sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    
+
+.grace:hover{
+  text-decoration: none;
+
 }
+.grace-move-card{
+    transition: .5s;
+}
+.grace-move-card:hover{
+    transform: translate(-5px,-5px);
+    box-shadow: 3px 3px 5px rgb(204, 202, 202);
+}
+.grace-btn2 span {
+  color: #707070;
+}
+.grace-chairs{
+    margin-top: -150px;
+}
+
+.grace-btn2:hover {
+  /* 顏色由左到右變 */
+  background-color: #000;
+  color: #fff;
+}
+.grace-btn2 span {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 400;
+  color: #707070;
+  font-size: 14px;
+}
+.grace-btn2:hover span {
+  color: #fff;
+}
+.grace-point {
+  color: #c77334;
+  text-align: left;
+}
+
+.grace-tag {
+  width: 110px;
+  height: 40px;
+  background-color: #c77334;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.5;
+}
+.grace-tag-p {
+  position: absolute;
+  left: 110px;
+  background-color: #436464;
+  width: 110px;
+  height: 40px;
+  text-align: center;
+  color: #fff;
+}
+.grace-time {
+  font-family: 'Assistant', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+.grace-tag-time {
+  font-family: 'Assistant', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+.g-more {
+  width: 150px;
+  height: 50px;
+  // background-color: #fff;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  margin: 0 auto;
+  line-height: 50px;
+  transition: 0.5s;
+  border: 1px solid #707070;
+}
+.g-more:hover {
+  background-color: #000;
+  color: #fff;
+}
+// .grace-grid{
+//   margin: -350px 0 100px -150px;
+// }
 

@@ -5,14 +5,14 @@ body{
 }
 .designer-des {
     width: 712px;
-    height: 504px;
+    height: 480px;
     background-color: #D6D7D1;            
 }
 .designer-img{
     width: 488px;
-    height: 674px;
+    height: 600px;
     background: url() center no-repeat;
-    background-size: cover;
+    background-size: contain;
 }
 .design{
     font-family: Assistant;
