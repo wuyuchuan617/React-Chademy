@@ -7,11 +7,14 @@ function ProductTen(props) {
   return (
     <>
       <div class="row justify-content-end thirdbg">
-        <ul class="fade-pager__indicators col-1">
+        <ul class="fade-pager__indicators ">
           <li
             class={
               'fade-pager__indicator' + (statusPhoto === 1 ? ' active' : '')
             }
+            onClick={() => {
+              setStatusPhoto(1)
+            }}
           >
             01
           </li>
@@ -19,6 +22,9 @@ function ProductTen(props) {
             class={
               'fade-pager__indicator' + (statusPhoto === 2 ? ' active' : '')
             }
+            onClick={() => {
+              setStatusPhoto(2)
+            }}
           >
             02
           </li>

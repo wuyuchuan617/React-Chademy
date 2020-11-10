@@ -6,6 +6,7 @@ import { Menu, Dropdown } from 'antd'
 import { DownOutlined } from '@ant-design/icons'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import { Modal, Button } from 'antd'
+import { withRouter } from 'react-router-dom'
 function AllOrder(props) {
   const { name, phone, city, area, adress } = props
   const [member, setMember] = useState('')
@@ -223,18 +224,21 @@ function AllOrder(props) {
               >
                 {item.product_name}
               </h6>
-              <a href={link}>
-                <h6
-                  style={{
-                    lineHeight: '200px',
-                    cursor: 'pointer',
-                    position: 'absolute',
-                    right: '50px',
-                  }}
-                >
-                  <BsPen />
-                </h6>
-              </a>
+              {/* <Link to={link}> */}
+              <h6
+                style={{
+                  lineHeight: '200px',
+                  cursor: 'pointer',
+                  position: 'absolute',
+                  right: '50px',
+                }}
+                onClick={() => {
+                  props.history.push(link)
+                }}
+              >
+                <BsPen />
+              </h6>
+              {/* </Link> */}
             </div>
           )
         })}
@@ -242,4 +246,4 @@ function AllOrder(props) {
     </>
   )
 }
-export default AllOrder
+export default withRouter(AllOrder)

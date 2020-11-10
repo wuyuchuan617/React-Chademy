@@ -7,6 +7,7 @@ import popularImg from '../images/777.jpg'
 import { Rate } from 'antd'
 import { withRouter } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import Breadcrumbw from '../components/Breadcrumbw'
 
 function ProductFirst(props) {
   const {
@@ -198,6 +199,10 @@ function ProductFirst(props) {
     <>
       <ProductModal visible={visible} setVisible={setVisible} photo={photo} />
       <div className="container firstTop">
+        <div className="row  mt-5 wbread">
+          <Breadcrumbw item={item} />
+        </div>
+
         <div className="row justify-content-between">
           <div className="col-8">
             <div className="product_photo" onClick={() => setVisible(true)}>
@@ -315,10 +320,32 @@ function ProductFirst(props) {
                   <div className="choose-wood"></div>
                 </div>
               </div>
+              <li class="share-facebook">
+                <a
+                  rel="nofollow noopener noreferrer"
+                  data-shared="sharing-facebook-48785"
+                  class="share-facebook sd-button share-icon no-text"
+                  href="https://entertheloft.com/product/cylinder-high-by-studio-corkinho/?share=facebook&amp;nb=1"
+                  target="_blank"
+                  title="Click to share on Facebook"
+                >
+                  <span></span>
+                  <span class="sharing-screen-reader-text">
+                    Click to share on Facebook (Opens in new window)
+                  </span>
+                </a>
+              </li>
+
+              <a
+                href="https://www.facebook.com/sharer.php?u=https://www.cyberbiz.co/support/?p=855"
+                target="_blank"
+              >
+                aaa
+              </a>
 
               {isLogged ? (
                 <button
-                  className="cart-btn"
+                  className="w_cart-btn"
                   onClick={() => {
                     setCartAmount(cartamount + 1)
                     updateCartToLocalStorage({
@@ -335,7 +362,7 @@ function ProductFirst(props) {
                 </button>
               ) : (
                 <button
-                  className="cart-btn"
+                  className="w_cart-btn"
                   onClick={() => {
                     props.history.push('/login')
                   }}

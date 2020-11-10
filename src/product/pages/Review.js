@@ -38,6 +38,9 @@ function Review(props) {
   //  存星星數字
   const [stars, setStars] = useState(5)
 
+  // 會員
+  const [member, setMember] = useState('')
+
   // ---------------以下開始fetch SQL get data function-----------------
 
   // 拿訂單資料
@@ -83,6 +86,20 @@ function Review(props) {
   useEffect(() => {
     updateReviewToServer()
   }, [photo])
+
+  // get member
+  function getCartFromLocalStorage() {
+    const newMember = JSON.parse(localStorage.getItem('reduxState')).user.users
+      .name
+
+    console.log('newMember', newMember)
+    console.log(typeof newMember)
+    setMember(newMember)
+  }
+
+  useEffect(() => {
+    getCartFromLocalStorage()
+  }, [])
 
   // 送出表單
   async function handleSubmit(e) {
@@ -252,7 +269,7 @@ function Review(props) {
                   <input
                     type="hidden"
                     name="buy_member_id"
-                    value="AMY"
+                    value={member}
                     className="form-control"
                   />
 
