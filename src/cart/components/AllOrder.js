@@ -223,7 +223,7 @@ function AllOrder(props) {
               >
                 {item.product_name}
               </h6>
-              <Link to={link}>
+              <a href={link}>
                 <h6
                   style={{
                     lineHeight: '200px',
@@ -234,7 +234,7 @@ function AllOrder(props) {
                 >
                   <BsPen />
                 </h6>
-              </Link>
+              </a>
             </div>
           )
         })}
