@@ -18,6 +18,7 @@ import Brand from './about/pages/Brand'
 import Product from './product/pages/Product'
 import ProductList from './product/pages/ProductList'
 import Review from './product/pages/Review'
+import Custom from './product/pages/Custom'
 
 // ---------------------以下import 二手頁面--------------------
 import SecondhandForm from './secondhand/pages/SecondhandForm'
@@ -132,6 +133,10 @@ function App() {
 
             <Route path="/review/:PO_NO?">
               <Review />
+            </Route>
+
+            <Route path="/custom">
+              <Custom />
             </Route>
 
             {/* 二手頁面 */}

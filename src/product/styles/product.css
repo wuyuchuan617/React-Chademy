@@ -136,18 +136,19 @@ body {
   margin-top: 90px;
   margin: auto;
   color: white;
+  transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 
 .w_cart-btn:hover {
-  width: 100%;
-  height: 50px;
+  /* width: 100%;
+  height: 50px; */
   /* border: none; */
   border: 1px solid #c77334;
   background-color: transparent;
-  margin-top: 90px;
-  margin: auto;
+  /* margin-top: 90px; */
+  /* margin: auto; */
   color: black;
-  transition: .5s;
+  /* transition: .5s; */
 }
 
 /* first container finish here! */
