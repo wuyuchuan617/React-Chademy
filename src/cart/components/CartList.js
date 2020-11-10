@@ -14,6 +14,8 @@ function CartList(props) {
     setShowLoading,
     myCartDisplay,
     setMyCartDisplay,
+    typeofProduct,
+    setTypeofProduct,
   } = props
   // const [showLoading, setShowLoading] = useState(false)
   // const [myCartDisplay, setMyCartDisplay] = useState([])
@@ -24,8 +26,15 @@ function CartList(props) {
   function getCartFromLocalStorage() {
     setShowLoading(true)
     const newCart = localStorage.getItem('cart') || '[]'
+    let cartArray = JSON.parse(newCart)
+    let putArray = []
+    for (let i = 0; i < cartArray.length; i++) {
+      if (cartArray[i].category === typeofProduct) {
+        putArray.push(cartArray[i])
+      }
+    }
     // console.log(newCart)
-    setMyCart(JSON.parse(newCart))
+    setMyCart(putArray)
     // console.log(JSON.parse(newCart))
   }
   //載入時拿local storage資料
@@ -56,47 +65,51 @@ function CartList(props) {
       <div className="cartlist">
         <ul>
           {myCart.map((item, i) => {
-            return (
-              <li>
-                <div className="listitem">
-                  {/* src={require('../../img/' + item.photo)} */}
-                  <img src={require('../../img/' + item.img)} alt="" />
-                  <h6 style={{ left: '450px' }}>{item.id}</h6>
-                  <h6 style={{ left: '750px' }}>${item.price}</h6>
-                  <div className="listqty">
-                    <h6
-                      style={{ left: '10px', cursor: 'pointer' }}
-                      onClick={() => updateCartToLocalStorage(item)}
-                    >
-                      <MdAdd />
+            if (item.category === typeofProduct) {
+              return (
+                <li>
+                  <div className="listitem">
+                    {/* src={require('../../img/' + item.photo)} */}
+                    <img src={require('../../img/' + item.img)} alt="" />
+                    <h6 style={{ left: '450px' }}>{item.id}</h6>
+                    <h6 style={{ left: '750px' }}>${item.price}</h6>
+                    <div className="listqty">
+                      <h6
+                        style={{ left: '10px', cursor: 'pointer' }}
+                        onClick={() => updateCartToLocalStorage(item)}
+                      >
+                        <MdAdd />
+                      </h6>
+                      <h6 style={{ left: '50px' }}>{item.amount}</h6>
+                      <h6
+                        style={{ left: '80px', cursor: 'pointer' }}
+                        onClick={() => {
+                          if (item.amount === 1) return
+                          updateCartToLocalStorage(item, false)
+                        }}
+                      >
+                        <FiMinus />
+                      </h6>
+                    </div>
+                    <h6 style={{ left: '1100px', color: '#C67334' }}>
+                      ${item.price * item.amount}
                     </h6>
-                    <h6 style={{ left: '50px' }}>{item.amount}</h6>
-                    <h6
-                      style={{ left: '80px', cursor: 'pointer' }}
-                      onClick={() => {
-                        if (item.amount === 1) return
-                        updateCartToLocalStorage(item, false)
-                      }}
+                    <Link
+                      to="#"
+                      onClick={() =>
+                        window.confirm('確定刪除？')
+                          ? handleDelete(item.id)
+                          : ''
+                      }
                     >
-                      <FiMinus />
-                    </h6>
+                      <h6 style={{ left: '1220px' }}>
+                        <BsTrash />
+                      </h6>
+                    </Link>
                   </div>
-                  <h6 style={{ left: '1100px', color: '#C67334' }}>
-                    ${item.price * item.amount}
-                  </h6>
-                  <Link
-                    to="#"
-                    onClick={() =>
-                      window.confirm('確定刪除？') ? handleDelete(item.id) : ''
-                    }
-                  >
-                    <h6 style={{ left: '1220px' }}>
-                      <BsTrash />
-                    </h6>
-                  </Link>
-                </div>
-              </li>
-            )
+                </li>
+              )
+            }
           })}
         </ul>
       </div>

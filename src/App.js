@@ -216,33 +216,48 @@ function App() {
             <Route path="/cartbid">
               <CartBid
                 myCart={myCart}
+                cartamount={cartamount}
+                totalPrice={totalPrice}
+                setTotalPrice={setTotalPrice}
                 setMyCart={setMyCart}
                 showLoading={showLoading}
                 setShowLoading={setShowLoading}
                 myCartDisplay={myCartDisplay}
                 setMyCartDisplay={setMyCartDisplay}
+                subtotal={subtotal}
+                setSubtoal={setSubtoal}
               />
             </Route>
 
             <Route path="/cartsecondhand">
               <CartSecondHand
                 myCart={myCart}
+                cartamount={cartamount}
+                totalPrice={totalPrice}
+                setTotalPrice={setTotalPrice}
                 setMyCart={setMyCart}
                 showLoading={showLoading}
                 setShowLoading={setShowLoading}
                 myCartDisplay={myCartDisplay}
                 setMyCartDisplay={setMyCartDisplay}
+                subtotal={subtotal}
+                setSubtoal={setSubtoal}
               />
             </Route>
 
             <Route path="/cartclass">
               <CartClass
                 myCart={myCart}
+                cartamount={cartamount}
+                totalPrice={totalPrice}
+                setTotalPrice={setTotalPrice}
                 setMyCart={setMyCart}
                 showLoading={showLoading}
                 setShowLoading={setShowLoading}
                 myCartDisplay={myCartDisplay}
                 setMyCartDisplay={setMyCartDisplay}
+                subtotal={subtotal}
+                setSubtoal={setSubtoal}
               />
             </Route>
 

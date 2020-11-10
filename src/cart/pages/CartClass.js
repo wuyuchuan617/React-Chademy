@@ -1,22 +1,41 @@
 import React, { useState, useEffect } from 'react'
 import CartList from '../components/CartList'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-
+import img1 from '../../product/images/777.jpg'
 // import './style/jay.scss'
 
 function CartClass(props) {
+  const [myDiscount, setMyDiscount] = useState(0)
+  const [inputDiscount, setInputDiscount] = useState('')
+  const [deliveryCharge, setDeliveryCharge] = useState(0)
+  const [typeofProduct, setTypeofProduct] = useState(2)
   const {
+    subtotal,
+    setSubtoal,
+    totalPrice,
+    setTotalPrice,
     myCart,
     setMyCart,
     showLoading,
     setShowLoading,
     myCartDisplay,
     setMyCartDisplay,
+    cartamount,
   } = props
+  const sum = (items) => {
+    let total = 0
+    for (let i = 0; i < items.length; i++) {
+      total += items[i].amount * items[i].price
+    }
+    setSubtoal(total)
+    return total
+  }
+  useEffect(() => {
+    setTotalPrice(subtotal + myDiscount + deliveryCharge)
+  }, [])
   // const [myCart, setMyCart] = useState([])
   // const [showLoading, setShowLoading] = useState(false)
   // const [myCartDisplay, setMyCartDisplay] = useState([])
-
   useEffect(() => {
     setTimeout(() => {
       setShowLoading(false)
@@ -44,13 +63,10 @@ function CartClass(props) {
     console.log(newMyCartDisplay)
     setMyCartDisplay(newMyCartDisplay)
   }, [myCart])
-  const sum = (items) => {
-    let total = 0
-    for (let i = 0; i < items.length; i++) {
-      total += items[i].amount * items[i].price
-    }
-    return total
-  }
+
+  useEffect(() => {
+    setTotalPrice(subtotal + myDiscount + deliveryCharge)
+  }, [subtotal, myDiscount, deliveryCharge])
   return (
     <>
       <div className="myprogress">
@@ -109,6 +125,8 @@ function CartClass(props) {
         setShowLoading={setShowLoading}
         myCartDisplay={myCartDisplay}
         setMyCartDisplay={setMyCartDisplay}
+        typeofProduct={typeofProduct}
+        setTypeofProduct={setTypeofProduct}
       />
       <hr className="jhr" />
       <div className="submit">
@@ -120,7 +138,7 @@ function CartClass(props) {
             marginBottom: '30px',
           }}
         >
-          <h6>小計(共3項)</h6>
+          <h6>小計(共{cartamount}項)</h6>
           <h6 style={{ color: '#C67334' }}>${sum(myCart)}</h6>
         </div>
         <label for="discount">
@@ -140,24 +158,55 @@ function CartClass(props) {
               letterSpacing: '3px',
             }}
           >
-            <input type="text" name="discount" id="discount"></input>
-            <Link className="j_btn2" to="#">
-              確定
-            </Link>
+            <input
+              type="text"
+              name="discount"
+              id="discount"
+              onChange={(e) => setInputDiscount(e.target.value)}
+            ></input>
+            <div
+              className="j_btn2"
+              onClick={() => {
+                if (inputDiscount === 'CHADEMY10') {
+                  setMyDiscount(-subtotal * 0.1)
+                }
+              }}
+            >
+              <h6>確定</h6>
+            </div>
           </div>
-          <h6 style={{ color: '#C67334' }}>$0</h6>
+          <h6 style={{ color: '#C67334' }}>${myDiscount}</h6>
         </div>
-
-        <select
+        <div
           style={{
-            fontSize: '18px',
-            width: '275px',
-            height: '40px',
+            display: 'flex',
+            letterSpacing: '3px',
+            justifyContent: 'space-between',
+            marginBottom: '30px',
           }}
         >
-          <option>到店取貨(Free)</option>
-          <option>宅配到府(+$500)</option>
-        </select>
+          <select
+            style={{
+              fontSize: '18px',
+              width: '275px',
+              height: '40px',
+            }}
+            onChange={() => {
+              if (deliveryCharge === 0) {
+                setDeliveryCharge(500)
+              } else {
+                setDeliveryCharge(0)
+              }
+            }}
+          >
+            <option onClick={() => setDeliveryCharge(0)}>到店取貨(Free)</option>
+            <option onClick={() => setDeliveryCharge(500)}>
+              宅配到府(+$500)
+            </option>
+          </select>
+          <h6 style={{ color: '#C67334' }}>${deliveryCharge}</h6>
+        </div>
+
         <div
           style={{
             display: 'flex',
@@ -184,7 +233,7 @@ function CartClass(props) {
           }}
         >
           <div></div>
-          <h6 style={{ color: '#C67334' }}>$</h6>
+          <h6 style={{ color: '#C67334' }}>${totalPrice}</h6>
         </div>
         <Link to="deliveryinfo" className="btn3">
           買單

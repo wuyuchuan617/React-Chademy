@@ -8,7 +8,7 @@ function CartProduct(props) {
   const [myDiscount, setMyDiscount] = useState(0)
   const [inputDiscount, setInputDiscount] = useState('')
   const [deliveryCharge, setDeliveryCharge] = useState(0)
-
+  const [typeofProduct, setTypeofProduct] = useState(1)
   const {
     subtotal,
     setSubtoal,
@@ -125,6 +125,8 @@ function CartProduct(props) {
         setShowLoading={setShowLoading}
         myCartDisplay={myCartDisplay}
         setMyCartDisplay={setMyCartDisplay}
+        typeofProduct={typeofProduct}
+        setTypeofProduct={setTypeofProduct}
       />
       <hr className="jhr" />
       <div className="submit">
