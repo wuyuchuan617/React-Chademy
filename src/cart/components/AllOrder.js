@@ -6,11 +6,8 @@ import { Menu, Dropdown } from 'antd'
 import { DownOutlined } from '@ant-design/icons'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import { Modal, Button } from 'antd'
-<<<<<<< Updated upstream
 import { withRouter } from 'react-router-dom'
-=======
 import { useRouteMatch, useLocation } from 'react-router-dom'
->>>>>>> Stashed changes
 function AllOrder(props) {
   const { setMyPO_NO, setMyDate } = props
   const [member, setMember] = useState('')
@@ -205,7 +202,7 @@ function AllOrder(props) {
       >
         {detailData.map((item) => {
           let link =
-            '/review?PO_NO=' + item.PO_NO + '&product_name=' + item.product_name
+            '/review/' + item.PO_NO + '&' + item.product_name
           for (let i = 0; i < productData.length; i++) {
             console.log('hi')
             if (item.product_name === productData[i].product_name) {

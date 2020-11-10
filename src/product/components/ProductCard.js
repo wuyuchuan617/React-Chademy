@@ -18,7 +18,7 @@ function ProductCard(props) {
           />
         </div>
 
-        <div className="productCardImgHover">
+        {/* <div className="productCardImgHover">
           <img
             src={item.photo_hover}
             alt=""
@@ -26,7 +26,7 @@ function ProductCard(props) {
               props.history.push('/product/' + item.sid)
             }}
           />
-        </div>
+        </div> */}
 
         <p>{item.product_name}</p>
         <p>${item.price}</p>

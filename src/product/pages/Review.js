@@ -1,6 +1,7 @@
 // ------------------------------以下引入套件----------------------------
 
 import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import { Rate } from 'antd'
 import { Layout } from 'antd'
 // ------------------以下引入Components----------------------------
@@ -17,6 +18,17 @@ const { Header, Footer, Sider, Content } = Layout
 // -----------------------以下開始Component Product-----------------
 
 function Review(props) {
+  const { po } = useParams()
+  let newPo = po.split('&')
+
+  let poNO = newPo[0]
+  let productNO = newPo[1]
+  console.log('po', po)
+  console.log('typeof po', typeof po)
+  console.log('newPo', newPo)
+  console.log('poNO', poNO)
+  console.log('productNO', productNO)
+
   // -----------------------以下開始useState狀態設定-----------------
 
   // 以下六個為demo btn 預設文字
@@ -221,7 +233,7 @@ function Review(props) {
                       <input
                         type="text"
                         className="formstyle formwidthw1"
-                        value={orderProduct}
+                        value={productNO}
                         id="productname"
                         name="buy_product"
                       />
@@ -231,7 +243,7 @@ function Review(props) {
                       <input
                         type="text"
                         className="formstyle formwidthw1"
-                        value={orderProductNo}
+                        value={poNO}
                         name="order_no"
                         id="productname"
                       />

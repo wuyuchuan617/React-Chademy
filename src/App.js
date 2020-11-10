@@ -131,7 +131,7 @@ function App() {
               <Product cartamount={cartamount} setCartAmount={setCartAmount} />
             </Route>
 
-            <Route path="/review/:PO_NO?">
+            <Route path="/review/:po?">
               <Review />
             </Route>
 
