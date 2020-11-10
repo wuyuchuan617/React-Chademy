@@ -57,7 +57,7 @@ function Aside() {
             { path: '/member-center/myorder', name: '訂單' },
             { path: '/member-center/myfav', name: '追蹤清單' },
             { path: '/member-center/coupon', name: '折價券' },
-            { path: '/評論', name: '評論' },
+            { path: '/member-center/commentt', name: '評論' },
             { path: '/我的評價', name: '我的評價' },
           ].map((item) => (
             <Menu.Item key={item.path}>
