@@ -180,7 +180,7 @@ function ProductFirst(props) {
   function getCartFromLocalStorage() {
     const newMember = JSON.parse(localStorage.getItem('reduxState')).user.users
       .sid
-
+    //d
     console.log('newMember', newMember)
     console.log(typeof newMember)
     setMember(newMember)
