@@ -35,7 +35,7 @@ function MyNavbar(props) {
     resetShow,
     setResetShow,
   } = props
-
+  const [clickcart, setClickCart] = useState(false)
   function getCartFromLocalStorage() {
     const newCart = localStorage.getItem('cart') || '[]'
     // console.log(JSON.parse(newCart))
@@ -212,7 +212,14 @@ function MyNavbar(props) {
               <AiOutlineShoppingCart className="icon" />
             </Nav.Link>
             <Badge count={cartamount}>
-              <Nav.Link as={NavLink} to="#" onClick={() => setShowCart(true)}>
+              <Nav.Link
+                as={NavLink}
+                to="#"
+                onClick={() => {
+                  setShowCart(true)
+                  setClickCart(true)
+                }}
+              >
                 <AiOutlineShoppingCart className="icon" />
               </Nav.Link>
             </Badge>
@@ -253,11 +260,15 @@ function MyNavbar(props) {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      <CartArea
-        showCart={showCart}
-        setShowCart={setShowCart}
-        cartamount={cartamount}
-      />
+      {clickcart ? (
+        <CartArea
+          showCart={showCart}
+          setShowCart={setShowCart}
+          cartamount={cartamount}
+        />
+      ) : (
+        ''
+      )}
     </>
   )
 }
