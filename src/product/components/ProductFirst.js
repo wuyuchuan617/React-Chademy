@@ -188,7 +188,7 @@ function ProductFirst(props) {
 
   useEffect(() => {
     updateTotalToServer()
-  }, [heartItem.follow_status])
+  }, [heartItem.category])
 
   useEffect(() => {
     getHeartFromServer()
@@ -273,8 +273,10 @@ function ProductFirst(props) {
                   if (heart === false) {
                     const newHeartItem = {
                       follow_product: item.product_name,
+                      product_no: item.product_no,
                       member_id: member,
-                      follow_status: 1,
+                      category: 1,
+                      price: item.price,
                     }
                     await setHeartItem(newHeartItem)
                   } else {
