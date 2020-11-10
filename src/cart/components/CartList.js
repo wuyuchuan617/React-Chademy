@@ -5,6 +5,7 @@ import { MdAdd } from 'react-icons/md'
 import { FiMinus } from 'react-icons/fi'
 import { BsTrash } from 'react-icons/bs'
 // import './style/jay.scss'
+import { Popconfirm, message } from 'antd'
 
 function CartList(props) {
   const {
@@ -42,6 +43,15 @@ function CartList(props) {
     getCartFromLocalStorage()
   }, [])
 
+  function confirm(e) {
+    console.log(e)
+    message.success('Click on Yes')
+  }
+
+  function cancel(e) {
+    console.log(e)
+    message.error('Click on No')
+  }
   const updateCartToLocalStorage = (item, isAdded = true) => {
     console.log(item, isAdded)
     const currentCart = JSON.parse(localStorage.getItem('cart')) || []
@@ -94,18 +104,26 @@ function CartList(props) {
                     <h6 style={{ left: '1100px', color: '#C67334' }}>
                       ${item.price * item.amount}
                     </h6>
-                    <Link
-                      to="#"
-                      onClick={() =>
-                        window.confirm('確定刪除？')
-                          ? handleDelete(item.id)
-                          : ''
-                      }
+                    <Popconfirm
+                      title="Are you sure delete this"
+                      onConfirm={confirm}
+                      onCancel={cancel}
+                      okText="Yes"
+                      cancelText="No"
                     >
-                      <h6 style={{ left: '1220px' }}>
-                        <BsTrash />
-                      </h6>
-                    </Link>
+                      <Link
+                        to="#"
+                        onClick={() =>
+                          window.confirm('確定刪除？')
+                            ? handleDelete(item.id)
+                            : ''
+                        }
+                      >
+                        <h6 style={{ left: '1220px' }}>
+                          <BsTrash />
+                        </h6>
+                      </Link>
+                    </Popconfirm>
                   </div>
                 </li>
               )
