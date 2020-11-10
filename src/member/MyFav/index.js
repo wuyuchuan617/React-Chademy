@@ -20,7 +20,7 @@ function MyFav(props) {
             </div>
             {/* 這裡要撈資料 */}
             <ul className="coupon_detail_list">
-              <li>使用期限：[販售者/設計師]產品名稱</li>
+              <li>[販售者/設計師]產品名稱</li>
               <li>商品編號：123456</li>
               <li>金額：$300</li>
               <li>商品總類：二手</li>
