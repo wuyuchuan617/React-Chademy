@@ -9,7 +9,7 @@ import { DownOutlined } from '@ant-design/icons'
 import FinishedOrder from '../components/FinishedOrder'
 
 function MemberOrder(props) {
-  const { name, phone, city, area, adress } = props
+  const { setMyDate, setMyPO_NO } = props
   const [filiterState, setFiliterState] = useState('全部')
   const menu = (
     <Menu>
@@ -65,10 +65,26 @@ function MemberOrder(props) {
         </a>
       </Dropdown>
       <div style={{ marginTop: '30px' }}>
-        {filiterState === '全部' ? <AllOrder /> : ''}
-        {filiterState === '已完成' ? <FinishedOrder /> : ''}
-        {filiterState === '運送中' ? <PendingOrder /> : ''}
-        {filiterState === '已取消' ? <CancelOrder /> : ''}
+        {filiterState === '全部' ? (
+          <AllOrder setMyPO_NO={setMyPO_NO} setMyDate={setMyDate} />
+        ) : (
+          ''
+        )}
+        {filiterState === '已完成' ? (
+          <FinishedOrder setMyPO_NO={setMyPO_NO} setMyDate={setMyDate} />
+        ) : (
+          ''
+        )}
+        {filiterState === '運送中' ? (
+          <PendingOrder setMyPO_NO={setMyPO_NO} setMyDate={setMyDate} />
+        ) : (
+          ''
+        )}
+        {filiterState === '已取消' ? (
+          <CancelOrder setMyPO_NO={setMyPO_NO} setMyDate={setMyDate} />
+        ) : (
+          ''
+        )}
       </div>
     </>
   )

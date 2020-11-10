@@ -6,9 +6,13 @@ import { Menu, Dropdown } from 'antd'
 import { DownOutlined } from '@ant-design/icons'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import { Modal, Button } from 'antd'
+<<<<<<< Updated upstream
 import { withRouter } from 'react-router-dom'
+=======
+import { useRouteMatch, useLocation } from 'react-router-dom'
+>>>>>>> Stashed changes
 function AllOrder(props) {
-  const { name, phone, city, area, adress } = props
+  const { setMyPO_NO, setMyDate } = props
   const [member, setMember] = useState('')
   const [PO_NO, setPO_NO] = useState('')
   const [data, setData] = useState([])
@@ -106,7 +110,7 @@ function AllOrder(props) {
   const menu = (
     <Menu>
       <Menu.Item key="0">
-        <Link to="#">我要退貨</Link>
+        <Link to={`/member-center/returnorder`}>我要退貨</Link>
       </Menu.Item>
     </Menu>
   )
@@ -144,6 +148,10 @@ function AllOrder(props) {
                 overlay={menu}
                 trigger={['click']}
                 placement={'bottomRight'}
+                onClick={() => {
+                  setMyPO_NO(item.PO_NO)
+                  setMyDate(item.order_date)
+                }}
               >
                 <a
                   className="ant-dropdown-link"
@@ -176,6 +184,7 @@ function AllOrder(props) {
                 style={{ lineHeight: '175px', cursor: 'pointer' }}
                 onClick={() => {
                   setVisible(true)
+
                   setPO_NO(item.PO_NO)
                 }}
               >

@@ -24,6 +24,8 @@ const { Header, Sider, Content } = Layout
 
 function MemberIndex() {
   const [title, setTitle] = useState('')
+  const [myPO_NO, setMyPO_NO] = useState('')
+  const [myDate, setMyDate] = useState('')
 
   const { path } = useRouteMatch()
   const location = useLocation()
@@ -111,10 +113,15 @@ function MemberIndex() {
                 <Address />
               </Route>
               <Route path={`${path}/myorder`}>
-                <MemberOrder />
+                <MemberOrder
+                  myPO_NO={myPO_NO}
+                  setMyPO_NO={setMyPO_NO}
+                  myDate={myDate}
+                  setMyDate={setMyDate}
+                />
               </Route>
               <Route path={`${path}/returnorder`}>
-                <ReturnOrder />
+                <ReturnOrder myPO_NO={myPO_NO} myDate={myDate} />
               </Route>
             </Content>
           </Switch>
