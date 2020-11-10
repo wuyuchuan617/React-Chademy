@@ -77,6 +77,10 @@ header {
 
 /*masonry*/
 
+.annie_title{
+  margin-top: -50px;
+}
+
  .a_list {
             column-count: 3;
             /* column-rule: 1px dashed lightblue; */
@@ -114,6 +118,11 @@ header {
             
         }
 
+               .a_list .item img:hover + h4{
+            color:#C77334;
+            
+        }
+
         .a_list .item h4 {
            font-size: 1.125rem;
   letter-spacing: 0.2rem;
@@ -123,9 +132,7 @@ header {
    transition: all .5s ease 0s;
         }
 
-.a_list .item h4:hover {
-            color:#C77334;
-        }
+
 
                 .a_list .item p {
            font-size: 14px;

@@ -252,11 +252,16 @@ color: #707070;
 .a_message3{
     background-color: #DEDDDA;
     padding:10px !important;
+    margin-bottom: 15px;
 }
 
 .a_message8{
     margin-top: 20px;
+    
+
 }
+
+
 
 
 /*留言板_互動表單*/
@@ -356,6 +361,10 @@ color: #707070;
   font-weight: normal;
   margin-bottom: 30px;
         }
+
+         .a_list2 .item img:hover + h4{
+            color:#C77334;
+         }
 
 
         .annie_title01 h2 {

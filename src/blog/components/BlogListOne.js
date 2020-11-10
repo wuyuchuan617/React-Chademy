@@ -16,8 +16,14 @@ import imageblogfarmer from '../images/20_blog.jpeg'
 import imageblogstone from '../images/21_blog.jpeg'
 import imageblognature from '../images/22_blog.jpeg'
 import imagewriter from '../images/48.png'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function BlogListOne(props) {
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
   const { item } = props
 
   const [mycart, setMycart] = useState([])
@@ -48,13 +54,31 @@ function BlogListOne(props) {
       <div class="container">
         <div class="row">
           <div class="a_blogblog col-9">
-            <div class="a_blog_image">
+            <div
+              class="a_blog_image"
+              data-aos="fade-down"
+              data-aos-delay="50000"
+              data-aos-duration="1400"
+              data-aos-easing="ease-in-sine"
+            >
               <img src={require('../../img/' + item.images)} alt="" />
             </div>
-            <div class="d-flex a_blog-name justify-content-between">
+            <div
+              class="d-flex a_blog-name justify-content-between"
+              data-aos="fade-down"
+              data-aos-delay="50000"
+              data-aos-duration="1400"
+              data-aos-easing="ease-in-sine"
+            >
               <div>{item.title}</div>
             </div>
-            <div class="a_blog-desc">
+            <div
+              class="a_blog-desc"
+              data-aos="fade-down"
+              data-aos-delay="50000"
+              data-aos-duration="1400"
+              data-aos-easing="ease-in-sine"
+            >
               <p>{item.introduction}</p>
             </div>
 
