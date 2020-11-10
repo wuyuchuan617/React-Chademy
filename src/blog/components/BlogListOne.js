@@ -57,28 +57,15 @@ function BlogListOne(props) {
             <div
               class="a_blog_image"
               data-aos="fade-down"
-              data-aos-delay="50000"
-              data-aos-duration="1400"
-              data-aos-easing="ease-in-sine"
+              data-aos-delay="30000"
+              data-aos-duration="1200"
             >
               <img src={require('../../img/' + item.images)} alt="" />
             </div>
-            <div
-              class="d-flex a_blog-name justify-content-between"
-              data-aos="fade-down"
-              data-aos-delay="50000"
-              data-aos-duration="1400"
-              data-aos-easing="ease-in-sine"
-            >
+            <div class="d-flex a_blog-name justify-content-between">
               <div>{item.title}</div>
             </div>
-            <div
-              class="a_blog-desc"
-              data-aos="fade-down"
-              data-aos-delay="50000"
-              data-aos-duration="1400"
-              data-aos-easing="ease-in-sine"
-            >
+            <div class="a_blog-desc">
               <p>{item.introduction}</p>
             </div>
 
@@ -176,151 +163,181 @@ function BlogListOne(props) {
             <div class="d-flex a_blog-popular_name justify-content-between">
               <div>人氣排行</div>
             </div>
-            <div className="box3blog">
+            <div
+              className="box3blog"
+              data-aos="fade-down"
+              data-aos-delay="30000"
+              data-aos-duration="1200"
+              data-aos-once="true"
+            >
               <div className="upper3blog">
                 <img src={ImgBlogfour} />
 
                 <div className="box300blog">
                   <p>1</p>
                 </div>
-              </div>
-
-              <div className="wordtrainblog">
                 <div className="word1trainblog">
                   <h5>高級紅木家居</h5>
                 </div>
               </div>
             </div>
-            <div className="box3blog">
+            <div
+              className="box3blog"
+              data-aos="fade-down"
+              data-aos-delay="30000"
+              data-aos-duration="1200"
+              data-aos-once="true"
+            >
               <div className="upper3blog">
                 <img src={ImgBlogfive} />
 
                 <div className="box300blog">
                   <p>2</p>
                 </div>
-              </div>
-
-              <div className="wordtrainblog">
                 <div className="word1trainblog">
                   <h5>懷舊復古家居</h5>
                 </div>
               </div>
             </div>
-            <div className="box3blog">
+            <div
+              className="box3blog"
+              data-aos="fade-down"
+              data-aos-delay="30000"
+              data-aos-duration="1200"
+              data-aos-once="true"
+            >
               <div className="upper3blog">
                 <img src={ImgBlogseven} />
 
                 <div className="box300blog">
                   <p>3</p>
                 </div>
-              </div>
-
-              <div className="wordtrainblog">
                 <div className="word1trainblog">
                   <h5>檜木香13號房子</h5>
                 </div>
               </div>
             </div>
-            <div className="box3blog">
+            <div
+              className="box3blog"
+              data-aos="fade-down"
+              data-aos-delay="30000"
+              data-aos-duration="1200"
+              data-aos-once="true"
+            >
               <div className="upper3blog">
                 <img src={ImgBlogeight} />
 
                 <div className="box300blog">
                   <p>4</p>
                 </div>
-              </div>
-
-              <div className="wordtrainblog">
                 <div className="word1trainblog">
                   <h5>童趣座椅</h5>
                 </div>
               </div>
             </div>
-            <div className="box3blog">
+            <div
+              className="box3blog"
+              data-aos="fade-down"
+              data-aos-delay="30000"
+              data-aos-duration="1200"
+              data-aos-once="true"
+            >
               <div className="upper3blog">
                 <img src={ImgBlognine} />
 
                 <div className="box300blog">
                   <p>5</p>
                 </div>
-              </div>
-
-              <div className="wordtrainblog">
                 <div className="word1trainblog">
                   <h5>彎木椅</h5>
                 </div>
               </div>
             </div>
-            <div className="box3blog">
+            <div
+              className="box3blog"
+              data-aos="fade-down"
+              data-aos-delay="30000"
+              data-aos-duration="1200"
+              data-aos-once="true"
+            >
               <div className="upper3blog">
                 <img src={ImgBlogfourt} />
 
                 <div className="box300blog">
                   <p>6</p>
                 </div>
-              </div>
-
-              <div className="wordtrainblog">
                 <div className="word1trainblog">
                   <h5>優雅的營造空間</h5>
                 </div>
               </div>
             </div>
-            <div className="box3blog">
+            <div
+              className="box3blog"
+              data-aos="fade-down"
+              data-aos-delay="30000"
+              data-aos-duration="1200"
+              data-aos-once="true"
+            >
               <div className="upper3blog">
                 <img src={ImgBlogthi} />
 
                 <div className="box300blog">
-                  <p>7</p>
-                </div>
-              </div>
-
-              <div className="wordtrainblog">
-                <div className="word1trainblog">
-                  <h5>簡單質樸之幸福</h5>
+                  <p>7</p>{' '}
+                  <div className="word1trainblog">
+                    <h5>簡單質樸之幸福</h5>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="box3blog">
+            <div
+              className="box3blog"
+              data-aos="fade-down"
+              data-aos-delay="30000"
+              data-aos-duration="1200"
+              data-aos-once="true"
+            >
               <div className="upper3blog">
                 <img src={ImgBlogtwe} />
 
                 <div className="box300blog">
                   <p>8</p>
-                </div>
-              </div>
-
-              <div className="wordtrainblog">
-                <div className="word1trainblog">
-                  <h5>療育與自然的結合</h5>
+                  <div className="word1trainblog">
+                    <h5>療育與自然的結合</h5>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="box3blog">
+            <div
+              className="box3blog"
+              data-aos="fade-down"
+              data-aos-delay="30000"
+              data-aos-duration="1200"
+              data-aos-once="true"
+            >
               <div className="upper3blog">
                 <img src={ImgBlogele} />
 
                 <div className="box300blog">
                   <p>9</p>
                 </div>
-              </div>
-
-              <div className="wordtrainblog">
                 <div className="word1trainblog">
                   <h5>畢卡索設計風格家居</h5>
                 </div>
               </div>
             </div>
-            <div className="box3blog">
+            <div
+              className="box3blog"
+              data-aos="fade-down"
+              data-aos-delay="30000"
+              data-aos-duration="1200"
+              data-aos-once="true"
+            >
               <div className="upper3blog">
                 <img src={ImgBlogten} />
 
                 <div className="box300blog">
                   <p>10</p>
                 </div>
-              </div>
-
-              <div className="wordtrainblog">
                 <div className="word1trainblog">
                   <h5>黑絨毛的質感</h5>
                 </div>

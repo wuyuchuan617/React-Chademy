@@ -34,6 +34,7 @@ function BlogListThree(props) {
           data-aos="fade-down"
           data-aos-delay="50000"
           data-aos-duration="2400"
+          data-aos-once="true"
         >
           <div className="item">
             <img src={ImgBlogfour} alt="" />

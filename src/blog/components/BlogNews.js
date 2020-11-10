@@ -16,6 +16,7 @@ function BlogNews() {
         data-aos="fade-down"
         data-aos-delay="50000"
         data-aos-duration="2400"
+        data-aos-once="true"
       >
         <div className="a_blogbox col-lg-6 col-sm-12">
           <div className="a_blogtitle1">
