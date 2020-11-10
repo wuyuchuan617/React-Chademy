@@ -179,6 +179,18 @@ background-color: #ded5c6;
     background-color:  #f3f4f4;
   }
 
+  input{
+    padding: 20px 15px;
+  }
+
+  textarea{
+    padding: 20px 15px;
+  }
+
+  .i_frame{
+    margin-top:0;
+    padding-top: 0;
+  }
  
 
 

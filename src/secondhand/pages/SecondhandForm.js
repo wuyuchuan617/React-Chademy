@@ -1,16 +1,33 @@
 import React, { useState, useEffect } from 'react'
 import Img from '../img/WireDiningChair_LeatherSaddle.jpg'
-import Img2 from '../img/Cover_CircleDiningChair_22.jpg'
 
 import '../styles/secondhandForm.css'
-import { Alert } from 'antd'
-import { Button, notification, Space } from 'antd'
-
+import { Layout } from 'antd'
+import { Button, notification } from 'antd'
+import Aside from '../../common_components/Aside/index'
+import '../../common_components/Aside/index.scoped.scss'
+import '../../member/MemberCenter/index.scoped.scss'
+const { Header, Footer, Sider, Content } = Layout
 function SecondhandForm() {
   //photo
   const [photo, setPhoto] = useState(null)
   const [previewPhoto, setPreviewPhoto] = useState({})
+  const [member, setMember] = useState('')
+  //redux
+  function getCartFromLocalStorage() {
+    const newMember = JSON.parse(localStorage.getItem('reduxState')).user.users
+      .sid
 
+    console.log('newMember', newMember)
+    console.log(typeof newMember)
+    setMember(newMember)
+  }
+
+  useEffect(() => {
+    getCartFromLocalStorage()
+  }, [])
+
+  //photo
   async function updateReviewToServer() {
     // const newTotal = { total: total + value }
     const fd = new FormData()
@@ -126,6 +143,12 @@ function SecondhandForm() {
             <div className="i_formcss">
               <div className="i_formset">
                 <label for="productname">商品名稱</label>
+                <input
+                  type="hidden"
+                  className="i_formstyle i_formwidth"
+                  name="member_sid"
+                  value={member}
+                />
                 <input
                   type="text"
                   className="i_formstyle i_formwidth"

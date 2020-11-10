@@ -81,9 +81,9 @@ function ProductList(props) {
     console.log(data)
   }
 
-  useEffect(() => {
-    updateTotalToServer()
-  }, [heartItem])
+  // useEffect(() => {
+  //   updateTotalToServer()
+  // }, [heartItem])
 
   useEffect(() => {
     getHeartFromServer()
@@ -100,30 +100,30 @@ function ProductList(props) {
         />
         <div
           className="i_mask"
-          // onClick={() => {
-          //   props.history.push('/secondhand_product/' + item.sid)
-          // }}
+          onClick={() => {
+            props.history.push('/secondhand_product/' + item.sid)
+          }}
         >
           <p
             className="i_list_like"
             style={heart ? heartFill : null}
-            onClick={() => {
-              setHeart(!heart)
-              if (heart === false) {
-                const newHeartItem = {
-                  follow_product: item.productname || '',
-                  member_id: 'AMY',
-                  follow_status: 1,
-                }
-                console.log('newHeartItem' + newHeartItem)
-                setHeartItem(newHeartItem)
-                // updateTotalToServer(newHeartItem)
-              } else {
-                deleteHeartToServer(item.productname)
-                setHeart(false)
-                setHeartItem({})
-              }
-            }}
+            // onClick={() => {
+            //   setHeart(!heart)
+            //   if (heart === false) {
+            //     const newHeartItem = {
+            //       follow_product: item.productname || '',
+            //       member_id: 'AMY',
+            //       follow_status: 1,
+            //     }
+            //     console.log('newHeartItem' + newHeartItem)
+            //     setHeartItem(newHeartItem)
+            //     // updateTotalToServer(newHeartItem)
+            //   } else {
+            //     deleteHeartToServer(item.productname)
+            //     setHeart(false)
+            //     setHeartItem({})
+            //   }
+            // }}
           >
             ♥︎
           </p>
