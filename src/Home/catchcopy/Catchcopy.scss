@@ -41,3 +41,14 @@
   font-family: 'Noto Sans TC', sans-serif;
   font-weight: lighter;
 }
+
+@media screen and (max-width :375px){
+  .i_homeinfo .i_homesubinfo {
+    font-size: 12px;
+}
+
+.i_homeinfo {
+ 
+  font-size: 22px;
+}
+}

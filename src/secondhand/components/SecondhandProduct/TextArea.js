@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 
 function TextArea(props) {
+  const isLogged = useSelector((state) => state.user.logged)
+
   const { item } = props
   const [mycart, setMycart] = useState([])
   const [productName, setProductName] = useState('')

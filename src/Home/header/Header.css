@@ -22,3 +22,16 @@ header {
 .i_homesubslogan {
   font-size: 24px;
 }
+
+@media screen and (max-width: 375px){
+  .iw_video{
+    height: 100vh;
+    object-fit: cover;
+  }
+  .i_homeslogan{
+    font-size: 22px;
+  }
+  .i_homesubslogan {
+    font-size: 12px;
+}
+}

@@ -22,7 +22,7 @@ function About() {
       <div className="col-lg-6 col-md-3 col-sm-12 imgarea ">
         <img src={Img} alt="" />
       </div>
-      <div className="col-lg-6 col-md-9 col-sm-12 ">
+      <div className="col-lg-6 col-md-12 col-sm-12 mobile_news">
         <div className="newsset d-flex mt-4">
           <p className="mr-5 noto-sans p14">2020.09.21</p>
           <p className="noto-sans p14">官網改版更新，新視覺全新亮相</p>

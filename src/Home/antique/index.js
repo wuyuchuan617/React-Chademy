@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 
 import Img from '../img/fixbefore.jpg'
 import Img2 from '../img/fixedafter.jpg'
@@ -14,6 +15,9 @@ function Antique() {
     AOS.init()
     AOS.refresh()
   }, [])
+
+  let history = useHistory()
+  console.log(history)
 
   return (
     <div
@@ -40,8 +44,11 @@ function Antique() {
           <br />
           或者您想以二手價格賣出也沒有問題！本站所販售商品於原供應商（製造商、代理商）保固期內如有故障，請將故障品攜至提貨中心辦理送修
         </p>
-        <div className="btn_lessmargin more">
-          <a href="/secondhand_list">MORE</a>
+        <div
+          className="btn_lessmargin more"
+          onClick={() => history.push('/secondhand_list')}
+        >
+          MORE
         </div>
       </div>
     </div>

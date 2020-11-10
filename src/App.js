@@ -23,6 +23,8 @@ import Review from './product/pages/Review'
 import SecondhandForm from './secondhand/pages/SecondhandForm'
 import SecondhandList from './secondhand/pages/SecondhandList'
 import SecondhandProduct from './secondhand/pages/SecondhandProduct'
+import SecondhandFormEdit from './secondhand/pages/SecondhandFormEdit'
+import ReviewMember from './secondhand/pages/ReviewMember'
 
 // ---------------------以下import 募資頁面--------------------
 import FundHomepage from './fund/pages/FundHomepage'
@@ -132,6 +134,9 @@ function App() {
             </Route>
 
             {/* 二手頁面 */}
+            <Route path="/secondhand_form_edit/:sid?">
+              <SecondhandFormEdit />
+            </Route>
             <Route path="/secondhand_form">
               <SecondhandForm />
             </Route>
@@ -142,6 +147,10 @@ function App() {
 
             <Route path="/secondhand_product/:sid?">
               <SecondhandProduct />
+            </Route>
+
+            <Route path="/review_member">
+              <ReviewMember />
             </Route>
 
             {/* 募資頁面 */}

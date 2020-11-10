@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import './Blogs.css'
 import Img from '../img/Journal_OvergaardDyrman.jpg'
 import Img2 from '../img/ATD_Retail_2020_Rely_HW6_Object_SC42_Candleholder_SC40-41_Glass-Vase_SC36-1501x2000.jpg'
@@ -10,6 +11,8 @@ function Blogs() {
     AOS.init()
     AOS.refresh()
   }, [])
+  let history = useHistory()
+  console.log(history)
   return (
     <div
       className="row no-gutters mt_mb_100"
@@ -41,7 +44,12 @@ function Blogs() {
           <p className="p14">2020.08.30</p>
         </div>
       </div>
-      <div className="btn_lessmargin2 more">MORE</div>
+      <div
+        className="btn_lessmargin2 more"
+        onClick={() => history.push('/blog')}
+      >
+        MORE
+      </div>
     </div>
   )
 }

@@ -4,15 +4,44 @@ import Img2 from '../img/Cover_CircleDiningChair_22.jpg'
 
 import '../styles/secondhandForm.css'
 import { Alert } from 'antd'
-import { Button, notification, Space } from 'antd'
+import { withRouter, useParams } from 'react-router-dom'
 
 function SecondhandForm() {
+  const [product, setProduct] = useState([])
   //photo
   const [photo, setPhoto] = useState(null)
   const [previewPhoto, setPreviewPhoto] = useState({})
 
+  let { sid } = useParams()
+  console.log('sid' + sid)
+
+  async function getTotalFromSQL(props) {
+    const url = 'http://localhost:3001/man_secondhand/secondhandlist/' + sid
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+
+    const response = await fetch(request)
+    const data = await response.json()
+    data.map((item, index) => {
+      setProduct(item)
+    })
+    // const newData = [...data]
+    // console.log('newData' + newData)
+    // console.log(Array.isArray(data))
+    // setProduct(newData)
+  }
+
+  useEffect(() => {
+    getTotalFromSQL()
+  }, [])
+
   async function updateReviewToServer() {
-    // const newTotal = { total: total + value }
     const fd = new FormData()
     fd.append('myfile', photo)
     console.log('fd' + JSON.stringify(fd))
@@ -43,7 +72,7 @@ function SecondhandForm() {
   async function handleSubmit(e) {
     e.preventDefault()
     const fd = new FormData(document.form2)
-    const url = 'http://localhost:3001/man_secondhand/add'
+    const url = 'http://localhost:3001/man_secondhand/edit/' + sid
 
     const request = new Request(url, {
       method: 'POST',
@@ -59,14 +88,7 @@ function SecondhandForm() {
     console.log(newData.newFileName)
   }
 
-  const openNotificationWithIcon = (type) => {
-    notification[type]({
-      message: '上傳成功',
-      description:
-        'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
-    })
-  }
-
+  console.log(product)
   return (
     <>
       <div className="i_fv">
@@ -80,7 +102,7 @@ function SecondhandForm() {
       </div>
       <div className="container custom-container-width">
         <div className="i_title text-center m-5">
-          <h1>新增中古資料</h1>
+          <h1>修改中古資料</h1>
           <p>Second Hands Login</p>
         </div>
         <form
@@ -96,7 +118,14 @@ function SecondhandForm() {
                   type="hidden"
                   className="file_upload"
                   name="photo"
-                  value={previewPhoto.newFileName}
+                  value={product.photo}
+                  // value={previewPhoto.newFileName}
+                  onChange={(e) =>
+                    setProduct({
+                      ...product,
+                      photo: e.previewPhoto.newFileName,
+                    })
+                  }
                 />
                 <input
                   type="file"
@@ -116,10 +145,15 @@ function SecondhandForm() {
             </p>
             <div className="i_upload_img ml100">
               <img
-                src={`http://localhost:3001/img/` + previewPhoto.newFileName}
+                src={
+                  `http://localhost:3001/img/` + previewPhoto.newFileName
+                    ? `http://localhost:3001/img/` + previewPhoto.newFileName
+                    : `http://localhost:3001/img/` + product.photo
+                }
                 alt=""
                 id="myimg"
               />
+              <img src={`http://localhost:3001/img/` + product.photo} />
             </div>
           </div>
           <div className="col-lg-6 col-sm-12">
@@ -131,6 +165,10 @@ function SecondhandForm() {
                   className="i_formstyle i_formwidth"
                   id="productname"
                   name="productname"
+                  value={product.productname}
+                  onChange={(e) =>
+                    setProduct({ ...product, productname: e.value })
+                  }
                 />
               </div>
               <div className="i_formset">
@@ -140,6 +178,10 @@ function SecondhandForm() {
                   className="i_formstyle i_formwidth"
                   id="product_no"
                   name="product_no"
+                  value={product.product_no}
+                  onChange={(e) =>
+                    setProduct({ ...product, product_no: e.value })
+                  }
                 />
               </div>
               <div className="i_formset">
@@ -149,6 +191,8 @@ function SecondhandForm() {
                   className="i_formstyle i_formwidth"
                   id="price"
                   name="price"
+                  value={product.price}
+                  onChange={(e) => setProduct({ ...product, price: e.value })}
                 />
               </div>
               <div className="i_formset">
@@ -158,15 +202,21 @@ function SecondhandForm() {
                   className="i_formstyle i_formwidth"
                   id="stock"
                   name="stock"
+                  value={product.stock}
+                  onChange={(e) => setProduct({ ...product, stock: e.value })}
                 />
               </div>
               <div className="i_formset">
                 <label for="description">商品描述</label>
                 <textarea
                   rows="4"
-                  cols="61"
+                  cols="48"
                   className="i_formstyle"
                   name="description"
+                  value={product.description}
+                  onChange={(e) =>
+                    setProduct({ ...product, description: e.value })
+                  }
                 ></textarea>
               </div>
               <div className="i_formset">
@@ -175,6 +225,10 @@ function SecondhandForm() {
                   id="categories"
                   className="i_formstyle i_formwidth"
                   name="categories_sid"
+                  value={product.categories_sid}
+                  onChange={(e) =>
+                    setProduct({ ...product, categories_sid: e.value })
+                  }
                 >
                   <option value="1">高腳椅</option>
                   <option value="2">單椅</option>
@@ -191,6 +245,10 @@ function SecondhandForm() {
                     name="framework_sid"
                     className="i_formstyle i_radiomargin"
                     value="1"
+                    checked={product.framework_sid === 1 ? true : false}
+                    onChange={(e) =>
+                      setProduct({ ...product, framework_sid: 1 })
+                    }
                   />
                   木頭
                 </div>
@@ -200,6 +258,10 @@ function SecondhandForm() {
                     name="framework_sid"
                     className="i_formstyle i_radiomargin"
                     value="2"
+                    checked={product.framework_sid === 2 ? true : false}
+                    onChange={(e) =>
+                      setProduct({ ...product, framework_sid: 2 })
+                    }
                   />
                   金屬
                 </div>
@@ -209,6 +271,10 @@ function SecondhandForm() {
                     name="framework_sid"
                     className="i_formstyle i_radiomargin"
                     value="3"
+                    checked={product.framework_sid === 3 ? true : false}
+                    onChange={(e) =>
+                      setProduct({ ...product, framework_sid: 3 })
+                    }
                   />
                   塑膠
                 </div>
@@ -222,6 +288,10 @@ function SecondhandForm() {
                     name="material_sid"
                     className="i_formstyle i_radiomargin"
                     value="1"
+                    checked={product.material_sid === 1 ? true : false}
+                    onChange={(e) =>
+                      setProduct({ ...product, material_sid: 1 })
+                    }
                   />
                   布料
                 </div>
@@ -231,6 +301,10 @@ function SecondhandForm() {
                     name="material_sid"
                     className="i_formstyle i_radiomargin"
                     value="2"
+                    checked={product.material_sid === 2 ? true : false}
+                    onChange={(e) =>
+                      setProduct({ ...product, material_sid: 2 })
+                    }
                   />
                   皮革
                 </div>
@@ -240,6 +314,10 @@ function SecondhandForm() {
                     name="material_sid"
                     className="i_formstyle i_radiomargin"
                     value="3"
+                    checked={product.material_sid === 3 ? true : false}
+                    onChange={(e) =>
+                      setProduct({ ...product, material_sid: 3 })
+                    }
                   />
                   木質
                 </div>
@@ -253,6 +331,10 @@ function SecondhandForm() {
                     name="conditions_sid"
                     className="i_formstyle i_radiomargin"
                     value="1"
+                    checked={product.conditions_sid === 1 ? true : false}
+                    onChange={(e) =>
+                      setProduct({ ...product, conditions_sid: 1 })
+                    }
                   />
                   九成新
                 </div>
@@ -262,6 +344,10 @@ function SecondhandForm() {
                     name="conditions_sid"
                     className="i_formstyle i_radiomargin"
                     value="2"
+                    checked={product.conditions_sid === 2 ? true : false}
+                    onChange={(e) =>
+                      setProduct({ ...product, conditions_sid: 2 })
+                    }
                   />
                   八成新
                 </div>
@@ -271,20 +357,18 @@ function SecondhandForm() {
                     name="conditions_sid"
                     className="i_formstyle i_radiomargin"
                     value="3"
+                    checked={product.conditions_sid === 3 ? true : false}
+                    onChange={(e) =>
+                      setProduct({ ...product, conditions_sid: 3 })
+                    }
                   />
                   七成新
                 </div>
               </div>
-              <button
-                className="i_btn3 text-center mt-4"
-                type="submit"
-                onClick={() => openNotificationWithIcon('success')}
-              >
+              <button className="i_btn3 text-center mt-4" type="submit">
                 新增商品
               </button>
             </div>
-
-            {/* {showAlert && <Alert message="Warning Text" type="warning" />} */}
           </div>
         </form>
       </div>

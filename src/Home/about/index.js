@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-
+import { useHistory } from 'react-router-dom'
 import OurApproach from '../img/OurApproach_OvergaardDyrman-1.jpg'
 import './About.scss'
 import AOS from 'aos'
@@ -10,19 +10,24 @@ function About() {
     AOS.init()
     AOS.refresh()
   }, [])
+
+  let history = useHistory()
+  console.log(history)
   return (
     <div
       className="row no-gutters mt_mb_100"
       data-aos="fade-up"
       data-aos-duration="2000"
+      onClick={() => history.push('/brand')}
+      style={{ cursor: 'pointer' }}
     >
-      <div className="col-lg-8 col-md-10 col-sm-12">
+      <div className="col-lg-8 col-md-12 col-sm-12">
         <div className="aboutcompany">
           <img src={OurApproach} alt="" />
         </div>
       </div>
 
-      <div className="col-lg-4 col-md-2 col-sm-12 ">
+      <div className="col-lg-4 col-md-12 col-sm-12 ">
         <div className="companytext ">
           <p className="abouttitle noto-serif">從培訓到上線</p>
           <p className="p14  noto-sans">

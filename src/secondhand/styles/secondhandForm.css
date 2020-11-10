@@ -1,7 +1,7 @@
 body {
     background-color: #edece8 !important;
     color: #475050 !important;
-  }
+}
   
   * {
     margin: 0;
@@ -98,6 +98,10 @@ body {
     border: none;
     margin-bottom: 15px;
   }
+
+  .i_formstyle input{
+    padding: 6px 10px;
+  }
   
   .i_formset label {
     margin-bottom: 3px;
@@ -157,6 +161,26 @@ body {
   .ml100{
     margin-left: 100px;
   }
+
+  .i_btn6{
+    width:50%;
+    height: 30px;
+    font-size: 12px;
+   text-align: center;
+   line-height: 30px;
+cursor: pointer;
+  }
+
+  .i_good{
+background-color: #ded5c6;
+  }
+
+  .i_bad{
+    background-color:  #f3f4f4;
+  }
+
+ 
+
 
   
   

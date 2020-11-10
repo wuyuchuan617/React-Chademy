@@ -98,3 +98,21 @@
   font-weight: 200;
   letter-spacing: 2px;
 }
+
+@media(max-width: 768px) {
+.i_courses_text .more{
+  margin:30px auto;
+}
+.i_courses_text {
+  text-align: center;
+}
+.i_fund_text {
+  margin: 25px auto;
+}
+.i_fund
+  {
+    height: 100%;
+    margin-top: 76px;
+}
+
+  }

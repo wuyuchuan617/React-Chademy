@@ -11,6 +11,37 @@ function SecondhandList() {
   const [viewProduct, setViewProduct] = useState(8)
   const [lastProductId, setLastProductId] = useState(0)
 
+  /**
+   * 用來判斷是不是最後一筆資料
+   */
+  const [isLast, setIsLast] = useState(false)
+
+  /**
+   * 用來搜尋DB的資料
+   */
+  const [query, setQuery] = useState({
+    type: '',
+    sid: null,
+    pageNo: 0,
+    isPage: false,
+  })
+
+  /**
+   * 提供function傳給左方filter使用
+   */
+  const searchProduct = (type, sid) => {
+    console.log(type, sid)
+    if (!type || !sid) {
+      return
+    }
+
+    setIsLast(false)
+    setQuery({ type, sid, pageNo: 0, isPage: false })
+  }
+
+  /**
+   * more的時候
+   */
   const handleClick = () => {
     let preViewProduct = viewProduct
     let newViewProduct = preViewProduct + 8
@@ -25,30 +56,51 @@ function SecondhandList() {
         .getElementById(lastProductId)
         .scrollIntoView({ behavior: 'smooth', block: 'center' })
     }
+
+    const nextQuery = { ...query, pageNo: query.pageNo + 1, isPage: true }
+    setQuery(nextQuery)
   }
 
-  async function getTotalFromSQL(props) {
-    const url = 'http://localhost:3001/man_secondhand/secondhandlist'
+  /**
+   * 搜尋API使用
+   */
+  async function getTotalFromSQL2(props) {
+    const url = 'http://localhost:3001/man_secondhand/product'
 
-    const request = new Request(url, {
-      method: 'GET',
+    fetch(url, {
+      method: 'POST',
       headers: new Headers({
         Accept: 'application/json',
         'Content-Type': 'application/json',
       }),
+      body: JSON.stringify({
+        ...query,
+        page_no: query.pageNo,
+      }),
     })
-
-    const response = await fetch(request)
-    const data = await response.json()
-    const newData = [...data]
-    console.log('newData' + newData)
-    console.log(Array.isArray(data))
-    setProduct(newData)
+      .then((res) => {
+        return res.json()
+      })
+      .then((body) => {
+        console.log(body.data)
+        if (body.data.length < 8) {
+          setIsLast(true)
+        }
+        if (query.isPage) {
+          setProduct(product.concat(body.data))
+        } else {
+          setProduct(body.data)
+        }
+      })
   }
 
+  /**
+   * 當query變更，再次搜尋
+   */
   useEffect(() => {
-    getTotalFromSQL()
-  }, [])
+    console.log(query)
+    getTotalFromSQL2()
+  }, [query])
 
   useEffect(() => {
     const arr = product.slice(0, viewProduct)
@@ -63,16 +115,18 @@ function SecondhandList() {
           <Breadcrumb />
         </div>
         <div className="row mt-5">
-          <Filter />
+          <Filter searchProduct={searchProduct} />
           <div className="i_product d-flex flex-wrap">
             {product.slice(0, viewProduct).map((item, index) => {
               return <ProductList key={index} item={item} />
             })}
             <div className="i_end">
               <hr />
-              <div className="i_btn1 text-center mt-4" onClick={handleClick}>
-                more
-              </div>
+              {!isLast && (
+                <div className="i_btn1 text-center mt-4" onClick={handleClick}>
+                  more
+                </div>
+              )}
             </div>
           </div>
         </div>

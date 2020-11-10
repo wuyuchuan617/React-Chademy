@@ -3,12 +3,16 @@ import './Bidding.css'
 import Img from '../img/Cover_CircleDiningChair_22.jpg'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { useHistory } from 'react-router-dom'
 
 function Bidding() {
   useEffect(() => {
     AOS.init()
     AOS.refresh()
   }, [])
+
+  let history = useHistory()
+  console.log(history)
   return (
     <div
       className="row no-gutters mt_mb_100"
@@ -32,7 +36,9 @@ function Bidding() {
           </p>
         </div>
 
-        <div className="btn_auto more">MORE</div>
+        <div className="btn_auto more" onClick={() => history.push('/pages')}>
+          MORE
+        </div>
       </div>
       <div className="col-lg-6 col-sm-12 bid">
         <img src={Img} alt="" />

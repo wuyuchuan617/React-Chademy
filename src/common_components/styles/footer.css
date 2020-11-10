@@ -54,6 +54,7 @@
 
 .footer {
   background-color: #ded5c6;
+  z-index:10;
 }
 
 .company {

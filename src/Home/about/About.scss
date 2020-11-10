@@ -78,3 +78,33 @@
   font-family: 'Noto Sans TC', sans-serif;
   font-weight: lighter;
 }
+
+
+@media screen and (max-width: 768px) {
+  .aboutcompany {
+   
+    height: 100%;
+  
+  }
+  .companytext{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+  .companytext .p14 {
+    font-size: 14px;
+    margin: 40px 0;
+    letter-spacing: 5px;
+    color: #475050;
+}
+.companytext {
+  max-width: 100%;
+  height: 100%; 
+  background-color: #deddda;
+  padding-top: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #475050;
+  padding-bottom: 20px;
+}
+
+}

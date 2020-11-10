@@ -66,3 +66,34 @@
   font-weight: 200;
   letter-spacing: 2px;
 }
+
+.mobile{
+  display:none;
+}
+
+@media(max-width: 768px) {
+
+.imgarea{
+  display:none;
+}
+.title3 {
+  margin-bottom: 50px;
+}
+.mobile{
+  display:block;
+}
+
+.mobile2{
+  display:none;
+}
+
+.classic_mobile{
+    width: 85%;
+    margin: 0 auto;
+}
+
+.mobile_news{
+  padding-left: 50px !important;
+  padding-right: 50px !important;
+}
+}
