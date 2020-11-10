@@ -32,8 +32,8 @@ function ProductPopular(props) {
               <img src={popularImg} alt="" />
             </div>
             <div className="popularText justify-content-center">
-              <p className="classic">熱銷經典</p>
-              <p className="bestSell">BEST SELLERS</p>
+              <p className="classic">新品上市</p>
+              <p className="bestSell">NEW ARRIVAL</p>
               <button className="popularButton">SHOP NOW</button>
             </div>
           </div>

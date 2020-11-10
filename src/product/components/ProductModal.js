@@ -4,7 +4,7 @@ import 'antd/dist/antd.css'
 import '../styles/couponModal.css'
 
 function ProductModal(props) {
-  const { visible, setVisible, photo1 } = props
+  const { visible, setVisible, photo } = props
   return (
     <>
       <Modal
@@ -21,7 +21,7 @@ function ProductModal(props) {
       >
         <div className="row modalOut d-flex">
           <div className="col modalproduct ">
-            <img src={photo1} alt="" />
+            <img src={photo} alt="" />
           </div>
         </div>
       </Modal>

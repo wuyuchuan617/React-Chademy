@@ -20,7 +20,7 @@ function ProductCard(props) {
 
         <div className="productCardImgHover">
           <img
-            src={popularImg}
+            src={item.photo_hover}
             alt=""
             onClick={() => {
               props.history.push('/product/' + item.sid)

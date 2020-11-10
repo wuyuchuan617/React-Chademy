@@ -60,6 +60,7 @@ import Finish from './cart/pages/Finish'
 //-----------------------------------------------------------
 
 function App() {
+  const [footer, setFooter] = useState(null)
   //---------------購物車使用變數--------------------------------
   const [myCart, setMyCart] = useState([])
   const [showLoading, setShowLoading] = useState(false)
@@ -142,7 +143,7 @@ function App() {
             </Route>
 
             <Route path="/secondhand_list">
-              <SecondhandList />
+              <SecondhandList footer={footer} setFooter={setFooter} />
             </Route>
 
             <Route path="/secondhand_product/:sid?">

@@ -2,7 +2,7 @@ import React from 'react'
 
 function PurchaseInfo() {
   return (
-    <div className="row">
+    <div className="row justify-content-center">
       <div className="i_detail">
         <div className="i_filter">
           <div className="i_list d-flex justify-content-between align-items-center pl-3 ">
@@ -10,7 +10,10 @@ function PurchaseInfo() {
             <p className="mr-3 mt-3">＋</p>
           </div>
 
-          <div className="i_list d-flex justify-content-between align-items-center pr-3 pl-3">
+          <div
+            className="i_list d-flex justify-content-between align-items-center pr-3 pl-3"
+            onClick={() => {}}
+          >
             <p className="mr-5 mt-3">購買須知</p>
             <p className="ml-5 mt-3">＋</p>
           </div>

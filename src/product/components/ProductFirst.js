@@ -28,6 +28,7 @@ function ProductFirst(props) {
   const [heartItem, setHeartItem] = useState({})
   const [visible, setVisible] = useState(false)
   const [avgStar, setAvgStar] = useState(0)
+  const [member, setMember] = useState('')
 
   useEffect(() => {
     let aveStars = 0
@@ -175,12 +176,22 @@ function ProductFirst(props) {
     // }
   }
 
+  function getCartFromLocalStorage() {
+    const newMember = JSON.parse(localStorage.getItem('reduxState')).user.users
+      .name
+
+    console.log('newMember', newMember)
+    console.log(typeof newMember)
+    setMember(newMember)
+  }
+
   useEffect(() => {
     updateTotalToServer()
   }, [heartItem.follow_status])
 
   useEffect(() => {
     getHeartFromServer()
+    getCartFromLocalStorage()
   }, [])
 
   return (
@@ -196,7 +207,7 @@ function ProductFirst(props) {
               <div className="product_photo_small">
                 {/* <img src={require('../../img/' + item.photo)} alt="" /> */}
                 <img
-                  src={require('../../img/' + item.photo)}
+                  src={item.photo}
                   alt=""
                   onClick={(e) => {
                     setPhoto(e.target.src)
@@ -205,7 +216,7 @@ function ProductFirst(props) {
               </div>
               <div className="product_photo_small">
                 <img
-                  src={series}
+                  src={item.photo2}
                   alt=""
                   onClick={(e) => {
                     setPhoto(e.target.src)
@@ -214,7 +225,7 @@ function ProductFirst(props) {
               </div>
               <div className="product_photo_small">
                 <img
-                  src={popularImg}
+                  src={item.photo3}
                   alt=""
                   onClick={(e) => {
                     setPhoto(e.target.src)
@@ -223,7 +234,7 @@ function ProductFirst(props) {
               </div>
               <div className="product_photo_small">
                 <img
-                  src={series}
+                  src={item.photo4}
                   alt=""
                   onClick={(e) => {
                     setPhoto(e.target.src)
@@ -257,7 +268,7 @@ function ProductFirst(props) {
                   if (heart === false) {
                     const newHeartItem = {
                       follow_product: item.product_name,
-                      member_id: 'AMY',
+                      member_id: member,
                       follow_status: 1,
                     }
                     await setHeartItem(newHeartItem)
@@ -283,7 +294,7 @@ function ProductFirst(props) {
                 </p>
               </div>
 
-              <div className="choose-area">
+              {/* <div className="choose-area">
                 <p>選擇木頭：</p>
                 <div className="d-flex">
                   <div className="choose-wood"></div>
@@ -292,7 +303,7 @@ function ProductFirst(props) {
                   <div className="choose-wood"></div>
                   <div className="choose-wood"></div>
                 </div>
-              </div>
+              </div> */}
 
               <div className="choose-area">
                 <p>選擇皮革：</p>

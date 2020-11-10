@@ -16,6 +16,7 @@ import ProductSeven from '../components/ProductSeven'
 import Slider from '../components/Slider'
 import ProductEight from '../components/ProductEight'
 import ProductNine from '../components/ProductNine'
+import ProductTen from '../components/ProductTen'
 import PurchaseInfo from '../components/PurchaseInfo'
 
 // ------------------------以下引入樣式----------------------------
@@ -97,6 +98,10 @@ function Product(props) {
 
       {product.map((item, index) => {
         return <ProductSecond key={index} item={item} product={product} />
+      })}
+
+      {product.map((item, index) => {
+        return <ProductTen key={index} item={item} product={product} />
       })}
 
       {product.map((item, index) => {
