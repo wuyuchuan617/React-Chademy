@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import record from '../styles/record.scss'
 import pic from '../myfile/Karim-hero-tablet.jpg'
 import useInterval from 'use-interval'
-
+import QueueAnim from 'rc-queue-anim';
 function Record(props){
-    const {item, getMember} = props
-    useInterval(()=>{getMember()},2000)
+    const {item, getMember,price} = props
+    // useInterval(()=>{getMember()},2000)
+    // useEffect(()=>{
+    //     getMember()
+    //   },[price])
     // item.avatar
     return(
         <>
@@ -15,7 +18,6 @@ function Record(props){
                     <td>${item.total_price}</td>
                     <td>{item.time}</td>
                 </tr>
-        
         </>
     )
 }

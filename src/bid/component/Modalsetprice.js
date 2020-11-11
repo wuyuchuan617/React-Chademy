@@ -3,7 +3,7 @@ import { Modal,Button } from 'react-bootstrap'
 
 function Modalsetprice(props){
   console.log(props)
-    const{pname, chair,price,setCartAmount,cartamount,productpic}=props
+    const{pname, chair,price,setCartAmount,cartamount,productpic,setNoShowModel}=props
     //add to cart fn
     const [myCart, setMyCart] = useState([])
     const [pc, setPc] = useState('')
@@ -54,6 +54,7 @@ function Modalsetprice(props){
             <Modal.Footer>
                 <Button  className="w_cart-btn"
                   onClick={() => {
+                    setNoShowModel(true)
                     props.onHide()
                     setCartAmount(cartamount + 1)
                     updateCartToLocalStorage({

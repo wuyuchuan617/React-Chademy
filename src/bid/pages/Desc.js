@@ -54,7 +54,8 @@ function Desc(props) {
   const [heart, setHeart] = useState(false)
   const [heartItem, setHeartItem] = useState({})
   const [modalShow, setModalShow] = React.useState(false);
-  
+  const [noShowModel, setNoShowModel] = useState(false)
+
   // 判斷登入的狀態
 // const isLogged = useSelector((state) => state.user.logged)
 
@@ -197,9 +198,12 @@ function Desc(props) {
   const renderer = ({ hours, minutes, seconds, completed }) => {
     if (completed) {
       // Render a complete state
-      setTimeout(()=>{
-        setModalShow(true);
-      }, 200);
+      console.log('noShowModel:', noShowModel)
+      if(! noShowModel){
+        setTimeout(()=>{
+          setModalShow(true);
+        }, 200);
+      }
       return '';
     } else {   
       // Render a countdown
@@ -226,7 +230,10 @@ function Desc(props) {
   };
   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    setShow(false)
+    setNoShowModel(true);
+  };
   const handleShow = () => setShow(true);
   const [addmoney,setAddmoney] = useState(0)
 
@@ -248,9 +255,7 @@ function getCartFromLocalStorage() {
 
 }
 
-// useEffect(()=>{
-//   getMember()
-// },[price])
+
   return (
     <>
       {/* countdown */}
@@ -456,12 +461,14 @@ function getCartFromLocalStorage() {
                     <th className="w-25">總金額</th>
                     <th className="w-25">時間</th>
                 </tr>
-        {/* if(index>5) return null */}
-        {/* return  */}
+   
+                {/* <QueueAnim component="ul" type={['right', 'left']} leaveReverse> */}
       {member.map((item,index)=>
+      
         <Record key={index} item={item} {...props} getMember={getMember} />
         )}
-      {/* )} */}
+        {/* </QueueAnim> */}
+    
         </tbody>
       </table>
       </Route>
@@ -549,6 +556,7 @@ function getCartFromLocalStorage() {
         show={modalShow}
         onHide={() => setModalShow(false)}
         pname={pname} price={price} productpic={productpic} chair={chair}
+        setNoShowModel={setNoShowModel}
         {...props}
       />
     </>
