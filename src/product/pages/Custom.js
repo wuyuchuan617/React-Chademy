@@ -156,7 +156,7 @@ function Custom(props) {
         <div class="parallax"></div>
 
         <div className="container">
-          <div className="row">
+          <div className="row justify-content-center">
             <img src={require('../images/Group 186.png')} alt="" />
           </div>
         </div>
@@ -222,14 +222,72 @@ function Custom(props) {
             </div>
           </div>
           <div className="row w_share_row">
-            <div className="col-4">
-              <img src={require('../images/share1.jpg')} alt="" />
+            <div className="col-4 coll4">
+              <img
+                className="w_share_hover_img"
+                src={require('../images/share1.jpg')}
+                alt=""
+              />
+              <p className="w_share_hover_text text-center w_ins_title">
+                意外的收穫，藏在不停尋找的簡單裡
+              </p>
+              <p className="text-center w_share_hover_text">
+                「沒有任何機器能取代匠師獨特的風格。Gustav
+                Bahus生產的傢俱，凸顯了挪威人的優雅和簡約，手工製造卻不為生產需求而妥協。」
+              </p>
             </div>
-            <div className="col-4">
-              <img src={require('../images/share2.jpg')} alt="" />
+            <div className="col-4 coll4">
+              <img src={require('../images/award.jpg')} alt="" />
+              <p className="w_share_hover_text text-center w_ins_title">
+                燕椅，體驗一張椅子美妙的存在
+              </p>
+              <p className="text-center w_share_hover_text">
+                新的燕椅承襲老椅的台、和、洋混血基因，讓它能自由自在地身處於各式各樣的風格空間。輕盈而敞開的後背，迎接日光灑落家中。​
+              </p>
             </div>
-            <div className="col-4">
+            <div className="col-4 coll4">
               <img src={require('../images/share3.jpg')} alt="" />
+              <p className="w_share_hover_text text-center w_ins_title">
+                流暢、從容的輕盈線條
+              </p>
+              <p className="text-center w_share_hover_text">
+                每一張燕椅，最後皆由手工刻製細修，一氣呵成的曲線，從椅腦頂端順著側稜線，滑向後腳與後方精實的微弧面相接。
+              </p>
+            </div>
+          </div>
+          <div className="container">
+            <div className="row w_share_row">
+              <div className="col-5 award_img">
+                <img src={require('../images/share2.jpg')} alt="" />
+              </div>
+              <div className="col-7 w_award_bg">
+                <p className="w_ins_title">
+                  燕椅，獲IFDA旭川國際家具設計大賽入圍肯定
+                </p>
+                <p>
+                  1990年開始，三年一度的「 IFDA
+                  旭川國際家具設計大賽」，每一屆僅取總件數的前 3%
+                  進入決賽。2017年是 27
+                  周年，也是極具紀念性的第十屆，燕椅從全世界 683
+                  件作品中，成為最終 25
+                  位的入選者。在2017年6月的旭川設計週與同年11
+                  月的日本東京國際家具暨家居用品展展出。
+                  我們一方面感謝IFDA的肯定，一方面也很感動，這次的入選證明了台灣的文化元素一樣能登上世界的舞台，我們從燕椅開始，讓世界一步一步地看見，台灣這塊土地也能誕生出全世界都會愛上的美麗家具。
+                </p>
+                <p className="w_ins_title">
+                  Shortlisted at 2017 International Furniture Design Award
+                </p>
+                <p>
+                  IFDA is held every three years since 1990. In the year 2017
+                  when it came to its 10th iteration. Hirundo was awarded
+                  shortlisted out of 683 competitors from the world and
+                  exhibited both in Asahikawa Design Week and Tokyo Interior
+                  Lifestyle Living.
+                </p>
+                <p className="text-right">
+                  More About IFDA http://www.ifda.jp/
+                </p>
+              </div>
             </div>
           </div>
         </div>

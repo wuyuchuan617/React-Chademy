@@ -146,3 +146,36 @@
 .w_share_left {
     /* background-color: #F3F4F4; */
 }
+
+.w_share_hover_text {
+    opacity: 0;
+    transition: .5s;
+}
+
+.coll4:hover .w_share_hover_text {
+    opacity: 1;
+}
+
+.w_ins_title {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #c77334;
+}
+
+.w_award_bg {
+    max-width: 100%;
+    background-color: #ded5c6;
+    margin: 0px -15px;
+    padding: 20px 10px;
+}
+
+.award_img {
+    width: 100%;
+    height: 450px;
+}
+
+.award_img img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
