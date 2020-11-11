@@ -239,6 +239,7 @@ function AllOrder(props) {
                 }}
                 onClick={() => {
                   props.history.push(link)
+                  setVisible(false)
                 }}
               >
                 <BsPen />
