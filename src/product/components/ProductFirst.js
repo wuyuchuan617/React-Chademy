@@ -312,7 +312,7 @@ function ProductFirst(props) {
                 </div>
               </div> */}
 
-              <div className="choose-area">
+              {/* <div className="choose-area">
                 <p>選擇皮革：</p>
                 <div className="d-flex">
                   <div className="choose-wood"></div>
@@ -321,8 +321,13 @@ function ProductFirst(props) {
                   <div className="choose-wood"></div>
                   <div className="choose-wood"></div>
                 </div>
+<<<<<<< Updated upstream
               </div>
               <li className="share-facebook">
+=======
+              </div> */}
+              <li class="share-facebook">
+>>>>>>> Stashed changes
                 <a
                   rel="nofollow noopener noreferrer"
                   data-shared="sharing-facebook-48785"

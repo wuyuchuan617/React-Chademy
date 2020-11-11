@@ -1,0 +1,117 @@
+.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+    position: relative;
+    background-color: #F3F4F4;
+    color: #1A1818;
+    border: none;
+    border-radius: 2px;
+    -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    width: 100%;
+    height: 45px;
+    padding: 9px 11px;
+    margin-bottom: 20px;
+}
+
+.ant-select-single.ant-select-show-arrow .ant-select-selection-item,
+.ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder {
+    padding-right: 18px;
+    color: #1A1818;
+}
+
+.ant-select-item-option-content {
+    -ms-flex: auto;
+    flex: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height: 40px;
+    line-height: 40px;
+}
+
+.ant-select-arrow {
+
+    top: 30%;
+
+}
+
+.w_custom_title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+
+.w_custom_desc {
+    padding: 10px 38px;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+}
+
+.w_custom-btn {
+    width: 84%;
+    height: 45px;
+    justify-content: center;
+    display: block;
+    border: 1px solid #c77334;
+    background-color: #c77334;
+    margin-top: 90px;
+    margin: auto;
+    margin-top: 30px;
+    color: white;
+    transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.w_custom_work {
+    position: relative;
+    overflow: hidden;
+    width: 280%;
+    height: 400px;
+}
+
+.w_custom_work:hover.w_custom_work img {
+    opacity: .6;
+}
+
+.w_custom_work img {
+    width: 280%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.w_container_fluid {
+    margin: 140px 0px
+}
+
+.w_custom_hover p {
+    color: white;
+}
+
+.w_custom_hover {
+    /* color: white; */
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    bottom: 30px;
+    left: 30px;
+    display: none;
+    padding: 150px 30px;
+    transition: opacity 0.4s ease 0s;
+}
+
+.w_custom_work:hover .w_custom_hover {
+    display: block;
+    opacity: 1;
+    color: white;
+}
+
+.parallax {
+    background-image: url("../images/arv-hero.jpg");
+    min-height: 600px;
+    /* 沒內文時可以看到的最小高度 */
+
+    background-attachment: fixed;
+    /* 固定圖像 */
+    background-position: center center;
+    /* 圖像置中 */
+    background-size: cover;
+}
