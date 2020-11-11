@@ -237,9 +237,9 @@ function AllOrder(props) {
                   position: 'absolute',
                   right: '50px',
                 }}
-                onClick={() => {
+                onClick={async () => {
+                  await setVisible(false)
                   props.history.push(link)
-                  setVisible(false)
                 }}
               >
                 <BsPen />
