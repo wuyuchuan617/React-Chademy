@@ -2,7 +2,7 @@ import React from 'react'
 import { Modal,Button } from 'react-bootstrap'
 
 function Modalsetprice(props){
-    const{pname, chair}=props
+    const{pname, chair,price}=props
     // console.log(data)
     return(
         <>
@@ -26,7 +26,19 @@ function Modalsetprice(props){
                     
             </Modal.Body>
             <Modal.Footer>
-                <Button onClick={props.onHide}>結帳</Button>
+                <Button  className="w_cart-btn"
+                  onClick={() => {
+                    props.onHide()
+                    setCartAmount(cartamount + 1)
+                    updateCartToLocalStorage({
+                  
+                      id: pname,
+                      img: chair,
+                      amount: 1,
+                      price: price,
+                      category: 1,
+                    })
+                  }}>加入購物車</Button>
             </Modal.Footer>
             </Modal>
         </>
