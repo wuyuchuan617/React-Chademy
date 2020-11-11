@@ -5,16 +5,18 @@ import imagetwo from '../images/03-1.png'
 import imagethree from '../images/03-2.png'
 import heart from '../images/heart.svg'
 import OneWorkShop from '../components/OneWorkShop'
+import '../styles/slider.css'
+import Carousel from 'react-elastic-carousel'
 
 function ItemOne(props) {
   const { oneWorkShop } = props
   return (
-    <div className="container-fluid">
-      <div className="wrapper2">
-        <div className="title01">
-          <h2>一日木工體驗</h2>
-        </div>
-        <div className="row">
+    <div className="wrapper2">
+      <div className="title01">
+        <h2>一日木工體驗</h2>
+      </div>
+      <div className="row justify-content-center">
+        <Carousel itemsToScroll={3} itemsToShow={3}>
           {oneWorkShop.map((item, index) => {
             return <OneWorkShop key={index} item={item} />
           })}
@@ -97,7 +99,7 @@ function ItemOne(props) {
               </div>
             </div>
           </div> */}
-        </div>
+        </Carousel>
       </div>
     </div>
   )

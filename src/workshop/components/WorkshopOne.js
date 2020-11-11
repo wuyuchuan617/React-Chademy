@@ -7,29 +7,32 @@ import imagemainfour from '../images/34-4.png'
 import imagemainfive from '../images/34-5.png'
 
 function WorkshopOne(props) {
-  const { item } = props
+  const { item, cartamount, setCartAmount } = props
 
-  const [mycart, setMycart] = useState([])
+  const [mycart, setMyCart] = useState([])
   const [show, setShow] = useState(false)
   const [workshopName, setWorkshopName] = useState('')
 
-  const updateCartToLocalStorage = (value) => {
-    // 從localstorage得到cart(json字串)
+  //從localstroage拿資料
+  const updateCartToLocalStorage = (item, isAdded = true) => {
+    console.log(item, isAdded)
     const currentCart = JSON.parse(localStorage.getItem('cart')) || []
 
-    console.log('currentCart', currentCart)
+    // find if the product in the localstorage with its id
+    const index = currentCart.findIndex((v) => v.id === item.id)
 
-    // 把得到的cart(json字串)轉為陣列值，然後和新加入的物件值合併為新陣列
-    const newCart = [...currentCart, value]
+    console.log('index', index)
+    // found: index! == -1
+    if (index > -1) {
+      currentCart[index].amount++
+    } else {
+      currentCart.push(item)
+    }
 
-    // 設定回localstorage中(記得轉回json字串)
-    localStorage.setItem('cart', JSON.stringify(newCart))
+    localStorage.setItem('cart', JSON.stringify(currentCart))
 
-    console.log('newCart', newCart)
     // 設定資料
-    // 設定至元件的狀態中
-    setMycart(newCart)
-    setWorkshopName(value.name)
+    setMyCart(currentCart)
   }
   return (
     <div class="container">
@@ -71,12 +74,14 @@ function WorkshopOne(props) {
           <button
             class="cart-btn"
             onClick={() => {
+              setCartAmount(cartamount + 1)
               updateCartToLocalStorage({
-                activitie_id: item.activitie_id,
-                activitie_name: item.activitie_name,
-                activitie_images: item.images,
+                product_no: item.activitie_id,
+                id: item.activitie_name,
+                img: item.images,
                 amount: 1,
-                price: item.price,
+                price: item.sale_price,
+                category: 2,
               })
             }}
           >

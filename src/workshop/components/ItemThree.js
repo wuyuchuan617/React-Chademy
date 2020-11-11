@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/workshop.css'
 import ThreeWorkShop from '../components/ThreeWorkShop'
+import '../styles/slider.css'
+import Carousel from 'react-elastic-carousel'
 
 function ItemThree(props) {
   const { threeWorkShop } = props
   return (
-    <div className="container-fluid">
-      <div className="wrapper2">
-        <div className="title01">
-          <h2>展覽活動</h2>
-        </div>
-        <div className="row">
+    <div className="wrapper2">
+      <div className="title01">
+        <h2>展覽活動</h2>
+      </div>
+      <div className="row justify-content-center">
+        <Carousel itemsToScroll={3} itemsToShow={3}>
           {threeWorkShop.map((item2, index) => {
             return <ThreeWorkShop key={index} item2={item2} />
           })}
@@ -81,7 +83,7 @@ function ItemThree(props) {
               </div>
             </div>
           </div>*/}
-        </div>
+        </Carousel>
       </div>
     </div>
   )

@@ -185,7 +185,7 @@ function App() {
                 setCartAmount={setCartAmount}
                 resetShow={resetShow}
                 setResetShow={setResetShow}
-                myCart={myCart} 
+                myCart={myCart}
                 setMyCart={setMyCart}
               />
             </Route>
@@ -201,6 +201,7 @@ function App() {
                 setCartAmount={setCartAmount}
                 resetShow={resetShow}
                 setResetShow={setResetShow}
+                setMyCart={setMyCart}
               />
             </Route>
 

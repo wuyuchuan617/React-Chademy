@@ -1,7 +1,7 @@
 /*一日木工體驗*/
 .wrapper2 {
-  padding-left: 7.5rem;
-  padding-right: 7.5rem;
+  padding-left: 4.0rem;
+  padding-right: 4.0rem;
   margin-top: 3rem;
   background-color: #edece8;
   margin-bottom: 6rem;
@@ -48,6 +48,7 @@
   background-color: #ffffff !important;
   transition: 0.5s;
   width: 21.25rem;
+
 }
 
 .boxoneday:hover {
@@ -373,8 +374,7 @@ img {
   overflow: hidden;
   background-color: #ffffff !important;
   transition: 0.5s;
-  width: 100%;
-  margin-bottom: 3.3125rem;
+  width: 95%;
 }
 
 .box5worker:hover {
@@ -414,7 +414,7 @@ img {
   transition: 0.5s;
   width: 100%;
   height: 211px;
-  margin-bottom: 3.3125rem;
+  width: 95%;
 }
 
 .box6title:hover {

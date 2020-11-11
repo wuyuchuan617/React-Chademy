@@ -7,10 +7,18 @@ import WorkshopFour from '../components/WorkshopFour'
 import WorkshopFive from '../components/WorkshopFive'
 import WorkshopSix from '../components/WorkshopSix'
 import WorkshopSeven from '../components/WorkshopSeven'
+import WorkshopEight from '../components/WorkshopEight'
 import { withRouter, useParams } from 'react-router-dom'
 
 function WorkshopList(props) {
   const [workshop, setWorkshop] = useState([])
+  const {
+    cartamount,
+    setCartAmount,
+    resetShow,
+    setResetShow,
+    setMycart,
+  } = props
 
   let { sid } = useParams()
   console.log('sid' + sid)
@@ -42,7 +50,14 @@ function WorkshopList(props) {
   return (
     <>
       {workshop.map((item, index) => {
-        return <WorkshopOne key={index} item={item} workshop={workshop} />
+        return (
+          <WorkshopOne
+            key={index}
+            item={item}
+            workshop={workshop}
+            setCartAmount={setCartAmount}
+          />
+        )
       })}
 
       <WorkshopTwo />
@@ -51,6 +66,7 @@ function WorkshopList(props) {
       <WorkshopFive />
       <WorkshopSix />
       <WorkshopSeven />
+      <WorkshopEight />
     </>
   )
 }
