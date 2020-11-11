@@ -7,7 +7,7 @@ function NoReviewCard(props) {
       <div className="container">
         <Carousel itemsToScroll={1} itemsToShow={1}>
           <div className="row justify-content-center">
-            <div className="col-7 w_new_img">
+            <div className="col-6 w_new_img">
               <img src={require('../images/newbg.jpg')} alt="" />
             </div>
             <div className="col-5 d-flex">
@@ -25,7 +25,7 @@ function NoReviewCard(props) {
           </div>
 
           <div className="row justify-content-center">
-            <div className="col-7 w_new_img">
+            <div className="col-6 w_new_img">
               <img src={require('../images/new21.jpg')} alt="" />
             </div>
             <div className="col-5 d-flex">
@@ -43,7 +43,7 @@ function NoReviewCard(props) {
           </div>
 
           <div className="row justify-content-center">
-            <div className="col-7 w_new_img">
+            <div className="col-6 w_new_img">
               <img src={require('../images/new31.jpg')} alt="" />
             </div>
             <div className="col-5 d-flex">
@@ -61,7 +61,7 @@ function NoReviewCard(props) {
           </div>
 
           <div className="row justify-content-center">
-            <div className="col-7 w_new_img">
+            <div className="col-6 w_new_img">
               <img src={require('../images/new41.jpg')} alt="" />
             </div>
             <div className="col-5 d-flex">

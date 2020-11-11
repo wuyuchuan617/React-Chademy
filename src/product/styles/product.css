@@ -755,3 +755,15 @@ body {
 .fade-pager__page.active {
   display: block;
 }
+
+.parallax1 {
+  background-image: url("../images/arv-hero.jpg");
+  min-height: 600px;
+  /* 沒內文時可以看到的最小高度 */
+
+  background-attachment: fixed;
+  /* 固定圖像 */
+  background-position: center center;
+  /* 圖像置中 */
+  background-size: cover;
+}

@@ -114,11 +114,13 @@ function Product(props) {
         return <ProductFour key={index} item={item} product={product} />
       })}
 
-      <div className="w_six_scroll">
+      <div class="parallax1"></div>
+
+      {/* <div className="w_six_scroll">
         {product.map((item, index) => {
           return <ProductSix key={index} item={item} product={product} />
         })}
-      </div>
+      </div> */}
       {product.map((item, index) => {
         return <ProductFive key={index} item={item} product={product} />
       })}

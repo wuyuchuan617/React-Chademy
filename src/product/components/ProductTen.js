@@ -32,6 +32,9 @@ function ProductTen(props) {
             class={
               'fade-pager__indicator' + (statusPhoto === 3 ? ' active' : '')
             }
+            onClick={() => {
+              setStatusPhoto(3)
+            }}
           >
             03
           </li>
@@ -39,6 +42,9 @@ function ProductTen(props) {
             class={
               'fade-pager__indicator' + (statusPhoto === 4 ? ' active' : '')
             }
+            onClick={() => {
+              setStatusPhoto(4)
+            }}
           >
             04
           </li>
@@ -46,6 +52,9 @@ function ProductTen(props) {
             class={
               'fade-pager__indicator' + (statusPhoto === 5 ? ' active' : '')
             }
+            onClick={() => {
+              setStatusPhoto(5)
+            }}
           >
             05
           </li>
@@ -53,6 +62,9 @@ function ProductTen(props) {
             class={
               'fade-pager__indicator' + (statusPhoto === 6 ? ' active' : '')
             }
+            onClick={() => {
+              setStatusPhoto(6)
+            }}
           >
             06
           </li>
@@ -60,6 +72,9 @@ function ProductTen(props) {
             class={
               'fade-pager__indicator' + (statusPhoto === 7 ? ' active' : '')
             }
+            onClick={() => {
+              setStatusPhoto(7)
+            }}
           >
             07
           </li>
@@ -67,6 +82,9 @@ function ProductTen(props) {
             class={
               'fade-pager__indicator' + (statusPhoto === 8 ? ' active' : '')
             }
+            onClick={() => {
+              setStatusPhoto(8)
+            }}
           >
             08
           </li>
@@ -74,6 +92,9 @@ function ProductTen(props) {
             class={
               'fade-pager__indicator' + (statusPhoto === 9 ? ' active' : '')
             }
+            onClick={() => {
+              setStatusPhoto(9)
+            }}
           >
             09
           </li>
@@ -81,6 +102,9 @@ function ProductTen(props) {
             class={
               'fade-pager__indicator' + (statusPhoto === 10 ? ' active' : '')
             }
+            onClick={() => {
+              setStatusPhoto(10)
+            }}
           >
             10
           </li>
