@@ -16,7 +16,7 @@ export default function NavbarPerview(props) {
       // 當滑鼠移開 Navbar 之後，先顯示 transition 的效果，再隱藏。
       timer = setTimeout(() => {
         ref.current.style.display = 'none'
-      }, 700)
+      }, 500)
     } else {
       ref.current.style.display = 'block'
     }
@@ -29,6 +29,7 @@ export default function NavbarPerview(props) {
       ref={ref}
       className={`shit ${activeName ? 'isActive' : ''}`}
       onClick={closeNavbar}
+      onMouseEnter={() => setActiveName('about')}
     >
       <section
         className={`navbarPreview_container ${activeName ? 'isActive' : ''}`}

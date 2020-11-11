@@ -15,7 +15,10 @@ export default function CHNavbar(props) {
   const { scrollY, scrollDirection } = useWindowScroll()
 
   return (
-    <div className={'CHNavbar_container'}>
+    <div
+      className={'CHNavbar_container'}
+      onMouseLeave={() => setActiveName('')}
+    >
       <Navbar
         scrollY={scrollY}
         scrollDirection={scrollDirection}

@@ -73,6 +73,13 @@ function MyNavbar(props) {
 
   let history = useHistory()
 
+  // mouseOver: function () {
+  //   this.menuHover = !0
+  // },
+  // mouseOut: function () {
+  //   this.menuHover = !1
+  // },
+
   const handleLogout = () => {
     // 登出
     const logout = () => {
@@ -110,7 +117,7 @@ function MyNavbar(props) {
         className={`navbar_container ${activeName ? 'show_bg' : ''}`}
       >
         <Navbar.Brand
-          // onClick={() => setActiveName('')}
+          onMouseEnter={() => setActiveName('')}
           as={NavLink}
           to="/"
           className="logo_brand"
@@ -129,14 +136,14 @@ function MyNavbar(props) {
 
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav
-            onMouseEnter={() => setActiveName('about')}
-            onMouseLeave={() => setActiveName('')}
+            // onMouseEnter={() => setActiveName('about')}
+            // onMouseLeave={() => setActiveName('')}
             className="navbar_list justify-content-between text"
           >
             <Nav.Link
               as={NavLink}
               to="/Brand"
-              // onClick={() => setActiveName('Brand')}
+              onMouseEnter={() => setActiveName('Brand')}
               className={['text-center', activeState('Brand')]}
             >
               <div>品牌故事</div>
@@ -146,7 +153,7 @@ function MyNavbar(props) {
             <Nav.Link
               as={NavLink}
               to="/productlist"
-              // onClick={() => setActiveName('product')}
+              onMouseEnter={() => setActiveName('product')}
               className={['text-center', activeState('product')]}
             >
               <div>經典產品</div>
@@ -155,7 +162,7 @@ function MyNavbar(props) {
             <Nav.Link
               as={NavLink}
               to="/secondhand_list"
-              // onClick={() => setActiveName('antique')}
+              onMouseEnter={() => setActiveName('antique')}
               className={['text-center', activeState('antique')]}
             >
               <div>中古市集</div>
@@ -164,7 +171,7 @@ function MyNavbar(props) {
             <Nav.Link
               as={NavLink}
               to="/pages/bid"
-              // onClick={() => setActiveName('bidding')}
+              onMouseEnter={() => setActiveName('bidding')}
               className={['text-center', activeState('bidding')]}
             >
               <div>精品競標</div>
@@ -173,7 +180,7 @@ function MyNavbar(props) {
             <Nav.Link
               as={NavLink}
               to="/Workshop"
-              // onClick={() => setActiveName('Workshop')}
+              onMouseEnter={() => setActiveName('Workshop')}
               className={[
                 'openPreview',
                 'text-center',
@@ -186,7 +193,7 @@ function MyNavbar(props) {
             <Nav.Link
               as={NavLink}
               to="/fundhomepage"
-              // onClick={() => setActiveName('funding')}
+              onMouseEnter={() => setActiveName('funding')}
               className={['text-center', activeState('funding')]}
             >
               <div>新創募資</div>
@@ -195,7 +202,7 @@ function MyNavbar(props) {
             <Nav.Link
               as={NavLink}
               to="/Blog"
-              // onClick={() => setActiveName('Blog')}
+              onMouseEnter={() => setActiveName('Blog')}
               className={['text-center', activeState('Blog')]}
             >
               <div>靈感探索</div>
