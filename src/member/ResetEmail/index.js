@@ -106,7 +106,6 @@ function ResetEmail() {
       </Content>
     </Layout>
   )
-
 }
 
 export default ResetEmail
