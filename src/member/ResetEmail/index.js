@@ -1,5 +1,5 @@
 // import React from 'react'
-import React, { useState } from 'react'
+import React from 'react'
 import './index.scoped.scss'
 
 import request from '../../utils/request'
@@ -12,24 +12,13 @@ function ResetEmail() {
   // 表單元素
   const [form] = Form.useForm()
 
-  // const [smShow, setSmShow] = useState(false)
-  // const [reg, setReg] = useState({
-  //   title: '',
-  //   msg: '',
-  //   data: {},
-  // })
-
   // 表單方法
   const onFinish = (fieldsValue) => {
     const fetchData = async () => {
-      const { user = {} } = JSON.parse(localStorage['reduxState'] || '{}')
-      const { token } = user.users || {}
-
       const response = await request({
         url: `/members/setUserEmail`,
         method: 'POST',
         data: {
-          token: token,
           email: fieldsValue.email,
         },
       })
@@ -40,29 +29,12 @@ function ResetEmail() {
         message.error(msg)
       } else {
         message.success(msg)
+
+        // 成功後清空
+        form.resetFields()
       }
 
       console.log('response.data ', data)
-
-      // 如果成功
-      // if (success) {
-      //   // 設定小彈窗的內容
-      //   setReg({
-      //     success: success,
-      //     title: '重置信箱成功',
-      //     msg: msg,
-      //   })
-
-      //   setSmShow(true) // 顯示小彈窗
-      // } else {
-      //   setReg({
-      //     success: success,
-      //     title: '重置信箱失敗',
-      //     msg: msg,
-      //     data: data,
-      //   })
-      //   setSmShow(true)
-      // }
     }
 
     fetchData()
@@ -75,13 +47,9 @@ function ResetEmail() {
           form={form}
           layout="vertical"
           name="basic"
-          initialValues={{
-            email: '',
-            password: '',
-          }}
+          initialValues={{ email: '' }}
           onFinish={onFinish}
           onValuesChange={(changedValues, allValues) => {
-            console.log(allValues)
             form.setFieldsValue(allValues)
           }}
           className="form_container"
@@ -138,46 +106,7 @@ function ResetEmail() {
       </Content>
     </Layout>
   )
-
-  // return (
-  //   <>
-  //     <Container>
-  //       <Form>
-  //         <h1>重置密碼</h1>
-  //         <div>更改密碼</div>
-  //         <Form.Group controlId="formBasicEmail">
-  //           <Form.Label>新密碼</Form.Label>
-  //           <Form.Control type="password" placeholder="Enter password" />
-  //         </Form.Group>
-
-  //         <Form.Group controlId="formBasicPassword">
-  //           <Form.Label>確認新密碼</Form.Label>
-  //           <Form.Control type="password" placeholder="Enter password" />
-  //         </Form.Group>
-
-  //         <Button
-  //           variant="primary"
-  //           type="submit"
-  //           onClick={async () => {
-  //             // const response = await request({
-  //             //   url: `/members/forgetPwd`,
-  //             //   method: 'POST',
-  //             //   data: { token, password },
-  //             // })
-  //             // console.log(response)
-  //             // if (!response.success) {
-  //             //   message.error(response.msg)
-  //             // } else {
-  //             //   message.success(response.msg)
-  //             // }
-  //           }}
-  //         >
-  //           Submit
-  //         </Button>
-  //       </Form>
-  //     </Container>
-  //   </>
-  // )
+
 }
 
 export default ResetEmail
