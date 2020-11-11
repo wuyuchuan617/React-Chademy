@@ -9,6 +9,7 @@ import { AiOutlineClose,AiOutlinePlus } from "react-icons/ai";
 function Filter(props) {
   const {
     showFilter,
+    item,
     data,
     chairSeat,
     category,
@@ -17,10 +18,14 @@ function Filter(props) {
     chairColor,
     setChairColor,
     getFilterFromSQL,
+    searchProduct,
+    viewfilter,
+    setViewfilter
   } = props
 
-  // 0 : close 1 : open
-  const [viewFilter, setViewFilter] = useState(0)
+
+   // 0 : close 1 : open
+ const [viewFilter, setViewFilter] = useState(0)
 
   const [viewSpread, setViewSpread] = useState(false)
   const [viewSpread1, setViewSpread1] = useState(false)
@@ -28,7 +33,7 @@ function Filter(props) {
   const [viewSpread3, setViewSpread3] = useState(false)
   const [viewSpread4, setViewSpread4] = useState(false)
 
-  console.log(viewFilter)
+  // console.log(viewFilter)
 
   // const newViewFilter = ({ open }) => setViewFilter(open)
 
@@ -88,7 +93,7 @@ function Filter(props) {
     e.preventDefault()
     console.log('Clicked! But prevent default.')
   }
-
+console.log(data)
   return (
     <>
       <div
@@ -185,81 +190,9 @@ function Filter(props) {
               aria-hidden="false"
               style={viewSpread1 ? sidebarContentShow : sidebarContentHide}
             >
-              <Checkbox
-                onChange={() => {
-                  if (data.bid_sid.indexOf(1) !== -1) {
-                    let newCate = category.filter((item) => {
-                      return item !== 1
-                    })
-                    setCategory(newCate)
-                  } else {
-                    setCategory(['chair', ...category])
-                  }
-                }}
-                style={{ display: 'block', marginLeft: 0 }}
-              >
-                競標中
-              </Checkbox>
-              <Checkbox
-                onChange={() => {
-                  if (category.indexOf('armchair') !== -1) {
-                    let newCate = category.filter((item) => {
-                      return item !== 'armchair'
-                    })
-                    setCategory(newCate)
-                  } else {
-                    setCategory(['armchair', ...category])
-                  }
-                }}
-                style={{ display: 'block', marginLeft: 0 }}
-              >
-                即將競標
-              </Checkbox>
-              <Checkbox
-                onChange={() => {
-                  if (category.indexOf('dining') !== -1) {
-                    let newCate = category.filter((item) => {
-                      return item !== 'dining'
-                    })
-                    setCategory(newCate)
-                  } else {
-                    setCategory(['dining', ...category])
-                  }
-                }}
-                style={{ display: 'block', marginLeft: 0 }}
-              >
-                已結標
-              </Checkbox>
-              {/* <Checkbox
-                onChange={() => {
-                  if (category.indexOf('lounge') !== -1) {
-                    let newCate = category.filter((item) => {
-                      return item !== 'lounge'
-                    })
-                    setCategory(newCate)
-                  } else {
-                    setCategory(['lounge', ...category])
-                  }
-                }}
-                style={{ display: 'block', marginLeft: 0 }}
-              >
-                沙發椅
-              </Checkbox>
-              <Checkbox
-                onChange={() => {
-                  if (category.indexOf('stool') !== -1) {
-                    let newCate = category.filter((item) => {
-                      return item !== 'stool'
-                    })
-                    setCategory(newCate)
-                  } else {
-                    setCategory(['stool', ...category])
-                  }
-                }}
-                style={{ display: 'block', marginLeft: 0 }}
-              >
-                吧台椅
-              </Checkbox> */}
+              <p onClick={()=>{ setViewfilter(1)}}>競標中</p>
+              <p onClick={()=>{ setViewfilter(0)}}>即將競標</p>
+              <p onClick={()=>{ setViewfilter(2)}}>已結標</p>
             </ul>
           </div>
 
@@ -289,81 +222,11 @@ function Filter(props) {
               aria-hidden="false"
               style={viewSpread ? sidebarContentShow : sidebarContentHide}
             >
-              <Checkbox
-                onChange={() => {
-                  if (chairSeat.indexOf('皮革') !== -1) {
-                    let newCate = chairSeat.filter((item) => {
-                      return item !== '皮革'
-                    })
-                    setChairSeat(newCate)
-                  } else {
-                    setChairSeat(['皮革', ...chairSeat])
-                  }
-                }}
-                style={{ display: 'block', marginLeft: 0 }}
-              >
-                ADELAIDE
-              </Checkbox>
-              <Checkbox
-                onChange={() => {
-                  if (chairSeat.indexOf('布料') !== -1) {
-                    let newCate = chairSeat.filter((item) => {
-                      return item !== '布料'
-                    })
-                    setChairSeat(newCate)
-                  } else {
-                    setChairSeat(['布料', ...chairSeat])
-                  }
-                }}
-                style={{ display: 'block', marginLeft: 0 }}
-              >
-                IMOLA
-              </Checkbox>
-              <Checkbox
-                onChange={() => {
-                  if (chairSeat.indexOf('藤編') !== -1) {
-                    let newCate = chairSeat.filter((item) => {
-                      return item !== '藤編'
-                    })
-                    setChairSeat(newCate)
-                  } else {
-                    setChairSeat(['藤編', ...chairSeat])
-                  }
-                }}
-                style={{ display: 'block', marginLeft: 0 }}
-              >
-                OSAKA
-              </Checkbox>
-              <Checkbox
-                onChange={() => {
-                  if (chairSeat.indexOf('木頭') !== -1) {
-                    let newCate = chairSeat.filter((item) => {
-                      return item !== '木頭'
-                    })
-                    setChairSeat(newCate)
-                  } else {
-                    setChairSeat(['木頭', ...chairSeat])
-                  }
-                }}
-                style={{ display: 'block', marginLeft: 0 }}
-              >
-                BOSTON
-              </Checkbox>
-              <Checkbox
-                onChange={() => {
-                  if (chairSeat.indexOf('塑膠') !== -1) {
-                    let newCate = chairSeat.filter((item) => {
-                      return item !== '塑膠'
-                    })
-                    setChairSeat(newCate)
-                  } else {
-                    setChairSeat(['塑膠', ...chairSeat])
-                  }
-                }}
-                style={{ display: 'block', marginLeft: 0 }}
-              >
-                CHARLOTTE
-              </Checkbox>
+              <p onClick={()=>{ setViewfilter(3)}}>ADELAIDE</p>
+              <p onClick={()=>{ setViewfilter(4)}}>IMOLA</p>
+              <p onClick={()=>{ setViewfilter(5)}}>OSAKA</p>
+              <p onClick={()=>{ setViewfilter(6)}}>BOSTON</p>
+              <p onClick={()=>{ setViewfilter(7)}}>CHARLOTTE</p>
             </ul>
           </div>
          <div className="refinement seats  " data-refinement-id="seats">
@@ -382,7 +245,7 @@ function Filter(props) {
                   setViewSpread4(false)
                 }}
               >
-                <div className="refinement-title ">顏色</div>
+                <div className="refinement-title ">設計師</div>
                 <div className="spreadPlus">+</div>
               </div>
             </div>
@@ -392,51 +255,9 @@ function Filter(props) {
               aria-hidden="false"
               style={viewSpread2 ? sidebarContentShow : sidebarContentHide}
             >
-              <Checkbox
-                onChange={() => {
-                  if (chairSeat.indexOf('皮革') !== -1) {
-                    let newCate = chairSeat.filter((item) => {
-                      return item !== '皮革'
-                    })
-                    setChairSeat(newCate)
-                  } else {
-                    setChairSeat(['皮革', ...chairSeat])
-                  }
-                }}
-                style={{ display: 'block', marginLeft: 0 }}
-              >
-                Henrik Pedersen
-              </Checkbox>
-              <Checkbox
-                onChange={() => {
-                  if (chairSeat.indexOf('布料') !== -1) {
-                    let newCate = chairSeat.filter((item) => {
-                      return item !== '布料'
-                    })
-                    setChairSeat(newCate)
-                  } else {
-                    setChairSeat(['布料', ...chairSeat])
-                  }
-                }}
-                style={{ display: 'block', marginLeft: 0 }}
-              >
-                Karim Rashid
-              </Checkbox>
-              <Checkbox
-                onChange={() => {
-                  if (chairSeat.indexOf('藤編') !== -1) {
-                    let newCate = chairSeat.filter((item) => {
-                      return item !== '藤編'
-                    })
-                    setChairSeat(newCate)
-                  } else {
-                    setChairSeat(['藤編', ...chairSeat])
-                  }
-                }}
-                style={{ display: 'block', marginLeft: 0 }}
-              >
-                Morten Georgsen
-              </Checkbox>
+              <p onClick={()=>{ setViewfilter(8)}}>Henrik Pedersen</p>
+              <p onClick={()=>{ setViewfilter(9)}}>Karim Rashid</p>
+              <p onClick={()=>{ setViewfilter(10)}}>Morten Georgsen</p>
               
             </ul>
         </div>

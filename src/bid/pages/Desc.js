@@ -1,9 +1,7 @@
-import React, { useState, useEffect,useCallback } from 'react'
-import useInterval from '@use-it/interval';
+import React, { useState, useEffect } from 'react'
+// import useInterval from '@use-it/interval';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-// import Designer from '../component/Designer'
 import Slider from '../component/Slider'
-import { connect } from 'react-redux'
 import Bookmark from '../component/Bookmark'
 import Record from '../component/Record'
 import Chatroom from '../component/Chatroom'
@@ -12,15 +10,17 @@ import Sidepic from '../component/Sidepic'
 import '../styles/desc.scss'
 import { withRouter, useParams } from 'react-router-dom'
 import '../styles/designer.scss'
-import { Button, NavDropdown } from 'react-bootstrap'
+import { Button, Modal } from 'react-bootstrap'
 import Modalsetprice from '../component/Modalsetprice'
-import Countdown,{calcTimeDelta} from 'react-countdown';
+import Countdown from 'react-countdown';
+import Confirm from '../component/Confirm';
 // import { BsFillHeartFill } from 'react-icons/bs'
 // import { HeartOutlined } from '@ant-design/icons';
 import Counter from '../component/Counter'
 import QueueAnim from 'rc-queue-anim';
-// import Counter from '../component/Counter';
-
+import ScrollParallax from 'rc-scroll-anim/lib/ScrollParallax';
+import { BackTop } from 'antd'
+import { UpOutlined } from '@ant-design/icons'
 function Desc(props) {
 
   let {id} = useParams()
@@ -28,10 +28,10 @@ function Desc(props) {
   const heartFill = {
     color: '#C77334',
   }
-  const {price, setPrice,pname, setPname, data,total,setTotal} = props
-  const [startdate, setStartdate] = useState('')
+  const {price, setPrice,pname, setPname, data,total,setTotal,startdate, setStartdate,enddate, setEnddate, setMyCart,setCartAmount,cartamount} = props
+  // const [startdate, setStartdate] = useState('')
   const [starttime, setStarttime] = useState('')
-  const [enddate, setEnddate] = useState('')
+  // const [enddate, setEnddate] = useState('')
   const [endtime, setEndtime] = useState('')
   const [desc, setDesc] = useState([])
   const [material, setMaterial] = useState('')
@@ -45,10 +45,10 @@ function Desc(props) {
   const [part, setPart] = useState([])
   const [visiter, setVisiter] = useState([])
   const [day, setDay] = useState(0)
-  const [hr, setHr] = useState(0)
-  const [min, setMin] = useState(0)
+  const [sdate, setSdate] = useState('')
+  const [edate, setEdate] = useState('')
   const [sec, setSec] = useState(0)
-  
+  const [member2, setMember2] = useState('')
   const [heart, setHeart] = useState(false)
   const [heartItem, setHeartItem] = useState({})
   const [modalShow, setModalShow] = React.useState(false);
@@ -68,11 +68,9 @@ function Desc(props) {
 
     const response = await fetch(request)
     const data = await response.json()
-    // setDay(data[0].countdown.days)
-    // setHr(data[0].countdown.hours)
-    // setMin(data[0].countdown.minutes)
-    // setSec(data[0].countdown.seconds)
-    // setTotal(data[0].countdown.total)
+  console.log('data',data)
+    setSdate(data[0].sdate)
+    setEdate(data[0].edate)
     setStartprice(data[0].startedPrice)
     setVisiter(data[0].visiter)
     setPart(data[0].participant)
@@ -130,9 +128,9 @@ function Desc(props) {
   async function addprice(value){
     const url = 'http://localhost:3001/product/api/record' 
     const copyPrice = price
-    // let date1 = Date now()
+  
     const newPrice = { 
-      'member_sid': id,
+      'member_sid': member2,
       'product_sid': id,
       'bid_sid': id,
       'price' : value,
@@ -140,6 +138,7 @@ function Desc(props) {
       'sid': id,
       // 'time':Date.now(),
     }
+
     const request = new Request(url, {
       method: 'POST',
       body: JSON.stringify(newPrice),
@@ -150,7 +149,6 @@ function Desc(props) {
     })
     const response = await fetch(request)
     const data = await response.json()
-    
     setPrice(+copyPrice + value*1)
   }
 
@@ -159,42 +157,49 @@ function Desc(props) {
        initData()
        getDesigner()
        getMember()
+       getCartFromLocalStorage() 
+
   }, [])
 
   useEffect(()=>{
     setChair(`http://localhost:3000/uploads/${productpic[0]}`)
   },[productpic])
   
-  
-  function getTimeRemaining(startdate,enddate){ 
+  //countdown
+  function getTimeRemaining(enddate){ 
     // const s_time = Date.parse(startdate);
     // const e_time = Date.parse(enddate);
-    const s_time = new Date(startdate).getTime();
+    const s_time = Date.now();
+    // const s_time = new Date(startdate).getTime();
+
     const e_time = new Date(enddate).getTime();
     const total = e_time - s_time
-    
-    return total
+  
+    return total 
   }
 
   useEffect(()=>{
-    const a = getTimeRemaining(startdate,enddate)
+    const a = getTimeRemaining(enddate)
     setTotal(a)
-    setDay(Math.floor( a/(1000*60*60*24) )-1)
+    const secs = Math.floor( a/(1000*60*60*24))-1
+    setDay(secs<0?0:secs)
   },[startdate,enddate])
   //countdown
-  console.log('total',total)
+  // console.log('total',total)
 
-
+//   const Completionist = () =>  setModalShow(true);
+// console.log(setModalShow(true))
   const renderer = ({ hours, minutes, seconds, completed }) => {
     if (completed) {
       // Render a complete state
-      return null
+      return 
     } else {
+      
       // Render a countdown
     //  date1 = new Date(total)
       return (
 
-        <div className="d-flex w-50 align-items-center justify-content-center">
+        <div className="d-flex w-50 align-items-center justify-content-center ">
         <div key="a" className="col-sm-2 days d-flex flex-column">
               {day}<span>days</span>
             </div>
@@ -213,32 +218,63 @@ function Desc(props) {
       );
     }
   };
+  const [show, setShow] = useState(false);
 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const [addmoney,setAddmoney] = useState(0)
 
+//   function numberWithCommas(x) {
+//     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+// }
+// useEffect(()=>{
+//   numberWithCommas(price)
+// },[initData()])
+
+//get member_sid fn
+function getCartFromLocalStorage() {
+  const newMember = JSON.parse(localStorage.getItem('reduxState')).user.users
+    .sid
+ 
+  // console.log('newMember', newMember)
+  // console.log(typeof newMember)
+  setMember2(newMember)
+
+}
+
+//add to cart fn
+// const updateCartToLocalStorage = (item, isAdded = true) => {
+//   console.log(item, isAdded)
+//   const currentCart = JSON.parse(localStorage.getItem('cart')) || []
+
+//   // find if the product in the localstorage with its id
+//   const index = currentCart.findIndex((v) => v.id === item.id)
+
+//   console.log('index', index)
+//   // found: index! == -1
+//   if (index > -1) {
+//     currentCart[index].amount++
+//   } else {
+//     currentCart.push(item)
+//   }
+
+//   localStorage.setItem('cart', JSON.stringify(currentCart))
+//       // 設定資料
+//       setMyCart(currentCart)
+//     }
+
+    
   return (
     <>
       {/* countdown */}
 
       <div className="container">
-        <div  className="row justify-content-center">
+        <div  className="row justify-content-center ">
           {/* <div className=" d-flex align-items-center justify-content-center"> */}
           {total ? 
           <Countdown date={Date.now() + (+total)} renderer={renderer}>
-    </Countdown>:''}
-    {/* <Counter/> */}
-            {/* <div key="a" className="col-sm-2 days d-flex flex-column">
-              {day}<span>days</span>
-            </div>
-            <div className="col-sm-2 days d-flex flex-column">
-            {hr}<span>hours</span>
-            </div>
-            <div className="col-sm-2 days d-flex flex-column">
-              {min}<span>minutes</span>
-            </div>
-            <div className="col-sm-2 days d-flex flex-column">
-            {sec}<span>seconds</span> */}
-            {/* </div> */}
-          {/* </div> */}
+    </Countdown>:'...'}
+   
         </div>
       </div>
       {/* Desc */}
@@ -255,61 +291,58 @@ function Desc(props) {
             })}
       
             </div>
+            
             <div className="info">
+            <ScrollParallax  animation={[
+            // { x: 0, opacity: 1, playScale: [0, 1.5] },
+            { y: 0, opacity: 1, playScale: [0, 1] },
+            { blur: '10px', playScale: [0, 3] },
+          ]}
+          style={{ transform: 'translateY(10px)', filter: 'blur(0px)', opacity: 0 }}>
               <h4 className="text-center">產品簡介</h4>
               <div className="line2"></div>
-              <p>{desc}
-              </p>
+              <p>{desc}</p>
+              </ScrollParallax>
             </div>
             <div className="info">
+            <ScrollParallax  animation={[
+            // { x: 0, opacity: 1, playScale: [0, 1.5] },
+            { y: 0, opacity: 1, playScale: [0, 1] },
+            { blur: '10px', playScale: [0, 1] },
+          ]}
+          style={{ transform: 'translateY(50px)', filter: 'blur(0px)', opacity: 0 }}>
               <h4 className="text-center">產品規格</h4>
               <div className="line2"></div>
               <div className="justify-content-center d-flex">
                 <div className="col-6">
                   <h4 className="text-center">尺寸</h4>
                   <p>{dimensions}</p>
-                  
-                  {/* <table className="mx-auto">
-                    <tbody className="text-right justify-content-center ">
-                      <tr>
-                        <th></th>
-                        <td>76cm</td>
-                      </tr>
-                      <tr>
-                        <th>width</th>
-                        <td>74cm</td>
-                      </tr>
-                      <tr>
-                        <th>Depth</th>
-                        <td>66cm</td>
-                      </tr>
-                      <tr>
-                        <th>Seat Height</th>
-                        <td>55cm</td>
-                      </tr>
-                      <tr>
-                        <th>Armrest Height</th>
-                        <td>54cm</td>
-                      </tr>
-                    </tbody>
-                  </table> */}
+                 
                 </div>
                 <div className="col-6">
                   <h4 className="text-center">材質</h4>
-                  <p className="text-left">
-                    {material}
-                  </p>
+                  <p className="text-left">{material}</p>
+                  
                 </div>
               </div>
+                </ScrollParallax>
             </div>
           </div>
           <div className="line mx-4"></div>
           <div className="bidinfo">
+          {/* 動畫特效 */}
+          <ScrollParallax  animation={[
+            // { x: 0, playScale: [0, 1.5] },
+            { y: 0, opacity:1, playScale: [0, 1] },
+            { blur: '10px', playScale: [0, 3] },
+          ]}
+          style={{ transform: 'translateY(50px)', filter: 'blur(0px)', opacity: 0 }}>
             <h1>{pname}</h1>
             <h5 className="g-pDesc">{pname}單椅</h5>
             <h4>目前金額</h4>
-            <div className="line3 my-4"></div>
+            <div className="line3 my-4 w-100"></div>
             <h2 className="g-bidprice">${price}</h2>
+            
             {/* <BsFillHeartFill
                 onClick={async () => {
                   await setHeart(!heart)
@@ -333,22 +366,54 @@ function Desc(props) {
             {/* <HeartOutlined className="g-heart" style={{ fontSize: '18px', color: '#707070', fill: '#707070'}}/> */}
             <p>出價</p>
             <div className="d-flex justify-content-between">
-            <div onClick={()=>addprice(1000)}
+            <div 
+            onClick={()=>{
+              setAddmoney(1000)
+              // addprice(1000)
+              handleShow()
+              }}
              className="g-price d-flex justify-content-center align-items-center">
-             <span className="text-center">$1,000</span>
+             $1,000
              </div>
-            <div onClick={()=>addprice(5000)}
+    
+              <Modal show={show} onHide={handleClose} >
+                <Modal.Header closeButton>
+                  <Modal.Title>Modal heading</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>確定要加價嗎？</Modal.Body>
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={handleClose}>
+                    不確定
+                  </Button>
+                  <Button variant="primary" onClick={()=>{
+                    addprice(addmoney)
+                    handleClose()
+                 
+                  }}>
+                    確定
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+            <div onClick={()=>{
+              setAddmoney(5000)
+              // addprice(1000)
+              handleShow()
+              }}
             className="g-price d-flex justify-content-center align-items-center">$5,000</div>
-            <div onClick={()=>addprice(10000)}
+            <div onClick={()=>{
+              setAddmoney(10000)
+              // addprice(1000)
+              handleShow()
+              }}
             className="g-price d-flex justify-content-center align-items-center">$10,000</div>
             </div>
             <h4>競標資訊</h4>
-            <div className="line3 my-4"></div>
+            <div className="line3 my-4  w-100"></div>
             <table>
               <tbody className="text-left justify-content-center ">
                 <tr>
                   <th>競標日期</th>
-                  <td>{startdate}~{enddate}</td>
+                  <td>{sdate}~{edate}</td>
                 </tr>
                 <tr>
                   <th>競標時間</th>
@@ -368,20 +433,23 @@ function Desc(props) {
                 </tr>
               </tbody>
             </table>
+            </ScrollParallax>
             
             {/* <button className="chat"></button> */}
-            <Button className="chat" variant="primary" onClick={() => setModalShow(true)}>
+            {/* <Button className="chat" variant="primary" onClick={() => setModalShow(true)}>
             設定自動出價
-            </Button>
+            </Button> */}
 
-      <Modalsetprice
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-        pname={pname} chair={chair}
-      />
+     
+          
           </div>
         </div>
-      
+        <ScrollParallax  animation={[
+            // { x: 0, opacity: 1, playScale: [0, 1.5] },
+            { y: 0, opacity: 1, playScale: [0, 1] },
+            { blur: '10px', playScale: [0, 3] },
+          ]}
+          style={{ transform: 'translateY(10px)', filter: 'blur(0px)', opacity: 0 }}>
       <Bookmark {...props}/>
 
       <div className="row">
@@ -415,7 +483,14 @@ function Desc(props) {
       </div>
         </div>
         </div>
+      </ScrollParallax>
         {/* <QueueAnim delay={300} duration={2000} type={['right', 'left']} leaveReverse> */}
+        <ScrollParallax  animation={[
+            // { x: 0, opacity: 1, playScale: [0, 1.5] },
+            { y: 0, opacity: 1, playScale: [0, 1] },
+            { blur: '10px', playScale: [0, 1] },
+          ]}
+          style={{ transform: 'translateY(70px)', filter: 'blur(0px)', opacity: 0 }}>
       <div key="a" className="container">
         <div className="d-flex align-items-center ">
           <div className="designer-des d-flex align-items-center px-5">
@@ -433,7 +508,14 @@ function Desc(props) {
           </div>
         </div>
       </div>
+      </ScrollParallax>
       {/* </QueueAnim> */}
+      <ScrollParallax  animation={[
+            // { x: 0, opacity: 1, playScale: [0, 1.5] },
+            { y: 0, opacity: 1, playScale: [0, 1] },
+            { blur: '10px', playScale: [0, 1] },
+          ]}
+          style={{ transform: 'translateY(70px)', filter: 'blur(0px)', opacity: 0 }}>
       <h2 className="grace-related-product text-center">相關產品</h2>
         <div className="row">
         <Carousel itemsToScroll={3} itemsToShow={3}>
@@ -444,20 +526,42 @@ function Desc(props) {
       )}
       </Carousel>
       </div>
+      </ScrollParallax>
       </div>
-     
+      <BackTop
+          visibilityHeight="2000"
+          style={{
+            height: '40',
+            width: '40',
+            lineHeight: '33px',
+            color: 'white',
+            fontSize: '16px',
+            borderRadius: '0',
+            textAlign: 'center',
+            backgroundColor: '#c77334',
+          }}
+        >
+          <div>
+            <UpOutlined
+              style={{
+                color: 'white',
+                fontSize: '18px',
+                borderRadius: '0',
+                backgroundColor: '#c77334',
+                marginTop: '-3px',
+              }}
+            />
+          </div>
+        </BackTop>
+      <Modalsetprice
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        // pname={pname} chair={chair} price={price} setMyCart={setMyCart}
+        {...props}
+      />
     </>
   )
 }
 
 
-// const mapStateToProps = (store) => {
-//   return { desc: store.bid}
-// }
-// export default connect(mapStateToProps, {
-//   getData,
-//   getBidData,
-//   initAct,
-//   initActAsync,
-// })(Desc)
 export default Desc

@@ -1,17 +1,11 @@
-.navbar_contanier {
+.navbar_container {
   z-index: 1;
   font-family: 'Josefin Sans';
-
-  background-color: orange;
-  // width: 100%;
-  // max-width: 700px;
-  // margin: 0 auto;
   // 透明
   background-color: rgba(255, 255, 255, 0);
 
   top: 0;
-  transition: top 0.8s;
-
+  transition: all ease-out .5s;
   // navbar 有選項時的顏色
   &.show_bg {
     background-color: #dbd9d5;

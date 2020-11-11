@@ -7,7 +7,12 @@ function Pages(){
     const [price, setPrice] = useState(99)
     const [pname, setPname] = useState('')
     const [total, setTotal] = useState(0)
+    const [totalb, setTotalb] = useState(null)
     const [data, setData] = useState([])
+    const [startdate, setStartdate] = useState('')
+    const [enddate, setEnddate] = useState('')
+    const [s_date, setS_date] = useState(null)
+    const [e_date, setE_date] = useState(null)
 
     async function initBidData() {
       const url = 'http://localhost:3001/product/api/record/list'
@@ -25,6 +30,8 @@ function Pages(){
       const data1 = await response.json()
       // console.log('data1',data1)
       setData(data1)
+      // setS_date(data1.startingDate)
+      // setE_date(data1.bidDate)
       
     }
 
@@ -75,16 +82,15 @@ function Pages(){
     //     // console.log(`[timer] == stop count down ${countDownSecond}s  ==`)
     //   }
     // }, [total]) // 相依 prop / state 值的 Effect
-    // {remainSecond} setRemainSecond={setRemainSecond} day={day} hr={hr} min={min} sec={sec}
-
+  
     return(
         <>
         <Switch>
         <Route path="/pages/bid">
-        <Bid price={price} total={total} setTotal={setTotal} setPrice={setPrice} pname={pname} setPname={setPname} data={data} setData={setData} />
+        <Bid price={price} setTotalb={setTotalb} total={total} totalb={totalb} setTotal={setTotal} setPrice={setPrice} pname={pname} setPname={setPname} data={data} setData={setData} startdate={startdate} enddate={enddate} s_date={s_date} e_date={e_date}/>
           </Route>
           <Route path="/pages/desc/record/:id?">
-          <Desc price={price} setPrice={setPrice} total={total} setTotal={setTotal} pname={pname} setPname={setPname} data={data}/>
+          <Desc price={price} setPrice={setPrice} total={total} setTotal={setTotal} pname={pname} setPname={setPname} data={data} setStartdate={setStartdate} startdate={startdate} enddate={enddate} setEnddate={setEnddate}/>
           </Route>
           <Route path="/pages/desc/chatroom/:id?">
           <Desc price={price} setPrice={setPrice} data={data} total={total} setTotal={setTotal} pname={pname} setPname={setPname} />

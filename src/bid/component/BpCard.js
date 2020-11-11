@@ -16,7 +16,7 @@ import Countdown from 'react-countdown';
 // const ENDPOINT = "http://127.0.0.1:8080";
 
 function BpCard(props){
-  const {item,total,setTotal,data, setData,remainSecond,setRemainSecond} = props
+  const {item,totalb,setTotal,data, setData,s_date,e_date,setTotalb} = props
   // const [response, setResponse] = useState("");
 
   // useEffect(() => {
@@ -25,9 +25,28 @@ function BpCard(props){
   //     setResponse(data);
   //   });
   // }, []);
- 
+// console.log(totalb)
         //countdown
+        // let aap= null
+        let ss = item.startingDate
+        let ee = item.bidDate
+        // console.log('ss',ss)
+        // console.log('ee',ee)
+        function getTimeRemaining(startdate,enddate){ 
+          // const s_time = Date.parse(startdate);
+          // const e_time = Date.parse(enddate);
+          const s_time = new Date(startdate).getTime();
+          const e_time = new Date(enddate).getTime();
+          const total = e_time - s_time
+          return total
+        }
+        useEffect(()=>{
+          let a = new Date(item.bidDate).getTime() - Date.now()
+          setTotalb(a) 
+          // console.log('a',a)
+        },[])
         const Completionist = () => <span>Sold Out!</span>;
+        // console.log('totalb',totalb)
 
         // Renderer callback with condition
         const renderer = ({ hours, minutes, seconds, completed }) => {
@@ -41,7 +60,8 @@ function BpCard(props){
         };
     
   let chair = `http://localhost:3000/uploads/${item.pic[1]}`
-  
+  // console.log('dateee', new Date(item.bidDate).getTime() - Date.now())
+  // console.log('dateee234', Date.now())
     return(
         <>
        
@@ -49,16 +69,27 @@ function BpCard(props){
        <Link to={`/pages/desc/record/${item.sid}`}
        className="grace">
             <Card className="grace-move-card rounded-0 p-0">
-              <div className=" grace-tag grace-tag-time d-flex align-items-center justify-content-center rounded-0">
-              {total ? 
-          <Countdown date={Date.now() + (+total)} renderer={renderer}>
+            {(item.bid_sid===2 )?null:(
+              <div className=" grace-tag grace-tag-both d-flex align-items-center justify-content-center rounded-0">
+              {totalb ? 
+          <Countdown date={new Date(item.bidDate).getTime() - Date.now()} renderer={renderer}>
     </Countdown>:''}
               </div>
-              <div className="grace-tag-time d-flex align-items-center justify-content-center rounded-0 grace-tag-p">
-              
-                <span>${item.current_price}</span>
+              )}
+              {(item.bid_sid=== 0 )?(
+              <div className=" grace-tag grace-tag-both d-flex align-items-center justify-content-center rounded-0">
+              即將競標
               </div>
+              ):null}
+              {(item.bid_sid===2 )?null:(
+              <div className="grace-tag-both d-flex align-items-center justify-content-center rounded-0 grace-tag-p">${item.current_price}</div>
+              )}
               <Card.Img className="rounded-0" variant="top" src={chair} />
+              
+              {(item.bid_sid!==2)?null:(
+              <div className="g_mask"></div>)}
+              {(item.bid_sid!==2)?null:(
+              <div className=" grace-tag-close grace-tag-both d-flex align-items-center justify-content-center rounded-0">已結標</div>)}
               <Card.Body>
                 <Card.Text>
                   <div className="d-flex justify-content-between">
@@ -79,7 +110,7 @@ function BpCard(props){
                       </div>
                       <div className="text-right">
                         <p className="card-text mb-2 mt-0 grace-point grace-time">
-                          {item.bidDate}
+                          {item.edate}
                         </p>
                         <p className="card-text my-2 mt-0 grace-point grace-time">
                           {item.bidTime}
@@ -88,13 +119,13 @@ function BpCard(props){
                     </div>
                   </div>
                   <div className="card-body p-0 py-2 align-self-end d-flex justify-content-end">
-                    <div className="grace-btn2 rounded-0 d-flex justify-content-center align-items-center">
-                      <span>
-                      下標
-                      </span>
+                  {(item.bid_sid===2 ||item.bid_sid===0 )?null:(
+
+                    <div className="grace-btn2 rounded-0 d-flex justify-content-center align-items-center"><span>下標</span>
                     </div>
-                    
+                    )}
                   </div>
+                  
                 </Card.Text>
               </Card.Body>
             </Card>         
