@@ -57,10 +57,10 @@ function Finish(props) {
         <br />
         <h3>{orderNo}</h3>
         <div className="j_wrap">
-          <Link to="#" className="j_btn6">
+          <Link to="/productlist" className="j_btn6">
             <div className="j_btn6">繼續購物</div>
           </Link>
-          <Link tp="#" className="j_btn6">
+          <Link to="/member-center/myorder" className="j_btn6">
             <div className="j_btn6">查看訂單</div>
           </Link>
         </div>
