@@ -3,14 +3,15 @@ import Bid from './Bid'
 import Desc from './Desc'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
-function Pages(){
+function Pages(props){
+  const {setCartAmount, cartamount}=props
     const [price, setPrice] = useState(99)
     const [pname, setPname] = useState('')
-    const [total, setTotal] = useState(0)
+    
     const [totalb, setTotalb] = useState(null)
     const [data, setData] = useState([])
     const [startdate, setStartdate] = useState('')
-    const [enddate, setEnddate] = useState('')
+    
     const [s_date, setS_date] = useState(null)
     const [e_date, setE_date] = useState(null)
 
@@ -87,13 +88,13 @@ function Pages(){
         <>
         <Switch>
         <Route path="/pages/bid">
-        <Bid price={price} setTotalb={setTotalb} total={total} totalb={totalb} setTotal={setTotal} setPrice={setPrice} pname={pname} setPname={setPname} data={data} setData={setData} startdate={startdate} enddate={enddate} s_date={s_date} e_date={e_date}/>
+        <Bid price={price} setTotalb={setTotalb} totalb={totalb} setPrice={setPrice} pname={pname} setPname={setPname} data={data} setData={setData} startdate={startdate} s_date={s_date} e_date={e_date}/>
           </Route>
           <Route path="/pages/desc/record/:id?">
-          <Desc price={price} setPrice={setPrice} total={total} setTotal={setTotal} pname={pname} setPname={setPname} data={data} setStartdate={setStartdate} startdate={startdate} enddate={enddate} setEnddate={setEnddate}/>
+          <Desc price={price} setPrice={setPrice}  pname={pname} setPname={setPname} data={data} setStartdate={setStartdate} startdate={startdate} setCartAmount={setCartAmount} cartamount={cartamount} />
           </Route>
           <Route path="/pages/desc/chatroom/:id?">
-          <Desc price={price} setPrice={setPrice} data={data} total={total} setTotal={setTotal} pname={pname} setPname={setPname} />
+          <Desc price={price} setPrice={setPrice} data={data}  pname={pname} setPname={setPname} setCartAmount={setCartAmount} cartamount={cartamount}/>
           </Route>
           {/* <Route path="/pages/desc/spec/:id?">
           <Desc price={price} setPrice={setPrice} />

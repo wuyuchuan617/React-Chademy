@@ -1,9 +1,11 @@
 import React from 'react'
 import record from '../styles/record.scss'
 import pic from '../myfile/Karim-hero-tablet.jpg'
+import useInterval from 'use-interval'
 
 function Record(props){
-    const {item} = props
+    const {item, getMember} = props
+    useInterval(()=>{getMember()},2000)
     // item.avatar
     return(
         <>

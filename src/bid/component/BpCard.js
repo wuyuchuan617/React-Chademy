@@ -72,7 +72,7 @@ function BpCard(props){
             {(item.bid_sid===2 )?null:(
               <div className=" grace-tag grace-tag-both d-flex align-items-center justify-content-center rounded-0">
               {totalb ? 
-          <Countdown date={new Date(item.bidDate).getTime() - Date.now()} renderer={renderer}>
+          <Countdown date={new Date(item.bidDate).getTime()} renderer={renderer}>
     </Countdown>:''}
               </div>
               )}

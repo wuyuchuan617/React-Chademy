@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect,useSelector } from 'react'
 // import useInterval from '@use-it/interval';
+import useInterval from 'use-interval'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import Slider from '../component/Slider'
 import Bookmark from '../component/Bookmark'
@@ -28,10 +29,11 @@ function Desc(props) {
   const heartFill = {
     color: '#C77334',
   }
-  const {price, setPrice,pname, setPname, data,total,setTotal,startdate, setStartdate,enddate, setEnddate, setMyCart,setCartAmount,cartamount} = props
+  const {price, setPrice,pname, setPname, data,startdate, setStartdate, setMyCart,setCartAmount,cartamount} = props
   // const [startdate, setStartdate] = useState('')
   const [starttime, setStarttime] = useState('')
-  // const [enddate, setEnddate] = useState('')
+  const [enddate, setEnddate] = useState('')
+  const [total, setTotal] = useState(0)
   const [endtime, setEndtime] = useState('')
   const [desc, setDesc] = useState([])
   const [material, setMaterial] = useState('')
@@ -53,8 +55,11 @@ function Desc(props) {
   const [heartItem, setHeartItem] = useState({})
   const [modalShow, setModalShow] = React.useState(false);
   
+  // 判斷登入的狀態
+// const isLogged = useSelector((state) => state.user.logged)
+
   async function initData() {
-    
+
     const url = `http://localhost:3001/product/api/bid/${id}`
 
     const request = new Request(url, {
@@ -169,8 +174,8 @@ function Desc(props) {
   function getTimeRemaining(enddate){ 
     // const s_time = Date.parse(startdate);
     // const e_time = Date.parse(enddate);
-    const s_time = Date.now();
-    // const s_time = new Date(startdate).getTime();
+    // const s_time = Date.now();
+    const s_time = new Date(startdate).getTime();
 
     const e_time = new Date(enddate).getTime();
     const total = e_time - s_time
@@ -182,21 +187,22 @@ function Desc(props) {
     const a = getTimeRemaining(enddate)
     setTotal(a)
     const secs = Math.floor( a/(1000*60*60*24))-1
-    setDay(secs<0?0:secs)
+    setDay(secs<0?0:`0${secs}`)
   },[startdate,enddate])
   //countdown
   // console.log('total',total)
 
-//   const Completionist = () =>  setModalShow(true);
+  // const Completionist = () =>  setModalShow(true);
 // console.log(setModalShow(true))
   const renderer = ({ hours, minutes, seconds, completed }) => {
     if (completed) {
       // Render a complete state
-      return 
-    } else {
-      
+      setTimeout(()=>{
+        setModalShow(true);
+      }, 200);
+      return '';
+    } else {   
       // Render a countdown
-    //  date1 = new Date(total)
       return (
 
         <div className="d-flex w-50 align-items-center justify-content-center ">
@@ -242,28 +248,9 @@ function getCartFromLocalStorage() {
 
 }
 
-//add to cart fn
-// const updateCartToLocalStorage = (item, isAdded = true) => {
-//   console.log(item, isAdded)
-//   const currentCart = JSON.parse(localStorage.getItem('cart')) || []
-
-//   // find if the product in the localstorage with its id
-//   const index = currentCart.findIndex((v) => v.id === item.id)
-
-//   console.log('index', index)
-//   // found: index! == -1
-//   if (index > -1) {
-//     currentCart[index].amount++
-//   } else {
-//     currentCart.push(item)
-//   }
-
-//   localStorage.setItem('cart', JSON.stringify(currentCart))
-//       // 設定資料
-//       setMyCart(currentCart)
-//     }
-
-    
+// useEffect(()=>{
+//   getMember()
+// },[price])
   return (
     <>
       {/* countdown */}
@@ -271,8 +258,9 @@ function getCartFromLocalStorage() {
       <div className="container">
         <div  className="row justify-content-center ">
           {/* <div className=" d-flex align-items-center justify-content-center"> */}
+          {/* <Countdown date={Date.now() + (+total) } renderer={renderer}> */}
           {total ? 
-          <Countdown date={Date.now() + (+total)} renderer={renderer}>
+          <Countdown date={new Date(enddate).getTime() } renderer={renderer}>
     </Countdown>:'...'}
    
         </div>
@@ -365,6 +353,7 @@ function getCartFromLocalStorage() {
 
             {/* <HeartOutlined className="g-heart" style={{ fontSize: '18px', color: '#707070', fill: '#707070'}}/> */}
             <p>出價</p>
+            {/* {isLogged ? ( */}
             <div className="d-flex justify-content-between">
             <div 
             onClick={()=>{
@@ -407,6 +396,7 @@ function getCartFromLocalStorage() {
               }}
             className="g-price d-flex justify-content-center align-items-center">$10,000</div>
             </div>
+            {/* ):null} */}
             <h4>競標資訊</h4>
             <div className="line3 my-4  w-100"></div>
             <table>
@@ -436,9 +426,9 @@ function getCartFromLocalStorage() {
             </ScrollParallax>
             
             {/* <button className="chat"></button> */}
-            {/* <Button className="chat" variant="primary" onClick={() => setModalShow(true)}>
+            <Button className="chat" variant="primary" onClick={() => setModalShow(true)}>
             設定自動出價
-            </Button> */}
+            </Button>
 
      
           
@@ -466,10 +456,12 @@ function getCartFromLocalStorage() {
                     <th className="w-25">總金額</th>
                     <th className="w-25">時間</th>
                 </tr>
-      {member.map((item,index)=>{
-        if(index>5) return null
-        return <Record key={index} item={item} {...props} />}
-      )}
+        {/* if(index>5) return null */}
+        {/* return  */}
+      {member.map((item,index)=>
+        <Record key={index} item={item} {...props} getMember={getMember} />
+        )}
+      {/* )} */}
         </tbody>
       </table>
       </Route>
@@ -556,7 +548,7 @@ function getCartFromLocalStorage() {
       <Modalsetprice
         show={modalShow}
         onHide={() => setModalShow(false)}
-        // pname={pname} chair={chair} price={price} setMyCart={setMyCart}
+        pname={pname} price={price} productpic={productpic} chair={chair}
         {...props}
       />
     </>
