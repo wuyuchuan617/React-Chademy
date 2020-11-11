@@ -3,9 +3,9 @@ import React, { useState, useEffect } from 'react'
 function Custom(props) {
   // 把三種狀態存陣列，最後join
 
-  const [arm, setArm] = useState('')
-  const [wood, setWood] = useState('')
-  const [seat, setSeat] = useState('')
+  const [arm, setArm] = useState('noarm')
+  const [wood, setWood] = useState('white')
+  const [seat, setSeat] = useState('weaved')
 
   const [returnData, setReturnData] = useState({})
 
@@ -36,6 +36,10 @@ function Custom(props) {
       setReturnData(item)
     })
   }
+
+  useEffect(() => {
+    getCustomFromSQL()
+  }, [arm, wood, seat])
 
   return (
     <>
@@ -82,14 +86,6 @@ function Custom(props) {
                 <option value="brown">深咖啡色</option>
               </select>
             </div>
-            <button
-              className="w_cart-btn"
-              onClick={() => {
-                getCustomFromSQL()
-              }}
-            >
-              confirm
-            </button>
           </div>
         </div>
       </div>
