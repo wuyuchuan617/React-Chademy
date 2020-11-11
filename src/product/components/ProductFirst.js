@@ -294,13 +294,11 @@ function ProductFirst(props) {
                   Adelaide是一款優雅的小傑作，無論從哪個角度看都美貌不減，而且無比舒適。纖細的有機線條營造了輕盈有機外觀，邀請您坐下來欣賞精緻的丹麥設計。
                 </p>
               </div>
-
               <div className="product-desc">
                 <p className="w_comP">
                   Adelaide是一款優雅的小傑作，無論從哪個角度看都美貌不減，而且無比舒適。纖細的有機線條營造了輕盈有機外觀，邀請您坐下來欣賞精緻的丹麥設計。
                 </p>
               </div>
-
               {/* <div className="choose-area">
                 <p>選擇木頭：</p>
                 <div className="d-flex">
@@ -311,8 +309,8 @@ function ProductFirst(props) {
                   <div className="choose-wood"></div>
                 </div>
               </div> */}
-
-              {/* <div className="choose-area">
+              {/* /*{' '}
+              <div className="choose-area">
                 <p>選擇皮革：</p>
                 <div className="d-flex">
                   <div className="choose-wood"></div>
@@ -321,13 +319,8 @@ function ProductFirst(props) {
                   <div className="choose-wood"></div>
                   <div className="choose-wood"></div>
                 </div>
-<<<<<<< Updated upstream
-              </div>
-              <li className="share-facebook">
-=======
               </div> */}
-              <li class="share-facebook">
->>>>>>> Stashed changes
+              <li className="share-facebook">
                 <a
                   rel="nofollow noopener noreferrer"
                   data-shared="sharing-facebook-48785"
@@ -342,14 +335,12 @@ function ProductFirst(props) {
                   </span>
                 </a>
               </li>
-
               <a
                 href="https://www.facebook.com/sharer.php?u=https://www.cyberbiz.co/support/?p=855"
                 target="_blank"
               >
                 aaa
               </a>
-
               {isLogged ? (
                 <button
                   className="w_cart-btn"
