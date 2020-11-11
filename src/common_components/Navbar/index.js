@@ -36,6 +36,7 @@ function MyNavbar(props) {
     setResetShow,
   } = props
   const [clickcart, setClickCart] = useState(false)
+
   function getCartFromLocalStorage() {
     const newCart = localStorage.getItem('cart') || '[]'
     // console.log(JSON.parse(newCart))
@@ -43,9 +44,11 @@ function MyNavbar(props) {
     console.log(newCart2.length)
     setCartAmount(newCart2.length)
   }
+
   useEffect(() => {
     getCartFromLocalStorage()
   }, [])
+
   useEffect(() => {
     getCartFromLocalStorage()
   }, [cartamount])
@@ -82,7 +85,7 @@ function MyNavbar(props) {
 
     request({ url: 'members/logout', method: 'POST' })
       .then(() => {
-        message.success(' 登出成功 ')
+        message.success('登出成功')
         logout()
       })
       .catch(() => logout())
@@ -92,7 +95,6 @@ function MyNavbar(props) {
     <>
       <Navbar
         ref={(element) => {
-          // console.log(3, element)
           // NOTE: 排除 el 為 null
           if (!element) return
 
@@ -105,10 +107,10 @@ function MyNavbar(props) {
         collapseOnSelect
         expand="lg"
         fixed="top"
-        className={`navbar_contanier ${activeName ? 'show_bg' : ''}`}
+        className={`navbar_container ${activeName ? 'show_bg' : ''}`}
       >
         <Navbar.Brand
-          onClick={() => setActiveName('')}
+          // onClick={() => setActiveName('')}
           as={NavLink}
           to="/"
           className="logo_brand"
@@ -126,12 +128,15 @@ function MyNavbar(props) {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
         <Navbar.Collapse id="responsive-navbar-nav">
-          {/* <Nav className="m-auto justify-content-between"> */}
-          <Nav className="navbar_list  justify-content-between text">
+          <Nav
+            onMouseEnter={() => setActiveName('about')}
+            onMouseLeave={() => setActiveName('')}
+            className="navbar_list justify-content-between text"
+          >
             <Nav.Link
               as={NavLink}
               to="/Brand"
-              onClick={() => setActiveName('Brand')}
+              // onClick={() => setActiveName('Brand')}
               className={['text-center', activeState('Brand')]}
             >
               <div>品牌故事</div>
@@ -141,7 +146,7 @@ function MyNavbar(props) {
             <Nav.Link
               as={NavLink}
               to="/productlist"
-              onClick={() => setActiveName('product')}
+              // onClick={() => setActiveName('product')}
               className={['text-center', activeState('product')]}
             >
               <div>經典產品</div>
@@ -150,7 +155,7 @@ function MyNavbar(props) {
             <Nav.Link
               as={NavLink}
               to="/secondhand_list"
-              onClick={() => setActiveName('antique')}
+              // onClick={() => setActiveName('antique')}
               className={['text-center', activeState('antique')]}
             >
               <div>中古市集</div>
@@ -159,7 +164,7 @@ function MyNavbar(props) {
             <Nav.Link
               as={NavLink}
               to="/pages/bid"
-              onClick={() => setActiveName('bidding')}
+              // onClick={() => setActiveName('bidding')}
               className={['text-center', activeState('bidding')]}
             >
               <div>精品競標</div>
@@ -168,8 +173,12 @@ function MyNavbar(props) {
             <Nav.Link
               as={NavLink}
               to="/Workshop"
-              onClick={() => setActiveName('Workshop')}
-              className={['text-center', activeState('Workshop')]}
+              // onClick={() => setActiveName('Workshop')}
+              className={[
+                'openPreview',
+                'text-center',
+                activeState('Workshop'),
+              ]}
             >
               <div>設計學院</div>
               <div className="text-center">WORKSHOP</div>
@@ -177,7 +186,7 @@ function MyNavbar(props) {
             <Nav.Link
               as={NavLink}
               to="/fundhomepage"
-              onClick={() => setActiveName('funding')}
+              // onClick={() => setActiveName('funding')}
               className={['text-center', activeState('funding')]}
             >
               <div>新創募資</div>
@@ -186,7 +195,7 @@ function MyNavbar(props) {
             <Nav.Link
               as={NavLink}
               to="/Blog"
-              onClick={() => setActiveName('Blog')}
+              // onClick={() => setActiveName('Blog')}
               className={['text-center', activeState('Blog')]}
             >
               <div>靈感探索</div>
