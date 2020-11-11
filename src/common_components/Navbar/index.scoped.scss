@@ -49,6 +49,7 @@
     }
     .logo_brand {
       margin-left: 80px;
+      min-width: 50px;
     }
   }
   .icon {
@@ -58,5 +59,13 @@
 
   .icon_con {
     margin-right: 70px;
+  }
+}
+
+// 1024px 以下
+@media screen and (max-width: 1024px) {
+  .logo_brand {
+    margin-left: 0;
+    width: 50px;
   }
 }
