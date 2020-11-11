@@ -5,12 +5,16 @@ import Filter from '../components/SecondhandList/Filter'
 import ProductList from '../components/SecondhandList/ProductList'
 import Breadcrumb from '../../common_components/Breadcrumb'
 import '../styles/secondhandList.css'
+import { useSelector } from 'react-redux'
 
-function SecondhandList() {
+function SecondhandList(props) {
   const [product, setProduct] = useState([])
   const [viewProduct, setViewProduct] = useState(8)
   const [lastProductId, setLastProductId] = useState(0)
-
+  // props解構
+  const { setCartAmount, cartamount, resetShow, setResetShow } = props
+  // 判斷登入的狀態
+  const isLogged = useSelector((state) => state.user.logged)
   /**
    * 用來判斷是不是最後一筆資料
    */
@@ -118,7 +122,17 @@ function SecondhandList() {
           <Filter searchProduct={searchProduct} />
           <div className="i_product d-flex flex-wrap">
             {product.slice(0, viewProduct).map((item, index) => {
-              return <ProductList key={index} item={item} />
+              return (
+                <ProductList
+                  key={index}
+                  item={item}
+                  setCartAmount={setCartAmount}
+                  cartamount={cartamount}
+                  isLogged={isLogged}
+                  resetShow={resetShow}
+                  setResetShow={setResetShow}
+                />
+              )
             })}
             <div className="i_end">
               <hr />

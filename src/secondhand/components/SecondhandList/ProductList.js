@@ -11,6 +11,8 @@ function ProductList(props) {
   const heartFill = {
     color: '#C77334',
   }
+  const [memberData, setMemberData] = useState({})
+  const [allMember, setAllMember] = useState({})
 
   async function getHeartFromServer() {
     const url = 'http://localhost:3001/man_product/heart/' + item.productname
@@ -88,6 +90,67 @@ function ProductList(props) {
   useEffect(() => {
     getHeartFromServer()
   }, [])
+
+  /**
+   * 撈會員資料
+   */
+  async function getItemFromSQL4() {
+    const url =
+      'http://localhost:3001/man_secondhand/member_data/' + item.member_sid
+
+    const request = new Request(url, {
+      method: 'GET',
+
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    // const response = await fetch(request).then((v) => console.log(v))
+    const response = await fetch(request)
+    const data = await response.json()
+
+    console.log('response' + response) // [object Response]
+    console.log('data' + data) // [object Object]
+
+    setMemberData(data)
+  }
+  useEffect(() => {
+    getItemFromSQL4()
+    getItemFromSQL3()
+  }, [])
+
+  /**
+   * 撈會員全部資料
+   */
+  async function getItemFromSQL3() {
+    const url = 'http://localhost:3001/man_secondhand/member_data'
+
+    const request = new Request(url, {
+      method: 'GET',
+
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    // const response = await fetch(request).then((v) => console.log(v))
+    const response = await fetch(request)
+    const data = await response.json()
+
+    console.log('response' + response) // [object Response]
+    console.log('data' + data) // [object Object]
+
+    setAllMember(data)
+  }
+  let memberImg = ''
+  for (let i = 0; i < allMember.length; i++) {
+    if (item.member_sid === allMember[i].sid) {
+      memberImg = allMember[i].avatar
+    } else {
+      memberImg = Img
+    }
+  }
   return (
     <div className="i_card" id={item.sid}>
       <div className="i_card_img">
@@ -132,8 +195,8 @@ function ProductList(props) {
       <div className="i_card_info mt-4 d-flex justify-content-between">
         <div className="i_user">
           <div className="i_user_name">
-            <img src={Img} alt="" />
-            <p>Linda325</p>
+            <img src={memberImg} alt="" />
+            <p>{memberData.length > 0 ? memberData.name : 'Linda325'}</p>
           </div>
           <div className="i_user_star mt-2">
             <Rate

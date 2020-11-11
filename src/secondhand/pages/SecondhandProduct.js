@@ -8,8 +8,14 @@ import Breadcrumb from '../components/Breadcrumb'
 import IconArea from '../components/SecondhandProduct/IconArea'
 import Courses2 from '../components/SecondhandProduct/Courses2'
 import Slider from '../components/SecondhandProduct/Slider'
+import { useSelector } from 'react-redux'
 
 function SecondhandProduct(props) {
+  // 判斷登入的狀態
+  const isLogged = useSelector((state) => state.user.logged)
+
+  // props解構
+  const { setCartAmount, cartamount, resetShow, setResetShow } = props
   const [product, setProduct] = useState([])
 
   let { sid } = useParams()
@@ -51,7 +57,18 @@ function SecondhandProduct(props) {
             return <ImgArea key={index} item={item} product={product} />
           })}
           {product.map((item, index) => {
-            return <TextArea key={index} item={item} product={product} />
+            return (
+              <TextArea
+                key={index}
+                item={item}
+                product={product}
+                setCartAmount={setCartAmount}
+                cartamount={cartamount}
+                isLogged={isLogged}
+                resetShow={resetShow}
+                setResetShow={setResetShow}
+              />
+            )
           })}
         </div>
         <Filter />

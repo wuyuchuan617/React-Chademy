@@ -4,7 +4,15 @@ import { useSelector } from 'react-redux'
 function TextArea(props) {
   const isLogged = useSelector((state) => state.user.logged)
 
-  const { item } = props
+  const {
+    item,
+    sid,
+    cartamount,
+    setCartAmount,
+    resetShow,
+    setResetShow,
+  } = props
+
   const [mycart, setMycart] = useState([])
   const [productName, setProductName] = useState('')
 
@@ -52,13 +60,14 @@ function TextArea(props) {
       <div
         className="i_btn5 text-center mt-4"
         onClick={() => {
+          setCartAmount(cartamount + 1)
           updateCartToLocalStorage({
             product_no: item.product_no,
-            product_name: item.productname,
-            product_photo: item.photo,
+            id: item.productname,
+            img: item.photo,
             amount: 1,
             price: item.price,
-            category: 1,
+            category: 5,
           })
         }}
       >
