@@ -46,13 +46,13 @@ function SecondhandProduct(props) {
   }, [])
   return (
     <>
-      <div class="container custom-container-width">
-        <div class="row mt-5 mb-4">
+      <div className="container custom-container-width">
+        <div className="row mt-5 mb-4">
           {product.map((item, index) => {
             return <Breadcrumb key={index} item={item} product={product} />
           })}
         </div>
-        <div class="row d-flex flex-wrap">
+        <div className="row d-flex flex-wrap">
           {product.map((item, index) => {
             return <ImgArea key={index} item={item} product={product} />
           })}
@@ -74,7 +74,7 @@ function SecondhandProduct(props) {
         <Filter />
       </div>
       <IconArea />
-      <div class="container custom-container-width">
+      <div className="container custom-container-width">
         {product.map((item, index) => {
           return <Slider key={index} item={item} />
         })}

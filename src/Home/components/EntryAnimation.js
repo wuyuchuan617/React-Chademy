@@ -48,18 +48,18 @@ function EntryAnimation(props) {
 
   return (
     <>
-      <div class="w_entryBg">
-        <div class="w_aa">A</div>
-        <div class="w_text">Thinking learning and design.</div>
-        <div class="w_better">
-          BETTE<span class="w_rr">R</span>
+      <div className="w_entryBg">
+        <div className="w_aa">A</div>
+        <div className="w_text">Thinking learning and design.</div>
+        <div className="w_better">
+          BETTE<span className="w_rr">R</span>
         </div>
 
-        <div class="w_tomorrow">
-          <span class="w_tt">T</span>OMORROW
+        <div className="w_tomorrow">
+          <span className="w_tt">T</span>OMORROW
         </div>
 
-        <div class="w_skip">
+        <div className="w_skip">
           <p>-SKIP-</p>
         </div>
       </div>

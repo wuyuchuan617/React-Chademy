@@ -322,17 +322,17 @@ function ProductFirst(props) {
                   <div className="choose-wood"></div>
                 </div>
               </div>
-              <li class="share-facebook">
+              <li className="share-facebook">
                 <a
                   rel="nofollow noopener noreferrer"
                   data-shared="sharing-facebook-48785"
-                  class="share-facebook sd-button share-icon no-text"
+                  className="share-facebook sd-button share-icon no-text"
                   href="https://entertheloft.com/product/cylinder-high-by-studio-corkinho/?share=facebook&amp;nb=1"
                   target="_blank"
                   title="Click to share on Facebook"
                 >
                   <span></span>
-                  <span class="sharing-screen-reader-text">
+                  <span className="sharing-screen-reader-text">
                     Click to share on Facebook (Opens in new window)
                   </span>
                 </a>

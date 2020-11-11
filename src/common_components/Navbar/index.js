@@ -20,7 +20,7 @@ import { NavLink } from 'react-router-dom'
 import CartArea from '../../cart/components/CartArea'
 //購物車數字
 import { Badge } from 'antd'
-import { ClockCircleOutlined } from '@ant-design/icons'
+// import { ClockCircleOutlined } from '@ant-design/icons'
 
 function MyNavbar(props) {
   const {
@@ -32,8 +32,8 @@ function MyNavbar(props) {
     setNavbarHeight,
     scrollY,
     scrollDirection,
-    resetShow,
-    setResetShow,
+    // resetShow,
+    // setResetShow,
   } = props
   const [clickcart, setClickCart] = useState(false)
 

@@ -50,29 +50,29 @@ function BlogListOne(props) {
   }
 
   return (
-    <div class="a_blogwrap">
-      <div class="container">
-        <div class="row">
-          <div class="a_blogblog col-9">
+    <div className="a_blogwrap">
+      <div className="container">
+        <div className="row">
+          <div className="a_blogblog col-9">
             <div
-              class="a_blog_image"
+              className="a_blog_image"
               data-aos="fade-down"
               data-aos-delay="30000"
               data-aos-duration="1200"
             >
               <img src={require('../../img/' + item.images)} alt="" />
             </div>
-            <div class="d-flex a_blog-name justify-content-between">
+            <div className="d-flex a_blog-name justify-content-between">
               <div>{item.title}</div>
             </div>
-            <div class="a_blog-desc">
+            <div className="a_blog-desc">
               <p>{item.introduction}</p>
             </div>
 
-            <div class="d-flex a_blog-name-title justify-content-between">
+            <div className="d-flex a_blog-name-title justify-content-between">
               <div>特點一：Hygge（丹麥式簡約）</div>
             </div>
-            <div class="a_blog-desc-title">
+            <div className="a_blog-desc-title">
               <p>
                 Hygge
                 是丹麥文化中一個有代表性的形容詞，它比極簡風格要質樸舒適，又比田園風格要簡約乾淨。
@@ -82,59 +82,59 @@ function BlogListOne(props) {
                 Pinterest 上既有入駐商家提供圖片中的產品鏈接，也有手作達人的 DIY
                 製作教程，不少教程都配有視頻和分步圖解，滿足各種使用者的需求。
               </p>
-              <div class="a_blogblog_image">
+              <div className="a_blogblog_image">
                 <img src={imageblogfif} />
               </div>
             </div>
 
-            <div class="d-flex a_blog-name-title justify-content-between">
+            <div className="d-flex a_blog-name-title justify-content-between">
               <div>特點二：農家風</div>
             </div>
-            <div class="a_blog-desc-title">
+            <div className="a_blog-desc-title">
               <p>
                 做舊、質樸、自然的農家風。這一風格的裝飾要素是一些做舊的物件，比如說箱子、牆壁掛飾、擺件、具有農家味的裝飾物，比如說各種各樣的籐編、竹編製品以及各類植物和瓜果蔬菜等。當然木材也也是關鍵性的元素之一，可以用它作為牆磚，也可以用原木直接製作風格質樸的桌椅。
               </p>
-              <div class="a_blogblog_image">
+              <div className="a_blogblog_image">
                 <img src={imageblogfarmer} />
               </div>
             </div>
 
-            <div class="d-flex a_blog-name-title justify-content-between">
+            <div className="d-flex a_blog-name-title justify-content-between">
               <div>特點三：大理石牆紙</div>
             </div>
-            <div class="a_blog-desc-title">
+            <div className="a_blog-desc-title">
               <p>
                 總體來說 2020
                 年“自然”會是家裝趨勢的一個核心關鍵詞，各種天然風格的材質格外受到歡迎。分析大理石風格壁紙持續走熱的緣由，一方面是受到早前極簡主義流行餘威的影響，另一方面它又能很好地從冷靜的極簡過渡到當下更有人情味的自然風格裝飾趨勢。
               </p>
-              <div class="a_blogblog_image">
+              <div className="a_blogblog_image">
                 <img src={imageblogstone} />
               </div>
             </div>
 
-            <div class="d-flex a_blog-name-title justify-content-between">
+            <div className="d-flex a_blog-name-title justify-content-between">
               <div>特點四：壓克力</div>
             </div>
-            <div class="a_blog-desc-title">
+            <div className="a_blog-desc-title">
               <p>
                 同樣是受到極簡主義餘威的影響。無論是運用亞克力的家具還是裝飾品，都值得嘗試。它其實屬於一款非常百搭的材質，無論是融入到復古典雅的裝修風格中來形成一種時間風格上的衝突，還是用於打造摩登簡約的家裝都很合適。尤其是黃銅製作的迷你花盆，無論是單一材料製作的簡單款式，還是與其他材質組合的設計都很別緻。除了花盆、桌椅、檯燈、收納籃子一類實用的產品，黃銅製作的裝飾品擺件也值得考慮。
               </p>
-              <div class="a_blogblog_image">
+              <div className="a_blogblog_image">
                 <img src={imageblognature} />
               </div>
             </div>
 
-            <div class="d-flex a_blog-name-title justify-content-between">
+            <div className="d-flex a_blog-name-title justify-content-between">
               <div>總結</div>
             </div>
-            <div class="a_blog-desc-title">
+            <div className="a_blog-desc-title">
               <p>
                 用最簡單的方法，掌握居家家飾的設計，總體來說，能從這些趨勢中感受到上一波極簡主義浪潮的影響，以及自然舒適裝修風格的持續走熱。
               </p>
             </div>
 
-            <div class="a_blog-desc-connection">
-              <div class="a_blog-desc-connectiontitle">文章標籤</div>
+            <div className="a_blog-desc-connection">
+              <div className="a_blog-desc-connectiontitle">文章標籤</div>
               <p>家具</p>
               <p>自然風格</p>
               <p>文青風</p>
@@ -142,14 +142,14 @@ function BlogListOne(props) {
               <p>歐式風格</p>
             </div>
 
-            <div class="a_blog-desc-writer">
-              <div class="a_blog-desc-writertitle">創作者介紹</div>
+            <div className="a_blog-desc-writer">
+              <div className="a_blog-desc-writertitle">創作者介紹</div>
 
-              <div class="row d-flex justify-content-center no-gutters">
-                <p class="col-3 a_blog2">
+              <div className="row d-flex justify-content-center no-gutters">
+                <p className="col-3 a_blog2">
                   <img src={imagewriter} />
                 </p>
-                <div class="col-9 a_blog3">
+                <div className="col-9 a_blog3">
                   <h6>EVA CHANG</h6>
                   <p>
                     台北人，現居新竹，喜歡新竹比台北多，在古董裡慢慢生活的女子。興趣是做料理、烘焙、電影和音樂，最喜歡的動物是米克斯犬。認為理想人生是過不苟且、不將就、不隨波逐流的生活。享受在遙遠的國度做尋常的小事，環遊世界的古董旅行至今累積30幾個國家，未完待續。
@@ -159,8 +159,8 @@ function BlogListOne(props) {
             </div>
           </div>
 
-          <div class="col-3">
-            <div class="d-flex a_blog-popular_name justify-content-between">
+          <div className="col-3">
+            <div className="d-flex a_blog-popular_name justify-content-between">
               <div>人氣排行</div>
             </div>
             <div

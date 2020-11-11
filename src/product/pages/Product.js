@@ -127,7 +127,7 @@ function Product(props) {
         <div className="row justify-content-center title">
           <h3>產品評價</h3>
         </div>
-        <div class="w_rew_scroll">
+        <div className="w_rew_scroll">
           {product.map((item, index) => {
             return (
               <ProductSeven

@@ -4,21 +4,21 @@ import imagemain from '../images/46.png'
 
 function About(props) {
   return (
-    <div class="a_aboutwrap">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <div class="a_about_image">
+    <div className="a_aboutwrap">
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <div className="a_about_image">
               <img src={imagemain} />
             </div>
           </div>
 
-          <div class="col">
-            <div class="d-flex a_about-name justify-content-between">
+          <div className="col">
+            <div className="d-flex a_about-name justify-content-between">
               <div>About CHADEMY</div>
             </div>
 
-            <div class="a_about-desc">
+            <div className="a_about-desc">
               <p>
                 1952年創立自有品牌CHADEMY家具， 取名CHADEMY
                 的概念是來自奧地利宮廷音樂家Johann

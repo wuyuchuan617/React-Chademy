@@ -25,7 +25,7 @@ function BlogBanner() {
       <div className="a_video">
         <video
           src={video}
-          class="w-100"
+          className="w-100"
           autoplay="autoplay"
           muted="true"
           preload="auto"

@@ -69,8 +69,8 @@ function FundList(props) {
 
   return (
     <>
-      <div class="context1">
-        <div class="container" id="productCards">
+      <div className="context1">
+        <div className="container" id="productCards">
           <div className="e_lablebox mt-5 mb-5">
             <Link to="/newfundproject" className="e_defaultlable">
               最新發起
@@ -80,14 +80,14 @@ function FundList(props) {
             </Link>
           </div>
 
-          <div class="row  justify-content-center">
+          <div className="row  justify-content-center">
             {product.slice(0, viewProduct).map((item, index) => {
               return <FundListCard key={index} item={item} />
             })}
           </div>
-          <div class="container">
-            <div class="row">
-              <button class="loadButton" onClick={handleClick}>
+          <div className="container">
+            <div className="row">
+              <button className="loadButton" onClick={handleClick}>
                 LOAD MORE
               </button>
             </div>

@@ -115,7 +115,7 @@ function SecondhandList(props) {
   return (
     <>
       <Firstview />
-      <div class="container custom-container-width">
+      <div className="container custom-container-width">
         <div className="row mt-5">
           <Breadcrumb />
         </div>

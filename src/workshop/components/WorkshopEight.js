@@ -19,8 +19,8 @@ import '../styles/workshop.css'
 function WorkshopEight(props) {
   return (
     <>
-      <div class="wrapper2">
-        <div class="title01">
+      <div className="wrapper2">
+        <div className="title01">
           <h2>猜你喜歡</h2>
         </div>
         <div className="row justify-content-center">
