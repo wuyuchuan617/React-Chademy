@@ -2,9 +2,30 @@ import React from 'react'
 import { Modal,Button } from 'react-bootstrap'
 
 function Modalsetprice(props){
-    const{pname, chair,price}=props
+    const{pname, chair,price,setMyCart,setCartAmount,cartamount}=props
+    //add to cart fn
+const updateCartToLocalStorage = (item, isAdded = true) => {
+    console.log(item, isAdded)
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || []
+  
+    // find if the product in the localstorage with its id
+    const index = currentCart.findIndex((v) => v.id === item.id)
+  
+    console.log('index', index)
+    // found: index! == -1
+    if (index > -1) {
+      currentCart[index].amount++
+    } else {
+      currentCart.push(item)
+    }
+  
+    localStorage.setItem('cart', JSON.stringify(currentCart))
+        // 設定資料
+        setMyCart(currentCart)
+      }
     // console.log(data)
     return(
+        
         <>
             <Modal
             {...props}

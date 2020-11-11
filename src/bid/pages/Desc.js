@@ -28,7 +28,7 @@ function Desc(props) {
   const heartFill = {
     color: '#C77334',
   }
-  const {price, setPrice,pname, setPname, data,total,setTotal,startdate, setStartdate,enddate, setEnddate} = props
+  const {price, setPrice,pname, setPname, data,total,setTotal,startdate, setStartdate,enddate, setEnddate, setMyCart,setCartAmount,cartamount} = props
   // const [startdate, setStartdate] = useState('')
   const [starttime, setStarttime] = useState('')
   // const [enddate, setEnddate] = useState('')
@@ -236,32 +236,32 @@ function getCartFromLocalStorage() {
   const newMember = JSON.parse(localStorage.getItem('reduxState')).user.users
     .sid
  
-  console.log('newMember', newMember)
-  console.log(typeof newMember)
+  // console.log('newMember', newMember)
+  // console.log(typeof newMember)
   setMember2(newMember)
 
 }
 
 //add to cart fn
-const updateCartToLocalStorage = (item, isAdded = true) => {
-  console.log(item, isAdded)
-  const currentCart = JSON.parse(localStorage.getItem('cart')) || []
+// const updateCartToLocalStorage = (item, isAdded = true) => {
+//   console.log(item, isAdded)
+//   const currentCart = JSON.parse(localStorage.getItem('cart')) || []
 
-  // find if the product in the localstorage with its id
-  const index = currentCart.findIndex((v) => v.id === item.id)
+//   // find if the product in the localstorage with its id
+//   const index = currentCart.findIndex((v) => v.id === item.id)
 
-  console.log('index', index)
-  // found: index! == -1
-  if (index > -1) {
-    currentCart[index].amount++
-  } else {
-    currentCart.push(item)
-  }
+//   console.log('index', index)
+//   // found: index! == -1
+//   if (index > -1) {
+//     currentCart[index].amount++
+//   } else {
+//     currentCart.push(item)
+//   }
 
-  localStorage.setItem('cart', JSON.stringify(currentCart))
-      // 設定資料
-      setMyCart(currentCart)
-    }
+//   localStorage.setItem('cart', JSON.stringify(currentCart))
+//       // 設定資料
+//       setMyCart(currentCart)
+//     }
 
     
   return (
@@ -556,7 +556,8 @@ const updateCartToLocalStorage = (item, isAdded = true) => {
       <Modalsetprice
         show={modalShow}
         onHide={() => setModalShow(false)}
-        pname={pname} chair={chair} price={price}
+        // pname={pname} chair={chair} price={price} setMyCart={setMyCart}
+        {...props}
       />
     </>
   )
