@@ -4,7 +4,7 @@ import Img from '../../img/elementaire-chair_910x1100_brandmodel.jpg'
 import { Rate } from 'antd'
 
 function ProductList(props) {
-  const { item } = props
+  const { item, reload } = props
   const [rateColor, setRateColor] = useState({})
   const [heart, setHeart] = useState(false)
   const [heartItem, setHeartItem] = useState({})
@@ -119,6 +119,10 @@ function ProductList(props) {
     getItemFromSQL4()
     getItemFromSQL3()
   }, [])
+  useEffect(() => {
+    getItemFromSQL4()
+    getItemFromSQL3()
+  }, [reload])
 
   /**
    * 撈會員全部資料
@@ -138,17 +142,19 @@ function ProductList(props) {
     const response = await fetch(request)
     const data = await response.json()
 
-    console.log('response' + response) // [object Response]
-    console.log('data' + data) // [object Object]
+    console.log('response', response) // [object Response]
+    console.log('data', data) // [object Object]
 
     setAllMember(data)
   }
-  let memberImg = ''
+
+  let memberImg = Img
   for (let i = 0; i < allMember.length; i++) {
-    if (item.member_sid === allMember[i].sid) {
+    if (+item.member_sid === allMember[i].sid) {
       memberImg = allMember[i].avatar
-    } else {
-      memberImg = Img
+      console.log(item.member_sid)
+      console.log('hihi')
+      console.log(memberImg)
     }
   }
   return (

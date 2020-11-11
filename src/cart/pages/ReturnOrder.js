@@ -14,12 +14,11 @@ function ReturnOrder(props) {
   const { TreeNode } = TreeSelect
   const { TextArea } = Input
 
-
   async function cancelToServer(value) {
     const url = 'http://localhost:3001/j_cart/cancelorder'
     const request = new Request(url, {
       method: 'POST',
-      // body: JSON.stringify(submitData),
+      body: JSON.stringify({ PO_NO: myPO_NO }),
       headers: new Headers({
         Accept: 'application/json',
         'Content-Type': 'application/json',
@@ -51,7 +50,14 @@ function ReturnOrder(props) {
       <label>給予建議</label>
       <TextArea rows={4} />
       <Link className="j_btn7">
-        <div className="j_btn7">確認退貨</div>
+        <div
+          className="j_btn7"
+          onClick={() => {
+            cancelToServer()
+          }}
+        >
+          確認退貨
+        </div>
       </Link>
     </>
   )

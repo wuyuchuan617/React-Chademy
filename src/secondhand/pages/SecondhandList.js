@@ -11,6 +11,7 @@ function SecondhandList(props) {
   const [product, setProduct] = useState([])
   const [viewProduct, setViewProduct] = useState(8)
   const [lastProductId, setLastProductId] = useState(0)
+  const [reload, setReload] = useState(0)
   // props解構
   const { setCartAmount, cartamount, resetShow, setResetShow } = props
   // 判斷登入的狀態
@@ -131,13 +132,20 @@ function SecondhandList(props) {
                   isLogged={isLogged}
                   resetShow={resetShow}
                   setResetShow={setResetShow}
+                  reload={reload}
                 />
               )
             })}
             <div className="i_end">
               <hr />
               {!isLast && (
-                <div className="i_btn1 text-center mt-4" onClick={handleClick}>
+                <div
+                  className="i_btn1 text-center mt-4"
+                  onClick={() => {
+                    handleClick()
+                    setReload(reload + 1)
+                  }}
+                >
                   more
                 </div>
               )}
