@@ -76,7 +76,6 @@ function MemberCenter(props) {
     const url = 'http://localhost:3001/members/setUserInfo'
     const { user = {} } = JSON.parse(localStorage['reduxState'] || '{}')
     const { token, authToken } = user.users || {}
-
     const response = await fetch(url, {
       method: 'POST',
       headers: {

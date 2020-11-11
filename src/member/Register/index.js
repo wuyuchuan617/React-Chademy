@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+// import { useDispatch } from 'react-redux'
 
 import './index.scoped.scss'
 import request from '../../utils/request'
@@ -31,7 +31,7 @@ const validateMessages = {
 }
 
 function Register(props) {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
 
   // 表單元素
   const [form] = Form.useForm()
@@ -73,8 +73,9 @@ function Register(props) {
       // 資料（物件）轉成 JSON，儲存登入資訊
       // localStorage.setItem('userInfo', JSON.stringify(data))
 
+      // 因為註冊後不幫他登入，所以取消
       // 3. 調用 dispatch => 觸發 store.subscribe
-      dispatch({ type: 'SIGN_IN', payload: data })
+      // dispatch({ type: 'SIGN_IN', payload: data })
 
       // 設定小彈窗的內容
       setReg({
@@ -88,7 +89,7 @@ function Register(props) {
 
       // n 秒後轉導至 /
       setTimeout(() => {
-        history.push('/')
+        history.push('/login')
       }, 2000)
     } else {
       setReg({
