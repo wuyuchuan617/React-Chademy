@@ -115,3 +115,34 @@
     /* 圖像置中 */
     background-size: cover;
 }
+
+.w_share_big {
+    margin: 3px 0 30px 0;
+    padding: 0px 0 30px 0;
+    /* border-top: solid 1px #47292b; */
+    /* background: url(../cssImages/bg-small-divider.gif) no-repeat bottom left; */
+    font-size: 44px;
+    text-transform: uppercase;
+    line-height: 0.9;
+}
+
+.w_share_row {
+    margin-bottom: 30px;
+}
+
+.w_tag {
+    color: #c77334;
+    font-size: 32px;
+    text-transform: uppercase;
+    line-height: 0.9;
+}
+
+.w_share_text {
+    padding: 10px 0px;
+    letter-spacing: 3px;
+    margin-top: 40px;
+}
+
+.w_share_left {
+    /* background-color: #F3F4F4; */
+}

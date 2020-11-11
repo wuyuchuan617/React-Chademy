@@ -202,6 +202,37 @@ function Custom(props) {
             </div>
           </div>
         </div>
+
+        <div className="container">
+          <div className="row w_share_row">
+            <div className="col-5 w_share_left">
+              <p className="w_share_big">
+                DESIGNED & MADE IN MELBOURNE FOR AN ENDURING APPEAL
+              </p>
+              <p>TAG US ON INSTAGRAM</p>
+              <p className="w_tag">#SIT_DOWN_PLEASE</p>
+
+              <p className="w_share_text">
+                「沒有任何機器能取代匠師獨特的風格。Gustav
+                Bahus生產的傢俱，凸顯了挪威人的優雅和簡約，手工製造卻不為生產需求而妥協。」
+              </p>
+            </div>
+            <div className="col-7">
+              <img src={require('../images/share.jpg')} alt="" />
+            </div>
+          </div>
+          <div className="row w_share_row">
+            <div className="col-4">
+              <img src={require('../images/share1.jpg')} alt="" />
+            </div>
+            <div className="col-4">
+              <img src={require('../images/share2.jpg')} alt="" />
+            </div>
+            <div className="col-4">
+              <img src={require('../images/share3.jpg')} alt="" />
+            </div>
+          </div>
+        </div>
       </Form>
     </>
   )
