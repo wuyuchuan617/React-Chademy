@@ -17,6 +17,7 @@ import ResetPass from './ResetPass'
 import MyFav from './MyFav'
 import Address from './Address'
 import Commentt from './Commentt'
+import Evaluation from './Evaluation'
 // --------------------- 以下 import 訂單頁面 --------------------
 import MemberOrder from '../cart/pages/MemberOrder'
 import ReturnOrder from '../cart/pages/ReturnOrder'
@@ -41,6 +42,7 @@ function MemberIndex() {
         '/myfav': '追蹤清單',
         '/address': '地址',
         '/commentt': '評論',
+        '/evaluation': '我的評價',
         '/myorder': '訂單',
         '/returnorder': '退貨',
       }
@@ -118,6 +120,10 @@ function MemberIndex() {
 
               <Route path={`${path}/commentt`}>
                 <Commentt />
+              </Route>
+
+              <Route path={`${path}/evaluation`}>
+                <Evaluation />
               </Route>
 
               <Route path={`${path}/myorder`}>
