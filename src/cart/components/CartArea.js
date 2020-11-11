@@ -37,7 +37,8 @@ function CartArea(props) {
                       width: '550px',
                       height: '130px',
                       display: 'flex',
-                      marginBottom: '2px',
+                      marginTop: '5px',
+                      marginBottom: '5px',
                     }}
                   >
                     <img
@@ -81,6 +82,7 @@ function CartArea(props) {
                           position: 'relative',
                           display: 'flex',
                           justifyContent: 'space-between',
+                          marginTop: '15px',
                         }}
                       >
                         <h6>數量</h6>
@@ -93,6 +95,7 @@ function CartArea(props) {
                           position: 'relative',
                           display: 'flex',
                           justifyContent: 'space-between',
+                          marginTop: '10px',
                         }}
                       >
                         <h6>小計</h6>
