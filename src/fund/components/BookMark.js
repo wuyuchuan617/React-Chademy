@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 function BookMark(props) {
   const [changecolor, setChangeColor] = useState(0)
   const { filterMark, setFilterMark } = props
+  const { setTime } = props
 
   return (
     <>
@@ -16,15 +17,18 @@ function BookMark(props) {
           onClick={() => {
             setChangeColor(0)
             setFilterMark(0)
+            setTime(`time='1'`)
           }}
         >
           最新發起
         </div>
+
         <div
           className={changecolor === 1 ? 'e_activelable' : 'e_defaultlable'}
           onClick={() => {
             setChangeColor(1)
             setFilterMark(1)
+            setTime(`time='2'`)
           }}
         >
           即將結束

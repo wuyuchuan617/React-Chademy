@@ -5,8 +5,8 @@ import e_video from '../images/oljn5-343em.mp4'
 import '../styles/FundHomepage.scss'
 // import 'react-bootstrap'
 import { Container, Row, Col } from 'react-bootstrap'
-import BookMark from '../components/BookMark'
-import BookIcon from '../components/BookIcon'
+import BookMarkhp from '../components/BookMarkhp'
+import BookIconhp from '../components/BookIconhp'
 import BookMarkTwo from '../components/BookMarkTwo'
 import PopBmarkOne from '../components/PopBmark/PopBmarkOne'
 import PopBmarkTwo from '../components/PopBmark/PopBmarkTwo'
@@ -52,8 +52,8 @@ function FundHomepage() {
           </Row>
         </Col>
       </Container>
-      <BookMark setFilterMark={setFilterMark} />
-      <BookIcon setFilterIcon={setFilterIcon} />
+      <BookMarkhp setFilterMark={setFilterMark} />
+      <BookIconhp setFilterIcon={setFilterIcon} />
       {filterMark === 0 && filterIcon === 0 ? <CarouselE /> : ''}
       {filterMark === 0 && filterIcon === 1 ? <CarouselE /> : ''}
       {filterMark === 0 && filterIcon === 2 ? <CarouselE /> : ''}

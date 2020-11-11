@@ -31,6 +31,7 @@ import ReviewMember from './secondhand/pages/ReviewMember'
 import FundHomepage from './fund/pages/FundHomepage'
 import FundList from './fund/pages/FundList'
 import FundItem from './fund/pages/FundItem'
+import FundForm from './fund/pages/FundForm'
 
 // ---------------------以下import 競標頁面--------------------
 import Pages from './bid/pages/Pages'
@@ -175,6 +176,10 @@ function App() {
 
             <Route path="/funditem/:sid?">
               <FundItem cartamount={cartamount} setCartAmount={setCartAmount} />
+            </Route>
+
+            <Route path="/fundform">
+              <FundForm />
             </Route>
 
             {/* 競標頁面 */}

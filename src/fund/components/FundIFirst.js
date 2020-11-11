@@ -12,6 +12,15 @@ import ProgressE from './ProgressE'
 import small1 from '../images/dt2.jpeg'
 import small2 from '../images/dt3.jpeg'
 import small3 from '../images/dt4-1.jpeg'
+import { AiFillInfoCircle } from 'react-icons/ai'
+import { FaFacebook } from 'react-icons/fa'
+import { FaFacebookMessenger } from 'react-icons/fa'
+import { FaShareAlt } from 'react-icons/fa'
+
+import dt2 from '../images/dt2.jpeg'
+import dt3 from '../images/dt3.jpeg'
+import dt4 from '../images/dt4-1.jpeg'
+import dt5 from '../images/Image 32.png'
 
 function FundIFirst(props) {
   const { item, sid, cartamount, setCartAmount } = props
@@ -175,10 +184,38 @@ function FundIFirst(props) {
                 />
               </div>
             </div>
+
+            <div class="share_area d-flex">
+              <p class="share d-flex">分享至</p>
+              <div class="box d-flex"></div>
+              <div class="share-icon d-flex">
+                <div className="fa ">
+                  <FaFacebookMessenger />
+                </div>
+
+                <div className="fa ">
+                  <FaFacebook />
+                </div>
+
+                <div className="fa ">
+                  <FaShareAlt />
+                </div>
+              </div>
+            </div>
+
+            <hr />
+
+            {/* <div class="line "></div> */}
           </div>
           <div className="col-4 right-part">
             <div className="d-flex product-name justify-content-between">
-              <div className="subtitle3">{item.e__proname}</div>
+              <div className="subtitle3">
+                {item.e_proname}{' '}
+                <span className="by">
+                  by Eva
+                  <AiFillInfoCircle />
+                </span>
+              </div>
             </div>
             <div className="heart justify-content-end">
               <BsFillHeartFill
@@ -204,9 +241,50 @@ function FundIFirst(props) {
               <div className="product-desc">
                 <p className="w_comP">{item.e_prointro}</p>
               </div>
+
+              <p className="e_price">${item.e_lowprice}</p>
+
+              <div className="e_target">
+                <p className="e_tar">目標金額：${item.e_goal}</p>
+              </div>
+
+              <div className="barwrapper">
+                <div className="progress">
+                  <div
+                    className="progress_bar"
+                    id="progress_bar"
+                    role="progressbar"
+                    aria-valuenow="42"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  >
+                    <ProgressE item={item} />
+                  </div>
+                </div>
+              </div>
+
+              <div className="e_ptarget">
+                <p className="e_ptar">募資進度：${item.e_progress_money}</p>
+              </div>
+
+              <hr />
+
+              <div className="e_left">
+                <p className="e_leff">
+                  剩餘時間 : {item.e_day} <br />
+                  {item.e_start_time}<br/>
+                  <div className="e_lefff">至</div>
+                  {item.e_end_time}
+                </p>
+              </div>
+
+              <div className="e_man">
+                <p className="e_mann">贊助人數 :{item.e_men}人</p>
+              </div>
+
               {isLogged ? (
                 <button
-                  className="cart-btn"
+                  className="e_cart-btn"
                   onClick={() => {
                     setCartAmount(cartamount + 1)
                     updateCartToLocalStorage({
@@ -223,7 +301,7 @@ function FundIFirst(props) {
                 </button>
               ) : (
                 <button
-                  className="cart-btn"
+                  className="e_cart-btn"
                   onClick={() => {
                     props.history.push('/login')
                   }}
@@ -232,6 +310,59 @@ function FundIFirst(props) {
                 </button>
               )}
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-7">
+            <h3 class="p_title">Easy Seat</h3>
+            <p class="intro_p">
+              柔軟的設計、細微的細節以及曲線造型使其不存在視覺欣賞的死角。Henrik
+              Pedersen
+              的有機設計通過精美的工藝設計加以呈現，將成為您起居室中的標誌性家居。
+            </p>
+
+            <img class="inner-pic" src={dt2} alt="" />
+
+            <div className="ip2 d-flex">
+              <img class="inner-pic2 d-flex" src={dt3} alt="" />
+
+              <h4 class="pic2-h4 d-flex">Feast for the eyes</h4>
+            </div>
+
+            <p class="inner-pic2-p ">
+              柔軟的設計、細微的細節以及曲線造型使其不存在視覺欣賞的死角。Henrik
+              Pedersen 的有機設計通過精美的工藝設計加以呈現。
+            </p>
+
+            <div class="pic3">
+              <img class="inner-pic3" src={dt4} alt="" />
+            </div>
+
+            <h4 class="pic3-h4">Genuine comfort</h4>
+            <p class="pic3-p">
+              柔軟的設計、細微的細節以及曲線造型使其不存在視覺欣賞的死角。Henrik
+              Pedersen
+              的有機設計通過精美的工藝設計加以呈現，將成為您起居室中的標誌性家居。
+            </p>
+
+            <div className="dim">
+              <h4 class="details">Dimensions & Details</h4>
+            </div>
+
+            <div className="dim-p">
+              <p class="pic4-p">
+                椅高：83cm <br />
+                寬度：53cm <br />
+                材質：混合聚酯、絨毛 <br />
+                顏色：綠、藍 <br />
+                型號：CHALLE021GRE-UK <br />
+              </p>
+            </div>
+
+            <img class="details-pic" src={dt5} alt="" />
           </div>
         </div>
       </div>

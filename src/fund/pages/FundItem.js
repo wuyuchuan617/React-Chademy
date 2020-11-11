@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import FundFirst from '../components/FundIFirst'
 import '../styles/FundItem.scss'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import Carousel from 'react-elastic-carousel'
 
 function FundItem(props) {
   const isLogged = useSelector((state) => state.user.logged)
@@ -59,6 +60,20 @@ function FundItem(props) {
           />
         )
       })}
+
+      {/* <Container>
+        <Row>
+          <h2 className="grace-related-product text-center">瀏覽紀錄</h2>
+          <div className="row">
+            <Carousel itemsToScroll={3} itemsToShow={3}>
+              {data.map((item, index) => {
+                if (data.length > 8) return (data.length = 8)
+                return <Slider key={index} item={item} {...props} />
+              })}
+            </Carousel>
+          </div>
+        </Row>
+      </Container> */}
     </>
   )
 }

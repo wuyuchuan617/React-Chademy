@@ -13,97 +13,89 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 function BookIcon(props) {
   const [changeword, setChangeWord] = useState(0)
   const { filterIcon, setFilterIcon } = props
+  const { setSeries } = props
+
   return (
     <>
       <div className="container">
         <div className="row">
           <div className="col">
-            <div className="icon">
+            <div
+              className={changeword === 0 ? 'e_icon1' : 'e_icon'}
+              onClick={() => {
+                setChangeWord(0)
+                setFilterIcon(0)
+                setSeries(`category='1'`)
+              }}
+            >
               <div className="icon_img">
                 <img className="chair_icon" src={barstool} alt="" />
               </div>
-              <p
-                className={changeword === 0 ? 'chair_p2' : 'chair_p'}
-                onClick={() => {
-                  setChangeWord(0)
-                  setFilterIcon(0)
-                }}
-              >
-                吧台椅
-              </p>
+              <p className="chair_p">吧台椅</p>
             </div>
           </div>
 
           <div className="col">
-            <div className="icon">
+            <div
+              className={changeword === 1 ? 'e_icon1' : 'e_icon'}
+              onClick={() => {
+                setChangeWord(1)
+                setFilterIcon(1)
+                setSeries(`category='2'`)
+              }}
+            >
               <div className="icon_img">
                 <img className="chair_icon" src={chairs} alt="" />
               </div>
-              <p
-                className={changeword === 1 ? 'chair_p2' : 'chair_p'}
-                onClick={() =>{
-
-                 setChangeWord(1)
-                 setFilterIcon(1)
-                 }
-                 }
-              >
-                單椅
-              </p>
+              <p className="chair_p">單椅</p>
             </div>
           </div>
 
           <div className="col">
-            <div className="icon">
+            <div
+              className={changeword === 2 ? 'e_icon1' : 'e_icon'}
+              onClick={() => {
+                setChangeWord(2)
+                setFilterIcon(2)
+                setSeries(`category='3'`)
+              }}
+            >
               <div className="icon_img">
                 <img className="chair_icon" src={armchair} alt="" />
               </div>
-              <p
-                className={changeword === 2 ? 'chair_p2' : 'chair_p'}
-                onClick={() =>{ 
-                  setChangeWord(2)
-                  setFilterIcon(2)
-                }}
-              >
-                {' '}
-                扶手椅
-              </p>
+              <p className="chair_p"> 扶手椅</p>
             </div>
           </div>
 
           <div className="col">
-            <div className="icon">
+            <div
+              className={changeword === 3 ? 'e_icon1' : 'e_icon'}
+              onClick={() => {
+                setChangeWord(3)
+                setFilterIcon(3)
+                setSeries(`category='4'`)
+              }}
+            >
               <div className="icon_img">
                 <img className="chair_icon" src={diningchair} alt="" />
               </div>
-              <p
-                className={changeword === 3 ? 'chair_p2' : 'chair_p'}
-                onClick={() => {
-                  setChangeWord(3)
-                  setFilterIcon(3)
-                  }}
-              >
-                {' '}
-                餐椅
-              </p>
+              <p className="chair_p"> 餐椅</p>
             </div>
           </div>
 
           <div className="col">
-            <div className="icon">
+            <div
+              className={changeword === 4 ? 'e_icon1' : 'e_icon'}
+              onClick={() => {
+                setChangeWord(4)
+                setFilterIcon(4)
+                setSeries(`category='5'`)
+              }}
+            >
               <div className="icon_img">
                 <img className="chair_icon_sofa" src={loungechair} alt="" />
               </div>
-              <p
-                className={changeword === 4 ? 'chair_p2' : 'chair_p'}
-                onClick={() => {
-                  setChangeWord(4)
-                  setFilterIcon(4)
-                  }}
-              >
-                {' '}
-                沙發椅
-              </p>
+              <p className="chair_p">沙發椅</p>
             </div>
           </div>
         </div>
