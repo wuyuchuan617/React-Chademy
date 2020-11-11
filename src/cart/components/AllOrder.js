@@ -201,8 +201,7 @@ function AllOrder(props) {
         width={1000}
       >
         {detailData.map((item) => {
-          let link =
-            '/review/' + item.PO_NO + '&' + item.product_name
+          let link = '/review/' + item.PO_NO + '&' + item.product_name
           for (let i = 0; i < productData.length; i++) {
             console.log('hi')
             if (item.product_name === productData[i].product_name) {

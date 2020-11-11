@@ -152,7 +152,12 @@ function App() {
             </Route>
 
             <Route path="/secondhand_product/:sid?">
-              <SecondhandProduct />
+              <SecondhandProduct
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setResetShow={setResetShow}
+              />
             </Route>
 
             <Route path="/review_member">
@@ -175,7 +180,12 @@ function App() {
             {/* 競標頁面 */}
 
             <Route path="/pages">
-              <Pages />
+              <Pages
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setResetShow={setResetShow}
+              />
             </Route>
 
             {/* 課程頁面 */}
@@ -184,7 +194,12 @@ function App() {
             </Route>
 
             <Route exact path="/WorkshopList/:sid?">
-              <WorkshopList />
+              <WorkshopList
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setResetShow={setResetShow}
+              />
             </Route>
 
             {/* 部落格頁面 */}
