@@ -6,8 +6,18 @@ import { Menu, Dropdown } from 'antd'
 import { DownOutlined } from '@ant-design/icons'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import { Modal, Button } from 'antd'
+import { withRouter } from 'react-router-dom'
+import { useRouteMatch, useLocation } from 'react-router-dom'
+
 function PendingOrder(props) {
-  const { name, phone, city, area, adress } = props
+  const {
+    setMyPO_NO,
+    setMyDate,
+    getAll,
+    getFinish,
+    getPending,
+    getCancel,
+  } = props
   const [member, setMember] = useState('')
   const [PO_NO, setPO_NO] = useState('')
   const [data, setData] = useState([])
@@ -61,7 +71,58 @@ function PendingOrder(props) {
   async function getAllorderFromServer(value) {
     // const newTotal = { total: total + value }
 
+    const url = `http://localhost:3001/j_cart/list?member=${member}`
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    const response = await fetch(request)
+    const data = await response.json()
+    setData(data)
+  }
+  //拿會員取消訂單
+  async function getCancelOrderFromServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = `http://localhost:3001/j_cart/listcancel?member=${member}`
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    const response = await fetch(request)
+    const data = await response.json()
+    setData(data)
+  }
+  //拿會員運送中訂單
+  async function getPendingOrderFromServer(value) {
+    // const newTotal = { total: total + value }
+
     const url = `http://localhost:3001/j_cart/listpending?member=${member}`
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    const response = await fetch(request)
+    const data = await response.json()
+    setData(data)
+  }
+  //拿會員完成訂單
+  async function getFinishedOrderFromServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = `http://localhost:3001/j_cart//listfinish?member=${member}`
 
     const request = new Request(url, {
       method: 'GET',
@@ -96,16 +157,18 @@ function PendingOrder(props) {
     getProductImgFromServer()
     getNameFromLocalStorage()
   }, [])
-  useEffect(() => {
-    getAllorderFromServer()
-  }, [member])
+
   useEffect(() => {
     getOrderDetailFromServer()
   }, [PO_NO])
+  useEffect(() => {
+    getPendingOrderFromServer()
+  }, [member])
+
   const menu = (
     <Menu>
       <Menu.Item key="0">
-        <Link to="#">我要退貨</Link>
+        <Link to={`/member-center/returnorder`}>我要退貨</Link>
       </Menu.Item>
     </Menu>
   )
@@ -143,6 +206,10 @@ function PendingOrder(props) {
                 overlay={menu}
                 trigger={['click']}
                 placement={'bottomRight'}
+                onClick={() => {
+                  setMyPO_NO(item.PO_NO)
+                  setMyDate(item.order_date)
+                }}
               >
                 <a
                   className="ant-dropdown-link"
@@ -175,6 +242,7 @@ function PendingOrder(props) {
                 style={{ lineHeight: '175px', cursor: 'pointer' }}
                 onClick={() => {
                   setVisible(true)
+
                   setPO_NO(item.PO_NO)
                 }}
               >
@@ -194,8 +262,7 @@ function PendingOrder(props) {
         width={1000}
       >
         {detailData.map((item) => {
-          let link =
-            '/review?PO_NO=' + item.PO_NO + '&product_name=' + item.product_name
+          let link = '/review/' + item.PO_NO + '&' + item.product_name
           for (let i = 0; i < productData.length; i++) {
             console.log('hi')
             if (item.product_name === productData[i].product_name) {
@@ -223,18 +290,22 @@ function PendingOrder(props) {
               >
                 {item.product_name}
               </h6>
-              <a href={link}>
-                <h6
-                  style={{
-                    lineHeight: '200px',
-                    cursor: 'pointer',
-                    position: 'absolute',
-                    right: '50px',
-                  }}
-                >
-                  <BsPen />
-                </h6>
-              </a>
+              {/* <Link to={link}> */}
+              <h6
+                style={{
+                  lineHeight: '200px',
+                  cursor: 'pointer',
+                  position: 'absolute',
+                  right: '50px',
+                }}
+                onClick={async () => {
+                  await setVisible(false)
+                  props.history.push(link)
+                }}
+              >
+                <BsPen />
+              </h6>
+              {/* </Link> */}
             </div>
           )
         })}
@@ -242,4 +313,4 @@ function PendingOrder(props) {
     </>
   )
 }
-export default PendingOrder
+export default withRouter(PendingOrder)

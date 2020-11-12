@@ -8,8 +8,16 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import { Modal, Button } from 'antd'
 import { withRouter } from 'react-router-dom'
 import { useRouteMatch, useLocation } from 'react-router-dom'
+
 function AllOrder(props) {
-  const { setMyPO_NO, setMyDate } = props
+  const {
+    setMyPO_NO,
+    setMyDate,
+    getAll,
+    getFinish,
+    getPending,
+    getCancel,
+  } = props
   const [member, setMember] = useState('')
   const [PO_NO, setPO_NO] = useState('')
   const [data, setData] = useState([])
@@ -76,6 +84,57 @@ function AllOrder(props) {
     const data = await response.json()
     setData(data)
   }
+  //拿會員取消訂單
+  async function getCancelOrderFromServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = `http://localhost:3001/j_cart/listcancel?member=${member}`
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    const response = await fetch(request)
+    const data = await response.json()
+    setData(data)
+  }
+  //拿會員運送中訂單
+  async function getPendingOrderFromServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = `http://localhost:3001/j_cart/listpending?member=${member}`
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    const response = await fetch(request)
+    const data = await response.json()
+    setData(data)
+  }
+  //拿會員完成訂單
+  async function getFinishedOrderFromServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = `http://localhost:3001/j_cart//listfinish?member=${member}`
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    const response = await fetch(request)
+    const data = await response.json()
+    setData(data)
+  }
   async function getOrderDetailFromServer(value) {
     // const newTotal = { total: total + value }
 
@@ -98,12 +157,14 @@ function AllOrder(props) {
     getProductImgFromServer()
     getNameFromLocalStorage()
   }, [])
-  useEffect(() => {
-    getAllorderFromServer()
-  }, [member])
+
   useEffect(() => {
     getOrderDetailFromServer()
   }, [PO_NO])
+  useEffect(() => {
+    getAllorderFromServer()
+  }, [member, getAll])
+
   const menu = (
     <Menu>
       <Menu.Item key="0">
