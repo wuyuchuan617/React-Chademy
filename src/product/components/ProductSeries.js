@@ -12,8 +12,11 @@ function ProductSeries(props) {
   return (
     <>
       <div className="container">
-        <div className="row justify-content-center">
-          <p className="subtitle1">產品系列</p>
+        <div className="row">
+          <div className="w_title1">
+            <div className="titlech noto-serif text-center">產品系列</div>
+            <div className="titleEN lora text-center">Collections</div>
+          </div>
         </div>
 
         <div className="row justify-content-start thirdbg1">

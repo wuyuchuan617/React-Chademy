@@ -15,7 +15,7 @@ function ProductFive(props) {
             <p>Founded On Friendship, Guided By Curiosity</p>
           </div>
           <div className="designer-photo">
-            <img src={require('../../img/' + item.photo)} alt="" />
+            <img src={require('../images/founder.jpg')} alt="" />
           </div>
         </div>
         <div className="row">

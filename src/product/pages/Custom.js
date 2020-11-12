@@ -3,6 +3,9 @@ import { Form, Select } from 'antd'
 import '../styles/custom.css'
 import { useSelector } from 'react-redux'
 import CustomBanner from '../components/CustomBanner'
+import BreadcrumCustom from '../components/BreadcrumCustom'
+import { BackTop } from 'antd'
+import { UpOutlined } from '@ant-design/icons'
 
 function Custom(props) {
   const [componentSize, setComponentSize] = useState('default')
@@ -55,7 +58,11 @@ function Custom(props) {
   return (
     <>
       <CustomBanner />
-
+      <div className="container firstTop">
+        <div className="row  mt-1 wbread">
+          <BreadcrumCustom />
+        </div>
+      </div>
       {/* <div class="text">文章</div> */}
 
       <Form
@@ -292,6 +299,31 @@ function Custom(props) {
           </div>
         </div>
       </Form>
+      <BackTop
+        visibilityHeight="2000"
+        style={{
+          height: '40',
+          width: '40',
+          lineHeight: '33px',
+          color: 'white',
+          fontSize: '16px',
+          borderRadius: '0',
+          textAlign: 'center',
+          backgroundColor: '#c77334',
+        }}
+      >
+        <div>
+          <UpOutlined
+            style={{
+              color: 'white',
+              fontSize: '18px',
+              borderRadius: '0',
+              backgroundColor: '#c77334',
+              marginTop: '-3px',
+            }}
+          />
+        </div>
+      </BackTop>
     </>
   )
 }

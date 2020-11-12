@@ -11,7 +11,7 @@ function NoReviewCard(props) {
         </div>
         <div className="col-7">
           <div className="d-flex justify-content-between ">
-            <h3>尚未有評論</h3>
+            <p>尚未有評論</p>
           </div>
         </div>
       </div>

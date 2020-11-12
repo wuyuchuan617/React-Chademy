@@ -108,6 +108,13 @@ body {
   transition: 0.5s;
 }
 
+.product_photo_small img {
+
+  width: 176px;
+  height: 130px;
+  object-fit: cover;
+}
+
 .smallPhotos {
   padding: px;
 }
@@ -189,13 +196,15 @@ body {
 
 .third-photo {
   width: 620px;
-  height: 392px;
+  height: 400px;
   overflow: hidden;
   object-fit: cover;
 }
 
 .third-photo img {
-  width: 100%;
+  width: 620px;
+  height: 400px;
+  object-fit: cover;
 }
 
 .seats {
@@ -250,7 +259,10 @@ body {
 }
 
 .fourth-photo img {
-  width: 100%;
+  width: 619px;
+  height: 400px;
+  /* overflow: hidden; */
+  object-fit: cover;
 }
 
 /* fourth container finish here! */
@@ -310,7 +322,9 @@ body {
 }
 
 .designer-photo img {
-  width: 100%;
+  width: 500px;
+  height: 360px;
+  object-fit: cover;
 }
 
 /* sixth container finish here! */
@@ -375,13 +389,14 @@ body {
 
 .review-photo {
   height: 300px;
-  width: 50%;
+  width: 100%;
   overflow: hidden;
 }
 
 .review-photo img {
-  /* width: 100%; */
-  height: 100%;
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
 }
 
 .reviews p {
@@ -429,16 +444,16 @@ body {
   margin-top: 30px;
   color: #475050;
   font-family: Noto Serif TC;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
   letter-spacing: 2px;
 }
 
 .w_comP {
-  color: #475050;
+  color: black;
   font-family: Noto Sans TC;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 200;
   letter-spacing: 2px;
 }
 
@@ -451,9 +466,9 @@ body {
   line-height: 30px;
   color: #475050;
   font-family: Noto Sans TC;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
 }
 
 .more-btn {
@@ -684,6 +699,7 @@ body {
   overflow: hidden;
   position: relative;
   object-fit: contain;
+  margin-left: 50px;
 }
 
 .fade-pager__pages {
@@ -709,6 +725,7 @@ body {
   text-align: center;
   list-style: none;
   margin-right: 20px;
+  margin-left: 30px;
 }
 
 .fade-pager__indicator {
@@ -772,7 +789,7 @@ body {
 }
 
 .parallax1 {
-  background-image: url("../images/arv-hero.jpg");
+  background-image: url("../images/scroll.jpg");
   min-height: 600px;
   /* 沒內文時可以看到的最小高度 */
 
@@ -781,4 +798,10 @@ body {
   background-position: center center;
   /* 圖像置中 */
   background-size: cover;
+}
+
+.w_title1 {
+  width: 100%;
+  position: relative;
+  margin-bottom: 50px;
 }

@@ -10,7 +10,7 @@ function ProductFour(props) {
       <div className="container">
         <div className="row">
           <div className="col-sm-12 col-lg-6 fourth-photo">
-            <img src={require('../../img/' + item.photo)} alt="" />
+            <img src={require('../images/pc4.jpg')} alt="" />
           </div>
           <div className="col">
             <div className="quote">

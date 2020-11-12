@@ -5,6 +5,12 @@ function NoReviewCard(props) {
   return (
     <>
       <div className="container">
+        <div className="row">
+          <div className="w_title1">
+            <div className="titlech noto-serif text-center">新品上市</div>
+            <div className="titleEN lora text-center">New Arrivals</div>
+          </div>
+        </div>
         <Carousel itemsToScroll={1} itemsToShow={1}>
           <div className="row justify-content-center">
             <div className="col-6 w_new_img">

@@ -212,7 +212,7 @@ function ProductFirst(props) {
         <div className="row justify-content-between">
           <div className="col-8">
             <div className="product_photo" onClick={() => setVisible(true)}>
-              <img src={photo} alt="" />
+              <img src={item.photo} alt="" />
             </div>
             <div className="d-flex justify-content-between smallPhotos">
               <div className="product_photo_small">
@@ -353,7 +353,7 @@ function ProductFirst(props) {
               </a>
               {isLogged ? (
                 <button
-                  className="w_cart-btn"
+                  className="btn_lessmargin more"
                   onClick={() => {
                     setCartAmount(cartamount + 1)
                     updateCartToLocalStorage({
@@ -370,7 +370,7 @@ function ProductFirst(props) {
                 </button>
               ) : (
                 <button
-                  className="w_cart-btn"
+                  className="btn_lessmargin more"
                   onClick={() => {
                     props.history.push('/login')
                   }}
