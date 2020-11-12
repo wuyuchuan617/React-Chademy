@@ -24,7 +24,12 @@ function ProductSecond(props) {
             </p>
           </div>
           <div className="col-sm-12 col-lg-6 second-photo">
-            <img src={require('../../img/' + item.photo)} alt="" />
+            <img
+              src={
+                'https://oandd.dk/wp-content/uploads/2018/12/TwoTone_SandBlack_WireDiningChair_OvergaardDyrman_6378-1024x689.jpg'
+              }
+              alt=""
+            />
           </div>
         </div>
       </div>

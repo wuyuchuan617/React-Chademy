@@ -4,10 +4,16 @@ import './index.scss'
 
 import MainScreen from '../MainScreen'
 
-import { message } from 'antd'
+import { message, Modal } from 'antd'
 import { transCardNumber } from '../../utils'
 
 import { AiOutlinePlus } from 'react-icons/ai'
+import request from '../../utils/request'
+
+import { ExclamationCircleOutlined } from '@ant-design/icons'
+import { BsTrash } from 'react-icons/bs'
+
+const { confirm } = Modal
 
 function Creditcard() {
   const [modalShow, setModalShow] = useState(false)
@@ -24,6 +30,44 @@ function Creditcard() {
     setModalShow(false)
 
     setUserCreditcardInfo(data)
+  }
+
+  function showConfirm(card) {
+    confirm({
+      title: 'Do you Want to delete these items?',
+      icon: <ExclamationCircleOutlined />,
+      content: 'Some descriptions',
+      onOk() {
+        const {
+          originCard: { sid: card_sid },
+        } = card
+        console.log('OK', card)
+        deleteCreditcard(card_sid)
+      },
+      onCancel() {
+        console.log('Cancel')
+      },
+    })
+  }
+
+  const deleteCreditcard = async (card_sid) => {
+    const response = await request({
+      url: `/members/deleteCreditcard`,
+      method: 'POST',
+      data: {
+        card_sid,
+      },
+    })
+
+    const { success, msg, data } = response
+
+    if (!success) {
+      message.error(msg)
+    } else {
+      message.success(msg)
+
+      getUserCreditcardInfo()
+    }
   }
 
   async function setUserCreditcardInfo(data) {
@@ -81,10 +125,10 @@ function Creditcard() {
     })
 
     /**
-      data: [{…}]
-      msg: "會員信用卡資料已傳送"
-      success: true
-     */
+    data: [{…}]
+    msg: "會員信用卡資料已傳送"
+    success: true
+   */
     const res = await response.json()
     console.log('RES ', res)
 
@@ -102,20 +146,26 @@ function Creditcard() {
   return (
     <>
       {creditcard.map((card) => (
-        <div className="lineee justify-content-between">
-          卡號：{transCardNumber(card.cardNumber)}
-          <div className="icon_con">
-            <AiOutlinePlus
-              className="icon"
-              onClick={(e) =>
-                handleOpenModal(e, {
-                  ...card,
-                  cardNumber: transCardNumber(card.cardNumber),
-                })
-              }
-            />
+        <>
+          <div className="lineee justify-content-between">
+            卡號：{transCardNumber(card.cardNumber)}
+            <div className="icon_con">
+              <AiOutlinePlus
+                className="icon"
+                onClick={(e) =>
+                  handleOpenModal(e, {
+                    ...card,
+                    cardNumber: transCardNumber(card.cardNumber),
+                  })
+                }
+              />
+              <BsTrash
+                className="delet_btn"
+                onClick={() => showConfirm(card)}
+              ></BsTrash>
+            </div>
           </div>
-        </div>
+        </>
       ))}
       <div className="lineee justify-content-between">
         新增信用卡

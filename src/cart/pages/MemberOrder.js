@@ -11,6 +11,10 @@ import FinishedOrder from '../components/FinishedOrder'
 function MemberOrder(props) {
   const { setMyDate, setMyPO_NO } = props
   const [filiterState, setFiliterState] = useState('全部')
+  const [getAll, setGetAll] = useState(0)
+  const [getPending, setGetPending] = useState(0)
+  const [getFinish, setGetFinish] = useState(0)
+  const [getCancel, setGetCancel] = useState(0)
   const menu = (
     <Menu>
       <Menu.Item>
@@ -18,7 +22,10 @@ function MemberOrder(props) {
           target="_blank"
           rel="noopener noreferrer"
           href="http://www.alipay.com/"
-          onClick={() => setFiliterState('全部')}
+          onClick={() => {
+            setFiliterState('全部')
+            setGetAll(getAll + 1)
+          }}
         >
           全部訂單
         </div>
@@ -28,7 +35,10 @@ function MemberOrder(props) {
           target="_blank"
           rel="noopener noreferrer"
           href="http://www.tmall.com/"
-          onClick={() => setFiliterState('已完成')}
+          onClick={() => {
+            setFiliterState('已完成')
+            setGetFinish(getFinish + 1)
+          }}
         >
           已完成
         </div>
@@ -38,9 +48,12 @@ function MemberOrder(props) {
           target="_blank"
           rel="noopener noreferrer"
           href="http://www.taobao.com/"
-          onClick={() => setFiliterState('運送中')}
+          onClick={() => {
+            setFiliterState('處理中')
+            setGetPending(getPending + 1)
+          }}
         >
-          運送中
+          處理中
         </div>
       </Menu.Item>
       <Menu.Item>
@@ -48,7 +61,10 @@ function MemberOrder(props) {
           target="_blank"
           rel="noopener noreferrer"
           href="http://www.tmall.com/"
-          onClick={() => setFiliterState('已取消')}
+          onClick={() => {
+            setFiliterState('已取消')
+            setGetCancel(getCancel + 1)
+          }}
         >
           已取消
         </div>
@@ -66,7 +82,14 @@ function MemberOrder(props) {
       </Dropdown>
       <div style={{ marginTop: '30px' }}>
         {filiterState === '全部' ? (
-          <AllOrder setMyPO_NO={setMyPO_NO} setMyDate={setMyDate} />
+          <AllOrder
+            setMyPO_NO={setMyPO_NO}
+            setMyDate={setMyDate}
+            getAll={getAll}
+            getPending={getPending}
+            getCancel={getCancel}
+            getFinish={getFinish}
+          />
         ) : (
           ''
         )}
@@ -75,7 +98,7 @@ function MemberOrder(props) {
         ) : (
           ''
         )}
-        {filiterState === '運送中' ? (
+        {filiterState === '處理中' ? (
           <PendingOrder setMyPO_NO={setMyPO_NO} setMyDate={setMyDate} />
         ) : (
           ''

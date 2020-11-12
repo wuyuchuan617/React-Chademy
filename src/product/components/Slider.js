@@ -51,9 +51,13 @@ function Slider(props) {
 
   return (
     <>
-      <h2 className="grace-related-product text-center">相關產品</h2>
-
       <div className="container">
+        <div className="row">
+          <div className="w_title1">
+            <div className="titlech noto-serif text-center">相關產品</div>
+            <div className="titleEN lora text-center">You may also like</div>
+          </div>
+        </div>
         <div className="row">
           <Carousel itemsToScroll={3} itemsToShow={3}>
             {relateProducts.map((item, index) => {
@@ -61,14 +65,14 @@ function Slider(props) {
                 <div className="col grace-wrap mx-1">
                   <div className="productCardImg">
                     <img
-                      src={require('../../img/' + item.photo)}
+                      src={`http://localhost:3001/img/` + item.photo}
                       alt=""
                       onClick={() => {
                         props.history.push('/product/' + item.sid)
                       }}
                     />
                   </div>
-                  <div className="d-flex flex-column grace-slider-text">
+                  <div className="d-flex flex-column grace-slider-text text-center">
                     <span>{item.product_name}</span>
                     <span>${item.price}</span>
                   </div>

@@ -1,11 +1,13 @@
-import React, { useState, useEffect, useSelector } from 'react'
+import React, { useState, useEffect } from 'react'
 // import useInterval from '@use-it/interval';
+import { useSelector } from 'react-redux'
+
 import useInterval from 'use-interval'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import Slider from '../component/Slider'
 import Bookmark from '../component/Bookmark'
 import Record from '../component/Record'
-import Chatroom from '../component/Chatroom'
+import Setprice from '../component/Setprice'
 import Carousel from 'react-elastic-carousel'
 import Sidepic from '../component/Sidepic'
 import '../styles/desc.scss'
@@ -34,13 +36,12 @@ function Desc(props) {
     pname,
     setPname,
     data,
-    startdate,
-    setStartdate,
     setMyCart,
     setCartAmount,
     cartamount,
   } = props
-  // const [startdate, setStartdate] = useState('')
+  const [startdate, setStartdate] = useState('')
+  const [sid, setSid] = useState('')
   const [starttime, setStarttime] = useState('')
   const [enddate, setEnddate] = useState('')
   const [total, setTotal] = useState(0)
@@ -65,9 +66,9 @@ function Desc(props) {
   const [heartItem, setHeartItem] = useState({})
   const [modalShow, setModalShow] = React.useState(false)
   const [noShowModel, setNoShowModel] = useState(false)
-
+  const [changepage, setChangepage] = useState(2)
   // 判斷登入的狀態
-  // const isLogged = useSelector((state) => state.user.logged)
+  const isLogged = useSelector((state) => state.user.logged)
 
   async function initData() {
     const url = `http://localhost:3001/product/api/bid/${id}`
@@ -84,6 +85,7 @@ function Desc(props) {
     const response = await fetch(request)
     const data = await response.json()
     console.log('data', data)
+    setSid(data[0].sid)
     setSdate(data[0].sdate)
     setEdate(data[0].edate)
     setStartprice(data[0].startedPrice)
@@ -243,21 +245,23 @@ function Desc(props) {
   const handleShow = () => setShow(true)
   const [addmoney, setAddmoney] = useState(0)
 
-  //   function numberWithCommas(x) {
-  //     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  // }
-  // useEffect(()=>{
-  //   numberWithCommas(price)
-  // },[initData()])
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+  }
+  useEffect(() => {
+    numberWithCommas(price)
+  }, [])
 
   //get member_sid fn
   function getCartFromLocalStorage() {
-    const newMember = JSON.parse(localStorage.getItem('reduxState')).user.users
-      .sid
+    const { user = {} } = JSON.parse(localStorage['reduxState'] || '{}')
+    const { sid } = user.users || {}
 
-    // console.log('newMember', newMember)
-    // console.log(typeof newMember)
-    setMember2(newMember)
+    if (isLogged) {
+      // console.log('newMember', newMember)
+      // console.log(typeof newMember)
+      setMember2(sid)
+    }
   }
 
   return (
@@ -389,60 +393,61 @@ function Desc(props) {
               {/* <HeartOutlined className="g-heart" style={{ fontSize: '18px', color: '#707070', fill: '#707070'}}/> */}
               <p>出價</p>
               {/* {isLogged ? ( */}
-              <div className="d-flex justify-content-between">
-                <div
-                  onClick={() => {
-                    setAddmoney(1000)
-                    // addprice(1000)
-                    handleShow()
-                  }}
-                  className="g-price d-flex justify-content-center align-items-center"
-                >
-                  $1,000
-                </div>
+              {isLogged ? (
+                <div className="d-flex justify-content-between">
+                  <div
+                    onClick={() => {
+                      setAddmoney(1000)
+                      // addprice(1000)
+                      handleShow()
+                    }}
+                    className="g-price d-flex justify-content-center align-items-center"
+                  >
+                    $1,000
+                  </div>
 
-                <Modal show={show} onHide={handleClose}>
-                  <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
-                  </Modal.Header>
-                  <Modal.Body>確定要加價嗎？</Modal.Body>
-                  <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                      不確定
-                    </Button>
-                    <Button
-                      variant="primary"
-                      onClick={() => {
-                        addprice(addmoney)
-                        handleClose()
-                      }}
-                    >
-                      確定
-                    </Button>
-                  </Modal.Footer>
-                </Modal>
-                <div
-                  onClick={() => {
-                    setAddmoney(5000)
-                    // addprice(1000)
-                    handleShow()
-                  }}
-                  className="g-price d-flex justify-content-center align-items-center"
-                >
-                  $5,000
+                  <Modal show={show} onHide={handleClose}>
+                    <Modal.Header closeButton>
+                      <Modal.Title>Modal heading</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>確定要加價嗎？</Modal.Body>
+                    <Modal.Footer>
+                      <Button variant="secondary" onClick={handleClose}>
+                        不確定
+                      </Button>
+                      <Button
+                        variant="primary"
+                        onClick={() => {
+                          addprice(addmoney)
+                          handleClose()
+                        }}
+                      >
+                        確定
+                      </Button>
+                    </Modal.Footer>
+                  </Modal>
+                  <div
+                    onClick={() => {
+                      setAddmoney(5000)
+                      // addprice(1000)
+                      handleShow()
+                    }}
+                    className="g-price d-flex justify-content-center align-items-center"
+                  >
+                    $5,000
+                  </div>
+                  <div
+                    onClick={() => {
+                      setAddmoney(10000)
+                      // addprice(1000)
+                      handleShow()
+                    }}
+                    className="g-price d-flex justify-content-center align-items-center"
+                  >
+                    $10,000
+                  </div>
                 </div>
-                <div
-                  onClick={() => {
-                    setAddmoney(10000)
-                    // addprice(1000)
-                    handleShow()
-                  }}
-                  className="g-price d-flex justify-content-center align-items-center"
-                >
-                  $10,000
-                </div>
-              </div>
-              {/* ):null} */}
+              ) : null}
               <h4>競標資訊</h4>
               <div className="line3 my-4  w-100"></div>
               <table>
@@ -497,42 +502,45 @@ function Desc(props) {
             opacity: 0,
           }}
         >
-          <Bookmark {...props} />
+          <Bookmark
+            sid={sid}
+            changepage={changepage}
+            setChangepage={setChangepage}
+          />
 
           <div className="row">
             <div className="col">
               <div className="g-bg p-3">
-                <Switch>
-                  <Route path="/pages/desc/record/:id?">
-                    <table className="w-100 text-center mt-3">
-                      <tbody>
-                        <tr className="w-100 text-center">
-                          <th className="w-25">競標者</th>
-                          <th className="w-25">下標金額</th>
-                          <th className="w-25">總金額</th>
-                          <th className="w-25">時間</th>
-                        </tr>
+                {changepage == 2 ? (
+                  <table className="w-100 text-center mt-3">
+                    <tbody>
+                      <tr className="w-100 text-center">
+                        <th className="w-25">競標者</th>
+                        <th className="w-25">下標金額</th>
+                        <th className="w-25">總金額</th>
+                        <th className="w-25">時間</th>
+                      </tr>
+                      {member.map((item, index) => (
+                        <Record
+                          key={index}
+                          item={item}
+                          {...props}
+                          getMember={getMember}
+                          changepage={changepage}
+                        />
+                      ))}
+                    </tbody>
+                  </table>
+                ) : (
+                  <Setprice changepage={changepage} />
+                )}
+                {/* <Route path="/pages/desc/setprice/:id?"> */}
 
-                        {/* <QueueAnim component="ul" type={['right', 'left']} leaveReverse> */}
-                        {member.map((item, index) => (
-                          <Record
-                            key={index}
-                            item={item}
-                            {...props}
-                            getMember={getMember}
-                          />
-                        ))}
-                        {/* </QueueAnim> */}
-                      </tbody>
-                    </table>
-                  </Route>
-                  <Route path="/pages/desc/chatroom/:id?">
-                    <Chatroom />
-                  </Route>
-                  {/* <Route path="/pages/desc/spec/:id?">
+                {/* </Route> */}
+                {/* <Route path="/pages/desc/spec/:id?">
         <Spec/>
       </Route> */}
-                </Switch>
+                {/* </Switch> */}
               </div>
             </div>
           </div>

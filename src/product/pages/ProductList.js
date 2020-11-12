@@ -10,6 +10,7 @@ import ProductPopular from '../components/ProductPopular'
 import ProductSeries from '../components/ProductSeries'
 import ProductCard from '../components/ProductCard'
 import CouponModal from '../components/CouponModal'
+import ListNew from '../components/ListNew'
 import Breadcrumb from '../../common_components/Breadcrumb'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
@@ -254,18 +255,20 @@ function ProductList(props) {
         preload="auto"
       ></video>
 
+      <Breadcrumb />
+
       <ProductPopular />
+      <ListNew />
 
       <ProductSeries setSeries={setSeries} />
 
       <div className="context1">
         <div className="container" id="productCards">
-          <div className="row d-flex justify-content-center">
-            <p className="col-4 subtitle1">全部產品</p>
-
-            <p className="col-8">
-              在與人談論到居家靈感佈置陳列的時候，推崇自然風格的我們，總是鼓勵大家回到原點，以自己的角度出發，親自去挑選符合自己生活使用習慣的古董老件，而非跟隨流行的風格。
-            </p>
+          <div className="row">
+            <div className="w_title1">
+              <div className="titlech noto-serif text-center">全部產品</div>
+              <div className="titleEN lora text-center">All Product</div>
+            </div>
           </div>
 
           <div className="row justify-content-center">
@@ -283,7 +286,6 @@ function ProductList(props) {
           </button>
         </div>
       </div>
-
       <BackTop
         visibilityHeight="2000"
         style={{

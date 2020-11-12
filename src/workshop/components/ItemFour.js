@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import '../styles/workshop.css'
 import imagework from '../images/11.jpg'
 import imageworker from '../images/12.jpg'
+import imageworkerthree from '../images/11-1.png'
+import imageworkerfour from '../images/11-2.png'
 import '../styles/slider.css'
 import Carousel from 'react-elastic-carousel'
 
@@ -35,36 +37,36 @@ function ItemFour(props) {
             <div className="wordworker">
               <div className="word1worker">
                 <h4>木工創客實驗室</h4>
-                <h6>營業時間:09:00-18:00</h6>
-                <h6>地點:台灣/台北市</h6>
+                <h6>營業時間:09:00-21:00</h6>
+                <h6>地點:台北市</h6>
               </div>
             </div>
           </div>
 
           <div className="box5worker">
             <div className="upper5">
-              <img src={imageworker} />
+              <img src={imageworkerthree} />
             </div>
 
             <div className="wordworker">
               <div className="word1worker">
-                <h4>木工創客實驗室</h4>
-                <h6>營業時間:09:00-18:00</h6>
-                <h6>地點:台灣/台北市</h6>
+                <h4>雷雕廠房</h4>
+                <h6>營業時間:09:00-21:00</h6>
+                <h6>地點:台北市</h6>
               </div>
             </div>
           </div>
 
           <div className="box5worker">
             <div className="upper5">
-              <img src={imageworker} />
+              <img src={imageworkerfour} />
             </div>
 
             <div className="wordworker">
               <div className="word1worker">
-                <h4>木工創客實驗室</h4>
-                <h6>營業時間:09:00-18:00</h6>
-                <h6>地點:台灣/台北市</h6>
+                <h4>木工上漆室</h4>
+                <h6>營業時間:09:00-21:00</h6>
+                <h6>地點:台北市</h6>
               </div>
             </div>
           </div>

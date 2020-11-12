@@ -22,7 +22,6 @@ service.interceptors.request.use(
     const { authToken } = user.users || {}
 
     if (authToken) {
-      console.log(' 有 authToken ')
       config.headers['Authorization'] = `Bearer ${authToken}`
     }
     return config
@@ -49,14 +48,13 @@ service.interceptors.response.use(
    */
   (response) => {
     console.log(
-      '%c response.data: ',
-      'background: red; color: white; font-weight: 900',
+      '%c INFO %cresponse.data',
+      'color: #0092FA; font-weight: bold; ',
+      'color: #fff; background: #0092FA; font-weight: bold; padding: 5px; border-radius: 3px',
       response.data
     )
 
     const res = response.data
-
-    console.log(res)
 
     // if the custom code is not 20000, it is judged as an error.
     if (res.code) {

@@ -34,7 +34,12 @@ function Aside() {
   return (
     <>
       <div className="aside_container" style={{ width: 256 }}>
-        <Menu defaultSelectedKeys={['1']} mode="inline" onClick={hanldeClick}>
+        <Menu
+          className="aside_menu"
+          defaultSelectedKeys={['1']}
+          mode="inline"
+          onClick={hanldeClick}
+        >
           {/* defaultOpenKeys={['sub1']} */}
           {/* theme="dark" */}
           {/* inlineCollapsed={collapsed} */}

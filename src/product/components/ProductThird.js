@@ -24,7 +24,7 @@ function ProductThird(props) {
       <div className="container">
         <div className="row">
           <div className="col-sm-12 col-lg-6 third-photo">
-            <img src={require('../../img/' + item.photo)} alt="" />
+            <img src={require('../images/pc3.jpg')} alt="" />
           </div>
           <div className="col-sm-12 col-lg-6 ">
             <div className=" refinement seats  " data-refinement-id="seats">

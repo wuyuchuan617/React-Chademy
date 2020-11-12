@@ -31,7 +31,7 @@ body {
     margin-top: 20px;
     margin-right: 20px;
     color: #1A1818;
-
+    cursor: pointer;
 }
 
 .clearFilter {
@@ -41,7 +41,7 @@ body {
     font-size: 12px;
     color: #1A1818;
     background-color: #F3F4F4;
-
+    cursor: pointer;
 }
 
 .filterTag {
@@ -86,7 +86,7 @@ a {
     margin: 20px 20px;
     border-bottom: 1px solid #A7A49F;
     padding: 15px;
-
+    cursor: pointer;
 
 }
 
@@ -136,6 +136,7 @@ a {
 
 .productCard {
     margin: 0px 0px 60px 0px;
+    cursor: pointer;
 }
 
 .productCard p {
@@ -149,16 +150,17 @@ a {
 }
 
 .productCardImg {
-
+    width: 100%;
     height: 250px;
     overflow: hidden;
     position: relative;
     object-fit: contain;
 }
 
-.productCardImg {
+.productCardImg img {
     width: 100%;
-
+    height: 250px;
+    object-fit: cover;
 }
 
 .productCardImgHover {
@@ -170,6 +172,13 @@ a {
     left: 15px;
     top: 0;
     transition: .5s;
+}
+
+.productCardImgHover img {
+
+    width: 350px;
+    height: 250px;
+    object-fit: cover;
 }
 
 .productCardImgHover:hover {
@@ -285,12 +294,17 @@ img {
 }
 
 .seriePhoto {
+    width: 100%;
+    height: 500px;
     position: relative;
     margin-bottom: 100px;
+    background-position: center;
 }
 
 .seriePhoto img {
     width: 100%;
+    height: 500px;
+    object-fit: cover;
 }
 
 
@@ -303,3 +317,102 @@ img {
     font-weight: 300;
     letter-spacing: 4px;
 } */
+
+
+/* 以下為new */
+
+
+.product-left-border {
+    height: 620px;
+    top: -24px;
+    width: 0.5px;
+    position: relative;
+    left: 30px;
+    border-left: 1px solid rgba(144, 144, 144, 0.5);
+}
+
+@media screen and (min-width: 1008px) {
+    .ShopTheLook__ProductList {
+        flex: none;
+        width: 270px;
+        margin: 0 80px;
+    }
+}
+
+@media only screen and (max-width: 1499px) and (min-width: 1440px) {
+    .product-right-border {
+        height: 620px;
+        top: -24px;
+    }
+}
+
+.product-right-border {
+    width: 0.5px;
+    border-right: 1px solid rgba(144, 144, 144, 0.5);
+    position: relative;
+    left: -30px;
+}
+
+.w_new_text {
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.w_new-btn {
+    width: 84%;
+    height: 40px;
+    justify-content: center;
+    display: block;
+    border: 1px solid #c77334;
+    background-color: #c77334;
+    margin-top: 90px;
+    margin: auto;
+    margin-top: 40px;
+    color: white;
+    transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.w_new_img {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+
+.w_new_img img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+/* below are seriesTitle */
+
+.fade-pager__indicator1 {
+    margin-bottom: 20px;
+    width: 100%;
+    transition: .7s;
+    transition-timing-function: ease-in;
+    cursor: pointer;
+}
+
+.fade-pager__indicator1.active {
+    /* border-bottom: 1px solid white; */
+    color: white;
+    width: 100%;
+
+}
+
+.fade-pager1 {
+    height: 600px;
+    /* min-width: 80vw; */
+    overflow: hidden;
+    position: relative;
+    object-fit: contain;
+
+}
+
+.thirdbg1 {
+    background-color: #5f6b6b;
+    padding-top: 50px;
+    height: 600px;
+    /* margin-bottom: 300px; */
+}

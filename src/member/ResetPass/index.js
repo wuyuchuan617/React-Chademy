@@ -1,15 +1,9 @@
-// import React from 'react'
-import React, { useState, useEffect } from 'react'
-
-import { useHistory } from 'react-router-dom'
-
+import React from 'react'
 import './index.scoped.scss'
 
 import request from '../../utils/request'
 
-// import { Form, Button, Container } from 'react-bootstrap'
-
-import { Typography, Layout, Form, Input, Modal, Button } from 'antd'
+import { Typography, Layout, Form, Input, Button, message } from 'antd'
 const { Title } = Typography
 const { Content } = Layout
 
@@ -17,77 +11,51 @@ function ResetPass() {
   // 表單元素
   const [form] = Form.useForm()
 
-  const [smShow, setSmShow] = useState(false)
-  const [reg, setReg] = useState({
-    title: '',
-    msg: '',
-    data: {},
-  })
-
-  let history = useHistory()
-
   // 表單方法
   const onFinish = (fieldsValue) => {
-    const { user = {} } = JSON.parse(localStorage['reduxState'] || '{}')
-    const { token } = user.users || {}
-
+    console.log(
+      '%c DEBUG %cData',
+      'color: #0092FA; font-weight: bold; ',
+      'color: #fff; background: #0092FA; font-weight: bold; padding: 5px; border-radius: 3px',
+      fieldsValue
+    )
     const fetchData = async () => {
       const response = await request({
-        url: `/members/resetPWD`,
+        url: `/members/setUserPass`,
         method: 'POST',
         data: {
-          token: token,
-          password: fieldsValue.password,
+          oldPassword: fieldsValue.oldPassword,
+          newPassword: fieldsValue.newPassword,
         },
       })
 
       const { success, msg, data } = response
 
-      // 如果成功
-      if (success) {
-        // 設定小彈窗的內容
-        setReg({
-          success: success,
-          title: '重置密碼',
-          msg: msg,
-        })
-
-        // 顯示小彈窗
-        setSmShow(true)
-
-        // n 秒後轉導至 /
-        setTimeout(() => {
-          history.push('/')
-        }, 2000)
+      if (!success) {
+        message.error(msg)
       } else {
-        setReg({
-          success: success,
-          title: '重置密碼',
-          msg: msg,
-          data: data,
-        })
+        message.success(msg)
 
-        setSmShow(true)
+        // 成功後清空
+        form.resetFields()
       }
+
+      console.log('response.data ', data)
     }
 
     fetchData()
   }
 
   return (
-    <Layout className="register_container">
+    <Layout className="password_container">
       <Content style={{ padding: '0 50px' }}>
         <Form
           form={form}
           layout="vertical"
           name="basic"
-          initialValues={{
-            email: '',
-            password: '',
-          }}
+          initialValues={{ oldPassword: '', newPassword: '' }}
           onFinish={onFinish}
           onValuesChange={(changedValues, allValues) => {
-            console.log(allValues)
             form.setFieldsValue(allValues)
           }}
           className="form_container"
@@ -95,7 +63,7 @@ function ResetPass() {
           <Title level={4}>重置密碼</Title>
 
           <Form.Item
-            name="password"
+            name="oldPassword"
             label="請輸入舊密碼"
             rules={[
               {
@@ -109,12 +77,12 @@ function ResetPass() {
           </Form.Item>
 
           <Form.Item
-            name="password1"
+            name="newPassword"
             label="請輸入密碼"
             rules={[
               {
                 required: true,
-                message: 'Please input your password!',
+                message: 'Please input your new password!',
               },
             ]}
             hasFeedback
@@ -123,18 +91,18 @@ function ResetPass() {
           </Form.Item>
 
           <Form.Item
-            name="password2"
+            name="confirm"
             label="請輸入確認密碼"
-            dependencies={['password1']}
+            dependencies={['newPassword']}
             hasFeedback
             rules={[
               {
                 required: true,
-                message: 'Please confirm your password!',
+                message: 'Please confirm your new password!',
               },
               ({ getFieldValue }) => ({
                 validator(rule, value) {
-                  if (!value || getFieldValue('password1') === value) {
+                  if (!value || getFieldValue('newPassword') === value) {
                     return Promise.resolve()
                   }
                   return Promise.reject(
@@ -153,70 +121,9 @@ function ResetPass() {
             </Button>
           </Form.Item>
         </Form>
-
-        <Modal
-          className="reset_modal"
-          title={reg.title}
-          visible={smShow}
-          onOk={() => setSmShow(false)}
-          onCancel={() => setSmShow(false)}
-          footer={[
-            <Button
-              key="submit"
-              type="primary"
-              onClick={() => setSmShow(false)}
-            >
-              確認
-            </Button>,
-          ]}
-        >
-          {reg.success && <div>{reg.msg}</div>}
-          {reg.data && reg.data.noEmail && <div>{reg.data.noEmail}</div>}
-          {reg.data && reg.data.noMobile && <div>{reg.data.noMobile}</div>}
-        </Modal>
       </Content>
     </Layout>
   )
-
-  // return (
-  //   <>
-  //     <Container>
-  //       <Form>
-  //         <h1>重置密碼</h1>
-  //         <div>更改密碼</div>
-  //         <Form.Group controlId="formBasicEmail">
-  //           <Form.Label>新密碼</Form.Label>
-  //           <Form.Control type="password" placeholder="Enter password" />
-  //         </Form.Group>
-
-  //         <Form.Group controlId="formBasicPassword">
-  //           <Form.Label>確認新密碼</Form.Label>
-  //           <Form.Control type="password" placeholder="Enter password" />
-  //         </Form.Group>
-
-  //         <Button
-  //           variant="primary"
-  //           type="submit"
-  //           onClick={async () => {
-  //             // const response = await request({
-  //             //   url: `/members/forgetPwd`,
-  //             //   method: 'POST',
-  //             //   data: { token, password },
-  //             // })
-  //             // console.log(response)
-  //             // if (!response.success) {
-  //             //   message.error(response.msg)
-  //             // } else {
-  //             //   message.success(response.msg)
-  //             // }
-  //           }}
-  //         >
-  //           Submit
-  //         </Button>
-  //       </Form>
-  //     </Container>
-  //   </>
-  // )
 }
 
 export default ResetPass

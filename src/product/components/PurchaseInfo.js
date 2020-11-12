@@ -1,22 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function PurchaseInfo() {
+  const [show, setShow] = useState(false)
   return (
-    <div className="row justify-content-center">
-      <div className="i_detail">
-        <div className="i_filter">
-          <div className="i_list d-flex justify-content-between align-items-center pl-3 ">
-            <p className="mr-5 mt-3">賣家資訊</p>
-            <p className="mr-3 mt-3">＋</p>
-          </div>
+    <div className="i_detail">
+      <div className="i_filter">
+        <div className="i_list d-flex justify-content-between align-items-center pl-3 ">
+          <p className="mr-5 mt-3">賣家資訊</p>
+          <p className="mr-3 mt-3">＋</p>
+        </div>
 
-          <div
-            className="i_list d-flex justify-content-between align-items-center pr-3 pl-3"
-            onClick={() => {}}
-          >
-            <p className="mr-5 mt-3">購買須知</p>
-            <p className="ml-5 mt-3">＋</p>
-          </div>
+        <div
+          className="i_list d-flex justify-content-between align-items-center pr-3 pl-3"
+          onClick={() => {
+            setShow(!show)
+          }}
+        >
+          <p className="mr-5 mt-3">購買須知</p>
+          <p className="ml-5 mt-3">＋</p>
+        </div>
+        {show && (
           <div className="i_info ml-3">
             <div className="i_title mb-3 mt-5">配送費</div>
             <div className="i_text">
@@ -79,9 +82,9 @@ function PurchaseInfo() {
               </p>
             </div>
           </div>
+        )}
 
-          <div className="i_border_bottom"></div>
-        </div>
+        <div className="i_border_bottom"></div>
       </div>
     </div>
   )

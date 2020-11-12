@@ -31,6 +31,16 @@ body {
   object-fit: cover;
 }
 
+.ant-anchor-wrapper {
+  margin-left: -4px;
+  /* padding-left: 4px; */
+  overflow: auto;
+  margin-top: 10px;
+  background-color: transparent;
+  font-size: 18px;
+  cursor: pointer;
+}
+
 .modalproduct img {
   object-fit: cover;
   width: 100%;
@@ -41,6 +51,12 @@ body {
   width: 25px;
   height: 25px;
   color: #b7bdb3;
+
+}
+
+.heart {
+  cursor: pointer;
+  margin: 20px 0px;
 }
 
 .wbread {
@@ -91,6 +107,14 @@ body {
   height: 130px;
   overflow: hidden;
   transition: 0.5s;
+  cursor: pointer;
+}
+
+.product_photo_small img {
+
+  width: 176px;
+  height: 130px;
+  object-fit: cover;
 }
 
 .smallPhotos {
@@ -130,26 +154,26 @@ body {
 
 .w_cart-btn {
   width: 100%;
-  height: 50px;
+  /* height: 50px;
   border: 1px solid #c77334;
   background-color: #c77334;
   margin-top: 90px;
   margin: auto;
   color: white;
-  transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86); */
 }
 
-.w_cart-btn:hover {
+/* .w_cart-btn:hover { */
   /* width: 100%;
   height: 50px; */
-  /* border: none; */
+  /* border: none;
   border: 1px solid #c77334;
-  background-color: transparent;
+  background-color: transparent; */
   /* margin-top: 90px; */
   /* margin: auto; */
-  color: black;
+  /* color: black; */
   /* transition: .5s; */
-}
+/* } */
 
 /* first container finish here! */
 
@@ -174,13 +198,15 @@ body {
 
 .third-photo {
   width: 620px;
-  height: 392px;
+  height: 400px;
   overflow: hidden;
   object-fit: cover;
 }
 
 .third-photo img {
-  width: 100%;
+  width: 620px;
+  height: 400px;
+  object-fit: cover;
 }
 
 .seats {
@@ -198,6 +224,7 @@ body {
   margin: 0px 20px;
   border-bottom: 1px solid #edece8;
   padding: 15px;
+  cursor: pointer;
 }
 
 /* third container finish here! */
@@ -235,7 +262,10 @@ body {
 }
 
 .fourth-photo img {
-  width: 100%;
+  width: 619px;
+  height: 400px;
+  /* overflow: hidden; */
+  object-fit: cover;
 }
 
 /* fourth container finish here! */
@@ -295,7 +325,9 @@ body {
 }
 
 .designer-photo img {
-  width: 100%;
+  width: 500px;
+  height: 360px;
+  object-fit: cover;
 }
 
 /* sixth container finish here! */
@@ -360,13 +392,14 @@ body {
 
 .review-photo {
   height: 300px;
-  width: 50%;
+  width: 100%;
   overflow: hidden;
 }
 
 .review-photo img {
-  /* width: 100%; */
-  height: 100%;
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
 }
 
 .reviews p {
@@ -414,16 +447,16 @@ body {
   margin-top: 30px;
   color: #475050;
   font-family: Noto Serif TC;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
   letter-spacing: 2px;
 }
 
 .w_comP {
-  color: #475050;
+  color: black;
   font-family: Noto Sans TC;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 200;
   letter-spacing: 2px;
 }
 
@@ -436,9 +469,9 @@ body {
   line-height: 30px;
   color: #475050;
   font-family: Noto Sans TC;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
 }
 
 .more-btn {
@@ -669,6 +702,7 @@ body {
   overflow: hidden;
   position: relative;
   object-fit: contain;
+  margin-left: 50px;
 }
 
 .fade-pager__pages {
@@ -694,6 +728,7 @@ body {
   text-align: center;
   list-style: none;
   margin-right: 20px;
+  margin-left: 30px;
 }
 
 .fade-pager__indicator {
@@ -701,6 +736,7 @@ body {
   width: 30px;
   transition: .7s;
   transition-timing-function: ease-in;
+  cursor: pointer;
 }
 
 .fade-pager__indicator.active {
@@ -754,4 +790,22 @@ body {
 
 .fade-pager__page.active {
   display: block;
+}
+
+.parallax1 {
+  background-image: url("../images/scroll.jpg");
+  min-height: 600px;
+  /* 沒內文時可以看到的最小高度 */
+
+  background-attachment: fixed;
+  /* 固定圖像 */
+  background-position: center center;
+  /* 圖像置中 */
+  background-size: cover;
+}
+
+.w_title1 {
+  width: 100%;
+  position: relative;
+  margin-bottom: 50px;
 }

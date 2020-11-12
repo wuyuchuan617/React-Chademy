@@ -295,14 +295,14 @@ function FundList(props) {
             />
           </div>
 
-          <div class="row  justify-content-center">
+          <div className="row  justify-content-center">
             {product.slice(0, viewProduct).map((item, index) => {
               return <FundListCard key={index} item={item} />
             })}
           </div>
-          <div class="container">
-            <div class="row">
-              <button class="loadButton" onClick={handleClick}>
+          <div className="container">
+            <div className="row">
+              <button className="loadButton" onClick={handleClick}>
                 LOAD MORE
               </button>
             </div>

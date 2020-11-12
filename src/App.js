@@ -58,6 +58,9 @@ import CartClass from './cart/pages/CartClass'
 import DeliveryInfo from './cart/pages/DeliveryInfo'
 import CheckInfo from './cart/pages/CheckInfo'
 import Finish from './cart/pages/Finish'
+import { Manager } from 'socket.io-client'
+
+// ---------------------以下import 管理後台頁面------------------
 
 //-----------------------------------------------------------
 
@@ -77,8 +80,13 @@ function App() {
   const [totalPrice, setTotalPrice] = useState(0)
   const [subtotal, setSubtoal] = useState(0)
   const [resetShow, setResetShow] = useState(0)
+  const [showDashBoard, setDashboard] = useState(false)
   //-----------------------------------------------------------
-  return (
+  return showDashBoard ? (
+    <div
+      style={{ width: '100px', height: '100px', backgroundColor: 'black' }}
+    ></div>
+  ) : (
     <Router>
       <>
         <CHNavbar

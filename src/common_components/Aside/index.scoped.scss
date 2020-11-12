@@ -1,4 +1,11 @@
 .aside_container {
+  // outline: 1px dashed orange;
+
+  .aside_menu {
+    width: 60%;
+    // outline: 1px dashed green;
+  }
+
   /deep/ .ant-menu {
     border-right: none;
     background-color: #edece800;

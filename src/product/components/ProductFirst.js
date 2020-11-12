@@ -8,6 +8,8 @@ import { Rate } from 'antd'
 import { withRouter } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Breadcrumbw from '../components/Breadcrumbw'
+import { Anchor } from 'antd'
+const { Link } = Anchor
 
 function ProductFirst(props) {
   const {
@@ -21,6 +23,10 @@ function ProductFirst(props) {
   } = props
 
   const isLogged = useSelector((state) => state.user.logged)
+
+  const onChange = (link) => {
+    console.log('Anchor:OnChange', link)
+  }
 
   const [myCart, setMyCart] = useState([])
   const [show, setShow] = useState(false)
@@ -47,7 +53,7 @@ function ProductFirst(props) {
 
   useEffect(() => {
     setPhoto(`http://localhost:3001/img/${item.photo}`)
-  }, [item])
+  }, [sid])
 
   const heartFill = {
     color: '#C77334',
@@ -212,7 +218,7 @@ function ProductFirst(props) {
               <div className="product_photo_small">
                 {/* <img src={require('../../img/' + item.photo)} alt="" /> */}
                 <img
-                  src={item.photo}
+                  src={`http://localhost:3001/img/` + item.photo}
                   alt=""
                   onClick={(e) => {
                     setPhoto(e.target.src)
@@ -221,7 +227,7 @@ function ProductFirst(props) {
               </div>
               <div className="product_photo_small">
                 <img
-                  src={item.photo2}
+                  src={`http://localhost:3001/img/` + item.photo2}
                   alt=""
                   onClick={(e) => {
                     setPhoto(e.target.src)
@@ -230,7 +236,7 @@ function ProductFirst(props) {
               </div>
               <div className="product_photo_small">
                 <img
-                  src={item.photo3}
+                  src={`http://localhost:3001/img/` + item.photo3}
                   alt=""
                   onClick={(e) => {
                     setPhoto(e.target.src)
@@ -239,7 +245,7 @@ function ProductFirst(props) {
               </div>
               <div className="product_photo_small">
                 <img
-                  src={item.photo4}
+                  src={`http://localhost:3001/img/` + item.photo4}
                   alt=""
                   onClick={(e) => {
                     setPhoto(e.target.src)
@@ -264,7 +270,11 @@ function ProductFirst(props) {
               />
               {/* )
               })} */}
-              <p> （ {review.length}則評論 ）</p>
+              <Anchor affix={false} onChange={onChange}>
+                <Link href="#w_review" title={`（ ${review.length}則評論 ）`}>
+                  {/* <p> （ {review.length}則評論 ）</p> */}
+                </Link>
+              </Anchor>
             </div>
             <div className="heart justify-content-end">
               <BsFillHeartFill
@@ -294,13 +304,11 @@ function ProductFirst(props) {
                   Adelaide是一款優雅的小傑作，無論從哪個角度看都美貌不減，而且無比舒適。纖細的有機線條營造了輕盈有機外觀，邀請您坐下來欣賞精緻的丹麥設計。
                 </p>
               </div>
-
               <div className="product-desc">
                 <p className="w_comP">
                   Adelaide是一款優雅的小傑作，無論從哪個角度看都美貌不減，而且無比舒適。纖細的有機線條營造了輕盈有機外觀，邀請您坐下來欣賞精緻的丹麥設計。
                 </p>
               </div>
-
               {/* <div className="choose-area">
                 <p>選擇木頭：</p>
                 <div className="d-flex">
@@ -311,7 +319,7 @@ function ProductFirst(props) {
                   <div className="choose-wood"></div>
                 </div>
               </div> */}
-
+              {/* /*{' '}
               <div className="choose-area">
                 <p>選擇皮革：</p>
                 <div className="d-flex">
@@ -321,33 +329,31 @@ function ProductFirst(props) {
                   <div className="choose-wood"></div>
                   <div className="choose-wood"></div>
                 </div>
-              </div>
-              <li class="share-facebook">
+              </div> */}
+              <li className="share-facebook">
                 <a
                   rel="nofollow noopener noreferrer"
                   data-shared="sharing-facebook-48785"
-                  class="share-facebook sd-button share-icon no-text"
+                  className="share-facebook sd-button share-icon no-text"
                   href="https://entertheloft.com/product/cylinder-high-by-studio-corkinho/?share=facebook&amp;nb=1"
                   target="_blank"
                   title="Click to share on Facebook"
                 >
                   <span></span>
-                  <span class="sharing-screen-reader-text">
+                  <span className="sharing-screen-reader-text">
                     Click to share on Facebook (Opens in new window)
                   </span>
                 </a>
               </li>
-
               <a
                 href="https://www.facebook.com/sharer.php?u=https://www.cyberbiz.co/support/?p=855"
                 target="_blank"
               >
                 aaa
               </a>
-
               {isLogged ? (
-                <button
-                  className="w_cart-btn"
+                <div
+                  className="btn_lessmargin more w_cart-btn"
                   onClick={() => {
                     setCartAmount(cartamount + 1)
                     updateCartToLocalStorage({
@@ -361,16 +367,16 @@ function ProductFirst(props) {
                   }}
                 >
                   加入購物車
-                </button>
+                </div>
               ) : (
-                <button
-                  className="w_cart-btn"
+                <div
+                  className="btn_lessmargin more w_cart-btn"
                   onClick={() => {
                     props.history.push('/login')
                   }}
                 >
                   加入購物車 請先登入
-                </button>
+                </div>
               )}
             </div>
           </div>

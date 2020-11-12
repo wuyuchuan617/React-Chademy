@@ -43,7 +43,7 @@ function ReviewCard(props) {
               </p>
             </div>
           </div>
-          <p className="w_review_comm">{item.review_comment}</p>
+          <p className="w_review_comm p14">{item.review_comment}</p>
         </div>
       </div>
     </>

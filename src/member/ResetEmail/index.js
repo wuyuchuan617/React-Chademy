@@ -1,4 +1,3 @@
-// import React from 'react'
 import React from 'react'
 import './index.scoped.scss'
 
@@ -72,7 +71,7 @@ function ResetEmail() {
           </Form.Item>
 
           <Form.Item
-            name="password2"
+            name="email2"
             label="請輸入確認電子郵件"
             dependencies={['email']}
             hasFeedback
@@ -106,7 +105,6 @@ function ResetEmail() {
       </Content>
     </Layout>
   )
-
 }
 
 export default ResetEmail

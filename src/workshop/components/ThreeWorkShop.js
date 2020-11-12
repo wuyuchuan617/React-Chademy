@@ -18,11 +18,13 @@ function ThreeWorkShop(props) {
         <div className="wordexhibition">
           <div className="word1exhibition">
             <h4>{item2.activitie_name}</h4>
-            <h6>展覽日期:{item2.start_date}</h6>
+            <h6>
+              展覽日期:{item2.start_date}-{item2.end_date}
+            </h6>
             <h6>地點:{item2.address}</h6>
           </div>
           <div className="price">
-            <h4>${item2.sale_price}</h4>
+            <h4>${item2.origina_price}</h4>
           </div>
         </div>
       </div>
