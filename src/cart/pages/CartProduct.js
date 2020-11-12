@@ -37,9 +37,7 @@ function CartProduct(props) {
   // const [showLoading, setShowLoading] = useState(false)
   // const [myCartDisplay, setMyCartDisplay] = useState([])
   useEffect(() => {
-    setTimeout(() => {
-      setShowLoading(false)
-    }, 500)
+    setShowLoading(false)
     let newMyCartDisplay = []
 
     //尋找myCartDisplay
