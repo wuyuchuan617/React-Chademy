@@ -49,11 +49,11 @@ function MemberOrder(props) {
           rel="noopener noreferrer"
           href="http://www.taobao.com/"
           onClick={() => {
-            setFiliterState('運送中')
+            setFiliterState('處理中')
             setGetPending(getPending + 1)
           }}
         >
-          運送中
+          處理中
         </div>
       </Menu.Item>
       <Menu.Item>
@@ -98,7 +98,7 @@ function MemberOrder(props) {
         ) : (
           ''
         )}
-        {filiterState === '運送中' ? (
+        {filiterState === '處理中' ? (
           <PendingOrder setMyPO_NO={setMyPO_NO} setMyDate={setMyDate} />
         ) : (
           ''

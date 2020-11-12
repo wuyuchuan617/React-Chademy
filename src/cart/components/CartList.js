@@ -76,19 +76,20 @@ function CartList(props) {
                     <div className="listqty">
                       <h6
                         style={{ left: '10px', cursor: 'pointer' }}
-                        onClick={() => updateCartToLocalStorage(item)}
-                      >
-                        <MdAdd />
-                      </h6>
-                      <h6 style={{ left: '50px' }}>{item.amount}</h6>
-                      <h6
-                        style={{ left: '80px', cursor: 'pointer' }}
                         onClick={() => {
                           if (item.amount === 1) return
                           updateCartToLocalStorage(item, false)
                         }}
                       >
                         <FiMinus />
+                      </h6>
+
+                      <h6 style={{ left: '50px' }}>{item.amount}</h6>
+                      <h6
+                        style={{ left: '80px', cursor: 'pointer' }}
+                        onClick={() => updateCartToLocalStorage(item)}
+                      >
+                        <MdAdd />
                       </h6>
                     </div>
                     <h6 style={{ left: '1100px', color: '#C67334' }}>
