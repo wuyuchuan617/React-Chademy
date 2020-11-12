@@ -51,7 +51,7 @@ function MyFav(props) {
             <Row>
               {/* item.status === Number(activeKey) &&  */}
               {myfavlist.map((item) => (
-                <>
+                <section className="item_container">
                   <div>
                     <img src={imagemyfav} alt="myfav" className="Capon_img" />
                   </div>
@@ -72,7 +72,7 @@ function MyFav(props) {
                       移除此商品
                     </div>
                   </div>
-                </>
+                </section>
               ))}
             </Row>
           </TabPane>
