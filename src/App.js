@@ -59,8 +59,9 @@ import DeliveryInfo from './cart/pages/DeliveryInfo'
 import CheckInfo from './cart/pages/CheckInfo'
 import Finish from './cart/pages/Finish'
 // import { Manager } from 'socket.io-client'
-import DashBoard from './cart/pages/DashBorad'
+import DashBoard from './cart/components/DashBorad'
 import CartFund from './cart/pages/CartFund'
+import ManagerOrder from './cart/pages/ManageOrder'
 
 // ---------------------以下import 管理後台頁面------------------
 
@@ -86,7 +87,19 @@ function App() {
   const [typeofProduct, setTypeofProduct] = useState(0)
   //-----------------------------------------------------------
   return showDashBoard ? (
-    <DashBoard />
+    <Router>
+      <>
+        <Switch>
+          {/* 404找不到網頁，需要放在switch路由表最後一個 */}
+          <Route path="/dashboard">
+            <ManagerOrder
+              showDashBoard={showDashBoard}
+              setDashboard={setDashboard}
+            />
+          </Route>
+        </Switch>
+      </>
+    </Router>
   ) : (
     <Router>
       <>
