@@ -9,6 +9,11 @@ import BookMark from '../components/BookMark'
 import BookIcon from '../components/BookIcon'
 import Dropdowna from '../components/Dropdowna'
 
+
+import Button from 'antd/lib/button';
+import QueueAnim from 'rc-queue-anim';
+import Hpanimate from './Hpanimate'
+
 import BannerE from '../components/BannerE'
 
 function FundList(props) {
@@ -277,6 +282,7 @@ function FundList(props) {
     <>
       <div class="context1">
         {/* <BannerE/> */}
+       
         <div class="container" id="productCards">
           <div className="e_lableboxx mt-5">
             <BookMark setFilterMark={setFilterMark} setTime={setTime} />

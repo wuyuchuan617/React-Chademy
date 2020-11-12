@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import e_video from '../images/oljn5-343em.mp4'
-
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import '../styles/FundHomepage.scss'
 // import 'react-bootstrap'
 import { Container, Row, Col } from 'react-bootstrap'
@@ -46,9 +46,9 @@ function FundHomepage() {
       <Container>
         <Col>
           <Row>
-            <button name="explore" className="explore">
+            <Link to="/fundlist" className="explore">
               探索
-            </button>
+            </Link>
           </Row>
         </Col>
       </Container>
@@ -66,7 +66,9 @@ function FundHomepage() {
       {filterMark === 1 && filterIcon === 4 ? <CarouselE /> : ''}
 
       <div className="e_more_div" z-index="10">
-        <button className="e_more">more</button>
+        <Link to="/fundlist" className="e_more">
+          more
+        </Link>
       </div>
       <h1 className="e_popular">熱門募資專案</h1>
       <BookMarkTwo setShowProject={setShowProject} />

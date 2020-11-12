@@ -6,6 +6,8 @@ import { Alert } from 'antd'
 import { Button, notification, Space } from 'antd'
 import 'antd/dist/antd.css'
 
+import '../styles/FundItem.scss'
+
 function FundForm() {
   //photo
   const [photo, setPhoto] = useState(null)
@@ -71,6 +73,10 @@ function FundForm() {
   const [fundGoal, setFundGoal] = useState('')
   const [endTime, setEndTime] = useState('')
   const [realTime, setRealTime] = useState('')
+  const [leftDay, setLeftDay] = useState('')
+  const [designer, setDesigner] = useState('')
+  const [progress, setProgress] = useState('')
+  const [sid, setSid] = useState('')
 
   const openNotificationWithIcon = (type) => {
     notification[type]({
@@ -137,7 +143,7 @@ function FundForm() {
             <div
               className="btnDemo text-center mt-4"
               onClick={() => {
-                setOrderProductNo('405')
+                setOrderProductNo('1')
                 setOrderProduct('IMOLA')
                 setLowPrice('324000')
                 setFundGoal('8888000')
@@ -147,6 +153,10 @@ function FundForm() {
                 setReviewComment(
                   `我們為您搭配的歐洲經典傢俱家飾物件，由我們親自設計施作的木作，就是要讓您展現任性、自豪又絕對脫俗的居家品味。“把喜歡的美感傳達出去`
                 )
+                setLeftDay('1')
+                setDesigner('Ian')
+                setProgress('0')
+                
               }}
             >
               DEMO
@@ -251,6 +261,41 @@ function FundForm() {
                   value={realTime}
                 />
               </div>
+
+              <div className="e_formset">
+                <label for="stock">天數</label>
+                <input
+                  type="text"
+                  className="i_formstyle i_formwidth"
+                  id="stock"
+                  name="e_day"
+                  value={leftDay}
+                />
+              </div>
+
+              <div className="e_formset">
+                <label for="stock">進度</label>
+                <input
+                  type="text"
+                  className="i_formstyle i_formwidth"
+                  id="stock"
+                  name="e_progress"
+                  value={progress}
+                />
+              </div>
+
+              <div className="e_formset">
+                <label for="stock">設計師</label>
+                <input
+                  type="text"
+                  className="i_formstyle i_formwidth"
+                  id="stock"
+                  name="e_designer_sid"
+                  value={designer}
+                />
+              </div>
+
+           
 
               <button
                 className="i_btn3 text-center mt-4"

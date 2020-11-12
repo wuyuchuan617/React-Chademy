@@ -183,3 +183,73 @@
     // margin: auto;
     color: white;
   }
+
+  .e_formset{
+      display: none;
+
+  }
+
+  .e-related-product {
+    font-family: serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #707070;
+    // margin-bottom: 30px;
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
+ 
+}
+
+.small_card{
+    width: 80%;
+    background-color: #fcf8f8;
+    margin: auto;
+    padding: 15px;
+    margin-bottom: 30px;
+    margin-left: 80px;
+}
+
+.e_account{
+    font-family: Noto Sans TC;
+    font-size: 14px;
+    font-weight: 500;
+    color: #707070;
+    text-align: left;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+.e_name{
+    margin-left: 10px;
+    margin-bottom: 40px;
+}
+.em{
+    font-family: Noto Sans TC;
+    font-size: 18px;
+    font-weight: 500;
+    color: #436464;
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration:  2px solid #436464 ;
+}
+
+.emp{
+    font-family: Noto Sans TC;
+    font-size: 16px;
+    font-weight: 500;
+    color: #525757;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.emday{
+    font-family: Noto Sans TC;
+    font-size: 14px;
+    font-weight: 300;
+    color: #787c7c;
+    text-align: right;
+}
+
+.emdayp{
+    margin-left: 5px;
+}

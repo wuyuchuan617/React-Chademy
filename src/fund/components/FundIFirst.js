@@ -16,6 +16,8 @@ import { AiFillInfoCircle } from 'react-icons/ai'
 import { FaFacebook } from 'react-icons/fa'
 import { FaFacebookMessenger } from 'react-icons/fa'
 import { FaShareAlt } from 'react-icons/fa'
+import { FaChessQueen } from 'react-icons/fa'
+import { FaHandHoldingHeart } from 'react-icons/fa'
 
 import dt2 from '../images/dt2.jpeg'
 import dt3 from '../images/dt3.jpeg'
@@ -24,6 +26,12 @@ import dt5 from '../images/Image 32.png'
 
 function FundIFirst(props) {
   const { item, sid, cartamount, setCartAmount } = props
+  const localData = {
+    img: item.e_pic,
+    id: item.e_proname,
+    price: item.e_lowprice,
+    amount: 1,
+  }
 
   const isLogged = useSelector((state) => state.user.logged)
 
@@ -86,6 +94,27 @@ function FundIFirst(props) {
       setHeart(true)
     }
   }
+  //從localstroage拿資料
+  const updateStoryToLocalStorage = (item) => {
+    console.log(item)
+    const currentStory = JSON.parse(localStorage.getItem('showStory')) || []
+
+    // find if the product in the localstorage with its id
+    const index = currentStory.findIndex((v) => v.id === item.id)
+
+    console.log('index', index)
+    // found: index! == -1
+    if (index > -1) {
+      currentStory[index].amount++
+    } else {
+      currentStory.push(item)
+    }
+
+    localStorage.setItem('showStory', JSON.stringify(currentStory))
+    console.log('------', currentStory)
+
+    // 設定資料
+  }
   async function updateTotalToServer(value) {
     // const newTotal = { total: total + value }
 
@@ -135,6 +164,8 @@ function FundIFirst(props) {
 
   useEffect(() => {
     getHeartFromServer()
+    updateStoryToLocalStorage(localData)
+    console.log('hihi')
   }, [])
   return (
     <>
@@ -272,7 +303,8 @@ function FundIFirst(props) {
               <div className="e_left">
                 <p className="e_leff">
                   剩餘時間 : {item.e_day} <br />
-                  {item.e_start_time}<br/>
+                  {item.e_start_time}
+                  <br />
                   <div className="e_lefff">至</div>
                   {item.e_end_time}
                 </p>
@@ -362,7 +394,54 @@ function FundIFirst(props) {
               </p>
             </div>
 
-            <img class="details-pic" src={dt5} alt="" />
+            <img className="details-pic" src={dt5} alt="" />
+          </div>
+
+          <div className="col-5">
+            <div className="small_card">
+              <h4 className="e_account">
+                <FaChessQueen />
+                <span className="e_name">Eva</span>
+              </h4>
+
+              <h3 className="em">熱情贊助：＄105,000</h3>
+
+              <h3 className="emp">期待拿到實體貨的那天～</h3>
+              <h4 className="emday">
+                <FaHandHoldingHeart />
+                <span className="emdayp"> 十天前</span>
+              </h4>
+            </div>
+
+            <div className="small_card">
+              <h4 className="e_account">
+                <FaChessQueen />
+                <span className="e_name">Eva</span>
+              </h4>
+
+              <h3 className="em">熱情贊助：＄105,000</h3>
+
+              <h3 className="emp">期待拿到實體貨的那天～</h3>
+              <h4 className="emday">
+                <FaHandHoldingHeart />
+                <span className="emdayp"> 十天前</span>
+              </h4>
+            </div>
+
+            <div className="small_card">
+              <h4 className="e_account">
+                <FaChessQueen />
+                <span className="e_name">Eva</span>
+              </h4>
+
+              <h3 className="em">熱情贊助：＄105,000</h3>
+
+              <h3 className="emp">期待拿到實體貨的那天～</h3>
+              <h4 className="emday">
+                <FaHandHoldingHeart />
+                <span className="emdayp"> 十天前</span>
+              </h4>
+            </div>
           </div>
         </div>
       </div>
