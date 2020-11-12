@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
+import { BsFillHeartFill } from 'react-icons/bs'
 import '../styles/workshoplist.css'
 import imagemainone from '../images/34-1.png'
 import imagemaintwo from '../images/34-2.png'
@@ -9,70 +11,66 @@ import imagemainfive from '../images/34-5.png'
 function WorkshopOne(props) {
   const { item, cartamount, setCartAmount } = props
 
-  const [mycart, setMyCart] = useState([])
-  const [show, setShow] = useState(false)
-  const [workshopName, setWorkshopName] = useState('')
+  const [mycart, setMycart] = useState([])
+  const [productName, setProductName] = useState('')
 
-  //從localstroage拿資料
-  const updateCartToLocalStorage = (item, isAdded = true) => {
-    console.log(item, isAdded)
+  const updateCartToLocalStorage = (value) => {
+    // 從localstorage得到cart(json字串)
     const currentCart = JSON.parse(localStorage.getItem('cart')) || []
 
-    // find if the product in the localstorage with its id
-    const index = currentCart.findIndex((v) => v.id === item.id)
+    console.log('currentCart', currentCart)
 
-    console.log('index', index)
-    // found: index! == -1
-    if (index > -1) {
-      currentCart[index].amount++
-    } else {
-      currentCart.push(item)
-    }
+    // 把得到的cart(json字串)轉為陣列值，然後和新加入的物件值合併為新陣列
+    const newCart = [...currentCart, value]
 
-    localStorage.setItem('cart', JSON.stringify(currentCart))
+    // 設定回localstorage中(記得轉回json字串)
+    localStorage.setItem('cart', JSON.stringify(newCart))
 
+    console.log('newCart', newCart)
     // 設定資料
-    setMyCart(currentCart)
+    // 設定至元件的狀態中
+    setMycart(newCart)
+    setProductName(value.name)
   }
   return (
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <div class="workshop_photo">
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <div className="workshop_photo">
             <img src={require('../../img/' + item.images)} alt="" />
           </div>
-          <div class="d-flex justify-content-between">
-            <div class="workshop_photo_small">
+          <div className="d-flex justify-content-between">
+            <div className="workshop_photo_small">
               <img src={imagemaintwo} />
             </div>
-            <div class="workshop_photo_small">
+            <div className="workshop_photo_small">
               <img src={imagemainthree} />
             </div>
-            <div class="workshop_photo_small">
+            <div className="workshop_photo_small">
               <img src={imagemainfour} />
             </div>
-            <div class="workshop_photo_small">
+            <div className="workshop_photo_small">
               <img src={imagemainfive} />
             </div>
           </div>
         </div>
 
-        <div class="col">
-          <div class="d-flex workshop-name justify-content-between">
+        <div className="col">
+          <div className="d-flex workshop-name justify-content-between">
             <div>{item.activitie_name}</div>
             <div>
-              <i class="fas fa-heart"></i>
+              <i className="fas fa-heart"></i>
             </div>
           </div>
 
-          <div class="workshop-desc">
+          <div className="workshop-desc">
             <p>{item.introduction}</p>
             <h6>剩餘名額1</h6>
             <h1>課程價格_NT{item.sale_price}</h1>
           </div>
 
           <button
-            class="cart-btn"
+            className="cart-btn"
             onClick={() => {
               setCartAmount(cartamount + 1)
               updateCartToLocalStorage({

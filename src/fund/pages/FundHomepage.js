@@ -37,7 +37,7 @@ function FundHomepage() {
             alt=""
           />
         </div>
-        <p class="p_video">
+        <p className="p_video">
           本學院培育之新銳設計師，大膽之作
           <br />
           敬邀您一同欣賞

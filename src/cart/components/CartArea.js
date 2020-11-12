@@ -47,7 +47,7 @@ function CartArea(props) {
                         height: '130px',
                         objectFit: 'cover',
                       }}
-                      src={require('../../img/' + item.img)}
+                      src={'http://localhost:3001/img/' + item.img}
                     />
                     <div
                       style={{

@@ -31,6 +31,15 @@ body {
   object-fit: cover;
 }
 
+.ant-anchor-wrapper {
+  margin-left: -4px;
+  /* padding-left: 4px; */
+  overflow: auto;
+  margin-top: 10px;
+  background-color: transparent;
+  font-size: 18px;
+}
+
 .modalproduct img {
   object-fit: cover;
   width: 100%;
@@ -41,6 +50,12 @@ body {
   width: 25px;
   height: 25px;
   color: #b7bdb3;
+
+}
+
+.heart {
+
+  margin: 20px 0px;
 }
 
 .wbread {
@@ -754,4 +769,16 @@ body {
 
 .fade-pager__page.active {
   display: block;
+}
+
+.parallax1 {
+  background-image: url("../images/arv-hero.jpg");
+  min-height: 600px;
+  /* 沒內文時可以看到的最小高度 */
+
+  background-attachment: fixed;
+  /* 固定圖像 */
+  background-position: center center;
+  /* 圖像置中 */
+  background-size: cover;
 }

@@ -8,27 +8,22 @@ import imagestar from '../images/star.svg'
 import imagestarone from '../images/star-02.svg'
 import imagestartwo from '../images/star-03.svg'
 
-
-
-
 function WorkshopSeven(props) {
   return (
-    
-     <div class="container-fluid">
-
-        <div class="wrapper2">
-            <div class="title01">
-                <h2>課程評價</h2>
-            </div>
-            <div class="row justify-content-center">
-          <div class="article col-md-3 mb-3">
-            <div class="boxevaluation">
-              <div class="upperevaluation">
-                <img src={imageevaluationone}/>
+    <div className="container-fluid">
+      <div className="wrapper2">
+        <div className="title01">
+          <h2>課程評價</h2>
+        </div>
+        <div className="row justify-content-center">
+          <div className="article col-md-3 mb-3">
+            <div className="boxevaluation">
+              <div className="upperevaluation">
+                <img src={imageevaluationone} />
               </div>
-              <div class="wordevaluation">
-                <div class="word1evaluation">
-                  <img src={imagestar}/>
+              <div className="wordevaluation">
+                <div className="word1evaluation">
+                  <img src={imagestar} />
                   <h5>好課程推薦</h5>
                   <p>
                     這是我所見過最札實厲害的木工課程，在這12天的過程中，讓我獲益良多。
@@ -37,14 +32,14 @@ function WorkshopSeven(props) {
               </div>
             </div>
           </div>
-          <div class="article col-md-3 mb-3">
-            <div class="boxevaluation">
-              <div class="upperevaluation">
-                <img src={imageevaluationtwo}/>
+          <div className="article col-md-3 mb-3">
+            <div className="boxevaluation">
+              <div className="upperevaluation">
+                <img src={imageevaluationtwo} />
               </div>
-              <div class="wordevaluation">
-                <div class="word1evaluation">
-                  <img src={imagestarone}/>
+              <div className="wordevaluation">
+                <div className="word1evaluation">
+                  <img src={imagestarone} />
                   <h5>我的最愛</h5>
                   <p>
                     這是我所見過最札實厲害的木工課程，在這12天的過程中，讓我獲益良多。
@@ -53,14 +48,14 @@ function WorkshopSeven(props) {
               </div>
             </div>
           </div>
-           <div class="article col-md-3 mb-3">
-            <div class="boxevaluation">
-              <div class="upperevaluation">
-                <img src={imageevaluationthree}/>
+          <div className="article col-md-3 mb-3">
+            <div className="boxevaluation">
+              <div className="upperevaluation">
+                <img src={imageevaluationthree} />
               </div>
-              <div class="wordevaluation">
-                <div class="word1evaluation">
-                  <img src={imagestartwo}/>
+              <div className="wordevaluation">
+                <div className="word1evaluation">
+                  <img src={imagestartwo} />
                   <h5>真心愛上</h5>
                   <p>
                     這是我所見過最札實厲害的木工課程，在這12天的過程中，讓我獲益良多。
@@ -69,14 +64,14 @@ function WorkshopSeven(props) {
               </div>
             </div>
           </div>
-           <div class="article col-md-3 mb-3">
-            <div class="boxevaluation">
-              <div class="upperevaluation">
-                <img src={imageevaluationfour}/>
+          <div className="article col-md-3 mb-3">
+            <div className="boxevaluation">
+              <div className="upperevaluation">
+                <img src={imageevaluationfour} />
               </div>
-              <div class="wordevaluation">
-                <div class="word1evaluation">
-                  <img src={imagestarone}/>
+              <div className="wordevaluation">
+                <div className="word1evaluation">
+                  <img src={imagestarone} />
                   <h5>最棒的課程</h5>
                   <p>
                     這是我所見過最札實厲害的木工課程，在這12天的過程中，讓我獲益良多。
@@ -85,21 +80,12 @@ function WorkshopSeven(props) {
               </div>
             </div>
           </div>
-          </div>
-      <div class="row justify-content-center">
-        <button class="more-btn">MORE</button>
+        </div>
+        <div className="row justify-content-center">
+          <button className="more-btn">MORE</button>
+        </div>
       </div>
-
-
-
-      
-        
-
-    
-                
     </div>
-</div>
-    
   )
 }
 

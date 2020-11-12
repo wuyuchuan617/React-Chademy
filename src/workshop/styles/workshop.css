@@ -138,7 +138,7 @@ img {
   overflow: hidden;
   background-color: #ffffff !important;
   transition: 0.5s;
-  width: 44.75rem;
+  width: 95%;
 }
 
 .box2train:hover {
@@ -186,7 +186,7 @@ img {
   position: absolute;
   bottom: 0;
   right: 0;
-  margin-right: 0.5rem;
+  margin-right: 200px;
   filter: opacity(0.5);
 }
 

@@ -82,11 +82,11 @@ function BlogListTwo(props) {
         <h5>留言列表</h5>
       </div>
       <div className="a_message01list" data-aos="fade-up"></div>
-      <div class="row d-flex justify-content-center no-gutters a_messagestart">
-        <p class="col-2 a_message2">
+      <div className="row d-flex justify-content-center no-gutters a_messagestart">
+        <p className="col-2 a_message2">
           <img src={imagedemo} />
         </p>
-        <div class="col-10">
+        <div className="col-10">
           <textarea
             onChange={(e) => {
               console.log(e.target.value)
@@ -108,9 +108,9 @@ function BlogListTwo(props) {
             className="a_formstyle"
             name="a_description"
           ></textarea>
-          <div class="row justify-content-end">
+          <div className="row justify-content-end">
             <button
-              class="message-btn"
+              className="message-btn"
               onClick={() => {
                 const newMessage = {
                   title: item.title,
@@ -127,7 +127,7 @@ function BlogListTwo(props) {
         </div>
       </div>
 
-      <div class="row d-flex justify-content-center no-gutters a_message8">
+      <div className="row d-flex justify-content-center no-gutters a_message8">
         {blogListMessage.map((item, index) => {
           return <BlogListMessage key={index} item={item} />
         })}

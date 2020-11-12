@@ -411,3 +411,9 @@ export const townships = countries.map((v, i, array) =>
 export const postcodes = countries.map((v, i, array) =>
   Object.values(data[array[i]])
 )
+
+// ant/select 格式 https://ant.design/components/select-cn/
+export const cityData = Object.entries(data).reduce(
+  (acc, [key, value]) => ({ ...acc, [key]: Object.keys(value) }),
+  {}
+)

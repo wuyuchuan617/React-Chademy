@@ -114,20 +114,22 @@ function Product(props) {
         return <ProductFour key={index} item={item} product={product} />
       })}
 
-      <div className="w_six_scroll">
+      <div class="parallax1"></div>
+
+      {/* <div className="w_six_scroll">
         {product.map((item, index) => {
           return <ProductSix key={index} item={item} product={product} />
         })}
-      </div>
+      </div> */}
       {product.map((item, index) => {
         return <ProductFive key={index} item={item} product={product} />
       })}
 
-      <div className="container ">
+      <div className="container " id="w_review">
         <div className="row justify-content-center title">
           <h3>產品評價</h3>
         </div>
-        <div class="w_rew_scroll">
+        <div className="w_rew_scroll">
           {product.map((item, index) => {
             return (
               <ProductSeven
@@ -145,7 +147,7 @@ function Product(props) {
       })}
 
       <div className="container">
-        <div className="row">
+        <div className="row justify-content-center">
           <PurchaseInfo />
         </div>
       </div>

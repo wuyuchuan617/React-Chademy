@@ -112,12 +112,13 @@ header {
         .a_list .item img {
             width: 100%;
             margin-bottom: 10px;
+            filter : brightness(85%);
             transition: all .5s ease 0s;
             
         }
 
         .a_list .item img:hover {
-            filter : brightness(75%);
+            filter : brightness(110%);
             transform: scale(1.02);
             
         }

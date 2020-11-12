@@ -537,7 +537,7 @@ function Filter(props) {
               </div>
             </ul>
           </div>
-          <div className="refinement seats  " data-refinement-id="seats">
+          {/* <div className="refinement seats  " data-refinement-id="seats">
             <div
               className="refinement-toggle js-slide-toggle  is-active"
               data-toggle-element="#seats"
@@ -592,7 +592,7 @@ function Filter(props) {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           <div className="refinement seats  " data-refinement-id="seats">
             <div
