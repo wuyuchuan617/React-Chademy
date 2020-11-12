@@ -4,32 +4,24 @@ import './index.scoped.scss'
 import { Comment, Tooltip, Avatar, Rate } from 'antd'
 import moment from 'moment'
 
+import request from '../../utils/request'
+
 function Evaluation() {
   const [evaluation, setEvaluation] = useState([])
 
   async function getEvaluation() {
-    const url = 'http://localhost:3001/members/getEvaluation'
-    const { user = {} } = JSON.parse(localStorage['reduxState'] || '{}')
-    const { token, authToken } = user.users || {}
-
-    const response = await fetch(url, {
+    const response = await request({
+      url: `/members/getEvaluation`,
       method: 'POST',
-      headers: {
-        Authorization: `Bearer ${authToken}`,
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        token: token,
-      }),
+      data: {},
     })
 
-    const res = await response.json()
+    const { success, data } = response
 
-    console.log(111, res)
-    // if (res && res.data) {
-    //   setEvaluation(res.data)
-    // }
+    console.log('success, data ', success, data)
+    if (success) {
+      setEvaluation(data)
+    }
   }
 
   useEffect(() => {
@@ -46,48 +38,43 @@ function Evaluation() {
       {evaluation.length > 0 ? (
         evaluation.map((item) => {
           return (
-            <>
-              <div>我的評分</div>
-              <div>有關我的評價</div>
-
-              <Comment
-                className="evaluation_container"
-                author={
+            <Comment
+              className="evaluation_container"
+              author={
+                <div>
+                  <div>{item.buy_product}</div>
+                  <Rate disabled defaultValue={item.stars} />
+                </div>
+              }
+              avatar={
+                <>
+                  <Avatar
+                    src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                    alt="Han Solo"
+                  />
+                </>
+              }
+              content={
+                <div>
+                  <p>{item.review_comment}</p>
                   <div>
-                    <div>{item.buy_product}</div>
-                    <Rate disabled defaultValue={item.stars} />
-                  </div>
-                }
-                avatar={
-                  <>
-                    <Avatar
-                      src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-                      alt="Han Solo"
+                    <img
+                      alt="img"
+                      // src={require('../../img/' + item.photo)}
                     />
-                  </>
-                }
-                content={
-                  <div>
-                    <p>{item.review_comment}</p>
-                    <div>
-                      <img
-                        alt="img"
-                        // src={require('../../img/' + item.photo)}
-                      />
-                    </div>
                   </div>
-                }
-                datetime={
-                  <Tooltip title={moment().format('YYYY-MM-DD HH:mm:ss')}>
-                    <span>{moment(item.review_time).fromNow()}</span>
-                  </Tooltip>
-                }
-              />
-            </>
+                </div>
+              }
+              datetime={
+                <Tooltip title={moment().format('YYYY-MM-DD HH:mm:ss')}>
+                  <span>{moment(item.review_time).fromNow()}</span>
+                </Tooltip>
+              }
+            />
           )
         })
       ) : (
-        <Comment className="evaluation_container" content={<p>尚未有評價</p>} />
+        <Comment className="evaluation_container" content={<p>尚未評論</p>} />
       )}
     </>
   )
