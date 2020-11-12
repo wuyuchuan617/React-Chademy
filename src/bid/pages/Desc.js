@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import Slider from '../component/Slider'
 import Bookmark from '../component/Bookmark'
 import Record from '../component/Record'
-import Chatroom from '../component/Chatroom'
+import Setprice from '../component/Setprice'
 import Carousel from 'react-elastic-carousel'
 import Sidepic from '../component/Sidepic'
 import '../styles/desc.scss'
@@ -29,8 +29,9 @@ function Desc(props) {
   const heartFill = {
     color: '#C77334',
   }
-  const {price, setPrice,pname, setPname, data,startdate, setStartdate, setMyCart,setCartAmount,cartamount} = props
-  // const [startdate, setStartdate] = useState('')
+  const {price, setPrice,pname, setPname, data, setMyCart,setCartAmount,cartamount} = props
+  const [startdate, setStartdate] = useState('')
+  const [sid, setSid] = useState('')
   const [starttime, setStarttime] = useState('')
   const [enddate, setEnddate] = useState('')
   const [total, setTotal] = useState(0)
@@ -55,7 +56,7 @@ function Desc(props) {
   const [heartItem, setHeartItem] = useState({})
   const [modalShow, setModalShow] = React.useState(false);
   const [noShowModel, setNoShowModel] = useState(false)
-
+  const [changepage, setChangepage] = useState(2)
   // 判斷登入的狀態
 // const isLogged = useSelector((state) => state.user.logged)
 
@@ -75,6 +76,7 @@ function Desc(props) {
     const response = await fetch(request)
     const data = await response.json()
   console.log('data',data)
+    setSid(data[0].sid)
     setSdate(data[0].sdate)
     setEdate(data[0].edate)
     setStartprice(data[0].startedPrice)
@@ -237,12 +239,12 @@ function Desc(props) {
   const handleShow = () => setShow(true);
   const [addmoney,setAddmoney] = useState(0)
 
-//   function numberWithCommas(x) {
-//     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-// }
-// useEffect(()=>{
-//   numberWithCommas(price)
-// },[initData()])
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+useEffect(()=>{
+  numberWithCommas(price)
+},[])
 
 //get member_sid fn
 function getCartFromLocalStorage() {
@@ -445,14 +447,12 @@ function getCartFromLocalStorage() {
             { blur: '10px', playScale: [0, 3] },
           ]}
           style={{ transform: 'translateY(10px)', filter: 'blur(0px)', opacity: 0 }}>
-      <Bookmark {...props}/>
+      <Bookmark sid={sid} changepage={changepage} setChangepage={setChangepage} />
 
       <div className="row">
         <div className="col">
         <div className="g-bg p-3">
-
-      <Switch>
-      <Route path="/pages/desc/record/:id?"> 
+        {changepage==2? (
       <table className="w-100 text-center mt-3">
             <tbody>
                 <tr className="w-100 text-center">
@@ -461,24 +461,21 @@ function getCartFromLocalStorage() {
                     <th className="w-25">總金額</th>
                     <th className="w-25">時間</th>
                 </tr>
-   
-                {/* <QueueAnim component="ul" type={['right', 'left']} leaveReverse> */}
       {member.map((item,index)=>
-      
-        <Record key={index} item={item} {...props} getMember={getMember} />
+        <Record key={index} item={item} {...props} getMember={getMember} changepage={changepage} />
         )}
-        {/* </QueueAnim> */}
-    
+   
         </tbody>
       </table>
-      </Route>
-      <Route path="/pages/desc/chatroom/:id?">
-        <Chatroom/>
-      </Route>
+   
+        ):(  <Setprice changepage={changepage}/>)}
+      {/* <Route path="/pages/desc/setprice/:id?"> */}
+      
+      {/* </Route> */}
       {/* <Route path="/pages/desc/spec/:id?">
         <Spec/>
       </Route> */}
-      </Switch>
+      {/* </Switch> */}
       </div>
         </div>
         </div>
