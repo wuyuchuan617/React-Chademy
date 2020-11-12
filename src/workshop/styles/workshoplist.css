@@ -5,6 +5,13 @@
   margin-bottom: 100px;
 }
 
+.a_heart svg{
+  width: 25px;
+  height: 25px;
+  color: #b7bdb3;
+}
+
+
 .workshop_photo {
   width: 670px;
   background-size: cover;

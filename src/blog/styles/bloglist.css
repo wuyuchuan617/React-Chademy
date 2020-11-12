@@ -176,10 +176,12 @@ width: 60%;
 
         .upper3blog img{
           transition: .5s;
+          filter : brightness(85%);
         }
 
                 .upper3blog img:hover {
-                  filter : brightness(75%);    
+                   
+                   filter : brightness(110%);
         }
 
 
