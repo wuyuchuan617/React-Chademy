@@ -9,6 +9,7 @@ import { withRouter } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Breadcrumbw from '../components/Breadcrumbw'
 import { Anchor } from 'antd'
+import { FacebookProvider, Share } from 'react-facebook'
 const { Link } = Anchor
 
 function ProductFirst(props) {
@@ -330,7 +331,7 @@ function ProductFirst(props) {
                   <div className="choose-wood"></div>
                 </div>
               </div> */}
-              <li className="share-facebook">
+              {/* <li className="share-facebook">
                 <a
                   rel="nofollow noopener noreferrer"
                   data-shared="sharing-facebook-48785"
@@ -344,13 +345,28 @@ function ProductFirst(props) {
                     Click to share on Facebook (Opens in new window)
                   </span>
                 </a>
-              </li>
-              <a
+              </li> */}
+              {/* <a
                 href="https://www.facebook.com/sharer.php?u=https://www.cyberbiz.co/support/?p=855"
                 target="_blank"
               >
                 aaa
-              </a>
+              </a> */}
+
+              {/* <FacebookProvider appId="123456789">
+                <Share href="http://www.facebook.com">
+                  {({ handleClick, loading }) => (
+                    <button
+                      type="button"
+                      disabled={loading}
+                      onClick={handleClick}
+                    >
+                      Share
+                    </button>
+                  )}
+                </Share>
+              </FacebookProvider> */}
+
               {isLogged ? (
                 <div
                   className="btn_lessmargin more w_cart-btn"
