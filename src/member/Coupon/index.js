@@ -70,32 +70,38 @@ function Coupon(props) {
           <TabPane tab={tabItem.tab} key={tabItem.key} centered>
             <Row>
               {/* data/couponlist */}
-              {couponlist.map(
-                (item) =>
-                  item.status === Number(activeKey) && (
-                    <>
-                      <div>
-                        <img
-                          src={imageCapon}
-                          alt="Capon"
-                          className="Capon_img"
-                        />
-                      </div>
-                      <ul className="coupon_detail_list">
-                        <li>
-                          使用期限：
-                          {moment(item.coupon_end_time).format('YYYY-MM-DD')}
-                        </li>
-                        <li>優惠券編號：{item.coupon_id}</li>
-                        <li>折扣金額：${item.coupon_money}</li>
-                      </ul>
-                      <div className="cou">
-                        <div className={`cou_btn cou_btn_${tabItem.key}`}>
-                          {tabItem.tab}
+              {couponlist.length === 0 ? (
+                <div className="empty_container">
+                  <div>沒有可使用的優惠券</div>
+                </div>
+              ) : (
+                couponlist.map(
+                  (item) =>
+                    item.status === Number(activeKey) && (
+                      <>
+                        <div>
+                          <img
+                            src={imageCapon}
+                            alt="Capon"
+                            className="Capon_img"
+                          />
                         </div>
-                      </div>
-                    </>
-                  )
+                        <ul className="coupon_detail_list">
+                          <li>
+                            使用期限：
+                            {moment(item.coupon_end_time).format('YYYY-MM-DD')}
+                          </li>
+                          <li>優惠券編號：{item.coupon_id}</li>
+                          <li>折扣金額：${item.coupon_money}</li>
+                        </ul>
+                        <div className="cou">
+                          <div className={`cou_btn cou_btn_${tabItem.key}`}>
+                            {tabItem.tab}
+                          </div>
+                        </div>
+                      </>
+                    )
+                )
               )}
             </Row>
           </TabPane>
