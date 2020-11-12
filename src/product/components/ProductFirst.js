@@ -8,6 +8,8 @@ import { Rate } from 'antd'
 import { withRouter } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Breadcrumbw from '../components/Breadcrumbw'
+import { Anchor } from 'antd'
+const { Link } = Anchor
 
 function ProductFirst(props) {
   const {
@@ -21,6 +23,10 @@ function ProductFirst(props) {
   } = props
 
   const isLogged = useSelector((state) => state.user.logged)
+
+  const onChange = (link) => {
+    console.log('Anchor:OnChange', link)
+  }
 
   const [myCart, setMyCart] = useState([])
   const [show, setShow] = useState(false)
@@ -264,7 +270,11 @@ function ProductFirst(props) {
               />
               {/* )
               })} */}
-              <p> （ {review.length}則評論 ）</p>
+              <Anchor affix={false} onChange={onChange}>
+                <Link href="#w_review" title={`（ ${review.length}則評論 ）`}>
+                  {/* <p> （ {review.length}則評論 ）</p> */}
+                </Link>
+              </Anchor>
             </div>
             <div className="heart justify-content-end">
               <BsFillHeartFill

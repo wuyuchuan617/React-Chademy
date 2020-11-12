@@ -125,7 +125,7 @@ function Product(props) {
         return <ProductFive key={index} item={item} product={product} />
       })}
 
-      <div className="container ">
+      <div className="container " id="w_review">
         <div className="row justify-content-center title">
           <h3>產品評價</h3>
         </div>
@@ -147,7 +147,7 @@ function Product(props) {
       })}
 
       <div className="container">
-        <div className="row">
+        <div className="row justify-content-center">
           <PurchaseInfo />
         </div>
       </div>
