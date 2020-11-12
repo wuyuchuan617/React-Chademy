@@ -58,7 +58,9 @@ import CartClass from './cart/pages/CartClass'
 import DeliveryInfo from './cart/pages/DeliveryInfo'
 import CheckInfo from './cart/pages/CheckInfo'
 import Finish from './cart/pages/Finish'
-import { Manager } from 'socket.io-client'
+// import { Manager } from 'socket.io-client'
+import DashBoard from './cart/pages/DashBorad'
+import CartFund from './cart/pages/CartFund'
 
 // ---------------------以下import 管理後台頁面------------------
 
@@ -81,11 +83,10 @@ function App() {
   const [subtotal, setSubtoal] = useState(0)
   const [resetShow, setResetShow] = useState(0)
   const [showDashBoard, setDashboard] = useState(false)
+  const [typeofProduct, setTypeofProduct] = useState(0)
   //-----------------------------------------------------------
   return showDashBoard ? (
-    <div
-      style={{ width: '100px', height: '100px', backgroundColor: 'black' }}
-    ></div>
+    <DashBoard />
   ) : (
     <Router>
       <>
@@ -246,6 +247,8 @@ function App() {
                 setMyCartDisplay={setMyCartDisplay}
                 subtotal={subtotal}
                 setSubtoal={setSubtoal}
+                typeofProduct={typeofProduct}
+                setTypeofProduct={setTypeofProduct}
               />
             </Route>
 
@@ -262,6 +265,8 @@ function App() {
                 setMyCartDisplay={setMyCartDisplay}
                 subtotal={subtotal}
                 setSubtoal={setSubtoal}
+                typeofProduct={typeofProduct}
+                setTypeofProduct={setTypeofProduct}
               />
             </Route>
 
@@ -278,6 +283,8 @@ function App() {
                 setMyCartDisplay={setMyCartDisplay}
                 subtotal={subtotal}
                 setSubtoal={setSubtoal}
+                typeofProduct={typeofProduct}
+                setTypeofProduct={setTypeofProduct}
               />
             </Route>
 
@@ -294,6 +301,26 @@ function App() {
                 setMyCartDisplay={setMyCartDisplay}
                 subtotal={subtotal}
                 setSubtoal={setSubtoal}
+                typeofProduct={typeofProduct}
+                setTypeofProduct={setTypeofProduct}
+              />
+            </Route>
+
+            <Route path="/cartfund">
+              <CartFund
+                myCart={myCart}
+                cartamount={cartamount}
+                totalPrice={totalPrice}
+                setTotalPrice={setTotalPrice}
+                setMyCart={setMyCart}
+                showLoading={showLoading}
+                setShowLoading={setShowLoading}
+                myCartDisplay={myCartDisplay}
+                setMyCartDisplay={setMyCartDisplay}
+                subtotal={subtotal}
+                setSubtoal={setSubtoal}
+                typeofProduct={typeofProduct}
+                setTypeofProduct={setTypeofProduct}
               />
             </Route>
 
@@ -323,6 +350,8 @@ function App() {
                 adress={adress}
                 setOrderNo={setOrderNo}
                 setCartAmount={setCartAmount}
+                typeofProduct={typeofProduct}
+                setTypeofProduct={setTypeofProduct}
               />
             </Route>
 

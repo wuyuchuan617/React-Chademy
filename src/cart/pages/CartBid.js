@@ -5,10 +5,10 @@ import img1 from '../../product/images/777.jpg'
 // import './style/jay.scss'
 
 function CartBid(props) {
+  const { typeofProduct, setTypeofProduct } = props
   const [myDiscount, setMyDiscount] = useState(0)
   const [inputDiscount, setInputDiscount] = useState('')
   const [deliveryCharge, setDeliveryCharge] = useState(0)
-  const [typeofProduct, setTypeofProduct] = useState(4)
   const {
     subtotal,
     setSubtoal,
@@ -32,6 +32,7 @@ function CartBid(props) {
   }
   useEffect(() => {
     setTotalPrice(subtotal + myDiscount + deliveryCharge)
+    setTypeofProduct(4)
   }, [])
   // const [myCart, setMyCart] = useState([])
   // const [showLoading, setShowLoading] = useState(false)
@@ -96,17 +97,40 @@ function CartBid(props) {
         </div>
       </div>
       <div className="lablebox">
-        <Link to="/cartproduct" className="defaultlable">
+        <Link
+          to="/cartproduct"
+          className="defaultlable"
+          onClick={() => setTypeofProduct(1)}
+        >
           產品
         </Link>
-        <Link to="/cartbid" className="activelable">
+        <Link
+          to="/cartbid"
+          className="activelable"
+          onClick={() => setTypeofProduct(4)}
+        >
           競標
         </Link>
-        <Link to="/cartsecondhand" className="defaultlable">
+        <Link
+          to="/cartsecondhand"
+          className="defaultlable"
+          onClick={() => setTypeofProduct(5)}
+        >
           中古商品
         </Link>
-        <Link to="/cartclass" className="defaultlable">
+        <Link
+          to="/cartclass"
+          className="defaultlable"
+          onClick={() => setTypeofProduct(2)}
+        >
           體驗課程
+        </Link>
+        <Link
+          to="/cartfund"
+          className="defaultlable"
+          onClick={() => setTypeofProduct(3)}
+        >
+          募資
         </Link>
       </div>
       <hr className="jhr" />
@@ -136,7 +160,7 @@ function CartBid(props) {
             marginBottom: '30px',
           }}
         >
-          <h6>小計(共{cartamount}項)</h6>
+          <h6>小計(共{myCart.length}項)</h6>
           <h6 style={{ color: '#C67334' }}>${sum(myCart)}</h6>
         </div>
         <label for="discount">

@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import img1 from '../../product/images/777.jpg'
 // import './style/jay.scss'
 
-function CartSecondHand(props) {
+function CartFund(props) {
   const { typeofProduct, setTypeofProduct } = props
   const [myDiscount, setMyDiscount] = useState(0)
   const [inputDiscount, setInputDiscount] = useState('')
@@ -32,7 +32,7 @@ function CartSecondHand(props) {
   }
   useEffect(() => {
     setTotalPrice(subtotal + myDiscount + deliveryCharge)
-    setTypeofProduct(5)
+    setTypeofProduct(3)
   }, [])
   // const [myCart, setMyCart] = useState([])
   // const [showLoading, setShowLoading] = useState(false)
@@ -113,7 +113,7 @@ function CartSecondHand(props) {
         </Link>
         <Link
           to="/cartsecondhand"
-          className="activelable"
+          className="defaultlable"
           onClick={() => setTypeofProduct(5)}
         >
           中古商品
@@ -127,7 +127,7 @@ function CartSecondHand(props) {
         </Link>
         <Link
           to="/cartfund"
-          className="defaultlable"
+          className="activelable"
           onClick={() => setTypeofProduct(3)}
         >
           募資
@@ -265,4 +265,4 @@ function CartSecondHand(props) {
   )
 }
 
-export default CartSecondHand
+export default CartFund
