@@ -130,8 +130,8 @@ function Custom(props) {
                 </Form.Item>
               </div>
               {isLogged ? (
-                <button
-                  className="w_custom-btn"
+                <div
+                  className="btn_lessmargin more w_cart-btn"
                   //   onClick={() => {
                   // setCartAmount(cartamount + 1)
                   // updateCartToLocalStorage({
@@ -145,16 +145,16 @@ function Custom(props) {
                   //   }}
                 >
                   加入購物車
-                </button>
+                </div>
               ) : (
-                <button
-                  className="w_custom-btn"
+                <div
+                  className="btn_lessmargin more w_cart-btn"
                   onClick={() => {
                     props.history.push('/login')
                   }}
                 >
                   加入購物車 請先登入
-                </button>
+                </div>
               )}
             </div>
           </div>
@@ -169,6 +169,12 @@ function Custom(props) {
         </div>
 
         <div className="container-fluid w_container_fluid">
+          <div className="row">
+            <div className="w_title1">
+              <div className="titlech noto-serif text-center">經典工藝</div>
+              <div className="titleEN lora text-center">Classic Craft</div>
+            </div>
+          </div>
           <div className="row">
             <div className="col w_custom_work">
               <img src={require('../images/c1.jpg')} alt="" />
@@ -211,6 +217,12 @@ function Custom(props) {
         </div>
 
         <div className="container">
+          <div className="row">
+            <div className="w_title1">
+              <div className="titlech noto-serif text-center">參考作品</div>
+              <div className="titleEN lora text-center">Other Projects</div>
+            </div>
+          </div>
           <div className="row w_share_row">
             <div className="col-5 w_share_left">
               <p className="w_share_big">
@@ -263,6 +275,12 @@ function Custom(props) {
             </div>
           </div>
           <div className="container">
+            <div className="row">
+              <div className="w_title1">
+                <div className="titlech noto-serif text-center">國際大賞</div>
+                <div className="titleEN lora text-center">Awards</div>
+              </div>
+            </div>
             <div className="row w_share_row">
               <div className="col-5 award_img">
                 <img src={require('../images/share2.jpg')} alt="" />
@@ -271,7 +289,7 @@ function Custom(props) {
                 <p className="w_ins_title">
                   燕椅，獲IFDA旭川國際家具設計大賽入圍肯定
                 </p>
-                <p>
+                <p className="w_ins_comment">
                   1990年開始，三年一度的「 IFDA
                   旭川國際家具設計大賽」，每一屆僅取總件數的前 3%
                   進入決賽。2017年是 27
@@ -279,19 +297,19 @@ function Custom(props) {
                   件作品中，成為最終 25
                   位的入選者。在2017年6月的旭川設計週與同年11
                   月的日本東京國際家具暨家居用品展展出。
-                  我們一方面感謝IFDA的肯定，一方面也很感動，這次的入選證明了台灣的文化元素一樣能登上世界的舞台，我們從燕椅開始，讓世界一步一步地看見，台灣這塊土地也能誕生出全世界都會愛上的美麗家具。
+                  {/* 我們一方面感謝IFDA的肯定，一方面也很感動，這次的入選證明了台灣的文化元素一樣能登上世界的舞台，我們從燕椅開始，讓世界一步一步地看見，台灣這塊土地也能誕生出全世界都會愛上的美麗家具。 */}
                 </p>
                 <p className="w_ins_title">
                   Shortlisted at 2017 International Furniture Design Award
                 </p>
-                <p>
+                <p className="w_ins_comment">
                   IFDA is held every three years since 1990. In the year 2017
                   when it came to its 10th iteration. Hirundo was awarded
                   shortlisted out of 683 competitors from the world and
                   exhibited both in Asahikawa Design Week and Tokyo Interior
                   Lifestyle Living.
                 </p>
-                <p className="text-right">
+                <p className="text-right w_ins_comment mt-5">
                   More About IFDA http://www.ifda.jp/
                 </p>
               </div>

@@ -53,7 +53,7 @@ function ProductFirst(props) {
 
   useEffect(() => {
     setPhoto(`http://localhost:3001/img/${item.photo}`)
-  }, [item])
+  }, [sid])
 
   const heartFill = {
     color: '#C77334',
@@ -212,13 +212,13 @@ function ProductFirst(props) {
         <div className="row justify-content-between">
           <div className="col-8">
             <div className="product_photo" onClick={() => setVisible(true)}>
-              <img src={item.photo} alt="" />
+              <img src={photo} alt="" />
             </div>
             <div className="d-flex justify-content-between smallPhotos">
               <div className="product_photo_small">
                 {/* <img src={require('../../img/' + item.photo)} alt="" /> */}
                 <img
-                  src={item.photo}
+                  src={`http://localhost:3001/img/` + item.photo}
                   alt=""
                   onClick={(e) => {
                     setPhoto(e.target.src)
@@ -227,7 +227,7 @@ function ProductFirst(props) {
               </div>
               <div className="product_photo_small">
                 <img
-                  src={item.photo2}
+                  src={`http://localhost:3001/img/` + item.photo2}
                   alt=""
                   onClick={(e) => {
                     setPhoto(e.target.src)
@@ -236,7 +236,7 @@ function ProductFirst(props) {
               </div>
               <div className="product_photo_small">
                 <img
-                  src={item.photo3}
+                  src={`http://localhost:3001/img/` + item.photo3}
                   alt=""
                   onClick={(e) => {
                     setPhoto(e.target.src)
@@ -245,7 +245,7 @@ function ProductFirst(props) {
               </div>
               <div className="product_photo_small">
                 <img
-                  src={item.photo4}
+                  src={`http://localhost:3001/img/` + item.photo4}
                   alt=""
                   onClick={(e) => {
                     setPhoto(e.target.src)
@@ -352,8 +352,8 @@ function ProductFirst(props) {
                 aaa
               </a>
               {isLogged ? (
-                <button
-                  className="btn_lessmargin more"
+                <div
+                  className="btn_lessmargin more w_cart-btn"
                   onClick={() => {
                     setCartAmount(cartamount + 1)
                     updateCartToLocalStorage({
@@ -367,16 +367,16 @@ function ProductFirst(props) {
                   }}
                 >
                   加入購物車
-                </button>
+                </div>
               ) : (
-                <button
-                  className="btn_lessmargin more"
+                <div
+                  className="btn_lessmargin more w_cart-btn"
                   onClick={() => {
                     props.history.push('/login')
                   }}
                 >
                   加入購物車 請先登入
-                </button>
+                </div>
               )}
             </div>
           </div>

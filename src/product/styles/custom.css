@@ -160,6 +160,17 @@
     font-size: 18px;
     margin-top: 20px;
     color: #c77334;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.w_ins_comment {
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 2px;
+
 }
 
 .w_award_bg {
@@ -171,11 +182,11 @@
 
 .award_img {
     width: 100%;
-    height: 450px;
+    height: 470px;
 }
 
 .award_img img {
     width: 100%;
-    height: 450px;
+    height: 470px;
     object-fit: cover;
 }
