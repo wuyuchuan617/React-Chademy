@@ -34,9 +34,7 @@ function NewsLetter() {
                 id="productname"
               />
             </div>
-            <div className="btn_lessmargin more w_cart-btn ">
-              訂閱電子報
-            </div>
+            <div className="btn_lessmargin more w_cart-btn ">訂閱電子報</div>
           </div>
         </div>
       </div>

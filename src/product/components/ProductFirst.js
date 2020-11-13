@@ -195,7 +195,7 @@ function ProductFirst(props) {
 
   useEffect(() => {
     updateTotalToServer()
-  }, [heartItem.category])
+  }, [heartItem.product_type])
 
   useEffect(() => {
     getHeartFromServer()
@@ -286,7 +286,7 @@ function ProductFirst(props) {
                       follow_product: item.product_name,
                       product_no: item.product_no,
                       member_id: member,
-                      category: 1,
+                      product_type: 1,
                       price: item.price,
                     }
                     await setHeartItem(newHeartItem)

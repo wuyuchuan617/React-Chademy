@@ -246,7 +246,7 @@ function Review(props) {
                   <div className="reviewStars d-flex">
                     <Rate
                       style={{ color: '#C77334' }}
-                      defaultValue={5}
+                      defaultValue={3}
                       onChange={(e) => {
                         setStars(e)
                       }}
@@ -273,7 +273,7 @@ function Review(props) {
 
                   <input
                     type="hidden"
-                    name="buy_member_id"
+                    name="user_id"
                     value={member}
                     className="form-control"
                   />

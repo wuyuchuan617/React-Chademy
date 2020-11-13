@@ -178,3 +178,7 @@ hr {
 .reviewStars {
   margin: 25px 0px;
 }
+
+.ant-rate-star-zero svg {
+  color: #ded5c6
+}
