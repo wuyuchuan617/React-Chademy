@@ -21,7 +21,8 @@ function DateFilter(props) {
           <div className="col ">
             <Space direction="vertical" size={12}>
               <DatePicker
-                defaultValue={moment('2020-09-20', dateFormat)}
+                // defaultValue={moment('2020-09-20', dateFormat)}
+                placeholder={'選擇開課日期'}
                 format={dateFormat}
                 onChange={(date, dateString) => {
                   console.log('dateString', dateString)
