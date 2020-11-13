@@ -63,6 +63,7 @@ import Finish from './cart/pages/Finish'
 import DashBoard from './cart/components/DashBorad'
 import CartFund from './cart/pages/CartFund'
 import ManagerOrder from './cart/pages/ManageOrder'
+import { tr } from 'date-fns/locale'
 
 // ---------------------以下import 管理後台頁面------------------
 

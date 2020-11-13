@@ -7,6 +7,7 @@ import {
   MailOutlined,
   SettingOutlined,
 } from '@ant-design/icons'
+import { Modal, Button } from 'antd'
 
 const { SubMenu } = Menu
 
@@ -16,15 +17,67 @@ const rootSubmenuKeys = ['sub1', 'sub2', 'sub4']
 function ManagerOrder(props) {
   const { showDashBoard, setDashboard } = props
   const [data, setData] = useState([])
-  const [openKeys, setOpenKeys] = React.useState(['sub1'])
+  const [visible, setVisible] = useState(false)
+  const [detailData, setDetailData] = useState([])
+  const [productData, setProductData] = useState([])
+  const [address, setAddress] = useState('')
+  const [thisPO_NO, setThisPO_NO] = useState('')
+  const [reload, setReload] = useState(0)
 
-  const onOpenChange = (keys) => {
-    const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1)
-    if (rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
-      setOpenKeys(keys)
-    } else {
-      setOpenKeys(latestOpenKey ? [latestOpenKey] : [])
-    }
+  async function getProductFromServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = `http://localhost:3001/j_cart/productlist`
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    const response = await fetch(request)
+    const data = await response.json()
+    console.log('hi', data)
+    setProductData(data)
+  }
+
+  async function getOrderDetailFromServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = `http://localhost:3001/j_cart/detaillist?PO_NO=${thisPO_NO}`
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    const response = await fetch(request)
+    const data = await response.json()
+    console.log('hi', data)
+    setDetailData(data)
+  }
+  useEffect(() => {
+    getOrderDetailFromServer()
+    getProductFromServer()
+  }, [thisPO_NO])
+
+  async function cancelToServer(value) {
+    const url = 'http://localhost:3001/j_cart/finishorder'
+    const request = new Request(url, {
+      method: 'POST',
+      body: JSON.stringify({ PO_NO: thisPO_NO }),
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+
+    // try {
+    const response = await fetch(request)
+    const data = await response.json()
   }
   //拿全部訂單
   async function getAllorderFromServer(value) {
@@ -50,9 +103,21 @@ function ManagerOrder(props) {
       let date = data[i].order_date
       let total = data[i].total
       let status = data[i].order_status
+      let filter = data[i].order_status
       switch (status) {
         case 1:
-          status = <div style={{ color: 'red' }}>處理中</div>
+          status = (
+            <div
+              style={{ color: 'red', cursor: 'pointer' }}
+              onClick={() => {
+                setVisible(true)
+                setAddress(data[i].delivery_adress)
+                setThisPO_NO(PO_NO)
+              }}
+            >
+              處理中
+            </div>
+          )
           break
         case 3:
           status = <div style={{ color: 'green' }}>已完成</div>
@@ -67,6 +132,7 @@ function ManagerOrder(props) {
         date: date,
         total: '$' + total,
         status: status,
+        filter: filter,
       }
       newArray.push(object)
     }
@@ -76,21 +142,10 @@ function ManagerOrder(props) {
     setDashboard(true)
     getAllorderFromServer()
   }, [])
-
-  const dataSource = [
-    {
-      key: '1',
-      name: '胡彦斌',
-      age: 32,
-      address: '西湖区湖底公园1号',
-    },
-    {
-      key: '2',
-      name: '胡彦祖',
-      age: 42,
-      address: '西湖区湖底公园1号',
-    },
-  ]
+  useEffect(() => {
+    setDashboard(true)
+    getAllorderFromServer()
+  }, [reload])
 
   const columns = [
     {
@@ -122,8 +177,13 @@ function ManagerOrder(props) {
       dataIndex: 'status',
       key: 'status',
       width: '180px',
+      onFilter: (value, record) => record.filter.indexOf(value) === 0,
+      sorter: (a, b) => a.filter - b.filter,
+      // sortDirections: ['descend', 'ascend'],
     },
   ]
+  let boximg = '5cbb0ac7-6aee-4ee9-840b-d54e1c896bd2.jpg'
+  let price = 0
   return (
     <>
       <div style={{ display: 'flex' }}>
@@ -178,6 +238,70 @@ function ManagerOrder(props) {
           />
         </div>
       </div>
+      <Modal
+        title={address}
+        centered
+        visible={visible}
+        onOk={() => {
+          cancelToServer()
+          setVisible(false)
+          setReload(reload + 1)
+        }}
+        onCancel={() => setVisible(false)}
+        width={1000}
+        okText="出貨"
+      >
+        {detailData.map((item) => {
+          for (let i = 0; i < productData.length; i++) {
+            console.log('hi')
+            if (item.product_name === productData[i].product_name) {
+              price = productData[i].price
+              boximg = productData[i].photo
+              console.log('showimg')
+            }
+          }
+          return (
+            <div className="j_commitbox">
+              <img
+                style={{
+                  width: '300px',
+                  height: '200px',
+                  objectFit: 'cover',
+                }}
+                src={'http://localhost:3001/img/' + boximg}
+                alt=""
+              />
+              <h6
+                style={{
+                  lineHeight: '200px',
+                  position: 'relative',
+                  left: '50px',
+                }}
+              >
+                {item.product_name}
+              </h6>
+              <h6
+                style={{
+                  lineHeight: '200px',
+                  position: 'absolute',
+                  left: '700px',
+                }}
+              >
+                數量:{item.quantity}
+              </h6>
+              <h6
+                style={{
+                  lineHeight: '200px',
+                  position: 'absolute',
+                  left: '840px',
+                }}
+              >
+                單價:{price}
+              </h6>
+            </div>
+          )
+        })}
+      </Modal>
     </>
   )
 }
