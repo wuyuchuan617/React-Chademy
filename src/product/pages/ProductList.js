@@ -253,7 +253,7 @@ function ProductList(props) {
         preload="auto"
       ></video>
 
-      <Breadcrumb />
+      {/* <Breadcrumb /> */}
 
       <ProductPopular />
       <ListNew />
@@ -261,7 +261,7 @@ function ProductList(props) {
       <ProductSeries setSeries={setSeries} />
 
       <div className="context1">
-        <div className="container" id="productCards">
+        <div className="container productCards" id="productCards">
           <div className="row">
             <div className="w_title1">
               <div className="titlech noto-serif text-center">全部產品</div>
@@ -279,7 +279,7 @@ function ProductList(props) {
 
       <div className="container">
         <div className="row">
-          <button className="loadButton" onClick={handleClick}>
+          <button className="w_loadButton" onClick={handleClick}>
             LOAD MORE
           </button>
         </div>

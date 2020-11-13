@@ -53,7 +53,7 @@ function Filter(props) {
   }
 
   let filterTextHide = {
-    display: 'block',
+    // display: 'none',
     position: 'fixed',
   }
 
@@ -95,17 +95,48 @@ function Filter(props) {
     console.log('Clicked! But prevent default.')
   }
 
+  useEffect(() => {
+    window.addEventListener('scroll', fixed)
+    const filterw = document.querySelector('.w_sidebar')
+    const filterww = document.querySelector('.w_filterText')
+    const fixpoint = document.querySelector('.productCards')
+    const footerFixpoint = document.querySelector('.w_loadButton')
+    console.log('filterw', filterw)
+    console.log('fixpoint', fixpoint)
+    console.log('footerFixpoint', footerFixpoint)
+    // const scrollpoint = document.querySelector('.grace-fixpoint')
+
+    function fixed() {
+      let y = fixpoint.offsetTop
+      let z = footerFixpoint.offsetTop - 320
+      console.log('y', fixpoint.offsetTop)
+      console.log('z', footerFixpoint.offsetTop)
+      console.log('window.pageYOffset', window.pageYOffset)
+      if (window.pageYOffset >= y || window.pageYOffset < z) {
+        filterw.classList.add('w_fix')
+        filterww.classList.add('w_filter_fix')
+      }
+      if (window.pageYOffset < y || window.pageYOffset > z) {
+        filterw.classList.remove('w_fix')
+        filterww.classList.remove('w_filter_fix')
+      }
+      // if (window.pageYOffset > 1500) {
+      //   filterw.classList.remove('w_fix')
+      // }
+    }
+  }, [window.pageYOffset])
+
   return (
     <>
       <div
-        className="filterText"
+        className="w_filterText"
         onClick={() => setViewFilter(1)}
         style={viewFilter === 1 ? filterTextShow : filterTextHide}
       >
         <p>FILTER</p>
       </div>
       <div
-        className="sidebar"
+        className="w_sidebar"
         style={viewFilter === 1 ? sidebarShow : sidebarHide}
       >
         <div

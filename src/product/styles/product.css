@@ -572,8 +572,9 @@ body {
   padding-left: 70px;
 }
 
-.footer {
+.w_footer {
   background-color: #ded5c6;
+  z-index: 20;
 }
 
 .company {

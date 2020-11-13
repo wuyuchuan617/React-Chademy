@@ -12,7 +12,7 @@ import Sidepic from '../component/Sidepic'
 import '../styles/desc.scss'
 import { withRouter, useParams } from 'react-router-dom'
 import '../styles/designer.scss'
-import {  Button , Modal } from 'react-bootstrap'
+import { Button, Modal } from 'react-bootstrap'
 import Modalsetprice from '../component/Modalsetprice'
 import Countdown, {
   zeroPad,
@@ -149,13 +149,13 @@ function Desc(props) {
     const url = 'http://localhost:3001/product/api/record'
     const copyPrice = price
     const newPrice = {
-      'member_sid': member2,
-      'product_sid': id,
-      'bid_sid': id,
-      'price': value,
-      'total_price': +copyPrice + value * 1,
-      'sid': id,
-      'email': JSON.parse(localStorage.getItem('reduxState')).user.users.email,
+      member_sid: member2,
+      product_sid: id,
+      bid_sid: id,
+      price: value,
+      total_price: +copyPrice + value * 1,
+      sid: id,
+      email: JSON.parse(localStorage.getItem('reduxState')).user.users.email,
     }
 
     const request = new Request(url, {
@@ -171,7 +171,6 @@ function Desc(props) {
     setPrice(+copyPrice + value * 1)
   }
 
-
   const [chair, setChair] = useState(null)
   useEffect(() => {
     initData()
@@ -185,18 +184,17 @@ function Desc(props) {
 
     function fixed() {
       let y = fixpoint.offsetTop
-         console.log('fixpoint.offsetTop',fixpoint.offsetTop)
-        console.log('window.pageYOffset',window.pageYOffset)
+      console.log('fixpoint.offsetTop', fixpoint.offsetTop)
+      console.log('window.pageYOffset', window.pageYOffset)
       if (window.pageYOffset >= y) {
-    
         fixpoint.classList.add('g-fixed')
         line.classList.add('g-fixed-line')
-      } 
-      if (window.pageYOffset < y)  {
+      }
+      if (window.pageYOffset < y) {
         fixpoint.classList.remove('g-fixed')
         line.classList.remove('g-fixed-line')
       }
-      if (window.pageYOffset >1500)  {
+      if (window.pageYOffset > 1500) {
         fixpoint.classList.remove('g-fixed')
         line.classList.remove('g-fixed-line')
       }
@@ -293,13 +291,12 @@ function Desc(props) {
   }
   const [state, setState] = useState({
     show: true,
-  items: [<tr key="0"></tr>],
+    items: [<tr key="0"></tr>],
   })
-  
 
-  function onAdd () {
+  function onAdd() {
     let items = state.items
-    console.log('items',items)
+    console.log('items', items)
     items.push(<tr key={Date.now()}></tr>)
     setState({
       show: true,
@@ -313,7 +310,7 @@ function Desc(props) {
       <div className="container">
         <div className="row justify-content-center">
           {/* <Countdown date={Date.now() + (+total) } renderer={renderer}> */}
-        
+
           {total ? (
             <Countdown
               date={new Date(enddate).getTime()}
@@ -324,7 +321,7 @@ function Desc(props) {
           )}
         </div>
       </div>
-          
+
       {/* Desc */}
       <div className="container">
         <div className="row">
@@ -408,14 +405,14 @@ function Desc(props) {
                 opacity: 0,
               }}
             > */}
-            
-              <h1>{pname}</h1>
-              <h5 className="g-pDesc">{pname}單椅</h5>
-              <h4>目前金額</h4>
-              <div className="line3 my-4 w-100"></div>
-              <h2 className="g-bidprice">${comma}</h2>
 
-              {/* <BsFillHeartFill
+            <h1>{pname}</h1>
+            <h5 className="g-pDesc">{pname}單椅</h5>
+            <h4>目前金額</h4>
+            <div className="line3 my-4 w-100"></div>
+            <h2 className="g-bidprice">${comma}</h2>
+
+            {/* <BsFillHeartFill
                 onClick={async () => {
                   await setHeart(!heart)
                   if (heart === false) {
@@ -434,96 +431,97 @@ function Desc(props) {
                 style={heart ? heartFill : ''}
               /> */}
 
-              {/* <HeartOutlined className="g-heart" style={{ fontSize: '18px', color: '#707070', fill: '#707070'}}/> */}
-              <p>出價</p>
-              {/* {isLogged ? ( */}
-                <div className="d-flex justify-content-between">
-                  <div
-                    onClick={() => {
-                      setAddmoney(1000)
-                      // addprice(1000)
-                      handleShow()
-                    }}
-                    className="g-price d-flex justify-content-center align-items-center"
-                  >
-                    $1,000
-                  </div>
+            {/* <HeartOutlined className="g-heart" style={{ fontSize: '18px', color: '#707070', fill: '#707070'}}/> */}
+            <p>出價</p>
+            {/* {isLogged ? ( */}
+            <div className="d-flex justify-content-between">
+              <div
+                onClick={() => {
+                  setAddmoney(1000)
+                  // addprice(1000)
+                  handleShow()
+                }}
+                className="g-price d-flex justify-content-center align-items-center"
+              >
+                $1,000
+              </div>
 
-                  <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton>
-                      <Modal.Title>Modal heading</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>確定要加價嗎？</Modal.Body>
-                    <Modal.Footer>
-                      <Button variant="secondary" onClick={handleClose}>
-                        不確定
-                      </Button>
-                      <Button
-                        variant="primary"
-                        onClick={() => {
-                          addprice(addmoney)
-                          handleClose()
-                          onAdd()
-                        }}
-                      >
-                        確定
-                      </Button>
-                    </Modal.Footer>
-                  </Modal>
-                  <div
+              <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                  <Modal.Title>Modal heading</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>確定要加價嗎？</Modal.Body>
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={handleClose}>
+                    不確定
+                  </Button>
+                  <Button
+                    variant="primary"
                     onClick={() => {
-                      setAddmoney(5000)
-                      // addprice(1000)
-                      handleShow()
+                      addprice(addmoney)
+                      handleClose()
+                      onAdd()
                     }}
-                    className="g-price d-flex justify-content-center align-items-center"
                   >
-                    $5,000
-                  </div>
-                  <div
-                    onClick={() => {
-                      setAddmoney(10000)
-                      // addprice(1000)
-                      handleShow()
-                    }}
-                    className="g-price d-flex justify-content-center align-items-center"
-                  >
-                    $10,000
-                  </div>
-                </div>
-              {/* ) : null} */}
-              <h4 className="pb-1">競標資訊</h4>
-              <div className="line3 my-4  w-100"></div>
-              <table>
-                <tbody className="g-table text-left justify-content-center ">
-                  <tr>
-                    <th >競標日期</th>
-                    <td>
-                      {sdate}~{edate}
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>競標時間</th>
-                    <td>
-                      {starttime}~{endtime}
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>起標價格</th>
-                    <td>${comma3}</td>
-                  </tr>
-                  <tr>
-                    <th>競標人數</th>
-                    <td>{visiter}人</td>
-                  </tr>
-                  <tr>
-                    <th>觀看人數</th>
-                    <td>{part}人</td>
-                  </tr>
-                </tbody>
-              </table>
-              <h2 className="g-smalltime text-center pt-4"><Counter total={total} enddate={enddate} /></h2>
-           
+                    確定
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+              <div
+                onClick={() => {
+                  setAddmoney(5000)
+                  // addprice(1000)
+                  handleShow()
+                }}
+                className="g-price d-flex justify-content-center align-items-center"
+              >
+                $5,000
+              </div>
+              <div
+                onClick={() => {
+                  setAddmoney(10000)
+                  // addprice(1000)
+                  handleShow()
+                }}
+                className="g-price d-flex justify-content-center align-items-center"
+              >
+                $10,000
+              </div>
+            </div>
+            {/* ) : null} */}
+            <h4 className="pb-1">競標資訊</h4>
+            <div className="line3 my-4  w-100"></div>
+            <table>
+              <tbody className="g-table text-left justify-content-center ">
+                <tr>
+                  <th>競標日期</th>
+                  <td>
+                    {sdate}~{edate}
+                  </td>
+                </tr>
+                <tr>
+                  <th>競標時間</th>
+                  <td>
+                    {starttime}~{endtime}
+                  </td>
+                </tr>
+                <tr>
+                  <th>起標價格</th>
+                  <td>${comma3}</td>
+                </tr>
+                <tr>
+                  <th>競標人數</th>
+                  <td>{visiter}人</td>
+                </tr>
+                <tr>
+                  <th>觀看人數</th>
+                  <td>{part}人</td>
+                </tr>
+              </tbody>
+            </table>
+            <h2 className="g-smalltime text-center pt-4">
+              <Counter total={total} enddate={enddate} />
+            </h2>
 
             {/* <button className="chat"></button> */}
             <Button
@@ -574,15 +572,15 @@ function Desc(props) {
                         type={['right', 'left']}
                         leaveReverse
                       > */}
-                        {member.map((item, index) => (
-                          <Record
-                            key={index}
-                            item={item}
-                            {...props}
-                            getMember={getMember}
-                            changepage={changepage}
-                          />
-                        ))}
+                      {member.map((item, index) => (
+                        <Record
+                          key={index}
+                          item={item}
+                          {...props}
+                          getMember={getMember}
+                          changepage={changepage}
+                        />
+                      ))}
                       {/* </QueueAnim> */}
                     </tbody>
                   </table>
@@ -593,7 +591,8 @@ function Desc(props) {
                     comma={comma}
                     chair={chair}
                     addprice={addprice}
-                    enddate={enddate} total={total}
+                    enddate={enddate}
+                    total={total}
                   />
                 )}
                 {/* <Route path="/pages/desc/setprice/:id?"> */}
@@ -662,7 +661,7 @@ function Desc(props) {
           </div>
         </ScrollParallax>
       </div>
-     
+
       <BackTop
         visibilityHeight="2000"
         style={{
