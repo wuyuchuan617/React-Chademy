@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
-// import useInterval from '@use-it/interval';
 import { useSelector } from 'react-redux'
-
+// import useInterval from '@use-it/interval';
 import useInterval from 'use-interval'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import Slider from '../component/Slider'
@@ -13,17 +12,23 @@ import Sidepic from '../component/Sidepic'
 import '../styles/desc.scss'
 import { withRouter, useParams } from 'react-router-dom'
 import '../styles/designer.scss'
-import { Button, Modal } from 'react-bootstrap'
+import {  Button , Modal } from 'react-bootstrap'
 import Modalsetprice from '../component/Modalsetprice'
-import Countdown from 'react-countdown'
+import Countdown, {
+  zeroPad,
+  calcTimeDelta,
+  formatTimeDelta,
+} from 'react-countdown'
 import Confirm from '../component/Confirm'
 // import { BsFillHeartFill } from 'react-icons/bs'
 // import { HeartOutlined } from '@ant-design/icons';
 import Counter from '../component/Counter'
 import QueueAnim from 'rc-queue-anim'
+// import Button from 'antd/lib/button'
 import ScrollParallax from 'rc-scroll-anim/lib/ScrollParallax'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
+import { GrWindows } from 'react-icons/gr'
 function Desc(props) {
   let { id } = useParams()
   //<3 css
@@ -40,6 +45,7 @@ function Desc(props) {
     setCartAmount,
     cartamount,
   } = props
+  const [comma, setComma] = useState(null)
   const [startdate, setStartdate] = useState('')
   const [sid, setSid] = useState('')
   const [starttime, setStarttime] = useState('')
@@ -84,7 +90,7 @@ function Desc(props) {
 
     const response = await fetch(request)
     const data = await response.json()
-    console.log('data', data)
+
     setSid(data[0].sid)
     setSdate(data[0].sdate)
     setEdate(data[0].edate)
@@ -114,7 +120,7 @@ function Desc(props) {
         'Content-Type': 'application/json',
       }),
     })
-    // const response = await fetch(request).then((v) => console.log(v))
+
     const response = await fetch(request)
     const data = await response.json()
 
@@ -135,22 +141,21 @@ function Desc(props) {
     })
     const response = await fetch(request)
     const data = await response.json()
-    // console.log(data)
+
     setMember(data)
   }
 
   async function addprice(value) {
     const url = 'http://localhost:3001/product/api/record'
     const copyPrice = price
-
     const newPrice = {
-      member_sid: member2,
-      product_sid: id,
-      bid_sid: id,
-      price: value,
-      total_price: +copyPrice + value * 1,
-      sid: id,
-      // 'time':Date.now(),
+      'member_sid': member2,
+      'product_sid': id,
+      'bid_sid': id,
+      'price': value,
+      'total_price': +copyPrice + value * 1,
+      'sid': id,
+      'email': JSON.parse(localStorage.getItem('reduxState')).user.users.email,
     }
 
     const request = new Request(url, {
@@ -166,13 +171,40 @@ function Desc(props) {
     setPrice(+copyPrice + value * 1)
   }
 
+
   const [chair, setChair] = useState(null)
   useEffect(() => {
     initData()
     getDesigner()
     getMember()
-    getCartFromLocalStorage()
+    //  getCartFromLocalStorage()
+    window.addEventListener('scroll', fixed)
+    const fixpoint = document.querySelector('.bidinfo')
+    const line = document.querySelector('.line')
+    // const scrollpoint = document.querySelector('.grace-fixpoint')
+
+    function fixed() {
+      let y = fixpoint.offsetTop
+         console.log('fixpoint.offsetTop',fixpoint.offsetTop)
+        console.log('window.pageYOffset',window.pageYOffset)
+      if (window.pageYOffset >= y) {
+    
+        fixpoint.classList.add('g-fixed')
+        line.classList.add('g-fixed-line')
+      } 
+      if (window.pageYOffset < y)  {
+        fixpoint.classList.remove('g-fixed')
+        line.classList.remove('g-fixed-line')
+      }
+      if (window.pageYOffset >1500)  {
+        fixpoint.classList.remove('g-fixed')
+        line.classList.remove('g-fixed-line')
+      }
+    }
   }, [])
+  useEffect(() => {
+    getCartFromLocalStorage()
+  }, [isLogged])
 
   useEffect(() => {
     setChair(`http://localhost:3000/uploads/${productpic[0]}`)
@@ -194,18 +226,13 @@ function Desc(props) {
   useEffect(() => {
     const a = getTimeRemaining(enddate)
     setTotal(a)
-    const secs = Math.floor(a / (1000 * 60 * 60 * 24)) - 1
-    setDay(secs < 0 ? 0 : `0${secs}`)
-  }, [startdate, enddate])
+  }, [enddate])
   //countdown
-  // console.log('total',total)
 
-  // const Completionist = () =>  setModalShow(true);
-  // console.log(setModalShow(true))
-  const renderer = ({ hours, minutes, seconds, completed }) => {
+  const renderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
       // Render a complete state
-      console.log('noShowModel:', noShowModel)
+
       if (!noShowModel) {
         setTimeout(() => {
           setModalShow(true)
@@ -217,19 +244,19 @@ function Desc(props) {
       return (
         <div className="d-flex w-50 align-items-center justify-content-center ">
           <div key="a" className="col-sm-2 days d-flex flex-column">
-            {day}
+            {zeroPad(days)}
             <span>days</span>
           </div>
           <div className="col-2 days d-flex flex-column">
-            {hours}
+            {zeroPad(hours)}
             <span>hours</span>
           </div>
           <div className="col-2 days d-flex flex-column">
-            {minutes}
+            {zeroPad(minutes)}
             <span>minutes</span>
           </div>
           <div className="col-2 days d-flex flex-column">
-            {seconds}
+            {zeroPad(seconds)}
             <span>seconds</span>
           </div>
         </div>
@@ -248,30 +275,45 @@ function Desc(props) {
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
   }
+  const [comma3, setComma3] = useState(null)
   useEffect(() => {
-    numberWithCommas(price)
-  }, [])
+    const newprice = price
+    const c = numberWithCommas(newprice)
+    setComma(c)
+    const d = numberWithCommas(startprice)
+    setComma3(d)
+  }, [price])
 
   //get member_sid fn
   function getCartFromLocalStorage() {
-    const { user = {} } = JSON.parse(localStorage['reduxState'] || '{}')
-    const { sid } = user.users || {}
+    const newMember = JSON.parse(localStorage.getItem('reduxState')).user.users
+      .sid
 
-    if (isLogged) {
-      // console.log('newMember', newMember)
-      // console.log(typeof newMember)
-      setMember2(sid)
-    }
+    setMember2(newMember)
   }
+  const [state, setState] = useState({
+    show: true,
+  items: [<tr key="0"></tr>],
+  })
+  
 
+  function onAdd () {
+    let items = state.items
+    console.log('items',items)
+    items.push(<tr key={Date.now()}></tr>)
+    setState({
+      show: true,
+      items,
+    })
+  }
   return (
     <>
       {/* countdown */}
 
       <div className="container">
-        <div className="row justify-content-center ">
-          {/* <div className=" d-flex align-items-center justify-content-center"> */}
+        <div className="row justify-content-center">
           {/* <Countdown date={Date.now() + (+total) } renderer={renderer}> */}
+        
           {total ? (
             <Countdown
               date={new Date(enddate).getTime()}
@@ -282,6 +324,7 @@ function Desc(props) {
           )}
         </div>
       </div>
+          
       {/* Desc */}
       <div className="container">
         <div className="row">
@@ -353,7 +396,7 @@ function Desc(props) {
           <div className="line mx-4"></div>
           <div className="bidinfo">
             {/* 動畫特效 */}
-            <ScrollParallax
+            {/* <ScrollParallax
               animation={[
                 // { x: 0, playScale: [0, 1.5] },
                 { y: 0, opacity: 1, playScale: [0, 1] },
@@ -364,12 +407,13 @@ function Desc(props) {
                 filter: 'blur(0px)',
                 opacity: 0,
               }}
-            >
+            > */}
+            
               <h1>{pname}</h1>
               <h5 className="g-pDesc">{pname}單椅</h5>
               <h4>目前金額</h4>
               <div className="line3 my-4 w-100"></div>
-              <h2 className="g-bidprice">${price}</h2>
+              <h2 className="g-bidprice">${comma}</h2>
 
               {/* <BsFillHeartFill
                 onClick={async () => {
@@ -393,7 +437,6 @@ function Desc(props) {
               {/* <HeartOutlined className="g-heart" style={{ fontSize: '18px', color: '#707070', fill: '#707070'}}/> */}
               <p>出價</p>
               {/* {isLogged ? ( */}
-              {isLogged ? (
                 <div className="d-flex justify-content-between">
                   <div
                     onClick={() => {
@@ -420,6 +463,7 @@ function Desc(props) {
                         onClick={() => {
                           addprice(addmoney)
                           handleClose()
+                          onAdd()
                         }}
                       >
                         確定
@@ -447,13 +491,13 @@ function Desc(props) {
                     $10,000
                   </div>
                 </div>
-              ) : null}
-              <h4>競標資訊</h4>
+              {/* ) : null} */}
+              <h4 className="pb-1">競標資訊</h4>
               <div className="line3 my-4  w-100"></div>
               <table>
-                <tbody className="text-left justify-content-center ">
+                <tbody className="g-table text-left justify-content-center ">
                   <tr>
-                    <th>競標日期</th>
+                    <th >競標日期</th>
                     <td>
                       {sdate}~{edate}
                     </td>
@@ -466,7 +510,7 @@ function Desc(props) {
                   </tr>
                   <tr>
                     <th>起標價格</th>
-                    <td>${startprice}</td>
+                    <td>${comma3}</td>
                   </tr>
                   <tr>
                     <th>競標人數</th>
@@ -478,7 +522,8 @@ function Desc(props) {
                   </tr>
                 </tbody>
               </table>
-            </ScrollParallax>
+              <h2 className="g-smalltime text-center pt-4"><Counter total={total} enddate={enddate} /></h2>
+           
 
             {/* <button className="chat"></button> */}
             <Button
@@ -509,7 +554,7 @@ function Desc(props) {
           />
 
           <div className="row">
-            <div className="col">
+            <div className="col-8">
               <div className="g-bg p-3">
                 {changepage == 2 ? (
                   <table className="w-100 text-center mt-3">
@@ -520,19 +565,36 @@ function Desc(props) {
                         <th className="w-25">總金額</th>
                         <th className="w-25">時間</th>
                       </tr>
-                      {member.map((item, index) => (
-                        <Record
-                          key={index}
-                          item={item}
-                          {...props}
-                          getMember={getMember}
-                          changepage={changepage}
-                        />
-                      ))}
+                      {/* <Button onChange={onAdd} style={{ marginLeft: 10 }}>
+                        Add
+                      </Button> */}
+                      {/* <QueueAnim
+                      onChange={onAdd}
+                        component="tr"
+                        type={['right', 'left']}
+                        leaveReverse
+                      > */}
+                        {member.map((item, index) => (
+                          <Record
+                            key={index}
+                            item={item}
+                            {...props}
+                            getMember={getMember}
+                            changepage={changepage}
+                          />
+                        ))}
+                      {/* </QueueAnim> */}
                     </tbody>
                   </table>
                 ) : (
-                  <Setprice changepage={changepage} />
+                  <Setprice
+                    changepage={changepage}
+                    {...props}
+                    comma={comma}
+                    chair={chair}
+                    addprice={addprice}
+                    enddate={enddate} total={total}
+                  />
                 )}
                 {/* <Route path="/pages/desc/setprice/:id?"> */}
 
@@ -600,6 +662,7 @@ function Desc(props) {
           </div>
         </ScrollParallax>
       </div>
+     
       <BackTop
         visibilityHeight="2000"
         style={{

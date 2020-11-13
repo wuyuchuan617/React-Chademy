@@ -2,19 +2,17 @@ import React, { useEffect, useState } from 'react'
 import { Modal,Button } from 'react-bootstrap'
 
 function Modalsetprice(props){
-  console.log(props)
     const{pname, chair,price,setCartAmount,cartamount,productpic,setNoShowModel}=props
     //add to cart fn
     const [myCart, setMyCart] = useState([])
     const [pc, setPc] = useState('')
     const updateCartToLocalStorage = (item, isAdded = true) => {
-        console.log(item, isAdded)
+   
         const currentCart = JSON.parse(localStorage.getItem('cart')) || []
       
         // find if the product in the localstorage with its id
         const index = currentCart.findIndex((v) => v.id === item.id)
       
-        console.log('index', index)
         // found: index! == -1
         if (index > -1) {
           currentCart[index].amount++
