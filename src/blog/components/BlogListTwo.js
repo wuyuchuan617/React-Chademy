@@ -93,7 +93,7 @@ function BlogListTwo(props) {
               setMessageTitle(e.target.value)
             }}
             rows="1"
-            cols="126"
+            cols="122"
             className="a_formstyle"
             name="a_description"
           ></textarea>
@@ -104,7 +104,7 @@ function BlogListTwo(props) {
               setMessage(e.target.value)
             }}
             rows="6"
-            cols="126"
+            cols="122"
             className="a_formstyle"
             name="a_description"
           ></textarea>
@@ -112,11 +112,16 @@ function BlogListTwo(props) {
             <button
               className="message-btn"
               onClick={() => {
+                const { user = {} } = JSON.parse(
+                  localStorage['reduxState'] || '{}'
+                )
+                const { name } = user.users || {}
+
                 const newMessage = {
                   title: item.title,
                   text_title: messagetitle,
                   text_content: message,
-                  member_id: '456',
+                  member_id: name,
                 }
                 setSaveMessage(newMessage)
               }}

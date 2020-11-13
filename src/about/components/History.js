@@ -1,21 +1,33 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../styles/about.css'
 import a_popularImg from '../images/58.png'
 import a_popularImgtwo from '../images/59.png'
 import a_popularImgthree from '../images/60.png'
 import a_popularImgfour from '../images/61.png'
 import a_popularImgfive from '../images/62.png'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function History() {
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
   return (
     <div className="container">
       <div className="title01">
-        <h2>重大紀事</h2>
+        <div className="titlech noto-serif text-center">重大紀事</div>
+        <div className="titleEN lora text-center">Chronicle of events</div>
       </div>
 
       <div className="row no-gutters justify-content-between">
-        <div className="article col-md-6 mb-12">
-          <div className="a_history">
+        <div className="article col-md-6 col-mb-6 col-sm-1">
+          <div
+            className="a_history"
+            data-aos="flip-left"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+          >
             <div className="row no-gutters">
               <div className="article col-md-12 mb-12 d-flex">
                 <div className="a_historyImg">
@@ -30,7 +42,13 @@ function History() {
               </div>
             </div>
           </div>
-          <div className="a_historytwo">
+          <div
+            className="a_historytwo"
+            data-aos="flip-left"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+            data-aos-once="true"
+          >
             <div className="row no-gutters">
               <div className="article col-md-12 mb-12 d-flex">
                 <div className="a_historyImg">
@@ -53,7 +71,13 @@ function History() {
           <div className="a_circle3"></div>
           <div className="a_circle4"></div>
           <div className="a_circle5"></div>
-          <div className="a_historythree">
+          <div
+            className="a_historythree"
+            data-aos="flip-left"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+            data-aos-once="true"
+          >
             <div className="row no-gutters">
               <div className="article col-md-12 mb-12 d-flex">
                 <div className="a_historyImg">
@@ -70,7 +94,13 @@ function History() {
             </div>
           </div>
 
-          <div className="a_historyfour">
+          <div
+            className="a_historyfour"
+            data-aos="flip-left"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+            data-aos-once="true"
+          >
             <div className="row no-gutters">
               <div className="article col-md-12 mb-12 d-flex">
                 <div className="a_historyImg">
@@ -87,7 +117,13 @@ function History() {
             </div>
           </div>
 
-          <div className="a_historyfive">
+          <div
+            className="a_historyfive"
+            data-aos="flip-left"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+            data-aos-once="true"
+          >
             <div className="row no-gutters">
               <div className="article col-md-12 mb-12 d-flex">
                 <div className="a_historyImg">
@@ -104,8 +140,19 @@ function History() {
           </div>
         </div>
 
-        <div className="row justify-content-center">
-          <div className="membertitle">未來展望</div>
+        <div
+          className="row justify-content-center"
+          data-aos="fade-up"
+          data-aos-delay="50000"
+          data-aos-duration="2400"
+          data-aos-once="true"
+        >
+          <div className="anniea_title02">
+            <div className="titlech noto-serif text-center">未來展望</div>
+            <div className="titleEN lora text-center">
+              A look into the Future
+            </div>
+          </div>
           <div className="membertitle2">
             期許拓展更多的門市以及產品，並且孕育更多對木工產業有意義的人才，創作叫好又叫座的商品，最重要的是，將富有教育意義的理念傳達給更多人知道。
           </div>

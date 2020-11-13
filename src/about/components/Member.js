@@ -1,17 +1,30 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import '../styles/about.css'
 import imagemember from '../images/48.png'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function Member() {
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
   return (
     <div className="container">
       <div className="title01">
-        <h2>團隊成員</h2>
+        <div className="titlech noto-serif text-center">團隊成員</div>
+        <div className="titleEN lora text-center">Members</div>
       </div>
       <div className="row no-gutters">
         <div className="article col-md-6 mb-12">
           <div className="a_boxmemberone">
-            <div className="row d-flex justify-content-center">
+            <div
+              className="row d-flex justify-content-center"
+              data-aos="fade-right"
+              data-aos-delay="50000"
+              data-aos-duration="2400"
+              data-aos-once="true"
+            >
               <p className="col-3 a_member2">
                 <img src={imagemember} />
                 EVA CHANG
@@ -22,7 +35,13 @@ function Member() {
             </div>
 
             <div className="a_boxmembertwo">
-              <div className="row d-flex justify-content-center">
+              <div
+                className="row d-flex justify-content-center"
+                data-aos="fade-right"
+                data-aos-delay="50000"
+                data-aos-duration="2400"
+                data-aos-once="true"
+              >
                 <p className="col-3 a_member2">
                   <img src={imagemember} />
                   EVA CHANG
@@ -33,7 +52,13 @@ function Member() {
               </div>
 
               <div className="a_boxmemberthree">
-                <div className="row d-flex justify-content-center">
+                <div
+                  className="row d-flex justify-content-center"
+                  data-aos="fade-right"
+                  data-aos-delay="50000"
+                  data-aos-duration="2400"
+                  data-aos-once="true"
+                >
                   <p className="col-3 a_member2">
                     <img src={imagemember} />
                     EVA CHANG
@@ -48,7 +73,13 @@ function Member() {
         </div>
         <div className="article col-md-6 mb-12">
           <div className="a_boxmemberfour">
-            <div className="row d-flex justify-content-center">
+            <div
+              className="row d-flex justify-content-center"
+              data-aos="fade-left"
+              data-aos-delay="50000"
+              data-aos-duration="2400"
+              data-aos-once="true"
+            >
               <p className="col-3 a_member2">
                 <img src={imagemember} />
                 EVA CHANG
@@ -58,7 +89,13 @@ function Member() {
               </p>
             </div>
             <div className="a_boxmemberfive">
-              <div className="row d-flex justify-content-center">
+              <div
+                className="row d-flex justify-content-center"
+                data-aos="fade-left"
+                data-aos-delay="50000"
+                data-aos-duration="2400"
+                data-aos-once="true"
+              >
                 <p className="col-3 a_member2">
                   <img src={imagemember} />
                   EVA CHANG
@@ -68,7 +105,13 @@ function Member() {
                 </p>
               </div>
               <div className="a_boxmembersix">
-                <div className="row d-flex justify-content-center">
+                <div
+                  className="row d-flex justify-content-center"
+                  data-aos="fade-left"
+                  data-aos-delay="50000"
+                  data-aos-duration="2400"
+                  data-aos-once="true"
+                >
                   <p className="col-3 a_member2">
                     <img src={imagemember} />
                     EVA CHANG
@@ -78,7 +121,13 @@ function Member() {
                   </p>
                 </div>
                 <div className="a_boxmemberseven">
-                  <div className="row d-flex justify-content-center">
+                  <div
+                    className="row d-flex justify-content-center"
+                    data-aos="fade-left"
+                    data-aos-delay="50000"
+                    data-aos-duration="2400"
+                    data-aos-once="true"
+                  >
                     <p className="col-3 a_member2">
                       <img src={imagemember} />
                       EVA CHANG
@@ -94,8 +143,17 @@ function Member() {
         </div>
       </div>
 
-      <div className="row justify-content-center">
-        <div className="membertitle">想加入我們團隊嗎？</div>
+      <div
+        className="row justify-content-center"
+        data-aos="fade-up"
+        data-aos-delay="50000"
+        data-aos-duration="2400"
+        data-aos-once="true"
+      >
+        <div className="anniea_title02">
+          <div className="titlech noto-serif text-center">加入我們</div>
+          <div className="titleEN lora text-center">Join Chademy</div>
+        </div>
         <div className="membertitle2">
           我們設定目標，並以我們共同的價值觀為工作準擇。僅管我們的員工各司其職，我們的目標和價值觀卻是一致的，這些價值觀會貫徹我們的整個工作過程，來指導我們做出正確的决定。
         </div>

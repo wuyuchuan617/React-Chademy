@@ -21,7 +21,7 @@ header {
   color: #707070;
   font-size: 16px;
   text-align: center;
-  line-height: 40px;
+  line-height: 30px;
 }
 
 /*logo*/
@@ -296,11 +296,12 @@ img {
 
 .membertitle2 {
   font-family: 'Noto Sans TC', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   color: #707070;
   padding: 0 280px;
   text-align: center;
   letter-spacing: 0.2rem;
+  letter-spacing: 5px;
 }
 
 /*history*/
@@ -424,4 +425,355 @@ img {
   letter-spacing: 5px;
   font-size: 14px;
   font-weight: 300;
+}
+
+.title01 {
+  margin-bottom: 4.375rem;
+}
+
+.anniea_title02 {
+  margin-bottom: 1.375rem;
+}
+
+@media screen and (max-width: 768px) {
+  /*about*/
+  .a_banner {
+    display: none;
+  }
+
+  /*logo*/
+  .partannielogo {
+    width: 40%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  .a_chademy {
+    font-family: 'Lora', serif;
+    font-weight: normal;
+    font-size: 24px;
+  }
+
+  .a_chademyone {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 10px;
+    font-weight: 200;
+    letter-spacing: 2px;
+    color: #1a1818;
+    padding: 0 30px;
+  }
+
+  /*about*/
+
+  .a_aboutwrap {
+    width: 100%;
+    background-color: #edece8;
+  }
+
+  .a_about_image {
+    width: 420px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .a_about_image img {
+    width: 100%;
+  }
+
+  .a_about-desc {
+    margin-top: 20px;
+    color: #707070;
+    letter-spacing: 0.2rem;
+  }
+
+  .a_about-desc p {
+    color: #707070;
+    letter-spacing: 0.2rem;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 10px;
+    font-weight: normal;
+  }
+
+  /*history*/
+
+  .a_article2 {
+    border-left: none;
+    position: relative;
+  }
+
+  .a_history {
+    background-color: #f7f1ed;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+  }
+
+  .a_historytwo {
+    background-color: #f7f1ed;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+  }
+
+  .a_historythree {
+    background-color: #f7f1ed;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+  }
+
+  .a_historyfour {
+    background-color: #f7f1ed;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+  }
+
+  .a_historyfive {
+    background-color: #f7f1ed;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+  }
+
+  .a_circle1 {
+    display: none;
+  }
+
+  .a_circle2 {
+    display: none;
+  }
+
+  .a_circle3 {
+    display: none;
+  }
+
+  .a_circle4 {
+    display: none;
+  }
+
+  .a_circle5 {
+    display: none;
+  }
+
+  .a_historyImg {
+    width: 100%;
+  }
+
+  .a_historytitle {
+    font-family: 'Noto Serif TC', serif;
+    color: #1a1818;
+    font-size: 16px;
+  }
+
+  .a_historycontent {
+    color: #707070;
+    letter-spacing: 5px;
+    font-size: 10px;
+    font-weight: 300;
+  }
+
+  .title01 {
+    margin-bottom: 10px;
+  }
+
+  .anniea_title02 {
+    margin-bottom: 10px;
+  }
+
+  /*member*/
+
+  .a_boxmemberone {
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-right: 10px;
+  }
+
+  .a_boxmembertwo {
+    padding-top: 20px;
+  }
+
+  .a_boxmemberthree {
+    padding-top: 20px;
+  }
+
+  .a_boxmemberfour {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-left: none;
+  }
+
+  .a_boxmemberfive {
+    padding-top: 20px;
+  }
+
+  .a_boxmembersix {
+    padding-top: 20px;
+  }
+
+  .a_boxmemberseven {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .a_member2 {
+    font-family: 'Noto Serif TC', serif;
+    color: #1a1818;
+    font-size: 6px;
+    font-weight: normal;
+    text-align: center;
+  }
+
+  .a_member2 img {
+    margin-bottom: 10px;
+  }
+
+  .a_member3 {
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #707070;
+    letter-spacing: 5px;
+    font-size: 10px;
+    margin-bottom: 50px;
+    text-align: left;
+  }
+
+  .membertitle {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 24px;
+    color: #1a1818;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    letter-spacing: 0.2rem;
+  }
+
+  .membertitle2 {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 10px;
+    color: #707070;
+    padding: 0 20px;
+    text-align: center;
+    letter-spacing: 0.2rem;
+    letter-spacing: 5px;
+  }
+
+  /*virtual*/
+
+  .a_subtitle2 {
+    font-family: 'Noto Serif TC', serif;
+    color: #38393c;
+    letter-spacing: 5px;
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 10px;
+    padding-right: 90px;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .a_subtitle3 {
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #707070;
+    letter-spacing: 5px;
+    font-size: 12px;
+    text-align: left;
+    border-left: 3px solid #d9c7aa;
+    margin-bottom: 20px;
+  }
+
+  iframe {
+    width: 420px;
+    height: 320px;
+  }
+
+  /*physicalstore*/
+
+  .a_PhysicalStoreewrap {
+    width: 100%;
+    background-color: #edece8;
+  }
+
+  .a_aboutPhysicalStore_image {
+    width: 1600px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 0px;
+    margin-left: 0px;
+  }
+
+  .a_aboutPhysicalStore_image img {
+    width: 100%;
+  }
+
+  .a_aboutPhysicalStore-name {
+    font-family: 'Lora', serif;
+    font-size: 10px;
+    font-weight: bold;
+    margin-top: 0px;
+    letter-spacing: 0.2rem;
+  }
+
+  .a_PhysicalStoresubtitle2 {
+    font-family: 'Noto Serif TC', serif;
+    color: #38393c;
+    letter-spacing: 5px;
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-right: 90px;
+    padding-top: 23px;
+    text-align: center;
+  }
+
+  .a_PhysicalStoresubtitle3 {
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #707070;
+    letter-spacing: 5px;
+    font-size: 10px;
+    margin-bottom: 20px;
+    text-align: left;
+    border-left: 3px solid #d9c7aa;
+    margin-top: 20px;
+  }
+
+  .a_PhysicalStoresubtitle4 {
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #707070;
+    letter-spacing: 5px;
+    font-size: 10px;
+    margin-bottom: 50px;
+    text-align: left;
+    background-color: #fff;
+    padding: 10px;
+    display: none;
+  }
+
+  /*partner*/
+  .a_aboutwrapper2 {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+    margin-top: 10px;
+    background-color: #edece8;
+    margin-bottom: 10px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .a_wordpartner {
+    padding: 0rem;
+  }
 }

@@ -1,21 +1,39 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/about.css'
 import imagemain from '../images/46.png'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function About(props) {
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
   return (
     <div className="a_aboutwrap">
       <div className="container">
         <div className="row">
-          <div className="col">
+          <div
+            className="col"
+            data-aos="fade-right"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+          >
             <div className="a_about_image">
               <img src={imagemain} />
             </div>
           </div>
 
-          <div className="col">
-            <div className="d-flex a_about-name justify-content-between">
-              <div>About CHADEMY</div>
+          <div
+            className="col"
+            data-aos="fade-left"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+            data-aos-once="true"
+          >
+            <div className="title01">
+              <div className="titlech noto-serif text-center">關於品牌</div>
+              <div className="titleEN lora text-center">About Chademy</div>
             </div>
 
             <div className="a_about-desc">

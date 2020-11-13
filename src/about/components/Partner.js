@@ -8,17 +8,29 @@ import imagepartnerfive from '../images/54.png'
 import imagepartnersix from '../images/55.png'
 import imagepartnerseven from '../images/56.png'
 import imagepartnereight from '../images/57.png'
-
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function Partner(props) {
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
   return (
     <div className="container-fluid">
       <div className="a_aboutwrapper2">
         <div className="title01">
-          <h2>海外代理商</h2>
+          <div className="titlech noto-serif text-center">海外代理商</div>
+          <div className="titleEN lora text-center">Foreign Agency</div>
         </div>
+
         <div className="row">
-          <div className="article col-md-3 mb-3">
+          <div
+            className="article col-md-3 col-mb-4 col-sm-6"
+            data-aos="flip-left"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+          >
             <div className="a_boxpartner">
               <div className="a_upper1">
                 <img src={imagepartnerone} />
@@ -32,8 +44,14 @@ function Partner(props) {
                 </div>
               </div>
             </div>
-                  </div>
-                  <div className="article col-md-3 mb-3">
+          </div>
+          <div
+            className="article col-md-3 col-mb-4 col-sm-6"
+            data-aos="flip-left"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+            data-aos-once="true"
+          >
             <div className="a_boxpartner">
               <div className="a_upper1">
                 <img src={imagepartnertwo} />
@@ -47,8 +65,14 @@ function Partner(props) {
                 </div>
               </div>
             </div>
-                  </div>
-                  <div className="article col-md-3 mb-3">
+          </div>
+          <div
+            className="article col-md-3 col-mb-4 col-sm-6"
+            data-aos="flip-left"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+            data-aos-once="true"
+          >
             <div className="a_boxpartner">
               <div className="a_upper1">
                 <img src={imagepartnerthree} />
@@ -62,8 +86,14 @@ function Partner(props) {
                 </div>
               </div>
             </div>
-                  </div>
-                  <div className="article col-md-3 mb-3">
+          </div>
+          <div
+            className="article col-md-3 col-mb-4 col-sm-6"
+            data-aos="flip-left"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+            data-aos-once="true"
+          >
             <div className="a_boxpartner">
               <div className="a_upper1">
                 <img src={imagepartnerfour} />
@@ -77,10 +107,16 @@ function Partner(props) {
                 </div>
               </div>
             </div>
-                  </div>
-              </div>
-              <div className="row">
-              <div className="article col-md-3 mb-3">
+          </div>
+        </div>
+        <div className="row">
+          <div
+            className="article col-md-3 col-mb-4 col-sm-6"
+            data-aos="flip-left"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+            data-aos-once="true"
+          >
             <div className="a_boxpartner">
               <div className="a_upper1">
                 <img src={imagepartnerfive} />
@@ -94,8 +130,14 @@ function Partner(props) {
                 </div>
               </div>
             </div>
-              </div>
-              <div className="article col-md-3 mb-3">
+          </div>
+          <div
+            className="article col-md-3 col-mb-4 col-sm-6"
+            data-aos="flip-left"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+            data-aos-once="true"
+          >
             <div className="a_boxpartner">
               <div className="a_upper1">
                 <img src={imagepartnersix} />
@@ -109,8 +151,14 @@ function Partner(props) {
                 </div>
               </div>
             </div>
-              </div>
-              <div className="article col-md-3 mb-3">
+          </div>
+          <div
+            className="article col-md-3 col-mb-4 col-sm-6"
+            data-aos="flip-left"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+            data-aos-once="true"
+          >
             <div className="a_boxpartner">
               <div className="a_upper1">
                 <img src={imagepartnerseven} />
@@ -124,8 +172,14 @@ function Partner(props) {
                 </div>
               </div>
             </div>
-              </div>
-              <div className="article col-md-3 mb-3">
+          </div>
+          <div
+            className="article col-md-3 col-mb-4 col-sm-6"
+            data-aos="flip-left"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+            data-aos-once="true"
+          >
             <div className="a_boxpartner">
               <div className="a_upper1">
                 <img src={imagepartnereight} />
@@ -139,17 +193,10 @@ function Partner(props) {
                 </div>
               </div>
             </div>
-                  </div>
-                  </div>
           </div>
-          </div>
-     
-      
-           
-  
-      
-          
-    
+        </div>
+      </div>
+    </div>
   )
 }
 

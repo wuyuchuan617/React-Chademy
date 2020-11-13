@@ -14,6 +14,19 @@ function WorkshopOne(props) {
   const [mycart, setMycart] = useState([])
   const [productName, setProductName] = useState('')
 
+  const [heart, setHeart] = useState(false)
+
+  const heartFill = {
+    color: '#C77334',
+  }
+
+  const [visible, setVisible] = useState(false)
+
+  const [photo, setPhoto] = useState(`http://localhost:3001/img/${item.images}`)
+  useEffect(() => {
+    setPhoto(`http://localhost:3001/img/${item.images}`)
+  }, [item])
+
   const updateCartToLocalStorage = (value) => {
     // 從localstorage得到cart(json字串)
     const currentCart = JSON.parse(localStorage.getItem('cart')) || []
@@ -36,21 +49,45 @@ function WorkshopOne(props) {
     <div className="container">
       <div className="row">
         <div className="col">
-          <div className="workshop_photo">
+          <div className="workshop_photo" onClick={() => setVisible(true)}>
             <img src={require('../../img/' + item.images)} alt="" />
           </div>
           <div className="d-flex justify-content-between">
             <div className="workshop_photo_small">
-              <img src={imagemaintwo} />
+              <img
+                src={imagemaintwo}
+                alt=""
+                onClick={(e) => {
+                  setPhoto(e.target.src)
+                }}
+              />
             </div>
             <div className="workshop_photo_small">
-              <img src={imagemainthree} />
+              <img
+                src={imagemainthree}
+                alt=""
+                onClick={(e) => {
+                  setPhoto(e.target.src)
+                }}
+              />
             </div>
             <div className="workshop_photo_small">
-              <img src={imagemainfour} />
+              <img
+                src={imagemainfour}
+                alt=""
+                onClick={(e) => {
+                  setPhoto(e.target.src)
+                }}
+              />
             </div>
             <div className="workshop_photo_small">
-              <img src={imagemainfive} />
+              <img
+                src={imagemainfive}
+                alt=""
+                onClick={(e) => {
+                  setPhoto(e.target.src)
+                }}
+              />
             </div>
           </div>
         </div>
@@ -58,8 +95,13 @@ function WorkshopOne(props) {
         <div className="col">
           <div className="d-flex workshop-name justify-content-between">
             <div>{item.activitie_name}</div>
-            <div>
-              <i className="fas fa-heart"></i>
+            <div className="heart justify-content-end">
+              <BsFillHeartFill
+                onClick={() => {
+                  setHeart(!heart)
+                }}
+                style={heart ? heartFill : ''}
+              />
             </div>
           </div>
 
