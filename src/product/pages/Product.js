@@ -126,8 +126,11 @@ function Product(props) {
       })}
 
       <div className="container " id="w_review">
-        <div className="row justify-content-center title">
-          <h3>產品評價</h3>
+        <div className="row">
+          <div className="w_title1">
+            <div className="titlech noto-serif text-center">產品評價</div>
+            <div className="titleEN lora text-center">Comments</div>
+          </div>
         </div>
         <div className="w_rew_scroll">
           {product.map((item, index) => {
@@ -147,6 +150,12 @@ function Product(props) {
       })}
 
       <div className="container">
+        <div className="row">
+          <div className="w_title1">
+            <div className="titlech noto-serif text-center">購物須知</div>
+            <div className="titleEN lora text-center">Purchase Info</div>
+          </div>
+        </div>
         <div className="row justify-content-center">
           <PurchaseInfo />
         </div>

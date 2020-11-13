@@ -24,7 +24,7 @@ function FundListCard(props) {
           // }}
         >
           <div className="e_wrap">
-            <img src={require('../../img/' + item.e_pic)} alt="" />
+            <img src={`http://localhost:3001/img/` + item.e_pic} alt="" />
           </div>
 
           <h5 className="e_card_title">{item.e_proname}</h5>

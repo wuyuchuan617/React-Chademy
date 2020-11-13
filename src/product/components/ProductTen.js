@@ -6,7 +6,7 @@ function ProductTen(props) {
   const [statusPhoto, setStatusPhoto] = useState(1)
   return (
     <>
-      <div className="row justify-content-end thirdbg">
+      <div className="row justify-content-center thirdbg">
         <ul className="fade-pager__indicators ">
           <li
             class={
@@ -118,7 +118,11 @@ function ProductTen(props) {
               }
             >
               <div className="lazy-img-container lazy-img-container--66 center-children">
-                <img className="b-lazy loaded" src={item.photo2} alt="" />
+                <img
+                  className="b-lazy loaded"
+                  src={require('../images/ps1.jpg')}
+                  alt=""
+                />
               </div>
             </li>
             <li
@@ -128,7 +132,11 @@ function ProductTen(props) {
               }
             >
               <div className="lazy-img-container lazy-img-container--66 center-children">
-                <img className="b-lazy loaded" src={item.photo3} alt="" />
+                <img
+                  className="b-lazy loaded"
+                  src={require('../images/ps2.jpg')}
+                  alt=""
+                />
               </div>
             </li>
             <li
@@ -138,7 +146,11 @@ function ProductTen(props) {
               }
             >
               <div className="lazy-img-container lazy-img-container--66 center-children">
-                <img className="b-lazy loaded" src={item.photo2} alt="" />
+                <img
+                  className="b-lazy loaded"
+                  src={require('../images/ps3.jpg')}
+                  alt=""
+                />
               </div>
             </li>
             <li
@@ -148,7 +160,11 @@ function ProductTen(props) {
               }
             >
               <div className="lazy-img-container lazy-img-container--66 center-children">
-                <img className="b-lazy loaded" src={item.photo4} alt="" />
+                <img
+                  className="b-lazy loaded"
+                  src={require('../images/ps4.jpg')}
+                  alt=""
+                />
               </div>
             </li>
             <li
@@ -158,7 +174,11 @@ function ProductTen(props) {
               }
             >
               <div className="lazy-img-container lazy-img-container--66 center-children">
-                <img className="b-lazy loaded" src={item.photo2} alt="" />
+                <img
+                  className="b-lazy loaded"
+                  src={require('../images/ps5.jpg')}
+                  alt=""
+                />
               </div>
             </li>
             <li
@@ -168,7 +188,11 @@ function ProductTen(props) {
               }
             >
               <div className="lazy-img-container lazy-img-container--66 center-children">
-                <img className="b-lazy loaded" src={item.photo3} alt="" />
+                <img
+                  className="b-lazy loaded"
+                  src={require('../images/ps6.jpg')}
+                  alt=""
+                />
               </div>
             </li>
             <li
@@ -178,7 +202,11 @@ function ProductTen(props) {
               }
             >
               <div className="lazy-img-container lazy-img-container--66 center-children">
-                <img className="b-lazy loaded" src={item.photo4} alt="" />
+                <img
+                  className="b-lazy loaded"
+                  src={require('../images/ps7.jpg')}
+                  alt=""
+                />
               </div>
             </li>
             <li
@@ -188,7 +216,11 @@ function ProductTen(props) {
               }
             >
               <div className="lazy-img-container lazy-img-container--66 center-children">
-                <img className="b-lazy loaded" src={item.photo3} alt="" />
+                <img
+                  className="b-lazy loaded"
+                  src={require('../images/ps8.jpg')}
+                  alt=""
+                />
               </div>
             </li>
             <li
@@ -198,7 +230,11 @@ function ProductTen(props) {
               }
             >
               <div className="lazy-img-container lazy-img-container--66 center-children">
-                <img className="b-lazy loaded" src={item.photo2} alt="" />
+                <img
+                  className="b-lazy loaded"
+                  src={require('../images/ps9.jpg')}
+                  alt=""
+                />
               </div>
             </li>
             <li
@@ -208,7 +244,11 @@ function ProductTen(props) {
               }
             >
               <div className="lazy-img-container lazy-img-container--66 center-children">
-                <img className="b-lazy loaded" src={item.photo3} alt="" />
+                <img
+                  className="b-lazy loaded"
+                  src={require('../images/ps10.jpg')}
+                  alt=""
+                />
               </div>
             </li>
           </ul>

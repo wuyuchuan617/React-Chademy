@@ -1,13 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import { withRouter, useHistory } from 'react-router-dom'
 import { countries, townships, postcodes } from '../components/Data'
+import { ATMCard } from 'atm-card-react'
+import Cards from 'react-credit-cards'
+import 'react-credit-cards/lib/styles.scss'
 // import './style/jay.scss'
 
 function CheckInfo(props) {
   const [showCreditCard, setShowCreditCard] = useState(true)
   const [showATM, setShowATM] = useState(false)
   const [showIns, setShowIns] = useState(false)
+  const [cvc, setCvc] = useState('222')
+  const [expiry, setExpiry] = useState('')
+  const [focus, setFocus] = useState('')
+  const [myname, setMyName] = useState('NAME')
+  const [number, setNumber] = useState('')
+
   // const [orderNo, setOrderNo] = useState('')
   const {
     myCart,
@@ -20,7 +29,15 @@ function CheckInfo(props) {
     cartamount,
     setCartAmount,
     totalPrice,
+    typeofProduct,
   } = props
+  const [month, setMonth] = useState(2)
+  const [year, setYear] = useState(22)
+  const [holder, setHolder] = useState('mars')
+  const [cvv, setCvv] = useState('')
+  const [mydate, setMyDate] = useState('')
+  const [myString, setMyString] = useState('')
+  const [newLocalData, setNewLocalData] = useState([])
   const city2 = city === -1 ? 0 : city
   const area2 = area === -1 ? 0 : area
   let date = new Date()
@@ -85,6 +102,20 @@ function CheckInfo(props) {
       const data = await response.json()
     }
   }
+  function getLocalStorage() {
+    let data = JSON.parse(localStorage.getItem('cart')) || []
+    let putArray = []
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].category !== typeofProduct) {
+        putArray.push(data[i])
+      }
+    }
+    setNewLocalData(putArray)
+    // localStorage.setItem('cart', JSON.stringify(currentCart))
+  }
+  useEffect(() => {
+    getLocalStorage()
+  }, [])
   return (
     <>
       <div className="myprogress">
@@ -124,7 +155,15 @@ function CheckInfo(props) {
       </div>
       <hr className="jhr" />
       <div className="checkinfo">
-        <div className="creditcard"></div>
+        <div className="creditcard">
+          <Cards
+            cvc={cvc}
+            expiry={expiry}
+            focused={focus}
+            name={myname}
+            number={number}
+          />
+        </div>
         <div className="inputcheckinfo">
           <div style={{ display: 'flex' }}>
             <div
@@ -158,19 +197,61 @@ function CheckInfo(props) {
               <h6>分期付款</h6>
             </div>
           </div>
-          <input
-            type="text"
-            style={{
-              marginTop: '30px',
-            }}
-            placeholder="卡號"
-          />
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <input
+              id="input1"
+              type="text"
+              style={{
+                marginTop: '30px',
+                width: '140px',
+              }}
+              placeholder="卡號"
+              onChange={(e) => {
+                if (myString.length === 4) {
+                  document.querySelector('#input1').blur()
+                  document.querySelector('#input2').focus()
+                } else {
+                  setNumber(myString + e.target.value)
+                }
+              }}
+            />
+            <input
+              id="input2"
+              type="text"
+              style={{
+                marginTop: '30px',
+                width: '140px',
+              }}
+              placeholder="卡號"
+              onChange={(e) => setMyString(myString + e.target.value)}
+            />
+            <input
+              type="text"
+              style={{
+                marginTop: '30px',
+                width: '140px',
+              }}
+              placeholder="卡號"
+              onChange={(e) => setMyString(myString + e.target.value)}
+            />
+            <input
+              type="text"
+              style={{
+                marginTop: '30px',
+                width: '140px',
+              }}
+              placeholder="卡號"
+              onChange={(e) => setMyString(myString + e.target.value)}
+            />
+          </div>
+
           <input
             type="text"
             style={{
               marginTop: '30px',
             }}
             placeholder="持卡人"
+            onChange={(e) => setMyName(e.target.value)}
           />
           <input
             type="text"
@@ -178,6 +259,9 @@ function CheckInfo(props) {
               marginTop: '30px',
             }}
             placeholder="到期日"
+            onChange={(e) => {
+              setExpiry(e.target.value)
+            }}
           />
           <input
             type="text"
@@ -193,6 +277,7 @@ function CheckInfo(props) {
                 updateTotalToServer()
                 updateProductToServer()
                 setOrderNo(`PO${+date}`)
+                localStorage.setItem('cart', JSON.stringify(newLocalData))
               }}
             >
               完成付款

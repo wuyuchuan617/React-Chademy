@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 
 import e_video from '../images/oljn5-343em.mp4'
-
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import '../styles/FundHomepage.scss'
 // import 'react-bootstrap'
 import { Container, Row, Col } from 'react-bootstrap'
-import BookMark from '../components/BookMark'
-import BookIcon from '../components/BookIcon'
+import BookMarkhp from '../components/BookMarkhp'
+import BookIconhp from '../components/BookIconhp'
 import BookMarkTwo from '../components/BookMarkTwo'
 import PopBmarkOne from '../components/PopBmark/PopBmarkOne'
 import PopBmarkTwo from '../components/PopBmark/PopBmarkTwo'
@@ -46,14 +46,14 @@ function FundHomepage() {
       <Container>
         <Col>
           <Row>
-            <button name="explore" className="explore">
+            <Link to="/fundlist" className="explore">
               探索
-            </button>
+            </Link>
           </Row>
         </Col>
       </Container>
-      <BookMark setFilterMark={setFilterMark} />
-      <BookIcon setFilterIcon={setFilterIcon} />
+      <BookMarkhp setFilterMark={setFilterMark} />
+      <BookIconhp setFilterIcon={setFilterIcon} />
       {filterMark === 0 && filterIcon === 0 ? <CarouselE /> : ''}
       {filterMark === 0 && filterIcon === 1 ? <CarouselE /> : ''}
       {filterMark === 0 && filterIcon === 2 ? <CarouselE /> : ''}
@@ -66,7 +66,9 @@ function FundHomepage() {
       {filterMark === 1 && filterIcon === 4 ? <CarouselE /> : ''}
 
       <div className="e_more_div" z-index="10">
-        <button className="e_more">more</button>
+        <Link to="/fundlist" className="e_more">
+          more
+        </Link>
       </div>
       <h1 className="e_popular">熱門募資專案</h1>
       <BookMarkTwo setShowProject={setShowProject} />

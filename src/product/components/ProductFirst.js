@@ -9,6 +9,7 @@ import { withRouter } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Breadcrumbw from '../components/Breadcrumbw'
 import { Anchor } from 'antd'
+import { FacebookProvider, Share } from 'react-facebook'
 const { Link } = Anchor
 
 function ProductFirst(props) {
@@ -53,7 +54,7 @@ function ProductFirst(props) {
 
   useEffect(() => {
     setPhoto(`http://localhost:3001/img/${item.photo}`)
-  }, [item])
+  }, [sid])
 
   const heartFill = {
     color: '#C77334',
@@ -218,7 +219,7 @@ function ProductFirst(props) {
               <div className="product_photo_small">
                 {/* <img src={require('../../img/' + item.photo)} alt="" /> */}
                 <img
-                  src={item.photo}
+                  src={`http://localhost:3001/img/` + item.photo}
                   alt=""
                   onClick={(e) => {
                     setPhoto(e.target.src)
@@ -227,7 +228,7 @@ function ProductFirst(props) {
               </div>
               <div className="product_photo_small">
                 <img
-                  src={item.photo2}
+                  src={`http://localhost:3001/img/` + item.photo2}
                   alt=""
                   onClick={(e) => {
                     setPhoto(e.target.src)
@@ -236,7 +237,7 @@ function ProductFirst(props) {
               </div>
               <div className="product_photo_small">
                 <img
-                  src={item.photo3}
+                  src={`http://localhost:3001/img/` + item.photo3}
                   alt=""
                   onClick={(e) => {
                     setPhoto(e.target.src)
@@ -245,7 +246,7 @@ function ProductFirst(props) {
               </div>
               <div className="product_photo_small">
                 <img
-                  src={item.photo4}
+                  src={`http://localhost:3001/img/` + item.photo4}
                   alt=""
                   onClick={(e) => {
                     setPhoto(e.target.src)
@@ -330,7 +331,7 @@ function ProductFirst(props) {
                   <div className="choose-wood"></div>
                 </div>
               </div> */}
-              <li className="share-facebook">
+              {/* <li className="share-facebook">
                 <a
                   rel="nofollow noopener noreferrer"
                   data-shared="sharing-facebook-48785"
@@ -344,16 +345,31 @@ function ProductFirst(props) {
                     Click to share on Facebook (Opens in new window)
                   </span>
                 </a>
-              </li>
-              <a
+              </li> */}
+              {/* <a
                 href="https://www.facebook.com/sharer.php?u=https://www.cyberbiz.co/support/?p=855"
                 target="_blank"
               >
                 aaa
-              </a>
+              </a> */}
+
+              {/* <FacebookProvider appId="123456789">
+                <Share href="http://www.facebook.com">
+                  {({ handleClick, loading }) => (
+                    <button
+                      type="button"
+                      disabled={loading}
+                      onClick={handleClick}
+                    >
+                      Share
+                    </button>
+                  )}
+                </Share>
+              </FacebookProvider> */}
+
               {isLogged ? (
-                <button
-                  className="w_cart-btn"
+                <div
+                  className="btn_lessmargin more w_cart-btn"
                   onClick={() => {
                     setCartAmount(cartamount + 1)
                     updateCartToLocalStorage({
@@ -367,16 +383,16 @@ function ProductFirst(props) {
                   }}
                 >
                   加入購物車
-                </button>
+                </div>
               ) : (
-                <button
-                  className="w_cart-btn"
+                <div
+                  className="btn_lessmargin more w_cart-btn"
                   onClick={() => {
                     props.history.push('/login')
                   }}
                 >
                   加入購物車 請先登入
-                </button>
+                </div>
               )}
             </div>
           </div>

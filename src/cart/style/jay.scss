@@ -1,486 +1,492 @@
-.colsecartdiv{
-    width: 100vw;
-    top: 0;
-    bottom: 0;
-    position: fixed;
-    background-color: rgba(255, 255, 255, 0.6);
-    z-index: 3;
-    overflow: hidden;
+.colsecartdiv {
+  width: 100vw;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.6);
+  z-index: 3;
+  overflow: hidden;
 }
 
-.closecartbox{
-    margin-top: 52px;
-    width: 550px;
-    top: 0;
-    bottom: 0;
-    position:fixed;
-    right:-550px;
-    background-color: #F3F4F4;
-    animation-name:closecart;
-    animation-duration:  .5s;
-    z-index: 5;
-    // background-color: transparent
-  }
-.showcartbox{
-    width: 550px;
-    top: 0;
-    bottom: 0;
-    position:fixed;
-    right:0px;
-    background-color: #F3F4F4;
-    animation-name:showcart;
-    animation-duration:  .5s;
-    z-index: 5;
-  }
-  @keyframes showcart{
-    from{
-        right:-550px;
-    }
-    to{
-        right:0px;
-    }
-  }
-  @keyframes closecart{
-    from{
-        right:0px;
-    }
-    to{
-        right:-550px;
-    }
-  }
-  .btn1{
-    position: absolute;
-    bottom: 0;
-    width: 550px;
-    height: 50px;
-    background-color: #C67334;
-    z-index: 6;
-    text-align: center;
-    line-height: 50px;
-    text-decoration: none;
-    color: white;
-  }
-  .btn1:hover{
-    text-decoration: none;
-    color: white;
-  }
-  .j_btn2{
-      width: 100px;
-      height: 40px;
-      background-color: #C67334;
-      text-align: center;
-      line-height: 40px;
-      text-decoration: none;
-      color: white;
-      cursor: pointer
-  }
-  .j_btn2 h6{
-    line-height: 40px;
-  }
-  .j_btn2:hover{
-    text-decoration: none;
-    color: white;
-  }
-  .btn3{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 300px;
-    height: 50px;
-    background-color: #C67334;
-    // z-index: 6;
-    text-align: center;
-    line-height: 50px;
-    text-decoration: none;
-    color: white;
-    margin-bottom: 50px;
-  }
-  .btn3:hover{
-    text-decoration: none;
-    color: white;
-  }
-  .btn4{
-    margin: 0 auto 30px auto;
-    width: 400px;
-    height: 50px;
-    background-color: #C67334;
-    text-align: center;
-    line-height: 50px;
-    text-decoration: none;
-    color: white;
+.closecartbox {
+  margin-top: 52px;
+  width: 550px;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  right: -550px;
+  background-color: #f3f4f4;
+  animation-name: closecart;
+  animation-duration: 0.5s;
+  z-index: 5;
+  // background-color: transparent
 }
-.btn4:hover{
-  text-decoration: none;
-  color: white;
+.showcartbox {
+  width: 550px;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  right: 0px;
+  background-color: #f3f4f4;
+  animation-name: showcart;
+  animation-duration: 0.5s;
+  z-index: 5;
 }
-.j_btn5{
-  margin: auto;
-  width: 300px;
-  height: 40px;
-  background-color: #C67334;
-  text-align: center;
-  line-height: 40px;
-  text-decoration: none;
-  color: white;
+@keyframes showcart {
+  from {
+    right: -550px;
+  }
+  to {
+    right: 0px;
+  }
 }
-.j_btn5:hover{
-  text-decoration: none;
-  color: white;
+@keyframes closecart {
+  from {
+    right: 0px;
+  }
+  to {
+    right: -550px;
+  }
 }
-.j_btn6{
-  margin: auto;
-  width: 225px;
-  height: 40px;
-  background-color: #C67334;
-  text-align: center;
-  line-height: 40px;
-  text-decoration: none;
-  color: white;
-}
-.j_btn6:hover{
-  text-decoration: none;
-  color: white;
-}
-.j_btn7{
-  width: 450px;
+.btn1 {
+  position: absolute;
+  bottom: 0;
+  width: 550px;
   height: 50px;
-  background-color: #C67334;
+  background-color: #c67334;
+  z-index: 6;
+  text-align: center;
+  line-height: 50px;
+  text-decoration: none;
+  color: white;
+}
+.btn1:hover {
+  text-decoration: none;
+  color: white;
+}
+.j_btn2 {
+  width: 100px;
+  height: 40px;
+  background-color: #c67334;
+  text-align: center;
+  line-height: 40px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+.j_btn2 h6 {
+  line-height: 40px;
+}
+.j_btn2:hover {
+  text-decoration: none;
+  color: white;
+}
+.btn3 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  height: 50px;
+  background-color: #c67334;
   // z-index: 6;
   text-align: center;
   line-height: 50px;
   text-decoration: none;
   color: white;
-  margin: 15px auto 20px auto
+  margin-bottom: 50px;
 }
-.j_btn7:hover{
+.btn3:hover {
   text-decoration: none;
   color: white;
 }
-  ul{
-    list-style-type: none;
-  }
-  .carousel{
-    width: 100vw;
-    height: 100vh;
-    background-color: pink;
-    position: relative;
-    overflow: hidden;
-  }
-  .carousel ul{
-    width: 500vh;
-    display: flex;
-    position: absolute;
-  }
-  .carousel li div {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    background-color:black;
-  
-  }
-  .slider-dots{
-    margin: 0 auto;
-    bottom: 0;
-  }
-  
-  //progress bar
-  .myprogress{
-    width: 650px;
-    height: 95px;
-    margin: 140px auto 0 auto;
-    position: relative;
-  }
-  .progressbar{
-    width: 600px;
-    height: 25px;
-    margin: 0 auto;
-    padding: 0 0px;
-    border-radius: 25px;
-    background-color: #C77334;
-    display: flex;
-    justify-content: space-between;
-  }
-  .activecircle{
-    // position: absolute;
-    margin-top: -12.5px;
-    width: 45px;
-    height: 45px;
-    border-radius: 45px;
-    background-color: #436464;
-  }
-  .layoutcircle{
-         // position: absolute;
-    margin-top: -12.5px;
-    width: 45px;
-    height: 45px;
-    border-radius: 45px;
-  }
-  .defaultcircle{
-    // position: absolute;
-    margin: 15px auto 0 auto;
-    width: 15px;
-    height: 15px;
-    border-radius: 15px;
-    background-color: #fff;
-  }
-  .progresstitle{
-    margin-top: 20px;
-    width: 680px;
-    display: flex;
-    // justify-content: space-between;
-  }
-  .titlecenter1{
-    padding-left: 15px;
-    width: 175px;
-    // text-align: center;
-  }
-  .titlecenter2{
-    width: 185px;
-    // text-align: center;
-  }
-  .titlecenter3{
-    width: 188px;
-    // text-align: center;
-  }
-  
-  //cartlable
-  .lablebox{
-    width: 900px;
-    height: 40px;
-    margin: 10px auto;
-    display: flex;
-  }
-  .activelable{
-    width: 225px;
-    height: 40px;
-    text-align: center;
-    background-color: #C77334;
-    color: white;
-    line-height: 40px;
-    letter-spacing: 3px;
-    font-size: 16px;
-  } 
-  .activelable:hover{
-    text-decoration: none;
-    color: white;
-  }
-  .defaultlable:hover{
-    text-decoration: none;
-    color: black;
-  }
-  .defaultlable{
-    width: 225px;
-    height: 40px;
-    text-align: center;
-    line-height: 40px;
-    background-color: white;
-    // margin-bottom: 50px;
-    letter-spacing: 3px;
-    font-size: 16px;
-    color: black;
-  }
-  .wrap{
-    height: 21px;
-    // margin-left: 780px;
-    display: flex;
-    margin-bottom: 10px;
-  }
-  .wrap>h6{
-    position: absolute;
-  }
-  .cartlist{
-    width: 1200px;
-    // height: 220px;
-    // background-color: white;
-    margin: 0 auto;
-  }
-  .cartlist>ul{
-    margin: 0;
-    padding: 0;
-  }
-  .cartlist>li{
-    margin-bottom: 0;
-    padding: 0;
-  }
-  .listitem{
-    width: 100%;
-    height: 220px;
-    display: flex;
-    margin-bottom: 20px;
-    // line-height: 220px;
-  }
-  .listitem h6{
-    position: absolute;
-    line-height: 220px;
-  }
-  .cartlist img{
-    object-fit: cover;
-    width: 300px;
-    height: 220px;
-  }
+.btn4 {
+  margin: 0 auto 30px auto;
+  width: 400px;
+  height: 50px;
+  background-color: #c67334;
+  text-align: center;
+  line-height: 50px;
+  text-decoration: none;
+  color: white;
+}
+.btn4:hover {
+  text-decoration: none;
+  color: white;
+}
+.j_btn5 {
+  margin: auto;
+  width: 300px;
+  height: 40px;
+  background-color: #c67334;
+  text-align: center;
+  line-height: 40px;
+  text-decoration: none;
+  color: white;
+}
+.j_btn5:hover {
+  text-decoration: none;
+  color: white;
+}
+.j_btn6 {
+  margin: auto;
+  width: 225px;
+  height: 40px;
+  background-color: #c67334;
+  text-align: center;
+  line-height: 40px;
+  text-decoration: none;
+  color: white;
+}
+.j_btn6:hover {
+  text-decoration: none;
+  color: white;
+}
+.j_btn7 {
+  width: 450px;
+  height: 50px;
+  background-color: #c67334;
+  // z-index: 6;
+  text-align: center;
+  line-height: 50px;
+  text-decoration: none;
+  color: white;
+  margin: 15px auto 20px auto;
+}
+.j_btn7:hover {
+  text-decoration: none;
+  color: white;
+}
+ul {
+  list-style-type: none;
+}
+.carousel {
+  width: 100vw;
+  height: 100vh;
+  background-color: pink;
+  position: relative;
+  overflow: hidden;
+}
+.carousel ul {
+  width: 500vh;
+  display: flex;
+  position: absolute;
+}
+.carousel li div {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: black;
+}
+.slider-dots {
+  margin: 0 auto;
+  bottom: 0;
+}
 
-  .listqty{
-    margin-top: 90px;
-    position: absolute;
-    width: 140px;
-    height: 40px;
-    border: 1px solid black;
-    left: 890px;
-    display: flex;
+//progress bar
+.myprogress {
+  width: 650px;
+  height: 95px;
+  margin: 140px auto 0 auto;
+  position: relative;
+}
+.progressbar {
+  width: 600px;
+  height: 25px;
+  margin: 0 auto;
+  padding: 0 0px;
+  border-radius: 25px;
+  background-color: #c77334;
+  display: flex;
+  justify-content: space-between;
+}
+.activecircle {
+  // position: absolute;
+  margin-top: -12.5px;
+  width: 45px;
+  height: 45px;
+  border-radius: 45px;
+  background-color: #436464;
+}
+.layoutcircle {
+  // position: absolute;
+  margin-top: -12.5px;
+  width: 45px;
+  height: 45px;
+  border-radius: 45px;
+}
+.defaultcircle {
+  // position: absolute;
+  margin: 15px auto 0 auto;
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  background-color: #fff;
+}
+.progresstitle {
+  margin-top: 20px;
+  width: 680px;
+  display: flex;
+  // justify-content: space-between;
+}
+.titlecenter1 {
+  padding-left: 15px;
+  width: 175px;
+  // text-align: center;
+}
+.titlecenter2 {
+  width: 185px;
+  // text-align: center;
+}
+.titlecenter3 {
+  width: 188px;
+  // text-align: center;
+}
 
-  }
-  .listqty h6{
-    position: relative;
-    line-height: 30px;
-  }
+//cartlable
+.lablebox {
+  width: 900px;
+  height: 40px;
+  margin: 10px auto;
+  display: flex;
+}
+.activelable {
+  width: 180px;
+  height: 40px;
+  text-align: center;
+  background-color: #c77334;
+  color: white;
+  line-height: 40px;
+  letter-spacing: 3px;
+  font-size: 16px;
+}
+.activelable:hover {
+  text-decoration: none;
+  color: white;
+}
+.defaultlable:hover {
+  text-decoration: none;
+  color: black;
+}
+.defaultlable {
+  width: 180px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: white;
+  // margin-bottom: 50px;
+  letter-spacing: 3px;
+  font-size: 16px;
+  color: black;
+}
+.wrap {
+  height: 21px;
+  // margin-left: 780px;
+  display: flex;
+  margin-bottom: 10px;
+}
+.wrap > h6 {
+  position: absolute;
+}
+.cartlist {
+  width: 1200px;
+  // height: 220px;
+  // background-color: white;
+  margin: 0 auto;
+}
+.cartlist > ul {
+  margin: 0;
+  padding: 0;
+}
+.cartlist > li {
+  margin-bottom: 0;
+  padding: 0;
+}
+.listitem {
+  width: 100%;
+  height: 220px;
+  display: flex;
+  margin-bottom: 20px;
+  // line-height: 220px;
+}
+.listitem h6 {
+  position: absolute;
+  line-height: 220px;
+}
+.cartlist img {
+  object-fit: cover;
+  width: 300px;
+  height: 220px;
+}
 
-  .submit{
-    margin-top: 50px;
-    width: 580px;
-    height: 430px;
-    position: relative;
-    left: 580px;
-  }
- .jhr{
-    margin: 30px auto;
-    width: 1200px;
-  }
-  .submit input{
-    background-color: transparent;
-    border: 0.5px solid black;
-  }
+.listqty {
+  margin-top: 90px;
+  position: absolute;
+  width: 140px;
+  height: 40px;
+  border: 1px solid black;
+  left: 890px;
+  display: flex;
+}
+.listqty h6 {
+  position: relative;
+  line-height: 30px;
+}
 
-  .deliveryform{
-    width:600px;
-    margin: 0 auto;
-    display: block;
-  }
-  .deliveryform input{
-    border: none;
-  }
+.submit {
+  margin-top: 50px;
+  width: 580px;
+  height: 430px;
+  position: relative;
+  left: 580px;
+}
+.jhr {
+  margin: 30px auto;
+  width: 1200px;
+}
+.submit input {
+  background-color: transparent;
+  border: 0.5px solid black;
+}
 
-  .deliveryform select{
-    border: none;
-  }
-  .deliveryform small{
-    color: rgb(231, 97, 97);
-  }
+.deliveryform {
+  width: 600px;
+  margin: 0 auto;
+  display: block;
+}
+.deliveryform input {
+  border: none;
+}
 
-  .checkinfo{
-    margin: 0 auto;
-    width: 1200px;
-    display: flex;
-  }
+.deliveryform select {
+  border: none;
+}
+.deliveryform small {
+  color: rgb(231, 97, 97);
+}
 
-  .creditcard{
-    width: 600px;
-    height: 120px;
-    background-color: black;
-  }
-  .inputcheckinfo{
-    width: 600px;
-    height: 500px;
-    // background-color: #ccc
-  }
+.checkinfo {
+  margin: 0 auto;
+  width: 1200px;
+  display: flex;
+}
 
-  
-  .inputcheckinfo .activelable{
-    width: 200px;
-    height: 40px;
-    text-align: center;
-    background-color: #C77334;
-    color: white;
-    line-height: 40px;
-    letter-spacing: 3px;
-    font-size: 16px;
-    cursor: pointer
-  } 
-  .inputcheckinfo .defaultlable{
-    width: 200px;
-    height: 40px;
-    text-align: center;
-    line-height: 40px;
-    background-color: white;
-    // margin-bottom: 50px;
-    letter-spacing: 3px;
-    font-size: 16px;
-    color: black;
-    cursor: pointer
-  }
-  .inputcheckinfo h6{
-    position: relative;
-    line-height: 40px;
-  }
-  .inputcheckinfo input{
-    width: 100%;
-    height: 40px;
-    border: none;
-    margin-bottom: 20px;
-  }
-.j_showbox{
+.creditcard {
+  width: 600px;
+  height: 500px;
+  // background-color: black;
+  padding-top: 100px;
+  padding-left: 80px;
+  // margin: auto;
+}
+.inputcheckinfo {
+  width: 600px;
+  height: 500px;
+  // background-color: #ccc
+}
+
+.inputcheckinfo .activelable {
+  width: 200px;
+  height: 40px;
+  text-align: center;
+  background-color: #c77334;
+  color: white;
+  line-height: 40px;
+  letter-spacing: 3px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.inputcheckinfo .defaultlable {
+  width: 200px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: white;
+  // margin-bottom: 50px;
+  letter-spacing: 3px;
+  font-size: 16px;
+  color: black;
+  cursor: pointer;
+}
+.inputcheckinfo h6 {
+  position: relative;
+  line-height: 40px;
+}
+.inputcheckinfo input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  margin-bottom: 20px;
+}
+.j_showbox {
   margin: 50px auto 30px auto;
   text-align: center;
   width: 650px;
   height: 300px;
 }
-.j_wrap{
+.j_wrap {
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
 }
-.j_wrapspace{
+.j_wrapspace {
   display: flex;
   justify-content: space-between;
 }
-.j_wrapspace h6{
+.j_wrapspace h6 {
   line-height: 200px;
   margin: 0;
 }
-.j_wrap2{
+.j_wrap2 {
   display: flex;
   // justify-content: space-between;
 }
-.containercart{
-    position: fixed;
-    width: 550px;
-    top: 0;
-    bottom: 50px;
-    background-color: white;
-    z-index: 6;
-    overflow: auto;
+.containercart {
+  position: fixed;
+  width: 550px;
+  top: 0;
+  bottom: 50px;
+  background-color: white;
+  z-index: 6;
+  overflow: auto;
 }
-.j_myorderbox{
-  width:100% ;
+.j_myorderbox {
+  width: 100%;
   height: 400px;
   background-color: #fff;
   padding: 15px;
 }
-.j_myorderbox h4{
-  cursor: pointer
+.j_myorderbox h4 {
+  cursor: pointer;
 }
 
-.j_commitbox{
+.j_commitbox {
   width: 950px;
   height: 200px;
   // background-color: #ccc;
   display: flex;
   margin-bottom: 10px;
 }
-.j_myorderbox1{
-  width:100% ;
+.j_myorderbox1 {
+  width: 100%;
   // height: 200px;
   background-color: rgba(255, 255, 255, 0.355);
   // border: 0.3px solid ;
   margin-bottom: 10px;
 }
 
-.containercart h5{
+.containercart h5 {
   font-size: 16px;
 }
-.containercart h6{
+.containercart h6 {
   font-size: 14px;
 }
 
-.submit input{
+.submit input {
   padding: 0;
+}
+.rccs__number {
+  width: 500px;
+}
+.rccs__number {
+  margin-left: -5px;
 }

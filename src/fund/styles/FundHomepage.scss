@@ -37,6 +37,7 @@
   color: #eef3f5;
   text-align: center;
   border: none;
+  cursor: pointer
 }
 
 
@@ -46,8 +47,9 @@
   width: 600px;
   height: 40px;
   margin: auto;
-  margin-top: -100px;
+  margin-top: -50px;
   display: flex;
+  margin-bottom: -30px;
   // border: 1px solid #BDC5C7;
   cursor: pointer
 }
@@ -89,7 +91,17 @@
 
 // 椅子圖示頁籤
 
-.icon {
+.e_icon {
+  margin: auto;
+  justify-content: center;
+  // z-index: 5;
+  padding-top: 15px;
+  cursor: pointer
+}
+
+.e_icon1 {
+  border: 1px solid #bdc5c7;
+  padding-top: 15px;
   margin: auto;
   justify-content: center;
   // z-index: 5;
@@ -100,7 +112,7 @@
   margin: auto;
   justify-content: center;
   text-align: center;
-  transition: 0.1;
+  transition: 0.5;
   // z-index: 5;
 }
 
@@ -144,7 +156,7 @@
 
 // 輪播卡牌
 .ant-carousel .slick-dots-bottom {
-  bottom: 80px;
+  bottom: 20px;
 }
 
 .ant-carousel .slick-dots li button {
@@ -180,7 +192,7 @@
 
 }
 
-.e_wrap{
+.e_wrap {
   width: 100%;
   margin: 5px auto;
   height: 230px;
@@ -208,7 +220,7 @@
 
 }
 
-.intro_wrap{
+.intro_wrap {
   height: 60px;
   overflow: hidden;
 }
@@ -241,7 +253,7 @@
 
 }
 
-.btn_div{
+.btn_div {
   text-align: right;
   margin-top: 0;
 
@@ -258,9 +270,9 @@
   text-align: center;
   color: #707070;
   transition: .2s;
-  margin-top: -100px; 
-  
- 
+  margin-top: -100px;
+
+
 
 
 }
@@ -272,7 +284,7 @@
 }
 
 .e_card .e_card_bg button:hover {
-  background-color:  #d68b51;
+  background-color: #d68b51;
   color: white;
 }
 
@@ -289,20 +301,18 @@
   background-color: #edece8;
   // z-index: 100;
   cursor: pointer
- 
 }
 
-.e_more_div{
+.e_more_div {
   text-align: right;
-  margin-top: -155px ;
+  margin-top: -155px;
   justify-content: end;
   margin-right: 200px;
   // z-index: 100;
   cursor: pointer
- 
 }
 
-.e_more:hover{
+.e_more:hover {
   background-color: #D9C7AA;
   border: none;
   z-index: 10;

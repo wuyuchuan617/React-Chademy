@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function Finish(props) {
   const { orderNo, setCartAmount, cartamount } = props
   useEffect(() => {
-    localStorage.removeItem('cart')
+    // localStorage.removeItem('cart')
     setCartAmount(cartamount + 1)
   }, [])
 
