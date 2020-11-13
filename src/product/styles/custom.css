@@ -51,17 +51,17 @@
 
 .w_custom-btn {
   width: 84%;
-  height: 45px;
+  /* height: 45px;
   justify-content: center;
   display: block;
   border: 1px solid #c77334;
-  background-color: #c77334;
+  /* background-color: #c77334; */
   margin-top: 90px;
-  margin: auto;
+  /* margin: auto;
   margin-top: 30px;
   color: white;
   transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86),
-    border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86); */
 }
 
 .w_custom_work {
@@ -208,4 +208,36 @@
   height: 100%;
   object-fit: cover;
   align-items: flex-start;
+}
+
+.ant-steps-item-process .ant-steps-item-icon {
+  background: #c77334;
+}
+
+.ant-steps-item-process .ant-steps-item-icon {
+  border-color: #c77334;
+}
+
+.anticon-check svg {
+  display: inline-block;
+  color: #c77334;
+}
+
+
+
+.ant-steps-item-finish .ant-steps-item-icon {
+
+  border-color: #c77334;
+}
+
+.ant-steps-item-process>.ant-steps-item-container>.ant-steps-item-content>.ant-steps-item-title::after {
+  background-color: #c77334;
+}
+
+.ant-steps-item-finish>.ant-steps-item-container>.ant-steps-item-content>.ant-steps-item-title::after {
+  background-color: #c77334;
+}
+
+.w_step {
+  margin-bottom: 40px;
 }

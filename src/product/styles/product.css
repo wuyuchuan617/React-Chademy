@@ -164,15 +164,15 @@ body {
 }
 
 /* .w_cart-btn:hover { */
-  /* width: 100%;
+/* width: 100%;
   height: 50px; */
-  /* border: none;
+/* border: none;
   border: 1px solid #c77334;
   background-color: transparent; */
-  /* margin-top: 90px; */
-  /* margin: auto; */
-  /* color: black; */
-  /* transition: .5s; */
+/* margin-top: 90px; */
+/* margin: auto; */
+/* color: black; */
+/* transition: .5s; */
 /* } */
 
 /* first container finish here! */
@@ -809,4 +809,49 @@ body {
   width: 100%;
   position: relative;
   margin-bottom: 50px;
+}
+
+.site-drawer-render-in-current-wrapper {
+  position: relative;
+  height: 200px;
+  padding: 48px;
+  overflow: hidden;
+  text-align: center;
+  background: #fafafa;
+  border: 1px solid #ebedf0;
+  border-radius: 2px;
+}
+
+.site-drawer-render-in-current-wrapper {
+  background: url('../images/book.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.site-drawer-render-in-current-wrapper {
+  height: 650px;
+}
+
+.w_news-btn {
+  width: 30%;
+  margin-top: 260px;
+  margin-left: 650px;
+}
+
+.ant-drawer-header {
+
+  background: #5f6b6b;
+
+  height: 200px;
+}
+
+.ant-drawer-body {
+
+  background: #d6d7d1;
+}
+
+.w_online-btn {
+  width: 30%;
+  margin-top: 30px;
+  /* margin-left: 110px; */
 }

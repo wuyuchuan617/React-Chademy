@@ -97,33 +97,43 @@ function Filter(props) {
 
   useEffect(() => {
     window.addEventListener('scroll', fixed)
+    // 抓DOM元素
+
+    // 要顯示/消失的東西
     const filterw = document.querySelector('.w_sidebar')
     const filterww = document.querySelector('.w_filterText')
+    const sidebarContent = document.querySelector('.sidebarContent')
+    // 抓開始顯示位置DOM
     const fixpoint = document.querySelector('.productCards')
-    const footerFixpoint = document.querySelector('.w_loadButton')
-    console.log('filterw', filterw)
-    console.log('fixpoint', fixpoint)
-    console.log('footerFixpoint', footerFixpoint)
-    // const scrollpoint = document.querySelector('.grace-fixpoint')
+    // 抓要消失位置高度DOM
+    const loadbtnFixpoint = document.querySelector('.w_loadButton')
 
     function fixed() {
+      // 抓開始顯示位置高度
       let y = fixpoint.offsetTop
-      let z = footerFixpoint.offsetTop - 320
       console.log('y', fixpoint.offsetTop)
-      console.log('z', footerFixpoint.offsetTop)
+      // 抓要消失位置高度
+      let z = loadbtnFixpoint.offsetTop - 320
+      console.log('z', loadbtnFixpoint.offsetTop)
+
+      // 抓目前捲動高度
       console.log('window.pageYOffset', window.pageYOffset)
+
+      // 捲動高度>要顯示高度 或 捲動高度<要消失高度 => add fixed class
       if (window.pageYOffset >= y || window.pageYOffset < z) {
         filterw.classList.add('w_fix')
+        setViewFilter(0)
         filterww.classList.add('w_filter_fix')
       }
+
+      // 捲動高度<要顯示高度 或 捲動高度>要消失高度 => remove fixed class
       if (window.pageYOffset < y || window.pageYOffset > z) {
         filterw.classList.remove('w_fix')
+        setViewFilter(0)
         filterww.classList.remove('w_filter_fix')
       }
-      // if (window.pageYOffset > 1500) {
-      //   filterw.classList.remove('w_fix')
-      // }
     }
+    // 寫在didUpdate, 用捲動高度變動來執行function
   }, [window.pageYOffset])
 
   return (

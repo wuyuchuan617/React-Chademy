@@ -6,6 +6,12 @@ import CustomBanner from '../components/CustomBanner'
 import BreadcrumCustom from '../components/BreadcrumCustom'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
+import { Spin } from 'antd'
+import { set } from 'date-fns'
+import { LoadingOutlined } from '@ant-design/icons'
+import { Steps, Divider } from 'antd'
+
+const { Step } = Steps
 
 function Custom(props) {
   const [componentSize, setComponentSize] = useState('default')
@@ -18,10 +24,12 @@ function Custom(props) {
   // 把三種狀態存陣列，最後join
 
   const [arm, setArm] = useState('noarm')
-  const [wood, setWood] = useState('white')
+  const [wood, setWood] = useState('fumed')
   const [seat, setSeat] = useState('weaved')
 
   const [returnData, setReturnData] = useState({})
+  const [spin, setSpin] = useState(false)
+  const [step, setStep] = useState(0)
 
   let custom = []
   if (arm) custom.push(arm)
@@ -32,6 +40,8 @@ function Custom(props) {
 
   console.log('custom', custom)
   console.log('customUrl', customUrl)
+
+  const antIcon = <LoadingOutlined style={{ color: '#c77334' }} spin />
 
   async function getCustomFromSQL() {
     const url = 'http://localhost:3001/man_product/custom?custom=' + customUrl
@@ -53,6 +63,10 @@ function Custom(props) {
 
   useEffect(() => {
     getCustomFromSQL()
+    setSpin(true)
+    setTimeout(() => {
+      setSpin(false)
+    }, 500)
   }, [arm, wood, seat])
 
   return (
@@ -74,9 +88,25 @@ function Custom(props) {
         size={componentSize}
       >
         <div className="container">
+          <div className="row justify-content-center ">
+            <div className="col-8 w_step">
+              <Steps current={step}>
+                <Step title="Step 1" description="選擇把手" />
+                <Step title="Step 2" description="選擇木頭" />
+                <Step title="Step 3" description="選擇椅墊" />
+              </Steps>
+            </div>
+          </div>
           <div className="row">
             <div className="col-7 custom_photo">
-              <img src={returnData.photo} alt="" />
+              <Spin
+                indicator={antIcon}
+                spinning={spin}
+                style={{ color: '#c77334' }}
+                size={'large'}
+              >
+                <img src={returnData.photo} alt="" />
+              </Spin>
             </div>
             <div className="col-5">
               <p className="text-center w_custom_title">經典丹麥柚木餐椅</p>
@@ -87,12 +117,14 @@ function Custom(props) {
 
               <div className="">
                 <p className="text-center w_custom_mmmm">STEP 01</p>
+
                 <Form.Item label="" className="justify-content-center">
                   <Select
                     placeholder="選擇扶手"
                     // style={{ height: '60px' }}
                     onChange={(value) => {
                       setArm(value)
+                      setStep(1)
                     }}
                   >
                     <Select.Option value="noarm">無扶手</Select.Option>
@@ -100,6 +132,7 @@ function Custom(props) {
                   </Select>
                 </Form.Item>
               </div>
+
               <div className="">
                 <p className="text-center w_custom_mmmm">STEP 02</p>
                 <Form.Item label="" className="justify-content-center">
@@ -107,6 +140,7 @@ function Custom(props) {
                     placeholder="選擇木頭"
                     onChange={(value) => {
                       setWood(value)
+                      setStep(2)
                     }}
                   >
                     <Select.Option value="white">White Oak</Select.Option>
@@ -121,6 +155,7 @@ function Custom(props) {
                     placeholder="選擇椅墊"
                     onChange={(value) => {
                       setSeat(value)
+                      setStep(3)
                     }}
                   >
                     <Select.Option value="weaved">編織</Select.Option>
@@ -129,9 +164,10 @@ function Custom(props) {
                   </Select>
                 </Form.Item>
               </div>
+
               {isLogged ? (
                 <div
-                  className="btn_lessmargin more w_cart-btn"
+                  className="btn_lessmargin more w_cart-btn w_custom-btn"
                   //   onClick={() => {
                   // setCartAmount(cartamount + 1)
                   // updateCartToLocalStorage({
