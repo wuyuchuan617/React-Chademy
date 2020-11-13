@@ -11,6 +11,7 @@ import ProductSeries from '../components/ProductSeries'
 import ProductCard from '../components/ProductCard'
 import CouponModal from '../components/CouponModal'
 import ListNew from '../components/ListNew'
+import NewsLetter from '../components/NewsLetter'
 import Breadcrumb from '../../common_components/Breadcrumb'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
@@ -284,6 +285,7 @@ function ProductList(props) {
           </button>
         </div>
       </div>
+      <NewsLetter />
       <BackTop
         visibilityHeight="2000"
         style={{
