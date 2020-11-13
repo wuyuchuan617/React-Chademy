@@ -1,13 +1,16 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import '../styles/FundHomepage.scss'
 import { Container, Row, Col } from 'react-bootstrap'
 
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
-function BookMarkhp (props) {
+function BookMarkhp(props) {
   const [changecolor, setChangeColor] = useState(0)
   const { filterMark, setFilterMark } = props
-  
 
   return (
     <>

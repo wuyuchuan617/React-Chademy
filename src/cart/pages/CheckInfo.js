@@ -1,8 +1,12 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import { withRouter, useHistory } from 'react-router-dom'
-import { countries, townships, postcodes } from '../components/Data'
-import { ATMCard } from 'atm-card-react'
+import { Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
+import { countries, townships } from '../components/Data'
+// import { ATMCard } from 'atm-card-react'
 import Cards from 'react-credit-cards'
 import 'react-credit-cards/lib/styles.scss'
 // import './style/jay.scss'

@@ -1,6 +1,10 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import '../styles/FundList.scss'
-import { Container, Row, Col } from 'react-bootstrap'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+// import { Container, Row, Col } from 'react-bootstrap'
+// import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 
 import FundListCard from '../components/FundListCard'
@@ -9,9 +13,8 @@ import BookMark from '../components/BookMark'
 import BookIcon from '../components/BookIcon'
 import Dropdowna from '../components/Dropdowna'
 
-
-import Button from 'antd/lib/button';
-import QueueAnim from 'rc-queue-anim';
+import Button from 'antd/lib/button'
+import QueueAnim from 'rc-queue-anim'
 import Hpanimate from './Hpanimate'
 
 import BannerE from '../components/BannerE'
@@ -282,7 +285,7 @@ function FundList(props) {
     <>
       <div class="context1">
         {/* <BannerE/> */}
-       
+
         <div class="container" id="productCards">
           <div className="e_lableboxx mt-5">
             <BookMark setFilterMark={setFilterMark} setTime={setTime} />

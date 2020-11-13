@@ -1,3 +1,7 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import '../../styles/FundHomepage.scss'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
@@ -27,7 +31,7 @@ function FundCardFour() {
 
               <div className="intro_wrap">
                 <p className="e_intro">
-                低矮底座和曲線扶手，賦予其悠閒性格，也能當作角落或是小坪數客廳的單椅使用。美觀設計的特性使其能夠輕鬆融入任何一個房間。
+                  低矮底座和曲線扶手，賦予其悠閒性格，也能當作角落或是小坪數客廳的單椅使用。美觀設計的特性使其能夠輕鬆融入任何一個房間。
                 </p>
               </div>
 
@@ -78,7 +82,8 @@ function FundCardFour() {
 
               <div className="intro_wrap">
                 <p className="e_intro">
-                傾斜的扶手賦予沙發獨特造型，並使其現代風格隨之延伸到室內空間。 纖巧的鋁合金椅腳，也讓外觀更顯輕盈。
+                  傾斜的扶手賦予沙發獨特造型，並使其現代風格隨之延伸到室內空間。
+                  纖巧的鋁合金椅腳，也讓外觀更顯輕盈。
                 </p>
               </div>
 

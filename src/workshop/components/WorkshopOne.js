@@ -1,8 +1,12 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux'
+// import { useSelector } from 'react-redux'
 import { BsFillHeartFill } from 'react-icons/bs'
 import '../styles/workshoplist.css'
-import imagemainone from '../images/34-1.png'
+// import imagemainone from '../images/34-1.png'
 import imagemaintwo from '../images/34-2.png'
 import imagemainthree from '../images/34-3.png'
 import imagemainfour from '../images/34-4.png'

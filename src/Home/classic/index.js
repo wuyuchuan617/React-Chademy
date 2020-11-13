@@ -1,3 +1,9 @@
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable array-callback-return */
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react'
 import './Classic.css'
 import Img from '../img/Cover_CircleDiningChairs_OvergaardDyrman_studio.jpg'

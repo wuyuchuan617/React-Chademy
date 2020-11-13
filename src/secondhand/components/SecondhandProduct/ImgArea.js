@@ -1,16 +1,16 @@
 import React from 'react'
-import Img1 from '../../img/F Chair1.jpg'
-import Img2 from '../../img/F Chair2.jpg'
-import Img3 from '../../img/F Chair3.jpg'
-import Img4 from '../../img/F Chair4.jpg'
-import Img5 from '../../img/F Chair5.jpg'
+// import Img1 from '../../img/F Chair1.jpg'
+// import Img2 from '../../img/F Chair2.jpg'
+// import Img3 from '../../img/F Chair3.jpg'
+// import Img4 from '../../img/F Chair4.jpg'
+// import Img5 from '../../img/F Chair5.jpg'
 import {
-  Magnifier,
   GlassMagnifier,
-  SideBySideMagnifier,
-  PictureInPictureMagnifier,
-  MOUSE_ACTIVATION,
-  TOUCH_ACTIVATION,
+  // Magnifier,
+  // SideBySideMagnifier,
+  // PictureInPictureMagnifier,
+  // MOUSE_ACTIVATION,
+  // TOUCH_ACTIVATION,
 } from 'react-image-magnifiers'
 
 function ImgArea(props) {

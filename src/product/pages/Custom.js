@@ -1,3 +1,7 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
 import { Form, Select } from 'antd'
 import '../styles/custom.css'
@@ -56,6 +60,7 @@ function Custom(props) {
 
     const response = await fetch(request)
     let data = await response.json()
+    // eslint-disable-next-line array-callback-return
     data.map((item, index) => {
       setReturnData(item)
     })

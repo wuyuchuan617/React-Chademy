@@ -1,3 +1,8 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 // import useInterval from '@use-it/interval';
@@ -554,7 +559,7 @@ function Desc(props) {
           <div className="row">
             <div className="col-8">
               <div className="g-bg p-3">
-                {changepage == 2 ? (
+                {changepage === 2 ? (
                   <table className="w-100 text-center mt-3">
                     <tbody>
                       <tr className="w-100 text-center">

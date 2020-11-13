@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import bookmark from '../styles/bookmark.scss'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'

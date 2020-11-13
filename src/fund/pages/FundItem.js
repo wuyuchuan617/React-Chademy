@@ -1,12 +1,16 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
-import { withRouter, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 import FundFirst from '../components/FundIFirst'
 import '../styles/FundItem.scss'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+// import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import Carousel from 'react-elastic-carousel'
-import SliderE from '../components/SliderE'
+// import SliderE from '../components/SliderE'
 
 function FundItem(props) {
   const [localData, setLocalData] = useState([])
@@ -21,8 +25,8 @@ function FundItem(props) {
   console.log('sid' + sid)
 
   // 瀏覽紀錄
-  const [viewrecord, setViewRecord] = useState([])
-  const [productName, setProductName] = useState('')
+  // const [viewrecord, setViewRecord] = useState([])
+  // const [productName, setProductName] = useState('')
 
   const [view, setView] = useState([])
 

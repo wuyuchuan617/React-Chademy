@@ -1,5 +1,5 @@
 import React from 'react'
-import { countries, townships, postcodes } from '../components/Data'
+// import { countries, townships, postcodes } from '../components/Data'
 
 function PhoneDrive(props) {
   return (

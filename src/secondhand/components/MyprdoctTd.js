@@ -1,10 +1,17 @@
-import React, { useState, uesEffect } from 'react'
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable array-callback-return */
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+import React, { useState } from 'react'
+
 import { VscTrash } from 'react-icons/vsc'
 import { FiEdit3 } from 'react-icons/fi'
 import { useHistory, withRouter } from 'react-router-dom'
-import { Modal, Button } from 'antd'
+import { Modal } from 'antd'
 const MyproductTd = (props) => {
-  const { item, myproduct } = props
+  const { item } = props
   const [visible, setVisible] = useState(false)
   const [confirmLoading, setConfirmLoading] = useState(false)
   const [modalText, setModalText] = useState(

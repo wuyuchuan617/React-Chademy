@@ -1,3 +1,8 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
 import { Form, Input, DatePicker, Select } from 'antd'
 // import '../styles/setprice.scss'
@@ -6,7 +11,7 @@ import Countdown, {
   calcTimeDelta,
   formatTimeDelta,
 } from 'react-countdown'
-import {  Button , Modal } from 'react-bootstrap'
+import { Button, Modal } from 'react-bootstrap'
 function Setprice(props) {
   const {
     changepage,
@@ -34,7 +39,7 @@ function Setprice(props) {
     } else {
       // Render a countdown
       return (
-        <span >
+        <span>
           {zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
         </span>
       )
@@ -110,7 +115,6 @@ function Setprice(props) {
                 type="primary"
                 htmlType="submit"
                 onClick={() => {
-                  
                   handleShow()
                 }}
               >
@@ -138,9 +142,13 @@ function Setprice(props) {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={()=>{
-            trigger()
-            handleClose()}}>
+          <Button
+            variant="primary"
+            onClick={() => {
+              trigger()
+              handleClose()
+            }}
+          >
             Save Changes
           </Button>
         </Modal.Footer>

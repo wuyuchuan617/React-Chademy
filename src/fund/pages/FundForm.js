@@ -1,3 +1,8 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
 import Img from '../images/form.jpeg'
 
@@ -156,7 +161,6 @@ function FundForm() {
                 setLeftDay('1')
                 setDesigner('Ian')
                 setProgress('0')
-                
               }}
             >
               DEMO
@@ -294,8 +298,6 @@ function FundForm() {
                   value={designer}
                 />
               </div>
-
-           
 
               <button
                 className="i_btn3 text-center mt-4"

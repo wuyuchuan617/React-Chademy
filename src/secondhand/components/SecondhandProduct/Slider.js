@@ -1,10 +1,15 @@
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
 // import { connect } from 'react-redux'
 // import { IoIosArrowDropleft, IoIosArrowDropright } from 'react-icons/io'
 import Carousel from 'react-elastic-carousel'
 import '../../../product/styles/slider.scss'
-import { withRouter, useHistory } from 'react-router-dom'
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
+// import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 
 function Slider(props) {
   const { item } = props

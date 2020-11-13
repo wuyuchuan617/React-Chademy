@@ -1,12 +1,16 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
 import { BsFillHeartFill } from 'react-icons/bs'
 // import ProductModal from '../components/ProductModal'
 
-import { withRouter, useHistory } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import FundModal from '../components/FundModal'
 import '../styles/FundItem.scss'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+// import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
 import ProgressE from './ProgressE'
 import small1 from '../images/dt2.jpeg'

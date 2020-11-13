@@ -1,4 +1,8 @@
-import React, { useState, useEffect } from 'react'
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 
 function TextArea(props) {

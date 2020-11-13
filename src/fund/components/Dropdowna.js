@@ -1,6 +1,12 @@
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable array-callback-return */
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import React from 'react'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import { Menu, Dropdown, message } from 'antd'
+// import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { Menu, Dropdown, messge } from 'antd'
 import { DownOutlined } from '@ant-design/icons'
 import 'antd/dist/antd.css'
 import '../styles/FundList.scss'

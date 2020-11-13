@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable no-unused-vars */
 import React from 'react'
 // import { connect } from 'react-redux'
 // import { IoIosArrowDropleft, IoIosArrowDropright } from 'react-icons/io'

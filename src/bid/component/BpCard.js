@@ -1,15 +1,21 @@
-import React, { useState, useEffect, useCallback } from 'react'
-import socketIOClient from 'socket.io-client'
-import { Button, Card } from 'react-bootstrap'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import { withRouter, useParams } from 'react-router-dom'
-import Bid from '../pages/Bid'
-import { Parallax } from 'rc-scroll-anim'
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable array-callback-return */
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+import React, { useState, useEffect } from 'react'
+// import socketIOClient from 'socket.io-client'
+import { Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+// import { withRouter, useParams } from 'react-router-dom'
+// import Bid from '../pages/Bid'
+// import { Parallax } from 'rc-scroll-anim'
 import '../styles/bid.scss'
 import Countdown, {
   zeroPad,
-  calcTimeDelta,
-  formatTimeDelta,
+  // calcTimeDelta,
+  // formatTimeDelta,
 } from 'react-countdown'
 
 // import {
@@ -24,17 +30,17 @@ function BpCard(props) {
   const {
     item,
     totalb,
-    setTotal,
-    data,
-    setData,
-    s_date,
-    e_date,
+    // setTotal,
+    // data,
+    // setData,
+    // s_date,
+    // e_date,
     setTotalb,
   } = props
   const [comma2, setComma2] = useState(null)
 
-  let ss = item.startingDate
-  let ee = item.bidDate
+  // let ss = item.startingDate
+  // let ee = item.bidDate
   // console.log('ss',ss)
   // console.log('ee',ee)
   function getTimeRemaining(startdate, enddate) {

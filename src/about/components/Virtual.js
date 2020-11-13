@@ -1,3 +1,8 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react'
 import '../styles/about.css'
 import AOS from 'aos'
@@ -47,6 +52,7 @@ function Virtual() {
       >
         <div style={{ marginTop: 100 + 'px !important' }} className="vr">
           <iframe
+            title="ifeame"
             width="1100"
             height="620"
             src="https://my.matterport.com/show/?m=xFhQSwSpQ4r&amp;help=1"

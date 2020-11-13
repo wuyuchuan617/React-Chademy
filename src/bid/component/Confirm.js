@@ -1,12 +1,12 @@
 import React from 'react'
-import { Modal,Button } from 'react-bootstrap'
+// import { Modal, Button } from 'react-bootstrap'
 
-function Confirm(props){
-    // const{pname, chair}=props
-    // console.log(data)
-    return(
-        <>
-           {/* <Modal show={show} onHide={handleClose} >
+function Confirm(props) {
+  // const{pname, chair}=props
+  // console.log(data)
+  return (
+    <>
+      {/* <Modal show={show} onHide={handleClose} >
         <Modal.Header closeButton>
           <Modal.Title>Modal heading</Modal.Title>
         </Modal.Header>
@@ -23,7 +23,7 @@ function Confirm(props){
           </Button>
         </Modal.Footer>
       </Modal> */}
-        </>
-    )
+    </>
+  )
 }
 export default Confirm

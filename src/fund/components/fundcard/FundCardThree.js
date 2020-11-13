@@ -1,3 +1,7 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import '../../styles/FundHomepage.scss'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
@@ -78,7 +82,8 @@ function FundCardThree() {
 
               <div className="intro_wrap">
                 <p className="e_intro">
-                Charlotte 兼具舒適耐用和美觀設計的特性使其能夠輕鬆融入任何一個房間。幾乎無需維護，並擁有時尚外觀，是享受美好戶外時刻的完美陳設。
+                  Charlotte
+                  兼具舒適耐用和美觀設計的特性使其能夠輕鬆融入任何一個房間。幾乎無需維護，並擁有時尚外觀，是享受美好戶外時刻的完美陳設。
                 </p>
               </div>
 

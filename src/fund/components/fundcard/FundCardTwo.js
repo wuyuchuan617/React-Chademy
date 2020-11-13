@@ -1,3 +1,7 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import '../../styles/FundHomepage.scss'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
@@ -78,7 +82,7 @@ function FundCardTwo() {
 
               <div className="intro_wrap">
                 <p className="e_intro">
-                柔軟的造型和延伸的水平線條讓Trento成為您起居室中一把迷人的扶手椅。兼具舒適耐用和美觀設計的特性使其能夠輕鬆融入任何一個房間。
+                  柔軟的造型和延伸的水平線條讓Trento成為您起居室中一把迷人的扶手椅。兼具舒適耐用和美觀設計的特性使其能夠輕鬆融入任何一個房間。
                 </p>
               </div>
 

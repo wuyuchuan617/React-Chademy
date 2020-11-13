@@ -1,3 +1,9 @@
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable array-callback-return */
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import '../../styles/FundHomepage.scss'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
@@ -27,7 +33,7 @@ function FundCardSeven() {
 
               <div className="intro_wrap">
                 <p className="e_intro">
-                它當代的設計風格與曲線，讓舒適度倍增。Mariposa不僅擁有漂亮的外觀，更具舒適坐感。
+                  它當代的設計風格與曲線，讓舒適度倍增。Mariposa不僅擁有漂亮的外觀，更具舒適坐感。
                 </p>
               </div>
 
@@ -72,14 +78,13 @@ function FundCardSeven() {
                 <img src={tesx} alt="" />
               </div>
 
-              <h5 className="e_card_title">ADELAIDEl
-</h5>
+              <h5 className="e_card_title">ADELAIDEl</h5>
 
               <p className="e_maker">by Nico</p>
 
               <div className="intro_wrap">
                 <p className="e_intro">
-                這款現代椅子兼具優雅的曲線造型與卓越的舒適度，將為您的家增添一抹優雅特質。
+                  這款現代椅子兼具優雅的曲線造型與卓越的舒適度，將為您的家增添一抹優雅特質。
                 </p>
               </div>
 

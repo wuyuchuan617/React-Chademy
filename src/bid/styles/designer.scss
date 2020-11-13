@@ -1,47 +1,45 @@
 @import '~bootstrap/scss/bootstrap.scss';
 
-body{
-    background-color: #EDECE8;
+body {
+  background-color: #edece8;
 }
 .designer-des {
-    width: 712px;
-    height: 480px;
-    background-color: #D6D7D1;            
+  width: 712px;
+  height: 480px;
+  background-color: #d6d7d1;
 }
-.designer-img{
-    width: 488px;
-    height: 600px;
-    background: url() center no-repeat;
-    background-size: contain;
+.designer-img {
+  width: 488px;
+  height: 600px;
+  //   background: url() center no-repeat;
+  background-size: contain;
 }
-.design{
-    font-family: Assistant;
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: 5px;
+.design {
+  font-family: Assistant;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 5px;
 }
-.name{
-    font-family: Lora;
-    font-size: 24px;
-    font-weight: 400;
-    letter-spacing: 5px;
-    color:#c77334;
+.name {
+  font-family: Lora;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 5px;
+  color: #c77334;
 }
-.brief{
-    font-family: Assistant;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 20px;
-    color: #2b2929;
-
+.brief {
+  font-family: Assistant;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #2b2929;
 }
-.text-center span a{
-    font-family: Assistant;
-    font-size: 16px;
-    font-weight: 400;
-    text-decoration: underline;
-    ;
+.text-center span a {
+  font-family: Assistant;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: underline;
 }
-.designer-des a{
-    color: #707070;
+.designer-des a {
+  color: #707070;
 }

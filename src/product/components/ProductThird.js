@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { withRouter, useHistory } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 function ProductThird(props) {
-  const { product, item } = props
+  // const { product, item } = props
   // 0 : close 1 : open
-  const [viewFilter, setViewFilter] = useState(0)
+  // const [viewFilter, setViewFilter] = useState(0)
 
   const [viewSpread, setViewSpread] = useState(true)
   const [viewSpread1, setViewSpread1] = useState(false)

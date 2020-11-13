@@ -1,3 +1,7 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import '../styles/FundHomepage.scss'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
@@ -6,8 +10,6 @@ import FundCardOne from './fundcard/FundCardOne'
 
 import 'antd/dist/antd.css'
 import { Carousel } from 'antd'
-
-
 
 function CarouselE() {
   function onChange(a, b, c) {
@@ -20,7 +22,6 @@ function CarouselE() {
     // lineHeight: '160px',
     // textAlign: 'center',
     background: '#edece8',
-    
   }
   return (
     <>
@@ -31,13 +32,16 @@ function CarouselE() {
           </h3>
         </div>
         <div>
-          <h3 style={contentStyle}><FundCardOne /></h3>
+          <h3 style={contentStyle}>
+            <FundCardOne />
+          </h3>
         </div>
         <div>
-          <h3 style={contentStyle}><FundCardOne /></h3>
+          <h3 style={contentStyle}>
+            <FundCardOne />
+          </h3>
         </div>
       </Carousel>
-      
     </>
   )
 }

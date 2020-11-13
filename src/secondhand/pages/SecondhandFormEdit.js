@@ -1,3 +1,8 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
 import Img from '../img/WireDiningChair_LeatherSaddle.jpg'
 import Img2 from '../img/Cover_CircleDiningChair_22.jpg'
