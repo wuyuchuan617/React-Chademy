@@ -4,12 +4,14 @@ import Img from '../../../Home/img/sub_lightyourlife_20aw.jpg'
 import Img2 from '../../../Home/img/ATD_Retail_2020_Flowerpot_VP7_The-Moor_AP5_Rely_HW9_Linen-Cushion__In-Between__-1500x2000.jpg'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-
+import { useHistory } from 'react-router-dom'
 function Courses2() {
   useEffect(() => {
     AOS.init()
     AOS.refresh()
   }, [])
+  let history = useHistory()
+  console.log(history)
   return (
     <div
       className="row no-gutters mt_mb_100"
@@ -31,7 +33,12 @@ function Courses2() {
           發揚木工創客之精神
         </p>
         <p className="p14">專業課程+募資 實踐夢想</p>
-        <div className="btn_left more">MORE</div>
+        <div
+          className="btn_left more"
+          onClick={() => history.push('/Workshop')}
+        >
+          MORE
+        </div>
       </div>
       <div className="col-lg-4 col-sm-12 courseimg">
         <img src={Img2} alt="" />
@@ -49,7 +56,12 @@ function Courses2() {
             敬邀您一同欣賞
           </p>
           <p className="p14">支持新創 發現潛力</p>
-          <div className="btn_left more">MORE</div>
+          <div
+            className="btn_left more"
+            onClick={() => history.push('/fundhomepage')}
+          >
+            MORE
+          </div>
         </div>
       </div>
     </div>

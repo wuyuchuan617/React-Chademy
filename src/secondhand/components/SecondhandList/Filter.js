@@ -68,7 +68,7 @@ const FilterItem = (props) => {
         <p className="ml-5 mt-3 ">＋</p>
       </div>
       {isShow && (
-        <ul className="ml-5">
+        <ul className="ml-5 i_li">
           {item.filters.map((option, index) => (
             <li
               key={`option ${index}`}

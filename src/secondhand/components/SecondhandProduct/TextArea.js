@@ -37,7 +37,7 @@ function TextArea(props) {
   return (
     <div className="i_text_area">
       <div className="i_product_set">
-        <div className="i_product_name">{item.productname}</div>
+        <div className="i_product_name">{item.product_name}</div>
         <div className="i_product_no">{item.product_no}</div>
         <div className="i_like">♥︎</div>
       </div>

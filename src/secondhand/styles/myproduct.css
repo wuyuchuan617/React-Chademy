@@ -1,16 +1,36 @@
-.i_tdpd{
-    padding-top:100px;
+.i_tdpd {
+  padding-top: 100px;
 }
-.i_tdimg img{
-width: 130px;
-}
-
-.mycontainer{
-    max-width: 900px !important;
-    margin-top: 0 !important;
+.i_tdimg img {
+  width: 130px;
 }
 
-.mystyles{
-    cursor:pointer;
+.mycontainer {
+  max-width: 900px !important;
+  margin-top: 0 !important;
 }
 
+.mystyles {
+  cursor: pointer;
+}
+
+.ant-modal-footer {
+  background-color: #edece8 !important;
+}
+
+.ant-btn {
+  border-style: none !important;
+  background-color: #c5c4c2 !important;
+}
+
+.ant-btn-primary {
+  background-color: #c77334 !important;
+  border-style: none !important;
+}
+
+.mystyles {
+  transition: 0.5s;
+}
+.mystyles:hover {
+  fill: #c77334 !important;
+}

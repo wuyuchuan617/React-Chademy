@@ -9,9 +9,13 @@ import IconArea from '../components/SecondhandProduct/IconArea'
 import Courses2 from '../components/SecondhandProduct/Courses2'
 import Slider from '../components/SecondhandProduct/Slider'
 import { useSelector } from 'react-redux'
+import { Modal, Button } from 'antd'
+import { BackTop } from 'antd'
+import { UpOutlined } from '@ant-design/icons'
 
 function SecondhandProduct(props) {
   // 判斷登入的狀態
+
   const isLogged = useSelector((state) => state.user.logged)
 
   // props解構
@@ -80,6 +84,31 @@ function SecondhandProduct(props) {
         })}
         <Courses2 />
       </div>
+      <BackTop
+        visibilityHeight="2000"
+        style={{
+          height: '40',
+          width: '40',
+          lineHeight: '33px',
+          color: 'white',
+          fontSize: '16px',
+          borderRadius: '0',
+          textAlign: 'center',
+          backgroundColor: '#c77334',
+        }}
+      >
+        <div>
+          <UpOutlined
+            style={{
+              color: 'white',
+              fontSize: '18px',
+              borderRadius: '0',
+              backgroundColor: '#c77334',
+              marginTop: '-3px',
+            }}
+          />
+        </div>
+      </BackTop>
     </>
   )
 }

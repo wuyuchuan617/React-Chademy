@@ -48,7 +48,7 @@ function Breadcrumb1(props) {
         </Link>
       </Breadcrumb.Item>
       <Breadcrumb.Item style={{ fontSize: '14px' }}>
-        {item.productname}
+        {item.product_name}
       </Breadcrumb.Item>
     </Breadcrumb>
   )

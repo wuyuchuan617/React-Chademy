@@ -4,21 +4,35 @@ import Img2 from '../../img/F Chair2.jpg'
 import Img3 from '../../img/F Chair3.jpg'
 import Img4 from '../../img/F Chair4.jpg'
 import Img5 from '../../img/F Chair5.jpg'
+import {
+  Magnifier,
+  GlassMagnifier,
+  SideBySideMagnifier,
+  PictureInPictureMagnifier,
+  MOUSE_ACTIVATION,
+  TOUCH_ACTIVATION,
+} from 'react-image-magnifiers'
 
 function ImgArea(props) {
   const { item } = props
   return (
     <div className="i_img_area">
-      <div className="i_img_set">
-        <img
+      <div className="i_img_set mb-5">
+        {/* <img
           src={`http://localhost:3001/img/` + item.photo}
           alt=""
           className="mb-4"
+        /> */}
+        <GlassMagnifier
+          imageSrc={`http://localhost:3001/img/` + item.photo}
+          imageAlt="Example"
+          className="i_mag"
         />
-        <img src={Img2} alt="" className="mb-4" />
+
+        {/* <img src={Img2} alt="" className="mb-4" />
         <img src={Img3} alt="" className="mb-4" />
         <img src={Img4} alt="" className="mb-4" />
-        <img src={Img5} alt="" className="mb-4" />
+        <img src={Img5} alt="" className="mb-4" /> */}
       </div>
     </div>
   )

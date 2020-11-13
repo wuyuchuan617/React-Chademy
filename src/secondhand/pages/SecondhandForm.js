@@ -7,6 +7,8 @@ import { Button, notification } from 'antd'
 import Aside from '../../common_components/Aside/index'
 import '../../common_components/Aside/index.scoped.scss'
 import '../../member/MemberCenter/index.scoped.scss'
+import { BackTop } from 'antd'
+import { UpOutlined } from '@ant-design/icons'
 const { Header, Footer, Sider, Content } = Layout
 function SecondhandForm() {
   //photo
@@ -152,8 +154,8 @@ function SecondhandForm() {
                 <input
                   type="text"
                   className="i_formstyle i_formwidth"
-                  id="productname"
-                  name="productname"
+                  id="product_name"
+                  name="product_name"
                 />
               </div>
               <div className="i_formset">
@@ -214,8 +216,11 @@ function SecondhandForm() {
                     name="framework_sid"
                     className="i_formstyle i_radiomargin"
                     value="1"
+                    id="wood"
                   />
-                  木頭
+                  <label for="wood" style={{ display: 'inline' }}>
+                    木頭
+                  </label>
                 </div>
                 <div className="i_radioset">
                   <input
@@ -223,8 +228,11 @@ function SecondhandForm() {
                     name="framework_sid"
                     className="i_formstyle i_radiomargin"
                     value="2"
+                    id="metro"
                   />
-                  金屬
+                  <label for="metro" style={{ display: 'inline' }}>
+                    金屬
+                  </label>
                 </div>
                 <div className="i_radioset">
                   <input
@@ -232,8 +240,11 @@ function SecondhandForm() {
                     name="framework_sid"
                     className="i_formstyle i_radiomargin"
                     value="3"
+                    id="plastic"
                   />
-                  塑膠
+                  <label for="plastic" style={{ display: 'inline' }}>
+                    塑膠
+                  </label>
                 </div>
               </div>
               <hr />
@@ -245,8 +256,11 @@ function SecondhandForm() {
                     name="material_sid"
                     className="i_formstyle i_radiomargin"
                     value="1"
+                    id="bu"
                   />
-                  布料
+                  <label for="bu" style={{ display: 'inline' }}>
+                    布料
+                  </label>
                 </div>
                 <div className="i_radioset">
                   <input
@@ -254,8 +268,11 @@ function SecondhandForm() {
                     name="material_sid"
                     className="i_formstyle i_radiomargin"
                     value="2"
+                    id="leath"
                   />
-                  皮革
+                  <label for="leath" style={{ display: 'inline' }}>
+                    皮革
+                  </label>
                 </div>
                 <div className="i_radioset">
                   <input
@@ -263,8 +280,11 @@ function SecondhandForm() {
                     name="material_sid"
                     className="i_formstyle i_radiomargin"
                     value="3"
+                    id="wood2"
                   />
-                  木質
+                  <label for="wood2" style={{ display: 'inline' }}>
+                    木質
+                  </label>
                 </div>
               </div>
               <hr />
@@ -276,8 +296,11 @@ function SecondhandForm() {
                     name="conditions_sid"
                     className="i_formstyle i_radiomargin"
                     value="1"
+                    id="9"
                   />
-                  九成新
+                  <label for="9" style={{ display: 'inline' }}>
+                    九成新
+                  </label>
                 </div>
                 <div className="i_radioset">
                   <input
@@ -285,8 +308,11 @@ function SecondhandForm() {
                     name="conditions_sid"
                     className="i_formstyle i_radiomargin"
                     value="2"
+                    id="8"
                   />
-                  八成新
+                  <label for="8" style={{ display: 'inline' }}>
+                    八成新
+                  </label>
                 </div>
                 <div className="i_radioset">
                   <input
@@ -294,8 +320,11 @@ function SecondhandForm() {
                     name="conditions_sid"
                     className="i_formstyle i_radiomargin"
                     value="3"
+                    id="7"
                   />
-                  七成新
+                  <label for="7" style={{ display: 'inline' }}>
+                    七成新
+                  </label>
                 </div>
               </div>
               <button
@@ -310,6 +339,31 @@ function SecondhandForm() {
             {/* {showAlert && <Alert message="Warning Text" type="warning" />} */}
           </div>
         </form>
+        <BackTop
+          visibilityHeight="2000"
+          style={{
+            height: '40',
+            width: '40',
+            lineHeight: '33px',
+            color: 'white',
+            fontSize: '16px',
+            borderRadius: '0',
+            textAlign: 'center',
+            backgroundColor: '#c77334',
+          }}
+        >
+          <div>
+            <UpOutlined
+              style={{
+                color: 'white',
+                fontSize: '18px',
+                borderRadius: '0',
+                backgroundColor: '#c77334',
+                marginTop: '-3px',
+              }}
+            />
+          </div>
+        </BackTop>
       </div>
     </>
   )

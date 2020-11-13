@@ -2,8 +2,32 @@ import React, { useState, uesEffect } from 'react'
 import { VscTrash } from 'react-icons/vsc'
 import { FiEdit3 } from 'react-icons/fi'
 import { useHistory, withRouter } from 'react-router-dom'
+import { Modal, Button } from 'antd'
 const MyproductTd = (props) => {
   const { item, myproduct } = props
+  const [visible, setVisible] = useState(false)
+  const [confirmLoading, setConfirmLoading] = useState(false)
+  const [modalText, setModalText] = useState(
+    '您無法復原或回復您永久移除的檔案，確定要刪除'
+  )
+
+  const showModal = () => {
+    setVisible(true)
+  }
+
+  const handleOk = () => {
+    setModalText('您無法復原或回復您永久移除的檔案，確定要刪除?')
+    setConfirmLoading(true)
+    setTimeout(() => {
+      setVisible(false)
+      setConfirmLoading(false)
+    }, 2000)
+  }
+
+  const handleCancel = () => {
+    console.log('Clicked cancel button')
+    setVisible(false)
+  }
   let history = useHistory()
   console.log(history)
 
@@ -39,8 +63,24 @@ const MyproductTd = (props) => {
         <td className="i_tdpd">{item.productname}</td>
         <td className="i_tdpd">{item.price}</td>
         <td className="i_tdpd">
-          <VscTrash className="mystyles" onClick={deleteDataToServer} />
+          <VscTrash className="mystyles" onClick={showModal} />
         </td>
+        <Modal
+          title=""
+          visible={visible}
+          headStyle={{ backgroundColor: '#EDECE8' }}
+          bodyStyle={{ backgroundColor: '#EDECE8' }}
+          footerStyle={{ backgroundColor: '#EDECE8' }}
+          onOk={() => {
+            deleteDataToServer()
+            setVisible(false)
+            handleOk()
+          }}
+          confirmLoading={confirmLoading}
+          onCancel={handleCancel}
+        >
+          <p>{modalText}</p>
+        </Modal>
         <td className="mystyles">
           <FiEdit3
             className="mystyles"

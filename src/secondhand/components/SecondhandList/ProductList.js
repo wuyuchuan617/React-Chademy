@@ -269,7 +269,7 @@ function ProductList(props) {
                 props.history.push('/secondhand_product/' + item.sid)
               }}
             >
-              {item.productname}
+              {item.product_name}
             </p>
           </div>
           <div className="i_item_price ">
