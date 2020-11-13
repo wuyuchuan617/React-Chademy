@@ -113,7 +113,7 @@ function Filter(props) {
       let y = fixpoint.offsetTop
       console.log('y', fixpoint.offsetTop)
       // 抓要消失位置高度
-      let z = loadbtnFixpoint.offsetTop - 320
+      let z = loadbtnFixpoint.offsetTop - 400
       console.log('z', loadbtnFixpoint.offsetTop)
 
       // 抓目前捲動高度

@@ -29,7 +29,7 @@ function News(props) {
       <div className="container">
         <div className="row">
           <div className="w_title1">
-            <div className="titlech noto-serif text-center">年度目錄</div>
+            <div className="titlech noto-serif text-center">年度型錄</div>
             <div className="titleEN lora text-center">Catalog</div>
           </div>
         </div>

@@ -509,8 +509,16 @@ img {
 .formstyleww {
 
     background-color: transparent;
-    border: .5px solid #5f6b6b;
+    border: .5px solid #ded5c6;
     margin-bottom: 15px;
     padding: 25px 15px;
+
+}
+.formstyleww:focus {
+
+    background-color: #ded5c6;
+    /* border: .5px solid #ded5c6;
+    margin-bottom: 15px;
+    padding: 25px 15px; */
 
 }
