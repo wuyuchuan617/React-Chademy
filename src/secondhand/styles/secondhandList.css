@@ -161,9 +161,11 @@ body {
     cursor: pointer;
     margin: 0 auto;
   }
-
   .ant-rate-star-second{
-    color:#B7BDB3;
+    color:rgb(199, 115, 52);
+  }
+  .ant-rate-star-second{
+    color:rgb(199, 115, 52);
   }
 
   .i_user_name p{

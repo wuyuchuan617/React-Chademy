@@ -1,0 +1,16 @@
+.i_tdpd{
+    padding-top:100px;
+}
+.i_tdimg img{
+width: 130px;
+}
+
+.mycontainer{
+    max-width: 900px !important;
+    margin-top: 0 !important;
+}
+
+.mystyles{
+    cursor:pointer;
+}
+

@@ -16,6 +16,8 @@ function SecondhandList(props) {
   const { setCartAmount, cartamount, resetShow, setResetShow } = props
   // 判斷登入的狀態
   const isLogged = useSelector((state) => state.user.logged)
+  // 存從資料庫拿到的所有review資料
+  const [review, setReview] = useState([])
   /**
    * 用來判斷是不是最後一筆資料
    */
@@ -133,6 +135,8 @@ function SecondhandList(props) {
                   resetShow={resetShow}
                   setResetShow={setResetShow}
                   reload={reload}
+                  review={review}
+                  setReview={setReview}
                 />
               )
             })}

@@ -18,6 +18,7 @@ function SecondhandForm() {
   const [good, setGood] = useState('')
 
   const [member, setMember] = useState('')
+  const [memberSid, setMemberSid] = useState('')
 
   //redux
   function getCartFromLocalStorage() {
@@ -29,8 +30,19 @@ function SecondhandForm() {
     setMember(newMember)
   }
 
+  //redux
+  function getCartFromLocalStorage2() {
+    const newMember = JSON.parse(localStorage.getItem('reduxState')).user.users
+      .sid
+
+    console.log('newMember', newMember)
+    console.log(typeof newMember)
+    setMemberSid(newMember)
+  }
+
   useEffect(() => {
     getCartFromLocalStorage()
+    getCartFromLocalStorage2()
   }, [])
 
   //post form
@@ -88,7 +100,7 @@ function SecondhandForm() {
           </Sider>
           <Content style={{ padding: '0 50px' }}>
             <div className="i_title text-center">
-              <h5>Hello,Linda</h5>
+              <h5>Hello, {member}</h5>
             </div>
             <form
               className="row no-gutters mt-3"
@@ -142,24 +154,25 @@ function SecondhandForm() {
                     />
                   </div>
                   <div className="i_formset">
-                    <label for="buy_product">商品名稱</label>
+                    <label for="buy_product">賣家ID</label>
                     <input
                       type="text"
                       className="i_formstyle i_formwidth"
-                      id="buy_product"
-                      name="buy_product"
+                      id="seller_sid"
+                      name="seller_sid"
                     />
                   </div>
                   <div className="i_formset">
-                    <label for="buyer_id">會員ID</label>
+                    {/* <label for="buyer_id">會員ID</label> */}
                     <input
-                      type="text"
+                      type="hidden"
                       className="i_formstyle i_formwidth"
-                      id="buyer_id"
-                      name="buyer_id"
-                      value={member}
+                      id="buyer_sid"
+                      name="buyer_sid"
+                      value={memberSid}
                     />
                   </div>
+
                   <div className="i_formset mb-2">
                     <label>評分</label>
 

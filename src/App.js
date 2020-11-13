@@ -26,6 +26,7 @@ import SecondhandList from './secondhand/pages/SecondhandList'
 import SecondhandProduct from './secondhand/pages/SecondhandProduct'
 import SecondhandFormEdit from './secondhand/pages/SecondhandFormEdit'
 import ReviewMember from './secondhand/pages/ReviewMember'
+import Myproduct from './secondhand/pages/Myproduct'
 
 // ---------------------以下import 募資頁面--------------------
 import FundHomepage from './fund/pages/FundHomepage'
@@ -170,6 +171,10 @@ function App() {
 
             <Route path="/review_member">
               <ReviewMember />
+            </Route>
+
+            <Route path="/myproduct">
+              <Myproduct />
             </Route>
 
             {/* 募資頁面 */}

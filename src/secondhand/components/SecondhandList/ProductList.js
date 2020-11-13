@@ -4,7 +4,7 @@ import Img from '../../img/elementaire-chair_910x1100_brandmodel.jpg'
 import { Rate } from 'antd'
 
 function ProductList(props) {
-  const { item, reload } = props
+  const { item, reload, review, setReview } = props
   const [rateColor, setRateColor] = useState({})
   const [heart, setHeart] = useState(false)
   const [heartItem, setHeartItem] = useState({})
@@ -13,6 +13,45 @@ function ProductList(props) {
   }
   const [memberData, setMemberData] = useState({})
   const [allMember, setAllMember] = useState({})
+
+  const [avgStar, setAvgStar] = useState(0)
+
+  // 用memberSid搜尋該筆產品的所有評論
+  async function getItemFromSQL() {
+    const url =
+      'http://localhost:3001/man_secondhand/member_star/' + item.member_sid
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    // const response = await fetch(request).then((v) => console.log(v))
+    const response = await fetch(request)
+    const data = await response.json()
+
+    console.log('response' + response) // [object Response]
+    console.log('data' + data) // [object Object]
+
+    setReview(data)
+  }
+  useEffect(() => {
+    getItemFromSQL()
+  }, [item])
+
+  useEffect(() => {
+    let aveStars = 0
+
+    for (let i = 0; i < review.length; i++) {
+      aveStars += parseInt(review[i].stars)
+    }
+
+    console.log(aveStars, review.length, parseInt(aveStars / review.length))
+
+    if (review.length) setAvgStar(parseInt(aveStars / review.length))
+  }, [review])
 
   async function getHeartFromServer() {
     const url = 'http://localhost:3001/man_product/heart/' + item.productname
@@ -157,6 +196,15 @@ function ProductList(props) {
       console.log(memberImg)
     }
   }
+  let memberName = 'chademy'
+  for (let i = 0; i < allMember.length; i++) {
+    if (+item.member_sid === allMember[i].sid) {
+      memberName = allMember[i].name
+      console.log(item.member_sid)
+      console.log('hihi')
+      console.log(memberName)
+    }
+  }
   return (
     <div className="i_card" id={item.sid}>
       <div className="i_card_img">
@@ -202,17 +250,15 @@ function ProductList(props) {
         <div className="i_user">
           <div className="i_user_name">
             <img src={memberImg} alt="" />
-            <p>{memberData.length > 0 ? memberData.name : 'Linda325'}</p>
+            <p>{memberName}</p>
           </div>
           <div className="i_user_star mt-2">
             <Rate
               allowHalf
-              defaultValue={2.5}
-              style={rateColor}
-              className="ant-rate-star-second"
-              onClick={() => {
-                setRateColor({ height: '100px' })
-              }}
+              // style={{ color: 'rgb(199, 115, 52)' }}
+              className="ant-rate-star-second ant-rate-star-second"
+              disabled
+              value={avgStar}
             />
           </div>
         </div>
