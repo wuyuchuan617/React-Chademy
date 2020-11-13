@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Form, Input, DatePicker, Select } from 'antd'
-import '../styles/setprice.scss'
+// import '../styles/setprice.scss'
 import Countdown, {
   zeroPad,
   calcTimeDelta,
