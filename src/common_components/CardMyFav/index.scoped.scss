@@ -1,0 +1,35 @@
+.CardMyFav_container {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+}
+
+.btn_group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px 0;
+
+  .fav_btn {
+    border-bottom: 1px solid;
+    cursor: pointer;
+
+    .icon {
+      margin-right: 10px;
+    }
+  }
+
+  .fav_btn + .fav_btn {
+    margin-top: 20px;
+  }
+}
+
+.myfav_detail_list {
+  flex: 1;
+  padding: 20px 10px;
+  margin-left: 30px;
+
+  li + li {
+    margin-top: 15px;
+  }
+}

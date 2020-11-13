@@ -134,7 +134,10 @@ function App() {
 
             {/* 會員中心 */}
             <Route path="/member-center">
-              <MemberIndex />
+              <MemberIndex
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+              />
             </Route>
 
             {/* 品牌故事頁面 */}

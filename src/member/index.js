@@ -24,7 +24,7 @@ import ReturnOrder from '../cart/pages/ReturnOrder'
 
 const { Header, Sider, Content } = Layout
 
-function MemberIndex() {
+function MemberIndex({ cartamount, setCartAmount }) {
   const [title, setTitle] = useState('')
   const [myPO_NO, setMyPO_NO] = useState('')
   const [myDate, setMyDate] = useState('')
@@ -111,7 +111,7 @@ function MemberIndex() {
               </Route>
 
               <Route path={`${path}/myfav`}>
-                <MyFav />
+                <MyFav cartamount={cartamount} setCartAmount={setCartAmount} />
               </Route>
 
               <Route path={`${path}/address`}>

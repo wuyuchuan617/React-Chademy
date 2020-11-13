@@ -42,27 +42,21 @@ function Evaluation() {
               className="evaluation_container"
               author={
                 <div>
-                  <div>{item.buy_product}</div>
+                  <div>{item.name}</div>
                   <Rate disabled defaultValue={item.stars} />
                 </div>
               }
               avatar={
                 <>
                   <Avatar
-                    src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-                    alt="Han Solo"
+                    src={require('../../img/' + item.avatar)}
+                    alt="Avatar"
                   />
                 </>
               }
               content={
                 <div>
-                  <p>{item.review_comment}</p>
-                  <div>
-                    <img
-                      alt="img"
-                      // src={require('../../img/' + item.photo)}
-                    />
-                  </div>
+                  <p>{item.buyer_comment}</p>
                 </div>
               }
               datetime={

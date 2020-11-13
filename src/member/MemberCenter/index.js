@@ -13,6 +13,7 @@ import moment from 'moment'
 // const { Header, Sider, Content } = Layout
 
 function MemberCenter(props) {
+  const { setCartAmount } = props
   const [form] = Form.useForm()
 
   const [reg, setReg] = useState({
