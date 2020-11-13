@@ -165,7 +165,7 @@ function CheckInfo(props) {
           />
         </div>
         <div className="inputcheckinfo">
-          <div style={{ display: 'flex' }}>
+          <div style={{ display: 'flex', marginBottom: '20px' }}>
             <div
               className={showCreditCard ? 'activelable' : 'defaultlable'}
               onClick={() => {

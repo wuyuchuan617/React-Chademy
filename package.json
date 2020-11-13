@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@antv/g2plot": "^2.0.9",
     "@craco/craco": "5.7.0",
     "@material-ui/core": "4.11.0",
     "@testing-library/jest-dom": "4.2.4",
