@@ -19,14 +19,14 @@ function EntryAnimation(props) {
         tt.style.color = '#C77334'
         better.style.left = '39.5%'
         tomorrow.style.left = '59.5%'
-      }, 8000)
+      }, 7000)
 
       const showAnim = setTimeout(() => {
         aa.style.display = 'block'
         better.style.display = 'block'
         tomorrow.style.display = 'block'
         text.style.display = 'none'
-      }, 5000)
+      }, 4000)
 
       const disapearEntry = setTimeout(() => {
         aa.style.display = 'none'
@@ -34,7 +34,7 @@ function EntryAnimation(props) {
         tomorrow.style.display = 'none'
         w_entryBg.style.display = 'none'
         w_skip.style.display = 'none'
-      }, 10000)
+      }, 8000)
       // async function first() {
       //   await fisrtText()
       //   await showAnim()

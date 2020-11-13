@@ -366,7 +366,22 @@ function ProductFirst(props) {
                   )}
                 </Share>
               </FacebookProvider> */}
-
+              {/* <a href="https://lin.ee/unl5HeD">
+                <img
+                  src="https://scdn.line-apps.com/n/line_add_friends/btn/zh-Hant.png"
+                  alt="加入好友"
+                  height="36"
+                  border="0"
+                />
+              </a> */}
+              <a
+                target="_blank"
+                href="//www.facebook.com/sharer.php?u=https://fernwehwoodworking.com/products/fernweh-woodworking-furniture-catalog-hard-copy"
+                class="share__link"
+              >
+                <span class="icon icon-facebook" aria-hidden="true"></span>
+                <span class="share__text">Share</span>
+              </a>
               {isLogged ? (
                 <div
                   className="btn_lessmargin more w_cart-btn"

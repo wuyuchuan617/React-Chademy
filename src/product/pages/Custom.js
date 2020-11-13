@@ -175,6 +175,15 @@ function Custom(props) {
               <div className="titleEN lora text-center">Classic Craft</div>
             </div>
           </div>
+
+          <div className="row justify-content-center titleEN lora text-center mb-5">
+            <div className="col-6">
+              <p>
+                我們從設計草稿至親手製作樣品，並與30年經驗、位於台中專門製作椅子的木器廠協作，最後再由我們親手雕琢，用指尖細磨感受每一道弧線與面，確保到你的手中，也能感受同樣的舒適手感。
+              </p>
+            </div>
+          </div>
+
           <div className="row">
             <div className="col w_custom_work">
               <img src={require('../images/c1.jpg')} alt="" />
@@ -236,8 +245,8 @@ function Custom(props) {
                 Bahus生產的傢俱，凸顯了挪威人的優雅和簡約，手工製造卻不為生產需求而妥協。」
               </p>
             </div>
-            <div className="col-7">
-              <img src={require('../images/share.jpg')} alt="" />
+            <div className="col-7 w_share_big1">
+              <img src={require('../images/share4.jpg')} alt="" />
             </div>
           </div>
           <div className="row w_share_row">
@@ -248,7 +257,7 @@ function Custom(props) {
                 alt=""
               />
               <p className="w_share_hover_text text-center w_ins_title">
-                意外的收穫，藏在不停尋找的簡單裡
+                藏在不停尋找的簡單裡
               </p>
               <p className="text-center w_share_hover_text">
                 「沒有任何機器能取代匠師獨特的風格。Gustav
@@ -300,7 +309,7 @@ function Custom(props) {
                   {/* 我們一方面感謝IFDA的肯定，一方面也很感動，這次的入選證明了台灣的文化元素一樣能登上世界的舞台，我們從燕椅開始，讓世界一步一步地看見，台灣這塊土地也能誕生出全世界都會愛上的美麗家具。 */}
                 </p>
                 <p className="w_ins_title">
-                  Shortlisted at 2017 International Furniture Design Award
+                  2017 International Furniture Design Award
                 </p>
                 <p className="w_ins_comment">
                   IFDA is held every three years since 1990. In the year 2017

@@ -10,7 +10,7 @@ function Header() {
     const iw_video = document.querySelector('.iw_video')
     setTimeout(() => {
       iw_video.play()
-    }, 9000)
+    }, 7000)
   }, [])
   return (
     <header>
