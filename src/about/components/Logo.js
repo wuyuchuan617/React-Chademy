@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../styles/about.css'
 import imagelogo from '../images/LOGO-01.svg'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function Logo() {
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
   return (
     <div className="a_logowrap">
-      <div className="row no-gutters">
+      <div
+        className="row no-gutters"
+        data-aos="fade-up"
+        data-aos-delay="50000"
+        data-aos-duration="2400"
+      >
         <div className="partannie">
           <div className="partannielogo">
             <img src={imagelogo} />

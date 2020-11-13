@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import '../styles/workshop.css'
 import heart from '../images/heart.svg'
 import { withRouter, useParams } from 'react-router-dom'
+import { BsFillHeartFill } from 'react-icons/bs'
 
 function OneWorkShop(props) {
   const { item } = props
