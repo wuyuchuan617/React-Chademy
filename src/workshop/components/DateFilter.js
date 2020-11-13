@@ -16,7 +16,7 @@ function DateFilter(props) {
 
   return (
     <>
-      <div className="container">
+      <div className="container a_date_filter">
         <div className="row justify-content-center align-items-center  d-flex">
           <div className="col ">
             <Space direction="vertical" size={12}>

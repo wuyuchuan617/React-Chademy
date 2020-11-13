@@ -504,3 +504,11 @@ img {
   /* margin-bottom: 20px; */
   margin-top: 25px;
 }
+
+.a_date_filter {
+  position: absolute;
+
+  top: 60%;
+  left: 10%;
+  z-index: 20;
+}
