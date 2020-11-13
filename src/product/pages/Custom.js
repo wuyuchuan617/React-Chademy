@@ -86,7 +86,7 @@ function Custom(props) {
               </p>
 
               <div className="">
-                <p className="text-center">STEP 01</p>
+                <p className="text-center w_custom_mmmm">STEP 01</p>
                 <Form.Item label="" className="justify-content-center">
                   <Select
                     placeholder="選擇扶手"
@@ -101,7 +101,7 @@ function Custom(props) {
                 </Form.Item>
               </div>
               <div className="">
-                <p className="text-center">STEP 02</p>
+                <p className="text-center w_custom_mmmm">STEP 02</p>
                 <Form.Item label="" className="justify-content-center">
                   <Select
                     placeholder="選擇木頭"
@@ -115,7 +115,7 @@ function Custom(props) {
                 </Form.Item>
               </div>
               <div className="">
-                <p className="text-center">STEP 03</p>
+                <p className="text-center w_custom_mmmm">STEP 03</p>
                 <Form.Item label="" className="justify-content-center">
                   <Select
                     placeholder="選擇椅墊"

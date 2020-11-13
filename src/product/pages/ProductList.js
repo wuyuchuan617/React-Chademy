@@ -40,8 +40,6 @@ function ProductList(props) {
   )
   console.log('product ', product)
 
-  
-
   // 存要顯示幾筆資料
   const [viewProduct, setViewProduct] = useState(15)
 
