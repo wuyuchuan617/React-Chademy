@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import CartList from '../components/CartList'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import img1 from '../../product/images/777.jpg'
+import { Button, notification } from 'antd'
 // import './style/jay.scss'
 
 function CartBid(props) {
@@ -22,6 +23,15 @@ function CartBid(props) {
     setMyCartDisplay,
     cartamount,
   } = props
+  const openNotification = () => {
+    notification.open({
+      message: '提醒',
+      description: '競價商品如果棄標需要付標價金額10%的手續費',
+      onClick: () => {
+        console.log('Notification Clicked!')
+      },
+    })
+  }
   const sum = (items) => {
     let total = 0
     for (let i = 0; i < items.length; i++) {
@@ -33,6 +43,7 @@ function CartBid(props) {
   useEffect(() => {
     setTotalPrice(subtotal + myDiscount + deliveryCharge)
     setTypeofProduct(4)
+    openNotification()
   }, [])
   // const [myCart, setMyCart] = useState([])
   // const [showLoading, setShowLoading] = useState(false)

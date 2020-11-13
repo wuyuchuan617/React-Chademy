@@ -233,7 +233,7 @@ function CancelOrder(props) {
                   height: '175px',
                   objectFit: 'cover',
                 }}
-                src={require('../../img/' + thisimg)}
+                src={'http://localhost:3001/img/' + thisimg}
                 alt=""
               />
               <h6 style={{ lineHeight: '175px' }}>訂單金額:{item.total}</h6>
@@ -278,7 +278,7 @@ function CancelOrder(props) {
                   height: '200px',
                   objectFit: 'cover',
                 }}
-                src={require('../../img/' + boximg)}
+                src={'http://localhost:3001/img/' + boximg}
                 alt=""
               />
               <h6
