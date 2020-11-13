@@ -8,8 +8,8 @@ function ItemBanner(props) {
         <video
           src={ItemBannerVideo}
           className="w-100"
-          autoplay="autoplay"
-          muted="true"
+          autoPlay="autoplay"
+          muted={true}
           preload="auto"
         ></video>
       </div>

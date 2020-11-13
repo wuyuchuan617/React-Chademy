@@ -253,8 +253,8 @@ function ProductList(props) {
       <video
         src={bannerVideo}
         className="w-100"
-        autoplay="autoplay"
-        muted="true"
+        autoPlay="autoplay"
+        muted={true}
         preload="auto"
       ></video>
 

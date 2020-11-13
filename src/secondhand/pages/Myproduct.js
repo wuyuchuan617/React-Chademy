@@ -101,8 +101,8 @@ const Myproduct = () => {
               <h5>Hello, {member}</h5>
             </div>
 
-            <div class="container mycontainer">
-              <table class="table table-hover">
+            <div className="container mycontainer">
+              <table className="table table-hover">
                 <thead>
                   <tr>
                     <th scope="col">商品編號</th>

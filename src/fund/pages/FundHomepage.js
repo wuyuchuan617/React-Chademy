@@ -35,9 +35,9 @@ function FundHomepage() {
         <div className="video">
           <video
             width="100%"
-            loop="true"
-            autoplay="autoplay"
-            muted="true"
+            loop={true}
+            autoPlay="autoplay"
+            muted={true}
             preload="auto"
             src={e_video}
             alt=""

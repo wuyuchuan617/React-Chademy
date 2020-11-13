@@ -181,7 +181,7 @@ function AllOrder(props) {
   let boximg = '5cbb0ac7-6aee-4ee9-840b-d54e1c896bd2.jpg'
   return (
     <>
-      {data.map((item) => {
+      {data.map((item, index) => {
         for (let i = 0; i < imgdata.length; i++) {
           if (item.PO_NO === imgdata[i].PO_NO) {
             for (let j = 0; j < productData.length; j++) {
@@ -203,7 +203,11 @@ function AllOrder(props) {
             nowstatus = '已取消'
         }
         return (
-          <div className="j_myorderbox" style={{ marginBottom: '15px' }}>
+          <div
+            key={index}
+            className="j_myorderbox"
+            style={{ marginBottom: '15px' }}
+          >
             <div className="j_wrapspace">
               <h5>訂單編號:{item.PO_NO}</h5>
               <Dropdown
@@ -265,7 +269,7 @@ function AllOrder(props) {
         onCancel={() => setVisible(false)}
         width={1000}
       >
-        {detailData.map((item) => {
+        {detailData.map((item, index) => {
           let link = '/review/' + item.PO_NO + '&' + item.product_name
           for (let i = 0; i < productData.length; i++) {
             console.log('hi')
@@ -275,7 +279,7 @@ function AllOrder(props) {
             }
           }
           return (
-            <div className="j_commitbox">
+            <div key={index} className="j_commitbox">
               <img
                 style={{
                   width: '300px',

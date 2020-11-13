@@ -99,7 +99,7 @@ function Workshop(props) {
   return (
     <>
       <ItemBanner />
-      <div class="wrap123 custom-container-width">
+      <div className="wrap123 custom-container-width">
         <div className="row mt-5">
           <BreadcrumbOne />
         </div>

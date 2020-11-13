@@ -28,9 +28,9 @@ function Header() {
         <video
           className="iw_video"
           width="100%"
-          loop="true"
-          // autoplay="false"
-          muted="true"
+          loop={true}
+          // autoPlay="false"
+          muted={true}
           preload="auto"
           src={video}
           alt=""
