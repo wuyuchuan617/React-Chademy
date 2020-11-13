@@ -507,7 +507,12 @@ img {
 .a_date_filter {
   position: absolute;
 
-  top: 60%;
+  top:55%;
   left: 10%;
   z-index: 20;
+}
+
+.a_filter_bg {
+  background-color: #edece8;
+  padding-right: 15px;
 }
