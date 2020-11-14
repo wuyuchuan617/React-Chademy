@@ -81,8 +81,8 @@ function Commentt() {
                 </div>
               }
               datetime={
-                <Tooltip title={moment().format('YYYY-MM-DD HH:mm:ss')}>
-                  <span>{moment(item.review_time).fromNow()}</span>
+                <Tooltip title={moment().format('YYYY-MM-DD HH:mm')}>
+                  <span>{moment().format('YYYY-MM-DD')}</span>
                 </Tooltip>
               }
             />
