@@ -28,7 +28,7 @@ export default function CHNavbar(props) {
         setNavbarHeight={setNavbarHeight}
         cartamount={cartamount}
         setCartAmount={setCartAmount}
-<<<<<<< Updated upstream
+        setTypeofProduct={setTypeofProduct}
       >
         <NavbarPerview
           activeName={activeName}
@@ -36,15 +36,6 @@ export default function CHNavbar(props) {
           setActiveName={setActiveName}
         />
       </Navbar>
-=======
-        setTypeofProduct={setTypeofProduct}
-      />
-      <NavbarPerview
-        activeName={activeName}
-        navbarHeight={navbarHeight}
-        setActiveName={setActiveName}
-      />
->>>>>>> Stashed changes
     </div>
   )
 }
