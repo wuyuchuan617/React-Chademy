@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
+
 import React, { useState, useEffect } from 'react'
 import '../styles/bloglist.css'
-import imageblog from '../images/06_blog.jpg'
+// import imageblog from '../images/06_blog.jpg'
 import ImgBlogfour from '../images/04_blog.jpg'
 import ImgBlogfive from '../images/05_blog.jpg'
 import ImgBlogseven from '../images/07_blog.jpg'
@@ -60,7 +62,7 @@ function BlogListOne(props) {
               data-aos-delay="30000"
               data-aos-duration="1200"
             >
-              <img src={require('../../img/' + item.images)} alt="" />
+              <img alt="" src={require('../../img/' + item.images)} />
             </div>
             <div className="d-flex a_blog-name justify-content-between">
               <div>{item.title}</div>
@@ -83,7 +85,7 @@ function BlogListOne(props) {
                 製作教程，不少教程都配有視頻和分步圖解，滿足各種使用者的需求。
               </p>
               <div className="a_blogblog_image">
-                <img src={imageblogfif} />
+                <img alt="" src={imageblogfif} />
               </div>
             </div>
 
@@ -95,7 +97,7 @@ function BlogListOne(props) {
                 做舊、質樸、自然的農家風。這一風格的裝飾要素是一些做舊的物件，比如說箱子、牆壁掛飾、擺件、具有農家味的裝飾物，比如說各種各樣的籐編、竹編製品以及各類植物和瓜果蔬菜等。當然木材也也是關鍵性的元素之一，可以用它作為牆磚，也可以用原木直接製作風格質樸的桌椅。
               </p>
               <div className="a_blogblog_image">
-                <img src={imageblogfarmer} />
+                <img alt="" src={imageblogfarmer} />
               </div>
             </div>
 
@@ -108,7 +110,7 @@ function BlogListOne(props) {
                 年“自然”會是家裝趨勢的一個核心關鍵詞，各種天然風格的材質格外受到歡迎。分析大理石風格壁紙持續走熱的緣由，一方面是受到早前極簡主義流行餘威的影響，另一方面它又能很好地從冷靜的極簡過渡到當下更有人情味的自然風格裝飾趨勢。
               </p>
               <div className="a_blogblog_image">
-                <img src={imageblogstone} />
+                <img alt="" src={imageblogstone} />
               </div>
             </div>
 
@@ -120,7 +122,7 @@ function BlogListOne(props) {
                 同樣是受到極簡主義餘威的影響。無論是運用亞克力的家具還是裝飾品，都值得嘗試。它其實屬於一款非常百搭的材質，無論是融入到復古典雅的裝修風格中來形成一種時間風格上的衝突，還是用於打造摩登簡約的家裝都很合適。尤其是黃銅製作的迷你花盆，無論是單一材料製作的簡單款式，還是與其他材質組合的設計都很別緻。除了花盆、桌椅、檯燈、收納籃子一類實用的產品，黃銅製作的裝飾品擺件也值得考慮。
               </p>
               <div className="a_blogblog_image">
-                <img src={imageblognature} />
+                <img alt="" src={imageblognature} />
               </div>
             </div>
 
@@ -147,7 +149,7 @@ function BlogListOne(props) {
 
               <div className="row d-flex justify-content-center no-gutters">
                 <p className="col-3 a_blog2">
-                  <img src={imagewriter} />
+                  <img alt="" src={imagewriter} />
                 </p>
                 <div className="col-9 a_blog3">
                   <h6>EVA CHANG</h6>
@@ -171,7 +173,7 @@ function BlogListOne(props) {
               data-aos-once="true"
             >
               <div className="upper3blog">
-                <img src={ImgBlogfour} />
+                <img alt="" src={ImgBlogfour} />
 
                 <div className="box300blog">
                   <p>1</p>
@@ -189,7 +191,7 @@ function BlogListOne(props) {
               data-aos-once="true"
             >
               <div className="upper3blog">
-                <img src={ImgBlogfive} />
+                <img alt="" src={ImgBlogfive} />
 
                 <div className="box300blog">
                   <p>2</p>
@@ -207,7 +209,7 @@ function BlogListOne(props) {
               data-aos-once="true"
             >
               <div className="upper3blog">
-                <img src={ImgBlogseven} />
+                <img alt="" src={ImgBlogseven} />
 
                 <div className="box300blog">
                   <p>3</p>
@@ -225,7 +227,7 @@ function BlogListOne(props) {
               data-aos-once="true"
             >
               <div className="upper3blog">
-                <img src={ImgBlogeight} />
+                <img alt="" src={ImgBlogeight} />
 
                 <div className="box300blog">
                   <p>4</p>
@@ -243,7 +245,7 @@ function BlogListOne(props) {
               data-aos-once="true"
             >
               <div className="upper3blog">
-                <img src={ImgBlognine} />
+                <img alt="" src={ImgBlognine} />
 
                 <div className="box300blog">
                   <p>5</p>
@@ -261,7 +263,7 @@ function BlogListOne(props) {
               data-aos-once="true"
             >
               <div className="upper3blog">
-                <img src={ImgBlogfourt} />
+                <img alt="" src={ImgBlogfourt} />
 
                 <div className="box300blog">
                   <p>6</p>
@@ -279,7 +281,7 @@ function BlogListOne(props) {
               data-aos-once="true"
             >
               <div className="upper3blog">
-                <img src={ImgBlogthi} />
+                <img alt="" src={ImgBlogthi} />
 
                 <div className="box300blog">
                   <p>7</p>{' '}
@@ -297,7 +299,7 @@ function BlogListOne(props) {
               data-aos-once="true"
             >
               <div className="upper3blog">
-                <img src={ImgBlogtwe} />
+                <img alt="" src={ImgBlogtwe} />
 
                 <div className="box300blog">
                   <p>8</p>
@@ -315,7 +317,7 @@ function BlogListOne(props) {
               data-aos-once="true"
             >
               <div className="upper3blog">
-                <img src={ImgBlogele} />
+                <img alt="" src={ImgBlogele} />
 
                 <div className="box300blog">
                   <p>9</p>
@@ -333,7 +335,7 @@ function BlogListOne(props) {
               data-aos-once="true"
             >
               <div className="upper3blog">
-                <img src={ImgBlogten} />
+                <img alt="" src={ImgBlogten} />
 
                 <div className="box300blog">
                   <p>10</p>

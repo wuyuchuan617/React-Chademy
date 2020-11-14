@@ -10,7 +10,7 @@ import Itemfour from '../components/ItemFour'
 import Itemfive from '../components/ItemFive'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
-import AOS from 'aos'
+// import AOS from 'aos'
 import 'aos/dist/aos.css'
 import BreadcrumbOne from '../components/BreadcrumbOne'
 

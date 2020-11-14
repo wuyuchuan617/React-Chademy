@@ -1,3 +1,9 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+
 import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 // import useInterval from '@use-it/interval';
@@ -327,7 +333,7 @@ function Desc(props) {
         <div className="row">
           <div className="picarea">
             <div className="mainpic">
-              <img src={chair} />
+              <img alt="" src={chair} />
             </div>
             <div key="b" className="sidepic d-flex">
               {productpic.map((item, index) => {
@@ -632,7 +638,7 @@ function Desc(props) {
                 </div>
               </div>
               <div className="designer-img">
-                <img src={pic} />
+                <img alt="" src={pic} />
               </div>
             </div>
           </div>

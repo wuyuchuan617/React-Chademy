@@ -1,3 +1,8 @@
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+
 import React, { useState, useEffect } from 'react'
 import '../styles/workshop.css'
 import imagework from '../images/11.jpg'
@@ -17,7 +22,7 @@ function ItemFour(props) {
         <Carousel itemsToScroll={2} itemsToShow={2}>
           <div className="box5worker">
             <div className="upper5">
-              <img src={imagework} />
+              <img alt="" src={imagework} />
             </div>
 
             <div className="wordworker">
@@ -31,7 +36,7 @@ function ItemFour(props) {
 
           <div className="box5worker">
             <div className="upper5">
-              <img src={imageworker} />
+              <img alt="" src={imageworker} />
             </div>
 
             <div className="wordworker">
@@ -45,7 +50,7 @@ function ItemFour(props) {
 
           <div className="box5worker">
             <div className="upper5">
-              <img src={imageworkerthree} />
+              <img alt="" src={imageworkerthree} />
             </div>
 
             <div className="wordworker">
@@ -59,7 +64,7 @@ function ItemFour(props) {
 
           <div className="box5worker">
             <div className="upper5">
-              <img src={imageworkerfour} />
+              <img alt="" src={imageworkerfour} />
             </div>
 
             <div className="wordworker">

@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import { BsTrash } from 'react-icons/bs'
@@ -49,6 +51,7 @@ function CartArea(props) {
                     }}
                   >
                     <img
+                      alt=""
                       style={{
                         width: '250px',
                         height: '130px',

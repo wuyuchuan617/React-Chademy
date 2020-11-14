@@ -1,3 +1,8 @@
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+
 import React, { useState, useEffect, useCallback } from 'react'
 import socketIOClient from 'socket.io-client'
 import { Button, Card } from 'react-bootstrap'

@@ -1,3 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+
 import React, { useState, useEffect } from 'react'
 import { withRouter, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
@@ -132,7 +136,7 @@ function FundItem(props) {
               return (
                 <div className="col grace-wrap mx-1">
                   <div className="e-pic">
-                    <img src={`http://localhost:3001/img/` + item.img} />
+                    <img alt="" src={`http://localhost:3001/img/` + item.img} />
                   </div>
                   <div className="d-flex flex-column grace-slider-text">
                     <span className="grace-slider-pname"> {item.id}</span>

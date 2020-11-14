@@ -1,3 +1,8 @@
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+
 import React, { useState, useEffect } from 'react'
 import { Carousel } from 'react-bootstrap'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
@@ -9,6 +14,7 @@ function Sidepic(props) {
     <>
       <div className="pic">
         <img
+          alt=""
           onClick={() => {
             setChair(`http://localhost:3000/uploads/${item}`)
           }}

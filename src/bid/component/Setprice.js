@@ -1,3 +1,8 @@
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+
 import React, { useState, useEffect } from 'react'
 import { Form, Input, DatePicker, Select } from 'antd'
 // import '../styles/setprice.scss'
@@ -124,7 +129,7 @@ function Setprice(props) {
         <div className="col-6">
           <p className="g-set-prodname text-left">{pname}</p>
           <p className="g-set-prodname2 text-left">{pname}單椅</p>
-          <img src={chair} />
+          <img alt="" src={chair} />
         </div>
       </div>
 
