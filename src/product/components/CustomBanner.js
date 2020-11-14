@@ -1,5 +1,4 @@
 import React from 'react'
-import popularImg from '../images/777.jpg'
 import BannerAnim, { Element } from 'rc-banner-anim'
 import TweenOne from 'rc-tween-one'
 import 'rc-banner-anim/assets/index.css'

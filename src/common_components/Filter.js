@@ -1,25 +1,25 @@
 import React, { useState, useEffect } from 'react'
 import './styles/filter.css'
-import { Slider } from 'antd'
+// import { Slider } from 'antd'
 import 'antd/dist/antd.css'
-import { IntegerStep, DecimalStep } from './components/IntegerStep'
+// import { IntegerStep, DecimalStep } from './components/IntegerStep'
 import { Checkbox } from 'antd'
 import { Tag } from 'antd'
 import { Radio } from 'antd'
 
 function Filter(props) {
   const {
-    showFilter,
+    // showFilter,
     category,
     setCategory,
     chairSeat,
     setChairSeat,
     chairColor,
     setChairColor,
-    search,
+    // search,
     setSearch,
-    price,
-    setPrice,
+    // price,
+    // setPrice,
     setSort,
     getFilterFromSQL,
     getTotalFromSQL,
@@ -31,7 +31,7 @@ function Filter(props) {
   const [viewSpread, setViewSpread] = useState(false)
   const [viewSpread1, setViewSpread1] = useState(false)
   const [viewSpread2, setViewSpread2] = useState(false)
-  const [viewSpread3, setViewSpread3] = useState(false)
+  // const [viewSpread3, setViewSpread3] = useState(false)
   const [viewSpread4, setViewSpread4] = useState(false)
 
   console.log(viewFilter)
@@ -67,20 +67,20 @@ function Filter(props) {
   }
 
   // seats1
-  let seats1Show = {
-    display: 'block',
-  }
+  // let seats1Show = {
+  //   display: 'block',
+  // }
 
-  let seats1Hide = {
-    display: 'none',
-  }
+  // let seats1Hide = {
+  //   display: 'none',
+  // }
 
-  let colorBorder = {
-    border: 3 + 'px solid #c77334',
-  }
-  let colorBorder2 = {
-    border: '3px solid #EDECE8',
-  }
+  // let colorBorder = {
+  //   border: 3 + 'px solid #c77334',
+  // }
+  // let colorBorder2 = {
+  //   border: '3px solid #EDECE8',
+  // }
 
   function onChange(e) {
     console.log(`checked = ${e.target.checked}`)
@@ -232,7 +232,7 @@ function Filter(props) {
                   setViewSpread1(!viewSpread1)
                   setViewSpread(false)
                   setViewSpread2(false)
-                  setViewSpread3(false)
+                  // setViewSpread3(false)
                   setViewSpread4(false)
                 }}
               >
@@ -336,7 +336,7 @@ function Filter(props) {
                   setViewSpread(!viewSpread)
                   setViewSpread1(false)
                   setViewSpread2(false)
-                  setViewSpread3(false)
+                  // setViewSpread3(false)
                   setViewSpread4(false)
                 }}
               >
@@ -440,7 +440,7 @@ function Filter(props) {
                   setViewSpread2(!viewSpread2)
                   setViewSpread(false)
                   setViewSpread1(false)
-                  setViewSpread3(false)
+                  // setViewSpread3(false)
                   setViewSpread4(false)
                 }}
               >
@@ -647,7 +647,7 @@ function Filter(props) {
                   setViewSpread1(false)
                   setViewSpread(false)
                   setViewSpread2(false)
-                  setViewSpread3(false)
+                  // setViewSpread3(false)
                   setViewSpread4(!viewSpread4)
                 }}
               >

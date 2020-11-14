@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-import car from '../images/car.png'
 
 function ProductTen(props) {
-  const { item } = props
   const [statusPhoto, setStatusPhoto] = useState(1)
   return (
     <>

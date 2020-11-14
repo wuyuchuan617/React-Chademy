@@ -2,7 +2,7 @@ import React from 'react'
 import { withRouter } from 'react-router-dom'
 
 function ProductFour(props) {
-  const { product, item } = props
+  const { product } = props
   console.log(product)
 
   return (

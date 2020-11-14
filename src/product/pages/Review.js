@@ -12,7 +12,7 @@ import Aside from '../../common_components/Aside/index'
 import '../styles/review.css'
 import '../../common_components/Aside/index.scoped.scss'
 import '../../member/MemberCenter/index.scoped.scss'
-const { Header, Footer, Sider, Content } = Layout
+const { Header, Sider, Content } = Layout
 
 // -----------------------以下開始Component Product-----------------
 

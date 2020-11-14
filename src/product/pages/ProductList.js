@@ -1,7 +1,7 @@
 // ------------------以下引入套件----------------------------
 
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+// import { useSelector } from 'react-redux'
 
 // ------------------以下引入Components----------------------------
 
@@ -12,7 +12,7 @@ import ProductCard from '../components/ProductCard'
 import CouponModal from '../components/CouponModal'
 import ListNew from '../components/ListNew'
 import NewsLetter from '../components/NewsLetter'
-import Breadcrumb from '../../common_components/Breadcrumb'
+// import Breadcrumb from '../../common_components/Breadcrumb'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
 
@@ -29,7 +29,7 @@ import bannerVideo from '../images/The-Passion-of-Making.mp4'
 function ProductList(props) {
   // 判斷登入的狀態
 
-  const isLogged = useSelector((state) => state.user.logged)
+  // const isLogged = useSelector((state) => state.user.logged)
 
   // ---------------以下開始useState狀態設定-----------------
 

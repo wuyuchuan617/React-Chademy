@@ -2,7 +2,7 @@ import React from 'react'
 import { withRouter, useHistory } from 'react-router-dom'
 
 function ProductSecond(props) {
-  const { product, item } = props
+  const { product } = props
   console.log(product)
 
   return (

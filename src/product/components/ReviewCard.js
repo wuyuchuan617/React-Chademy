@@ -1,6 +1,6 @@
 // ------------------------------以下引入套件---------------------------
 
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Rate } from 'antd'
 
 // ------------------以下引入images----------------------------

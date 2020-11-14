@@ -1,27 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { Breadcrumb } from 'antd'
 
 function Breadcrumbw(props) {
   const { item } = props
   console.log(item)
-
-  let path = ''
-  const pathname = props.location.pathname
-
-  switch (pathname) {
-    case '/product':
-      path = '經典產品'
-      break
-    case '/brand':
-      path = '品牌故事'
-      break
-    case '/secondhand_list':
-      path = '中古市集'
-      break
-    default:
-      path = ''
-  }
 
   return (
     // <>

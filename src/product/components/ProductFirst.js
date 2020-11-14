@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import series from '../images/series.jpg'
 
 import { BsFillHeartFill } from 'react-icons/bs'
 import ProductModal from '../components/ProductModal'
-import popularImg from '../images/777.jpg'
+
 import { Rate } from 'antd'
 import { withRouter } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Breadcrumbw from '../components/Breadcrumbw'
 import { Anchor } from 'antd'
-import { FacebookProvider, Share } from 'react-facebook'
+
 const { Link } = Anchor
 
 function ProductFirst(props) {
@@ -30,8 +29,8 @@ function ProductFirst(props) {
   }
 
   const [myCart, setMyCart] = useState([])
-  const [show, setShow] = useState(false)
-  const [productName, setProductName] = useState('')
+  // const [show, setShow] = useState(false)
+  // const [productName, setProductName] = useState('')
   const [heart, setHeart] = useState(false)
   const [heartItem, setHeartItem] = useState({})
   const [visible, setVisible] = useState(false)

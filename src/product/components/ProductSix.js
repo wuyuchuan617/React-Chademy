@@ -1,5 +1,5 @@
 import React from 'react'
-import { withRouter, useHistory } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import hotel from '../images/hotel.jpg'
 function ProductSix(props) {
   const { product, item } = props

@@ -7,9 +7,8 @@ import BreadcrumCustom from '../components/BreadcrumCustom'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
 import { Spin } from 'antd'
-import { set } from 'date-fns'
 import { LoadingOutlined } from '@ant-design/icons'
-import { Steps, Divider } from 'antd'
+import { Steps } from 'antd'
 
 const { Step } = Steps
 
