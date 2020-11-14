@@ -5,7 +5,14 @@ import { BsTrash } from 'react-icons/bs'
 
 function CartArea(props) {
   const [cartList, setCartList] = useState([])
-  const { myCart, setShowCart, showCart, resetShow, cartamount } = props
+  const {
+    myCart,
+    setShowCart,
+    showCart,
+    resetShow,
+    cartamount,
+    setTypeofProduct,
+  } = props
   function getCartFromLocalStorage() {
     const newCart = localStorage.getItem('cart') || '[]'
     // console.log(newCart)
@@ -119,7 +126,10 @@ function CartArea(props) {
         <Link
           to="/cartproduct"
           className="btn1"
-          onClick={() => setShowCart(false)}
+          onClick={() => {
+            setShowCart(false)
+            setTypeofProduct(1)
+          }}
         >
           前往購物車
         </Link>

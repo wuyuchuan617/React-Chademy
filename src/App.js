@@ -109,6 +109,7 @@ function App() {
           cartamount={cartamount}
           setCartAmount={setCartAmount}
           resetShow={resetShow}
+          setTypeofProduct={setTypeofProduct}
         />
 
         <ScrollToTop>

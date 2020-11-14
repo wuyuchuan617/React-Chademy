@@ -32,6 +32,7 @@ function MyNavbar(props) {
     setNavbarHeight,
     scrollY,
     scrollDirection,
+    setTypeofProduct,
     // resetShow,
     // setResetShow,
   } = props
@@ -283,6 +284,7 @@ function MyNavbar(props) {
           showCart={showCart}
           setShowCart={setShowCart}
           cartamount={cartamount}
+          setTypeofProduct={setTypeofProduct}
         />
       ) : (
         ''

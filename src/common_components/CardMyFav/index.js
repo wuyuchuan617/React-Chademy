@@ -5,7 +5,7 @@ import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { FaRegTrashAlt } from 'react-icons/fa'
 
 function CardMyFav(props) {
-  const { cartamount, setCartAmount, data } = props
+  const { cartamount, setCartAmount, data, setTypeofProduct } = props
 
   console.log(
     '%c DEBUG %cData',
