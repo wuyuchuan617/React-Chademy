@@ -1,27 +1,38 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Affix, Button } from 'antd'
 
 const Filter = (props) => {
   const { searchProduct } = props
 
+  // useEffect(() => {
+  //   window.addEventListener('scroll', fixed)
+  //   const filteri = document.querySelector('i_filter_list')
+
+  //   function fixed() {
+  //     let y = filteri.offsetTop
+  //     console.log('y', y)
+  //     console.log('window.pageYOffset', window.pageYOffset)
+  //   }
+  // }, [window.pageYOffset])
   return (
-    <Affix
-      offsetTop={120}
-      onChange={(affixed) => console.log('affixed' + affixed)}
-    >
-      <div className="i_filter_list">
-        {itemList.map((item, index) => {
-          return (
-            <FilterItem
-              key={`item ${index}`}
-              item={item}
-              searchProduct={searchProduct}
-            />
-          )
-        })}
-        <div className="i_border_bottom"></div>
-      </div>
-    </Affix>
+    // <Affix
+    //   offsetTop={120}
+    //   onChange={(affixed) => console.log('affixed' + affixed)}
+    //   className="i_fix"
+    // >
+    <div className="i_filter_list">
+      {itemList.map((item, index) => {
+        return (
+          <FilterItem
+            key={`item ${index}`}
+            item={item}
+            searchProduct={searchProduct}
+          />
+        )
+      })}
+      <div className="i_border_bottom"></div>
+    </div>
+    // </Affix>
   )
 }
 

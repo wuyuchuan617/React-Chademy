@@ -28,7 +28,7 @@
 }
 
 .antique {
-  width: 675px;
+  max-width: 675px;
 }
 .antique img {
   width: 100%;
