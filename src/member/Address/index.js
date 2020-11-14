@@ -158,7 +158,10 @@ function Address() {
       <div className="lineee justify-content-between">
         地址：{allAddress ? allAddress : '新增地址'}
         <div className="icon_con">
-          <AiOutlinePlus className="icon" onClick={() => setVisible(true)} />
+          <AiOutlinePlus
+            className="plus_icon"
+            onClick={() => setVisible(true)}
+          />
           {allAddress && (
             <BsTrash
               className="delet_btn"

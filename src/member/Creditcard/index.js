@@ -148,7 +148,7 @@ function Creditcard() {
           卡號：{transCardNumber(card.cardNumber)}
           <div className="icon_con">
             <AiOutlinePlus
-              className="icon"
+              className="plus_icon"
               onClick={(e) =>
                 handleOpenModal(e, {
                   ...card,
