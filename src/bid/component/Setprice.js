@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/accessible-emoji */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 
@@ -124,8 +125,7 @@ function Setprice(props) {
             </Form.Item>
             <Form.Item>
               <Button
-          className="chat"
-
+                className="chat"
                 type="primary"
                 htmlType="submit"
                 onClick={() => {
@@ -145,7 +145,7 @@ function Setprice(props) {
           <p className="g-set-prodname text-left">{pname}</p>
           <p className="g-set-prodname2 text-left">{pname}單椅</p>
           <div className="g-setprice-wrap">
-            <img classname="g-setprice-img" src={chair} />
+            <img alt="" classname="g-setprice-img" src={chair} />
           </div>
         </div>
       </div>
@@ -172,13 +172,15 @@ function Setprice(props) {
           </p>
         </Modal.Body>
         <Modal.Footer>
-          <Button 
-          // className="rounded-0"
-          variant="secondary" onClick={handleClose}>
+          <Button
+            // className="rounded-0"
+            variant="secondary"
+            onClick={handleClose}
+          >
             取消
           </Button>
           <Button
-          // className="rounded-0"
+            // className="rounded-0"
             variant="primary"
             onClick={() => {
               subscribe(inputValue)
@@ -209,7 +211,7 @@ function Setprice(props) {
         </Modal.Body>
         <Modal.Footer>
           <Button
-          // className="rounded-0"
+            // className="rounded-0"
 
             variant="primary"
             onClick={() => {
