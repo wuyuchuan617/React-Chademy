@@ -1,22 +1,11 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable react/jsx-no-target-blank */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 
+import '../index.scoped.scss'
 import { Button, Form, Input, DatePicker, message } from 'antd'
 import moment from 'moment'
 
 function MemberCenter(props) {
-  const { setCartAmount } = props
   const [form] = Form.useForm()
-
-  const [reg, setReg] = useState({
-    title: '',
-    msg: '',
-    data: {},
-  })
 
   async function getUserInfo() {
     const url = 'http://localhost:3001/members/getUserInfo'
@@ -93,6 +82,7 @@ function MemberCenter(props) {
   // didmount拿所有資料
   useEffect(() => {
     getUserInfo()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
