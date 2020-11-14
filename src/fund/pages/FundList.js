@@ -280,14 +280,18 @@ function FundList(props) {
 
   return (
     <>
-      <div class="context1">
+      <div className="context1">
         {/* <BannerE/> */}
         {/* {product.map((item, index) => { */}
 
         {/* })} */}
 
+<<<<<<< HEAD
         <div class="container" id="productCards">
           <Breadcrumbw />
+=======
+        <div className="container" id="productCards">
+>>>>>>> 859173bdaa24508c1e437c5fe07ade7ae5ae1ccb
           <div className="e_lableboxx mt-5">
             <BookMark setFilterMark={setFilterMark} setTime={setTime} />
           </div>

@@ -62,7 +62,7 @@ function Slider(props) {
           <Carousel itemsToScroll={3} itemsToShow={3}>
             {relateProducts.map((item, index) => {
               return (
-                <div className="col grace-wrap mx-1">
+                <div className="col grace-wrap mx-1" key={index}>
                   <div className="productCardImg">
                     <img
                       src={`http://localhost:3001/img/` + item.photo}

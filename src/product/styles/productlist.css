@@ -433,14 +433,14 @@ img {
 .w_news1 {
   position: absolute;
   top: 20%;
-  left: 43%;
+  left: 45%;
   color: white;
 }
 
 .w_news2 {
   position: absolute;
   top: 30%;
-  left: 38%;
+  left: 40%;
   color: white;
   font-size: 12px;
 }
@@ -460,7 +460,7 @@ img {
 }
 
 .titleh-line.l1 {
-  left: 390px;
+  left: 410px;
   top: 114px;
   -webkit-transform-origin: left;
   -ms-transform-origin: left;
@@ -471,7 +471,7 @@ img {
 }
 
 .titleh-line.l2 {
-  left: 535px;
+  left: 555px;
   top: 114px;
   -webkit-transform-origin: right;
   -ms-transform-origin: right;
@@ -495,11 +495,16 @@ img {
   margin-bottom: 15px;
   padding: 25px 15px;
 }
+
 .formstyleww:focus {
   background-color: #ded5c6;
   /* border: .5px solid #ded5c6;
     margin-bottom: 15px;
     padding: 25px 15px; */
+<<<<<<< HEAD
 }
 =======
 >>>>>>> Stashed changes
+=======
+}
+>>>>>>> 859173bdaa24508c1e437c5fe07ade7ae5ae1ccb

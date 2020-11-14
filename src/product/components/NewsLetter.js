@@ -8,9 +8,9 @@ function NewsLetter() {
           <div className="col-8 w_newsletter">
             <img src={require('../images/newsletter.png')} alt="" />
             <div className="align-content"></div>
-            <span class="titleh-line l1" style={{ width: '30px' }}></span>
+            <span className="titleh-line l1" style={{ width: '30px' }}></span>
             <p className="w_news1">NEWSLETTER</p>
-            <span class="titleh-line l2" style={{ width: '30px' }}></span>
+            <span className="titleh-line l2" style={{ width: '30px' }}></span>
             <p className="w_news2">Our Design News in Your Inbox</p>
           </div>
           <div className="col-3 w_newsletter1">
@@ -25,13 +25,13 @@ function NewsLetter() {
               />
             </div>
             <div className="formset reviewInput w_news3">
-              <label for="productname ">Email</label>
+              <label for="productname1 ">Email</label>
               <input
                 type="text"
                 className="formstyleww formwidthw1"
                 // value={orderProductNo}
                 name="order_no"
-                id="productname"
+                id="productname1"
               />
             </div>
             <div className="btn_lessmargin more w_cart-btn ">訂閱電子報</div>
