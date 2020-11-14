@@ -51,8 +51,8 @@ function SecondhandProduct(props) {
   }, [])
   return (
     <>
-      <div className="container custom-container-width">
-        <div className="row mt-5 mb-4">
+      <div class="container custom-container-width">
+        <div class="row mt-5 mb-4">
           {product.map((item, index) => {
             return <Breadcrumb key={index} item={item} product={product} />
           })}
