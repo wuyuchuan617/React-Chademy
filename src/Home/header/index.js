@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 
 import video from '../img/Circle-Chair-Final.mp4'
 import './Header.css'
 
 function Header() {
-  const [play, setPlay] = useState('')
+  // const [play, setPlay] = useState('')
 
   useEffect(() => {
     const iw_video = document.querySelector('.iw_video')

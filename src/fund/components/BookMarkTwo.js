@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import '../styles/FundHomepage.scss'
 import { Container, Row, Col } from 'react-bootstrap'

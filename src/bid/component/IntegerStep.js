@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Slider, InputNumber, Row, Col } from 'antd'
 
 class IntegerStep extends React.Component {

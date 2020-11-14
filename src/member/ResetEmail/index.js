@@ -2,8 +2,8 @@ import React from 'react'
 
 import request from '../../utils/request'
 
-import { Typography, Layout, Form, Input, Button, message } from 'antd'
-const { Title } = Typography
+import { Layout, Form, Input, Button, message } from 'antd'
+// const { Title } = Typography
 const { Content } = Layout
 
 function ResetEmail() {

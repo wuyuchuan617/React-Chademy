@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { withRouter, useHistory } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import 'aos/dist/aos.css'
 import AOS from 'aos'
 import { Parallax } from 'rc-scroll-anim'

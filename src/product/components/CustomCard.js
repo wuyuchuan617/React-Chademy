@@ -2,7 +2,7 @@ import React from 'react'
 import { withRouter } from 'react-router-dom'
 
 function CustomCard(props) {
-  const { item } = props
+  // const { item } = props
 
   return (
     <>

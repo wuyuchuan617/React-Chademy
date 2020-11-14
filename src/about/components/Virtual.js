@@ -47,6 +47,7 @@ function Virtual() {
       >
         <div style={{ marginTop: 100 + 'px !important' }} className="vr">
           <iframe
+            title="iframe"
             width="1100"
             height="620"
             src="https://my.matterport.com/show/?m=xFhQSwSpQ4r&amp;help=1"

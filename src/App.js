@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // ------------------以下import 套件-------------------------
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
@@ -375,7 +376,6 @@ function App() {
                 setCartAmount={setCartAmount}
                 typeofProduct={typeofProduct}
                 setTypeofProduct={setTypeofProduct}
-                typeofProduct={typeofProduct}
               />
             </Route>
 

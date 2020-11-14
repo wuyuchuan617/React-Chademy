@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import './Classic.css'
 import Img from '../img/Cover_CircleDiningChairs_OvergaardDyrman_studio.jpg'
-import AOS from 'aos'
+// import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 const Classic = () => {
@@ -26,7 +26,7 @@ const Classic = () => {
         <div className="pot"></div>
 
         <div className="hover_card">
-          <img src={Img} />
+          <img alt="" src={Img} />
           <div className="text">
             <p>經典高腳椅</p>
             <p>永恆追求品質與質感，手工製作，每一個小細節淬煉出獨一無二。</p>

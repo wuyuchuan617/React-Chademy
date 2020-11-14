@@ -63,7 +63,7 @@ function MemberIndex({ cartamount, setCartAmount }) {
     handleTitle()
 
     // 如果 location.pathname 改變了，就重新設定 title
-  }, [location.pathname, path])
+  }, [location, path])
 
   console.log(' MemberIndex: ', path)
 

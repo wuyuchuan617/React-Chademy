@@ -59,7 +59,7 @@ function Creditcard() {
       },
     })
 
-    const { success, msg, data } = response
+    const { success, msg } = response
 
     if (!success) {
       message.error(msg)

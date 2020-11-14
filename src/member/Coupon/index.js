@@ -13,7 +13,6 @@ const { TabPane } = Tabs
 
 function Coupon(props) {
   const [couponlist, setCouponlist] = useState([])
-  const [activeKey, setActiveKey] = useState('1')
 
   console.log(props)
   // props.setTitle('折價卷')
@@ -55,13 +54,7 @@ function Coupon(props) {
 
   return (
     <>
-      <Tabs
-        defaultActiveKey="1"
-        type="card"
-        onChange={(activeKey) => {
-          setActiveKey(activeKey)
-        }}
-      >
+      <Tabs defaultActiveKey="1" type="card">
         {/* TabPane */}
         {[
           { tab: '已使用', key: '1' },

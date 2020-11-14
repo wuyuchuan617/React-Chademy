@@ -1,6 +1,6 @@
 import React from 'react'
 import '../../styles/PopBmark.scss'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+// import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import pop4 from '../../images/pop4.jpeg'
 import armchair from '../../images/armchair .png'
 

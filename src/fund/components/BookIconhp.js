@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import '../styles/FundHomepage.scss'
-import { Container, Row, Col } from 'react-bootstrap'
+// import { Container, Row, Col } from 'react-bootstrap'
 
 import barstool from '../images/bar stool .png'
 
@@ -8,7 +9,7 @@ import chairs from '../images/chairs .png'
 import armchair from '../images/armchair .png'
 import diningchair from '../images/dining chair .png'
 import loungechair from '../images/lounge chair.png'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+// import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
 function BookIconhp(props) {
   const [changeword, setChangeWord] = useState(0)

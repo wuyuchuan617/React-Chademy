@@ -1,4 +1,10 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
+
 import '../styles/bloglist.css'
 import imagewriter from '../images/48.png'
 import imagedemo from '../images/40.png'

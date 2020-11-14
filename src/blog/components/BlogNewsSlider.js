@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import '../styles/blog.css'
 import BlogNews from '../components/BlogNews'
 import BlogNewsTwo from '../components/BlogNewsTwo'

@@ -1,15 +1,16 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
 import ImgArea from '../components/SecondhandProduct/ImgArea'
 import TextArea from '../components/SecondhandProduct/TextArea'
 import Filter from '../components/SecondhandProduct/Filter'
 import '../styles/secondhandProduct.css'
-import { withRouter, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import Breadcrumb from '../components/Breadcrumb'
 import IconArea from '../components/SecondhandProduct/IconArea'
 import Courses2 from '../components/SecondhandProduct/Courses2'
 import Slider from '../components/SecondhandProduct/Slider'
 import { useSelector } from 'react-redux'
-import { Modal, Button } from 'antd'
+// import { Modal, Button } from 'antd'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
 

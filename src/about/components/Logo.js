@@ -19,7 +19,7 @@ function Logo() {
       >
         <div className="partannie">
           <div className="partannielogo">
-            <img src={imagelogo} />
+            <img alt="" src={imagelogo} />
           </div>
           <p className="a_chademy">CHADEMY 椅子學院</p>
           <p className="a_chademyone">

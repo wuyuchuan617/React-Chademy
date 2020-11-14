@@ -1,10 +1,10 @@
 import React from 'react'
 import '../styles/FundHomepage.scss'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import { Container, Row, Col } from 'react-bootstrap'
-import test from '../images/carousel.jpg'
+// import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+// import { Container, Row, Col } from 'react-bootstrap'
+// import test from '../images/carousel.jpg'
 import ProgressE from '../components/ProgressE'
-import { withRouter, useHistory } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 function FundListCard(props) {
   const { item } = props

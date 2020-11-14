@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { withRouter, useHistory } from 'react-router-dom'
+import React from 'react'
+import { withRouter } from 'react-router-dom'
 
 function NotFoundPage(props) {
   // 或使用useHistory勾子也可以達到同樣效果

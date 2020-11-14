@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import '../styles/workshop.css'
 import ThreeWorkShop from '../components/ThreeWorkShop'
 import '../styles/slider.css'

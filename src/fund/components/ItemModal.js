@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 
 import '../styles/FundModal.scss'
@@ -65,7 +66,7 @@ function ItemModal(props) {
             </div>
           </div>
           <div className="e_check">
-          <Radio>以詳閱募資條款</Radio>
+            <Radio>以詳閱募資條款</Radio>
           </div>
         </Modal.Body>
         <Modal.Footer>

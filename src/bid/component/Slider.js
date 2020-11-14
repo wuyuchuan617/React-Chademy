@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
 // import { connect } from 'react-redux'
 // import { IoIosArrowDropleft, IoIosArrowDropright } from 'react-icons/io'
@@ -22,7 +23,7 @@ function Slider(props) {
     <>
       <div className="col grace-wrap mx-1">
         <div className="grace-pic">
-          <img src={chair} />
+          <img alt="" src={chair} />
         </div>
         <div className="d-flex flex-column grace-slider-text">
           <span className="grace-slider-pname">{item.productName}</span>
