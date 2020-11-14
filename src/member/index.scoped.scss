@@ -1,9 +1,27 @@
 @import '../common_components/styles/ant_custom.scss';
 
+/**
+  會員中心的共同設定
+
+*/
 .memberCenter_container {
   padding: 100px;
 
   /deep/ {
+    .row_list {
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    // 圖片
+    img {
+      width: 200px;
+      height: 200px;
+      // outline: springgreen 3px dashed;
+    }
+
     // 標題
     .hander_container {
       padding-left: $asideWidth;
@@ -27,7 +45,21 @@
       }
     }
 
-    // tab 的區塊
+    // 折價卷 追蹤清單 共用
+    .ant-tabs-tabpane {
+      .detail_list {
+        flex: 1;
+        padding: 20px 10px;
+        margin-left: 30px;
+        // outline: purple 3px dashed;
+
+        li + li {
+          margin-top: 15px;
+        }
+      }
+    }
+
+    // ------------------- tab 的區塊 -------------------
     .ant-tabs-nav-list {
       width: 100%;
 
@@ -47,43 +79,6 @@
         margin-left: 0;
       }
     }
+    //
   }
-}
-
-//
-.Capon_img {
-  width: 200px;
-  height: 200px;
-}
-
-.cou_btn {
-  width: 80px;
-  height: 40px;
-  background-color: #c77334;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.cou {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.coupon_detail_list {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin-bottom: 0;
-
-  li + li {
-    margin-top: 20px;
-  }
-}
-
-.row {
-  display: flex;
-  justify-content: space-between;
 }

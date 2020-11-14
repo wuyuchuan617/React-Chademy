@@ -41,7 +41,7 @@ function MyFav(props) {
           { tab: '課程', key: '2' },
         ].map((tabItem) => (
           <TabPane tab={tabItem.tab} key={tabItem.key} centered>
-            <Row>
+            <Row className="row_list">
               {/* 顯示符合 key 的商品 */}
               {myfavlist.filter((i) => i.product_type === Number(tabItem.key))
                 .length === 0 ? (

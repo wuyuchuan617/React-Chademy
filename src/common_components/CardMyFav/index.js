@@ -33,18 +33,14 @@ function CardMyFav(props) {
   return (
     <section className="CardMyFav_container">
       <div>
-        <img
-          src={`${window.location.origin}/img/${data.photo}`}
-          alt="myfav"
-          className="Capon_img"
-        />
+        <img src={`${window.location.origin}/img/${data.photo}`} alt="myfav" />
       </div>
       {/* 這裡要撈資料 */}
-      <ul className="myfav_detail_list">
+      <ul className="detail_list">
         <li>商品名稱：{data.product_name}</li>
         <li>商品編號：{data.product_no}</li>
         <li>金額：${data.price}</li>
-        <li>商品總類：{data.product_type}</li>
+        {/* <li>商品總類：{data.product_type}</li> */}
       </ul>
       <div className="btn_group">
         <span

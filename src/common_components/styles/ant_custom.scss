@@ -46,32 +46,33 @@ $asideWidth: 256px;
 }
 
 // ------------------------- ANT 調整 -------------------------
+/deep/ {
+  // 消除
+  .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #000000d5;
+  }
 
-// 消除
-.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
-  color: #000000d5;
-}
+  // 消除
+  .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab-active,
+  .ant-tabs-card > div > .ant-tabs-nav .ant-tabs-tab-active {
+    color: #000000d5;
+  }
 
-// 消除
-.ant-tabs-card > .ant-tabs-nav .ant-tabs-tab-active,
-.ant-tabs-card > div > .ant-tabs-nav .ant-tabs-tab-active {
-  color: #000000d5;
-}
+  // 消除 border
+  .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab,
+  .ant-tabs-card > div > .ant-tabs-nav .ant-tabs-tab {
+    border: initial;
+  }
+  // 消除
+  .ant-tabs-tab:hover {
+    color: initial;
+  }
 
-// 消除 border
-.ant-tabs-card > .ant-tabs-nav .ant-tabs-tab,
-.ant-tabs-card > div > .ant-tabs-nav .ant-tabs-tab {
-  border: initial;
-}
-// 消除
-.ant-tabs-tab:hover {
-  color: initial;
-}
-
-// 消除
-.ant-tabs-tab-btn:focus,
-.ant-tabs-tab-remove:focus,
-.ant-tabs-tab-btn:active,
-.ant-tabs-tab-remove:active {
-  color: #000000d5;
+  // 消除
+  .ant-tabs-tab-btn:focus,
+  .ant-tabs-tab-remove:focus,
+  .ant-tabs-tab-btn:active,
+  .ant-tabs-tab-remove:active {
+    color: #000000d5;
+  }
 }
