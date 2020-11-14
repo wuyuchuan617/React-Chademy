@@ -275,6 +275,8 @@ function MyNavbar(props) {
             )}
           </Nav>
         </Navbar.Collapse>
+
+        {props.children}
       </Navbar>
       {clickcart ? (
         <CartArea

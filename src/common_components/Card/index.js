@@ -36,7 +36,7 @@ function Card(props) {
       <div className="img_list">
         {['新品上市', '創意客製', '專屬推薦'].map((item, index) => (
           <div className="img_item text-center" key={index}>
-            <figure className="fuck">
+            <figure className="img_box">
               <figcaption className="text-center img_title">{item}</figcaption>
               <img src={imageChpr} alt={item} />
             </figure>

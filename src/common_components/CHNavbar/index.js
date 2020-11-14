@@ -28,12 +28,13 @@ export default function CHNavbar(props) {
         setNavbarHeight={setNavbarHeight}
         cartamount={cartamount}
         setCartAmount={setCartAmount}
-      />
-      <NavbarPerview
-        activeName={activeName}
-        navbarHeight={navbarHeight}
-        setActiveName={setActiveName}
-      />
+      >
+        <NavbarPerview
+          activeName={activeName}
+          navbarHeight={navbarHeight}
+          setActiveName={setActiveName}
+        />
+      </Navbar>
     </div>
   )
 }
