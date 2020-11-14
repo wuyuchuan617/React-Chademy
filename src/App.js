@@ -86,7 +86,7 @@ function App() {
   const [subtotal, setSubtoal] = useState(0)
   const [resetShow, setResetShow] = useState(0)
   const [showDashBoard, setDashboard] = useState(false)
-  const [typeofProduct, setTypeofProduct] = useState(0)
+  const [typeofProduct, setTypeofProduct] = useState(1)
   //-----------------------------------------------------------
   return showDashBoard ? (
     <Router>
