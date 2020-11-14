@@ -14,17 +14,18 @@ function MyFav(props) {
 
   console.log(' props  ', props)
 
+  const fetchData = async () => {
+    const response = await request({
+      url: `/members/getUserMyFav`,
+      method: 'POST',
+      data: {},
+    })
+
+    setmyfavlist(response.data || {})
+  }
+
   // https://www.digitalocean.com/community/tutorials/creating-a-custom-usefetch-react-hook
   React.useEffect(() => {
-    const fetchData = async () => {
-      const response = await request({
-        url: `/members/getUserMyFav`,
-        method: 'POST',
-        data: {},
-      })
-
-      setmyfavlist(response.data || {})
-    }
     fetchData()
   }, [])
 
@@ -50,7 +51,12 @@ function MyFav(props) {
                 myfavlist.map(
                   (item, index) =>
                     item.product_type === Number(tabItem.key) && (
-                      <CardMyFav {...props} key={index} data={item}></CardMyFav>
+                      <CardMyFav
+                        {...props}
+                        key={index}
+                        data={item}
+                        fetchData={fetchData}
+                      ></CardMyFav>
                     )
                 )
               )}
