@@ -12,10 +12,7 @@ function CartList(props) {
     setMyCart,
     showLoading,
     setShowLoading,
-    myCartDisplay,
-    setMyCartDisplay,
     typeofProduct,
-    setTypeofProduct,
   } = props
   // const [showLoading, setShowLoading] = useState(false)
   // const [myCartDisplay, setMyCartDisplay] = useState([])
@@ -31,6 +28,7 @@ function CartList(props) {
     for (let i = 0; i < cartArray.length; i++) {
       if (cartArray[i].category === typeofProduct) {
         putArray.push(cartArray[i])
+        console.log('hello')
       }
     }
     // console.log(newCart)
