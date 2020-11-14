@@ -200,11 +200,11 @@ function Custom(props) {
 
         <div className="parallax"></div>
 
-        <div className="container">
+        {/* <div className="container">
           <div className="row justify-content-center">
             <img src={require('../images/Group 186.png')} alt="" />
           </div>
-        </div>
+        </div> */}
 
         <div className="container-fluid w_container_fluid">
           <div className="row">

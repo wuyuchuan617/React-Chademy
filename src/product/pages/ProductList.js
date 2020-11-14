@@ -15,6 +15,7 @@ import BannerVideo from '../components/BannerVideo'
 import ProductPopular from '../components/ProductPopular'
 import ProductSeries from '../components/ProductSeries'
 import ProductCard from '../components/ProductCard'
+import CustomCard from '../components/CustomCard'
 import CouponModal from '../components/CouponModal'
 import ListNew from '../components/ListNew'
 import NewsLetter from '../components/NewsLetter'
@@ -255,6 +256,7 @@ function ProductList(props) {
       <BannerVideo />
 
       <ProductPopular />
+      <CustomCard />
       <ListNew />
 
       <ProductSeries setSeries={setSeries} />
