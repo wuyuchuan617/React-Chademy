@@ -1,15 +1,11 @@
 // 頁籤
 .g_lablebox {
-    // width: 200px;
     height: 40px;
     cursor: pointer;
   }
   
   .g_activelable {
-    // width: 600px;
-    // height: 40px;
     text-align: center;
-    // background-color: #bdc5c7;
     color: #707070;
     line-height: 40px;
     letter-spacing: 3px;
@@ -28,15 +24,10 @@
   }
   
   .g_defaultlable {
-    // width: 600px;
     height: 40px;
-    // border: 5px #bdc5c7;
     text-align: center;
     line-height: 40px;
-    // background-color: #edece8;
-    // margin-bottom: 50px;
     letter-spacing: 3px;
     font-size: 16px;
     color: #707070;
-    // border: 1px solid #bdc5c7;
   }

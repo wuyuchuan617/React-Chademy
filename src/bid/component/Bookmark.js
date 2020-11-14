@@ -26,8 +26,8 @@ function Bookmark(props) {
 
   return (
     <>
-      <div className="row ">
-        <div className="col-8 d-flex grace1">
+      <div className=" ">
+        <div className="col d-flex grace1">
           <div
             onClick={(event) => {
               addcolor(event)

@@ -91,19 +91,19 @@ a:hover {
   box-shadow: 0 0 0px 0px #c77334 !important;
 }
 
-// 點點一般狀態
+/* // 點點一般狀態 */
 .ikyGAt {
   box-shadow: 0 0 0px 0px #c77334 !important;
   background-color: white !important;
 }
 
-// 點點選取狀態
+/* // 點點選取狀態 */
 .brcpxa {
   background-color: #c77334 !important;
   box-shadow: 0 0 0px 0px #c77334 !important;
 }
 
-// 左右btn無border
+/* // 左右btn無border */
 .chowzb {
   box-shadow: 0 0 0px 0px #c77334 !important;
 }

@@ -38,13 +38,7 @@ function BpCard(props) {
   } = props
   const [comma2, setComma2] = useState(null)
 
-  let ss = item.startingDate
-  let ee = item.bidDate
-  // console.log('ss',ss)
-  // console.log('ee',ee)
   function getTimeRemaining(startdate, enddate) {
-    // const s_time = Date.parse(startdate);
-    // const e_time = Date.parse(enddate);
     const s_time = new Date(startdate).getTime()
     const e_time = new Date(enddate).getTime()
     const total = e_time - s_time
@@ -53,10 +47,8 @@ function BpCard(props) {
   useEffect(() => {
     let a = new Date(item.bidDate).getTime() - Date.now()
     setTotalb(a)
-    // console.log('a',a)
   }, [])
   const Completionist = () => <span>Sold Out!</span>
-  // console.log('totalb',totalb)
 
   // Renderer callback with condition
   const renderer = ({ hours, minutes, seconds, completed }) => {
@@ -157,7 +149,7 @@ function BpCard(props) {
               </Card.Text>
             </Card.Body>
           </Card>
-        </Link>
+         </Link>
       </div>
     </>
   )

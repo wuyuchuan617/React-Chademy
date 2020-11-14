@@ -6,8 +6,6 @@
 
 import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
-// import useInterval from '@use-it/interval';
-import useInterval from 'use-interval'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import Slider from '../component/Slider'
 import Bookmark from '../component/Bookmark'
@@ -16,31 +14,20 @@ import Setprice from '../component/Setprice'
 import Carousel from 'react-elastic-carousel'
 import Sidepic from '../component/Sidepic'
 import '../styles/desc.scss'
-import { withRouter, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import '../styles/designer.scss'
 import { Button, Modal } from 'react-bootstrap'
 import Modalsetprice from '../component/Modalsetprice'
-import Countdown, {
-  zeroPad,
-  calcTimeDelta,
-  formatTimeDelta,
-} from 'react-countdown'
-import Confirm from '../component/Confirm'
-// import { BsFillHeartFill } from 'react-icons/bs'
-// import { HeartOutlined } from '@ant-design/icons';
+import Countdown, { zeroPad } from 'react-countdown'
 import Counter from '../component/Counter'
-import QueueAnim from 'rc-queue-anim'
-// import Button from 'antd/lib/button'
 import ScrollParallax from 'rc-scroll-anim/lib/ScrollParallax'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
-import { GrWindows } from 'react-icons/gr'
+import ReactCSSTransitionGroup from 'react-transition-group' // ES6
+import 'animate.css/animate.css'
 function Desc(props) {
   let { id } = useParams()
-  //<3 css
-  const heartFill = {
-    color: '#C77334',
-  }
+
   const {
     price,
     setPrice,
@@ -69,18 +56,19 @@ function Desc(props) {
   const [startprice, setStartprice] = useState([])
   const [part, setPart] = useState([])
   const [visiter, setVisiter] = useState([])
-  const [day, setDay] = useState(0)
   const [sdate, setSdate] = useState('')
   const [edate, setEdate] = useState('')
-  const [sec, setSec] = useState(0)
-  const [member2, setMember2] = useState('')
-  const [heart, setHeart] = useState(false)
-  const [heartItem, setHeartItem] = useState({})
   const [modalShow, setModalShow] = React.useState(false)
   const [noShowModel, setNoShowModel] = useState(false)
   const [changepage, setChangepage] = useState(2)
+  const [inputValue, setInputValue] = useState('')
+
   // 判斷登入的狀態
   const isLogged = useSelector((state) => state.user.logged)
+  // 判斷 scrolltop
+  const [lastOffset, setLastOffset] = useState(0)
+  // 設定競標資料索引值
+  let tempDataIndex = 0
 
   async function initData() {
     const url = `http://localhost:3001/product/api/bid/${id}`
@@ -151,16 +139,42 @@ function Desc(props) {
     setMember(data)
   }
 
+  async function subscribe(inputValue) {
+    const url = 'http://localhost:3001/product/api/sub'
+
+    const subscriber = {
+      member_sid: JSON.parse(localStorage.getItem('reduxState')).user.users.sid,
+      product_sid: id,
+      sub_price: inputValue,
+      total_price: price,
+      name: JSON.parse(localStorage.getItem('reduxState')).user.users.name,
+      sub_email: JSON.parse(localStorage.getItem('reduxState')).user.users
+        .email,
+    }
+    const request = new Request(url, {
+      method: 'POST',
+      body: JSON.stringify(subscriber),
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    const response = await fetch(request)
+    const data = await response.json()
+    console.log(data)
+  }
+
   async function addprice(value) {
     const url = 'http://localhost:3001/product/api/record'
     const copyPrice = price
     const newPrice = {
-      member_sid: member2,
+      member_sid: JSON.parse(localStorage.getItem('reduxState')).user.users.sid,
       product_sid: id,
       bid_sid: id,
       price: value,
       total_price: +copyPrice + value * 1,
       sid: id,
+      name: JSON.parse(localStorage.getItem('reduxState')).user.users.name,
       email: JSON.parse(localStorage.getItem('reduxState')).user.users.email,
     }
 
@@ -175,6 +189,7 @@ function Desc(props) {
     const response = await fetch(request)
     const data = await response.json()
     setPrice(+copyPrice + value * 1)
+    console.log('add fn', price)
   }
 
   const [chair, setChair] = useState(null)
@@ -183,32 +198,45 @@ function Desc(props) {
     getDesigner()
     getMember()
     //  getCartFromLocalStorage()
+  }, [])
+
+  //scroll event
+  useEffect(() => {
     window.addEventListener('scroll', fixed)
     const fixpoint = document.querySelector('.bidinfo')
     const line = document.querySelector('.line')
     // const scrollpoint = document.querySelector('.grace-fixpoint')
 
     function fixed() {
-      let y = fixpoint.offsetTop
-      console.log('fixpoint.offsetTop', fixpoint.offsetTop)
-      console.log('window.pageYOffset', window.pageYOffset)
-      if (window.pageYOffset >= y) {
+      // console.log('fixpoint.offsetTop', fixpoint.offsetTop)
+      // console.log('window.pageYOffset', window.pageYOffset)
+      let lastO = lastOffset
+
+      if (lastO > window.pageYOffset) {
+        // console.log('up')
+      } else if (lastO < window.pageYOffset) {
+        // console.log('down')
+      }
+
+      if (window.pageYOffset >= 320 && window.pageYOffset < 1334) {
         fixpoint.classList.add('g-fixed')
         line.classList.add('g-fixed-line')
-      }
-      if (window.pageYOffset < y) {
+        fixpoint.classList.remove('g-unfixed')
+
+        line.classList.remove('g-unfixed-line')
+      } else if (window.pageYOffset < 332) {
         fixpoint.classList.remove('g-fixed')
         line.classList.remove('g-fixed-line')
-      }
-      if (window.pageYOffset > 1500) {
+      } else if (window.pageYOffset >= 1334) {
         fixpoint.classList.remove('g-fixed')
+        fixpoint.classList.add('g-unfixed')
         line.classList.remove('g-fixed-line')
+        line.classList.add('g-unfixed-line')
       }
+
+      setLastOffset(window.pageYOffset)
     }
-  }, [])
-  useEffect(() => {
-    getCartFromLocalStorage()
-  }, [isLogged])
+  }, [lastOffset])
 
   useEffect(() => {
     setChair(`http://localhost:3000/uploads/${productpic[0]}`)
@@ -216,11 +244,7 @@ function Desc(props) {
 
   //countdown
   function getTimeRemaining(enddate) {
-    // const s_time = Date.parse(startdate);
-    // const e_time = Date.parse(enddate);
-    // const s_time = Date.now();
     const s_time = new Date(startdate).getTime()
-
     const e_time = new Date(enddate).getTime()
     const total = e_time - s_time
 
@@ -282,33 +306,21 @@ function Desc(props) {
   const [comma3, setComma3] = useState(null)
   useEffect(() => {
     const newprice = price
-    const c = numberWithCommas(newprice)
+    const c = numberWithCommas(price)
     setComma(c)
     const d = numberWithCommas(startprice)
     setComma3(d)
+    console.log('comma', price)
   }, [price])
-
-  //get member_sid fn
-  function getCartFromLocalStorage() {
-    const newMember = JSON.parse(localStorage.getItem('reduxState')).user.users
-      .sid
-
-    setMember2(newMember)
+  const [changeColorStatus, setChangeColorStatus] = useState(false)
+  function showRecord() {
+    setChangeColorStatus(true)
+    // const gnext = document.querySelector('.g-next')
+    // if(changeColorStatus && index==1)
+    // gnext.classList.add('g-color')
   }
-  const [state, setState] = useState({
-    show: true,
-    items: [<tr key="0"></tr>],
-  })
+  const gnext = document.querySelector('.g-next')
 
-  function onAdd() {
-    let items = state.items
-    console.log('items', items)
-    items.push(<tr key={Date.now()}></tr>)
-    setState({
-      show: true,
-      items,
-    })
-  }
   return (
     <>
       {/* countdown */}
@@ -316,7 +328,6 @@ function Desc(props) {
       <div className="container">
         <div className="row justify-content-center">
           {/* <Countdown date={Date.now() + (+total) } renderer={renderer}> */}
-
           {total ? (
             <Countdown
               date={new Date(enddate).getTime()}
@@ -335,7 +346,7 @@ function Desc(props) {
             <div className="mainpic">
               <img alt="" src={chair} />
             </div>
-            <div key="b" className="sidepic d-flex">
+            <div className="sidepic d-flex">
               {productpic.map((item, index) => {
                 if (productpic.length > 4) return (productpic.length = 4)
                 return (
@@ -365,7 +376,7 @@ function Desc(props) {
               >
                 <h4 className="text-center">產品簡介</h4>
                 <div className="line2"></div>
-                <p>{desc}</p>
+                <p className="g-intro-length">{desc}</p>
               </ScrollParallax>
             </div>
             <div className="info">
@@ -389,12 +400,82 @@ function Desc(props) {
                     <p>{dimensions}</p>
                   </div>
                   <div className="col-6">
-                    <h4 className="text-center">材質</h4>
-                    <p className="text-left">{material}</p>
+                    <h4 className="text-center ">材質</h4>
+                    <div className="g-material">
+                      <p className="text-left ">{material}</p>
+                    </div>
                   </div>
                 </div>
               </ScrollParallax>
             </div>
+
+            <ScrollParallax
+              animation={[
+                // { x: 0, opacity: 1, playScale: [0, 1.5] },
+                { y: 0, opacity: 1, playScale: [0, 1] },
+                { blur: '10px', playScale: [0, 3] },
+              ]}
+              style={{
+                transform: 'translateY(10px)',
+                filter: 'blur(0px)',
+                opacity: 0,
+              }}
+            >
+              <Bookmark
+                sid={sid}
+                changepage={changepage}
+                setChangepage={setChangepage}
+              />
+
+              <div className="">
+                <div className="col">
+                  <div className="g-bg p-3">
+                    {changepage == 2 ? (
+                      <table className="w-100 text-center mt-3">
+                        <tbody>
+                          <tr className="w-100 text-center">
+                            <th className="w-25">競標者</th>
+                            <th className="w-25">下標金額</th>
+                            <th className="w-25">總金額</th>
+                            <th className="w-25">時間</th>
+                          </tr>
+
+                          {member.map((item, index) => {
+                            if (item.bid_sid !== +id) return
+                            if (tempDataIndex > 5) return
+                            tempDataIndex++
+                            if (changeColorStatus && index == 0)
+                              gnext.classList.add('g-color')
+                            return (
+                              <Record
+                                key={index}
+                                item={item}
+                                {...props}
+                                getMember={getMember}
+                                changepage={changepage}
+                              />
+                            )
+                          })}
+                        </tbody>
+                      </table>
+                    ) : (
+                      <Setprice
+                        changepage={changepage}
+                        {...props}
+                        comma={comma}
+                        chair={chair}
+                        // addprice={addprice}
+                        enddate={enddate}
+                        total={total}
+                        inputValue={inputValue}
+                        setInputValue={setInputValue}
+                        subscribe={subscribe}
+                      />
+                    )}
+                  </div>
+                </div>
+              </div>
+            </ScrollParallax>
           </div>
           <div className="line mx-4"></div>
           <div className="bidinfo">
@@ -417,41 +498,19 @@ function Desc(props) {
             <h4>目前金額</h4>
             <div className="line3 my-4 w-100"></div>
             <h2 className="g-bidprice">${comma}</h2>
-
-            {/* <BsFillHeartFill
-                onClick={async () => {
-                  await setHeart(!heart)
-                  if (heart === false) {
-                    const newHeartItem = {
-                      follow_product: item.product_name,
-                      member_id: 'AMY',
-                      follow_status: 1,
-                    }
-                    await setHeartItem(newHeartItem)
-                  } else {
-                    deleteHeartToServer()
-                    setHeart(false)
-                    setHeartItem({})
-                  }
-                }}
-                style={heart ? heartFill : ''}
-              /> */}
-
-            {/* <HeartOutlined className="g-heart" style={{ fontSize: '18px', color: '#707070', fill: '#707070'}}/> */}
             <p>出價</p>
             {/* {isLogged ? ( */}
-            <div className="d-flex justify-content-between">
+            <div className="g-addprice d-flex justify-content-between">
               <div
                 onClick={() => {
                   setAddmoney(1000)
-                  // addprice(1000)
                   handleShow()
                 }}
                 className="g-price d-flex justify-content-center align-items-center"
               >
                 $1,000
               </div>
-
+              {/* 確定加價modal */}
               <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                   <Modal.Title>Modal heading</Modal.Title>
@@ -466,7 +525,7 @@ function Desc(props) {
                     onClick={() => {
                       addprice(addmoney)
                       handleClose()
-                      onAdd()
+                      showRecord()
                     }}
                   >
                     確定
@@ -476,7 +535,6 @@ function Desc(props) {
               <div
                 onClick={() => {
                   setAddmoney(5000)
-                  // addprice(1000)
                   handleShow()
                 }}
                 className="g-price d-flex justify-content-center align-items-center"
@@ -486,7 +544,6 @@ function Desc(props) {
               <div
                 onClick={() => {
                   setAddmoney(10000)
-                  // addprice(1000)
                   handleShow()
                 }}
                 className="g-price d-flex justify-content-center align-items-center"
@@ -539,79 +596,7 @@ function Desc(props) {
             </Button>
           </div>
         </div>
-        <ScrollParallax
-          animation={[
-            // { x: 0, opacity: 1, playScale: [0, 1.5] },
-            { y: 0, opacity: 1, playScale: [0, 1] },
-            { blur: '10px', playScale: [0, 3] },
-          ]}
-          style={{
-            transform: 'translateY(10px)',
-            filter: 'blur(0px)',
-            opacity: 0,
-          }}
-        >
-          <Bookmark
-            sid={sid}
-            changepage={changepage}
-            setChangepage={setChangepage}
-          />
 
-          <div className="row">
-            <div className="col-8">
-              <div className="g-bg p-3">
-                {changepage == 2 ? (
-                  <table className="w-100 text-center mt-3">
-                    <tbody>
-                      <tr className="w-100 text-center">
-                        <th className="w-25">競標者</th>
-                        <th className="w-25">下標金額</th>
-                        <th className="w-25">總金額</th>
-                        <th className="w-25">時間</th>
-                      </tr>
-                      {/* <Button onChange={onAdd} style={{ marginLeft: 10 }}>
-                        Add
-                      </Button> */}
-                      {/* <QueueAnim
-                      onChange={onAdd}
-                        component="tr"
-                        type={['right', 'left']}
-                        leaveReverse
-                      > */}
-                      {member.map((item, index) => (
-                        <Record
-                          key={index}
-                          item={item}
-                          {...props}
-                          getMember={getMember}
-                          changepage={changepage}
-                        />
-                      ))}
-                      {/* </QueueAnim> */}
-                    </tbody>
-                  </table>
-                ) : (
-                  <Setprice
-                    changepage={changepage}
-                    {...props}
-                    comma={comma}
-                    chair={chair}
-                    addprice={addprice}
-                    enddate={enddate}
-                    total={total}
-                  />
-                )}
-                {/* <Route path="/pages/desc/setprice/:id?"> */}
-
-                {/* </Route> */}
-                {/* <Route path="/pages/desc/spec/:id?">
-        <Spec/>
-      </Route> */}
-                {/* </Switch> */}
-              </div>
-            </div>
-          </div>
-        </ScrollParallax>
         {/* <QueueAnim delay={300} duration={2000} type={['right', 'left']} leaveReverse> */}
         <ScrollParallax
           animation={[
