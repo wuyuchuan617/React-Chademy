@@ -6,7 +6,7 @@ function CustomCard(props) {
 
   return (
     <>
-      <div className="container">
+      <div className="container section">
         <div className="row">
           <div className="w_title1">
             <div className="titlech noto-serif text-center">創意客製</div>
