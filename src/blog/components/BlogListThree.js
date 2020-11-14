@@ -32,8 +32,9 @@ function BlogListThree(props) {
   return (
     <div className="container-fluid ">
       <div className="wrapper10">
-        <div className="annie_title01">
-          <h2>相關文章</h2>
+        <div className="title01">
+          <div className="titlech noto-serif text-center">相關文章</div>
+          <div className="titleEN lora text-center">Correlative Articles</div>
         </div>
 
         <div

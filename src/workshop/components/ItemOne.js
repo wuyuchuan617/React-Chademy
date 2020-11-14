@@ -11,9 +11,10 @@ import Carousel from 'react-elastic-carousel'
 function ItemOne(props) {
   const { oneWorkShop } = props
   return (
-    <div className="wrapper2">
+    <div className="annie_wrapper100">
       <div className="title01">
-        <h2>一日木工體驗</h2>
+        <div className="titlech noto-serif text-center">一日木工體驗</div>
+        <div className="titleEN lora text-center">One day Workshop</div>
       </div>
       <div className="row justify-content-center">
         <Carousel itemsToScroll={3} itemsToShow={3}>

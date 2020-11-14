@@ -104,13 +104,13 @@ function Workshop(props) {
         setChooseClass={setChooseClass}
         getClassFilterFromSQL={getClassFilterFromSQL}
       />
-      <div className="container firstTop">
-        <div className="row  mt-1 wbread">
-          {filterResult.map((item, index) => {
-            return <FilterResultCard key={index} item={item} />
-          })}
-        </div>
+
+      <div className="row justify-content-center">
+        {filterResult.map((item, index) => {
+          return <FilterResultCard key={index} item={item} />
+        })}
       </div>
+
       <Itemone oneWorkShop={oneWorkShop} />
       <Itemtwo />
       <Itemthree threeWorkShop={threeWorkShop} />

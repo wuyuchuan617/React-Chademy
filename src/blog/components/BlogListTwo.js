@@ -93,7 +93,7 @@ function BlogListTwo(props) {
               setMessageTitle(e.target.value)
             }}
             rows="1"
-            cols="122"
+            cols="121"
             className="a_formstyle"
             name="a_description"
           ></textarea>
@@ -104,7 +104,7 @@ function BlogListTwo(props) {
               setMessage(e.target.value)
             }}
             rows="6"
-            cols="122"
+            cols="121"
             className="a_formstyle"
             name="a_description"
           ></textarea>

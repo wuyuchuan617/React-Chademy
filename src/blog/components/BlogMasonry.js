@@ -32,8 +32,9 @@ function BlogMasonry(props) {
 
   return (
     <div className="container annie_title">
-      <div className="annie_title01">
-        <h2>靈感探索</h2>
+      <div className="title01">
+        <div className="titlech noto-serif text-center">靈感探索</div>
+        <div className="titleEN lora text-center">Inspiration Exploration</div>
       </div>
 
       <div

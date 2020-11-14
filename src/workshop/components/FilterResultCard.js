@@ -14,28 +14,29 @@ function FilterResultCard(props) {
   const { item } = props
   return (
     <>
-      <div
-        className="boxoneday col-4"
-        onClick={() => {
-          props.history.push('/WorkshopList/' + item.sid)
-        }}
-      >
-        <div className="upper1">
-          <img src={require('../../img/' + item.images)} />
-          <p>HOT</p>
-          <div className="box100">
-            <img id="image" src={heart} />
-          </div>
-        </div>
+      <div className="annie_wrapper400">
+        <div
+          className="boxonedayfilter"
+          onClick={() => {
+            props.history.push('/WorkshopList/' + item.sid)
+          }}
+        >
+          <div className="upper1filter">
+            <img src={require('../../img/' + item.images)} />
 
-        <div className="wordoneday">
-          <div className="word1oneday">
-            <h4>{item.activitie_name}</h4>
-            <h6>開課日期:{item.start_date}</h6>
-            <h6>地點:{item.address}</h6>
+            <div className="box100filter">
+              <img id="image" src={heart} />
+            </div>
           </div>
-          <div className="price">
-            <h4>${item.sale_price}</h4>
+
+          <div className="wordonedayfilter">
+            <div className="word1onedayfilter">
+              <h4>主題名稱:{item.activitie_name}</h4>
+              <h6>開課日期:{item.start_date}</h6>
+            </div>
+            <div className="pricefilter">
+              <h4>促銷價格:${item.sale_price}</h4>
+            </div>
           </div>
         </div>
       </div>

@@ -1,10 +1,11 @@
 /*一日木工體驗*/
-.wrapper2 {
+.annie_wrapper100 {
   padding-left: 4rem;
   padding-right: 4rem;
-  margin-top: 3rem;
-  background-color: #edece8;
-  margin-bottom: 6rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  /*background-color: #edece8;*/
+  background-color: #deddda;
 }
 
 .title01 h2 {
@@ -28,7 +29,7 @@
 
 .word1oneday h6 {
   font-size: 0.875rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   letter-spacing: 0.2rem;
   color: #1a1818;
   font-family: 'Noto Sans TC', sans-serif;
@@ -54,7 +55,7 @@
   box-shadow: 3px 3px 10px gainsboro;
 }
 
-img {
+.upper1 img {
   max-width: 100%;
 }
 
@@ -120,13 +121,13 @@ img {
 }
 
 /*職人養成班-長條圖*/
-.wrapper3 {
-  padding-left: 7.5rem;
-  padding-right: 7.5rem;
-  margin: 0 auto;
-  margin-top: 3rem;
+
+.annie_wrapper200 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
   background-color: #edece8;
-  margin-bottom: 6rem;
 }
 
 .wordtrain {
@@ -159,7 +160,7 @@ img {
   color: white;
   position: absolute;
   top: 0rem;
-  right: 0rem;
+  right: 12.5rem;
 }
 
 .box200:hover {
@@ -185,7 +186,7 @@ img {
   position: absolute;
   bottom: 0;
   right: 0;
-  margin-right: 200px;
+  margin-right: 210px;
   filter: opacity(0.5);
 }
 
@@ -207,77 +208,11 @@ img {
 
 .word1train h6 {
   font-size: 0.875rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   letter-spacing: 0.2rem;
   color: #1a1818;
   font-family: 'Noto Sans TC', sans-serif;
   font-weight: normal;
-}
-
-/*職人養成班-窄圖*/
-.box3train {
-  overflow: hidden;
-  background-color: #ffffff !important;
-  transition: 0.5s;
-  width: 22.1875rem;
-  margin-bottom: 3.3125rem;
-}
-
-.box3train:hover {
-  box-shadow: 3px 3px 10px gainsboro;
-}
-
-.upper3 {
-  position: relative;
-  width: 22.1875rem;
-  height: 347px;
-}
-
-.box3train .upper3 p {
-  background-color: #c77334;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-right: 2rem;
-  padding-left: 2rem;
-  color: white;
-  position: absolute;
-  top: 0rem;
-  right: 0rem;
-}
-
-.box300:hover {
-  transition: 0.5s;
-  width: 22.1875rem;
-  height: 347px;
-  background: linear-gradient(to bottom, rgba(0, 0, 255, 0), rgb(0, 0, 0, 0.8));
-  position: absolute;
-  top: 0;
-}
-
-.box300 img:hover {
-  width: 10%;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin-right: 0.5rem;
-  filter: opacity(1);
-}
-
-.box300 img {
-  width: 10%;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin-right: 0.5rem;
-  filter: opacity(0.5);
-}
-
-.box300 {
-  width: 22.1875rem;
-  height: 347px;
-  background: linear-gradient(to bottom, rgba(0, 0, 255, 0), rgb(0, 0, 0, 0));
-  position: absolute;
-  top: 0;
 }
 
 /*展覽活動*/
@@ -321,7 +256,7 @@ img {
 
 .word1exhibition h6 {
   font-size: 0.875rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   letter-spacing: 0.2rem;
   color: #1a1818;
   font-family: 'Noto Sans TC', sans-serif;
@@ -395,7 +330,7 @@ img {
 
 .word1worker h6 {
   font-size: 0.875rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   letter-spacing: 0.2rem;
   color: #1a1818;
   font-family: 'Noto Sans TC', sans-serif;
@@ -430,7 +365,7 @@ img {
 
 .word1title h6 {
   font-size: 0.875rem;
-  margin-bottom: 1rem;
+
   letter-spacing: 0.2rem;
   color: #1a1818;
   font-family: 'Noto Sans TC', sans-serif;
@@ -450,7 +385,7 @@ img {
   color: #38393c;
   letter-spacing: 0.2rem;
   margin-top: 2.5rem;
-  margin-right: 3rem;
+  margin-right: 2rem;
   border-radius: 0% !important;
 }
 
@@ -507,12 +442,114 @@ img {
 .a_date_filter {
   position: absolute;
 
-  top: 55%;
-  left: 10%;
+  top: 45%;
+  left: 5%;
   z-index: 20;
 }
 
 .a_filter_bg {
   background-color: #edece8;
   padding-right: 15px;
+}
+
+/* FilterResultCard */
+
+.annie_wrapper400 {
+  padding-top: 0rem;
+  padding-bottom: 4rem;
+  background-color: #edece8;
+}
+
+.word1onedayfilter h4 {
+  font-size: 0.875rem;
+  letter-spacing: 0.2rem;
+  color: #1a1818;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: normal;
+}
+
+.word1onedayfilter h6 {
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.2rem;
+  color: #1a1818;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: normal;
+}
+
+.pricefilter h4 {
+  font-size: 0.875rem;
+  letter-spacing: 0.2rem;
+  color: #1a1818;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: normal;
+}
+
+.boxonedayfilter {
+  overflow: hidden;
+  margin-right: 10px;
+  margin-left: 10px;
+  transition: 0.5s;
+}
+
+.upper1filter img {
+  max-width: 100%;
+}
+
+.wordonedayfilter {
+  padding-top: 0.5rem;
+  padding-right: 0.2rem;
+}
+
+.upper1filter {
+  position: relative;
+  width: 21.25rem;
+  height: 232px;
+}
+
+.boxonedayfilter .upper1filter p {
+  background-color: #c77334;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  color: white;
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+}
+
+.box100filter:hover {
+  transition: 0.5s;
+  width: 21.25rem;
+  height: 232px;
+  background: linear-gradient(to bottom, rgba(0, 0, 255, 0), rgb(0, 0, 0, 0.8));
+  position: absolute;
+  top: 0;
+}
+
+.box100filter img:hover {
+  width: 10%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 0.5rem;
+  filter: opacity(1);
+}
+
+.box100filter img {
+  width: 10%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 0.5rem;
+  filter: opacity(0.5);
+}
+
+.box100filter {
+  width: 21.25rem;
+  height: 232px;
+  background: linear-gradient(to bottom, rgba(0, 0, 255, 0), rgb(0, 0, 0, 0));
+  position: absolute;
+  top: 0;
 }

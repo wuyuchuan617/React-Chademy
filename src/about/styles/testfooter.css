@@ -1,0 +1,76 @@
+footer {
+  padding: 30px 0;
+  width: 100%;
+  background-color: #ded5c6;
+  background-size: cover;
+  background-position: top center;
+  margin-bottom: 100px;
+}
+
+.footer-logo-container {
+  width: 124px;
+  margin: 0 auto;
+}
+
+.a_icons {
+  width: 25px;
+  margin: 0 10px;
+  transition: all 0.5s ease 0s;
+  filter: opacity(0.5);
+  cursor: pointer;
+}
+
+.a_icons:hover {
+  filter: opacity(1);
+}
+
+.footer-navbar {
+  margin-top: 35px;
+}
+
+.footer-navbar a,
+.footer-sub-navbar a {
+  font-family: 'Noto Serif TC', serif;
+  color: #707070;
+  transition: color 0.3s;
+}
+
+.footer-navbar a:hover,
+.footer-sub-navbar a:hover {
+  color: #1a1818;
+}
+
+.footer-sub-navbar a {
+  font-size: 12px;
+}
+
+.footer-navbar a:before,
+.footer-sub-navbar a:before {
+  content: '';
+  display: inline-block;
+  height: 10px;
+  width: 1.5px;
+  background-color: #c77334;
+  margin: 0 15px;
+  pointer-events: none;
+}
+
+.footer-sub-navbar a:before {
+  margin: 0 10px;
+}
+.footer-navbar .workchance a:before,
+.footer-sub-navbar .privacy a:before {
+  content: unset;
+}
+.copyright {
+  font-family: 'Noto Serif TC', serif;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #1a1818;
+  text-align: center;
+}
+.copyright a {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 12px;
+  color: #c77334;
+}

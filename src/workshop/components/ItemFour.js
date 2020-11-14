@@ -14,9 +14,10 @@ import Carousel from 'react-elastic-carousel'
 
 function ItemFour(props) {
   return (
-    <div className="wrapper2">
+    <div className="annie_wrapper200">
       <div className="title01">
-        <h2>木工創客</h2>
+        <div className="titlech noto-serif text-center">木工創客</div>
+        <div className="titleEN lora text-center">Wood Maker</div>
       </div>
       <div className="row justify-content-center">
         <Carousel itemsToScroll={2} itemsToShow={2}>

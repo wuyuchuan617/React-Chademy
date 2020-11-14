@@ -16,9 +16,10 @@ import Carousel from 'react-elastic-carousel'
 
 function ItemTwo(props) {
   return (
-    <div className="wrapper2">
+    <div className="annie_wrapper200">
       <div className="title01">
-        <h2>職人養成班</h2>
+        <div className="titlech noto-serif text-center">職人養成班</div>
+        <div className="titleEN lora text-center">Professional Class</div>
       </div>
       <div className="row justify-content-center">
         <Carousel itemsToScroll={2} itemsToShow={2}>
@@ -46,7 +47,7 @@ function ItemTwo(props) {
           <div className="box2train">
             <div className="upper2">
               <img src={imagesix} />
-              <p>HOT</p>
+
               <div className="box200">
                 <img id="image" src={heart} />
               </div>
