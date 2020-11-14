@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react'
 // ------------------以下引入Components----------------------------
 
 import Filter from '../../common_components/Filter'
+import BannerVideo from '../components/BannerVideo'
 import ProductPopular from '../components/ProductPopular'
 import ProductSeries from '../components/ProductSeries'
 import ProductCard from '../components/ProductCard'
@@ -246,15 +247,7 @@ function ProductList(props) {
         getTotalFromSQL={getTotalFromSQL}
       />
 
-      <video
-        src={bannerVideo}
-        className="w-100"
-        autoplay="autoplay"
-        muted="true"
-        preload="auto"
-      ></video>
-
-      {/* <Breadcrumb /> */}
+      <BannerVideo />
 
       <ProductPopular />
       <ListNew />
@@ -285,7 +278,9 @@ function ProductList(props) {
           </button>
         </div>
       </div>
+
       <NewsLetter />
+
       <BackTop
         visibilityHeight="2000"
         style={{
