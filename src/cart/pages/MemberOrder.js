@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import Aside from '../../common_components/Aside/index'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import PendingOrder from '../components/PendingOrder'
 import AllOrder from '../components/AllOrder'
 import CancelOrder from '../components/CancelOrder'

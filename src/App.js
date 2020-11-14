@@ -374,6 +374,7 @@ function App() {
                 setCartAmount={setCartAmount}
                 typeofProduct={typeofProduct}
                 setTypeofProduct={setTypeofProduct}
+                typeofProduct={typeofProduct}
               />
             </Route>
 

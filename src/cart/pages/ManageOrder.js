@@ -1,23 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { countries, townships, postcodes } from '../components/Data'
 import { Table, Tag, Space } from 'antd'
-import { Menu } from 'antd'
 
-import {
-  AppstoreOutlined,
-  MailOutlined,
-  SettingOutlined,
-} from '@ant-design/icons'
 import { Modal, Button } from 'antd'
 import DashBoardAside from '../components/DashBoardAside'
 
-const { SubMenu } = Menu
-
-// submenu keys of first level
-const rootSubmenuKeys = ['sub1', 'sub2', 'sub4']
-
 function ManagerOrder(props) {
-  const { showDashBoard, setDashboard } = props
+  const { setDashboard } = props
   const [data, setData] = useState([])
   const [visible, setVisible] = useState(false)
   const [detailData, setDetailData] = useState([])

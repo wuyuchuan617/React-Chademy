@@ -48,6 +48,7 @@ function CheckInfo(props) {
   const newarea = townships[city2][area2]
   const submitData = {
     PO_NO: `PO${+date}`,
+    category: typeofProduct,
     member: name,
     qualify: 1,
     delivery_adress: `${newcity}${newarea}${adress}`,
@@ -165,7 +166,7 @@ function CheckInfo(props) {
           />
         </div>
         <div className="inputcheckinfo">
-          <div style={{ display: 'flex', marginBottom: '20px' }}>
+          <div style={{ display: 'flex' }}>
             <div
               className={showCreditCard ? 'activelable' : 'defaultlable'}
               onClick={() => {
