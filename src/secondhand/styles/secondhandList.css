@@ -7,7 +7,11 @@ body {
   margin: 0;
   padding: 0;
 }
-
+.i_fix{
+  position: fixed;
+  display:block;
+  top:300px;
+}
 .i_fv {
   width: 100%;
   position: relative;
@@ -218,3 +222,4 @@ body {
 .i_li li:hover {
   color: rgb(199, 115, 52);
 }
+

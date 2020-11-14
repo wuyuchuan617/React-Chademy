@@ -60,13 +60,14 @@ const MyproductTd = (props) => {
         <td className="i_tdimg">
           <img src={`http://localhost:3001/img/` + item.photo} />
         </td>
-        <td className="i_tdpd">{item.productname}</td>
+        <td className="i_tdpd">{item.product_name}</td>
         <td className="i_tdpd">{item.price}</td>
         <td className="i_tdpd">
           <VscTrash className="mystyles" onClick={showModal} />
         </td>
         <Modal
           title=""
+          className="ii_style"
           visible={visible}
           headStyle={{ backgroundColor: '#EDECE8' }}
           bodyStyle={{ backgroundColor: '#EDECE8' }}

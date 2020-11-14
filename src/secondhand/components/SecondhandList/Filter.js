@@ -6,12 +6,25 @@ const Filter = (props) => {
 
   // useEffect(() => {
   //   window.addEventListener('scroll', fixed)
-  //   const filteri = document.querySelector('i_filter_list')
+  //   const filteri = document.querySelector('.i_filter_list')
+  //   const btn1 = document.querySelector('.i_btn1')
 
   //   function fixed() {
   //     let y = filteri.offsetTop
+  //     let z = btn1.offsetTop
+  //     console.log('z', z)
   //     console.log('y', y)
   //     console.log('window.pageYOffset', window.pageYOffset)
+
+  //     // 捲動高度>要顯示高度 或 捲動高度<要消失高度 => add fixed class
+  //     if (window.pageYOffset >= y || window.pageYOffset < z) {
+  //       filteri.classList.add('i_fix')
+  //     }
+
+  //     // 捲動高度<要顯示高度 或 捲動高度>要消失高度 => remove fixed class
+  //     if (window.pageYOffset < y || window.pageYOffset > z) {
+  //       filteri.classList.remove('i_fix')
+  //     }
   //   }
   // }, [window.pageYOffset])
   return (

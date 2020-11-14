@@ -7,7 +7,7 @@ import '../styles/FundItem.scss'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import Carousel from 'react-elastic-carousel'
 import SliderE from '../components/SliderE'
-import BreadcrumbwTwo from '../components/BreadcrumbwTwo'
+// import BreadcrumbwTwo from '../components/BreadcrumbwTwo'
 
 function FundItem(props) {
   const [localData, setLocalData] = useState([])
@@ -99,9 +99,9 @@ function FundItem(props) {
   return (
     <>
       <div className="container">
-        {product.map((item, index) => {
+        {/* {product.map((item, index) => {
           return <BreadcrumbwTwo key={index} item={item} product={product} />
-        })}
+        })} */}
       </div>
       {/* <BreadcrumbwTwo item={item} /> */}
       {product.map((item, index) => {

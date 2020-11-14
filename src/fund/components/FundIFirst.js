@@ -23,7 +23,7 @@ import dt2 from '../images/dt2.jpeg'
 import dt3 from '../images/dt3.jpeg'
 import dt4 from '../images/dt4-1.jpeg'
 import dt5 from '../images/Image 32.png'
-import ItemModal from '../components/ItemModal'
+// import ItemModal from '../components/ItemModal'
 // import Breadcrumbw from '../components/Breadcrumbw'
 
 function FundIFirst(props) {
@@ -317,7 +317,7 @@ function FundIFirst(props) {
                 <p className="e_mann">贊助人數 :{item.e_men}人</p>
               </div>
 
-              <ItemModal show={show} setShow={setShow} />
+              {/* <ItemModal show={show} setShow={setShow} /> */}
 
               {isLogged ? (
                 <button
