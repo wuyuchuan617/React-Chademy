@@ -4,16 +4,19 @@ import { Affix, Button } from 'antd'
 const Filter = (props) => {
   const { searchProduct } = props
 
-  // useEffect(() => {
-  //   window.addEventListener('scroll', fixed)
-  //   const filteri = document.querySelector('i_filter_list')
+  useEffect(() => {
+    window.addEventListener('scroll', fixed)
+    const filteri = document.querySelector('.i_filter_list')
+    const btn1 = document.querySelector('.i_btn1')
 
-  //   function fixed() {
-  //     let y = filteri.offsetTop
-  //     console.log('y', y)
-  //     console.log('window.pageYOffset', window.pageYOffset)
-  //   }
-  // }, [window.pageYOffset])
+    function fixed() {
+      let y = filteri.offsetTop
+      let z = btn1.offsetTop
+      console.log('y', y)
+      console.log('z', z)
+      console.log('window.pageYOffset', window.pageYOffset)
+    }
+  }, [window.pageYOffset])
   return (
     // <Affix
     //   offsetTop={120}

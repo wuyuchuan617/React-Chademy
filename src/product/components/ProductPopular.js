@@ -6,7 +6,7 @@ import 'aos/dist/aos.css'
 import Breadcrumbww from '../components/Breadcrumbww'
 
 function ProductPopular(props) {
-  const { item } = props
+  // const { item } = props
   useEffect(() => {
     AOS.init()
     AOS.refresh()

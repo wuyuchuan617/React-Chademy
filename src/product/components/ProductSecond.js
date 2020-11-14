@@ -1,15 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { withRouter, useHistory } from 'react-router-dom'
+import 'aos/dist/aos.css'
+import AOS from 'aos'
 
 function ProductSecond(props) {
   const { product } = props
   console.log(product)
-
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
   return (
     <>
       <div className="container">
         <div className="row">
-          <div className="col second-text">
+          <div className="col second-text" data-aos="fade-right">
             <p className="w_comP">
               柔軟的設計、細微的細節以及曲線造型使其不存在視覺欣賞的死角。Henrik
               Pedersen
@@ -23,7 +28,7 @@ function ProductSecond(props) {
               魔術貼以防止滑動。
             </p>
           </div>
-          <div className="col-sm-12 col-lg-6 second-photo">
+          <div className="col-sm-12 col-lg-6 second-photo" data-aos="fade-left">
             <img
               src={
                 'https://oandd.dk/wp-content/uploads/2018/12/TwoTone_SandBlack_WireDiningChair_OvergaardDyrman_6378-1024x689.jpg'

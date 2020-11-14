@@ -12,11 +12,22 @@ import Aside from '../../common_components/Aside/index'
 import '../styles/review.css'
 import '../../common_components/Aside/index.scoped.scss'
 import '../../member/MemberCenter/index.scoped.scss'
+import { useParams } from 'react-router-dom'
 const { Header, Sider, Content } = Layout
 
 // -----------------------以下開始Component Product-----------------
 
 function Review(props) {
+  const { po } = useParams()
+  let newPo = po.split('&')
+
+  let poNO = newPo[0]
+  let productNO = newPo[1]
+  console.log('po', po)
+  console.log('typeof po', typeof po)
+  console.log('newPo', newPo)
+  console.log('poNO', poNO)
+  console.log('productNO', productNO)
   // -----------------------以下開始useState狀態設定-----------------
 
   // 以下六個為demo btn 預設文字
@@ -40,6 +51,7 @@ function Review(props) {
 
   // 會員
   const [member, setMember] = useState('')
+  const [memberName, setMemberName] = useState('')
 
   // ---------------以下開始fetch SQL get data function-----------------
 
@@ -91,10 +103,13 @@ function Review(props) {
   function getCartFromLocalStorage() {
     const newMember = JSON.parse(localStorage.getItem('reduxState')).user.users
       .sid
+    const newMemberName = JSON.parse(localStorage.getItem('reduxState')).user
+      .users.name
 
     console.log('newMember', newMember)
     console.log(typeof newMember)
     setMember(newMember)
+    setMemberName(newMemberName)
   }
 
   useEffect(() => {
@@ -150,7 +165,7 @@ function Review(props) {
           <Content style={{ padding: '0 50px' }}>
             <div className=" text-center my-2">
               <p>新增評論</p>
-              <p>您好，Amy 感謝您的購買</p>
+              <p>您好， {memberName}感謝您的購買</p>
             </div>
             <form
               className="w_formcss1"
@@ -205,10 +220,10 @@ function Review(props) {
                   <div
                     className="btnDemo text-center mt-4"
                     onClick={() => {
-                      setOrderProductNo('CH29')
-                      setOrderProduct('204RH')
-                      setOrderNo('OVER1234')
-                      setOrderDate('2020.08.31')
+                      // setOrderProductNo('CH29')
+                      // setOrderProduct('204RH')
+                      // setOrderNo('OVER1234')
+                      // setOrderDate('2020.08.31')
                       setReviewTitle('質感非常好！')
                       setReviewComment(
                         `過去幾年來，我們創作了幾個空間，秉持著NV一向自然、原始、純粹的風格，希望讓大家拋開過去非得要”裝潢”的概念，讓空間載體本身回歸乾淨簡單，再佐上我們為您搭配的歐洲經典傢俱家飾物件，由我們親自設計施作的木作，就是要讓您展現任性、自豪又絕對脫俗的居家品味。“把喜歡的美感傳達出去`
@@ -226,7 +241,7 @@ function Review(props) {
                       <input
                         type="text"
                         className="formstyle formwidthw1"
-                        value={orderProduct}
+                        value={productNO}
                         id="productname"
                         name="buy_product"
                       />
@@ -236,7 +251,7 @@ function Review(props) {
                       <input
                         type="text"
                         className="formstyle formwidthw1"
-                        value={orderProductNo}
+                        value={poNO}
                         name="order_no"
                         id="productname"
                       />
