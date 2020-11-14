@@ -392,6 +392,25 @@ function ProductFirst(props) {
                   </LineShareButton>
                 </div>
               </div>
+
+              <div class="">
+                <div class="js-qty quantity-selector" id="Quantity-product">
+                  <span class="js-qty__adjust js-qty__adjust--minus quantity__minus">
+                    −
+                  </span>
+                  <input
+                    class="text quantity js-qty__num quantity__input"
+                    name="quantity"
+                    value="1"
+                    min="1"
+                    aria-label="quantity"
+                    pattern="[0-9]*"
+                  />
+                  <span class="js-qty__adjust js-qty__adjust--plus quantity__plus">
+                    +
+                  </span>
+                </div>
+              </div>
               {isLogged ? (
                 <div
                   className="btn_lessmargin more w_cart-btn"
