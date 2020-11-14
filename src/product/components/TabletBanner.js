@@ -1,7 +1,7 @@
 import React from 'react'
 
 function TabletBanner(props) {
-  const { item } = props
+  // const { item } = props
 
   return (
     <>
