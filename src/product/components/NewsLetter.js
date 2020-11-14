@@ -25,13 +25,13 @@ function NewsLetter() {
               />
             </div>
             <div className="formset reviewInput w_news3">
-              <label for="productname ">Email</label>
+              <label for="productname1 ">Email</label>
               <input
                 type="text"
                 className="formstyleww formwidthw1"
                 // value={orderProductNo}
                 name="order_no"
-                id="productname"
+                id="productname1"
               />
             </div>
             <div className="btn_lessmargin more w_cart-btn ">訂閱電子報</div>
