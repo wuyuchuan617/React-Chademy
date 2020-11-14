@@ -76,7 +76,7 @@ function Custom(props) {
           <BreadcrumCustom />
         </div>
       </div>
-      {/* <div class="text">文章</div> */}
+      {/* <div className="text">文章</div> */}
 
       <Form
         labelCol={{ span: 4 }}
@@ -195,7 +195,7 @@ function Custom(props) {
           </div>
         </div>
 
-        <div class="parallax"></div>
+        <div className="parallax"></div>
 
         <div className="container">
           <div className="row justify-content-center">

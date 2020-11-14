@@ -17,7 +17,7 @@ function NoReviewCard(props) {
               <img src={require('../images/newbg.jpg')} alt="" />
             </div>
             <div className="col-5 d-flex">
-              <div class="product-left-border d-none d-lg-block"></div>
+              <div className="product-left-border d-none d-lg-block"></div>
               <div className="ShopTheLook__ProductList">
                 <img src={require('../images/new2.jpg')} alt="" />
                 <p className="text-center w_ins_title">栗子棕絨面古董椅</p>
@@ -26,7 +26,7 @@ function NoReviewCard(props) {
                 </p>
                 <button className="w_new-btn">Check</button>
               </div>
-              <div class="product-right-border d-none d-lg-block"></div>
+              <div className="product-right-border d-none d-lg-block"></div>
             </div>
           </div>
 
@@ -35,7 +35,7 @@ function NoReviewCard(props) {
               <img src={require('../images/new21.jpg')} alt="" />
             </div>
             <div className="col-5 d-flex">
-              <div class="product-left-border d-none d-lg-block"></div>
+              <div className="product-left-border d-none d-lg-block"></div>
               <div className="ShopTheLook__ProductList">
                 <img src={require('../images/new22.jpg')} alt="" />
                 <p className="text-center w_ins_title">栗子棕絨面古董椅</p>
@@ -44,7 +44,7 @@ function NoReviewCard(props) {
                 </p>
                 <button className="w_new-btn">Check</button>
               </div>
-              <div class="product-right-border d-none d-lg-block"></div>
+              <div className="product-right-border d-none d-lg-block"></div>
             </div>
           </div>
 
@@ -53,7 +53,7 @@ function NoReviewCard(props) {
               <img src={require('../images/new31.jpg')} alt="" />
             </div>
             <div className="col-5 d-flex">
-              <div class="product-left-border d-none d-lg-block"></div>
+              <div className="product-left-border d-none d-lg-block"></div>
               <div className="ShopTheLook__ProductList">
                 <img src={require('../images/new32.jpg')} alt="" />
                 <p className="text-center w_ins_title">栗子棕絨面古董椅</p>
@@ -62,7 +62,7 @@ function NoReviewCard(props) {
                 </p>
                 <button className="w_new-btn">Check</button>
               </div>
-              <div class="product-right-border d-none d-lg-block"></div>
+              <div className="product-right-border d-none d-lg-block"></div>
             </div>
           </div>
 
@@ -71,7 +71,7 @@ function NoReviewCard(props) {
               <img src={require('../images/new41.jpg')} alt="" />
             </div>
             <div className="col-5 d-flex">
-              <div class="product-left-border d-none d-lg-block"></div>
+              <div className="product-left-border d-none d-lg-block"></div>
               <div className="ShopTheLook__ProductList">
                 <img src={require('../images/new42.jpg')} alt="" />
                 <p className="text-center w_ins_title">栗子棕絨面古董椅</p>
@@ -80,7 +80,7 @@ function NoReviewCard(props) {
                 </p>
                 <button className="w_new-btn">Check</button>
               </div>
-              <div class="product-right-border d-none d-lg-block"></div>
+              <div className="product-right-border d-none d-lg-block"></div>
             </div>
           </div>
         </Carousel>

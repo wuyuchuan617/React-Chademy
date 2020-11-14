@@ -376,10 +376,10 @@ function ProductFirst(props) {
               <a
                 target="_blank"
                 href="//www.facebook.com/sharer.php?u=https://fernwehwoodworking.com/products/fernweh-woodworking-furniture-catalog-hard-copy"
-                class="share__link"
+                className="share__link"
               >
-                <span class="icon icon-facebook" aria-hidden="true"></span>
-                <span class="share__text">Share</span>
+                <span className="icon icon-facebook" aria-hidden="true"></span>
+                <span className="share__text">Share</span>
               </a>
               {isLogged ? (
                 <div

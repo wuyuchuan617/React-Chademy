@@ -40,9 +40,9 @@ function ItemFive(props) {
             <div className="col-md-5">
               <img src={imageb} />
             </div>
-            <div class="col-md-7">
-              <div class="wordtitle">
-                <div class="word1title">
+            <div className="col-md-7">
+              <div className="wordtitle">
+                <div className="word1title">
                   <h4>雕刻技藝-五大常見的雕刻技術</h4>
                   <h6>發表時間:2020/09/28</h6>
                 </div>
@@ -57,9 +57,9 @@ function ItemFive(props) {
             <div className="col-md-5">
               <img src={imagec} />
             </div>
-            <div class="col-md-7">
-              <div class="wordtitle">
-                <div class="word1title">
+            <div className="col-md-7">
+              <div className="wordtitle">
+                <div className="word1title">
                   <h4>設計師專訪-作品成長的點滴</h4>
                   <h6>發表時間:2020/10/15</h6>
                 </div>
@@ -74,9 +74,9 @@ function ItemFive(props) {
             <div className="col-md-5">
               <img src={imaged} />
             </div>
-            <div class="col-md-7">
-              <div class="wordtitle">
-                <div class="word1title">
+            <div className="col-md-7">
+              <div className="wordtitle">
+                <div className="word1title">
                   <h4>木頭製造工坊-自由創作的夢想空間</h4>
                   <h6>發表時間:2020/10/20</h6>
                 </div>
@@ -87,13 +87,13 @@ function ItemFive(props) {
             </div>
           </div>
 
-          <div class="box6title row no-gutters">
-            <div class="col-md-5">
+          <div className="box6title row no-gutters">
+            <div className="col-md-5">
               <img src={imagee} />
             </div>
-            <div class="col-md-7">
-              <div class="wordtitle">
-                <div class="word1title">
+            <div className="col-md-7">
+              <div className="wordtitle">
+                <div className="word1title">
                   <h4>紋理的奧妙-真假區別</h4>
                   <h6>發表時間:2020/10/21</h6>
                 </div>
@@ -104,13 +104,13 @@ function ItemFive(props) {
             </div>
           </div>
 
-          <div class="box6title row no-gutters">
-            <div class="col-md-5">
+          <div className="box6title row no-gutters">
+            <div className="col-md-5">
               <img src={imagef} />
             </div>
-            <div class="col-md-7">
-              <div class="wordtitle">
-                <div class="word1title">
+            <div className="col-md-7">
+              <div className="wordtitle">
+                <div className="word1title">
                   <h4>文創傳情-一日工作坊之成果</h4>
                   <h6>發表時間:2020/10/22</h6>
                 </div>
@@ -121,13 +121,13 @@ function ItemFive(props) {
             </div>
           </div>
 
-          <div class="box6title row no-gutters">
-            <div class="col-md-5">
+          <div className="box6title row no-gutters">
+            <div className="col-md-5">
               <img src={imageg} />
             </div>
-            <div class="col-md-7">
-              <div class="wordtitle">
-                <div class="word1title">
+            <div className="col-md-7">
+              <div className="wordtitle">
+                <div className="word1title">
                   <h4>廢棄物利用-化腐朽為神奇</h4>
                   <h6>發表時間:2020/10/28</h6>
                 </div>
@@ -138,13 +138,13 @@ function ItemFive(props) {
             </div>
           </div>
 
-          <div class="box6title row no-gutters">
-            <div class="col-md-5">
+          <div className="box6title row no-gutters">
+            <div className="col-md-5">
               <img src={imageh} />
             </div>
-            <div class="col-md-7">
-              <div class="wordtitle">
-                <div class="word1title">
+            <div className="col-md-7">
+              <div className="wordtitle">
+                <div className="word1title">
                   <h4>木平台-難得一見的展覽</h4>
                   <h6>發表時間:2020/11/15</h6>
                 </div>

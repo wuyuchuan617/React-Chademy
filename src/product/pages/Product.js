@@ -116,7 +116,7 @@ function Product(props) {
         return <ProductFour key={index} item={item} product={product} />
       })}
 
-      <div class="parallax1"></div>
+      <div className="parallax1"></div>
 
       {/* <div className="w_six_scroll">
         {product.map((item, index) => {

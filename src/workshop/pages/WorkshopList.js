@@ -55,7 +55,7 @@ function WorkshopList(props) {
 
   return (
     <>
-      <div class="wrap456 custom-container-width">
+      <div className="wrap456 custom-container-width">
         <div className="row mt-5">
           {workshop.map((item, index) => {
             return <BreadcrumbTwo item={item} />

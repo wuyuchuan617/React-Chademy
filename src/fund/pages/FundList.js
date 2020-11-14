@@ -279,10 +279,10 @@ function FundList(props) {
 
   return (
     <>
-      <div class="context1">
+      <div className="context1">
         {/* <BannerE/> */}
 
-        <div class="container" id="productCards">
+        <div className="container" id="productCards">
           <div className="e_lableboxx mt-5">
             <BookMark setFilterMark={setFilterMark} setTime={setTime} />
           </div>

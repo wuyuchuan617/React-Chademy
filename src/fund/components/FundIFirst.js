@@ -216,10 +216,10 @@ function FundIFirst(props) {
               </div>
             </div>
 
-            <div class="share_area d-flex">
-              <p class="share d-flex">分享至</p>
-              <div class="box d-flex"></div>
-              <div class="share-icon d-flex">
+            <div className="share_area d-flex">
+              <p className="share d-flex">分享至</p>
+              <div className="box d-flex"></div>
+              <div className="share-icon d-flex">
                 <div className="fa ">
                   <FaFacebookMessenger />
                 </div>
@@ -236,7 +236,7 @@ function FundIFirst(props) {
 
             <hr />
 
-            {/* <div class="line "></div> */}
+            {/* <div className="line "></div> */}
           </div>
           <div className="col-4 right-part">
             <div className="d-flex product-name justify-content-between">
@@ -346,46 +346,46 @@ function FundIFirst(props) {
         </div>
       </div>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-7">
-            <h3 class="p_title">Easy Seat</h3>
-            <p class="intro_p">
+      <div className="container">
+        <div className="row">
+          <div className="col-7">
+            <h3 className="p_title">Easy Seat</h3>
+            <p className="intro_p">
               柔軟的設計、細微的細節以及曲線造型使其不存在視覺欣賞的死角。Henrik
               Pedersen
               的有機設計通過精美的工藝設計加以呈現，將成為您起居室中的標誌性家居。
             </p>
 
-            <img class="inner-pic" src={dt2} alt="" />
+            <img className="inner-pic" src={dt2} alt="" />
 
             <div className="ip2 d-flex">
-              <img class="inner-pic2 d-flex" src={dt3} alt="" />
+              <img className="inner-pic2 d-flex" src={dt3} alt="" />
 
-              <h4 class="pic2-h4 d-flex">Feast for the eyes</h4>
+              <h4 className="pic2-h4 d-flex">Feast for the eyes</h4>
             </div>
 
-            <p class="inner-pic2-p ">
+            <p className="inner-pic2-p ">
               柔軟的設計、細微的細節以及曲線造型使其不存在視覺欣賞的死角。Henrik
               Pedersen 的有機設計通過精美的工藝設計加以呈現。
             </p>
 
-            <div class="pic3">
-              <img class="inner-pic3" src={dt4} alt="" />
+            <div className="pic3">
+              <img className="inner-pic3" src={dt4} alt="" />
             </div>
 
-            <h4 class="pic3-h4">Genuine comfort</h4>
-            <p class="pic3-p">
+            <h4 className="pic3-h4">Genuine comfort</h4>
+            <p className="pic3-p">
               柔軟的設計、細微的細節以及曲線造型使其不存在視覺欣賞的死角。Henrik
               Pedersen
               的有機設計通過精美的工藝設計加以呈現，將成為您起居室中的標誌性家居。
             </p>
 
             <div className="dim">
-              <h4 class="details">Dimensions & Details</h4>
+              <h4 className="details">Dimensions & Details</h4>
             </div>
 
             <div className="dim-p">
-              <p class="pic4-p">
+              <p className="pic4-p">
                 椅高：83cm <br />
                 寬度：53cm <br />
                 材質：混合聚酯、絨毛 <br />
