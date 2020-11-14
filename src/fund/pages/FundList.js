@@ -290,7 +290,7 @@ function FundList(props) {
 
         {/* })} */}
 
-        <div class="container" id="productCards">
+        <div className="container" id="productCards">
           <Breadcrumbw />
           <div className="e_lableboxx mt-5">
             <BookMark setFilterMark={setFilterMark} setTime={setTime} />

@@ -34,7 +34,7 @@ function CardMyFav(props) {
 
   return (
     <section className="CardMyFav_container">
-      <div>
+      <div className="detail_img">
         <img src={`${window.location.origin}/img/${data.photo}`} alt="myfav" />
       </div>
       {/* 這裡要撈資料 */}

@@ -11,16 +11,16 @@ function MyFooter() {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div class="annie_footertest">
-          <div class="anniefooter_box7 row">
-            <div class="anniefooter_box6 col-md-6">
+        <div className="annie_footertest">
+          <div className="anniefooter_box7 row">
+            <div className="anniefooter_box6 col-md-6">
               <span>購物須知</span>
               <span>配送方式</span>
               <span>退貨規則</span>
               <span>常見問題</span>
               <span>法律條款</span>
             </div>
-            <div class="anniefooter_box5 col-md-6">
+            <div className="anniefooter_box5 col-md-6">
               <img src={facebook} alt="" />
               <img src={instagram} alt="" />
               <img src={linkedin} alt="" />
@@ -29,11 +29,11 @@ function MyFooter() {
               <img src={youtube} alt="" />
             </div>
           </div>
-          <div class="row">
-            <div class="anniefooter_f1 col-md-6">
+          <div className="row">
+            <div className="anniefooter_f1 col-md-6">
               <span>椅子學院股份有限公司</span>
             </div>
-            <div class="anniefooter_f2 col-md-6">
+            <div className="anniefooter_f2 col-md-6">
               <p>© 2020 - &Chademy Co. Ltd. All rights reserved.</p>
             </div>
           </div>

@@ -5,7 +5,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
 
-import { Modal, Button, Form, Input, DatePicker, message } from 'antd'
+import { Button, Form, Input, DatePicker, message } from 'antd'
 import moment from 'moment'
 
 function MemberCenter(props) {
@@ -17,7 +17,6 @@ function MemberCenter(props) {
     msg: '',
     data: {},
   })
-  const [smShow, setSmShow] = useState(false)
 
   async function getUserInfo() {
     const url = 'http://localhost:3001/members/getUserInfo'
@@ -155,25 +154,6 @@ function MemberCenter(props) {
           </Button>
         </Form.Item>
       </Form>
-
-      {/* 訊息彈窗 */}
-      <Modal
-        size="sm"
-        show={smShow}
-        onHide={() => setSmShow(false)}
-        aria-labelledby="example-modal-sizes-title-sm"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-sm">
-            {reg.title}
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          {reg.success && <div>{reg.msg}</div>}
-          {reg.data && reg.data.noEmail && <div>{reg.data.noEmail}</div>}
-          {reg.data && reg.data.noMobile && <div>{reg.data.noMobile}</div>}
-        </Modal.Body>
-      </Modal>
     </>
   )
 }

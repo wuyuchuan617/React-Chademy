@@ -144,7 +144,11 @@ function AllOrder(props) {
             nowstatus = '已取消'
         }
         return (
-          <div className="j_myorderbox" style={{ marginBottom: '15px' }}>
+          <div
+            key={item.sid}
+            className="j_myorderbox"
+            style={{ marginBottom: '15px' }}
+          >
             <div className="j_wrapspace">
               <h5>訂單編號:{item.PO_NO}</h5>
               <Dropdown

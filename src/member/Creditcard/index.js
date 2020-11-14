@@ -130,9 +130,7 @@ function Creditcard() {
     success: true
    */
     const res = await response.json()
-    console.log('RES ', res)
 
-    // console.log(111, res)
     if (res && res.data) {
       setCreditcard(res.data)
     }
@@ -145,34 +143,34 @@ function Creditcard() {
 
   return (
     <>
-      {creditcard.map((card) => (
-        <>
-          <div className="lineee justify-content-between">
-            卡號：{transCardNumber(card.cardNumber)}
-            <div className="icon_con">
-              <AiOutlinePlus
-                className="icon"
-                onClick={(e) =>
-                  handleOpenModal(e, {
-                    ...card,
-                    cardNumber: transCardNumber(card.cardNumber),
-                  })
-                }
-              />
-              <BsTrash
-                className="delet_btn"
-                onClick={() => showConfirm(card)}
-              ></BsTrash>
-            </div>
+      {creditcard.map((card, index) => (
+        <div key={index} className="lineee justify-content-between">
+          卡號：{transCardNumber(card.cardNumber)}
+          <div className="icon_con">
+            <AiOutlinePlus
+              className="icon"
+              onClick={(e) =>
+                handleOpenModal(e, {
+                  ...card,
+                  cardNumber: transCardNumber(card.cardNumber),
+                })
+              }
+            />
+            <BsTrash
+              className="delet_btn"
+              onClick={() => showConfirm(card)}
+            ></BsTrash>
           </div>
-        </>
+        </div>
       ))}
+
       <div className="lineee justify-content-between">
         新增信用卡
         <div className="icon_con">
           <AiOutlinePlus className="icon" onClick={handleOpenModal} />
         </div>
       </div>
+
       {creditcard.length === 0 && (
         <div style={{ textAlign: 'center', marginTop: '50px' }}>尚未綁定</div>
       )}

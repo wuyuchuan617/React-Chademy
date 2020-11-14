@@ -1,5 +1,7 @@
 import React from 'react'
 
+import '../index.scoped.scss'
+
 import request from '../../utils/request'
 
 import { Layout, Form, Input, Button, message } from 'antd'

@@ -15,13 +15,6 @@
       width: 100%;
     }
 
-    // 圖片
-    img {
-      width: 200px;
-      height: 200px;
-      // outline: springgreen 3px dashed;
-    }
-
     // 標題
     .hander_container {
       padding-left: $asideWidth;
@@ -47,6 +40,11 @@
 
     // 折價卷 追蹤清單 共用
     .ant-tabs-tabpane {
+      .detail_img img {
+        width: 200px;
+        height: 200px;
+      }
+
       .detail_list {
         flex: 1;
         padding: 20px 10px;

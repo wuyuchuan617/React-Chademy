@@ -48,9 +48,9 @@ function MyFav(props) {
                 <NoData tips="尚無追蹤清單"></NoData>
               ) : (
                 myfavlist.map(
-                  (item) =>
+                  (item, index) =>
                     item.product_type === Number(tabItem.key) && (
-                      <CardMyFav {...props} data={item}></CardMyFav>
+                      <CardMyFav {...props} key={index} data={item}></CardMyFav>
                     )
                 )
               )}
