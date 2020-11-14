@@ -60,7 +60,7 @@ function ResetPass() {
           }}
           className="form_container"
         >
-          <Title level={4}>重置密碼</Title>
+          {/* <Title level={4}>重置密碼</Title> */}
 
           <Form.Item
             name="oldPassword"

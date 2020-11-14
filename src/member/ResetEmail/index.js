@@ -52,7 +52,7 @@ function ResetEmail() {
           }}
           className="form_container"
         >
-          <Title level={4}>重置信箱</Title>
+          {/* <Title level={4}>重置信箱</Title> */}
 
           <Form.Item
             name="email"
