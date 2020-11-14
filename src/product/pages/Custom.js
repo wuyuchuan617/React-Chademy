@@ -58,8 +58,8 @@ function Custom(props) {
 
     const response = await fetch(request)
     const data = await response.json()
-    const newData = [...data]
-    newData.foreach((item, index) => {
+    // const newData = [...data]
+    data.forEach((item, index) => {
       setReturnData(item)
     })
   }
