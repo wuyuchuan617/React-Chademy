@@ -31,12 +31,12 @@ function PopBmarkFour(props) {
                 <p className="e_reviewSub">ADELAIDE</p>
               </div>
               <div className="d-flex">
-                  <div className="e_Photo align-items-end d-flex">
-                    <img src={armchair} alt="" />
-                  </div>
-
-                  <p className="e_comP  text-right d-flex">扶手椅</p>
+                <div className="e_Photo align-items-end d-flex">
+                  <img src={armchair} alt="" />
                 </div>
+
+                <p className="e_comP  text-right d-flex">扶手椅</p>
+              </div>
             </div>
             <p className="e__review_comm">
               直立的木質椅腳，賦予椅子濃濃的北歐風格，並與椅身的曲線形成對比。別具匠心地結合了折痕線條、柔軟形狀和誇張邊緣，全包覆的椅身。

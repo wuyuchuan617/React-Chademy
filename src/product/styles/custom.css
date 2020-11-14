@@ -40,7 +40,6 @@
 
 .w_custom_mmmm {
   margin-bottom: 0px;
-
 }
 
 .w_custom_desc {
@@ -147,8 +146,6 @@
   margin-top: 40px;
 }
 
-
-
 .w_share_hover_text {
   opacity: 0;
   transition: 0.5s;
@@ -221,18 +218,21 @@
   color: #c77334;
 }
 
-
-
 .ant-steps-item-finish .ant-steps-item-icon {
-
   border-color: #c77334;
 }
 
-.ant-steps-item-process>.ant-steps-item-container>.ant-steps-item-content>.ant-steps-item-title::after {
+.ant-steps-item-process
+  > .ant-steps-item-container
+  > .ant-steps-item-content
+  > .ant-steps-item-title::after {
   background-color: #c77334;
 }
 
-.ant-steps-item-finish>.ant-steps-item-container>.ant-steps-item-content>.ant-steps-item-title::after {
+.ant-steps-item-finish
+  > .ant-steps-item-container
+  > .ant-steps-item-content
+  > .ant-steps-item-title::after {
   background-color: #c77334;
 }
 

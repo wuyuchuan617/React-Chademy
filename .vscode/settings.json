@@ -1,23 +1,22 @@
-
 // 保存則格式化
 {
   "editor.tabSize": 2,
   "[javascript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true,
-      "source.fixAll": true
+    "source.fixAll.eslint": true,
+    "source.fixAll": true
   },
   "eslint.validate": [
-      "html",
-      "json",
-      "javascript",
-      "javascriptreact",
-      "typescript",
-      "typescriptreact",
-      "vue",
-      "jsx"
-  ],
+    "html",
+    "json",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "jsx"
+  ]
 }

@@ -156,7 +156,6 @@ function FundForm() {
                 setLeftDay('1')
                 setDesigner('Ian')
                 setProgress('0')
-                
               }}
             >
               DEMO
@@ -294,8 +293,6 @@ function FundForm() {
                   value={designer}
                 />
               </div>
-
-           
 
               <button
                 className="i_btn3 text-center mt-4"

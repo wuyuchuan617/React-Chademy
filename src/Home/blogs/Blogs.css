@@ -57,17 +57,17 @@
 }
 
 .noto-serif {
-  font-family: "Noto Serif TC", serif;
+  font-family: 'Noto Serif TC', serif;
   letter-spacing: 2px;
 }
 
 .lora {
-  font-family: "Lora", serif;
+  font-family: 'Lora', serif;
 }
 
 .noto-serif_p18 {
   font-size: 18px;
-  font-family: "Noto Serif TC", serif;
+  font-family: 'Noto Serif TC', serif;
 }
 
 .p14 {
@@ -91,24 +91,23 @@
   cursor: pointer;
 }
 
-.blog_text_1 p{
+.blog_text_1 p {
   color: #475050;
 }
 
-.blog_text_2{
+.blog_text_2 {
   color: #475050;
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   .blog_innertext {
     margin-top: 20px;
-    
-}
-.blog_text_1{
-  height: 100%;
-}
-
-.blog_img{
-  height: 100%;
-}
   }
+  .blog_text_1 {
+    height: 100%;
+  }
+
+  .blog_img {
+    height: 100%;
+  }
+}

@@ -29,9 +29,7 @@ function SliderE(props) {
 
       {/* return ( */}
       <div className="col grace-wrap mx-1">
-        <div className="e-pic">
-          {/* <img src={chair} /> */}
-        </div>
+        <div className="e-pic">{/* <img src={chair} /> */}</div>
         <div className="d-flex flex-column grace-slider-text">
           {/* <span className="grace-slider-pname"> {item.id}</span> */}
           {/* <span>${item.price}</span> */}

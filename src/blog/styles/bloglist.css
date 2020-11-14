@@ -1,19 +1,18 @@
 /*blog*/
 
-.wrap456{
-   margin-left:14rem;
-   margin-bottom: -80px;
-   margin-top:150px;
+.wrap456 {
+  margin-left: 14rem;
+  margin-bottom: -80px;
+  margin-top: 150px;
 }
 
 .a_blogwrap {
   width: 100%;
   background-color: #edece8;
-  
 }
 
-.a_blogblog{
-    padding-right: 30px;
+.a_blogblog {
+  padding-right: 30px;
 }
 
 .a_blog_image {
@@ -40,7 +39,6 @@
   margin-top: -15px;
   color: #707070;
   letter-spacing: 0.2rem;
-  
 }
 
 .a_blog-desc p {
@@ -54,21 +52,18 @@
   border-bottom: 3px solid #d9c7aa;
 }
 
-
-.a_blog-name-title{
-    font-family: 'Lora', serif;
+.a_blog-name-title {
+  font-family: 'Lora', serif;
   font-size: 24px;
   font-weight: bold;
   margin-top: 25px;
   letter-spacing: 0.2rem;
-
 }
 
-.a_blog-desc-title{
-    margin-top: 15px;
+.a_blog-desc-title {
+  margin-top: 15px;
   color: #707070;
   letter-spacing: 0.2rem;
-
 }
 
 .a_blog-desc-title p {
@@ -79,77 +74,65 @@
   font-size: 14px;
   font-weight: normal;
   padding-bottom: 10px;
-  
 }
 
-.a_blogblog_image{
-    width: 75%;
+.a_blogblog_image {
+  width: 75%;
   background-size: cover;
   background-position: center;
-  margin:0 auto;
+  margin: 0 auto;
   margin-bottom: 3rem;
 }
 
-.a_blog-desc-connectiontitle{
-    font-family: 'Lora', serif;
+.a_blog-desc-connectiontitle {
+  font-family: 'Lora', serif;
   font-size: 14px;
   font-weight: bold;
   margin-top: 100px;
   letter-spacing: 0.2rem;
- 
-
 }
 
-.a_blog-desc-connection p{
-    color: #c77334;
+.a_blog-desc-connection p {
+  color: #c77334;
   letter-spacing: 0.2rem;
   font-family: 'Noto Sans TC', sans-serif;
   font-size: 14px;
   font-weight: normal;
-    float: left;
-   border-bottom: 1px solid #c77334;
-    margin-right: 10px;
-      cursor: pointer;
-    
-  
+  float: left;
+  border-bottom: 1px solid #c77334;
+  margin-right: 10px;
+  cursor: pointer;
 }
 
-.a_blog-desc-writertitle{
-    font-family: 'Lora', serif;
+.a_blog-desc-writertitle {
+  font-family: 'Lora', serif;
   font-size: 14px;
   font-weight: bold;
   margin-top: 100px;
   letter-spacing: 0.2rem;
-  margin-bottom:30px;
+  margin-bottom: 30px;
 }
 
-
-
-.a_blog2 img{
-width: 60%; 
-
+.a_blog2 img {
+  width: 60%;
 }
 
-.a_blog2{
-    
-    text-align: center;
+.a_blog2 {
+  text-align: center;
 }
 
-.a_blog3{
-    padding-top:10px;
-    cursor: pointer;    
+.a_blog3 {
+  padding-top: 10px;
+  cursor: pointer;
 }
 
-
-.a_blog3 p{
-    color: #707070;
+.a_blog3 p {
+  color: #707070;
   letter-spacing: 0.2rem;
   font-family: 'Noto Sans TC', sans-serif;
   font-size: 14px;
-  font-weight: normal;   
+  font-weight: normal;
 }
-
-
 
 /*文章排行*/
 .box3trainblog {
@@ -158,32 +141,28 @@ width: 60%;
   transition: 0.5s;
   width: 80%;
   margin-bottom: 3.3125rem;
-  
-  
 }
 
 .upper3blog {
   position: relative;
   width: 100%;
   margin-top: 2rem;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
-        .upper3blog:hover{
-          transform: translateY(-10px); 
-          transition: all .5s ease 0s;
-        }
+.upper3blog:hover {
+  transform: translateY(-10px);
+  transition: all 0.5s ease 0s;
+}
 
-        .upper3blog img{
-          transition: .5s;
-          filter : brightness(85%);
-        }
+.upper3blog img {
+  transition: 0.5s;
+  filter: brightness(85%);
+}
 
-                .upper3blog img:hover {
-                   
-                   filter : brightness(110%);
-        }
-
+.upper3blog img:hover {
+  filter: brightness(110%);
+}
 
 .upper3blog p {
   background-color: #c77334;
@@ -197,143 +176,124 @@ width: 60%;
   right: 0rem;
 }
 
-.word1trainblog h5{
-    margin-top:10px;
-    border-bottom: 3px solid #d9c7aa;
-    padding-bottom: 10px;
-    font-size: 18px;
-    cursor: pointer;
+.word1trainblog h5 {
+  margin-top: 10px;
+  border-bottom: 3px solid #d9c7aa;
+  padding-bottom: 10px;
+  font-size: 18px;
+  cursor: pointer;
 }
 
-.a_blog-popular_name{
-    font-family: 'Lora', serif;
+.a_blog-popular_name {
+  font-family: 'Lora', serif;
   font-size: 24px;
   font-weight: bold;
   margin-top: 15px;
   letter-spacing: 0.2rem;
-
 }
 
-
 /*留言板*/
-.annie_message01 h5{
-    font-family: 'Lora', serif;
+.annie_message01 h5 {
+  font-family: 'Lora', serif;
   font-size: 18px;
   font-weight: bold;
   letter-spacing: 0.2rem;
   text-align: center;
-  color:#F3F4F4;
-  background-color: #C77334;
-  padding-top:5px;
-  padding-bottom:5px;
+  color: #f3f4f4;
+  background-color: #c77334;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
-.a_message2 img{
-width: 40%; 
-
+.a_message2 img {
+  width: 40%;
 }
 
-.a_message2{
-    
-    text-align: center;
+.a_message2 {
+  text-align: center;
 }
 
-.annie_message04{
-color: #1A1818;
+.annie_message04 {
+  color: #1a1818;
   letter-spacing: 0.2rem;
   font-family: 'Noto Sans TC', sans-serif;
   font-size: 18px;
-  font-weight: normal;    
+  font-weight: normal;
 }
 
-.annie_message05{
-color: #707070;
+.annie_message05 {
+  color: #707070;
   letter-spacing: 0.2rem;
   font-family: 'Noto Sans TC', sans-serif;
   font-size: 14px;
-  font-weight: normal;  
-  margin-bottom: 50px;  
+  font-weight: normal;
+  margin-bottom: 50px;
 }
 
-.annie_customer{
-color: #707070;
+.annie_customer {
+  color: #707070;
   letter-spacing: 0.2rem;
   font-family: 'Noto Sans TC', sans-serif;
   font-size: 10px;
-  font-weight: normal; 
+  font-weight: normal;
   margin-right: 10px;
-   
 }
 
-
-.annie_time{
-color: #707070;
+.annie_time {
+  color: #707070;
   letter-spacing: 0.2rem;
   font-family: 'Noto Sans TC', sans-serif;
   font-size: 10px;
-  font-weight: normal;   
-  margin-right: 20px; 
+  font-weight: normal;
+  margin-right: 20px;
 }
 
-.a_message3{
-    background-color: #DEDDDA;
-    padding:10px !important;
-    margin-bottom: 15px;
+.a_message3 {
+  background-color: #deddda;
+  padding: 10px !important;
+  margin-bottom: 15px;
 }
 
-.a_message8{
-    margin-top: 20px;
-    
-
+.a_message8 {
+  margin-top: 20px;
 }
-
-
-
 
 /*留言板_互動表單*/
-.a_messagestart{
-    margin-top: 20px;
-    border-bottom:3px solid #d9c7aa;
-    padding-bottom: 20px;
-
+.a_messagestart {
+  margin-top: 20px;
+  border-bottom: 3px solid #d9c7aa;
+  padding-bottom: 20px;
 }
 
-.a_formstyle{
-    border-style: none;
+.a_formstyle {
+  border-style: none;
 }
 
-.message-btn{
-
-    display: block;
+.message-btn {
+  display: block;
   width: 9.375rem;
   height: 2.5rem;
   border: none;
-  background-color:  #C77334;
-  color: #DEDDDA;
+  background-color: #c77334;
+  color: #deddda;
   letter-spacing: 0.2rem;
   margin-top: 0.5rem;
   margin-right: 15px;
   border-radius: 0% !important;
-
-
 }
 
-
 /*相關文章*/
-
 
 .wrapper10 {
   padding-left: 7.5rem;
   padding-right: 7.5rem;
   margin-top: 3rem;
-  background-color: #DEDDDA;
+  background-color: #deddda;
   padding-top: 50px;
-  padding-bottom:150px ;
+  padding-bottom: 150px;
   margin-right: -15px;
   margin-left: -15px;
 }
-
-
 
 .title0111 h2 {
   font-size: 2.25rem;
@@ -344,62 +304,58 @@ color: #707070;
 }
 
 .a_list2 {
-            column-count: 4;
-            /* column-rule: 1px dashed lightblue; */
-        }
+  column-count: 4;
+  /* column-rule: 1px dashed lightblue; */
+}
 
-        .a_list2 .item {
-            -webkit-column-break-inside: avoid;
-            /*Chrome, Safari, Opera */
-            page-break-inside: avoid;
-            /* Firefox */
-            break-inside: avoid;
-            /* IE 10+ */
+.a_list2 .item {
+  -webkit-column-break-inside: avoid;
+  /*Chrome, Safari, Opera */
+  page-break-inside: avoid;
+  /* Firefox */
+  break-inside: avoid;
+  /* IE 10+ */
 
-            padding:10px;
-            margin-bottom: 15px;
-            cursor: pointer;
-           
-        }
+  padding: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
 
-         .a_list2 .item:hover{
-          transform: translateY(-10px);
-          transition: all .5s ease 0s;
-        }
+.a_list2 .item:hover {
+  transform: translateY(-10px);
+  transition: all 0.5s ease 0s;
+}
 
-        .a_list2 .item img {
-            width: 100%;
-            margin-bottom: 10px;
-             transition: all .5s ease 0s;
-        }
+.a_list2 .item img {
+  width: 100%;
+  margin-bottom: 10px;
+  transition: all 0.5s ease 0s;
+}
 
-         .a_list2 .item img:hover {
-            filter : brightness(75%);
-            transform: scale(1.02);
-            
-        }
+.a_list2 .item img:hover {
+  filter: brightness(75%);
+  transform: scale(1.02);
+}
 
-        .a_list2 .item h4 {
-           font-size: 1.125rem;
+.a_list2 .item h4 {
+  font-size: 1.125rem;
   letter-spacing: 0.2rem;
   color: #1a1818;
   font-family: 'Noto Sans TC', sans-serif;
   font-weight: normal;
   margin-bottom: 30px;
-        }
+}
 
-         .a_list2 .item img:hover + h4{
-            color:#C77334;
-         }
+.a_list2 .item img:hover + h4 {
+  color: #c77334;
+}
 
-
-        .annie_title01 h2 {
+.annie_title01 h2 {
   font-size: 2.25rem;
   margin-bottom: 4.375rem;
   letter-spacing: 0.2rem;
   text-align: center;
 }
-
 
 /*@media(min-width:375px){
 .a_list2 {
@@ -415,14 +371,3 @@ text-align: center;
  
 }
 }*/
-
-
-
-
-
-
-
-
-
-
-

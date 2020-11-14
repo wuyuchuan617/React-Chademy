@@ -10,7 +10,7 @@ import diningchair from '../images/dining chair .png'
 import loungechair from '../images/lounge chair.png'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
-function BookIconhp (props) {
+function BookIconhp(props) {
   const [changeword, setChangeWord] = useState(0)
   const { filterIcon, setFilterIcon } = props
 

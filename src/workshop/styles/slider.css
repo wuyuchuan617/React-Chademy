@@ -1,111 +1,109 @@
-
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-color: #EDECE8;
+  background-color: #edece8;
 }
 
 .grace-related-product {
-    font-family: serif;
-    font-size: 32px;
-    font-weight: 400;
-    color: #707070;
-    margin-bottom: 40px;
+  font-family: serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: #707070;
+  margin-bottom: 40px;
 }
 
 .grace-wrap {
-    padding: 10px;
-
+  padding: 10px;
 }
 
 .grace-pic {
-    width: 80%;
-    height: 180px;
-    background-size: contain;
-    /* margin: 10px auto; */
+  width: 80%;
+  height: 180px;
+  background-size: contain;
+  /* margin: 10px auto; */
 }
 
 .relative-btn-right {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    color: #5d5d5d;
-    position: absolute;
-    right: 20px;
-    top: 45%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #5d5d5d;
+  position: absolute;
+  right: 20px;
+  top: 45%;
 }
 
 a:hover {
-    text-decoration: none;
-    color: #fff;
+  text-decoration: none;
+  color: #fff;
 }
 
 .grace-slider-text span {
-    font-family: assistant;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 30px;
+  font-family: assistant;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
 }
-.grace-slider-text.grace-slider-pname{
-    font-weight: 800;
-    font-size: 20px;
-    margin-top: 2px;
+.grace-slider-text.grace-slider-pname {
+  font-weight: 800;
+  font-size: 20px;
+  margin-top: 2px;
 }
 
 .aaa {
-    transform: translateX(-25px);
+  transform: translateX(-25px);
 }
 
 /* square buttons */
 .rec.rec-arrow {
-    border-radius: 50%;
-    background-color: #fff;
-    color: #707070;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #707070;
 }
 
 /* round buttons on hover */
 .rec.rec-arrow:hover:enabled {
-    background-color: #C77334;
-    color: #fff;
-    box-shadow: 0 0 0px 0px #C77334 !important;
+  background-color: #c77334;
+  color: #fff;
+  box-shadow: 0 0 0px 0px #c77334 !important;
 }
 
 .rec.rec-arrow:active {
-    background-color: #C77334;
-    color: #fff;
-    box-shadow: 0 0 0px 0px #C77334 !important;
+  background-color: #c77334;
+  color: #fff;
+  box-shadow: 0 0 0px 0px #c77334 !important;
 }
 
 /* hide disabled buttons */
 .rec.rec-arrow:disabled {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 /* disable default outline on focused items */
 /* add custom outline on focused items */
 .rec-carousel-item:focus {
-    outline: none !important;
-    box-shadow: inset 0 0 1px 1px lightgrey;
-    background-color: #C77334;
-    box-shadow: 0 0 0px 0px #C77334 !important;
+  outline: none !important;
+  box-shadow: inset 0 0 1px 1px lightgrey;
+  background-color: #c77334;
+  box-shadow: 0 0 0px 0px #c77334 !important;
 }
 
 // 點點一般狀態
 .ikyGAt {
-    box-shadow: 0 0 0px 0px #C77334 !important;
-    background-color: white !important;
+  box-shadow: 0 0 0px 0px #c77334 !important;
+  background-color: white !important;
 }
 
 // 點點選取狀態
 .brcpxa {
-    background-color: #C77334 !important;
-    box-shadow: 0 0 0px 0px #C77334 !important;
+  background-color: #c77334 !important;
+  box-shadow: 0 0 0px 0px #c77334 !important;
 }
 
 // 左右btn無border
 .chowzb {
-    box-shadow: 0 0 0px 0px #C77334 !important;
+  box-shadow: 0 0 0px 0px #c77334 !important;
 }

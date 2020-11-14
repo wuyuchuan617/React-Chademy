@@ -78,7 +78,7 @@ function FundCardOne() {
 
               <div className="intro_wrap">
                 <p className="e_intro">
-                這款椅子造型引人入勝，邀您探索每條曲線如何提升舒適度和美感。落座後享受Princeton優雅的環抱......
+                  這款椅子造型引人入勝，邀您探索每條曲線如何提升舒適度和美感。落座後享受Princeton優雅的環抱......
                 </p>
               </div>
 

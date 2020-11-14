@@ -466,7 +466,7 @@ img {
   line-height: 1.5715;
   list-style: none;
   -webkit-font-feature-settings: 'tnum';
-  font-feature-settings: 'tnum', "tnum";
+  font-feature-settings: 'tnum', 'tnum';
   padding: 4px 11px 4px;
   position: relative;
   display: -ms-inline-flexbox;
@@ -507,7 +507,7 @@ img {
 .a_date_filter {
   position: absolute;
 
-  top:55%;
+  top: 55%;
   left: 10%;
   z-index: 20;
 }

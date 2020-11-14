@@ -23,12 +23,12 @@
 }
 
 .noto-serif {
-  font-family: "Noto Serif TC", serif;
+  font-family: 'Noto Serif TC', serif;
   letter-spacing: 2px;
 }
 
 .lora {
-  font-family: "Lora", serif;
+  font-family: 'Lora', serif;
 }
 
 .course img {
@@ -36,13 +36,13 @@
   object-fit: cover;
 }
 
-.course p{
+.course p {
   color: #475050;
 }
 
 .noto-serif_p18 {
   font-size: 18px;
-  font-family: "Noto Serif TC", serif;
+  font-family: 'Noto Serif TC', serif;
 }
 
 .p14 {
@@ -84,13 +84,13 @@
 .i_fund_text {
   margin: 230px auto auto 20px;
 }
-.i_fund_text p{
-  color:  #475050;
+.i_fund_text p {
+  color: #475050;
 }
 
 .noto-serif_p18 {
   font-size: 18px;
-  font-family: "Noto Serif TC", serif;
+  font-family: 'Noto Serif TC', serif;
 }
 
 .p14 {
@@ -99,20 +99,18 @@
   letter-spacing: 2px;
 }
 
-@media(max-width: 768px) {
-.i_courses_text .more{
-  margin:30px auto;
-}
-.i_courses_text {
-  text-align: center;
-}
-.i_fund_text {
-  margin: 25px auto;
-}
-.i_fund
-  {
+@media (max-width: 768px) {
+  .i_courses_text .more {
+    margin: 30px auto;
+  }
+  .i_courses_text {
+    text-align: center;
+  }
+  .i_fund_text {
+    margin: 25px auto;
+  }
+  .i_fund {
     height: 100%;
     margin-top: 76px;
-}
-
   }
+}

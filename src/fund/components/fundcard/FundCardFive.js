@@ -27,7 +27,7 @@ function FundCardFive() {
 
               <div className="intro_wrap">
                 <p className="e_intro">
-                Aarhus永不過時的外觀將一直讓您的餐廳提升格調。而且椅子不僅是樣子漂亮！
+                  Aarhus永不過時的外觀將一直讓您的餐廳提升格調。而且椅子不僅是樣子漂亮！
                 </p>
               </div>
 
@@ -78,7 +78,8 @@ function FundCardFive() {
 
               <div className="intro_wrap">
                 <p className="e_intro">
-                傾斜的扶手賦予沙發獨特造型，並使其現代風格隨之延伸到室內空間。 纖巧的鋁合金椅腳，也讓外觀更顯輕盈。
+                  傾斜的扶手賦予沙發獨特造型，並使其現代風格隨之延伸到室內空間。
+                  纖巧的鋁合金椅腳，也讓外觀更顯輕盈。
                 </p>
               </div>
 

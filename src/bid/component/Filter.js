@@ -5,7 +5,7 @@ import 'antd/dist/antd.css'
 import { IntegerStep, DecimalStep } from './IntegerStep'
 import { Checkbox } from 'antd'
 import { Tag } from 'antd'
-import { AiOutlineClose,AiOutlinePlus } from "react-icons/ai";
+import { AiOutlineClose, AiOutlinePlus } from 'react-icons/ai'
 function Filter(props) {
   const {
     showFilter,
@@ -20,12 +20,11 @@ function Filter(props) {
     getFilterFromSQL,
     searchProduct,
     viewfilter,
-    setViewfilter
+    setViewfilter,
   } = props
 
-
-   // 0 : close 1 : open
- const [viewFilter, setViewFilter] = useState(0)
+  // 0 : close 1 : open
+  const [viewFilter, setViewFilter] = useState(0)
 
   const [viewSpread, setViewSpread] = useState(false)
   const [viewSpread1, setViewSpread1] = useState(false)
@@ -93,7 +92,7 @@ function Filter(props) {
     e.preventDefault()
     console.log('Clicked! But prevent default.')
   }
-console.log(data)
+  console.log(data)
   return (
     <>
       <div
@@ -113,7 +112,7 @@ console.log(data)
         >
           <div className="justify-content-end">
             <p id="close" onClick={() => setViewFilter(0)}>
-            <AiOutlineClose />
+              <AiOutlineClose />
             </p>
 
             <input type="text" className="filterSearch" placeholder="SEARCH" />
@@ -190,9 +189,27 @@ console.log(data)
               aria-hidden="false"
               style={viewSpread1 ? sidebarContentShow : sidebarContentHide}
             >
-              <p onClick={()=>{ setViewfilter(1)}}>競標中</p>
-              <p onClick={()=>{ setViewfilter(0)}}>即將競標</p>
-              <p onClick={()=>{ setViewfilter(2)}}>已結標</p>
+              <p
+                onClick={() => {
+                  setViewfilter(1)
+                }}
+              >
+                競標中
+              </p>
+              <p
+                onClick={() => {
+                  setViewfilter(0)
+                }}
+              >
+                即將競標
+              </p>
+              <p
+                onClick={() => {
+                  setViewfilter(2)
+                }}
+              >
+                已結標
+              </p>
             </ul>
           </div>
 
@@ -222,14 +239,44 @@ console.log(data)
               aria-hidden="false"
               style={viewSpread ? sidebarContentShow : sidebarContentHide}
             >
-              <p onClick={()=>{ setViewfilter(3)}}>ADELAIDE</p>
-              <p onClick={()=>{ setViewfilter(4)}}>IMOLA</p>
-              <p onClick={()=>{ setViewfilter(5)}}>OSAKA</p>
-              <p onClick={()=>{ setViewfilter(6)}}>BOSTON</p>
-              <p onClick={()=>{ setViewfilter(7)}}>CHARLOTTE</p>
+              <p
+                onClick={() => {
+                  setViewfilter(3)
+                }}
+              >
+                ADELAIDE
+              </p>
+              <p
+                onClick={() => {
+                  setViewfilter(4)
+                }}
+              >
+                IMOLA
+              </p>
+              <p
+                onClick={() => {
+                  setViewfilter(5)
+                }}
+              >
+                OSAKA
+              </p>
+              <p
+                onClick={() => {
+                  setViewfilter(6)
+                }}
+              >
+                BOSTON
+              </p>
+              <p
+                onClick={() => {
+                  setViewfilter(7)
+                }}
+              >
+                CHARLOTTE
+              </p>
             </ul>
           </div>
-         <div className="refinement seats  " data-refinement-id="seats">
+          <div className="refinement seats  " data-refinement-id="seats">
             <div
               className="refinement-toggle js-slide-toggle  is-active"
               data-toggle-element="#seats"
@@ -255,13 +302,30 @@ console.log(data)
               aria-hidden="false"
               style={viewSpread2 ? sidebarContentShow : sidebarContentHide}
             >
-              <p onClick={()=>{ setViewfilter(8)}}>Henrik Pedersen</p>
-              <p onClick={()=>{ setViewfilter(9)}}>Karim Rashid</p>
-              <p onClick={()=>{ setViewfilter(10)}}>Morten Georgsen</p>
-              
+              <p
+                onClick={() => {
+                  setViewfilter(8)
+                }}
+              >
+                Henrik Pedersen
+              </p>
+              <p
+                onClick={() => {
+                  setViewfilter(9)
+                }}
+              >
+                Karim Rashid
+              </p>
+              <p
+                onClick={() => {
+                  setViewfilter(10)
+                }}
+              >
+                Morten Georgsen
+              </p>
             </ul>
-        </div>
-          
+          </div>
+
           <div className="refinement seats  " data-refinement-id="seats">
             <div
               className="refinement-toggle js-slide-toggle  is-active"

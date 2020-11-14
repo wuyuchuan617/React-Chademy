@@ -2,9 +2,9 @@ header {
   position: relative;
 }
 
-.wrap123{
-  margin-left:14rem;
-   margin-bottom:50px;
+.wrap123 {
+  margin-left: 14rem;
+  margin-bottom: 50px;
 }
 .a_video {
   width: 100% !important;
@@ -26,7 +26,6 @@ header {
 .a_homesubslogan {
   font-size: 24px;
 }
-
 
 /*news*/
 .title {
@@ -76,82 +75,74 @@ header {
 
 .a_blog img {
   width: 100%;
-  margin-top:50px;
+  margin-top: 50px;
 }
 
 /*masonry*/
 
-.annie_title{
+.annie_title {
   margin-top: -100px;
 }
 
- .a_list {
-            column-count: 3;
-            /* column-rule: 1px dashed lightblue; */
-        }
+.a_list {
+  column-count: 3;
+  /* column-rule: 1px dashed lightblue; */
+}
 
-        .a_list .item {
-            -webkit-column-break-inside: avoid;
-            /*Chrome, Safari, Opera */
-            page-break-inside: avoid;
-            /* Firefox */
-            break-inside: avoid;
-            /* IE 10+ */
-            padding:10px;
-            margin-bottom: 15px;
-            cursor: pointer;
-           
-        }
+.a_list .item {
+  -webkit-column-break-inside: avoid;
+  /*Chrome, Safari, Opera */
+  page-break-inside: avoid;
+  /* Firefox */
+  break-inside: avoid;
+  /* IE 10+ */
+  padding: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
 
-        .a_list .item:hover{
-          transform: translateY(-10px);
-          transition: all .5s ease 0s;
-        }
+.a_list .item:hover {
+  transform: translateY(-10px);
+  transition: all 0.5s ease 0s;
+}
 
+.a_list .item img {
+  width: 100%;
+  margin-bottom: 10px;
+  filter: brightness(85%);
+  transition: all 0.5s ease 0s;
+}
 
-        .a_list .item img {
-            width: 100%;
-            margin-bottom: 10px;
-            filter : brightness(85%);
-            transition: all .5s ease 0s;
-            
-        }
+.a_list .item img:hover {
+  filter: brightness(110%);
+  transform: scale(1.02);
+}
 
-        .a_list .item img:hover {
-            filter : brightness(110%);
-            transform: scale(1.02);
-            
-        }
+.a_list .item img:hover + h4 {
+  color: #c77334;
+}
 
-               .a_list .item img:hover + h4{
-            color:#C77334;
-            
-        }
-
-        .a_list .item h4 {
-           font-size: 1.125rem;
+.a_list .item h4 {
+  font-size: 1.125rem;
   letter-spacing: 0.2rem;
   color: #1a1818;
   font-family: 'Noto Sans TC', sans-serif;
   font-weight: normal;
-   transition: all .5s ease 0s;
-        }
+  transition: all 0.5s ease 0s;
+}
 
-
-
-                .a_list .item p {
-           font-size: 14px;
+.a_list .item p {
+  font-size: 14px;
   font-weight: 200;
   letter-spacing: 2px;
-        }
+}
 
-        .annie_title01 h2 {
+.annie_title01 h2 {
   font-size: 2.25rem;
   margin-bottom: 4.375rem;
   letter-spacing: 0.2rem;
   text-align: center;
 }
-
 
 /*@media(min-width:375px){
     .a_homeslogan{
@@ -175,7 +166,3 @@ header {
 column-count: 2;
  }
 }*/
-
-
-
-

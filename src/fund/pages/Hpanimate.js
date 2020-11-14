@@ -1,7 +1,6 @@
 // import React from 'react'
 // import { FaBeer } from 'react-icons/fa'
 
-
 // // import * as React from 'react'
 // import { Frame } from 'framer'
 

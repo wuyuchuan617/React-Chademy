@@ -2,7 +2,6 @@
 // import TweenOne, { TweenOneGroup } from 'rc-tween-one'
 // import 'rc-banner-anim/assets/index.css'
 
-
 // const { Element, Arrow, Thumb } = BannerAnim
 // const BgElement = Element.BgElement
 

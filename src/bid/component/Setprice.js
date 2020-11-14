@@ -6,7 +6,7 @@ import Countdown, {
   calcTimeDelta,
   formatTimeDelta,
 } from 'react-countdown'
-import {  Button , Modal } from 'react-bootstrap'
+import { Button, Modal } from 'react-bootstrap'
 function Setprice(props) {
   const {
     changepage,
@@ -34,7 +34,7 @@ function Setprice(props) {
     } else {
       // Render a countdown
       return (
-        <span >
+        <span>
           {zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
         </span>
       )
@@ -110,7 +110,6 @@ function Setprice(props) {
                 type="primary"
                 htmlType="submit"
                 onClick={() => {
-                  
                   handleShow()
                 }}
               >
@@ -138,9 +137,13 @@ function Setprice(props) {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={()=>{
-            trigger()
-            handleClose()}}>
+          <Button
+            variant="primary"
+            onClick={() => {
+              trigger()
+              handleClose()
+            }}
+          >
             Save Changes
           </Button>
         </Modal.Footer>

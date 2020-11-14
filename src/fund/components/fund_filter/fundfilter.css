@@ -1,180 +1,169 @@
 body {
-    margin: 0px;
-    padding: 0px;
-
+  margin: 0px;
+  padding: 0px;
 }
 
 .contextt {
-    width: calc(100%-80px);
-    margin-left: 80px;
-    height: 300vh;
-    display: block;
-    background-color: #EDECE8;
+  width: calc(100%-80px);
+  margin-left: 80px;
+  height: 300vh;
+  display: block;
+  background-color: #edece8;
 }
 
 .sidebar {
-    display: block;
-    position: fixed;
-    z-index: 3;
-    width: 80px;
-    background-color: #DED5C6;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    overflow: scroll;
-    color: #475050;
-    font-family: Noto Sans TC;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 2px;
+  display: block;
+  position: fixed;
+  z-index: 3;
+  width: 80px;
+  background-color: #ded5c6;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  overflow: scroll;
+  color: #475050;
+  font-family: Noto Sans TC;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
 }
 
 #close {
-    text-align: end;
-    margin-top: 20px;
-    margin-right: 20px;
-    color: #1A1818;
-
+  text-align: end;
+  margin-top: 20px;
+  margin-right: 20px;
+  color: #1a1818;
 }
 
 .clearFilter {
-    text-align: center;
-    margin: 40px 30px;
-    padding: 5px 5px;
-    font-size: 12px;
-    color: #1A1818;
-    background-color: #F3F4F4;
-
+  text-align: center;
+  margin: 40px 30px;
+  padding: 5px 5px;
+  font-size: 12px;
+  color: #1a1818;
+  background-color: #f3f4f4;
 }
 
 .filterTag {
-    text-align: start;
-    margin: 0px 20px;
-    font-size: 12px;
-    color: #475050;
+  text-align: start;
+  margin: 0px 20px;
+  font-size: 12px;
+  color: #475050;
 }
 
 .filterSearch {
-    width: 180px;
-    height: 40px;
-    background-color: #F3F4F4;
-    border: none;
-    margin: 10px 30px;
-    text-align: center;
-    padding: 5px 5px;
-    font-size: 12px;
+  width: 180px;
+  height: 40px;
+  background-color: #f3f4f4;
+  border: none;
+  margin: 10px 30px;
+  text-align: center;
+  padding: 5px 5px;
+  font-size: 12px;
 }
 
-
 .ant-tag {
-    margin: 5px;
-    border: none;
-    border-radius: 0px;
-    background-color: #F3F4F4;
+  margin: 5px;
+  border: none;
+  border-radius: 0px;
+  background-color: #f3f4f4;
 }
 
 .seats1 {
-    display: none;
-    margin: 10px -10px 10px 40px;
-
+  display: none;
+  margin: 10px -10px 10px 40px;
 }
 
 .seats2 {
-    display: none;
-    margin: 10px 0px 10px 20px;
-
+  display: none;
+  margin: 10px 0px 10px 20px;
 }
 
 #seats1 li {
-    list-style-type: none;
-    margin-left: 30px;
+  list-style-type: none;
+  margin-left: 30px;
 }
 
 a {
-    text-decoration: none;
-    color: #707070;
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 4px;
+  text-decoration: none;
+  color: #707070;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 4px;
 }
 
 .chooseRadio {
-    text-decoration: none;
-    color: #707070;
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 4px;
-    margin-right: 3px;
+  text-decoration: none;
+  color: #707070;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  margin-right: 3px;
 }
 
 .plus {
-
-    margin: 20px 20px;
-    border-bottom: 1px solid #A7A49F;
-    padding: 15px;
-
-
+  margin: 20px 20px;
+  border-bottom: 1px solid #a7a49f;
+  padding: 15px;
 }
 
 .refinement-title {
-    color: #475050;
-    font-family: Noto Sans TC;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 5px;
+  color: #475050;
+  font-family: Noto Sans TC;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 5px;
 }
 
 .e_filterText {
-    position: absolute;
-    position: fixed;
-    left: 25px;
-    top: 50%;
-    transform: translate(0%, -50%);
-    writing-mode: vertical-lr;
-    text-orientation: upright;
-    z-index: 10;
-    display: block;
+  position: absolute;
+  position: fixed;
+  left: 25px;
+  top: 50%;
+  transform: translate(0%, -50%);
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  z-index: 10;
+  display: block;
 }
 
 .sidebarContent {
-    display: none;
+  display: none;
 }
 
 .searchButton {
-    border: none;
-    width: 200px;
-    height: 40px;
-    background-color: #C77334;
-    color: #FFFFFF;
-    letter-spacing: 5px;
-    display: block;
-    margin: auto;
-    margin-top: 70px;
-    margin-bottom: 50px;
-
+  border: none;
+  width: 200px;
+  height: 40px;
+  background-color: #c77334;
+  color: #ffffff;
+  letter-spacing: 5px;
+  display: block;
+  margin: auto;
+  margin-top: 70px;
+  margin-bottom: 50px;
 }
 
 .circleColor {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #fff;
-    margin: 10px 10px 10px 0px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 10px 10px 10px 0px;
 
-    padding: 15px;
+  padding: 15px;
 }
 
 .ant-checkbox-wrapper {
-    margin: 10px -10px 10px 20px;
+  margin: 10px -10px 10px 20px;
 }
 
 .ant-checkbox-checked .ant-checkbox-inner {
-    background-color: #C77334;
-    border-color: #C77334;
-
+  background-color: #c77334;
+  border-color: #c77334;
 }
 
 .ant-checkbox-group-item {
-    display: block;
-    margin-right: 0;
+  display: block;
+  margin-right: 0;
 }

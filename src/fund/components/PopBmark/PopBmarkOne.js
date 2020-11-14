@@ -14,7 +14,7 @@ function PopBmarkOne(props) {
       <div className="container ">
         <div className="row e_pop justify-content-between d-flex">
           <div className="review-photo justify-content-center col-4">
-            <img src={pop1} alt=""  width="100%" />
+            <img src={pop1} alt="" width="100%" />
             <p className="e_pimg">$92,000</p>
           </div>
 
@@ -29,16 +29,16 @@ function PopBmarkOne(props) {
                 />
 
                 <p className="e_reviewSub">MODENA</p>
-                </div>
-                <div className="d-flex">
-                  <div className="e_Photo align-items-end d-flex">
-                    <img src={chairs} alt="" />
-                  </div>
-
-                  <p className="e_comP  text-right d-flex">單椅</p>
-                </div>
               </div>
-           
+              <div className="d-flex">
+                <div className="e_Photo align-items-end d-flex">
+                  <img src={chairs} alt="" />
+                </div>
+
+                <p className="e_comP  text-right d-flex">單椅</p>
+              </div>
+            </div>
+
             <p className="e__review_comm">
               將不同材料和色彩，和諧的混搭在一起，替空間營造充滿活力的氛圍。永不過時的外觀將一直讓您的餐廳提升格調。可旋轉且附有輪子的椅腳，使這款椅子非常靈活。
             </p>
