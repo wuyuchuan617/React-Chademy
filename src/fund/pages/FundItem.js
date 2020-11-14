@@ -7,6 +7,7 @@ import '../styles/FundItem.scss'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import Carousel from 'react-elastic-carousel'
 import SliderE from '../components/SliderE'
+import BreadcrumbwTwo from '../components/BreadcrumbwTwo'
 
 function FundItem(props) {
   const [localData, setLocalData] = useState([])
@@ -97,6 +98,12 @@ function FundItem(props) {
   // const chair = `http://localhost:3001/img/${item.img}`
   return (
     <>
+      <div className="container">
+        {product.map((item, index) => {
+          return <BreadcrumbwTwo key={index} item={item} product={product} />
+        })}
+      </div>
+      {/* <BreadcrumbwTwo item={item} /> */}
       {product.map((item, index) => {
         return (
           <FundFirst

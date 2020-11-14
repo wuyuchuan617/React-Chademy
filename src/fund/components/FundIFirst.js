@@ -23,6 +23,8 @@ import dt2 from '../images/dt2.jpeg'
 import dt3 from '../images/dt3.jpeg'
 import dt4 from '../images/dt4-1.jpeg'
 import dt5 from '../images/Image 32.png'
+import ItemModal from '../components/ItemModal'
+// import Breadcrumbw from '../components/Breadcrumbw'
 
 function FundIFirst(props) {
   const { item, sid, cartamount, setCartAmount } = props
@@ -39,6 +41,7 @@ function FundIFirst(props) {
   const [heart, setHeart] = useState(false)
   const [heartItem, setHeartItem] = useState({})
   const [visible, setVisible] = useState(false)
+  const [show, setShow] = useState(false)
 
   const [photo, setPhoto] = useState(`http://localhost:3001/img/${item.e_pic}`)
 
@@ -314,19 +317,25 @@ function FundIFirst(props) {
                 <p className="e_mann">贊助人數 :{item.e_men}人</p>
               </div>
 
+              <ItemModal show={show} setShow={setShow} />
+
               {isLogged ? (
                 <button
                   className="e_cart-btn"
                   onClick={() => {
-                    setCartAmount(cartamount + 1)
-                    updateCartToLocalStorage({
-                      product_no: item.sid,
-                      id: item.e_proname,
-                      img: item.e_pic,
-                      amount: 1,
-                      price: item.e_lowprice,
-                      category: 4,
-                    })
+                    // setCartAmount(cartamount + 1)
+                    // updateCartToLocalStorage({
+                    //   product_no: item.sid,
+                    //   id: item.e_proname,
+                    //   img: item.e_pic,
+                    //   amount: 1,
+                    //   price: item.e_lowprice,
+                    //   category: 4,
+                    // })
+                    setShow(true)
+                    console.log('123')
+                    console.log(show)
+                    // setVisible(true)
                   }}
                 >
                   贊助
@@ -409,37 +418,37 @@ function FundIFirst(props) {
               <h3 className="emp">期待拿到實體貨的那天～</h3>
               <h4 className="emday">
                 <FaHandHoldingHeart />
-                <span className="emdayp"> 十天前</span>
+                <span className="emdayp"> 五天前</span>
               </h4>
             </div>
 
             <div className="small_card">
               <h4 className="e_account">
                 <FaChessQueen />
-                <span className="e_name">Eva</span>
+                <span className="e_name">Abby</span>
               </h4>
 
-              <h3 className="em">熱情贊助：＄105,000</h3>
+              <h3 className="em">熱情贊助：＄303,000</h3>
 
-              <h3 className="emp">期待拿到實體貨的那天～</h3>
+              <h3 className="emp">加油喔！</h3>
               <h4 className="emday">
                 <FaHandHoldingHeart />
-                <span className="emdayp"> 十天前</span>
+                <span className="emdayp"> 兩天前</span>
               </h4>
             </div>
 
             <div className="small_card">
               <h4 className="e_account">
                 <FaChessQueen />
-                <span className="e_name">Eva</span>
+                <span className="e_name">Ian</span>
               </h4>
 
-              <h3 className="em">熱情贊助：＄105,000</h3>
+              <h3 className="em">熱情贊助：＄505,000</h3>
 
-              <h3 className="emp">期待拿到實體貨的那天～</h3>
+              <h3 className="emp">希望盡快拿到椅子～</h3>
               <h4 className="emday">
                 <FaHandHoldingHeart />
-                <span className="emdayp"> 十天前</span>
+                <span className="emdayp"> 今天</span>
               </h4>
             </div>
           </div>

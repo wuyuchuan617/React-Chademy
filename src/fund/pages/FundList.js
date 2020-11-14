@@ -14,6 +14,7 @@ import QueueAnim from 'rc-queue-anim'
 import Hpanimate from './Hpanimate'
 
 import BannerE from '../components/BannerE'
+import Breadcrumbw from '../components/Breadcrumbw'
 
 function FundList(props) {
   const [showFilter, setShowFilter] = useState(false)
@@ -281,8 +282,12 @@ function FundList(props) {
     <>
       <div class="context1">
         {/* <BannerE/> */}
+        {/* {product.map((item, index) => { */}
+
+        {/* })} */}
 
         <div class="container" id="productCards">
+          <Breadcrumbw />
           <div className="e_lableboxx mt-5">
             <BookMark setFilterMark={setFilterMark} setTime={setTime} />
           </div>

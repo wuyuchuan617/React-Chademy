@@ -17,11 +17,15 @@ import CarouselE from '../components/CarouselE'
 import CarouselETwo from '../components/CarouselETwo'
 import CarouselEThree from '../components/CarouselEThree'
 import Edesign from '../components/Edesign'
+import { useHistory } from 'react-router-dom'
 
 function FundHomepage() {
   const [showProject, setShowProject] = useState(0)
   const [filterMark, setFilterMark] = useState(0)
   const [filterIcon, setFilterIcon] = useState(0)
+
+  let history = useHistory()
+
   return (
     <>
       <header>
@@ -66,9 +70,9 @@ function FundHomepage() {
       {filterMark === 1 && filterIcon === 4 ? <CarouselE /> : ''}
 
       <div className="e_more_div" z-index="10">
-        <Link to="/fundlist" className="e_more">
+        <div className="e_more" onClick={() => history.push('/fundlist')}>
           more
-        </Link>
+        </div>
       </div>
       <h1 className="e_popular">熱門募資專案</h1>
       <BookMarkTwo setShowProject={setShowProject} />
