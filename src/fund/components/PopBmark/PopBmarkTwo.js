@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import '../../styles/PopBmark.scss'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'

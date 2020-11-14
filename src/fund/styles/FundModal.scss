@@ -1,0 +1,41 @@
+.e_par {
+  background-image: url('../images/bg1.png');
+  min-height: 500px;
+
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  overflow: auto;
+}
+
+.text {
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.text1 {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 20px;
+
+}
+
+.tb {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  overflow: auto;
+  height: 350px;
+}
+
+.e_check {
+  text-align: center;
+}
+
+
+.ant-radio {
+  color: #c77334;
+  background: #c77334;
+}

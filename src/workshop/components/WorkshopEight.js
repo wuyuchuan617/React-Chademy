@@ -2,7 +2,7 @@ import React from 'react'
 // import { connect } from 'react-redux'
 // import { IoIosArrowDropleft, IoIosArrowDropright } from 'react-icons/io'
 import Carousel from 'react-elastic-carousel'
-import imageone from '../images/03.png'
+// import imageone from '../images/03.png'
 import imagetwo from '../images/03-1.png'
 import imagethree from '../images/03-2.png'
 import imagefour from '../images/03-3.png'
@@ -27,10 +27,10 @@ function WorkshopEight(props) {
           <Carousel itemsToScroll={3} itemsToShow={3}>
             <div className="boxoneday">
               <div className="upper1">
-                <img src={imagetwo} />
+                <img alt="" src={imagetwo} />
 
                 <div className="box100">
-                  <img id="image" src={heart} />
+                  <img alt="" id="image" src={heart} />
                 </div>
               </div>
 
@@ -48,10 +48,10 @@ function WorkshopEight(props) {
 
             <div className="boxoneday">
               <div className="upper1">
-                <img src={imagethree} />
+                <img alt="" src={imagethree} />
                 <p>HOT</p>
                 <div className="box100">
-                  <img id="image" src={heart} />
+                  <img alt="" id="image" src={heart} />
                 </div>
               </div>
 
@@ -69,10 +69,10 @@ function WorkshopEight(props) {
 
             <div className="boxoneday">
               <div className="upper1">
-                <img src={imagefour} />
+                <img alt="" src={imagefour} />
                 <p>HOT</p>
                 <div className="box100">
-                  <img id="image" src={heart} />
+                  <img alt="" id="image" src={heart} />
                 </div>
               </div>
 
@@ -90,10 +90,10 @@ function WorkshopEight(props) {
 
             <div className="boxoneday">
               <div className="upper1">
-                <img src={imagefive} />
+                <img alt="" src={imagefive} />
 
                 <div className="box100">
-                  <img id="image" src={heart} />
+                  <img alt="" id="image" src={heart} />
                 </div>
               </div>
 
@@ -111,10 +111,10 @@ function WorkshopEight(props) {
 
             <div className="boxoneday">
               <div className="upper1">
-                <img src={imagesix} />
+                <img alt="" src={imagesix} />
 
                 <div className="box100">
-                  <img id="image" src={heart} />
+                  <img alt="" id="image" src={heart} />
                 </div>
               </div>
 
@@ -132,10 +132,10 @@ function WorkshopEight(props) {
 
             <div className="boxoneday">
               <div className="upper1">
-                <img src={imageseven} />
+                <img alt="" src={imageseven} />
 
                 <div className="box100">
-                  <img id="image" src={heart} />
+                  <img alt="" id="image" src={heart} />
                 </div>
               </div>
 
@@ -152,10 +152,10 @@ function WorkshopEight(props) {
             </div>
             <div className="boxoneday">
               <div className="upper1">
-                <img src={imageeight} />
+                <img alt="" src={imageeight} />
                 <p>HOT</p>
                 <div className="box100">
-                  <img id="image" src={heart} />
+                  <img alt="" id="image" src={heart} />
                 </div>
               </div>
 
@@ -172,10 +172,10 @@ function WorkshopEight(props) {
             </div>
             <div className="boxoneday">
               <div className="upper1">
-                <img src={imagenine} />
+                <img alt="" src={imagenine} />
 
                 <div className="box100">
-                  <img id="image" src={heart} />
+                  <img alt="" id="image" src={heart} />
                 </div>
               </div>
 
@@ -192,10 +192,10 @@ function WorkshopEight(props) {
             </div>
             <div className="boxoneday">
               <div className="upper1">
-                <img src={imageten} />
+                <img alt="" src={imageten} />
 
                 <div className="box100">
-                  <img id="image" src={heart} />
+                  <img alt="" id="image" src={heart} />
                 </div>
               </div>
 

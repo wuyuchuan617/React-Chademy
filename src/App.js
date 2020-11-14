@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // ------------------以下import 套件-------------------------
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
@@ -86,7 +87,7 @@ function App() {
   const [subtotal, setSubtoal] = useState(0)
   const [resetShow, setResetShow] = useState(0)
   const [showDashBoard, setDashboard] = useState(false)
-  const [typeofProduct, setTypeofProduct] = useState(0)
+  const [typeofProduct, setTypeofProduct] = useState(1)
   //-----------------------------------------------------------
   return showDashBoard ? (
     <Router>
@@ -109,6 +110,7 @@ function App() {
           cartamount={cartamount}
           setCartAmount={setCartAmount}
           resetShow={resetShow}
+          setTypeofProduct={setTypeofProduct}
         />
 
         <ScrollToTop>

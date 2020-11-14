@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import './index.scss'
+import './index.scoped.scss'
 
 import { Row } from 'react-bootstrap'
 import { Tabs } from 'antd'
 
+import NoData from '../../common_components/NoData'
 import moment from 'moment'
 
 import imageCapon from '../chpr.png'
@@ -12,7 +13,6 @@ const { TabPane } = Tabs
 
 function Coupon(props) {
   const [couponlist, setCouponlist] = useState([])
-  const [activeKey, setActiveKey] = useState('1')
 
   console.log(props)
   // props.setTitle('折價卷')
@@ -54,13 +54,7 @@ function Coupon(props) {
 
   return (
     <>
-      <Tabs
-        defaultActiveKey="1"
-        type="card"
-        onChange={(activeKey) => {
-          setActiveKey(activeKey)
-        }}
-      >
+      <Tabs defaultActiveKey="1" type="card">
         {/* TabPane */}
         {[
           { tab: '已使用', key: '1' },
@@ -68,25 +62,19 @@ function Coupon(props) {
           { tab: '已逾期', key: '3' },
         ].map((tabItem) => (
           <TabPane tab={tabItem.tab} key={tabItem.key} centered>
-            <Row>
-              {/* data/couponlist */}
-              {couponlist.length === 0 ? (
-                <div className="empty_container">
-                  <div>沒有可使用的優惠券</div>
-                </div>
+            <Row className="row_list">
+              {couponlist.filter((i) => i.status === Number(tabItem.key))
+                .length === 0 ? (
+                <NoData tips="沒有可使用的優惠券"></NoData>
               ) : (
                 couponlist.map(
-                  (item) =>
-                    item.status === Number(activeKey) && (
-                      <>
-                        <div>
-                          <img
-                            src={imageCapon}
-                            alt="Capon"
-                            className="Capon_img"
-                          />
+                  (item, index) =>
+                    item.status === Number(tabItem.key) && (
+                      <section key={index} className="coupone_item">
+                        <div className="detail_img">
+                          <img src={imageCapon} alt="imageCapon" />
                         </div>
-                        <ul className="coupon_detail_list">
+                        <ul className="detail_list">
                           <li>
                             使用期限：
                             {moment(item.coupon_end_time).format('YYYY-MM-DD')}
@@ -99,7 +87,7 @@ function Coupon(props) {
                             {tabItem.tab}
                           </div>
                         </div>
-                      </>
+                      </section>
                     )
                 )
               )}
@@ -117,7 +105,7 @@ function Coupon(props) {
                     <div>
                       <img src={imageCapon} alt="Capon" className="Capon_img" />
                     </div>
-                    <ul className="coupon_detail_list">
+                    <ul className="detail_list">
                       <li>
                         使用期限：
                         {moment(item.coupon_end_time).format('YYYY-MM-DD')}
@@ -142,7 +130,7 @@ function Coupon(props) {
                     <div>
                       <img src={imageCapon} alt="Capon" className="Capon_img" />
                     </div>
-                    <ul className="coupon_detail_list">
+                    <ul className="detail_list">
                       <li>
                         使用期限：
                         {moment(item.coupon_end_time).format('YYYY-MM-DD')}
@@ -167,7 +155,7 @@ function Coupon(props) {
                     <div>
                       <img src={imageCapon} alt="Capon" className="Capon_img" />
                     </div>
-                    <ul className="coupon_detail_list">
+                    <ul className="detail_list">
                       <li>
                         使用期限：
                         {moment(item.coupon_end_time).format('YYYY-MM-DD')}

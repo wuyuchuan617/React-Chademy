@@ -23,7 +23,7 @@ function BrandBanner() {
         </p>
       </div>
       <div className="a_imagebanner">
-        <img src={a_imagebanner} />
+        <img alt="" src={a_imagebanner} />
       </div>
     </header>
   )

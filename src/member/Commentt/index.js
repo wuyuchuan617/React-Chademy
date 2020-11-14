@@ -5,6 +5,21 @@ import request from '../../utils/request'
 import { Comment, Tooltip, Avatar, Rate, Image } from 'antd'
 import moment from 'moment'
 
+import { noImage } from '../../utils'
+
+// 防止噴錯卡住 ref: https://www.c-sharpcorner.com/blogs/error-handling-while-use-image-render-in-react-js-application
+function CustomImg(props) {
+  const { src, alt = 'imaghe', ...otherProps } = props
+  let imagePath = ''
+  try {
+    imagePath = require('../../img/' + src)
+  } catch (err) {
+    imagePath = noImage //set default image path
+  }
+
+  return <Avatar {...otherProps} src={imagePath} alt={alt} />
+}
+
 function Commentt() {
   const [commentt, setCommentt] = useState([])
 
@@ -39,15 +54,7 @@ function Commentt() {
                   <Rate disabled defaultValue={item.stars} />
                 </div>
               }
-              avatar={
-                <>
-                  <Avatar
-                    size="large"
-                    src={require('../../img/' + item.avatar)}
-                    alt="Avatar"
-                  />
-                </>
-              }
+              avatar={<CustomImg src={item.avatar} />}
               content={
                 <div>
                   <p>{item.review_comment}</p>

@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+
+import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import img1 from '../../product/images/777.jpg'
 import SameAdress from '../components/SameAdress'
 import DefaultAddress from '../components/DefualtAddress'
 import PhoneDrive from '../components/PhoneDrive'
@@ -10,12 +12,6 @@ import Donated from '../components/Donated'
 // import './style/jay.scss'
 
 function DeliveryInfo(props) {
-  const [showadress, setShowAdress] = useState(false)
-  const [phoneDrive, setPhoneDrive] = useState(false)
-  const [donated, setDonaeted] = useState(false)
-  const [defaultform, setDefaultForm] = useState(true)
-  const [checkName, setCheckName] = useState(false)
-  const [checkPhone, setCheckPhone] = useState(false)
   const {
     name,
     setName,
@@ -28,6 +24,22 @@ function DeliveryInfo(props) {
     adress,
     setAdress,
   } = props
+  const [showadress, setShowAdress] = useState(false)
+  const [phoneDrive, setPhoneDrive] = useState(false)
+  const [donated, setDonaeted] = useState(false)
+  const [defaultform, setDefaultForm] = useState(true)
+  const [checkName, setCheckName] = useState(false)
+
+  function getNameFromLocalStorage() {
+    const newMember = JSON.parse(localStorage.getItem('reduxState')).user.users
+      .name
+
+    setName(newMember)
+    console.log(newMember)
+  }
+  useEffect(() => {
+    getNameFromLocalStorage()
+  }, [])
   return (
     <>
       <div className="myprogress">
@@ -76,7 +88,7 @@ function DeliveryInfo(props) {
           placeholder="姓名"
           required
           onChange={(e) => {
-            setName(e.target.value)
+            // setName(e.target.value)
             e.target.value ? setCheckName(false) : setCheckName(true)
           }}
         />
@@ -85,13 +97,12 @@ function DeliveryInfo(props) {
           type="tel"
           style={{
             width: '600px',
-            height: '40px',
+            height: '40p',
             marginTop: '30px',
           }}
           placeholder="手機"
           onChange={(e) => {
             setPhone(e.target.value)
-            e.target.value ? setCheckPhone(false) : setCheckPhone(true)
           }}
         />
         <select

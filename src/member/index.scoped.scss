@@ -1,0 +1,92 @@
+@import '../common_components/styles/ant_custom.scss';
+
+/**
+  會員中心的共同設定
+
+*/
+.memberCenter_container {
+  padding: 100px;
+
+  /deep/ {
+    .row_list {
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    // 標題
+    .hander_container {
+      padding-left: $asideWidth;
+      padding-right: 0;
+    }
+
+    // 表單
+    .form_container {
+      width: $formWidth;
+      margin: 0 auto;
+
+      input {
+        border-radius: 0;
+      }
+
+      .form-group.col {
+        padding: 0;
+      }
+
+      .date_input {
+        width: 100%;
+      }
+    }
+
+    // 折價卷 追蹤清單 共用
+    .ant-tabs-tabpane {
+      .detail_img img {
+        width: 200px;
+        height: 200px;
+      }
+
+      .detail_list {
+        flex: 1;
+        padding: 20px 10px;
+        margin-left: 30px;
+        // outline: purple 3px dashed;
+
+        li + li {
+          margin-top: 15px;
+        }
+      }
+    }
+
+    // ------------------- tab 的區塊 -------------------
+    .ant-tabs-nav-list {
+      width: 100%;
+
+      .ant-tabs-tab {
+        width: 33.33%;
+        height: 40px;
+        text-align: center;
+        background-color: $footerBg !important;
+
+        .ant-tabs-tab-btn {
+          flex: 1;
+        }
+      }
+
+      .ant-tabs-tabpane .row {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+    //
+  }
+}
+
+.member_content {
+  /deep/ {
+    .lineee,
+    .no_bind {
+      margin: 30px auto 0;
+    }
+  }
+}

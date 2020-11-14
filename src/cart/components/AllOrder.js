@@ -1,23 +1,19 @@
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+
 import React, { useEffect, useState } from 'react'
 import Aside from '../../common_components/Aside/index'
 import { GrMore } from 'react-icons/gr'
 import { BsPen } from 'react-icons/bs'
 import { Menu, Dropdown } from 'antd'
-import { DownOutlined } from '@ant-design/icons'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import { Modal, Button } from 'antd'
 import { withRouter } from 'react-router-dom'
-import { useRouteMatch, useLocation } from 'react-router-dom'
 
 function AllOrder(props) {
-  const {
-    setMyPO_NO,
-    setMyDate,
-    getAll,
-    getFinish,
-    getPending,
-    getCancel,
-  } = props
+  const { setMyPO_NO, setMyDate, getAll } = props
   const [member, setMember] = useState('')
   const [PO_NO, setPO_NO] = useState('')
   const [data, setData] = useState([])
@@ -72,57 +68,6 @@ function AllOrder(props) {
     // const newTotal = { total: total + value }
 
     const url = `http://localhost:3001/j_cart/list?member=${member}`
-
-    const request = new Request(url, {
-      method: 'GET',
-      headers: new Headers({
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      }),
-    })
-    const response = await fetch(request)
-    const data = await response.json()
-    setData(data)
-  }
-  //拿會員取消訂單
-  async function getCancelOrderFromServer(value) {
-    // const newTotal = { total: total + value }
-
-    const url = `http://localhost:3001/j_cart/listcancel?member=${member}`
-
-    const request = new Request(url, {
-      method: 'GET',
-      headers: new Headers({
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      }),
-    })
-    const response = await fetch(request)
-    const data = await response.json()
-    setData(data)
-  }
-  //拿會員運送中訂單
-  async function getPendingOrderFromServer(value) {
-    // const newTotal = { total: total + value }
-
-    const url = `http://localhost:3001/j_cart/listpending?member=${member}`
-
-    const request = new Request(url, {
-      method: 'GET',
-      headers: new Headers({
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      }),
-    })
-    const response = await fetch(request)
-    const data = await response.json()
-    setData(data)
-  }
-  //拿會員完成訂單
-  async function getFinishedOrderFromServer(value) {
-    // const newTotal = { total: total + value }
-
-    const url = `http://localhost:3001/j_cart//listfinish?member=${member}`
 
     const request = new Request(url, {
       method: 'GET',
@@ -199,7 +144,11 @@ function AllOrder(props) {
             nowstatus = '已取消'
         }
         return (
-          <div className="j_myorderbox" style={{ marginBottom: '15px' }}>
+          <div
+            key={item.sid}
+            className="j_myorderbox"
+            style={{ marginBottom: '15px' }}
+          >
             <div className="j_wrapspace">
               <h5>訂單編號:{item.PO_NO}</h5>
               <Dropdown

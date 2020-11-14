@@ -1,23 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import { countries, townships, postcodes } from '../components/Data'
-import { Table, Tag, Space } from 'antd'
-import { Menu } from 'antd'
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 
-import {
-  AppstoreOutlined,
-  MailOutlined,
-  SettingOutlined,
-} from '@ant-design/icons'
+import React, { useState, useEffect } from 'react'
+import { Table, Tag, Space } from 'antd'
+
 import { Modal, Button } from 'antd'
 import DashBoardAside from '../components/DashBoardAside'
 
-const { SubMenu } = Menu
-
-// submenu keys of first level
-const rootSubmenuKeys = ['sub1', 'sub2', 'sub4']
-
 function ManagerOrder(props) {
-  const { showDashBoard, setDashboard } = props
+  const { setDashboard } = props
   const [data, setData] = useState([])
   const [visible, setVisible] = useState(false)
   const [detailData, setDetailData] = useState([])

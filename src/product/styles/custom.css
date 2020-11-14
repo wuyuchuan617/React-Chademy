@@ -55,7 +55,7 @@
   display: block;
   border: 1px solid #c77334;
   /* background-color: #c77334; */
-  margin-top: 90px;
+  margin-top: 80px;
   /* margin: auto;
   margin-top: 30px;
   color: white;
@@ -238,4 +238,14 @@
 
 .w_step {
   margin-bottom: 40px;
+}
+
+.w_stepTexttt {
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 36px;
+  margin-bottom: -10px;
+  font-size: 18px;
+  color: #ded5c6;
+
 }

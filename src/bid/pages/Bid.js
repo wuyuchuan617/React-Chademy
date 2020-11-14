@@ -1,3 +1,10 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+
 import React, { useEffect, useState } from 'react'
 import BpCard from '../component/BpCard'
 import '../styles/bid.scss'
@@ -98,24 +105,24 @@ function Bid(props) {
   //  },[s_date,e_date])
 
   //loadmore
-  const handleClick = () => {
-    let preViewProduct = viewProduct
-    let newViewProduct = preViewProduct + 8
+  // const handleClick = () => {
+  //   let preViewProduct = viewProduct
+  //   let newViewProduct = preViewProduct + 8
 
-    setViewProduct(newViewProduct)
-    //const arr = product.slice(0, preViewProduct)
-    //setLastProductId(arr[arr.length - 1].sid)
-    if (document.getElementById(lastProductId)) {
-      //alert(lastProductId)
-      document
-        .getElementById(lastProductId)
-        .scrollIntoView({ behavior: 'smooth', block: 'center' })
-    }
-  }
-  useEffect(() => {
-    const arr = product.slice(0, viewProduct)
-    if (arr.length > 0) setLastProductId(arr[arr.length - 1].sid)
-  }, [viewProduct, product])
+  //   setViewProduct(newViewProduct)
+  //   //const arr = product.slice(0, preViewProduct)
+  //   //setLastProductId(arr[arr.length - 1].sid)
+  //   if (document.getElementById(lastProductId)) {
+  //     //alert(lastProductId)
+  //     document
+  //       .getElementById(lastProductId)
+  //       .scrollIntoView({ behavior: 'smooth', block: 'center' })
+  //   }
+  // }
+  // useEffect(() => {
+  //   const arr = product.slice(0, viewProduct)
+  //   if (arr.length > 0) setLastProductId(arr[arr.length - 1].sid)
+  // }, [viewProduct, product])
   //   useEffect(()=>{
 
   //     bidchange(1)
@@ -124,26 +131,26 @@ function Bid(props) {
   /**
    * 用來判斷是不是最後一筆資料
    */
-  const [isLast, setIsLast] = useState(false)
+  // const [isLast, setIsLast] = useState(false)
 
-  /**
-   * 用來搜尋DB的資料
-   */
-  const [query, setQuery] = useState({
-    type: '',
-    sid: null,
-    pageNo: 0,
-    isPage: false,
-  })
+  // /**
+  //  * 用來搜尋DB的資料
+  //  */
+  // const [query, setQuery] = useState({
+  //   type: '',
+  //   sid: null,
+  //   pageNo: 0,
+  //   isPage: false,
+  // })
 
-  const searchProduct = (type, sid) => {
-    if (!type || !sid) {
-      return
-    }
+  // const searchProduct = (type, sid) => {
+  //   if (!type || !sid) {
+  //     return
+  //   }
 
-    setIsLast(false)
-    setQuery({ type, sid, pageNo: 0, isPage: false })
-  }
+  //   setIsLast(false)
+  //   setQuery({ type, sid, pageNo: 0, isPage: false })
+  // }
   return (
     <>
       <Banner />
@@ -210,7 +217,7 @@ function Bid(props) {
             data={data}
             viewfilter={viewfilter}
             setViewfilter={setViewfilter}
-            searchProduct={searchProduct}
+            // searchProduct={searchProduct}
           />
           {/* <Waypoint onEnter={this._handleEnter}> */}
           <ScrollParallax
@@ -241,7 +248,7 @@ function Bid(props) {
 
                 return (
                   <>
-                    <BpCard key={item.bid_sid} item={item} {...props} />
+                    <BpCard key={item.bid_sid} item={item} {...props}  />
                   </>
                 )
               })}

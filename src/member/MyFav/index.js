@@ -14,17 +14,18 @@ function MyFav(props) {
 
   console.log(' props  ', props)
 
+  const fetchData = async () => {
+    const response = await request({
+      url: `/members/getUserMyFav`,
+      method: 'POST',
+      data: {},
+    })
+
+    setmyfavlist(response.data || [])
+  }
+
   // https://www.digitalocean.com/community/tutorials/creating-a-custom-usefetch-react-hook
   React.useEffect(() => {
-    const fetchData = async () => {
-      const response = await request({
-        url: `/members/getUserMyFav`,
-        method: 'POST',
-        data: {},
-      })
-
-      setmyfavlist(response.data || {})
-    }
     fetchData()
   }, [])
 
@@ -41,16 +42,21 @@ function MyFav(props) {
           { tab: '課程', key: '2' },
         ].map((tabItem) => (
           <TabPane tab={tabItem.tab} key={tabItem.key} centered>
-            <Row>
+            <Row className="row_list">
               {/* 顯示符合 key 的商品 */}
               {myfavlist.filter((i) => i.product_type === Number(tabItem.key))
                 .length === 0 ? (
                 <NoData tips="尚無追蹤清單"></NoData>
               ) : (
                 myfavlist.map(
-                  (item) =>
+                  (item, index) =>
                     item.product_type === Number(tabItem.key) && (
-                      <CardMyFav {...props} data={item}></CardMyFav>
+                      <CardMyFav
+                        {...props}
+                        key={index}
+                        data={item}
+                        fetchData={fetchData}
+                      ></CardMyFav>
                     )
                 )
               )}

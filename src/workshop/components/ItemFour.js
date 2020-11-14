@@ -1,3 +1,8 @@
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+
 import React, { useState, useEffect } from 'react'
 import '../styles/workshop.css'
 import imagework from '../images/11.jpg'
@@ -9,15 +14,16 @@ import Carousel from 'react-elastic-carousel'
 
 function ItemFour(props) {
   return (
-    <div className="wrapper2">
+    <div className="annie_wrapper200">
       <div className="title01">
-        <h2>木工創客</h2>
+        <div className="titlech noto-serif text-center">木工創客</div>
+        <div className="titleEN lora text-center">Wood Maker</div>
       </div>
       <div className="row justify-content-center">
         <Carousel itemsToScroll={2} itemsToShow={2}>
           <div className="box5worker">
             <div className="upper5">
-              <img src={imagework} />
+              <img alt="" src={imagework} />
             </div>
 
             <div className="wordworker">
@@ -31,7 +37,7 @@ function ItemFour(props) {
 
           <div className="box5worker">
             <div className="upper5">
-              <img src={imageworker} />
+              <img alt="" src={imageworker} />
             </div>
 
             <div className="wordworker">
@@ -45,7 +51,7 @@ function ItemFour(props) {
 
           <div className="box5worker">
             <div className="upper5">
-              <img src={imageworkerthree} />
+              <img alt="" src={imageworkerthree} />
             </div>
 
             <div className="wordworker">
@@ -59,7 +65,7 @@ function ItemFour(props) {
 
           <div className="box5worker">
             <div className="upper5">
-              <img src={imageworkerfour} />
+              <img alt="" src={imageworkerfour} />
             </div>
 
             <div className="wordworker">

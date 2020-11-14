@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import '../styles/about.css'
 import imagemap from '../images/47.png'
 import AOS from 'aos'
@@ -56,7 +56,7 @@ function PhysicalStore(props) {
           data-aos-once="true"
         >
           <div className="a_PhysicalStore_image">
-            <img src={imagemap} />
+            <img alt="" src={imagemap} />
           </div>
         </div>
       </div>

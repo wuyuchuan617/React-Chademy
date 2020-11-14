@@ -1,11 +1,16 @@
+/* eslint-disable no-unused-vars */
+
 import React from 'react'
 import './index.scoped.scss'
 
+import request from '../../utils/request'
+
+import { message } from 'antd'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { FaRegTrashAlt } from 'react-icons/fa'
 
 function CardMyFav(props) {
-  const { cartamount, setCartAmount, data } = props
+  const { cartamount, setCartAmount, data, fetchData, setTypeofProduct } = props
 
   console.log(
     '%c DEBUG %cData',
@@ -30,21 +35,40 @@ function CardMyFav(props) {
     setMyCart(currentCart)
   }
 
+  const deleteMyFav = async ({ sid, product_no }) => {
+    console.log(
+      '%c DEBUG %cData',
+      'color: #0092FA; font-weight: bold; ',
+      'color: #fff; background: #0092FA; font-weight: bold; padding: 5px; border-radius: 3px',
+      product_no
+    )
+    const response = await request({
+      url: `/members/deleteMyfav`,
+      method: 'DELETE',
+      data: { sid, product_no },
+    })
+
+    const { success, msg } = response
+
+    if (!success) {
+      message.error(msg)
+    } else {
+      message.success(msg)
+      fetchData()
+    }
+  }
+
   return (
     <section className="CardMyFav_container">
-      <div>
-        <img
-          src={`${window.location.origin}/img/${data.photo}`}
-          alt="myfav"
-          className="Capon_img"
-        />
+      <div className="detail_img">
+        <img src={`${window.location.origin}/img/${data.photo}`} alt="myfav" />
       </div>
       {/* 這裡要撈資料 */}
-      <ul className="myfav_detail_list">
+      <ul className="detail_list">
         <li>商品名稱：{data.product_name}</li>
         <li>商品編號：{data.product_no}</li>
         <li>金額：${data.price}</li>
-        <li>商品總類：{data.product_type}</li>
+        {/* <li>商品總類：{data.product_type}</li> */}
       </ul>
       <div className="btn_group">
         <span
@@ -65,7 +89,13 @@ function CardMyFav(props) {
           <AiOutlineShoppingCart className="icon" />
           加入購物車
         </span>
-        <span className="fav_btn">
+        <span
+          className="fav_btn"
+          onClick={() => {
+            console.log('  =>  data', data)
+            deleteMyFav(data)
+          }}
+        >
           <FaRegTrashAlt className="icon" />
           移除此商品
         </span>

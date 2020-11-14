@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react'
 import './index.scoped.scss'
 
@@ -32,6 +33,7 @@ function MyNavbar(props) {
     setNavbarHeight,
     scrollY,
     scrollDirection,
+    setTypeofProduct,
     // resetShow,
     // setResetShow,
   } = props
@@ -72,13 +74,6 @@ function MyNavbar(props) {
   const { name } = user.users || {}
 
   let history = useHistory()
-
-  // mouseOver: function () {
-  //   this.menuHover = !0
-  // },
-  // mouseOut: function () {
-  //   this.menuHover = !1
-  // },
 
   const handleLogout = () => {
     // 登出
@@ -135,11 +130,7 @@ function MyNavbar(props) {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav
-            // onMouseEnter={() => setActiveName('about')}
-            // onMouseLeave={() => setActiveName('')}
-            className="navbar_list justify-content-between text"
-          >
+          <Nav className="navbar_list justify-content-between text">
             <Nav.Link
               as={NavLink}
               to="/Brand"
@@ -275,12 +266,15 @@ function MyNavbar(props) {
             )}
           </Nav>
         </Navbar.Collapse>
+
+        {props.children}
       </Navbar>
       {clickcart ? (
         <CartArea
           showCart={showCart}
           setShowCart={setShowCart}
           cartamount={cartamount}
+          setTypeofProduct={setTypeofProduct}
         />
       ) : (
         ''

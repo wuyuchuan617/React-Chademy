@@ -1,10 +1,10 @@
 import React from 'react'
-import './index.scoped.scss'
+import '../index.scoped.scss'
 
 import request from '../../utils/request'
 
-import { Typography, Layout, Form, Input, Button, message } from 'antd'
-const { Title } = Typography
+import { Layout, Form, Input, Button, message } from 'antd'
+// const { Title } = Typography
 const { Content } = Layout
 
 function ResetPass() {
@@ -60,7 +60,7 @@ function ResetPass() {
           }}
           className="form_container"
         >
-          <Title level={4}>重置密碼</Title>
+          {/* <Title level={4}>重置密碼</Title> */}
 
           <Form.Item
             name="oldPassword"

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React, { useState } from 'react'
 import { Drawer } from 'antd'
 function News(props) {

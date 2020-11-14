@@ -1,3 +1,8 @@
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+
 import React, { useEffect } from 'react'
 import '../styles/blog.css'
 import ImgBlogfour from '../images/04_blog.jpg'
@@ -27,8 +32,9 @@ function BlogMasonry(props) {
 
   return (
     <div className="container annie_title">
-      <div className="annie_title01">
-        <h2>靈感探索</h2>
+      <div className="title01">
+        <div className="titlech noto-serif text-center">靈感探索</div>
+        <div className="titleEN lora text-center">Inspiration Exploration</div>
       </div>
 
       <div

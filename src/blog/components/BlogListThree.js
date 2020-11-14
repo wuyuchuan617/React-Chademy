@@ -1,3 +1,10 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+
 import React, { useState, useEffect } from 'react'
 import '../styles/bloglist.css'
 import ImgBlogfour from '../images/04_blog.jpg'
@@ -25,8 +32,9 @@ function BlogListThree(props) {
   return (
     <div className="container-fluid ">
       <div className="wrapper10">
-        <div className="annie_title01">
-          <h2>相關文章</h2>
+        <div className="title01">
+          <div className="titlech noto-serif text-center">相關文章</div>
+          <div className="titleEN lora text-center">Correlative Articles</div>
         </div>
 
         <div

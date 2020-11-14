@@ -6,14 +6,14 @@ import 'aos/dist/aos.css'
 import Breadcrumbww from '../components/Breadcrumbww'
 
 function ProductPopular(props) {
-  const { item } = props
+  // const { item } = props
   useEffect(() => {
     AOS.init()
     AOS.refresh()
   }, [])
   return (
     <>
-      <div className="container">
+      <div className="container section">
         <div className="row  mt-5 wbread">
           <Breadcrumbww />
         </div>

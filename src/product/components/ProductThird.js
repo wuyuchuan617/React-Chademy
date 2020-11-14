@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { withRouter } from 'react-router-dom'
+import { Parallax } from 'rc-scroll-anim'
 
 function ProductThird(props) {
   // const { product, item } = props
@@ -24,7 +25,13 @@ function ProductThird(props) {
       <div className="container">
         <div className="row">
           <div className="col-sm-12 col-lg-6 third-photo">
-            <img src={require('../images/pc3.jpg')} alt="" />
+            <Parallax
+              animation={{ scale: 1 }}
+              style={{ transform: 'scale(1.3)', margin: '0px auto' }}
+              className="code-box-shape"
+            >
+              <img src={require('../images/pc3.jpg')} alt="" />
+            </Parallax>
           </div>
           <div className="col-sm-12 col-lg-6 ">
             <div className=" refinement seats  " data-refinement-id="seats">

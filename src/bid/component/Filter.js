@@ -1,3 +1,8 @@
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+
 import React, { useState, useEffect } from 'react'
 import '../styles/filter.css'
 import { Slider } from 'antd'
@@ -115,52 +120,10 @@ function Filter(props) {
               <AiOutlineClose />
             </p>
 
-            <input type="text" className="filterSearch" placeholder="SEARCH" />
+            {/* <input type="text" className="filterSearch" placeholder="SEARCH" /> */}
 
-            <p className="clearFilter">Restart your filter</p>
-            <div className="filterTag">
-              {/* {category.map((item, index) => {
-                return (
-                  <Tag
-                    closable
-                    key={index}
-                    onClose={log} */}
-              {/* //   onClose={(e) => { */}
-              {/* //     let newCate = category.filter((el) => { */}
-              {/* //       return el !== item
-                    //     })
-                    //     setCategory(newCate)
-                    //   }}
-                  >
-                    {item}
-                  </Tag>
-                )
-              })}
-              {chairSeat.map((item, index) => {
-                return (
-                  <Tag closable key={index} onClose={log}>
-                    {item}
-                  </Tag>
-                )
-              })}
-              {chairColor.map((item, index) => {
-                return (
-                  <Tag closable key={index} onClose={log}>
-                    {item}
-                  </Tag>
-                )
-              })} */}
-              {/* <Tag closable onClose={log}>
-                白色
-              </Tag>
-
-              <Tag closable onClose={log}>
-                單椅
-              </Tag>
-              <Tag closable onClose={preventDefault}>
-                木頭
-              </Tag> */}
-            </div>
+            <p className="g-clearFilter" onClick={()=>{ setViewfilter(12)}}>Restart your filter</p>
+           
           </div>
 
           <div className="refinement seats  " data-refinement-id="seats">
@@ -189,27 +152,9 @@ function Filter(props) {
               aria-hidden="false"
               style={viewSpread1 ? sidebarContentShow : sidebarContentHide}
             >
-              <p
-                onClick={() => {
-                  setViewfilter(1)
-                }}
-              >
-                競標中
-              </p>
-              <p
-                onClick={() => {
-                  setViewfilter(0)
-                }}
-              >
-                即將競標
-              </p>
-              <p
-                onClick={() => {
-                  setViewfilter(2)
-                }}
-              >
-                已結標
-              </p>
+              <p className="g-hand" onClick={()=>{ setViewfilter(1)}}>競標中</p>
+              <p className="g-hand" onClick={()=>{ setViewfilter(0)}}>即將競標</p>
+              <p className="g-hand" onClick={()=>{ setViewfilter(2)}}>已結標</p>
             </ul>
           </div>
 
@@ -239,41 +184,11 @@ function Filter(props) {
               aria-hidden="false"
               style={viewSpread ? sidebarContentShow : sidebarContentHide}
             >
-              <p
-                onClick={() => {
-                  setViewfilter(3)
-                }}
-              >
-                ADELAIDE
-              </p>
-              <p
-                onClick={() => {
-                  setViewfilter(4)
-                }}
-              >
-                IMOLA
-              </p>
-              <p
-                onClick={() => {
-                  setViewfilter(5)
-                }}
-              >
-                OSAKA
-              </p>
-              <p
-                onClick={() => {
-                  setViewfilter(6)
-                }}
-              >
-                BOSTON
-              </p>
-              <p
-                onClick={() => {
-                  setViewfilter(7)
-                }}
-              >
-                CHARLOTTE
-              </p>
+              <p className="g-hand" onClick={()=>{ setViewfilter(3)}}>ADELAIDE</p>
+              <p className="g-hand" onClick={()=>{ setViewfilter(4)}}>IMOLA</p>
+              <p className="g-hand" onClick={()=>{ setViewfilter(5)}}>OSAKA</p>
+              <p className="g-hand" onClick={()=>{ setViewfilter(6)}}>BOSTON</p>
+              <p className="g-hand" onClick={()=>{ setViewfilter(7)}}>CHARLOTTE</p>
             </ul>
           </div>
           <div className="refinement seats  " data-refinement-id="seats">
@@ -324,162 +239,13 @@ function Filter(props) {
                 Morten Georgsen
               </p>
             </ul>
-          </div>
-
-          <div className="refinement seats  " data-refinement-id="seats">
-            <div
-              className="refinement-toggle js-slide-toggle  is-active"
-              data-toggle-element="#seats"
-              data-toggle-duration="800"
-            >
-              <div
-                className="plus d-flex justify-content-between"
-                onClick={() => {
-                  setViewSpread3(!viewSpread3)
-                  setViewSpread(false)
-                  setViewSpread1(false)
-                  setViewSpread2(false)
-                  setViewSpread4(false)
-                }}
-              >
-                <div className="refinement-title ">價格</div>
-                <div className="spreadPlus">+</div>
-              </div>
-            </div>
-
-            <ul
-              className="refinement-list scrollable seats1"
-              id="seats2"
-              aria-hidden="false"
-              style={viewSpread3 ? sidebarContentShow : sidebarContentHide}
-            >
-              <IntegerStep style={{ margin: 'auto' }} />
-
-              <li data-refinement-value="4">
-                <a className="refinement-link" rel="nofollow" href="#">
-                  3000以下
-                </a>
-              </li>
-              <li data-refinement-value="6">
-                <a className="refinement-link" rel="nofollow" href="#">
-                  3000-4999
-                </a>
-              </li>
-              <li data-refinement-value="8">
-                <a className="refinement-link" rel="nofollow" href="#">
-                  5000-6999
-                </a>
-              </li>
-              <li data-refinement-value="10">
-                <a className="refinement-link" rel="nofollow" href="#">
-                  7000-8999
-                </a>
-              </li>
-              <li data-refinement-value="12">
-                <a className="refinement-link" rel="nofollow" href="">
-                  9000以上
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="refinement seats  " data-refinement-id="seats">
-            <div
-              className="refinement-toggle js-slide-toggle  is-active"
-              data-toggle-element="#seats"
-              data-toggle-duration="800"
-            >
-              <div
-                className="plus d-flex justify-content-between"
-                onClick={() => {
-                  setViewSpread1(false)
-                  setViewSpread(false)
-                  setViewSpread2(false)
-                  setViewSpread3(false)
-                  setViewSpread4(!viewSpread4)
-                }}
-              >
-                <div className="refinement-title ">排列順序</div>
-                <div className="spreadPlus">+</div>
-              </div>
-            </div>
-            <ul
-              className="refinement-list scrollable seats1"
-              id="seats1"
-              aria-hidden="false"
-              style={viewSpread4 ? sidebarContentShow : sidebarContentHide}
-            >
-              <Checkbox
-                onChange={onChange}
-                style={{ display: 'block', marginLeft: 0 }}
-              >
-                單椅
-              </Checkbox>
-              <Checkbox
-                onChange={onChange}
-                style={{ display: 'block', marginLeft: 0 }}
-              >
-                扶手椅
-              </Checkbox>
-              <Checkbox
-                onChange={onChange}
-                style={{ display: 'block', marginLeft: 0 }}
-              >
-                餐椅
-              </Checkbox>
-              <Checkbox
-                onChange={onChange}
-                style={{ display: 'block', marginLeft: 0 }}
-              >
-                沙發椅
-              </Checkbox>
-              <Checkbox
-                onChange={onChange}
-                style={{ display: 'block', marginLeft: 0 }}
-              >
-                吧台椅
-              </Checkbox>
-            </ul>
-          </div>
-
-          <button
-            className="searchButton"
-            onClick={() => {
-              getFilterFromSQL()
-            }}
-          >
-            SEARCH
-          </button>
+        </div>
+          
+          
         </div>
       </div>
 
-      {/* <div className="contextt">
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-        <p>1111</p>
-      </div> */}
+    
     </>
   )
 }

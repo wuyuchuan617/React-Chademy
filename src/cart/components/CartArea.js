@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import { BsTrash } from 'react-icons/bs'
@@ -5,7 +7,14 @@ import { BsTrash } from 'react-icons/bs'
 
 function CartArea(props) {
   const [cartList, setCartList] = useState([])
-  const { myCart, setShowCart, showCart, resetShow, cartamount } = props
+  const {
+    myCart,
+    setShowCart,
+    showCart,
+    resetShow,
+    cartamount,
+    setTypeofProduct,
+  } = props
   function getCartFromLocalStorage() {
     const newCart = localStorage.getItem('cart') || '[]'
     // console.log(newCart)
@@ -42,6 +51,7 @@ function CartArea(props) {
                     }}
                   >
                     <img
+                      alt=""
                       style={{
                         width: '250px',
                         height: '130px',
@@ -119,7 +129,10 @@ function CartArea(props) {
         <Link
           to="/cartproduct"
           className="btn1"
-          onClick={() => setShowCart(false)}
+          onClick={() => {
+            setShowCart(false)
+            setTypeofProduct(1)
+          }}
         >
           前往購物車
         </Link>

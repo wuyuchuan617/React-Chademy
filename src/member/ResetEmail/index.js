@@ -1,10 +1,11 @@
 import React from 'react'
-import './index.scoped.scss'
+
+import '../index.scoped.scss'
 
 import request from '../../utils/request'
 
-import { Typography, Layout, Form, Input, Button, message } from 'antd'
-const { Title } = Typography
+import { Layout, Form, Input, Button, message } from 'antd'
+// const { Title } = Typography
 const { Content } = Layout
 
 function ResetEmail() {
@@ -53,7 +54,7 @@ function ResetEmail() {
           }}
           className="form_container"
         >
-          <Title level={4}>重置信箱</Title>
+          {/* <Title level={4}>重置信箱</Title> */}
 
           <Form.Item
             name="email"

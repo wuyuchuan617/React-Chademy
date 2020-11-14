@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import './index.scss'
+import './index.scoped.scss'
 
 import { Switch, Route, useRouteMatch, useLocation } from 'react-router-dom'
 
@@ -63,14 +63,14 @@ function MemberIndex({ cartamount, setCartAmount }) {
     handleTitle()
 
     // 如果 location.pathname 改變了，就重新設定 title
-  }, [location.pathname, path])
+  }, [location, path])
 
   console.log(' MemberIndex: ', path)
 
   return (
     <>
-      <Layout className="coupon_container">
-        <Header>
+      <Layout className="memberCenter_container">
+        <Header className="hander_container">
           <h2 className="text-center">{title}</h2>
         </Header>
         <Layout>
@@ -88,7 +88,7 @@ function MemberIndex({ cartamount, setCartAmount }) {
 
           {/* 方法二： 嵌套的 route, https://reactrouter.com/web/example/nesting */}
           <Switch>
-            <Content>
+            <Content className="member_content">
               {/* 會員中心 首頁 */}
               <Route exact path={path}>
                 <MemberCenter />

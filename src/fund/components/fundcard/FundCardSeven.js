@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../styles/FundHomepage.scss'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import { Container, Row, Col } from 'react-bootstrap'
+// import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { Container, Row } from 'react-bootstrap'
 import test from '../../images/dt5.jpeg'
 import tesx from '../../images/dt6.jpeg'
 

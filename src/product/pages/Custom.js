@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import React, { useState, useEffect } from 'react'
 import { Form, Select } from 'antd'
 import '../styles/custom.css'
@@ -55,7 +57,7 @@ function Custom(props) {
 
     const response = await fetch(request)
     let data = await response.json()
-    data.map((item, index) => {
+    data.foreach((item, index) => {
       setReturnData(item)
     })
   }
@@ -115,8 +117,8 @@ function Custom(props) {
               </p>
 
               <div className="">
-                <p className="text-center w_custom_mmmm">STEP 01</p>
-
+                {/* <p className="text-center w_custom_mmmm">STEP 01</p> */}
+                <p className="w_stepTexttt text-center">01 CHAIRARM</p>
                 <Form.Item label="" className="justify-content-center">
                   <Select
                     placeholder="選擇扶手"
@@ -133,7 +135,9 @@ function Custom(props) {
               </div>
 
               <div className="">
-                <p className="text-center w_custom_mmmm">STEP 02</p>
+                {/* <p className="text-center w_custom_mmmm">STEP 02</p>
+                 */}
+                <p className="w_stepTexttt text-center">02 WOOD</p>
                 <Form.Item label="" className="justify-content-center">
                   <Select
                     placeholder="選擇木頭"
@@ -148,7 +152,8 @@ function Custom(props) {
                 </Form.Item>
               </div>
               <div className="">
-                <p className="text-center w_custom_mmmm">STEP 03</p>
+                {/* <p className="text-center w_custom_mmmm">STEP 03</p> */}
+                <p className="w_stepTexttt text-center">03 LEATHER</p>
                 <Form.Item label="" className="justify-content-center">
                   <Select
                     placeholder="選擇椅墊"
@@ -197,11 +202,11 @@ function Custom(props) {
 
         <div className="parallax"></div>
 
-        <div className="container">
+        {/* <div className="container">
           <div className="row justify-content-center">
             <img src={require('../images/Group 186.png')} alt="" />
           </div>
-        </div>
+        </div> */}
 
         <div className="container-fluid w_container_fluid">
           <div className="row">

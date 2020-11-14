@@ -1,5 +1,3 @@
-@import '~bootstrap/scss/bootstrap.scss';
-
 body {
   background-color: #edece8;
 }
@@ -174,6 +172,20 @@ body {
   background-color: #fff;
   opacity: 0.5;
  
+}
+.g-hand{
+  cursor: pointer;
+}
+.g-clearFilter{
+  font-family: assistant;
+  font-weight: 600;
+  color: #c77334;
+  text-align: center;
+    margin: 40px 30px;
+    padding: 5px 5px;
+    font-size: 12px;
+    cursor: pointer;
+    background-color: #fff;
 }
 @media screen and (max-width: 600px) {
 

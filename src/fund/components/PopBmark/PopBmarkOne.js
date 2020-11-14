@@ -1,3 +1,9 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+
 import React from 'react'
 import '../../styles/PopBmark.scss'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'

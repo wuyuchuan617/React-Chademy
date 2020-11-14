@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 
 import Header from './header'
 import Catchcopy from './catchcopy'
 import About from './about'
-import classes from './style.module.scss'
+// import classes from './style.module.scss'
 import Antique from './antique'
 import News from './news'
 import Classic from './classic'

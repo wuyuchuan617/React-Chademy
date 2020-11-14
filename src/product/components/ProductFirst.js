@@ -1,3 +1,8 @@
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+
 import React, { useState, useEffect } from 'react'
 
 import { BsFillHeartFill } from 'react-icons/bs'
@@ -8,7 +13,13 @@ import { withRouter } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Breadcrumbw from '../components/Breadcrumbw'
 import { Anchor } from 'antd'
-
+import {
+  FacebookShareButton,
+  LineShareButton,
+  FacebookMessengerShareButton,
+} from 'react-share'
+import { FacebookShareCount } from 'react-share'
+import { FacebookIcon, FacebookMessengerIcon, LineIcon } from 'react-share'
 const { Link } = Anchor
 
 function ProductFirst(props) {
@@ -330,57 +341,57 @@ function ProductFirst(props) {
                   <div className="choose-wood"></div>
                 </div>
               </div> */}
-              {/* <li className="share-facebook">
-                <a
-                  rel="nofollow noopener noreferrer"
-                  data-shared="sharing-facebook-48785"
-                  className="share-facebook sd-button share-icon no-text"
-                  href="https://entertheloft.com/product/cylinder-high-by-studio-corkinho/?share=facebook&amp;nb=1"
-                  target="_blank"
-                  title="Click to share on Facebook"
-                >
-                  <span></span>
-                  <span className="sharing-screen-reader-text">
-                    Click to share on Facebook (Opens in new window)
-                  </span>
-                </a>
-              </li> */}
-              {/* <a
-                href="https://www.facebook.com/sharer.php?u=https://www.cyberbiz.co/support/?p=855"
-                target="_blank"
-              >
-                aaa
-              </a> */}
+              <div className="d-flex justify-content-end">
+                <div className="Demo__some-network mx-1">
+                  <FacebookShareButton
+                    url={'http://localhost:3000/product/156'}
+                    quote={'Chademy'}
+                    className="Demo__some-network__share-button"
+                  >
+                    <FacebookIcon
+                      size={32}
+                      round={true}
+                      // iconFillColor={'#ded5c6'}
+                      bgStyle={{ fill: '#ded5c6' }}
+                    />
+                  </FacebookShareButton>
 
-              {/* <FacebookProvider appId="123456789">
-                <Share href="http://www.facebook.com">
-                  {({ handleClick, loading }) => (
-                    <button
-                      type="button"
-                      disabled={loading}
-                      onClick={handleClick}
-                    >
-                      Share
-                    </button>
-                  )}
-                </Share>
-              </FacebookProvider> */}
-              {/* <a href="https://lin.ee/unl5HeD">
-                <img
-                  src="https://scdn.line-apps.com/n/line_add_friends/btn/zh-Hant.png"
-                  alt="加入好友"
-                  height="36"
-                  border="0"
-                />
-              </a> */}
-              <a
-                target="_blank"
-                href="//www.facebook.com/sharer.php?u=https://fernwehwoodworking.com/products/fernweh-woodworking-furniture-catalog-hard-copy"
-                className="share__link"
-              >
-                <span className="icon icon-facebook" aria-hidden="true"></span>
-                <span className="share__text">Share</span>
-              </a>
+                  <FacebookShareCount
+                    url={'http://10.0.0.195:3000/product/156'}
+                    className="Demo__some-network__share-count"
+                  >
+                    {(count) => count}
+                  </FacebookShareCount>
+                </div>
+                <div className="Demo__some-network  mx-1">
+                  <FacebookMessengerShareButton
+                    url={'http://10.0.0.195:3000/product/156'}
+                    appId="521270401588372"
+                    className="Demo__some-network__share-button"
+                  >
+                    <FacebookMessengerIcon
+                      size={32}
+                      round={true}
+                      // iconFillColor={'#ded5c6'}
+                      bgStyle={{ fill: '#ded5c6' }}
+                    />
+                  </FacebookMessengerShareButton>
+                </div>
+                <div className="Demo__some-network mx-1">
+                  <LineShareButton
+                    url={'http://10.0.0.195:3000/product/156'}
+                    title={'title'}
+                    className="Demo__some-network__share-button"
+                  >
+                    <LineIcon
+                      size={32}
+                      round={true}
+                      // iconFillColor={'#ded5c6'}
+                      bgStyle={{ fill: '#ded5c6' }}
+                    />
+                  </LineShareButton>
+                </div>
+              </div>
               {isLogged ? (
                 <div
                   className="btn_lessmargin more w_cart-btn"

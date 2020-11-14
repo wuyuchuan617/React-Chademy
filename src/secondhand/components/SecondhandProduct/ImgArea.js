@@ -1,3 +1,10 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+
 import React from 'react'
 import Img1 from '../../img/F Chair1.jpg'
 import Img2 from '../../img/F Chair2.jpg'

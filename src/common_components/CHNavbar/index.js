@@ -9,7 +9,7 @@ import useWindowScroll from '../../utils/scroll'
 export default function CHNavbar(props) {
   const [activeName, setActiveName] = useState('')
   const [navbarHeight, setNavbarHeight] = useState(0)
-  const { cartamount, setCartAmount } = props
+  const { cartamount, setCartAmount, setTypeofProduct } = props
 
   // 處理滾動
   const { scrollY, scrollDirection } = useWindowScroll()
@@ -28,12 +28,14 @@ export default function CHNavbar(props) {
         setNavbarHeight={setNavbarHeight}
         cartamount={cartamount}
         setCartAmount={setCartAmount}
-      />
-      <NavbarPerview
-        activeName={activeName}
-        navbarHeight={navbarHeight}
-        setActiveName={setActiveName}
-      />
+        setTypeofProduct={setTypeofProduct}
+      >
+        <NavbarPerview
+          activeName={activeName}
+          navbarHeight={navbarHeight}
+          setActiveName={setActiveName}
+        />
+      </Navbar>
     </div>
   )
 }

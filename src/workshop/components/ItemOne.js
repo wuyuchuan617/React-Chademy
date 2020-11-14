@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import '../styles/workshop.css'
-import imageone from '../images/03.png'
-import imagetwo from '../images/03-1.png'
-import imagethree from '../images/03-2.png'
-import heart from '../images/heart.svg'
+// import imageone from '../images/03.png'
+// import imagetwo from '../images/03-1.png'
+// import imagethree from '../images/03-2.png'
+// import heart from '../images/heart.svg'
 import OneWorkShop from '../components/OneWorkShop'
 import '../styles/slider.css'
 import Carousel from 'react-elastic-carousel'
@@ -11,9 +11,10 @@ import Carousel from 'react-elastic-carousel'
 function ItemOne(props) {
   const { oneWorkShop } = props
   return (
-    <div className="wrapper2">
+    <div className="annie_wrapper100">
       <div className="title01">
-        <h2>一日木工體驗</h2>
+        <div className="titlech noto-serif text-center">一日木工體驗</div>
+        <div className="titleEN lora text-center">One day Workshop</div>
       </div>
       <div className="row justify-content-center">
         <Carousel itemsToScroll={3} itemsToShow={3}>

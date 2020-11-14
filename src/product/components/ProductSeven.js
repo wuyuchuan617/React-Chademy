@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 // ------------------------------以下引入套件---------------------------
 
 import React, { useEffect } from 'react'

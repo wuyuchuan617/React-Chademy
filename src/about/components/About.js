@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import '../styles/about.css'
 import imagemain from '../images/46.png'
 import AOS from 'aos'
@@ -20,7 +20,7 @@ function About(props) {
             data-aos-duration="2400"
           >
             <div className="a_about_image">
-              <img src={imagemain} />
+              <img alt="" src={imagemain} />
             </div>
           </div>
 

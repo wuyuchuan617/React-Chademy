@@ -4,14 +4,14 @@ import React, { useState } from 'react'
 
 // ------------------以下引入images---------------------------
 
-import series from '../images/series.jpg'
+// import series from '../images/series.jpg'
 
 function ProductSeries(props) {
   const { setSeries } = props
   const [statusPhoto, setStatusPhoto] = useState(1)
   return (
     <>
-      <div className="container">
+      <div className="container section">
         <div className="row">
           <div className="w_title1">
             <div className="titlech noto-serif text-center">產品系列</div>

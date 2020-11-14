@@ -1,8 +1,8 @@
 import React from 'react'
-import { countries, townships, postcodes } from '../components/Data'
+import { countries, townships } from '../components/Data'
 
 function DefaultAddress(props) {
-  const { name, phone, city, area, adress } = props
+  const { city } = props
   return (
     <>
       <input

@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/accessible-emoji */
 import React, { useEffect, useState } from 'react'
 import { Modal, Button } from 'react-bootstrap'
 
@@ -47,11 +50,13 @@ function Modalsetprice(props) {
             id="contained-modal-title-vcenter"
             className="text-center"
           >
-            恭喜競標成功！
+            恭喜競標成功🎉🎉🎉🎉🎉
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h4 className="text-center">您已成功競標以下商品</h4>
+          <h4 className="text-center">
+            您已成功競標以下商品，請至購物車結帳！
+          </h4>
           <p className="text-center">{pname}</p>
           <div className="g-modal-pic mx-auto">
             <img src={chair} />
@@ -59,7 +64,7 @@ function Modalsetprice(props) {
         </Modal.Body>
         <Modal.Footer>
           <Button
-            className="w_cart-btn"
+            className="w_cart-btn rounded-0"
             onClick={() => {
               setNoShowModel(true)
               props.onHide()
