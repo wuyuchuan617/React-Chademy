@@ -302,7 +302,7 @@ function ProductList(props) {
       </div>
 
       <NewsLetter />
-      <TabW />
+      {/* <TabW /> */}
       {/* <TabletBanner /> */}
 
       <BackTop

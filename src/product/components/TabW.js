@@ -5,14 +5,17 @@ function TabW(props) {
 
   return (
     <>
-      <div className="container-fluid">
+      <div className="container-fluid w_tabbb">
         <div className="row">
           <div className="w_title1">
             <div className="titlech noto-serif text-center">新品上市</div>
             <div className="titleEN lora text-center">New Arrivals</div>
           </div>
         </div>
-        <div className="row d-flex justify-content-center">
+        <div
+          className="row d-flex justify-content-center w_triangle "
+          id="w_share"
+        >
           <div class="sec_2 pin">
             <div class="intro_tab">
               <div class="tab">
@@ -59,6 +62,10 @@ function TabW(props) {
             </div>
           </div>
         </div>
+        <div
+          className="row d-flex justify-content-center w_triangle2 "
+          id="w_speed"
+        ></div>
       </div>
     </>
   )

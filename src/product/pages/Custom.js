@@ -6,6 +6,7 @@ import '../styles/custom.css'
 import { useSelector } from 'react-redux'
 import CustomBanner from '../components/CustomBanner'
 import BreadcrumCustom from '../components/BreadcrumCustom'
+import TabW from '../components/TabW'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
 import { Spin } from 'antd'
@@ -323,6 +324,7 @@ function Custom(props) {
               </p>
             </div>
           </div>
+
           <div className="container">
             <div className="row">
               <div className="w_title1">
@@ -366,6 +368,8 @@ function Custom(props) {
           </div>
         </div>
       </Form>
+
+      <TabW />
       <BackTop
         visibilityHeight="2000"
         style={{
