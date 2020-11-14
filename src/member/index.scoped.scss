@@ -1,0 +1,89 @@
+@import '../common_components/styles/ant_custom.scss';
+
+.memberCenter_container {
+  padding: 100px;
+
+  /deep/ {
+    // 標題
+    .hander_container {
+      padding-left: $asideWidth;
+    }
+
+    // 表單
+    .form_container {
+      width: $formWidth;
+      margin: 0 auto;
+
+      input {
+        border-radius: 0;
+      }
+
+      .form-group.col {
+        padding: 0;
+      }
+
+      .date_input {
+        width: 100%;
+      }
+    }
+
+    // tab 的區塊
+    .ant-tabs-nav-list {
+      width: 100%;
+
+      .ant-tabs-tab {
+        width: 33.33%;
+        height: 40px;
+        text-align: center;
+        background-color: $footerBg !important;
+
+        .ant-tabs-tab-btn {
+          flex: 1;
+        }
+      }
+
+      .ant-tabs-tabpane .row {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+//
+.Capon_img {
+  width: 200px;
+  height: 200px;
+}
+
+.cou_btn {
+  width: 80px;
+  height: 40px;
+  background-color: #c77334;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.cou {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.coupon_detail_list {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 0;
+
+  li + li {
+    margin-top: 20px;
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}

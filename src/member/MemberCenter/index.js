@@ -4,18 +4,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
-import './index.scoped.scss'
-
-// import Aside from '../../common_components/Aside'
-
-// import { Form, Button, Col, Container, Modal } from 'react-bootstrap'
 
 import { Modal, Button, Form, Input, DatePicker, message } from 'antd'
-
 import moment from 'moment'
-// import { useHistory } from 'react-router-dom'
-
-// const { Header, Sider, Content } = Layout
 
 function MemberCenter(props) {
   const { setCartAmount } = props
@@ -27,26 +18,6 @@ function MemberCenter(props) {
     data: {},
   })
   const [smShow, setSmShow] = useState(false)
-
-  // let history = useHistory()
-  // const [validated, setValidated] = useState(false)
-
-  // const handleSubmit = (event) => {
-  //   const form = event.currentTarget
-  //   event.preventDefault() //阻止預設行為
-  //   event.stopPropagation() //停止向上傳送
-
-  //   console.log('form.checkValidity()', form.checkValidity())
-  //   if (form.checkValidity() === false) {
-  //     // event.preventDefault()
-  //     // event.stopPropagation()
-  //   } else {
-  //     // api
-  //     registerApi()
-  //   }
-
-  //   setValidated(true)
-  // }
 
   async function getUserInfo() {
     const url = 'http://localhost:3001/members/getUserInfo'
@@ -71,8 +42,6 @@ function MemberCenter(props) {
     if (res.data && res.data.birthday) {
       res.data.birthday = moment(res.data.birthday)
     }
-    // console.log('moment(res.data.birthday): ', moment(res.data.birthday))
-    // console.log('response.data ', res.data)
 
     // 設定初始值去表單上
     form.setFieldsValue(res.data)
@@ -122,49 +91,13 @@ function MemberCenter(props) {
     setUserInfo(allValue)
   }
 
-  //
-  //
-  //
-  //
-
-  // // Use form inside UseEffect
-  // useEffect(() => {
-  //   console.log('    useEffect')
-  //   form.setFieldsValue({
-  //     username: 'Annacoding',
-  //   })
-  // }, [])
-
   // didmount拿所有資料
   useEffect(() => {
     getUserInfo()
   }, [])
-  //
-  //
-  //
-  //
 
   return (
     <>
-      {/* <Layout className="memberCenter_container">
-        <Header className="hander_container">
-          <div className="title">個人資料</div>
-        </Header>
-
-        <Layout>
-          <Sider
-            className="sider_container"
-            style={{ background: 'transparent' }}
-            light="light"
-            width={256}
-          >
-            <Aside></Aside>
-          </Sider>
-          <Content style={{ padding: '0 50px' }}>
-          </Content>
-        </Layout>
-      </Layout> */}
-
       <Form
         form={form}
         layout="vertical"
@@ -185,7 +118,7 @@ function MemberCenter(props) {
           name="name"
           rules={[{ required: true, message: '此欄不得為空' }]}
         >
-          <Input />
+          <Input size="large" />
         </Form.Item>
 
         <Form.Item
@@ -193,7 +126,7 @@ function MemberCenter(props) {
           name="mobile"
           rules={[{ required: true, message: '此欄不得為空' }]}
         >
-          <Input />
+          <Input size="large" />
         </Form.Item>
 
         <Form.Item
@@ -217,7 +150,7 @@ function MemberCenter(props) {
         </Form.Item>
 
         <Form.Item>
-          <Button type="primary" htmlType="submit">
+          <Button type="chademy" htmlType="submit">
             更改
           </Button>
         </Form.Item>
