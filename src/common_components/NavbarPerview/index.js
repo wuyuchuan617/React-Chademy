@@ -3,34 +3,27 @@ import './index.scoped.scss'
 
 import Card from '../Card'
 
+const operPreviewList = [
+  'about',
+  'Brand',
+  'product',
+  'antique',
+  'bidding',
+  'Workshop',
+  'funding',
+  'Blog',
+]
+
 export default function NavbarPerview(props) {
-  const { activeName, navbarHeight, setActiveName } = props
+  const { activeName, navbarHeight } = props
 
   return (
-    // <div
-    //   ref={ref}
-    //   className={`shit ${activeName ? 'isActive' : ''}`}
-    //   onClick={closeNavbar}
-    //   onMouseEnter={() => setActiveName('about')}
-    // >
     <section
       className={`navbarPreview_container ${activeName ? 'isActive' : ''}`}
-      style={{ top: `${navbarHeight}px` }}
+      style={{ '--navbar-height': `${activeName ? navbarHeight : -1000}px` }}
     >
-      <Card />
-      {/*
-          // 根據不同 type 開啟不同 card
-          {[
-            'about',
-            'product',
-            'antique',
-            'bidding',
-            'workshop',
-            'funding',
-            'blog',
-          ].includes(activeName) && <Card />}
-         */}
+      {/* 比對 activeName，有匹配的 type 才開啟 */}
+      {operPreviewList.includes(activeName) && <Card />}
     </section>
-    // </div>
   )
 }

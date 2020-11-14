@@ -74,13 +74,6 @@ function MyNavbar(props) {
 
   let history = useHistory()
 
-  // mouseOver: function () {
-  //   this.menuHover = !0
-  // },
-  // mouseOut: function () {
-  //   this.menuHover = !1
-  // },
-
   const handleLogout = () => {
     // 登出
     const logout = () => {
@@ -136,11 +129,7 @@ function MyNavbar(props) {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav
-            // onMouseEnter={() => setActiveName('about')}
-            // onMouseLeave={() => setActiveName('')}
-            className="navbar_list justify-content-between text"
-          >
+          <Nav className="navbar_list justify-content-between text">
             <Nav.Link
               as={NavLink}
               to="/Brand"
