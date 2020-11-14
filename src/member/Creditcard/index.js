@@ -171,9 +171,7 @@ function Creditcard() {
         </div>
       </div>
 
-      {creditcard.length === 0 && (
-        <div style={{ textAlign: 'center', marginTop: '50px' }}>尚未綁定</div>
-      )}
+      {creditcard.length === 0 && <div className="no_bind">尚未綁定</div>}
       <MainScreen
         data={modalData}
         show={modalShow}

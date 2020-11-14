@@ -179,7 +179,6 @@ function Address() {
           <Select
             style={{
               width: 'calc(50% - 20px)',
-              height: '40px',
               marginBottom: '30px',
               marginRight: '20px',
             }}
@@ -194,7 +193,6 @@ function Address() {
           <Select
             style={{
               width: '50%',
-              height: '40px',
               marginBottom: '30px',
             }}
             size="large"

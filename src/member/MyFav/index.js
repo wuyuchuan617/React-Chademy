@@ -21,7 +21,7 @@ function MyFav(props) {
       data: {},
     })
 
-    setmyfavlist(response.data || {})
+    setmyfavlist(response.data || [])
   }
 
   // https://www.digitalocean.com/community/tutorials/creating-a-custom-usefetch-react-hook

@@ -18,6 +18,7 @@
     // 標題
     .hander_container {
       padding-left: $asideWidth;
+      padding-right: 0;
     }
 
     // 表單
@@ -78,5 +79,14 @@
       }
     }
     //
+  }
+}
+
+.member_content {
+  /deep/ {
+    .lineee,
+    .no_bind {
+      margin: 30px auto 0;
+    }
   }
 }
