@@ -177,7 +177,12 @@ hr {
   margin: 25px 0px;
 }
 
-.ant-rate-star-zero svg {
+/* .ant-rate-star-zero svg {
   color: #ded5c6;
+} */
+/* .ant-rate-star.ant-rate-star-full i svg {
+  color: #C77334;
+} */
+.ant-rate-star.ant-rate-star-zero {
+  color: #ded5c6 !important;
 }
-

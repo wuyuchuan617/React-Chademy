@@ -13,6 +13,7 @@ import { withRouter } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Breadcrumbw from '../components/Breadcrumbw'
 import { Anchor } from 'antd'
+import { FaLine, FaFacebookMessenger } from 'react-icons/fa'
 import {
   FacebookShareButton,
   LineShareButton,
@@ -277,7 +278,7 @@ function ProductFirst(props) {
               <Rate
                 disabled
                 allowHalf
-                style={{ color: '#C77334', fontSize: 24 + 'px' }}
+                style={{ fontSize: 24 + 'px' }}
                 count={avgStar}
               />
               {/* )
@@ -347,7 +348,7 @@ function ProductFirst(props) {
                 <span id="busuanzi_value_site_uv"></span>正在瀏覽
               </span>
 
-              <div className="d-flex justify-content-end">
+              {/* <div className="d-flex justify-content-end">
                 <div className="Demo__some-network mx-1">
                   <FacebookShareButton
                     url={'http://localhost:3000/product/156'}
@@ -397,7 +398,7 @@ function ProductFirst(props) {
                     />
                   </LineShareButton>
                 </div>
-              </div>
+              </div> */}
 
               <div class="">
                 <div class="js-qty quantity-selector" id="Quantity-product">
@@ -429,6 +430,7 @@ function ProductFirst(props) {
                   </span>
                 </div>
               </div>
+
               {isLogged ? (
                 <div
                   className="btn_lessmargin more w_cart-btn"
@@ -456,6 +458,38 @@ function ProductFirst(props) {
                   加入購物車 請先登入
                 </div>
               )}
+              <div class="Article__ShareButtons ShareButtons">
+                <a
+                  class="ShareButtons__Item ShareButtons__Item--facebook"
+                  href="https://www.facebook.com/sharer.php?u=https://menuspace.com/blogs/news/the-umanoff-collection"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <svg class="Icon Icon--facebook" viewBox="0 0 9 17">
+                    <path d="M5.842 17V9.246h2.653l.398-3.023h-3.05v-1.93c0-.874.246-1.47 1.526-1.47H9V.118C8.718.082 7.75 0 6.623 0 4.27 0 2.66 1.408 2.66 3.994v2.23H0v3.022h2.66V17h3.182z"></path>
+                  </svg>
+                </a>
+                <a
+                  class="ShareButtons__Item ShareButtons__Item--pinterest"
+                  href="https://pinterest.com/pin/create/button/?url=https://menuspace.com/blogs/news/the-umanoff-collection&amp;media=https://cdn.shopify.com/s/files/1/0262/3959/8658/articles/MENU_Umanoff-Side-Table_750x.jpg?v=1599490657&amp;description=Arthur%20Umanoff%20galvanised%20the%20Mid-century%20Modern%20movement%20with%20his%20streamlined%20objects%20that%20placed%20form%20after..."
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <FaLine
+                    class="Icon Icon--pinterest"
+                    // role="presentation"
+                    // viewBox="0 0 32 32"
+                  />
+                </a>
+                <a
+                  class="ShareButtons__Item ShareButtons__Item--linkedin"
+                  href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://menuspace.com/blogs/news/the-umanoff-collection&amp;title=The Umanoff Collection&amp;source=https://menuspace.com&amp;summary=Arthur%20Umanoff%20galvanised%20the%20Mid-century%20Modern%20movement%20with%20his%20streamlined%20objects%20that%20placed%20form%20after..."
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <FaFacebookMessenger class="Icon Icon--linkedin" />
+                </a>
+              </div>
             </div>
           </div>
         </div>

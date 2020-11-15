@@ -81,7 +81,7 @@ body {
 
 .stars svg {
   margin-right: 7px;
-  color: #c77334;
+  /* color: #c77334; */
 }
 
 .product_photo {
@@ -862,10 +862,10 @@ body {
 
 .w_float_text {
   position: relative;
-  
+
 }
 
-.w_float_circle{
+.w_float_circle {
   position: relative;
 }
 
@@ -888,4 +888,53 @@ body {
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
+}
+
+.ShareButtons__Item {
+  display: table-cell;
+  width: 120px;
+  height: 45px;
+  min-height: 45px;
+  color: #909090;
+  text-align: center;
+  vertical-align: middle;
+  background: #f7f6f4;
+  /* border: .5px solid #d7d6d5; */
+  outline: 1px solid transparent;
+  outline-offset: -1px;
+  transition: all 0.2s ease-in-out;
+}
+
+.ShareButtons__Item svg {
+  height: 18px;
+  width: 18px;
+  vertical-align: text-bottom;
+}
+
+.ShareButtons__Item--facebook:hover,
+.no-supports-hover .ShareButtons__Item--facebook {
+  background: #4469af;
+  color: #ffffff;
+  border-color: #4469af;
+  outline: 1.5px solid #4469af;
+}
+
+.ShareButtons__Item--pinterest:hover,
+.no-supports-hover .ShareButtons__Item--pinterest {
+  background: #06B901;
+  color: #ffffff;
+  border-color: #06B901;
+  outline: 1.5px solid #06B901;
+}
+
+.ShareButtons__Item--linkedin:hover,
+.no-supports-hover .ShareButtons__Item--linkedin {
+  background: #0077b5;
+  color: #ffffff;
+  border-color: #0077b5;
+  outline: 1.5px solid #0077b5;
+}
+
+.ShareButtons {
+  margin-top: 30px;
 }

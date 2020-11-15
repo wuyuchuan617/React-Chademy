@@ -271,7 +271,7 @@ function Review(props) {
                   <div className="reviewStars d-flex">
                     <Rate
                       style={{ color: '#C77334' }}
-                      defaultValue={3}
+                      defaultValue={5}
                       onChange={(e) => {
                         setStars(e)
                       }}

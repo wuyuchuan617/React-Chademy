@@ -20,6 +20,7 @@ import CustomCard from '../components/CustomCard'
 import CouponModal from '../components/CouponModal'
 import ListNew from '../components/ListNew'
 import NewsLetter from '../components/NewsLetter'
+import Pinterest from '../components/Pinterest'
 import ProductRecommend from '../components/ProductRecommend'
 import TabletBanner from '../components/TabletBanner'
 import TabW from '../components/TabW'
@@ -304,6 +305,7 @@ function ProductList(props) {
 
       <ProductRecommend />
       <NewsLetter />
+      <Pinterest />
       {/* <TabW /> */}
       {/* <TabletBanner /> */}
 
