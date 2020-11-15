@@ -8,9 +8,9 @@ body {
   padding: 0;
 }
 .i_fix{
-  position: fixed;
+  position: sticky;
   display:block;
-  top:300px;
+  top:200px;
 }
 .i_fv {
   width: 100%;

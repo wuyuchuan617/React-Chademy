@@ -30,24 +30,24 @@ const Filter = (props) => {
   //   }
   // }, [window.pageYOffset])
   return (
-    // <Affix
-    //   offsetTop={120}
-    //   onChange={(affixed) => console.log('affixed' + affixed)}
-    //   className="i_fix"
-    // >
-    <div className="i_filter_list">
-      {itemList.map((item, index) => {
-        return (
-          <FilterItem
-            key={`item ${index}`}
-            item={item}
-            searchProduct={searchProduct}
-          />
-        )
-      })}
-      <div className="i_border_bottom"></div>
-    </div>
-    // </Affix>
+    <Affix
+      offsetTop={120}
+      onChange={(affixed) => console.log('affixed' + affixed)}
+      className="i_fix"
+    >
+      <div className="i_filter_list">
+        {itemList.map((item, index) => {
+          return (
+            <FilterItem
+              key={`item ${index}`}
+              item={item}
+              searchProduct={searchProduct}
+            />
+          )
+        })}
+        <div className="i_border_bottom"></div>
+      </div>
+    </Affix>
   )
 }
 
