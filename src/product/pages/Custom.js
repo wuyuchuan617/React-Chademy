@@ -322,7 +322,7 @@ function Custom(props) {
             </div>
           </div>
 
-          <div className="row w_share_row">
+          <div className="row w_share_row ">
             <div className="col-5 w_share_left">
               <p className="w_share_big">
                 DESIGNED & MADE IN MELBOURNE FOR AN ENDURING APPEAL
@@ -340,7 +340,7 @@ function Custom(props) {
             </div>
           </div>
 
-          <div className="row w_share_row">
+          <div className="row w_share_row w_share_rowww">
             <div className="col-4 coll4">
               <img
                 className="w_share_hover_img"
@@ -381,7 +381,7 @@ function Custom(props) {
               <div className="titleEN lora text-center">Awards</div>
             </div>
           </div>
-          <div className="row w_share_row">
+          <div className="row w_share_row ">
             <div className="col-5 award_img">
               <img src={require('../images/share2.jpg')} alt="" />
             </div>
