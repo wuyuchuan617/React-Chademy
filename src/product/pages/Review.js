@@ -289,7 +289,7 @@ function Review(props) {
                     <label for="price">評論標題</label>
                     <input
                       type="text"
-                      className="formstyle formwidthw"
+                      className="formstyle formwidthw cus_input"
                       value={reviewTitle}
                       id="price"
                       name="review_title"

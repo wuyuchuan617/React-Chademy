@@ -341,6 +341,11 @@ function ProductFirst(props) {
                   <div className="choose-wood"></div>
                 </div>
               </div> */}
+
+              <span id="busuanzi_container_site_uv">
+                本站訪客數<span id="busuanzi_value_site_uv"></span>人次
+              </span>
+
               <div className="d-flex justify-content-end">
                 <div className="Demo__some-network mx-1">
                   <FacebookShareButton

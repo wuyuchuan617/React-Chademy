@@ -11,7 +11,7 @@ import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
 import { Spin } from 'antd'
 import { LoadingOutlined } from '@ant-design/icons'
-import { Steps } from 'antd'
+import { Steps, Input } from 'antd'
 
 const { Step } = Steps
 
@@ -32,6 +32,8 @@ function Custom(props) {
   const [returnData, setReturnData] = useState({})
   const [spin, setSpin] = useState(false)
   const [step, setStep] = useState(0)
+
+  const [inputText, setInputText] = useState('')
 
   let custom = []
   if (arm) custom.push(arm)
@@ -96,16 +98,25 @@ function Custom(props) {
       >
         <div className="container">
           <div className="row justify-content-center ">
-            <div className="col-8 w_step">
-              <Steps current={step}>
+            {/* <div className="col-8 w_step">
+              <Steps current={step} direction="vertical">
                 <Step title="Step 1" description="選擇把手" />
                 <Step title="Step 2" description="選擇木頭" />
                 <Step title="Step 3" description="選擇椅墊" />
               </Steps>
-            </div>
+            </div> */}
           </div>
+
           <div className="row">
-            <div className="col-7 custom_photo">
+            <div className="col-2 w_step">
+              <Steps current={step} direction="vertical">
+                <Step title="Step 1" description="選擇把手" />
+                <Step title="Step 2" description="選擇木頭" />
+                <Step title="Step 3" description="選擇椅墊" />
+                <Step title="Step 4" description="輸入刻字" />
+              </Steps>
+            </div>
+            <div className="col-6 custom_photo">
               <Spin
                 indicator={antIcon}
                 spinning={spin}
@@ -114,8 +125,12 @@ function Custom(props) {
               >
                 <img src={returnData.photo} alt="" />
               </Spin>
+              <div className=" w_custom_name">
+                <img src={require('../images/cus_name.jpg')} alt="" />
+                <div className="cust_show_name">{inputText}</div>
+              </div>
             </div>
-            <div className="col-5">
+            <div className="col-4">
               <p className="text-center w_custom_title">經典丹麥柚木餐椅</p>
               <p className="text-center w_custom_desc">
                 「沒有任何機器能取代匠師獨特的風格。Gustav
@@ -174,7 +189,27 @@ function Custom(props) {
                   </Select>
                 </Form.Item>
               </div>
-
+              <div className="">
+                {/* <p className="text-center w_custom_mmmm">STEP 03</p> */}
+                <p className="w_stepTexttt text-center">04 TEXT</p>
+                <div className="ant-row  formset justify-content-center">
+                  {/* <label for="price">評論標題</label> */}
+                  <Input
+                    type="text"
+                    placeholder="輸入文字，最多輸入20字"
+                    className="formstyle formwidthw cus_input"
+                    // value={reviewTitle}
+                    maxLength={20}
+                    id="price"
+                    name="review_title"
+                    onChange={(e) => {
+                      setInputText(e.target.value)
+                      setStep(4)
+                    }}
+                  />
+                  {/* <p className="text-center i_notice ml100">＊最多輸入20字</p> */}
+                </div>
+              </div>
               {isLogged ? (
                 <div
                   className="btn_lessmargin more w_cart-btn w_custom-btn"
