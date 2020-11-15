@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, uesEffect } from 'react'
 import { VscTrash } from 'react-icons/vsc'
 import { FiEdit3 } from 'react-icons/fi'
@@ -58,7 +59,7 @@ const MyproductTd = (props) => {
       <tr>
         <td className="i_tdpd">{item.sid}</td>
         <td className="i_tdimg">
-          <img src={`http://localhost:3001/img/` + item.e_pic} />
+          <img alt="" src={`http://localhost:3001/img/` + item.e_pic} />
         </td>
         <td className="i_tdpd">{item.e_proname}</td>
         <td className="i_tdpd">{item.e_lowprice}</td>
@@ -84,7 +85,9 @@ const MyproductTd = (props) => {
         <td className="mystyles">
           <FiEdit3
             className="mystyles"
-            onClick={() => history.push('/secondhand_form_edit/' + item.member_sid)}
+            onClick={() =>
+              history.push('/secondhand_form_edit/' + item.member_sid)
+            }
           />
         </td>
       </tr>

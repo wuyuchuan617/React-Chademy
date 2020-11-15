@@ -1,25 +1,25 @@
 import React, { useState } from 'react'
-import { Steps, Button, message } from 'antd'
+import { Button } from 'antd'
 import RecommendResult from '../components/RecommendResult'
 
-const { Step } = Steps
+// const { Step } = Steps
 
-const steps = [
-  {
-    title: 'First',
-    content: 'First-content',
-  },
-  {
-    title: 'Second',
-    content: 'Second-content',
-  },
-  {
-    title: 'Last',
-    content: 'Last-content',
-  },
-]
+// const steps = [
+//   {
+//     title: 'First',
+//     content: 'First-content',
+//   },
+//   {
+//     title: 'Second',
+//     content: 'Second-content',
+//   },
+//   {
+//     title: 'Last',
+//     content: 'Last-content',
+//   },
+// ]
 function ProductRecommend(props) {
-  const { item } = props
+  // const { item } = props
 
   const [current, setCurrent] = React.useState(0)
   const [recommendCate, setRecommendCate] = useState('')

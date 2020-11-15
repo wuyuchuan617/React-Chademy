@@ -1,10 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import SameAdress from '../components/SameAdress'
 import DefaultAddress from '../components/DefualtAddress'
 import PhoneDrive from '../components/PhoneDrive'
 
-import { countries, townships, postcodes } from '../components/Data'
+import { countries, townships } from '../components/Data'
 import Donated from '../components/Donated'
 // import './style/jay.scss'
 

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import '../styles/productlist.css'
-import popularImg from '../images/777.jpg'
+// import popularImg from '../images/777.jpg'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Breadcrumbww from '../components/Breadcrumbww'

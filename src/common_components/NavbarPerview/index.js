@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import './index.scoped.scss'
 
@@ -18,8 +19,7 @@ export default function NavbarPerview(props) {
   const { activeName, navbarHeight } = props
 
   return (
-    <>
-    </>
+    <></>
     // <section
     //   className={`navbarPreview_container ${activeName ? 'isActive' : ''}`}
     //   style={{ '--navbar-height': `${activeName ? navbarHeight : -1000}px` }}
