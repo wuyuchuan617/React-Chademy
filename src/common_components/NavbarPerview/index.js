@@ -18,12 +18,14 @@ export default function NavbarPerview(props) {
   const { activeName, navbarHeight } = props
 
   return (
-    <section
-      className={`navbarPreview_container ${activeName ? 'isActive' : ''}`}
-      style={{ '--navbar-height': `${activeName ? navbarHeight : -1000}px` }}
-    >
-      {/* 比對 activeName，有匹配的 type 才開啟 */}
-      {operPreviewList.includes(activeName) && <Card />}
-    </section>
+    <>
+    </>
+    // <section
+    //   className={`navbarPreview_container ${activeName ? 'isActive' : ''}`}
+    //   style={{ '--navbar-height': `${activeName ? navbarHeight : -1000}px` }}
+    // >
+    //   比對 activeName，有匹配的 type 才開啟
+    //   {operPreviewList.includes(activeName) && <Card />}
+    // </section>
   )
 }

@@ -8,9 +8,9 @@ import useInterval from 'use-interval'
 function Record(props) {
   const { item, getMember } = props
 
-  // useInterval(() => {
-  //   getMember()
-  // }, 1000)
+  useInterval(() => {
+    getMember()
+  }, 1000)
   // useEffect(()=>{
   //     getMember()
   //     setNewprice(item.price)

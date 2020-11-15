@@ -92,16 +92,16 @@ function Banner(props) {
             }}
           />
           <TweenOne
-            className="banner-user-title2"
+            className="banner-user-title3"
             animation={{ x: 50, y: 50, opacity: 0, type: 'from' }}
           >
-            全新的設計、華麗的面料和最流行的色彩。
+            要完成新潮的外觀搭配是一件頗具挑戰性的事情。
           </TweenOne>
           <TweenOne
-            className="banner-user-text2"
+            className="banner-user-text3"
             animation={{ x: 50, y: 50, opacity: 0, type: 'from', delay: 100 }}
           >
-            以競標的方式來獲得獨一無二，絕無僅有，最舒適又具設計感的椅子!
+            所幸的是，我們的設計師能讓這一切變得輕鬆簡單。
           </TweenOne>
         </Element>
       </BannerAnim>
