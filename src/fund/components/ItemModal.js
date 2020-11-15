@@ -1,8 +1,3 @@
-<<<<<<< Updated upstream
-/* eslint-disable no-unused-vars */
-=======
-
->>>>>>> Stashed changes
 import React, { useState } from 'react'
 
 import '../styles/FundModal.scss'
