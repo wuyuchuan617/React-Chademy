@@ -28,8 +28,8 @@ import dt2 from '../images/dt2.jpeg'
 import dt3 from '../images/dt3.jpeg'
 import dt4 from '../images/dt4-1.jpeg'
 import dt5 from '../images/Image 32.png'
-// import ItemModal from '../components/ItemModal'
-// import Breadcrumbw from '../components/Breadcrumbw'
+import ItemModal from '../components/ItemModal'
+import Breadcrumbw from '../components/Breadcrumbw'
 
 function FundIFirst(props) {
   const { item, sid, cartamount, setCartAmount } = props
