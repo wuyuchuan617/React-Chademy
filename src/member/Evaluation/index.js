@@ -46,9 +46,10 @@ function Evaluation() {
   return (
     <>
       {evaluation.length > 0 ? (
-        evaluation.map((item) => {
+        evaluation.map((item, index) => {
           return (
             <Comment
+              key={index}
               className="evaluation_container"
               author={
                 <div>
