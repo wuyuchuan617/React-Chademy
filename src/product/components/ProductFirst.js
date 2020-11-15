@@ -47,6 +47,7 @@ function ProductFirst(props) {
   const [visible, setVisible] = useState(false)
   const [avgStar, setAvgStar] = useState(0)
   const [member, setMember] = useState('')
+  const [cartQuantity, setCartQuantity] = useState(1)
 
   useEffect(() => {
     let aveStars = 0
@@ -343,7 +344,7 @@ function ProductFirst(props) {
               </div> */}
 
               <span id="busuanzi_container_site_uv">
-                本站訪客數<span id="busuanzi_value_site_uv"></span>人次
+                <span id="busuanzi_value_site_uv"></span>正在瀏覽
               </span>
 
               <div className="d-flex justify-content-end">
@@ -400,18 +401,30 @@ function ProductFirst(props) {
 
               <div class="">
                 <div class="js-qty quantity-selector" id="Quantity-product">
-                  <span class="js-qty__adjust js-qty__adjust--minus quantity__minus">
+                  <span
+                    class="js-qty__adjust js-qty__adjust--minus quantity__minus"
+                    onClick={() => {
+                      if (cartQuantity > 1) {
+                        setCartQuantity(cartQuantity - 1)
+                      }
+                    }}
+                  >
                     −
                   </span>
                   <input
                     class="text quantity js-qty__num quantity__input"
                     name="quantity"
-                    value="1"
+                    value={cartQuantity}
                     min="1"
                     aria-label="quantity"
                     pattern="[0-9]*"
                   />
-                  <span class="js-qty__adjust js-qty__adjust--plus quantity__plus">
+                  <span
+                    class="js-qty__adjust js-qty__adjust--plus quantity__plus"
+                    onClick={() => {
+                      setCartQuantity(cartQuantity + 1)
+                    }}
+                  >
                     +
                   </span>
                 </div>
