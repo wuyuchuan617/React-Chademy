@@ -94,3 +94,33 @@
     }
   }
 }
+
+/deep/ {
+  .avatar-uploader-chademy {
+    text-align: center;
+    margin-bottom: 15px;
+
+    > .ant-upload-select {
+      border: 2px dashed #707070;
+      width: 15vw;
+      height: 15vw;
+
+      .ant-upload {
+        overflow: hidden;
+        border-radius: 50% !important;
+        position: relative;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .ant-upload.ant-upload-select-picture-card {
+      // width: 150px;
+      // height: 150px;
+      border-radius: 50% !important;
+      background-color: #f3f4f4;
+    }
+  }
+}
