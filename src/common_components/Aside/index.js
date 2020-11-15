@@ -66,6 +66,7 @@ function Aside() {
             { path: '/member-center/evaluation', name: '我的評價' },
             { path: '/member-center/myfund', name: '我的募資' },
             { path: '/member-center/myproduct', name: '我的商品' },
+            { path: '/secondhand_form', name: '中古上架' },
           ].map((item) => (
             <Menu.Item key={item.path}>
               <div>{item.name}</div>
