@@ -8,7 +8,6 @@ import { Radio } from 'antd'
 import { InputNumber } from 'antd'
 import { Input } from 'antd'
 
-
 function ItemModal(props) {
   // const { visible, setVisible } = props
   const { show, setShow } = props
@@ -23,7 +22,6 @@ function ItemModal(props) {
   function onChange(value) {
     console.log('changed', value)
   }
-  
 
   return (
     <>
@@ -79,7 +77,7 @@ function ItemModal(props) {
             </div>
           </div>
           <div className="e_check">
-            <Radio >以詳閱募資條款</Radio>
+            <Radio>以詳閱募資條款</Radio>
           </div>
           <div className="e_my">
             欲贊助金額：

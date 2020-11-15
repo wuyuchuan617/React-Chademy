@@ -1,6 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-unused-vars */
-
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import SameAdress from '../components/SameAdress'
@@ -94,10 +91,10 @@ function DeliveryInfo(props) {
         />
         {checkName ? <small>不可空白</small> : ''}
         <input
-          type="tel"
+          type="text"
           style={{
             width: '600px',
-            height: '40p',
+            height: '40px',
             marginTop: '30px',
           }}
           placeholder="手機"
