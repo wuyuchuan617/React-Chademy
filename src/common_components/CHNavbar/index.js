@@ -34,6 +34,7 @@ export default function CHNavbar(props) {
           activeName={activeName}
           navbarHeight={navbarHeight}
           setActiveName={setActiveName}
+          setTypeofProduct={setTypeofProduct}
         />
       </Navbar>
     </div>

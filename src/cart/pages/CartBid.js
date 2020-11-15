@@ -27,6 +27,7 @@ function CartBid(props) {
     myCartDisplay,
     setMyCartDisplay,
     cartamount,
+    setCartAmount,
   } = props
   const openNotification = () => {
     notification.open({
@@ -165,6 +166,8 @@ function CartBid(props) {
         setMyCartDisplay={setMyCartDisplay}
         typeofProduct={typeofProduct}
         setTypeofProduct={setTypeofProduct}
+        cartamount={cartamount}
+        setCartAmount={setCartAmount}
       />
       <hr className="jhr" />
       <div className="submit">
