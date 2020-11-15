@@ -34,12 +34,14 @@ function CartBid(props) {
   } = props
   function getLocalStorage() {
     const newCart = JSON.parse(localStorage.getItem('cart')) || []
+    console.log(newCart)
     let newArray = []
     for (let i = 0; i < newCart.length; i++) {
-      if (newCart.category === typeofProduct) {
+      if (newCart[i].category === typeofProduct) {
         newArray.push(newCart[i])
       }
     }
+    console.log('jhh', newArray)
     setMyCart(newArray)
   }
 
@@ -62,7 +64,7 @@ function CartBid(props) {
   }
   useEffect(() => {
     setTotalPrice(subtotal + myDiscount + deliveryCharge)
-    setTypeofProduct(4)
+    // setTypeofProduct(4)
     getLocalStorage()
     openNotification()
   }, [])
@@ -188,7 +190,7 @@ function CartBid(props) {
         <h6 style={{ left: '780px' }}>單價</h6>
         <h6 style={{ left: '940px' }}>數量</h6>
         <h6 style={{ left: '1100px' }}>總計</h6>
-        <h6 style={{ left: '1210px' }}>操作</h6>
+        {/* <h6 style={{ left: '1210px' }}>操作</h6> */}
       </div>
       <div className="cartlist">
         <ul>
@@ -201,9 +203,9 @@ function CartBid(props) {
                     <img src={'http://localhost:3001/img/' + item.img} alt="" />
                     <h6 style={{ left: '450px' }}>{item.id}</h6>
                     <h6 style={{ left: '750px' }}>${item.price}</h6>
-                    <div className="listqty">
-                      <h6 style={{ left: '50px' }}>{item.amount}</h6>
-                    </div>
+
+                    <h6 style={{ left: '958px' }}>{item.amount}</h6>
+
                     <h6 style={{ left: '1100px', color: '#C67334' }}>
                       ${item.price * item.amount}
                     </h6>
@@ -215,9 +217,9 @@ function CartBid(props) {
                           : ''
                       }
                     >
-                      <h6 style={{ left: '1220px' }}>
+                      {/* <h6 style={{ left: '1220px' }}>
                         <BsTrash />
-                      </h6>
+                      </h6> */}
                     </Link>
                   </div>
                 </li>
