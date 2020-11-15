@@ -12,11 +12,12 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import Carousel from 'react-elastic-carousel'
 import SliderE from '../components/SliderE'
 // import BreadcrumbwTwo from '../components/BreadcrumbwTwo'
+import { BackTop } from 'antd'
+import { UpOutlined } from '@ant-design/icons'
 
 function FundItem(props) {
   const [localData, setLocalData] = useState([])
   const isLogged = useSelector((state) => state.user.logged)
-  
 
   const { setCartAmount, cartamount, resetShow, setResetShow } = props
   // const { setCartAmount, cartamount } = props
@@ -150,6 +151,32 @@ function FundItem(props) {
           {/* </div> */}
         </div>
       </div>
+
+      <BackTop
+        visibilityHeight="2000"
+        style={{
+          height: '40',
+          width: '40',
+          lineHeight: '33px',
+          color: 'white',
+          fontSize: '16px',
+          borderRadius: '0',
+          textAlign: 'center',
+          backgroundColor: '#c77334',
+        }}
+      >
+        <div>
+          <UpOutlined
+            style={{
+              color: 'white',
+              fontSize: '18px',
+              borderRadius: '0',
+              backgroundColor: '#c77334',
+              marginTop: '-3px',
+            }}
+          />
+        </div>
+      </BackTop>
     </>
   )
 }

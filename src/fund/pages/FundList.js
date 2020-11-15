@@ -19,6 +19,8 @@ import Hpanimate from './Hpanimate'
 
 import BannerE from '../components/BannerE'
 import Breadcrumbw from '../components/Breadcrumbw'
+import { BackTop } from 'antd'
+import { UpOutlined } from '@ant-design/icons'
 
 function FundList(props) {
   const [showFilter, setShowFilter] = useState(false)
@@ -323,6 +325,31 @@ function FundList(props) {
           </div>
         </div>
       </div>
+      <BackTop
+        visibilityHeight="2000"
+        style={{
+          height: '40',
+          width: '40',
+          lineHeight: '33px',
+          color: 'white',
+          fontSize: '16px',
+          borderRadius: '0',
+          textAlign: 'center',
+          backgroundColor: '#c77334',
+        }}
+      >
+        <div>
+          <UpOutlined
+            style={{
+              color: 'white',
+              fontSize: '18px',
+              borderRadius: '0',
+              backgroundColor: '#c77334',
+              marginTop: '-3px',
+            }}
+          />
+        </div>
+      </BackTop>
     </>
   )
 }

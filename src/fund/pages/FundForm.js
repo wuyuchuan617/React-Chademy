@@ -12,6 +12,7 @@ import { Button, notification, Space } from 'antd'
 import 'antd/dist/antd.css'
 
 import '../styles/FundItem.scss'
+import { useHistory } from 'react-router-dom'
 
 function FundForm() {
   //photo
@@ -22,9 +23,15 @@ function FundForm() {
     // const newTotal = { total: total + value }
     const fd = new FormData()
     fd.append('myfile', photo)
-    console.log('fd' + JSON.stringify(fd))
-    console.log('photo' + JSON.stringify(photo))
+    console.log('fd', JSON.stringify(fd))
+    console.log('photo', JSON.stringify(photo))
     const url = 'http://localhost:3001/man_fund/try-upload'
+
+    console.log(
+      '%c INFO ',
+      'background: orange; font-size: 16px;',
+      JSON.stringify(fd.entries())
+    )
 
     const request = new Request(url, {
       method: 'POST',
@@ -43,6 +50,7 @@ function FundForm() {
   }
 
   useEffect(() => {
+    if (!photo) return // 如果沒有值，就返回，不 call api
     updateReviewToServer()
   }, [photo])
 
@@ -81,7 +89,15 @@ function FundForm() {
   const [leftDay, setLeftDay] = useState('')
   const [designer, setDesigner] = useState('')
   const [progress, setProgress] = useState('')
-  const [sid, setSid] = useState('')
+  // const [sid, setSid] = useState('')
+  // const [sid, setSid] = useState('')
+  // const [membersid, setMemberSid] = useState('')
+
+  //直接從 localStorage 拿，不需要 useState 設值
+  const { user = {} } = JSON.parse(localStorage['reduxState'] || '{}')
+  const { sid } = user.users || {} // user_sid
+
+  let history = useHistory()
 
   const openNotificationWithIcon = (type) => {
     notification[type]({
@@ -109,7 +125,7 @@ function FundForm() {
         <form
           className="row no-gutters"
           name="form2"
-          novalidate
+          noValidate
           onSubmit={handleSubmit}
         >
           <div className="col-lg-6 col-sm-12">
@@ -299,12 +315,30 @@ function FundForm() {
                 />
               </div>
 
+              <div className="e_formset">
+                <label for="stock">會員</label>
+                <input
+                  type="text"
+                  className="i_formstyle i_formwidth"
+                  id="stock"
+                  name="member_sid"
+                  value={sid}
+                />
+              </div>
+
               <button
                 className="i_btn3 text-center mt-4"
                 type="submit"
                 onClick={() => openNotificationWithIcon('success')}
               >
                 新增專案
+              </button>
+
+              <button
+                className="i_btn3 text-center mt-4"
+                onClick={() => history.push('/member-center/myfund')}
+              >
+                回到列表
               </button>
             </div>
 

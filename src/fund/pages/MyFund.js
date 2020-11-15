@@ -79,7 +79,24 @@ const Myproduct = () => {
   // }, [memberSid])
 
   useEffect(() => {
-    async function fetchData() {
+    console.log(999, sid)
+    async function fetchDataByGet() {
+      // 封裝的 axios，請求會帶上 token，因此前端不用多帶 user_sid
+      // 後端直接可以透過 req.session.sid 知道誰登入
+      const response = await request({
+        url: `/man_fund/myfund/${sid}`,
+        method: 'GET',
+      })
+      const { success, data } = response
+
+      console.log('success, data     fetchDataByGet() => ', success, data)
+      console.log('success, data ', success, data)
+      if (success) {
+        setMyprdouct(data)
+      }
+    }
+
+    async function fetchDataByPost() {
       // 封裝的 axios，請求會帶上 token，因此前端不用多帶 user_sid
       // 後端直接可以透過 req.session.sid 知道誰登入
       const response = await request({
@@ -88,13 +105,14 @@ const Myproduct = () => {
       })
       const { success, data } = response
 
-      console.log('success, data ', success, data)
+      console.log('success, data fetchDataByPost => ', success, data)
       if (success) {
-        setMyprdouct(data)
+        // setMyprdouct(data)
       }
     }
 
-    fetchData()
+    fetchDataByGet()
+    fetchDataByPost()
   }, [name, sid])
 
   return (
