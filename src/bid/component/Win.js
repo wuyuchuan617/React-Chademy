@@ -4,11 +4,12 @@
 import React, { useEffect, useState } from 'react'
 import { Modal, Button } from 'react-bootstrap'
 
-function Modalsetprice(props) {
+function Win(props) {
   const {
     pname,
     chair,
     price,
+    comma,
     setCartAmount,
     cartamount,
     productpic,
@@ -37,6 +38,7 @@ function Modalsetprice(props) {
   useEffect(() => {
     setPc(productpic[0])
   }, [productpic])
+
   return (
     <>
       <Modal
@@ -44,6 +46,8 @@ function Modalsetprice(props) {
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
+        backdrop="static"
+        keyboard={false}
       >
         <Modal.Header closeButton>
           <Modal.Title
@@ -55,7 +59,7 @@ function Modalsetprice(props) {
         </Modal.Header>
         <Modal.Body>
           <h4 className="text-center">
-            您已成功競標以下商品，請至購物車結帳！
+            恭喜您用最優惠的價格<span style={{ color: '#c77334' }}>${comma}</span>成功競標以以下商品，請至購物車結帳！
           </h4>
           <p className="text-center">{pname}</p>
           <div className="g-modal-pic mx-auto">
@@ -85,4 +89,4 @@ function Modalsetprice(props) {
     </>
   )
 }
-export default Modalsetprice
+export default Win

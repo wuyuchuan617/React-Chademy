@@ -1,18 +1,16 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import Countdown, {
-  zeroPad,
-  calcTimeDelta,
-  formatTimeDelta,
+  zeroPad
 } from 'react-countdown'
 import '../styles/counter.scss'
 const Counter = (props) => {
   const { enddate, total } = props
-  const Completionist = () => <span>Sold Out!</span>
-  const renderer = ({ days, hours, minutes, seconds, completed }) => {
+  // const Completionist = () => <span>Sold Out!</span>
+  const renderer = ({  hours, minutes, seconds, completed }) => {
     if (completed) {
       // Render a completed state
-      return <Completionist />
+      return ''
     } else {
       // Render a countdown
       return (

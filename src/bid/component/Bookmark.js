@@ -8,7 +8,7 @@ import bookmark from '../styles/bookmark.scss'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
 function Bookmark(props) {
-  const { sid, changepage, setChangepage } = props
+  const { setChangepage } = props
 
   const addcolor = (event) => {
     const a = document.querySelectorAll('.g_activelable')
@@ -31,7 +31,6 @@ function Bookmark(props) {
           <div
             onClick={(event) => {
               addcolor(event)
-              // setColor(true)
               setChangepage(2)
             }}
             className="col g_lablebox g_activelable g_activelable2"
@@ -49,8 +48,7 @@ function Bookmark(props) {
           </div>
         </div>
       </div>
-      {/* </Link> */}
-      {/* </div> */}
+
     </>
   )
 }

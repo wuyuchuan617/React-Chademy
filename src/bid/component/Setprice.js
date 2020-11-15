@@ -11,11 +11,9 @@ import Countdown, { zeroPad } from 'react-countdown'
 import { Button, Modal } from 'react-bootstrap'
 function Setprice(props) {
   const {
-    changepage,
     comma,
     pname,
     chair,
-    price,
     enddate,
     total,
     inputValue,
@@ -42,7 +40,7 @@ function Setprice(props) {
     setModalState('close')
   }
   //coundown
-  const Completionist = () => <span>Sold Out!</span>
+  const Completionist = () => <span>Finished</span>
   const renderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
       // Render a completed state
@@ -94,26 +92,11 @@ function Setprice(props) {
             </div>
           </div>
 
-          <Form
-            // form={form}
-            layout="vertical"
-            name="basic"
-            className="form_container"
-          >
-            {/* <Form.Item label="每次出價金額" name="addprice"  className="g-setpricep" >
-          <Select className="g-setpricep">
-            <Select.Option onchange={} value="1000">$1,000</Select.Option>
-            <Select.Option value="5000">$5,000</Select.Option>
-            <Select.Option value="10000">$10,000</Select.Option>
-           
-          </Select>
-        </Form.Item> */}
-
+          <Form layout="vertical" name="basic" className="form_container">
             <Form.Item
               label="金額通知"
               name="totalPrice"
               type="number"
-              // rules={[{ required: true, message: '此欄不得為空' }]}
               className="g-setpricep"
             >
               <Input
@@ -137,9 +120,6 @@ function Setprice(props) {
               </Button>
             </Form.Item>
           </Form>
-          {/* <p className="g-setpricep">
-            *每次在其他競標者出價後自動加價，直到總金額達到最高金額$50,000為止
-          </p> */}
         </div>
         <div className="col-6">
           <p className="g-set-prodname text-left">{pname}</p>
@@ -172,20 +152,14 @@ function Setprice(props) {
           </p>
         </Modal.Body>
         <Modal.Footer>
-          <Button
-            // className="rounded-0"
-            variant="secondary"
-            onClick={handleClose}
-          >
+          <Button variant="secondary" onClick={handleClose}>
             取消
           </Button>
           <Button
-            // className="rounded-0"
             variant="primary"
             onClick={() => {
               subscribe(inputValue)
               handleShowModalTwo()
-              // handleClose()
             }}
           >
             確認

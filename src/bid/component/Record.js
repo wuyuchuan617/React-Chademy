@@ -1,18 +1,16 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import record from '../styles/record.scss'
 import pic from '../myfile/Karim-hero-tablet.jpg'
 import useInterval from 'use-interval'
-import Texty from 'rc-texty'
-import 'rc-texty/assets/index.css'
+
 
 function Record(props) {
-  const { item, getMember, price, changepage } = props
-  //   const [newprice, setNewprice] = useState(null)
+  const { item, getMember } = props
 
-  useInterval(() => {
-    getMember()
-  }, 1000)
+  // useInterval(() => {
+  //   getMember()
+  // }, 1000)
   // useEffect(()=>{
   //     getMember()
   //     setNewprice(item.price)

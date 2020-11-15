@@ -18,14 +18,13 @@ import '../styles/desc.scss'
 import { useParams } from 'react-router-dom'
 import '../styles/designer.scss'
 import { Button, Modal } from 'react-bootstrap'
-import Modalsetprice from '../component/Modalsetprice'
+import Win from '../component/Win'
 import Countdown, { zeroPad } from 'react-countdown'
 import Counter from '../component/Counter'
 import ScrollParallax from 'rc-scroll-anim/lib/ScrollParallax'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
-import ReactCSSTransitionGroup from 'react-transition-group' // ES6
-import 'animate.css/animate.css'
+
 function Desc(props) {
   let { id } = useParams()
 
@@ -85,7 +84,8 @@ function Desc(props) {
 
     const response = await fetch(request)
     const data = await response.json()
-
+    // setBidsid(data[0].bid_sid)
+    // console.log('data', data)
     setSid(data[0].sid)
     setSdate(data[0].sdate)
     setEdate(data[0].edate)
@@ -147,6 +147,7 @@ function Desc(props) {
       member_sid: JSON.parse(localStorage.getItem('reduxState')).user.users.sid,
       product_sid: id,
       sub_price: inputValue,
+      product_name: pname,
       total_price: price,
       name: JSON.parse(localStorage.getItem('reduxState')).user.users.name,
       sub_email: JSON.parse(localStorage.getItem('reduxState')).user.users
@@ -162,7 +163,6 @@ function Desc(props) {
     })
     const response = await fetch(request)
     const data = await response.json()
-    console.log(data)
   }
 
   async function addprice(value) {
@@ -190,7 +190,7 @@ function Desc(props) {
     const response = await fetch(request)
     const data = await response.json()
     setPrice(+copyPrice + value * 1)
-    console.log('add fn', price)
+    console.log('price', price)
   }
 
   const [chair, setChair] = useState(null)
@@ -198,41 +198,32 @@ function Desc(props) {
     initData()
     getDesigner()
     getMember()
-    //  getCartFromLocalStorage()
   }, [])
 
   //scroll event
   useEffect(() => {
     window.addEventListener('scroll', fixed)
     const fixpoint = document.querySelector('.bidinfo')
-    const line = document.querySelector('.line')
-    // const scrollpoint = document.querySelector('.grace-fixpoint')
 
     function fixed() {
       // console.log('fixpoint.offsetTop', fixpoint.offsetTop)
       // console.log('window.pageYOffset', window.pageYOffset)
-      let lastO = lastOffset
+      // let lastO = lastOffset
 
-      if (lastO > window.pageYOffset) {
-        // console.log('up')
-      } else if (lastO < window.pageYOffset) {
-        // console.log('down')
-      }
+      // if (lastO > window.pageYOffset) {
+      //   // console.log('up')
+      // } else if (lastO < window.pageYOffset) {
+      //   // console.log('down')
+      // }
 
-      if (window.pageYOffset >= 320 && window.pageYOffset < 1334) {
+      if (window.pageYOffset >= 297 && window.pageYOffset < 1370) {
         fixpoint.classList.add('g-fixed')
-        line.classList.add('g-fixed-line')
         fixpoint.classList.remove('g-unfixed')
-
-        line.classList.remove('g-unfixed-line')
-      } else if (window.pageYOffset < 332) {
+      } else if (window.pageYOffset < 297) {
         fixpoint.classList.remove('g-fixed')
-        line.classList.remove('g-fixed-line')
-      } else if (window.pageYOffset >= 1334) {
+      } else if (window.pageYOffset >= 1370) {
         fixpoint.classList.remove('g-fixed')
         fixpoint.classList.add('g-unfixed')
-        line.classList.remove('g-fixed-line')
-        line.classList.add('g-unfixed-line')
       }
 
       setLastOffset(window.pageYOffset)
@@ -248,7 +239,6 @@ function Desc(props) {
     const s_time = new Date(startdate).getTime()
     const e_time = new Date(enddate).getTime()
     const total = e_time - s_time
-
     return total
   }
 
@@ -267,7 +257,7 @@ function Desc(props) {
           setModalShow(true)
         }, 200)
       }
-      return ''
+      return 'Sold out!'
     } else {
       // Render a countdown
       return (
@@ -306,19 +296,14 @@ function Desc(props) {
   }
   const [comma3, setComma3] = useState(null)
   useEffect(() => {
-    const newprice = price
     const c = numberWithCommas(price)
     setComma(c)
     const d = numberWithCommas(startprice)
     setComma3(d)
-    console.log('comma', price)
   }, [price])
   const [changeColorStatus, setChangeColorStatus] = useState(false)
   function showRecord() {
     setChangeColorStatus(true)
-    // const gnext = document.querySelector('.g-next')
-    // if(changeColorStatus && index==1)
-    // gnext.classList.add('g-color')
   }
   const gnext = document.querySelector('.g-next')
 
@@ -327,23 +312,24 @@ function Desc(props) {
       {/* countdown */}
 
       <div className="container">
-        <div className="row justify-content-center">
+        <div className="row justify-content-center counter">
           {/* <Countdown date={Date.now() + (+total) } renderer={renderer}> */}
-          {total ? (
+          {new Date(startdate).getTime() > Date.now() ? (
+            `將於 ${startdate}開始競標`
+          ) : new Date(enddate).getTime() > Date.now() ? (
             <Countdown
               date={new Date(enddate).getTime()}
               renderer={renderer}
             ></Countdown>
           ) : (
-            '...'
+            '已結標'
           )}
         </div>
-      </div>
 
-      {/* Desc */}
-      <div className="container">
-        <div className="row">
-          <div className="picarea">
+        {/* Desc */}
+
+        <div className="row d-flex justify-content-between">
+          <div className="picarea border-right">
             <div className="mainpic">
               <img alt="" src={chair} />
             </div>
@@ -422,31 +408,29 @@ function Desc(props) {
                 opacity: 0,
               }}
             >
-              <Bookmark
-                sid={sid}
-                changepage={changepage}
-                setChangepage={setChangepage}
-              />
+              <Bookmark setChangepage={setChangepage} />
 
               <div className="">
                 <div className="col">
                   <div className="g-bg p-3">
                     {changepage == 2 ? (
                       <table className="w-100 text-center mt-3">
-                        <tbody>
+                        <thead>
                           <tr className="w-100 text-center">
                             <th className="w-25">競標者</th>
                             <th className="w-25">下標金額</th>
                             <th className="w-25">總金額</th>
                             <th className="w-25">時間</th>
                           </tr>
-
+                        </thead>
+                        <tbody>
                           {member.map((item, index) => {
                             if (item.bid_sid !== +id) return
                             if (tempDataIndex > 5) return
                             tempDataIndex++
                             if (changeColorStatus && index == 0)
                               gnext.classList.add('g-color')
+
                             return (
                               <Record
                                 key={index}
@@ -478,7 +462,7 @@ function Desc(props) {
               </div>
             </ScrollParallax>
           </div>
-          <div className="line mx-4"></div>
+
           <div className="bidinfo">
             {/* 動畫特效 */}
             {/* <ScrollParallax
@@ -499,60 +483,66 @@ function Desc(props) {
             <h4>目前金額</h4>
             <div className="line3 my-4 w-100"></div>
             <h2 className="g-bidprice">${comma}</h2>
-            <p>出價</p>
-            {/* {isLogged ? ( */}
-            <div className="g-addprice d-flex justify-content-between">
-              <div
-                onClick={() => {
-                  setAddmoney(1000)
-                  handleShow()
-                }}
-                className="g-price d-flex justify-content-center align-items-center"
-              >
-                $1,000
+            {new Date(startdate).getTime() > Date.now() ? null : new Date(
+                enddate
+              ).getTime() < Date.now() ? null : (
+              <p>出價</p>
+            )}
+            {new Date(startdate).getTime() > Date.now() ? null : new Date(
+                enddate
+              ).getTime() < Date.now() ? null : (
+              <div className="g-addprice d-flex justify-content-between">
+                <div
+                  onClick={() => {
+                    setAddmoney(1000)
+                    handleShow()
+                  }}
+                  className="g-price d-flex justify-content-center align-items-center"
+                >
+                  $1,000
+                </div>
+                {/* 確定加價modal */}
+                <Modal show={show} onHide={handleClose}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Modal heading</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>確定要加價嗎？</Modal.Body>
+                  <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                      不確定
+                    </Button>
+                    <Button
+                      variant="primary"
+                      onClick={() => {
+                        addprice(addmoney)
+                        handleClose()
+                        showRecord()
+                      }}
+                    >
+                      確定
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
+                <div
+                  onClick={() => {
+                    setAddmoney(5000)
+                    handleShow()
+                  }}
+                  className="g-price d-flex justify-content-center align-items-center"
+                >
+                  $5,000
+                </div>
+                <div
+                  onClick={() => {
+                    setAddmoney(10000)
+                    handleShow()
+                  }}
+                  className="g-price d-flex justify-content-center align-items-center"
+                >
+                  $10,000
+                </div>
               </div>
-              {/* 確定加價modal */}
-              <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                  <Modal.Title>Modal heading</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>確定要加價嗎？</Modal.Body>
-                <Modal.Footer>
-                  <Button variant="secondary" onClick={handleClose}>
-                    不確定
-                  </Button>
-                  <Button
-                    variant="primary"
-                    onClick={() => {
-                      addprice(addmoney)
-                      handleClose()
-                      showRecord()
-                    }}
-                  >
-                    確定
-                  </Button>
-                </Modal.Footer>
-              </Modal>
-              <div
-                onClick={() => {
-                  setAddmoney(5000)
-                  handleShow()
-                }}
-                className="g-price d-flex justify-content-center align-items-center"
-              >
-                $5,000
-              </div>
-              <div
-                onClick={() => {
-                  setAddmoney(10000)
-                  handleShow()
-                }}
-                className="g-price d-flex justify-content-center align-items-center"
-              >
-                $10,000
-              </div>
-            </div>
-            {/* ) : null} */}
+            )}
             <h4 className="pb-1">競標資訊</h4>
             <div className="line3 my-4  w-100"></div>
             <table>
@@ -589,11 +579,11 @@ function Desc(props) {
 
             {/* <button className="chat"></button> */}
             <Button
-              className="chat"
+              className="chat mt-0"
               variant="primary"
               onClick={() => setModalShow(true)}
             >
-              設定自動出價
+              直接購買
             </Button>
           </div>
         </div>
@@ -679,13 +669,15 @@ function Desc(props) {
           />
         </div>
       </BackTop>
-      <Modalsetprice
+
+      <Win
         show={modalShow}
         onHide={() => setModalShow(false)}
         pname={pname}
         price={price}
         productpic={productpic}
         chair={chair}
+        comma={comma}
         setNoShowModel={setNoShowModel}
         {...props}
       />

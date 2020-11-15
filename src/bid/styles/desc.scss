@@ -1,5 +1,5 @@
 $primary: #C77334;
-$border-color: #e0dddd;
+$border-color: #b8b5b5;
 $secondary: #707070;
 @import '~bootstrap/scss/bootstrap.scss';
 
@@ -26,6 +26,12 @@ $secondary: #707070;
             font-weight: 400;
             transform: translateY(-20px);
         }
+        .counter{
+            margin-bottom: 100px;
+        }
+        .picarea{
+         padding-right: 50px;
+        }
         .mainpic{
             // background: url(./Fredericia-The-Canvas-Chair-Natural-Canvas-Soaped-Oak-Main.jpg) center no-repeat;
             background-size: cover;
@@ -45,13 +51,7 @@ $secondary: #707070;
         .info{
             margin: 20px;
         }
-        .line{
-            width: 1px;
-            height: 928px;
-            background-color: #707070;
-            opacity: 0.4;          
-            margin-bottom: 20px;  
-        }
+    
         .line2{
             width: 722px;
             height: 1px;
@@ -199,24 +199,13 @@ $secondary: #707070;
             top:70px;
             right:150px;
         }
-        .g-fixed-line{
-            position: fixed;
-            top:70px;
-            right:447px;
-        }
-        .g-addprice{
-            z-index:1000;
-        }
+       
         .g-unfixed{
             position: relative;
-            top:1000px;
+            top:1070px;
             right:0px;
         }
-        .g-unfixed-line{
-            position: relative;
-            top:840px;
-            right:0px;
-        }
+        
 
   .g-modal-pic{
       width: 300px;

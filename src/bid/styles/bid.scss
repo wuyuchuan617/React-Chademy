@@ -60,6 +60,20 @@ body {
   background-color: #fff;
   text-decoration: none;
 }
+.grace-disabled {
+  width: 100px;
+  height: 40px;
+  // border: 1px solid #707070;
+  text-align: center;
+  transition: 0.5s ease-out;
+  cursor: pointer;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 400;
+  color: #707070;
+  font-size: 14px;
+  background-color: #fff;
+  text-decoration: none;
+}
 
 .grace:hover{
   text-decoration: none;

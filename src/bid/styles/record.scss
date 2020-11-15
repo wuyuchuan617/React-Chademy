@@ -64,5 +64,11 @@
 .g-color{
     background-color: #DED5C6;
     transition: .5s ease-in-out;
-    // transform: translateY(20px);
+    opacity: 1;
 }
+
+
+  @keyframes mymove {
+    from {left: -200px;}
+    to {left: 0px;}
+  }
