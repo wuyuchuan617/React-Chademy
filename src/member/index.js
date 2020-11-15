@@ -22,7 +22,8 @@ import MyFund from '../../src/fund/pages/MyFund'
 // --------------------- 以下 import 訂單頁面 --------------------
 import MemberOrder from '../cart/pages/MemberOrder'
 import ReturnOrder from '../cart/pages/ReturnOrder'
-
+// --------------------- 以下 import 我的商品 --------------------
+import Myproduct from '../secondhand/pages/Myproduct'
 const { Header, Sider, Content } = Layout
 
 function MemberIndex({ cartamount, setCartAmount }) {
@@ -47,6 +48,7 @@ function MemberIndex({ cartamount, setCartAmount }) {
         '/myfund': '我的募資',
         '/myorder': '訂單',
         '/returnorder': '退貨',
+        '/myproduct': '我的商品',
       }
 
       const title = titleObj[location.pathname.replace(path, '')] || '個人資料'
@@ -142,8 +144,13 @@ function MemberIndex({ cartamount, setCartAmount }) {
                   setMyDate={setMyDate}
                 />
               </Route>
+
               <Route path={`${path}/returnorder`}>
                 <ReturnOrder myPO_NO={myPO_NO} myDate={myDate} />
+              </Route>
+
+              <Route path={`${path}/myproduct`}>
+                <Myproduct />
               </Route>
             </Content>
           </Switch>

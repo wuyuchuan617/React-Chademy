@@ -194,7 +194,7 @@ function App() {
               <ReviewMember />
             </Route>
 
-            <Route path="/myproduct">
+            <Route path="/member-center/myproduct">
               <Myproduct />
             </Route>
 
