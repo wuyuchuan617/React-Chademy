@@ -50,7 +50,7 @@ function CancelOrder(props) {
     })
     const response = await fetch(request)
     const data = await response.json()
-    console.log('hi', data)
+    // console.log('hi', data)
     setProductData(data)
   }
   //拿產品圖片
@@ -153,7 +153,7 @@ function CancelOrder(props) {
     })
     const response = await fetch(request)
     const data = await response.json()
-    console.log('hi', data)
+    // console.log('hi', data)
     setDetailData(data)
   }
   useEffect(() => {
@@ -203,7 +203,11 @@ function CancelOrder(props) {
             nowstatus = '已取消'
         }
         return (
-          <div className="j_myorderbox" style={{ marginBottom: '15px' }}>
+          <div
+            className="j_myorderbox"
+            style={{ marginBottom: '15px' }}
+            key={item.sid}
+          >
             <div className="j_wrapspace">
               <h5>訂單編號:{item.PO_NO}</h5>
               <Dropdown
@@ -268,14 +272,18 @@ function CancelOrder(props) {
         {detailData.map((item) => {
           let link = '/review/' + item.PO_NO + '&' + item.product_name
           for (let i = 0; i < productData.length; i++) {
-            console.log('hi')
+            {
+              /* console.log('hi') */
+            }
             if (item.product_name === productData[i].product_name) {
               boximg = productData[i].photo
-              console.log('showimg')
+              {
+                /* console.log('showimg') */
+              }
             }
           }
           return (
-            <div className="j_commitbox">
+            <div className="j_commitbox" key={item.sid}>
               <img
                 style={{
                   width: '300px',

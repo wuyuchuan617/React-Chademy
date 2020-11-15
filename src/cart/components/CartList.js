@@ -7,7 +7,6 @@
 
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import img1 from '../../product/images/777.jpg'
 import { MdAdd } from 'react-icons/md'
 import { FiMinus } from 'react-icons/fi'
 import { BsTrash } from 'react-icons/bs'
@@ -79,6 +78,27 @@ function CartList(props) {
     // 設定資料
     setMyCart(currentCart)
   }
+
+  // const handleAdd = (id) => {
+  //   const index = myCart.findIndex((v) => myCart.id === )
+  // }
+  const handleDelete = (id) => {
+    let putArray = tempCart
+    const newCart = myCart.filter((item, index) => item.id !== id)
+    if (newCart !== []) setMyCart(newCart)
+    if (myCart !== []) {
+      for (let i = 0; i < newCart.length; i++) {
+        putArray.push(newCart[i])
+      }
+      console.log('myarray', putArray)
+    }
+
+    localStorage.setItem('cart', JSON.stringify(putArray))
+    const newTempCart = localStorage.getItem('cart') || '[]'
+    setTempCart(newTempCart)
+    setCartAmount(cartamount + 1)
+    setReload(reload + 1)
+  }
   const display = (
     <>
       <div className="cartlist">
@@ -86,7 +106,7 @@ function CartList(props) {
           {myCart.map((item, i) => {
             if (item.category === typeofProduct) {
               return (
-                <li>
+                <li key={item.id}>
                   <div className="listitem">
                     {/* src={require('../../img/' + item.photo)} */}
                     <img src={'http://localhost:3001/img/' + item.img} alt="" />
@@ -135,26 +155,6 @@ function CartList(props) {
       </div>
     </>
   )
-  // const handleAdd = (id) => {
-  //   const index = myCart.findIndex((v) => myCart.id === )
-  // }
-  const handleDelete = (id) => {
-    let putArray = tempCart
-    const newCart = myCart.filter((item, index) => item.id !== id)
-    if (newCart !== []) setMyCart(newCart)
-    if (myCart !== []) {
-      for (let i = 0; i < newCart.length; i++) {
-        putArray.push(newCart[i])
-      }
-      console.log('myarray', putArray)
-    }
-
-    localStorage.setItem('cart', JSON.stringify(putArray))
-    const newTempCart = localStorage.getItem('cart') || '[]'
-    setTempCart(newTempCart)
-    setCartAmount(cartamount + 1)
-    setReload(reload + 1)
-  }
   return showLoading ? loading : display
   // <>
   //   <div className="cartlist">

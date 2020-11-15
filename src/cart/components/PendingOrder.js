@@ -205,7 +205,11 @@ function PendingOrder(props) {
             nowstatus = '已取消'
         }
         return (
-          <div className="j_myorderbox" style={{ marginBottom: '15px' }}>
+          <div
+            className="j_myorderbox"
+            style={{ marginBottom: '15px' }}
+            key={item.sid}
+          >
             <div className="j_wrapspace">
               <h5>訂單編號:{item.PO_NO}</h5>
               <Dropdown
@@ -277,7 +281,7 @@ function PendingOrder(props) {
             }
           }
           return (
-            <div className="j_commitbox">
+            <div className="j_commitbox" key={item.sid}>
               <img
                 style={{
                   width: '300px',
