@@ -78,7 +78,7 @@ function Win(props) {
                 img: pc,
                 amount: 1,
                 price: price,
-                category: 1,
+                category: 4,
               })
             }}
           >
