@@ -8,6 +8,7 @@ import CartList from '../components/CartList'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import img1 from '../../product/images/777.jpg'
 import { Button, notification } from 'antd'
+import { BsTrash } from 'react-icons/bs'
 // import './style/jay.scss'
 
 function CartBid(props) {
@@ -15,6 +16,8 @@ function CartBid(props) {
   const [myDiscount, setMyDiscount] = useState(0)
   const [inputDiscount, setInputDiscount] = useState('')
   const [deliveryCharge, setDeliveryCharge] = useState(0)
+  const [tempCart, setTempCart] = useState([])
+  const [reload, setReload] = useState(0)
   const {
     subtotal,
     setSubtoal,
@@ -29,6 +32,17 @@ function CartBid(props) {
     cartamount,
     setCartAmount,
   } = props
+  function getLocalStorage() {
+    const newCart = JSON.parse(localStorage.getItem('cart')) || []
+    let newArray = []
+    for (let i = 0; i < newCart.length; i++) {
+      if (newCart.category === typeofProduct) {
+        newArray.push(newCart[i])
+      }
+    }
+    setMyCart(newArray)
+  }
+
   const openNotification = () => {
     notification.open({
       message: '提醒',
@@ -49,8 +63,27 @@ function CartBid(props) {
   useEffect(() => {
     setTotalPrice(subtotal + myDiscount + deliveryCharge)
     setTypeofProduct(4)
+    getLocalStorage()
     openNotification()
   }, [])
+
+  const handleDelete = (id) => {
+    let putArray = tempCart
+    const newCart = myCart.filter((item, index) => item.id !== id)
+    if (newCart !== []) setMyCart(newCart)
+    if (myCart !== []) {
+      for (let i = 0; i < newCart.length; i++) {
+        putArray.push(newCart[i])
+      }
+      console.log('myarray', putArray)
+    }
+
+    localStorage.setItem('cart', JSON.stringify(putArray))
+    const newTempCart = localStorage.getItem('cart') || '[]'
+    setTempCart(newTempCart)
+    setCartAmount(cartamount + 1)
+    setReload(reload + 1)
+  }
   // const [myCart, setMyCart] = useState([])
   // const [showLoading, setShowLoading] = useState(false)
   // const [myCartDisplay, setMyCartDisplay] = useState([])
@@ -157,7 +190,43 @@ function CartBid(props) {
         <h6 style={{ left: '1100px' }}>總計</h6>
         <h6 style={{ left: '1210px' }}>操作</h6>
       </div>
-      <CartList
+      <div className="cartlist">
+        <ul>
+          {myCart.map((item, i) => {
+            if (item.category === typeofProduct) {
+              return (
+                <li key={item.id}>
+                  <div className="listitem">
+                    {/* src={require('../../img/' + item.photo)} */}
+                    <img src={'http://localhost:3001/img/' + item.img} alt="" />
+                    <h6 style={{ left: '450px' }}>{item.id}</h6>
+                    <h6 style={{ left: '750px' }}>${item.price}</h6>
+                    <div className="listqty">
+                      <h6 style={{ left: '50px' }}>{item.amount}</h6>
+                    </div>
+                    <h6 style={{ left: '1100px', color: '#C67334' }}>
+                      ${item.price * item.amount}
+                    </h6>
+                    <Link
+                      to="#"
+                      onClick={() =>
+                        window.confirm('確定刪除？')
+                          ? handleDelete(item.id)
+                          : ''
+                      }
+                    >
+                      <h6 style={{ left: '1220px' }}>
+                        <BsTrash />
+                      </h6>
+                    </Link>
+                  </div>
+                </li>
+              )
+            }
+          })}
+        </ul>
+      </div>
+      {/* <CartList
         myCart={myCart}
         setMyCart={setMyCart}
         showLoading={showLoading}
@@ -168,7 +237,7 @@ function CartBid(props) {
         setTypeofProduct={setTypeofProduct}
         cartamount={cartamount}
         setCartAmount={setCartAmount}
-      />
+      /> */}
       <hr className="jhr" />
       <div className="submit">
         <div

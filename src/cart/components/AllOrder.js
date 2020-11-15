@@ -42,7 +42,7 @@ function AllOrder(props) {
     })
     const response = await fetch(request)
     const data = await response.json()
-    console.log('hi', data)
+    // console.log('hi', data)
     setProductData(data)
   }
   //拿產品圖片
@@ -94,7 +94,7 @@ function AllOrder(props) {
     })
     const response = await fetch(request)
     const data = await response.json()
-    console.log('hi', data)
+    // console.log('hi', data)
     setDetailData(data)
   }
   useEffect(() => {
@@ -213,10 +213,14 @@ function AllOrder(props) {
         {detailData.map((item) => {
           let link = '/review/' + item.PO_NO + '&' + item.product_name
           for (let i = 0; i < productData.length; i++) {
-            console.log('hi')
+            {
+              /* console.log('hi') */
+            }
             if (item.product_name === productData[i].product_name) {
               boximg = productData[i].photo
-              console.log('showimg')
+              {
+                /* console.log('showimg') */
+              }
             }
           }
           return (
