@@ -20,6 +20,7 @@ import CustomCard from '../components/CustomCard'
 import CouponModal from '../components/CouponModal'
 import ListNew from '../components/ListNew'
 import NewsLetter from '../components/NewsLetter'
+import ProductRecommend from '../components/ProductRecommend'
 import TabletBanner from '../components/TabletBanner'
 import TabW from '../components/TabW'
 // import Breadcrumb from '../../common_components/Breadcrumb'
@@ -301,6 +302,7 @@ function ProductList(props) {
         </div>
       </div>
 
+      <ProductRecommend />
       <NewsLetter />
       {/* <TabW /> */}
       {/* <TabletBanner /> */}
