@@ -53,7 +53,7 @@ function BlogList(props) {
 
   return (
     <>
-      <div className="wrap456 custom-container-width">
+      <div className="wrap789 custom-container-width">
         <div className="row mt-5">
           {blog.map((item, index) => {
             return <BreadcrumbOne item={item} />

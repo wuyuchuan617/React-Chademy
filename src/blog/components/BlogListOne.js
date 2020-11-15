@@ -162,8 +162,11 @@ function BlogListOne(props) {
           </div>
 
           <div className="col-3">
-            <div className="d-flex a_blog-popular_name justify-content-between">
-              <div>人氣排行</div>
+            <div
+              className="d-flex a_blog-popular_name justify-content-between"
+              data-aos="fade-up"
+            >
+              <div>人氣排行 TOP10</div>
             </div>
             <div
               className="box3blog"

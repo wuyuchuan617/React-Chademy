@@ -100,6 +100,7 @@ function BlogListTwo(props) {
             }}
             rows="1"
             cols="121"
+            placeholder="請用一句話形容此篇文章"
             className="a_formstyle"
             name="a_description"
           ></textarea>
@@ -111,6 +112,7 @@ function BlogListTwo(props) {
             }}
             rows="6"
             cols="121"
+            placeholder="您的更多回饋是我們創作好文章的正面能量!!!"
             className="a_formstyle"
             name="a_description"
           ></textarea>

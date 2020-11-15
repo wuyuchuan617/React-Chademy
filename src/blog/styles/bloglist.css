@@ -6,6 +6,12 @@
   margin-top: 150px;
 }
 
+.wrap789 {
+  margin-left: 10rem;
+  margin-bottom: -80px;
+  margin-top: 150px;
+}
+
 .a_blogwrap {
   width: 100%;
   background-color: #edece8;
@@ -28,10 +34,11 @@
 }
 
 .a_blog-name {
-  font-family: 'Lora', serif;
-  font-size: 36px;
+  font-family: 'Noto Serif TC', serif;
+  font-size: 28px;
   font-weight: bold;
   margin-top: 25px;
+  margin-bottom: 25px;
   letter-spacing: 0.2rem;
 }
 
@@ -53,8 +60,8 @@
 }
 
 .a_blog-name-title {
-  font-family: 'Lora', serif;
-  font-size: 24px;
+  font-family: 'Noto Serif TC', serif;
+  font-size: 18px;
   font-weight: bold;
   margin-top: 25px;
   letter-spacing: 0.2rem;
@@ -185,16 +192,17 @@
 }
 
 .a_blog-popular_name {
-  font-family: 'Lora', serif;
+  font-family: 'Noto Serif TC', serif;
   font-size: 24px;
   font-weight: bold;
   margin-top: 15px;
   letter-spacing: 0.2rem;
+  position: relative;
 }
 
 /*留言板*/
 .annie_message01 h5 {
-  font-family: 'Lora', serif;
+  font-family: 'Noto Serif TC', serif;
   font-size: 18px;
   font-weight: bold;
   letter-spacing: 0.2rem;
@@ -216,9 +224,9 @@
 .annie_message04 {
   color: #1a1818;
   letter-spacing: 0.2rem;
-  font-family: 'Noto Sans TC', sans-serif;
+  font-family: 'Noto Serif TC', serif;
   font-size: 18px;
-  font-weight: normal;
+  font-weight: bold;
 }
 
 .annie_message05 {
@@ -280,6 +288,17 @@
   margin-top: 0.5rem;
   margin-right: 15px;
   border-radius: 0% !important;
+  transition: all 0.35s;
+  text-align: center;
+}
+
+.message-btn:hover {
+  color: #c77334;
+  border-top: 1.5px solid #c77334;
+  border-bottom: 1.5px solid #c77334;
+  background-color: #edece8;
+  letter-spacing: 0.5rem;
+  text-align: center;
 }
 
 /*相關文章*/
@@ -305,6 +324,7 @@
 
 .a_list2 {
   column-count: 4;
+  font-family: 'Noto Sans TC', sans-serif;
   /* column-rule: 1px dashed lightblue; */
 }
 
@@ -319,6 +339,7 @@
   padding: 10px;
   margin-bottom: 15px;
   cursor: pointer;
+  font-family: 'Noto Sans TC', sans-serif;
 }
 
 .a_list2 .item:hover {
@@ -338,11 +359,11 @@
 }
 
 .a_list2 .item h4 {
-  font-size: 1.125rem;
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1rem;
   letter-spacing: 0.2rem;
   color: #1a1818;
-  font-family: 'Noto Sans TC', sans-serif;
-  font-weight: normal;
+  font-weight: bold;
   margin-bottom: 30px;
 }
 

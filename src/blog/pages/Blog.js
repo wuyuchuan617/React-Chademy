@@ -40,7 +40,7 @@ function Blog(props) {
   return (
     <>
       <BlogBanner />
-      <div className="wrap123 custom-container-width">
+      <div className="wrap1100 custom-container-width">
         <div className="row mt-5">
           <BreadcrumbTwo />
         </div>

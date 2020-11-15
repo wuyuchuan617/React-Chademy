@@ -42,7 +42,6 @@ function BlogMasonry(props) {
         data-aos="fade-down"
         data-aos-delay="50000"
         data-aos-duration="2400"
-        data-aos-once="true"
       >
         {oneBlog.map((item, index) => {
           return <OneBlog key={index} item={item} />
