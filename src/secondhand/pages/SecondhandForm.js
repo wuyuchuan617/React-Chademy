@@ -157,6 +157,12 @@ function SecondhandForm() {
                   value={member}
                 />
                 <input
+                  type="hidden"
+                  className="i_formstyle i_formwidth"
+                  name="product_type"
+                  value="5"
+                />
+                <input
                   type="text"
                   className="i_formstyle i_formwidth"
                   id="product_name"

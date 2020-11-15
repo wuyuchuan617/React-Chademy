@@ -71,7 +71,7 @@ function Slider(props) {
                     />
                   </div>
                   <div className="d-flex flex-column grace-slider-text">
-                    <span>{item.productname}</span>
+                    <span>{item.product_name}</span>
                     <span>${item.price}</span>
                   </div>
                 </div>

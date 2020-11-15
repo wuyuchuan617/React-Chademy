@@ -68,10 +68,10 @@ function Coupon(props) {
                 <NoData tips="沒有可使用的優惠券"></NoData>
               ) : (
                 couponlist.map(
-                  (item) =>
+                  (item, index) =>
                     item.status === Number(tabItem.key) && (
-                      <>
-                        <div>
+                      <section key={index} className="coupone_item">
+                        <div className="detail_img">
                           <img src={imageCapon} alt="imageCapon" />
                         </div>
                         <ul className="detail_list">
@@ -87,7 +87,7 @@ function Coupon(props) {
                             {tabItem.tab}
                           </div>
                         </div>
-                      </>
+                      </section>
                     )
                 )
               )}

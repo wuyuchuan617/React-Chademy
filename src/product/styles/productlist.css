@@ -347,7 +347,7 @@ img {
   height: 40px;
   justify-content: center;
   display: block;
-  border: 1px solid #c77334;
+  border: 1.5px solid #c77334;
   background-color: #c77334;
   margin-top: 90px;
   margin: auto;
@@ -602,9 +602,7 @@ img {
 }
 
 .w_custom_text p {
-
   color: white;
-
 }
 
 .w_custon_btn {
@@ -612,3 +610,74 @@ img {
   /* x */
   margin-top: 30px;
 }
+
+.w_phone {
+  width: 100%;
+  /* height: 400px; */
+}
+
+.w_phone img {
+  width: 100%;
+  /* height: 100%; */
+  object-fit: cover;
+}
+
+.js-qty {
+  position: relative;
+  margin: 30px auto;
+  /* max-width: 103px; */
+  min-width: 75px;
+  overflow: visible;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  color:#707070
+  }
+  
+  .js-qty__adjust--minus {
+  left: 0;
+  color:#707070
+  }
+  
+  .js-qty__adjust {
+      cursor: pointer;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 12px;
+      top: 0px;
+      bottom: 0px;
+      border: 0 none;
+      background: none;
+      text-align: center;
+      overflow: hidden;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -o-user-select: none;
+      user-select: none;
+      -webkit-transition: all 0.2s ease-out;
+      -moz-transition: all 0.2s ease-out;
+      -ms-transition: all 0.2s ease-out;
+      -o-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out;
+  }
+  
+  .js-qty .js-qty__num {
+      display: block;
+      background: none;
+      text-align: center;
+      border: 1px solid #ded5c6;
+      width: 100%;
+      padding: 5px 30px;
+      margin: 0;
+      color:#707070
+  }
+  
+  .js-qty__adjust--plus {
+  right: 0;
+  color:#707070
+  }

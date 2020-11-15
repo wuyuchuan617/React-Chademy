@@ -13,12 +13,12 @@ function BannerVideo(props) {
       ></video>
       <button
         data-href="#section-1600160888360-end"
-        class="Slideshow__ScrollButton RoundButton RoundButton--medium"
+        className="Slideshow__ScrollButton RoundButton RoundButton--medium"
         aria-label="Scroll to content"
         data-animate-bottom=""
       >
         <svg
-          class="Icon Icon--arrow-bottom"
+          className="Icon Icon--arrow-bottom"
           role="presentation"
           viewBox="0 0 21 11"
         >

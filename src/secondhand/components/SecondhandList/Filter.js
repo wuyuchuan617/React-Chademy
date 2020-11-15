@@ -6,38 +6,48 @@ import { Affix, Button } from 'antd'
 const Filter = (props) => {
   const { searchProduct } = props
 
-  useEffect(() => {
-    window.addEventListener('scroll', fixed)
-    const filteri = document.querySelector('.i_filter_list')
-    const btn1 = document.querySelector('.i_btn1')
+  // useEffect(() => {
+  //   window.addEventListener('scroll', fixed)
+  //   const filteri = document.querySelector('.i_filter_list')
+  //   const btn1 = document.querySelector('.i_btn1')
 
-    function fixed() {
-      let y = filteri.offsetTop
-      let z = btn1.offsetTop
-      console.log('y', y)
-      console.log('z', z)
-      console.log('window.pageYOffset', window.pageYOffset)
-    }
-  }, [window.pageYOffset])
+  //   function fixed() {
+  //     let y = filteri.offsetTop
+  //     let z = btn1.offsetTop
+  //     console.log('z', z)
+  //     console.log('y', y)
+  //     console.log('window.pageYOffset', window.pageYOffset)
+
+  //     // 捲動高度>要顯示高度 或 捲動高度<要消失高度 => add fixed class
+  //     if (window.pageYOffset >= y || window.pageYOffset < z) {
+  //       filteri.classList.add('i_fix')
+  //     }
+
+  //     // 捲動高度<要顯示高度 或 捲動高度>要消失高度 => remove fixed class
+  //     if (window.pageYOffset < y || window.pageYOffset > z) {
+  //       filteri.classList.remove('i_fix')
+  //     }
+  //   }
+  // }, [window.pageYOffset])
   return (
-    // <Affix
-    //   offsetTop={120}
-    //   onChange={(affixed) => console.log('affixed' + affixed)}
-    //   className="i_fix"
-    // >
-    <div className="i_filter_list">
-      {itemList.map((item, index) => {
-        return (
-          <FilterItem
-            key={`item ${index}`}
-            item={item}
-            searchProduct={searchProduct}
-          />
-        )
-      })}
-      <div className="i_border_bottom"></div>
-    </div>
-    // </Affix>
+    <Affix
+      offsetTop={120}
+      onChange={(affixed) => console.log('affixed' + affixed)}
+      className="i_fix"
+    >
+      <div className="i_filter_list">
+        {itemList.map((item, index) => {
+          return (
+            <FilterItem
+              key={`item ${index}`}
+              item={item}
+              searchProduct={searchProduct}
+            />
+          )
+        })}
+        <div className="i_border_bottom"></div>
+      </div>
+    </Affix>
   )
 }
 

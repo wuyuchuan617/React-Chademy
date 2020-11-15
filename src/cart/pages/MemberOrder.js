@@ -6,6 +6,7 @@ import CancelOrder from '../components/CancelOrder'
 import { Menu, Dropdown } from 'antd'
 import { DownOutlined } from '@ant-design/icons'
 import FinishedOrder from '../components/FinishedOrder'
+import OrderToFund from '../components/OrderToFund'
 
 function MemberOrder(props) {
   const { setMyDate, setMyPO_NO } = props
@@ -74,11 +75,28 @@ function MemberOrder(props) {
     <>
       <h3>我的訂單/訂單狀況({filiterState})</h3>
       <hr />
-      <Dropdown overlay={menu}>
-        <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
-          訂單狀況 <DownOutlined />
-        </a>
-      </Dropdown>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Dropdown overlay={menu}>
+          <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
+            訂單狀況 <DownOutlined />
+          </a>
+        </Dropdown>
+        <div
+          style={{
+            width: '100px',
+            height: '40px',
+            backgroundColor: '#c77334',
+            textAlign: 'center',
+            lineHeight: '40px',
+            color: 'white',
+            cursor: 'pointer',
+          }}
+          onClick={() => setFiliterState('課程')}
+        >
+          募資
+        </div>
+      </div>
+
       <div style={{ marginTop: '30px' }}>
         {filiterState === '全部' ? (
           <AllOrder
@@ -104,6 +122,11 @@ function MemberOrder(props) {
         )}
         {filiterState === '已取消' ? (
           <CancelOrder setMyPO_NO={setMyPO_NO} setMyDate={setMyDate} />
+        ) : (
+          ''
+        )}
+        {filiterState === '課程' ? (
+          <OrderToFund setMyPO_NO={setMyPO_NO} setMyDate={setMyDate} />
         ) : (
           ''
         )}

@@ -4,7 +4,7 @@ import '../styles/slider.scss'
 function NoReviewCard(props) {
   return (
     <>
-      <div className="container">
+      <div className="container section">
         <div className="row">
           <div className="w_title1">
             <div className="titlech noto-serif text-center">新品上市</div>

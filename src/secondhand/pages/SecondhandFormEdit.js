@@ -8,10 +8,12 @@
 import React, { useState, useEffect } from 'react'
 import Img from '../img/WireDiningChair_LeatherSaddle.jpg'
 import Img2 from '../img/Cover_CircleDiningChair_22.jpg'
-
+import { notification } from 'antd'
 import '../styles/secondhandForm.css'
-import { Alert } from 'antd'
+
 import { withRouter, useParams } from 'react-router-dom'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function SecondhandForm() {
   const [product, setProduct] = useState([])
@@ -21,6 +23,11 @@ function SecondhandForm() {
 
   let { sid } = useParams()
   console.log('sid' + sid)
+
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
 
   async function getTotalFromSQL(props) {
     const url = 'http://localhost:3001/man_secondhand/secondhandlist/' + sid
@@ -95,12 +102,22 @@ function SecondhandForm() {
     console.log(newData.newFileName)
   }
 
-  console.log(product)
+  const openNotificationWithIcon = (type) => {
+    notification[type]({
+      message: '修改成功',
+      description:
+        'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+    })
+  }
   return (
     <>
       <div className="i_fv">
         <img src={Img} alt="" />
-        <div className="i_fv_text text-center">
+        <div
+          className="i_fv_text text-center"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
           <p className="i_slogan_form">Thinking learning and design.</p>
           <p className="i_subslogan_form lora">
             Create your own fascinating masterpiece.
@@ -166,15 +183,15 @@ function SecondhandForm() {
           <div className="col-lg-6 col-sm-12">
             <div className="i_formcss">
               <div className="i_formset">
-                <label for="productname">商品名稱</label>
+                <label for="product_name">商品名稱</label>
                 <input
                   type="text"
                   className="i_formstyle i_formwidth"
                   id="productname"
-                  name="productname"
-                  value={product.productname}
+                  name="product_name"
+                  value={product.product_name}
                   onChange={(e) =>
-                    setProduct({ ...product, productname: e.value })
+                    setProduct({ ...product, product_name: e.value })
                   }
                 />
               </div>
@@ -372,8 +389,12 @@ function SecondhandForm() {
                   七成新
                 </div>
               </div>
-              <button className="i_btn3 text-center mt-4" type="submit">
-                新增商品
+              <button
+                className="i_btn3 text-center mt-4"
+                type="submit"
+                onClick={() => openNotificationWithIcon('success')}
+              >
+                修改商品
               </button>
             </div>
           </div>

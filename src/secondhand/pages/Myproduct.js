@@ -79,53 +79,31 @@ const Myproduct = () => {
 
   return (
     <>
-      <Layout className="memberCenter_container">
-        <Header className="hander_container">
-          <div className="title">我的評論</div>
-        </Header>
+      <div className="i_title text-center">
+        <h5>Hello, {member}</h5>
+      </div>
 
-        <Layout>
-          <Sider
-            className="sider_container"
-            style={{ background: 'transparent' }}
-            light="light"
-            width={256}
-          >
-            <Aside></Aside>
-          </Sider>
-          <Content style={{ padding: '0 50px' }}>
-            <div className="i_title text-center">
-              <h5>Hello, {member}</h5>
-            </div>
-
-            <div className="container mycontainer">
-              <table className="table table-hover">
-                <thead>
-                  <tr>
-                    <th scope="col">商品編號</th>
-                    <th scope="col">商品圖片</th>
-                    <th scope="col">商品名稱</th>
-                    <th scope="col">價錢</th>
-                    <th scope="col">刪除</th>
-                    <th scope="col">編輯</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {myproduct.map((item, index) => {
-                    return (
-                      <MyproductTd
-                        key={index}
-                        item={item}
-                        myproduct={myproduct}
-                      />
-                    )
-                  })}
-                </tbody>
-              </table>
-            </div>
-          </Content>
-        </Layout>
-      </Layout>
+      <div className="container mycontainer">
+        <table className="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">商品編號</th>
+              <th scope="col">商品圖片</th>
+              <th scope="col">商品名稱</th>
+              <th scope="col">價錢</th>
+              <th scope="col">刪除</th>
+              <th scope="col">編輯</th>
+            </tr>
+          </thead>
+          <tbody>
+            {myproduct.map((item, index) => {
+              return (
+                <MyproductTd key={index} item={item} myproduct={myproduct} />
+              )
+            })}
+          </tbody>
+        </table>
+      </div>
     </>
   )
 }

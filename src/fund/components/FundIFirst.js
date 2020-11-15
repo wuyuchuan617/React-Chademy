@@ -29,7 +29,7 @@ import dt3 from '../images/dt3.jpeg'
 import dt4 from '../images/dt4-1.jpeg'
 import dt5 from '../images/Image 32.png'
 import ItemModal from '../components/ItemModal'
-// import Breadcrumbw from '../components/Breadcrumbw'
+import Breadcrumbw from '../components/Breadcrumbw'
 
 function FundIFirst(props) {
   const { item, sid, cartamount, setCartAmount } = props
@@ -47,6 +47,8 @@ function FundIFirst(props) {
   const [heartItem, setHeartItem] = useState({})
   const [visible, setVisible] = useState(false)
   const [show, setShow] = useState(false)
+
+  const [changeshow, setChangeShow] = useState(0)
 
   const [photo, setPhoto] = useState(`http://localhost:3001/img/${item.e_pic}`)
 
@@ -310,7 +312,8 @@ function FundIFirst(props) {
 
               <div className="e_left">
                 <p className="e_leff">
-                  剩餘時間 : {item.e_day} <br />
+                  <span>剩餘時間 : {item.e_day} 天</span>
+                  <br />
                   {item.e_start_time}
                   <br />
                   <div className="e_lefff">至</div>
@@ -322,7 +325,11 @@ function FundIFirst(props) {
                 <p className="e_mann">贊助人數 :{item.e_men}人</p>
               </div>
 
-              <ItemModal show={show} setShow={setShow} />
+              <ItemModal
+                show={show}
+                setShow={setShow}
+                setChangeShow={setChangeShow}
+              />
 
               {isLogged ? (
                 <button
@@ -445,12 +452,27 @@ function FundIFirst(props) {
             <div className="small_card">
               <h4 className="e_account">
                 <FaChessQueen />
+                <span className="e_name">Gaby</span>
+              </h4>
+
+              <h3 className="em">熱情贊助：＄513,000</h3>
+
+              <h3 className="emp">希望盡快拿到椅子～</h3>
+              <h4 className="emday">
+                <FaHandHoldingHeart />
+                <span className="emdayp"> 兩天前</span>
+              </h4>
+            </div>
+
+            <div className={changeshow === 0 ? 'small_card1' : 'small_card'}>
+              <h4 className="e_account">
+                <FaChessQueen />
                 <span className="e_name">Ian</span>
               </h4>
 
-              <h3 className="em">熱情贊助：＄505,000</h3>
+              <h3 className="em">熱情贊助：＄123,011</h3>
 
-              <h3 className="emp">希望盡快拿到椅子～</h3>
+              <h3 className="emp">加油</h3>
               <h4 className="emday">
                 <FaHandHoldingHeart />
                 <span className="emdayp"> 今天</span>

@@ -20,6 +20,14 @@
 
   display: flex;
   justify-content: space-between;
+
+  /deep/ {
+    // 消除[記住我]的綠色
+    .was-validated .form-check-input:valid ~ .form-check-label,
+    .form-check-input.is-valid ~ .form-check-label {
+      color: #475050;
+    }
+  }
 }
 
 .login_btn {

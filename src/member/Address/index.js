@@ -158,7 +158,10 @@ function Address() {
       <div className="lineee justify-content-between">
         地址：{allAddress ? allAddress : '新增地址'}
         <div className="icon_con">
-          <AiOutlinePlus className="icon" onClick={() => setVisible(true)} />
+          <AiOutlinePlus
+            className="plus_icon"
+            onClick={() => setVisible(true)}
+          />
           {allAddress && (
             <BsTrash
               className="delet_btn"
@@ -179,7 +182,6 @@ function Address() {
           <Select
             style={{
               width: 'calc(50% - 20px)',
-              height: '40px',
               marginBottom: '30px',
               marginRight: '20px',
             }}
@@ -194,7 +196,6 @@ function Address() {
           <Select
             style={{
               width: '50%',
-              height: '40px',
               marginBottom: '30px',
             }}
             size="large"

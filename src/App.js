@@ -194,7 +194,7 @@ function App() {
               <ReviewMember />
             </Route>
 
-            <Route path="/myproduct">
+            <Route path="/member-center/myproduct">
               <Myproduct />
             </Route>
 
@@ -273,6 +273,8 @@ function App() {
                 setSubtoal={setSubtoal}
                 typeofProduct={typeofProduct}
                 setTypeofProduct={setTypeofProduct}
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
               />
             </Route>
 
@@ -291,6 +293,8 @@ function App() {
                 setSubtoal={setSubtoal}
                 typeofProduct={typeofProduct}
                 setTypeofProduct={setTypeofProduct}
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
               />
             </Route>
 
@@ -309,6 +313,8 @@ function App() {
                 setSubtoal={setSubtoal}
                 typeofProduct={typeofProduct}
                 setTypeofProduct={setTypeofProduct}
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
               />
             </Route>
 
@@ -326,6 +332,8 @@ function App() {
                 subtotal={subtotal}
                 setSubtoal={setSubtoal}
                 typeofProduct={typeofProduct}
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
                 setTypeofProduct={setTypeofProduct}
               />
             </Route>
@@ -345,6 +353,8 @@ function App() {
                 setSubtoal={setSubtoal}
                 typeofProduct={typeofProduct}
                 setTypeofProduct={setTypeofProduct}
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
               />
             </Route>
 

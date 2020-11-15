@@ -1,23 +1,11 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable react/jsx-no-target-blank */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 
-import { Modal, Button, Form, Input, DatePicker, message } from 'antd'
+import '../index.scoped.scss'
+import { Button, Form, Input, DatePicker, message } from 'antd'
 import moment from 'moment'
 
 function MemberCenter(props) {
-  const { setCartAmount } = props
   const [form] = Form.useForm()
-
-  const [reg, setReg] = useState({
-    title: '',
-    msg: '',
-    data: {},
-  })
-  const [smShow, setSmShow] = useState(false)
 
   async function getUserInfo() {
     const url = 'http://localhost:3001/members/getUserInfo'
@@ -94,6 +82,7 @@ function MemberCenter(props) {
   // didmount拿所有資料
   useEffect(() => {
     getUserInfo()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -155,25 +144,6 @@ function MemberCenter(props) {
           </Button>
         </Form.Item>
       </Form>
-
-      {/* 訊息彈窗 */}
-      <Modal
-        size="sm"
-        show={smShow}
-        onHide={() => setSmShow(false)}
-        aria-labelledby="example-modal-sizes-title-sm"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-sm">
-            {reg.title}
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          {reg.success && <div>{reg.msg}</div>}
-          {reg.data && reg.data.noEmail && <div>{reg.data.noEmail}</div>}
-          {reg.data && reg.data.noMobile && <div>{reg.data.noMobile}</div>}
-        </Modal.Body>
-      </Modal>
     </>
   )
 }

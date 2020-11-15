@@ -20,9 +20,11 @@ function CartList(props) {
     showLoading,
     setShowLoading,
     typeofProduct,
+    cartamount,
+    setCartAmount,
   } = props
-  // const [showLoading, setShowLoading] = useState(false)
-  // const [myCartDisplay, setMyCartDisplay] = useState([])
+  const [tempCart, setTempCart] = useState([])
+  const [reload, setReload] = useState(0)
 
   //拿資料時載入loading
   const loading = <></>
@@ -32,20 +34,32 @@ function CartList(props) {
     const newCart = localStorage.getItem('cart') || '[]'
     let cartArray = JSON.parse(newCart)
     let putArray = []
+    let putArray1 = []
     for (let i = 0; i < cartArray.length; i++) {
       if (cartArray[i].category === typeofProduct) {
         putArray.push(cartArray[i])
         console.log('hello')
       }
     }
+    for (let i = 0; i < cartArray.length; i++) {
+      if (cartArray[i].category !== typeofProduct) {
+        putArray1.push(cartArray[i])
+        console.log('hello')
+      }
+    }
+
     // console.log(newCart)
     setMyCart(putArray)
+    setTempCart(putArray1)
     // console.log(JSON.parse(newCart))
   }
   //載入時拿local storage資料
   useEffect(() => {
     getCartFromLocalStorage()
   }, [])
+  useEffect(() => {
+    getCartFromLocalStorage()
+  }, [reload])
 
   const updateCartToLocalStorage = (item, isAdded = true) => {
     console.log(item, isAdded)
@@ -125,8 +139,21 @@ function CartList(props) {
   //   const index = myCart.findIndex((v) => myCart.id === )
   // }
   const handleDelete = (id) => {
+    let putArray = tempCart
     const newCart = myCart.filter((item, index) => item.id !== id)
-    setMyCart(newCart)
+    if (newCart !== []) setMyCart(newCart)
+    if (myCart !== []) {
+      for (let i = 0; i < newCart.length; i++) {
+        putArray.push(newCart[i])
+      }
+      console.log('myarray', putArray)
+    }
+
+    localStorage.setItem('cart', JSON.stringify(putArray))
+    const newTempCart = localStorage.getItem('cart') || '[]'
+    setTempCart(newTempCart)
+    setCartAmount(cartamount + 1)
+    setReload(reload + 1)
   }
   return showLoading ? loading : display
   // <>

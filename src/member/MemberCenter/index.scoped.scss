@@ -36,13 +36,15 @@
     }
   }
 
-  .ant-layout-header {
-    text-align: center;
-  }
+  /deep/ {
+    .ant-layout-header {
+      text-align: center;
+    }
 
-  .ant-layout,
-  .ant-layout-header,
-  .ant-layout-content {
-    background: #edece8;
+    .ant-layout,
+    .ant-layout-header,
+    .ant-layout-content {
+      background: #edece8;
+    }
   }
 }

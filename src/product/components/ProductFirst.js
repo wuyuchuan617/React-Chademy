@@ -341,6 +341,11 @@ function ProductFirst(props) {
                   <div className="choose-wood"></div>
                 </div>
               </div> */}
+
+              <span id="busuanzi_container_site_uv">
+                本站訪客數<span id="busuanzi_value_site_uv"></span>人次
+              </span>
+
               <div className="d-flex justify-content-end">
                 <div className="Demo__some-network mx-1">
                   <FacebookShareButton
@@ -390,6 +395,25 @@ function ProductFirst(props) {
                       bgStyle={{ fill: '#ded5c6' }}
                     />
                   </LineShareButton>
+                </div>
+              </div>
+
+              <div class="">
+                <div class="js-qty quantity-selector" id="Quantity-product">
+                  <span class="js-qty__adjust js-qty__adjust--minus quantity__minus">
+                    −
+                  </span>
+                  <input
+                    class="text quantity js-qty__num quantity__input"
+                    name="quantity"
+                    value="1"
+                    min="1"
+                    aria-label="quantity"
+                    pattern="[0-9]*"
+                  />
+                  <span class="js-qty__adjust js-qty__adjust--plus quantity__plus">
+                    +
+                  </span>
                 </div>
               </div>
               {isLogged ? (

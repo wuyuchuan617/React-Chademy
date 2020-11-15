@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 
 import '../styles/FundModal.scss'
@@ -6,12 +5,24 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import { Radio } from 'antd'
+import { InputNumber } from 'antd'
+import { Input } from 'antd'
 
 function ItemModal(props) {
   // const { visible, setVisible } = props
   const { show, setShow } = props
+  const { item } = props
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
+  const { changeshow, setChangeShow } = props
+
+  const [inputprice, setInputPrice] = useState('')
+  const [inputtext, setInputText] = useState('')
+
+  function onChange(value) {
+    console.log('changed', value)
+  }
+
   return (
     <>
       <Modal show={show} onHide={handleClose}>
@@ -67,6 +78,27 @@ function ItemModal(props) {
           </div>
           <div className="e_check">
             <Radio>以詳閱募資條款</Radio>
+          </div>
+          <div className="e_my">
+            欲贊助金額：
+            <InputNumber
+              defaultValue={123000}
+              formatter={(value) =>
+                `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+              }
+              parser={(value) => value.replace(/\$\s?|(,*)/g, '')}
+              onChange={onChange}
+              // value={setInputPrice}
+            />
+          </div>
+          <div
+            className="e_input"
+            onClick={() => {
+              setChangeShow(1)
+            }}
+          >
+            想對設計師說的話：
+            <Input placeholder="此欄非必填" />
           </div>
         </Modal.Body>
         <Modal.Footer>

@@ -3,6 +3,7 @@ import './index.scoped.scss'
 
 import { Comment, Tooltip, Avatar, Rate } from 'antd'
 import moment from 'moment'
+import NoData from '../../common_components/NoData'
 
 import request from '../../utils/request'
 import { noImage } from '../../utils'
@@ -45,9 +46,10 @@ function Evaluation() {
   return (
     <>
       {evaluation.length > 0 ? (
-        evaluation.map((item) => {
+        evaluation.map((item, index) => {
           return (
             <Comment
+              key={index}
               className="evaluation_container"
               author={
                 <div>
@@ -70,7 +72,7 @@ function Evaluation() {
           )
         })
       ) : (
-        <Comment className="evaluation_container" content={<p>尚未評論</p>} />
+        <NoData tips="尚未評論" />
       )}
     </>
   )

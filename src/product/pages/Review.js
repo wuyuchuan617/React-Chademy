@@ -8,8 +8,7 @@
 // ------------------------------以下引入套件----------------------------
 
 import React, { useState, useEffect } from 'react'
-import { Rate } from 'antd'
-import { Layout } from 'antd'
+import { Rate, Layout, message } from 'antd'
 // ------------------以下引入Components----------------------------
 
 import Aside from '../../common_components/Aside/index'
@@ -126,6 +125,10 @@ function Review(props) {
   // 送出表單
   async function handleSubmit(e) {
     e.preventDefault()
+
+    if (!reviewTitle) return message.warn('請輸入評論標題')
+    if (!reviewComment) return message.warn('請輸入評論內容')
+
     const fd = new FormData(document.form1)
     const url = 'http://localhost:3001/man_product/addreview'
 
@@ -286,10 +289,11 @@ function Review(props) {
                     <label for="price">評論標題</label>
                     <input
                       type="text"
-                      className="formstyle formwidthw"
+                      className="formstyle formwidthw cus_input"
                       value={reviewTitle}
                       id="price"
                       name="review_title"
+                      onChange={(e) => setReviewTitle(e.target.value)}
                     />
                   </div>
 
@@ -315,6 +319,7 @@ function Review(props) {
                       cols="44"
                       className="formstyle"
                       value={reviewComment}
+                      onChange={(e) => setReviewComment(e.target.value)}
                       name="review_comment"
                     ></textarea>
                   </div>

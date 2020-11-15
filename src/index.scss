@@ -13,8 +13,14 @@ body {
   // overflow: hidden;
   overflow-x: hidden;
   // overflow-y: hidden;
+}
 
-  
+// body:hover{
+//   overflow-y: auto;
+// }
+
+* {
+  user-select: none; // 控制使用者能否選取文字
 }
 
 // body:hover{

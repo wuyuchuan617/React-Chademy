@@ -7,7 +7,8 @@
 
 import React, { useEffect, useState } from 'react'
 // import { useSelector } from 'react-redux'
-
+import ReactDOM from 'react-dom'
+import ReactFullpage from '@fullpage/react-fullpage'
 // ------------------以下引入Components----------------------------
 
 import Filter from '../../common_components/Filter'
@@ -19,9 +20,12 @@ import CustomCard from '../components/CustomCard'
 import CouponModal from '../components/CouponModal'
 import ListNew from '../components/ListNew'
 import NewsLetter from '../components/NewsLetter'
+import TabletBanner from '../components/TabletBanner'
+import TabW from '../components/TabW'
 // import Breadcrumb from '../../common_components/Breadcrumb'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
+import { scrollScreen } from 'rc-scroll-anim'
 
 // ------------------以下引入樣式----------------------------
 
@@ -212,12 +216,23 @@ function ProductList(props) {
   }, [series])
 
   // didmount拿所有資料
-  useEffect(() => {
-    localStorage.removeItem('product')
-    if (product.length === 0) {
-      getTotalFromSQL()
-    }
-  }, [])
+  useEffect(
+    () => {
+      localStorage.removeItem('product')
+      if (product.length === 0) {
+        getTotalFromSQL()
+      }
+      // scrollScreen.init({s
+      //   duration: 500,
+      //   // loop: true,
+      //   docHeight: 4000,
+      // })
+      // if (window.pageYOffset > 4000) {
+      //   scrollScreen.unMount()
+    },
+    // scrollScreen.unMount()
+    []
+  )
 
   // useEffect(() => {
   //   if (category.length > 1) getFilterFromSQL()
@@ -254,13 +269,13 @@ function ProductList(props) {
       />
 
       <BannerVideo />
+      <div id="fullpage">
+        <ProductPopular />
+        <CustomCard />
+        <ListNew />
 
-      <ProductPopular />
-      <CustomCard />
-      <ListNew />
-
-      <ProductSeries setSeries={setSeries} />
-
+        <ProductSeries setSeries={setSeries} />
+      </div>
       <div className="context1">
         <div className="container productCards" id="productCards">
           <div className="row">
@@ -287,6 +302,8 @@ function ProductList(props) {
       </div>
 
       <NewsLetter />
+      {/* <TabW /> */}
+      {/* <TabletBanner /> */}
 
       <BackTop
         visibilityHeight="2000"

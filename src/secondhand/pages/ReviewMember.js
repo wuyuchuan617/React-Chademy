@@ -157,6 +157,7 @@ function SecondhandForm() {
                       type="text"
                       className="i_formstyle i_formwidth"
                       name="order_number"
+                      value="po234653235"
                     />
                   </div>
                   <div className="i_formset">
@@ -166,6 +167,7 @@ function SecondhandForm() {
                       className="i_formstyle i_formwidth"
                       id="seller_sid"
                       name="seller_sid"
+                      value="26"
                     />
                   </div>
                   <div className="i_formset">

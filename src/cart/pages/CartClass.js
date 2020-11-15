@@ -27,6 +27,7 @@ function CartClass(props) {
     myCartDisplay,
     setMyCartDisplay,
     cartamount,
+    setCartAmount,
   } = props
   const sum = (items) => {
     let total = 0
@@ -156,6 +157,8 @@ function CartClass(props) {
         setMyCartDisplay={setMyCartDisplay}
         typeofProduct={typeofProduct}
         setTypeofProduct={setTypeofProduct}
+        cartamount={cartamount}
+        setCartAmount={setCartAmount}
       />
       <hr className="jhr" />
       <div className="submit">

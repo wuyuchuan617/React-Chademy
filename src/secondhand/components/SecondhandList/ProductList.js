@@ -13,6 +13,7 @@ function ProductList(props) {
   const [rateColor, setRateColor] = useState({})
   const [heart, setHeart] = useState(false)
   const [heartItem, setHeartItem] = useState({})
+  const [allStar, setAllStar] = useState({})
   const heartFill = {
     color: '#C77334',
   }
@@ -210,6 +211,43 @@ function ProductList(props) {
       console.log(memberName)
     }
   }
+
+  /**
+   * 撈會員全部評價資料
+   */
+  async function getAlRevieFromSQL() {
+    const url = 'http://localhost:3001/man_secondhand/all_member_star'
+
+    const request = new Request(url, {
+      method: 'GET',
+
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    // const response = await fetch(request).then((v) => console.log(v))
+    const response = await fetch(request)
+    const data = await response.json()
+
+    console.log('response', response) // [object Response]
+    console.log('data', data) // [object Object]
+
+    setAllStar(data)
+  }
+
+  useEffect(() => {
+    getAlRevieFromSQL()
+  }, [])
+  let star = 3
+  for (let i = 0; i < allStar.length; i++) {
+    if (+item.member_sid === allStar[i].seller_sid) {
+      star = +allStar[i].stars
+      console.log(item.member_sid)
+      console.log('yoyo')
+      console.log(star)
+    }
+  }
   return (
     <div className="i_card" id={item.sid}>
       <div className="i_card_img">
@@ -263,7 +301,7 @@ function ProductList(props) {
               // style={{ color: 'rgb(199, 115, 52)' }}
               className="ant-rate-star-second ant-rate-star-second"
               disabled
-              value={avgStar}
+              value={star}
             />
           </div>
         </div>

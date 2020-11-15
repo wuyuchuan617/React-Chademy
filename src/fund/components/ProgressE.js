@@ -1,6 +1,5 @@
 import React from 'react'
 import '../styles/ProgressE.scss'
-// import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import 'antd/dist/antd.css'
 import { Progress } from 'antd'
 

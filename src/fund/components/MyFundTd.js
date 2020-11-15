@@ -1,10 +1,3 @@
-/* eslint-disable array-callback-return */
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable react/jsx-no-target-blank */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-unused-vars */
-
 import React, { useState, uesEffect } from 'react'
 import { VscTrash } from 'react-icons/vsc'
 import { FiEdit3 } from 'react-icons/fi'
@@ -42,7 +35,7 @@ const MyproductTd = (props) => {
   async function deleteDataToServer(e) {
     // const newTotal = { total: total + value }
 
-    const url = 'http://localhost:3001/man_secondhand/del/' + item.sid
+    const url = 'http://localhost:3001/man_fund/del/' + item.sid
 
     const request = new Request(url, {
       method: 'DELETE',
@@ -63,18 +56,17 @@ const MyproductTd = (props) => {
   return (
     <>
       <tr>
-        <td className="i_tdpd">{item.product_no}</td>
+        <td className="i_tdpd">{item.sid}</td>
         <td className="i_tdimg">
-          <img src={`http://localhost:3001/img/` + item.photo} />
+          <img src={`http://localhost:3001/img/` + item.e_pic} />
         </td>
-        <td className="i_tdpd">{item.product_name}</td>
-        <td className="i_tdpd">{item.price}</td>
+        <td className="i_tdpd">{item.e_proname}</td>
+        <td className="i_tdpd">{item.e_lowprice}</td>
         <td className="i_tdpd">
           <VscTrash className="mystyles" onClick={showModal} />
         </td>
         <Modal
           title=""
-          className="ii_style"
           visible={visible}
           headStyle={{ backgroundColor: '#EDECE8' }}
           bodyStyle={{ backgroundColor: '#EDECE8' }}
@@ -92,7 +84,7 @@ const MyproductTd = (props) => {
         <td className="mystyles">
           <FiEdit3
             className="mystyles"
-            onClick={() => history.push('/secondhand_form_edit/' + item.sid)}
+            onClick={() => history.push('/secondhand_form_edit/' + item.member_sid)}
           />
         </td>
       </tr>
