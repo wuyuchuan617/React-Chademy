@@ -50,7 +50,7 @@ function ReturnOrder(props) {
       </TreeSelect>
       <label>給予建議</label>
       <TextArea rows={4} />
-      <Link className="j_btn7">
+      <Link to="/member-center/myorder" className="j_btn7">
         <div
           className="j_btn7"
           onClick={() => {
