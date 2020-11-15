@@ -140,6 +140,8 @@ function Filter(props) {
       }
     }
     // 寫在didUpdate, 用捲動高度變動來執行function
+
+    return () => window.removeEventListener('scroll', fixed)
   }, [window.pageYOffset])
 
   return (
