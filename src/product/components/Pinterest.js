@@ -1,8 +1,6 @@
 import React from 'react'
 
 function Pinterest(props) {
-  const { item } = props
-
   return (
     <>
       <div className="container">
