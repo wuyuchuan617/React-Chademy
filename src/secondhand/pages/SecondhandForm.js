@@ -1,38 +1,22 @@
-/* eslint-disable react/jsx-no-target-blank */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-unused-vars */
-
 import React, { useState, useEffect } from 'react'
 import Img from '../img/WireDiningChair_LeatherSaddle.jpg'
 
 import '../styles/secondhandForm.css'
-import { Layout } from 'antd'
-import { Button, notification } from 'antd'
-import Aside from '../../common_components/Aside/index'
+import { Modal, notification } from 'antd'
 import '../../common_components/Aside/index.scoped.scss'
 import '../../member/MemberCenter/index.scoped.scss'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
-const { Header, Footer, Sider, Content } = Layout
+
 function SecondhandForm() {
   //photo
   const [photo, setPhoto] = useState(null)
   const [previewPhoto, setPreviewPhoto] = useState({})
-  const [member, setMember] = useState('')
-  //redux
-  function getCartFromLocalStorage() {
-    const newMember = JSON.parse(localStorage.getItem('reduxState')).user.users
-      .sid
+  const [isLoding, setIsLoding] = useState(false)
 
-    console.log('newMember', newMember)
-    console.log(typeof newMember)
-    setMember(newMember)
-  }
-
-  useEffect(() => {
-    getCartFromLocalStorage()
-  }, [])
+  //直接從 localStorage 拿，不需要 useState 設值
+  const { user = {} } = JSON.parse(localStorage['reduxState'] || '{}')
+  const { sid } = user.users || {}
 
   //photo
   async function updateReviewToServer() {
@@ -60,15 +44,37 @@ function SecondhandForm() {
   }
 
   useEffect(() => {
+    if (!photo) return // 如果沒有值，就返回，不 api
     updateReviewToServer()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [photo])
+
+  const hasEmptyValue = (formData) => {
+    // 驗證都有填寫
+    // ref: https://developer.mozilla.org/zh-TW/docs/Web/API/FormData
+    return [...formData.values()].some((value) => value === '')
+  }
 
   //post form
   async function handleSubmit(e) {
+    setIsLoding(true)
+
     e.preventDefault()
     const fd = new FormData(document.form2)
-    const url = 'http://localhost:3001/man_secondhand/add'
 
+    // 這邊做一個簡單的檢查，所有的值都要輸入，否則會噴提示
+    // isLoding: 避免 enter 一直觸發
+    if (isLoding && hasEmptyValue(fd)) {
+      Modal.warning({ content: '尚未填寫完成！' })
+      setIsLoding(false)
+      return
+    }
+
+    // 先放這 後端 api 有 bug
+    openNotificationWithIcon('success')
+    setIsLoding(false)
+
+    const url = 'http://localhost:3001/man_secondhand/add'
     const request = new Request(url, {
       method: 'POST',
       body: fd,
@@ -110,7 +116,7 @@ function SecondhandForm() {
         <form
           className="row no-gutters"
           name="form2"
-          novalidate
+          noValidate
           onSubmit={handleSubmit}
         >
           <div className="col-lg-6 col-sm-12">
@@ -149,12 +155,12 @@ function SecondhandForm() {
           <div className="col-lg-6 col-sm-12">
             <div className="i_formcss">
               <div className="i_formset">
-                <label for="productname">商品名稱</label>
+                <label htmlFor="productname">商品名稱</label>
                 <input
                   type="hidden"
                   className="i_formstyle i_formwidth"
                   name="member_sid"
-                  value={member}
+                  value={sid}
                 />
                 <input
                   type="hidden"
@@ -170,7 +176,7 @@ function SecondhandForm() {
                 />
               </div>
               <div className="i_formset">
-                <label for="product_no">商品編號</label>
+                <label htmlFor="product_no">商品編號</label>
                 <input
                   type="text"
                   className="i_formstyle i_formwidth"
@@ -179,7 +185,7 @@ function SecondhandForm() {
                 />
               </div>
               <div className="i_formset">
-                <label for="price">價錢</label>
+                <label htmlFor="price">價錢</label>
                 <input
                   type="text"
                   className="i_formstyle i_formwidth"
@@ -188,7 +194,7 @@ function SecondhandForm() {
                 />
               </div>
               <div className="i_formset">
-                <label for="stock">商品數量</label>
+                <label htmlFor="stock">商品數量</label>
                 <input
                   type="text"
                   className="i_formstyle i_formwidth"
@@ -197,7 +203,7 @@ function SecondhandForm() {
                 />
               </div>
               <div className="i_formset">
-                <label for="description">商品描述</label>
+                <label htmlFor="description">商品描述</label>
                 <textarea
                   rows="4"
                   cols="61"
@@ -206,7 +212,7 @@ function SecondhandForm() {
                 ></textarea>
               </div>
               <div className="i_formset">
-                <label for="categories">商品種類</label>
+                <label htmlFor="categories">商品種類</label>
                 <select
                   id="categories"
                   className="i_formstyle i_formwidth"
@@ -229,7 +235,7 @@ function SecondhandForm() {
                     value="1"
                     id="wood"
                   />
-                  <label for="wood" style={{ display: 'inline' }}>
+                  <label htmlFor="wood" style={{ display: 'inline' }}>
                     木頭
                   </label>
                 </div>
@@ -241,7 +247,7 @@ function SecondhandForm() {
                     value="2"
                     id="metro"
                   />
-                  <label for="metro" style={{ display: 'inline' }}>
+                  <label htmlFor="metro" style={{ display: 'inline' }}>
                     金屬
                   </label>
                 </div>
@@ -253,14 +259,14 @@ function SecondhandForm() {
                     value="3"
                     id="plastic"
                   />
-                  <label for="plastic" style={{ display: 'inline' }}>
+                  <label htmlFor="plastic" style={{ display: 'inline' }}>
                     塑膠
                   </label>
                 </div>
               </div>
               <hr />
               <div className="i_formset">
-                <label for="material">材質</label>
+                <label htmlFor="material">材質</label>
                 <div className="i_radioset">
                   <input
                     type="radio"
@@ -269,7 +275,7 @@ function SecondhandForm() {
                     value="1"
                     id="bu"
                   />
-                  <label for="bu" style={{ display: 'inline' }}>
+                  <label htmlFor="bu" style={{ display: 'inline' }}>
                     布料
                   </label>
                 </div>
@@ -281,7 +287,7 @@ function SecondhandForm() {
                     value="2"
                     id="leath"
                   />
-                  <label for="leath" style={{ display: 'inline' }}>
+                  <label htmlFor="leath" style={{ display: 'inline' }}>
                     皮革
                   </label>
                 </div>
@@ -293,14 +299,14 @@ function SecondhandForm() {
                     value="3"
                     id="wood2"
                   />
-                  <label for="wood2" style={{ display: 'inline' }}>
+                  <label htmlFor="wood2" style={{ display: 'inline' }}>
                     木質
                   </label>
                 </div>
               </div>
               <hr />
               <div className="i_formset">
-                <label for="conditions">商品狀況</label>
+                <label htmlFor="conditions">商品狀況</label>
                 <div className=" i_radioset">
                   <input
                     type="radio"
@@ -309,7 +315,7 @@ function SecondhandForm() {
                     value="1"
                     id="9"
                   />
-                  <label for="9" style={{ display: 'inline' }}>
+                  <label htmlFor="9" style={{ display: 'inline' }}>
                     九成新
                   </label>
                 </div>
@@ -321,7 +327,7 @@ function SecondhandForm() {
                     value="2"
                     id="8"
                   />
-                  <label for="8" style={{ display: 'inline' }}>
+                  <label htmlFor="8" style={{ display: 'inline' }}>
                     八成新
                   </label>
                 </div>
@@ -333,16 +339,12 @@ function SecondhandForm() {
                     value="3"
                     id="7"
                   />
-                  <label for="7" style={{ display: 'inline' }}>
+                  <label htmlFor="7" style={{ display: 'inline' }}>
                     七成新
                   </label>
                 </div>
               </div>
-              <button
-                className="i_btn3 text-center mt-4"
-                type="submit"
-                onClick={() => openNotificationWithIcon('success')}
-              >
+              <button className="i_btn3 text-center mt-4" type="submit">
                 新增商品
               </button>
             </div>

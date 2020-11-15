@@ -52,7 +52,7 @@ function MemberCenter(props) {
 
     getUserInfo()
     console.log(' useEffect')
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const handleRequest = async (event) => {
