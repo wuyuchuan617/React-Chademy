@@ -35,9 +35,16 @@
 
 .e_leff {
     color: #C77334;
+
 }
-.e_lefff{
+
+.e_lefff {
     margin: auto;
+}
+
+.e_left .e_leff span {
+    margin-bottom: 50px;
+
 }
 
 .e_man {
@@ -162,14 +169,14 @@
     width: 40%;
 }
 
-.dim{
+.dim {
     text-align: center;
     margin-top: 150px;
 }
 
-.dim-p{
-   margin-left: 200px;
-   margin-top: 50px;
+.dim-p {
+    margin-left: 200px;
+    margin-top: 50px;
 
 }
 
@@ -179,17 +186,17 @@
     border: none;
     background-color: #c77334;
     margin-top: 60px;
-   
+
     // margin: auto;
     color: white;
-  }
+}
 
-  .e_formset{
-      display: none;
+.e_formset {
+    display: none;
 
-  }
+}
 
-  .e-related-product {
+.e-related-product {
     font-family: serif;
     font-size: 32px;
     font-weight: 400;
@@ -198,10 +205,10 @@
     text-align: center;
     margin: auto;
     margin-top: 30px;
- 
+
 }
 
-.small_card{
+.small_card {
     width: 80%;
     background-color: #fcf8f8;
     margin: auto;
@@ -210,11 +217,11 @@
     margin-left: 80px;
 }
 
-.small_card1{
+.small_card1 {
     display: none;
 }
 
-.e_account{
+.e_account {
     font-family: Noto Sans TC;
     font-size: 14px;
     font-weight: 500;
@@ -223,21 +230,23 @@
     letter-spacing: 2px;
     margin-bottom: 20px;
 }
-.e_name{
+
+.e_name {
     margin-left: 10px;
     margin-bottom: 40px;
 }
-.em{
+
+.em {
     font-family: Noto Sans TC;
     font-size: 18px;
     font-weight: 500;
     color: #436464;
     text-align: center;
     margin-bottom: 20px;
-    text-decoration:  2px solid #436464 ;
+    text-decoration: 2px solid #436464;
 }
 
-.emp{
+.emp {
     font-family: Noto Sans TC;
     font-size: 16px;
     font-weight: 500;
@@ -246,7 +255,7 @@
     margin-bottom: 30px;
 }
 
-.emday{
+.emday {
     font-family: Noto Sans TC;
     font-size: 14px;
     font-weight: 300;
@@ -254,6 +263,6 @@
     text-align: right;
 }
 
-.emdayp{
+.emdayp {
     margin-left: 5px;
 }

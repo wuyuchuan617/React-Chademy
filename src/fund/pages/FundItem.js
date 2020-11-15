@@ -16,6 +16,7 @@ import SliderE from '../components/SliderE'
 function FundItem(props) {
   const [localData, setLocalData] = useState([])
   const isLogged = useSelector((state) => state.user.logged)
+  
 
   const { setCartAmount, cartamount, resetShow, setResetShow } = props
   // const { setCartAmount, cartamount } = props

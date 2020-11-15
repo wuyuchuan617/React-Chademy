@@ -18,6 +18,7 @@ import MyFav from './MyFav'
 import Address from './Address'
 import Commentt from './Commentt'
 import Evaluation from './Evaluation'
+import MyFund from '../../src/fund/pages/MyFund'
 // --------------------- 以下 import 訂單頁面 --------------------
 import MemberOrder from '../cart/pages/MemberOrder'
 import ReturnOrder from '../cart/pages/ReturnOrder'
@@ -43,6 +44,7 @@ function MemberIndex({ cartamount, setCartAmount }) {
         '/address': '地址',
         '/commentt': '評論',
         '/evaluation': '我的評價',
+        '/myfund': '我的募資',
         '/myorder': '訂單',
         '/returnorder': '退貨',
       }
@@ -124,6 +126,12 @@ function MemberIndex({ cartamount, setCartAmount }) {
 
               <Route path={`${path}/evaluation`}>
                 <Evaluation />
+              </Route>
+
+
+
+              <Route path={`${path}/myfund`}>
+                <MyFund />
               </Route>
 
               <Route path={`${path}/myorder`}>

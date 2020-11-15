@@ -44,7 +44,7 @@ function BreadcrumbwTwo(props) {
         </Link>
       </Breadcrumb.Item>
       <Breadcrumb.Item>
-        <Link to="/productlist" style={{ fontSize: '14px' }}>
+        <Link to="/fundlist" style={{ fontSize: '14px' }}>
           募資專案
         </Link>
       </Breadcrumb.Item>

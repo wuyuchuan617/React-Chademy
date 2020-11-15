@@ -1,6 +1,6 @@
 .e_par {
   background-image: url('../images/bg1.png');
-  min-height: 500px;
+  // min-height: 500px;
 
   background-attachment: fixed;
   background-position: center center;
@@ -8,6 +8,8 @@
   overflow-y: scroll;
   overflow-x: hidden;
   overflow: auto;
+  margin-bottom: 20px;
+  font-family: Noto Sans TC;
 }
 
 .text {
@@ -32,10 +34,56 @@
 
 .e_check {
   text-align: center;
+  font-family: Noto Sans TC;
 }
 
+
+
+
+.ant-radio-checked {
+  // border-color: #c77334 !important ;
+  color: #c77334;
+  background: #c77334;
+
+}
+
+
+.e_my {
+  // text-align: center;
+  margin-top: 50px;
+  font-family: Noto Sans TC;
+}
+
+.ant-input-number-handler-down {
+  display: none;
+}
+
+.ant-input-number-input-wrap {
+  width: 100px;
+  padding-right: 20px;
+}
+
+.ant-input-number {
+  width: 100px;
+  padding-right: 20px;
+}
+
+.e_input {
+  margin-top: 10px;
+  font-family: Noto Sans TC;
+}
+
+.ant-radio-input {
+  color: #c77334;
+  background: #c77334;
+}
 
 .ant-radio {
   color: #c77334;
   background: #c77334;
+}
+
+.ant-radio-button-wrapper-checked {
+  background-color: #c77334 !important;
+ 
 }
