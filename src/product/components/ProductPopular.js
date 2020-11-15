@@ -17,7 +17,7 @@ function ProductPopular(props) {
         <div className="row  mt-5 wbread">
           <Breadcrumbww />
         </div>
-        <div
+        {/* <div
           className="row popular justify-content-between"
           data-aos="zoom-out-up"
           data-aos-duration="4000"
@@ -42,7 +42,7 @@ function ProductPopular(props) {
               <button className="popularButton">SHOP NOW</button>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   )

@@ -128,7 +128,7 @@ function ProductRecommend(props) {
                     src={require('../images/newbg.jpg')}
                     alt=""
                     onClick={() => {
-                      setRecommendCate('chair')
+                      setRecommendCate('armchair')
                       setCurrent(current + 1)
                     }}
                   />
