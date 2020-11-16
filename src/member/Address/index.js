@@ -9,7 +9,8 @@ import { transAddress } from '../../utils'
 
 import { message, Modal, Input, Select } from 'antd'
 import { BsTrash } from 'react-icons/bs'
-import { AiOutlinePlus } from 'react-icons/ai'
+import { HiPlus } from 'react-icons/hi'
+
 import { ExclamationCircleOutlined } from '@ant-design/icons'
 
 const { Option } = Select
@@ -158,10 +159,7 @@ function Address() {
       <div className="lineee justify-content-between">
         地址：{allAddress ? allAddress : '新增地址'}
         <div className="icon_con">
-          <AiOutlinePlus
-            className="plus_icon"
-            onClick={() => setVisible(true)}
-          />
+          <HiPlus className="plus_icon" onClick={() => setVisible(true)} />
           {allAddress && (
             <BsTrash
               className="delet_btn"

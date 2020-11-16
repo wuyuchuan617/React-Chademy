@@ -7,7 +7,8 @@ import MainScreen from '../MainScreen'
 import { message, Modal } from 'antd'
 import { transCardNumber } from '../../utils'
 
-import { AiOutlinePlus } from 'react-icons/ai'
+import { HiPlus } from 'react-icons/hi'
+
 import request from '../../utils/request'
 
 import { ExclamationCircleOutlined } from '@ant-design/icons'
@@ -147,7 +148,7 @@ function Creditcard() {
         <div key={index} className="lineee justify-content-between">
           卡號：{transCardNumber(card.cardNumber)}
           <div className="icon_con">
-            <AiOutlinePlus
+            <HiPlus
               className="plus_icon"
               onClick={(e) =>
                 handleOpenModal(e, {
@@ -167,7 +168,7 @@ function Creditcard() {
       <div className="lineee justify-content-between">
         新增信用卡
         <div className="icon_con">
-          <AiOutlinePlus className="icon" onClick={handleOpenModal} />
+          <HiPlus className="icon" onClick={handleOpenModal} />
         </div>
       </div>
 
