@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Form, Input } from 'antd'
 function NewsLetter() {
   return (
     <>
@@ -16,23 +16,28 @@ function NewsLetter() {
           <div className="col-3 w_newsletter1">
             <div className="formset reviewInput w_news3">
               <label for="productname ">姓名</label>
-              <input
-                type="text"
-                className="formstyleww formwidthw1"
-                // value={orderProductNo}
-                name="order_no"
-                id="productname"
-              />
+              <Form.Item name="name">
+                <Input
+                  type="text"
+                  className="formstyleww formwidthw1"
+                  // value={orderProductNo}
+                  name="order_no"
+                  id="productname"
+                />
+              </Form.Item>
             </div>
+
             <div className="formset reviewInput w_news3">
               <label for="productname1 ">Email</label>
-              <input
-                type="text"
-                className="formstyleww formwidthw1"
-                // value={orderProductNo}
-                name="order_no"
-                id="productname1"
-              />
+              <Form.Item name="name">
+                <Input
+                  type="text"
+                  className="formstyleww formwidthw1"
+                  // value={orderProductNo}
+                  name="order_no"
+                  id="productname1"
+                />
+              </Form.Item>
             </div>
             <div className="btn_lessmargin more w_cart-btn ">訂閱電子報</div>
           </div>
