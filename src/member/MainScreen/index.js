@@ -5,6 +5,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 
+// ref: https://github.com/jasminmif/react-interactive-paycard
 import React, { useState, useRef, useCallback, useEffect } from 'react'
 import CForm from './components/form'
 import Card from './components/card'
@@ -114,39 +115,34 @@ const MainScreen = (props) => {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      {/* <Modal.Title id="contained-modal-title-vcenter" className="text-center">
-        綁定信用卡
-      </Modal.Title> */}
-      <Modal.Body>
-        <div className="wrapper">
-          <CForm
+      <div className="wrapper">
+        <CForm
+          cardMonth={state.cardMonth}
+          cardYear={state.cardYear}
+          onUpdateState={updateStateValues}
+          cardNumberRef={formFieldsRefObj.cardNumber}
+          cardHolderRef={formFieldsRefObj.cardHolder}
+          cardDateRef={formFieldsRefObj.cardDate}
+          onCardInputFocus={onCardFormInputFocus}
+          onCardInputBlur={onCardInputBlur}
+        >
+          <Card
+            cardNumber={state.cardNumber}
+            cardHolder={state.cardHolder}
             cardMonth={state.cardMonth}
             cardYear={state.cardYear}
-            onUpdateState={updateStateValues}
-            cardNumberRef={formFieldsRefObj.cardNumber}
-            cardHolderRef={formFieldsRefObj.cardHolder}
-            cardDateRef={formFieldsRefObj.cardDate}
-            onCardInputFocus={onCardFormInputFocus}
-            onCardInputBlur={onCardInputBlur}
-          >
-            <Card
-              cardNumber={state.cardNumber}
-              cardHolder={state.cardHolder}
-              cardMonth={state.cardMonth}
-              cardYear={state.cardYear}
-              cardCvv={state.cardCvv}
-              isCardFlipped={state.isCardFlipped}
-              currentFocusedElm={currentFocusedElm}
-              onCardElementClick={focusFormFieldByKey}
-              cardNumberRef={cardElementsRef.cardNumber}
-              cardHolderRef={cardElementsRef.cardHolder}
-              cardDateRef={cardElementsRef.cardDate}
-            ></Card>
+            cardCvv={state.cardCvv}
+            isCardFlipped={state.isCardFlipped}
+            currentFocusedElm={currentFocusedElm}
+            onCardElementClick={focusFormFieldByKey}
+            cardNumberRef={cardElementsRef.cardNumber}
+            cardHolderRef={cardElementsRef.cardHolder}
+            cardDateRef={cardElementsRef.cardDate}
+          ></Card>
 
-            <Button onClick={handleSubmit}>提交</Button>
-          </CForm>
-        </div>
-      </Modal.Body>
+          <Button onClick={handleSubmit}>提交</Button>
+        </CForm>
+      </div>
     </Modal>
   )
 }

@@ -101,5 +101,13 @@ p::selection {
   .modal-dialog > .modal-content {
     background-color: transparent;
     border: none;
+
+    .wrapper {
+      padding: 0;
+    }
+  }
+
+  .modal-dialog {
+    max-width: 570px;
   }
 }
