@@ -15,14 +15,14 @@ function CustomBanner(props) {
             className="banner-user-title"
             animation={{ y: 30, opacity: 0, type: 'from' }}
           >
-            Ant Motion Banner
+            {/* <img src={require('../images/banner2.jpg')} alt="" /> */}
           </TweenOne>
 
           <TweenOne
             className="banner-user-text"
             animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
           >
-            The Fast Way Use Animation In React
+            {/* The Fast Way Use Animation In React */}
           </TweenOne>
         </Element>
         <Element prefixCls="banner-user-elem" key="1">
@@ -33,13 +33,13 @@ function CustomBanner(props) {
             className="banner-user-title"
             animation={{ y: 30, opacity: 0, type: 'from' }}
           >
-            Ant Motion Banner
+            {/* Ant Motion Banner */}
           </TweenOne>
           <TweenOne
             className="banner-user-text"
             animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
           >
-            The Fast Way Use Animation In React
+            {/* The Fast Way Use Animation In React */}
           </TweenOne>
         </Element>
       </BannerAnim>

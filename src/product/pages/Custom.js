@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux'
 import CustomBanner from '../components/CustomBanner'
 import BreadcrumCustom from '../components/BreadcrumCustom'
 import TabW from '../components/TabW'
+import Cicle from '../components/Cicle'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
 import { Spin } from 'antd'
@@ -82,7 +83,8 @@ function Custom(props) {
 
   return (
     <>
-      <CustomBanner />
+      {/* <CustomBanner /> */}
+      <div class=" ww_footer"></div>
       <div className="container firstTop">
         <div className="row  mt-1 wbread">
           <BreadcrumCustom />
@@ -485,6 +487,7 @@ function Custom(props) {
       </Form>
 
       <TabW />
+      {/* <Cicle /> */}
       {/* <div className="container">
         <div className="row">
           <div className="w_title1">

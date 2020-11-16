@@ -331,7 +331,7 @@
   margin-inline-end: 0px;
   /* font-weight: bold; */
   color: #edece8;
-  font-family: Noto Serif TC ;
+  font-family: Noto Serif TC;
   background-color: #5f6b6b;
   padding: 15px 10px;
 }
@@ -438,3 +438,38 @@
   height: 100%;
   object-fit: cover;
 }
+
+.ww_footer {
+  color: #fff;
+  font-size: 1em;
+  line-height: 1.5em;
+  padding: 11.875em 0 5em 0;
+  position: relative;
+  z-index: -10;
+  background: #000;
+}
+
+/* @media (min-width: 992px) { */
+.ww_footer::before {
+
+  content: '';
+  position: absolute;
+  top: -240%;
+  left: -10%;
+  width: 120%;
+  padding-top: 100%;
+  border-radius: 100%;
+  background: #a7a49f;
+  /* transform: translate(15%,5%); */
+  transform: rotate(180deg);
+
+}
+
+/* } */
+
+.ww_footer {
+      /* margin-top: 5em; */
+      padding-top: 18.75em;
+      background: 0 0;
+      overflow: hidden;
+  }
