@@ -20,6 +20,7 @@ import Slider from '../components/Slider'
 // import ProductNine from '../components/ProductNine'
 import ProductTen from '../components/ProductTen'
 import PurchaseInfo from '../components/PurchaseInfo'
+import Pinterest from '../components/Pinterest'
 import News from '../components/News'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
@@ -164,7 +165,7 @@ function Product(props) {
           <PurchaseInfo />
         </div>
       </div>
-
+      <Pinterest />
       <News />
 
       <BackTop

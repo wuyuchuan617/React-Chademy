@@ -344,9 +344,9 @@ function ProductFirst(props) {
                 </div>
               </div> */}
 
-              <span id="busuanzi_container_site_uv">
+              {/* <span id="busuanzi_container_site_uv">
                 <span id="busuanzi_value_site_uv"></span>正在瀏覽
-              </span>
+              </span> */}
 
               {/* <div className="d-flex justify-content-end">
                 <div className="Demo__some-network mx-1">

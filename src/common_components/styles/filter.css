@@ -23,6 +23,7 @@ body {
     /* transform: scale(0.7); */
     opacity: 1;
   }
+
   to {
     /* transform: scale(1); */
     opacity: 0;
@@ -82,7 +83,7 @@ body {
   width: 180px;
   height: 40px;
   background-color: #f3f4f4;
-  border: none;
+  /* border: 1px solid #ded5c6 !important; */
   margin: 10px 30px;
   text-align: center;
   padding: 5px 5px;
@@ -198,4 +199,9 @@ a {
 .ant-checkbox-group-item {
   display: block;
   margin-right: 0;
+}
+
+.ant-checkbox-checked:focus {
+  background-color: #c77334;
+  border-color: #c77334;
 }

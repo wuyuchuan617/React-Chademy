@@ -374,7 +374,7 @@ img {
 .fade-pager__indicator1 {
   margin-bottom: 20px;
   width: 100%;
-  transition: 0.7s;
+  transition: 0.5s;
   transition-timing-function: ease-in;
   cursor: pointer;
 }
@@ -745,7 +745,7 @@ span.PIN_1605466003322_embed_grid * {
   color: inherit;
   box-sizing: inherit;
   margin: 0;
-  padding: 0;
+  padding: 5px;
   text-align: left;
 }
 
@@ -771,7 +771,7 @@ span.PIN_1605466003322_embed_grid.PIN_1605466003322_c3 {
 }
 
 span.PIN_1605466003322_embed_grid .PIN_1605466003322_hd {
-  height: 55px;
+  height: 60px;
 }
 
 span.PIN_1605466003322_embed_grid .PIN_1605466003322_hd .PIN_1605466003322_img {
@@ -793,7 +793,7 @@ span.PIN_1605466003322_embed_grid .PIN_1605466003322_hd .PIN_1605466003322_pinne
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 75%;
+  width: 90%;
   position: absolute;
   top: 20px;
   left: 56px;
@@ -805,9 +805,9 @@ span.PIN_1605466003322_embed_grid.PIN_1605466003322_board .PIN_1605466003322_hd 
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 75%;
+  width: 90%;
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
   left: 56px;
   color: #363636;
   font-size: 12px;
@@ -838,7 +838,7 @@ span.PIN_1605466003322_embed_grid .PIN_1605466003322_ft {
   padding: 10px;
 }
 
-span.PIN_1605466003322_embed_grid * {
+/* span.PIN_1605466003322_embed_grid * {
   display: block;
   position: relative;
   font: inherit;
@@ -848,10 +848,10 @@ span.PIN_1605466003322_embed_grid * {
   margin: 0;
   padding: 0;
   text-align: left;
-}
+} */
 
 span.PIN_1605466003322_embed_grid .PIN_1605466003322_ft .PIN_1605466003322_button {
-  border-radius: 16px;
+  border-radius: 5px;
   text-align: center;
   background-color: #efefef;
   border: 1px solid #efefef;
@@ -859,9 +859,10 @@ span.PIN_1605466003322_embed_grid .PIN_1605466003322_ft .PIN_1605466003322_butto
   display: block;
   overflow: hidden;
   height: 32px;
-  width: 100%;
+  width: 98%;
   min-width: 70px;
   padding: 0 3px;
+  margin: auto;
 }
 
 span.PIN_1605466003322_embed_grid .PIN_1605466003322_ft .PIN_1605466003322_button .PIN_1605466003322_label.PIN_1605466003322_bottom {
@@ -898,4 +899,23 @@ span.PIN_1605466003322_embed_grid .PIN_1605466003322_ft .PIN_1605466003322_butto
 button:focus {
 
   outline: none -webkit-focus-ring-color !important;
+
+}
+
+.w_ins_title2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 18px;
+
+  color: #c77334;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.w_pin_btn {
+  width: 98%;
+  margin: auto;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 30px;
 }

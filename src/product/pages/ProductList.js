@@ -271,8 +271,9 @@ function ProductList(props) {
       />
 
       <BannerVideo />
-      <div id="fullpage">
-        <ProductPopular />
+
+      <ProductPopular />
+      <div id="w_custom_link">
         <CustomCard />
         <ListNew />
 
@@ -294,18 +295,25 @@ function ProductList(props) {
           </div>
         </div>
       </div>
-
-      <div className="container">
-        <div className="row">
-          <button className="w_loadButton" onClick={handleClick}>
+      <div className="context1">
+        <div className="container">
+          <div className="row">
+            <div
+              className="btn_lessmargin more  w_loadButton2"
+              onClick={handleClick}
+            >
+              MORE
+            </div>
+            {/* <button className="w_loadButton" onClick={handleClick}>
             LOAD MORE
-          </button>
+          </button> */}
+          </div>
         </div>
       </div>
 
       <ProductRecommend />
       <NewsLetter />
-      <Pinterest />
+      {/* <Pinterest /> */}
       {/* <TabW /> */}
       {/* <TabletBanner /> */}
 

@@ -6,7 +6,7 @@ function BannerVideo(props) {
     <>
       <video
         src={bannerVideo}
-        className="w-100 w_video"
+        className="h-100 w_video"
         autoplay="autoplay"
         muted="true"
         preload="auto"

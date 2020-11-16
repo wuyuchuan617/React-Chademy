@@ -12,7 +12,8 @@ import { UpOutlined } from '@ant-design/icons'
 import { Spin } from 'antd'
 import { LoadingOutlined } from '@ant-design/icons'
 import { Steps, Input } from 'antd'
-
+import { Parallax } from 'rc-scroll-anim'
+import Pinterest from '../components/Pinterest'
 const { Step } = Steps
 
 function Custom(props) {
@@ -374,7 +375,24 @@ function Custom(props) {
               </p>
             </div>
           </div>
-
+          <Parallax
+            animation={{ x: 700 }}
+            style={{ transform: 'translateX(0)', margin: '10px auto' }}
+            className="code-box-shape"
+          >
+            <div className="row w_float_text">
+              <div
+                class="wwd w-big-text"
+                style={{
+                  top: '-150px',
+                  left: '-50%',
+                  transform: 'translate3d(-61px, 0px, 0px)',
+                }}
+              >
+                Stay Creative Chademy
+              </div>
+            </div>
+          </Parallax>
           <div className="row">
             <div className="w_title1">
               <div className="titlech noto-serif text-center">國際大賞</div>
@@ -416,6 +434,7 @@ function Custom(props) {
       </Form>
 
       <TabW />
+      {/* <Pinterest /> */}
       <BackTop
         visibilityHeight="2000"
         style={{

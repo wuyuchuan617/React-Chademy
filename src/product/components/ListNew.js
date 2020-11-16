@@ -20,11 +20,16 @@ function NoReviewCard(props) {
               <div className="product-left-border d-none d-lg-block"></div>
               <div className="ShopTheLook__ProductList">
                 <img src={require('../images/new2.jpg')} alt="" />
-                <p className="text-center w_ins_title">栗子棕絨面古董椅</p>
+                <p className="text-center w_ins_title2">栗子棕絨面古董椅</p>
                 <p className="text-center w_new_text">
                   從雙手到雙腳都能體驗的細緻觸感、溫潤與冰涼的回饋，整體感受更加迷人，坐在上頭想必也會是愛不釋手。
                 </p>
-                <button className="w_new-btn">Check</button>
+                <div
+                  className="btn_lessmargin more w_cart-btn"
+                  style={{ marginTop: '40px' }}
+                >
+                  Check Out
+                </div>
               </div>
               <div className="product-right-border d-none d-lg-block"></div>
             </div>
@@ -38,11 +43,16 @@ function NoReviewCard(props) {
               <div className="product-left-border d-none d-lg-block"></div>
               <div className="ShopTheLook__ProductList">
                 <img src={require('../images/new22.jpg')} alt="" />
-                <p className="text-center w_ins_title">栗子棕絨面古董椅</p>
+                <p className="text-center w_ins_title2">栗子棕絨面古董椅</p>
                 <p className="text-center w_new_text">
                   從雙手到雙腳都能體驗的細緻觸感、溫潤與冰涼的回饋，整體感受更加迷人，坐在上頭想必也會是愛不釋手。
                 </p>
-                <button className="w_new-btn">Check</button>
+                <div
+                  className="btn_lessmargin more w_cart-btn"
+                  style={{ marginTop: '40px' }}
+                >
+                  Check Out
+                </div>
               </div>
               <div className="product-right-border d-none d-lg-block"></div>
             </div>
@@ -56,11 +66,16 @@ function NoReviewCard(props) {
               <div className="product-left-border d-none d-lg-block"></div>
               <div className="ShopTheLook__ProductList">
                 <img src={require('../images/new32.jpg')} alt="" />
-                <p className="text-center w_ins_title">栗子棕絨面古董椅</p>
+                <p className="text-center w_ins_title2">栗子棕絨面古董椅</p>
                 <p className="text-center w_new_text">
                   從雙手到雙腳都能體驗的細緻觸感、溫潤與冰涼的回饋，整體感受更加迷人，坐在上頭想必也會是愛不釋手。
                 </p>
-                <button className="w_new-btn">Check</button>
+                <div
+                  className="btn_lessmargin more w_cart-btn"
+                  style={{ marginTop: '40px' }}
+                >
+                  Check Out
+                </div>
               </div>
               <div className="product-right-border d-none d-lg-block"></div>
             </div>
@@ -74,11 +89,16 @@ function NoReviewCard(props) {
               <div className="product-left-border d-none d-lg-block"></div>
               <div className="ShopTheLook__ProductList">
                 <img src={require('../images/new42.jpg')} alt="" />
-                <p className="text-center w_ins_title">栗子棕絨面古董椅</p>
+                <p className="text-center  w_ins_title2">栗子棕絨面古董椅</p>
                 <p className="text-center w_new_text">
                   從雙手到雙腳都能體驗的細緻觸感、溫潤與冰涼的回饋，整體感受更加迷人，坐在上頭想必也會是愛不釋手。
                 </p>
-                <button className="w_new-btn">Check</button>
+                <div
+                  className="btn_lessmargin more w_cart-btn"
+                  style={{ marginTop: '40px' }}
+                >
+                  Check Out
+                </div>
               </div>
               <div className="product-right-border d-none d-lg-block"></div>
             </div>
