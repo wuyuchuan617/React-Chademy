@@ -1,7 +1,7 @@
 // https://github.com/PanJiaChen/vue-element-admin/blob/master/src/utils/request.js
 
 import axios from 'axios'
-import { message } from 'antd'
+// import { message } from 'antd'
 
 // import store from '@/store'
 // import { getToken } from '@/utils/auth'
@@ -71,7 +71,7 @@ service.interceptors.response.use(
 
       if (res.code === 999) {
         // to re-login
-        message.error(res.msg)
+        // message.error(res.msg)
         // MessageBox.confirm(
         //   'You have been logged out, you can cancel to stay on this page, or log in again',
         //   'Confirm logout',
@@ -92,15 +92,13 @@ service.interceptors.response.use(
     }
   },
   (error) => {
-    console.log('err' + error) // for debug
-
     console.log(
       '%c err: ',
       'background: red; color: white; font-weight: bolder;',
       error
     )
 
-    message.error(error.message)
+    // message.error(error.message)
     return Promise.reject(error)
   }
 )

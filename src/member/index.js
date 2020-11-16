@@ -17,6 +17,7 @@ import ResetPass from './ResetPass'
 import MyFav from './MyFav'
 import Address from './Address'
 import Commentt from './Commentt'
+import CommentEdit from './CommentEdit'
 import Evaluation from './Evaluation'
 import MyFund from '../../src/fund/pages/MyFund'
 // --------------------- 以下 import 訂單頁面 --------------------
@@ -36,40 +37,37 @@ function MemberIndex({ cartamount, setCartAmount }) {
 
   useEffect(() => {
     const handleTitle = () => {
-      const titleObj = {
-        '/coupon': '折價卷',
-        '/creditcard': '信用卡',
-        '/resetemail': '更換電子信箱',
-        '/resetpass': '更改密碼',
-        '/myfav': '追蹤清單',
-        '/address': '地址',
-        '/commentt': '評論',
-        '/evaluation': '我的評價',
-        '/myfund': '我的募資',
-        '/myorder': '訂單',
-        '/returnorder': '退貨',
-        '/myproduct': '我的商品',
-      }
+      const titleCopnfig = [
+        { path: '/coupon', title: '折價卷' },
+        { path: '/creditcard', title: '信用卡' },
+        { path: '/resetemail', title: '更換電子信箱' },
+        { path: '/resetpass', title: '更改密碼' },
+        { path: '/myfav', title: '追蹤清單' },
+        { path: '/address', title: '地址' },
+        { path: '/commentt', title: '評論' },
+        { path: '/commentEdit', title: '編輯評論' },
+        { path: '/evaluation', title: '我的評價' },
+        { path: '/myfund', title: '我的募資' },
+        { path: '/myorder', title: '訂單' },
+        { path: '/returnorder', title: '退貨' },
+        { path: '/myproduct', title: '我的商品' },
+      ]
 
-      const title = titleObj[location.pathname.replace(path, '')] || '個人資料'
+      // 當下的 url
+      const currentPath = location.pathname.replace(path, '')
 
-      console.log(location)
+      // e.g. '/commentEdit/22'.indexOf('/commentEdit') => 後面有帶參數也可以找到
+      // ~ => 把找不到(-1)，變成 0
+      const { title = '個人資料' } =
+        titleCopnfig.find((i) => ~currentPath.indexOf(i.path)) || {}
+
       setTitle(title)
-
-      console.log(
-        999,
-        title,
-        location.pathname.replace(path, ''),
-        '  location.pathname.replace'
-      )
     }
 
     handleTitle()
 
     // 如果 location.pathname 改變了，就重新設定 title
   }, [location, path])
-
-  console.log(' MemberIndex: ', path)
 
   return (
     <>
@@ -126,11 +124,13 @@ function MemberIndex({ cartamount, setCartAmount }) {
                 <Commentt />
               </Route>
 
+              <Route path={`${path}/commentEdit/:reviewSid`}>
+                <CommentEdit />
+              </Route>
+
               <Route path={`${path}/evaluation`}>
                 <Evaluation />
               </Route>
-
-
 
               <Route path={`${path}/myfund`}>
                 <MyFund />
