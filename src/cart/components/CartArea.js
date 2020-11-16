@@ -36,8 +36,13 @@ function CartArea(props) {
         onClick={() => setShowCart(false)}
       ></div>
       <div className={showCart ? 'showcartbox' : 'closecartbox'}>
+        <div className="j_justify">
+          <h4 style={{ marginTop: '8px' }}>購物車</h4>
+          <hr style={{ marginBottom: '8px' }} />
+        </div>
+
         <div className="containercart">
-          <ul>
+          <ul style={{ marginTop: '65px' }}>
             {cartList.map((item) => {
               return (
                 <li>
@@ -50,15 +55,24 @@ function CartArea(props) {
                       marginBottom: '5px',
                     }}
                   >
-                    <img
-                      alt=""
+                    <div
                       style={{
                         width: '250px',
                         height: '130px',
-                        objectFit: 'cover',
+                        padding: '5px',
                       }}
-                      src={'http://localhost:3001/img/' + item.img}
-                    />
+                    >
+                      <img
+                        alt=""
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                        }}
+                        src={'http://localhost:3001/img/' + item.img}
+                      />
+                    </div>
+
                     <div
                       style={{
                         width: '300px',

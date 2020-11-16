@@ -444,7 +444,7 @@ ul {
 .containercart {
   position: fixed;
   width: 550px;
-  top: 0;
+  top: 0px;
   bottom: 50px;
   background-color: white;
   z-index: 6;
@@ -508,4 +508,12 @@ ul {
   font-size: 14px;
   font-family: 'Noto Serif TC';
   cursor: pointer;
+}
+.j_justify {
+  width: 100%;
+  // margin-top: 50px;
+  position: fixed;
+  top: 0;
+  z-index: 20;
+  background-color: #fff;
 }
