@@ -19,6 +19,7 @@ import CarouselE from '../components/CarouselE'
 import CarouselETwo from '../components/CarouselETwo'
 import CarouselEThree from '../components/CarouselEThree'
 import Edesign from '../components/Edesign'
+import Hpanimate from './Hpanimate'
 import { useHistory } from 'react-router-dom'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
@@ -86,6 +87,8 @@ function FundHomepage() {
       {showProject === 3 ? <PopBmarkFour /> : ''}
       <h1 className="e_popular">設計學院</h1>
       <Edesign />
+
+      <Hpanimate/>
       <BackTop
         visibilityHeight="2000"
         style={{

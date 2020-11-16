@@ -5,6 +5,7 @@
 /* eslint-disable no-unused-vars */
 
 import React, { useState, useEffect } from 'react'
+import { Form, Input } from 'antd'
 import './styles/filter.css'
 // import { Slider } from 'antd'
 import 'antd/dist/antd.css'
@@ -112,7 +113,7 @@ function Filter(props) {
     // 抓開始顯示位置DOM
     const fixpoint = document.querySelector('.productCards')
     // 抓要消失位置高度DOM
-    const loadbtnFixpoint = document.querySelector('.w_loadButton')
+    const loadbtnFixpoint = document.querySelector('.w_loadButton2')
 
     function fixed() {
       // 抓開始顯示位置高度
@@ -165,17 +166,17 @@ function Filter(props) {
             <p id="close" onClick={() => setViewFilter(0)}>
               close
             </p>
-
-            <input
-              type="text"
-              className="filterSearch"
-              placeholder="SEARCH"
-              onChange={(e) => {
-                console.log(e.target.value)
-                setSearch(e.target.value)
-              }}
-            />
-
+            <Form.Item name="name">
+              <Input
+                type="text"
+                className="filterSearch"
+                placeholder="SEARCH"
+                onChange={(e) => {
+                  console.log(e.target.value)
+                  setSearch(e.target.value)
+                }}
+              />
+            </Form.Item>
             <p
               className="clearFilter"
               onClick={() => {

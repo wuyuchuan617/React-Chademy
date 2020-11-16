@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import PurchaseInfo from '../components/PurchaseInfo'
 function TabW(props) {
   const [tab, setTab] = useState(1)
 
@@ -8,8 +8,8 @@ function TabW(props) {
       <div className="container-fluid w_tabbb">
         <div className="row">
           <div className="w_title1">
-            <div className="titlech noto-serif text-center">新品上市</div>
-            <div className="titleEN lora text-center">New Arrivals</div>
+            <div className="titlech noto-serif text-center">創作理念</div>
+            <div className="titleEN lora text-center">Mission</div>
           </div>
         </div>
         <div

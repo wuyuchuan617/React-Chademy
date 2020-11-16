@@ -6,7 +6,7 @@
 import React, { useState, useEffect } from 'react'
 
 import { BsFillHeartFill } from 'react-icons/bs'
-import ProductModal from '../components/ProductModal'
+// import ProductModal from '../components/ProductModal'
 
 import { Rate } from 'antd'
 import { withRouter } from 'react-router-dom'
@@ -21,6 +21,7 @@ import {
 } from 'react-share'
 import { FacebookShareCount } from 'react-share'
 import { FacebookIcon, FacebookMessengerIcon, LineIcon } from 'react-share'
+import { Image } from 'antd'
 const { Link } = Anchor
 
 function ProductFirst(props) {
@@ -216,7 +217,7 @@ function ProductFirst(props) {
 
   return (
     <>
-      <ProductModal visible={visible} setVisible={setVisible} photo={photo} />
+      {/* <ProductModal visible={visible} setVisible={setVisible} photo={photo} /> */}
       <div className="container firstTop">
         <div className="row  mt-5 wbread">
           <Breadcrumbw item={item} />
@@ -224,7 +225,7 @@ function ProductFirst(props) {
 
         <div className="row justify-content-between">
           <div className="col-8">
-            <div className="product_photo" onClick={() => setVisible(true)}>
+            <div className="product_photo">
               <img src={photo} alt="" />
             </div>
             <div className="d-flex justify-content-between smallPhotos">
@@ -344,9 +345,9 @@ function ProductFirst(props) {
                 </div>
               </div> */}
 
-              <span id="busuanzi_container_site_uv">
+              {/* <span id="busuanzi_container_site_uv">
                 <span id="busuanzi_value_site_uv"></span>正在瀏覽
-              </span>
+              </span> */}
 
               {/* <div className="d-flex justify-content-end">
                 <div className="Demo__some-network mx-1">

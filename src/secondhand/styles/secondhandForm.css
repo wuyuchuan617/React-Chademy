@@ -198,3 +198,54 @@ input:focus {
   outline: 0;
   box-shadow: 0 0 0 1px #c77334;
 }
+
+textarea {
+  outline: 0;
+}
+
+textarea:focus {
+  outline: 0;
+  box-shadow: 0 0 0 1px #c77334;
+}
+
+select {
+  outline: 0;
+}
+
+select:focus {
+  outline: 0;
+  box-shadow: 0 0 0 1px #c77334;
+}
+
+::selection {
+  background: #c77334;
+  color: #fff;
+}
+
+select:focus option:checked {
+  background: #c77334;
+  color: #fff;
+}
+option:hover {
+  -webkit-appearance: none;
+}
+
+option:hover {
+  background: #c77334 !important;
+  color: #fff !important;
+}
+
+.i_formset label {
+  display: block;
+}
+
+.i_formset .ant-radio-wrapper {
+  display: inline;
+  font-size: 14px;
+  color: #475050;
+  letter-spacing: 2px;
+}
+
+.cus_container {
+  margin-top: 0 !important;
+}

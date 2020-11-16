@@ -42,6 +42,7 @@ function CheckInfo(props) {
   const [mydate, setMyDate] = useState('')
   const [myString, setMyString] = useState('')
   const [newLocalData, setNewLocalData] = useState([])
+  const [showValue, setShowValue] = useState(false)
   const city2 = city === -1 ? 0 : city
   const area2 = area === -1 ? 0 : area
   let date = new Date()
@@ -161,6 +162,17 @@ function CheckInfo(props) {
       <hr className="jhr" />
       <div className="checkinfo">
         <div className="creditcard">
+          <div
+            className="jbox10"
+            onClick={() => {
+              setNumber(12341234123412341234)
+              setMyName('mars')
+              setExpiry('10/20')
+              setShowValue(true)
+            }}
+          >
+            <h6>一鍵輸入</h6>
+          </div>
           <Cards
             cvc={cvc}
             expiry={expiry}
@@ -208,45 +220,13 @@ function CheckInfo(props) {
               type="text"
               style={{
                 marginTop: '30px',
-                width: '140px',
+                width: '600px',
               }}
               placeholder="卡號"
-              onChange={(e) => {
-                if (myString.length === 4) {
-                  document.querySelector('#input1').blur()
-                  document.querySelector('#input2').focus()
-                } else {
-                  setNumber(myString + e.target.value)
-                }
-              }}
-            />
-            <input
-              id="input2"
-              type="text"
-              style={{
-                marginTop: '30px',
-                width: '140px',
-              }}
-              placeholder="卡號"
-              onChange={(e) => setMyString(myString + e.target.value)}
-            />
-            <input
-              type="text"
-              style={{
-                marginTop: '30px',
-                width: '140px',
-              }}
-              placeholder="卡號"
-              onChange={(e) => setMyString(myString + e.target.value)}
-            />
-            <input
-              type="text"
-              style={{
-                marginTop: '30px',
-                width: '140px',
-              }}
-              placeholder="卡號"
-              onChange={(e) => setMyString(myString + e.target.value)}
+              value={showValue ? '1234-1234-1234-1234' : ''}
+              // onChange={async (e) => {
+              //   setNumber(e.target.value)
+              // }}
             />
           </div>
 
@@ -256,7 +236,7 @@ function CheckInfo(props) {
               marginTop: '30px',
             }}
             placeholder="持卡人"
-            onChange={(e) => setMyName(e.target.value)}
+            value={showValue ? 'MARS' : ''}
           />
           <input
             type="text"
@@ -264,9 +244,7 @@ function CheckInfo(props) {
               marginTop: '30px',
             }}
             placeholder="到期日"
-            onChange={(e) => {
-              setExpiry(e.target.value)
-            }}
+            value={showValue ? '10/22' : ''}
           />
           <input
             type="text"
@@ -274,6 +252,7 @@ function CheckInfo(props) {
               marginTop: '30px',
             }}
             placeholder="安全碼"
+            value={showValue ? '666' : ''}
           />
           <Link className="j_btn5" to="checkfinish">
             <div

@@ -82,7 +82,7 @@
 .pot {
   width: 15px;
   height: 15px;
-  background-color: #c77334;
+  background-color: #ff6f00;
   border-radius: 50%;
   position: absolute;
   top: 325px;
@@ -115,9 +115,11 @@
   top: 333px;
   left: 107px;
   width: 200px;
+
   background-color: #deddda;
   filter: opacity(0);
   z-index: 21;
+  transition: 0.5s;
 }
 
 .hover_card p {
@@ -129,14 +131,26 @@
 }
 
 .hover_card img {
-  width: 100%;
+  width: 200px;
+  height: 180px;
+  object-fit: cover;
 }
 
 .hover_card .text {
   padding: 10px 10px;
 }
-
-.pot:hover + .hover_card {
+.pot3 {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  opacity: 0;
+  position: absolute;
+  top: 306px;
+  left: 82px;
+  z-index: 66;
+  cursor: pointer;
+}
+.pot3:hover + .hover_card {
   position: absolute;
   top: 333px;
   left: 107px;
@@ -144,4 +158,105 @@
   background-color: #deddda;
   filter: opacity(1);
   z-index: 21;
+}
+
+.pod {
+  position: absolute;
+  top: 388px;
+  left: 379px;
+}
+
+.pod2 {
+  background-color: #c77334;
+  position: absolute;
+  top: 378px;
+  left: 369px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: 1s;
+}
+
+.pod2.active {
+  width: 65px;
+  height: 65px;
+  position: absolute;
+  top: 365px;
+  left: 354px;
+}
+
+.hover_card2 {
+  position: absolute;
+  top: 64px;
+  left: 283px;
+  width: 200px;
+  background-color: #deddda;
+  filter: opacity(0);
+  z-index: 21;
+  transition: 0.5s;
+}
+
+.pod3 {
+  position: absolute;
+  top: 370px;
+  left: 362px;
+  width: 50px;
+  height: 50px;
+  background-color: #c7743491;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 30;
+}
+
+.hover_card2 p {
+  font-size: 8px;
+  letter-spacing: 1px;
+  font-family: 'Noto Sans TC';
+  color: #232727;
+  font-weight: lighter;
+}
+
+.hover_card2 img {
+  width: 200px;
+  height: 180px;
+  object-fit: cover;
+}
+
+.hover_card2 .text {
+  padding: 10px 10px;
+}
+.pot3:hover + .hover_card2 {
+  background-color: #deddda;
+  filter: opacity(1);
+  z-index: 30;
+}
+
+.pox {
+  position: absolute;
+  top: 355px;
+  left: 588px;
+}
+
+.pox2 {
+  background-color: #c7743491;
+  position: absolute;
+  top: 346px;
+  left: 578px;
+
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+
+  opacity: 0.5;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.pox2.active {
+  width: 65px;
+  height: 65px;
+  position: absolute;
+  top: 330px;
+  left: 563px;
 }

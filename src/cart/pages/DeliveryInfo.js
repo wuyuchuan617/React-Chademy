@@ -26,6 +26,7 @@ function DeliveryInfo(props) {
   const [phoneDrive, setPhoneDrive] = useState(false)
   const [donated, setDonaeted] = useState(false)
   const [defaultform, setDefaultForm] = useState(true)
+  const [samename, setSameName] = useState('')
   const [checkName, setCheckName] = useState(false)
 
   function getNameFromLocalStorage() {
@@ -86,11 +87,15 @@ function DeliveryInfo(props) {
           placeholder="姓名"
           required
           onChange={(e) => {
-            // setName(e.target.value)
+            setSameName(e.target.value)
             e.target.value ? setCheckName(false) : setCheckName(true)
           }}
         />
-        {checkName ? <small>不可空白</small> : ''}
+        {checkName ? (
+          <small style={{ position: 'absolute' }}>不可空白</small>
+        ) : (
+          ''
+        )}
         <input
           type="text"
           style={{
@@ -222,6 +227,7 @@ function DeliveryInfo(props) {
             setArea={setArea}
             adress={adress}
             setAdress={setAdress}
+            samename={samename}
           />
         ) : (
           ''

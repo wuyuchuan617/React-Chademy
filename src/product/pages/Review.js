@@ -102,6 +102,7 @@ function Review(props) {
   console.log('previewPhoto.newFileName' + previewPhoto.newFileName)
 
   useEffect(() => {
+    if (!photo) return // 如果沒有值，就返回，不 api
     updateReviewToServer()
   }, [photo])
 

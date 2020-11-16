@@ -20,6 +20,8 @@ import Slider from '../components/Slider'
 // import ProductNine from '../components/ProductNine'
 import ProductTen from '../components/ProductTen'
 import PurchaseInfo from '../components/PurchaseInfo'
+import Pinterest from '../components/Pinterest'
+// import NewsLetter from '../components/NewsLetter'
 import News from '../components/News'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
@@ -149,6 +151,9 @@ function Product(props) {
           })}
         </div>
       </div>
+      <Pinterest />
+      <News />
+
       {product.map((item, index) => {
         return <Slider key={index} item={item} />
       })}
@@ -164,8 +169,7 @@ function Product(props) {
           <PurchaseInfo />
         </div>
       </div>
-
-      <News />
+      {/* <NewsLetter /> */}
 
       <BackTop
         visibilityHeight="2000"
