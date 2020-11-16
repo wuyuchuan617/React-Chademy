@@ -25,6 +25,7 @@ function PendingOrder(props) {
   const [bidData, setBidData] = useState([])
   const [experienceData, setExperienceData] = useState([])
   const [detailData, setDetailData] = useState([])
+  const [typeofProduct, setTypeofProduct] = useState(1)
   const [visible, setVisible] = useState(false)
   function getNameFromLocalStorage() {
     const newMember = JSON.parse(localStorage.getItem('reduxState')).user.users
@@ -32,7 +33,7 @@ function PendingOrder(props) {
 
     setMember(newMember)
   }
-  //拿會員的運送中訂單
+  //拿會員的全部訂單
   async function getAllorderFromServer(value) {
     // const newTotal = { total: total + value }
 
@@ -47,6 +48,7 @@ function PendingOrder(props) {
     })
     const response = await fetch(request)
     const data = await response.json()
+    console.log('pono', data)
     setData(data)
   }
   //拿商品資訊
@@ -292,7 +294,7 @@ function PendingOrder(props) {
                 style={{ lineHeight: '175px', cursor: 'pointer' }}
                 onClick={() => {
                   setVisible(true)
-
+                  setTypeofProduct(item.category)
                   setPO_NO(item.PO_NO)
                 }}
               >
@@ -313,6 +315,9 @@ function PendingOrder(props) {
       >
         {detailData.map((item) => {
           let link = '/review/' + item.PO_NO + '&' + item.product_name
+          if (typeofProduct === 5) {
+            link = '/review_member'
+          }
           for (let i = 0; i < productData.length; i++) {
             if (item.product_name === productData[i].product_name) {
               boximg = productData[i].photo
