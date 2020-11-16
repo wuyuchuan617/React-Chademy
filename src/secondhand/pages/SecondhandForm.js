@@ -7,8 +7,22 @@ import '../../common_components/Aside/index.scoped.scss'
 import '../../member/MemberCenter/index.scoped.scss'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
-
+import { Radio } from 'antd'
+import { Select } from 'antd'
 function SecondhandForm() {
+  const [value, setValue] = useState(0)
+  const [value2, setValue2] = useState(0)
+  const [value3, setValue3] = useState(0)
+  const { Option } = Select
+  const onChange = (e) => {
+    setValue(e.target.value)
+  }
+  const onChange2 = (e) => {
+    setValue2(e.target.value)
+  }
+  const onChange3 = (e) => {
+    setValue3(e.target.value)
+  }
   //photo
   const [photo, setPhoto] = useState(null)
   const [previewPhoto, setPreviewPhoto] = useState({})
@@ -206,7 +220,7 @@ function SecondhandForm() {
                 <label htmlFor="description">商品描述</label>
                 <textarea
                   rows="4"
-                  cols="61"
+                  cols="65"
                   className="i_formstyle"
                   name="description"
                 ></textarea>
@@ -227,122 +241,41 @@ function SecondhandForm() {
               </div>
               <div className="i_formset">
                 <label>骨架</label>
-                <div className="i_radioset">
-                  <input
-                    type="radio"
-                    name="framework_sid"
-                    className="i_formstyle i_radiomargin"
-                    value="1"
-                    id="wood"
-                  />
-                  <label htmlFor="wood" style={{ display: 'inline' }}>
-                    木頭
-                  </label>
-                </div>
-                <div className="i_radioset">
-                  <input
-                    type="radio"
-                    name="framework_sid"
-                    className="i_formstyle i_radiomargin"
-                    value="2"
-                    id="metro"
-                  />
-                  <label htmlFor="metro" style={{ display: 'inline' }}>
-                    金屬
-                  </label>
-                </div>
-                <div className="i_radioset">
-                  <input
-                    type="radio"
-                    name="framework_sid"
-                    className="i_formstyle i_radiomargin"
-                    value="3"
-                    id="plastic"
-                  />
-                  <label htmlFor="plastic" style={{ display: 'inline' }}>
-                    塑膠
-                  </label>
-                </div>
+                <Radio.Group
+                  onChange={onChange}
+                  value={value}
+                  name="framework_sid"
+                >
+                  <Radio value={1}>木頭</Radio>
+                  <Radio value={2}>金屬</Radio>
+                  <Radio value={3}>塑膠</Radio>
+                </Radio.Group>
               </div>
               <hr />
               <div className="i_formset">
                 <label htmlFor="material">材質</label>
-                <div className="i_radioset">
-                  <input
-                    type="radio"
-                    name="material_sid"
-                    className="i_formstyle i_radiomargin"
-                    value="1"
-                    id="bu"
-                  />
-                  <label htmlFor="bu" style={{ display: 'inline' }}>
-                    布料
-                  </label>
-                </div>
-                <div className="i_radioset">
-                  <input
-                    type="radio"
-                    name="material_sid"
-                    className="i_formstyle i_radiomargin"
-                    value="2"
-                    id="leath"
-                  />
-                  <label htmlFor="leath" style={{ display: 'inline' }}>
-                    皮革
-                  </label>
-                </div>
-                <div className="i_radioset">
-                  <input
-                    type="radio"
-                    name="material_sid"
-                    className="i_formstyle i_radiomargin"
-                    value="3"
-                    id="wood2"
-                  />
-                  <label htmlFor="wood2" style={{ display: 'inline' }}>
-                    木質
-                  </label>
-                </div>
+                <Radio.Group
+                  onChange={onChange2}
+                  value={value2}
+                  name="material_sid"
+                >
+                  <Radio value={1}>布料</Radio>
+                  <Radio value={2}>皮革</Radio>
+                  <Radio value={3}>木質</Radio>
+                </Radio.Group>
               </div>
               <hr />
               <div className="i_formset">
                 <label htmlFor="conditions">商品狀況</label>
-                <div className=" i_radioset">
-                  <input
-                    type="radio"
-                    name="conditions_sid"
-                    className="i_formstyle i_radiomargin"
-                    value="1"
-                    id="9"
-                  />
-                  <label htmlFor="9" style={{ display: 'inline' }}>
-                    九成新
-                  </label>
-                </div>
-                <div className="i_radioset">
-                  <input
-                    type="radio"
-                    name="conditions_sid"
-                    className="i_formstyle i_radiomargin"
-                    value="2"
-                    id="8"
-                  />
-                  <label htmlFor="8" style={{ display: 'inline' }}>
-                    八成新
-                  </label>
-                </div>
-                <div className="i_radioset">
-                  <input
-                    type="radio"
-                    name="conditions_sid"
-                    className="i_formstyle i_radiomargin"
-                    value="3"
-                    id="7"
-                  />
-                  <label htmlFor="7" style={{ display: 'inline' }}>
-                    七成新
-                  </label>
-                </div>
+                <Radio.Group
+                  onChange={onChange3}
+                  value={value3}
+                  name="conditions_sid"
+                >
+                  <Radio value={1}>九成新</Radio>
+                  <Radio value={2}>八成新</Radio>
+                  <Radio value={3}>七成新</Radio>
+                </Radio.Group>
               </div>
               <button className="i_btn3 text-center mt-4" type="submit">
                 新增商品
