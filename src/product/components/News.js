@@ -10,7 +10,7 @@ function News(props) {
         2021年度型錄全新登場！可在Chademy官方網站搶先看線上版本，8月19日起也可到店內免費索取。今年新型錄設定為「讓生活更美好的居家指南」。
       </p>
       <div
-        className="btn_lessmargin more w_cart-btn w_online-btn "
+        className="btn_lessmargin more w_cart-btn w_online-btn2 "
         onClick={() => {
           setDrawerw(true)
         }}
@@ -72,6 +72,7 @@ function News(props) {
 
                 <div
                   className="btn_lessmargin more w_online-btn "
+                  style={{ width: '200px' }}
                   onClick={() => {
                     setDrawerw(true)
                   }}

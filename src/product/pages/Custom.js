@@ -14,6 +14,7 @@ import { LoadingOutlined } from '@ant-design/icons'
 import { Steps, Input } from 'antd'
 import { Parallax } from 'rc-scroll-anim'
 import Pinterest from '../components/Pinterest'
+import PurchaseInfo from '../components/PurchaseInfo'
 const { Step } = Steps
 
 function Custom(props) {
@@ -434,7 +435,17 @@ function Custom(props) {
       </Form>
 
       <TabW />
-      {/* <Pinterest /> */}
+      {/* <div className="container">
+        <div className="row">
+          <div className="w_title1">
+            <div className="titlech noto-serif text-center">購物須知</div>
+            <div className="titleEN lora text-center">Purchase Info</div>
+          </div>
+        </div>
+        <div className="row justify-content-center">
+          <PurchaseInfo />
+        </div>
+      </div> */}
       <BackTop
         visibilityHeight="2000"
         style={{
