@@ -20,6 +20,8 @@ function AllOrder(props) {
   const [data, setData] = useState([])
   const [imgdata, setImgData] = useState([])
   const [productData, setProductData] = useState([])
+  const [secondhandData, setSecondhandData] = useState([])
+  const [bidData, setBidData] = useState([])
   const [detailData, setDetailData] = useState([])
   const [visible, setVisible] = useState(false)
   function getNameFromLocalStorage() {
@@ -45,6 +47,40 @@ function AllOrder(props) {
     const data = await response.json()
     // console.log('hi', data)
     setProductData(data)
+  }
+  async function getSecondhandFromServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = `http://localhost:3001/j_cart/secondhandlist`
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    const response = await fetch(request)
+    const data = await response.json()
+    console.log('second', data)
+    setSecondhandData(data)
+  }
+  async function getBidFromServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = `http://localhost:3001/j_cart/bidlist`
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    const response = await fetch(request)
+    const data = await response.json()
+    console.log('bid', data)
+    setBidData(data)
   }
   //拿產品圖片
   async function getProductImgFromServer(value) {
@@ -101,6 +137,8 @@ function AllOrder(props) {
   useEffect(() => {
     getProductFromServer()
     getProductImgFromServer()
+    getSecondhandFromServer()
+    getBidFromServer()
     getNameFromLocalStorage()
   }, [])
 
@@ -129,6 +167,16 @@ function AllOrder(props) {
             for (let j = 0; j < productData.length; j++) {
               if (imgdata[i].product_name === productData[j].product_name) {
                 thisimg = productData[j].photo
+              }
+            }
+            for (let k = 0; k < bidData.length; k++) {
+              if (imgdata[i].product_name === bidData[k].productName) {
+                thisimg = bidData[k].pic
+              }
+            }
+            for (let l = 0; l < secondhandData.length; l++) {
+              if (imgdata[i].product_name === secondhandData[l].productName) {
+                thisimg = secondhandData[l].pic
               }
             }
           }
@@ -219,9 +267,8 @@ function AllOrder(props) {
             }
             if (item.product_name === productData[i].product_name) {
               boximg = productData[i].photo
-              {
-                /* console.log('showimg') */
-              }
+            } else if (item.product_name === secondhandData[i].product_no) {
+              boximg = secondhandData[i].photo
             }
           }
           return (
