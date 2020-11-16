@@ -12,6 +12,7 @@ import '../styles/FundHomepage.scss'
 import BookMark from '../components/BookMark'
 import BookIcon from '../components/BookIcon'
 import Dropdowna from '../components/Dropdowna'
+import Img from '../images/christmas.jpg'
 
 import Button from 'antd/lib/button'
 import QueueAnim from 'rc-queue-anim'
@@ -286,13 +287,22 @@ function FundList(props) {
 
   return (
     <>
-      <div className="context1">
-        {/* <BannerE/> */}
-        {/* {product.map((item, index) => { */}
+      <div className="container" id="productCards">
+        <div className="i_fv">
+          <img src={Img} alt="" />
+          <div className="i_fv_text text-center">
+            <p className="i_slogan_form">Thinking learning and design.</p>
+            <p className="i_subslogan_form lora">
+              Create your own fascinating masterpiece.
+            </p>
+          </div>
+        </div>
+        <div className="context1">
+          {/* <BannerE/> */}
+          {/* {product.map((item, index) => { */}
 
-        {/* })} */}
+          {/* })} */}
 
-        <div className="container" id="productCards">
           <Breadcrumbw />
           <div className="e_lableboxx mt-5">
             <BookMark setFilterMark={setFilterMark} setTime={setTime} />
