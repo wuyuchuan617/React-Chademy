@@ -21,7 +21,9 @@ function AllOrder(props) {
   const [imgdata, setImgData] = useState([])
   const [productData, setProductData] = useState([])
   const [secondhandData, setSecondhandData] = useState([])
+  const [fundData, setFundData] = useState([])
   const [bidData, setBidData] = useState([])
+  const [experienceData, setExperienceData] = useState([])
   const [detailData, setDetailData] = useState([])
   const [visible, setVisible] = useState(false)
   function getNameFromLocalStorage() {
@@ -64,6 +66,42 @@ function AllOrder(props) {
     const data = await response.json()
     console.log('second', data)
     setSecondhandData(data)
+  }
+  //募資
+  async function getFundFromServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = `http://localhost:3001/j_cart/fundlist`
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    const response = await fetch(request)
+    const data = await response.json()
+    console.log('fund', data)
+    setFundData(data)
+  }
+  //體驗
+  async function getExperienceFromServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = `http://localhost:3001/j_cart/experiencelist`
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    const response = await fetch(request)
+    const data = await response.json()
+    console.log('Experience', data)
+    setExperienceData(data)
   }
   async function getBidFromServer(value) {
     // const newTotal = { total: total + value }
@@ -138,6 +176,8 @@ function AllOrder(props) {
     getProductFromServer()
     getProductImgFromServer()
     getSecondhandFromServer()
+    getFundFromServer()
+    getExperienceFromServer()
     getBidFromServer()
     getNameFromLocalStorage()
   }, [])
@@ -177,6 +217,18 @@ function AllOrder(props) {
             for (let l = 0; l < secondhandData.length; l++) {
               if (imgdata[i].product_name === secondhandData[l].productName) {
                 thisimg = secondhandData[l].pic
+              }
+            }
+            for (let m = 0; m < fundData.length; m++) {
+              if (imgdata[i].product_name === fundData[m].e_proname) {
+                thisimg = fundData[m].e_pic
+              }
+            }
+            for (let o = 0; o < experienceData.length; o++) {
+              if (
+                imgdata[i].product_name === experienceData[o].activitie_name
+              ) {
+                thisimg = experienceData[o].images
               }
             }
           }
@@ -262,13 +314,28 @@ function AllOrder(props) {
         {detailData.map((item) => {
           let link = '/review/' + item.PO_NO + '&' + item.product_name
           for (let i = 0; i < productData.length; i++) {
-            {
-              /* console.log('hi') */
-            }
             if (item.product_name === productData[i].product_name) {
               boximg = productData[i].photo
-            } else if (item.product_name === secondhandData[i].product_no) {
-              boximg = secondhandData[i].photo
+            }
+          }
+          for (let j = 0; j < bidData.length; j++) {
+            if (item.product_name === bidData[j].productName) {
+              boximg = bidData[j].pic
+            }
+          }
+          for (let k = 0; k < secondhandData.length; k++) {
+            if (item.product_name === secondhandData[k].product_name) {
+              boximg = secondhandData[k].photo
+            }
+          }
+          for (let l = 0; l < fundData.length; l++) {
+            if (item.product_name === fundData[l].e_proname) {
+              boximg = fundData[l].e_pic
+            }
+          }
+          for (let m = 0; m < experienceData.length; m++) {
+            if (item.product_name === experienceData[m].activitie_name) {
+              boximg = experienceData[m].images
             }
           }
           return (
