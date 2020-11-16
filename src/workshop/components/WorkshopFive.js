@@ -12,16 +12,29 @@ import imagetrainthree from '../images/24.png'
 import imagetrainfour from '../images/25.png'
 import imagetrainfive from '../images/26.png'
 import imagetrainsix from '../images/27.png'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function WorkshopFive(props) {
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
   return (
     <div className="container-fluid">
       <div className="wrapper2">
         <div className="title01">
-          <h2>札實的課程訓練</h2>
+          <div className="titlech noto-serif text-center">札實的課程訓練</div>
+          <div className="titleEN lora text-center">Lay a Solid Foundation</div>
         </div>
         <div className="row">
-          <div className="article col-md-4 mb-4">
+          <div
+            className="article col-md-4 mb-4"
+            data-aos="flip-left"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+            data-aos-once="true"
+          >
             <div className="boxtrain">
               <div className="upper6">
                 <img src={imagetrainone} />
@@ -36,7 +49,13 @@ function WorkshopFive(props) {
               </div>
             </div>
           </div>
-          <div className="article col-md-4 mb-4">
+          <div
+            className="article col-md-4 mb-4"
+            data-aos="flip-left"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+            data-aos-once="true"
+          >
             <div className="boxtrain">
               <div className="upper6">
                 <img src={imagetraintwo} />
@@ -49,7 +68,13 @@ function WorkshopFive(props) {
               </div>
             </div>
           </div>
-          <div className="article col-md-4 mb-4">
+          <div
+            className="article col-md-4 mb-4"
+            data-aos="flip-left"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+            data-aos-once="true"
+          >
             <div className="boxtrain">
               <div className="upper6">
                 <img src={imagetrainthree} />
@@ -66,7 +91,13 @@ function WorkshopFive(props) {
           </div>
         </div>
         <div className="row">
-          <div className="article col-md-4 mb-4">
+          <div
+            className="article col-md-4 mb-4"
+            data-aos="flip-left"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+            data-aos-once="true"
+          >
             <div className="boxtrain">
               <div className="upper6">
                 <img src={imagetrainfour} />
@@ -79,7 +110,13 @@ function WorkshopFive(props) {
               </div>
             </div>
           </div>
-          <div className="article col-md-4 mb-4">
+          <div
+            className="article col-md-4 mb-4"
+            data-aos="flip-left"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+            data-aos-once="true"
+          >
             <div className="boxtrain">
               <div className="upper6">
                 <img src={imagetrainfive} />
@@ -94,7 +131,13 @@ function WorkshopFive(props) {
               </div>
             </div>
           </div>
-          <div className="article col-md-4 mb-4">
+          <div
+            className="article col-md-4 mb-4"
+            data-aos="flip-left"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+            data-aos-once="true"
+          >
             <div className="boxtrain">
               <div className="upper6">
                 <img src={imagetrainsix} />

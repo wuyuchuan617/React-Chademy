@@ -1,7 +1,7 @@
 /*一日木工體驗*/
 .annie_wrapper100 {
-  padding-left: 4rem;
-  padding-right: 4rem;
+  padding-left: 7rem;
+  padding-right: 7rem;
   padding-top: 4rem;
   padding-bottom: 4rem;
   /*background-color: #edece8;*/
@@ -46,13 +46,14 @@
 
 .boxoneday {
   overflow: hidden;
-  background-color: #ffffff !important;
+  background-color: #f3f4f4 !important;
   transition: 0.5s;
   width: 21.25rem;
+  cursor: pointer;
 }
 
 .boxoneday:hover {
-  box-shadow: 3px 3px 10px gainsboro;
+  box-shadow: 5px 0px 10px#B7BDB3;
 }
 
 .upper1 img {
@@ -136,13 +137,14 @@
 
 .box2train {
   overflow: hidden;
-  background-color: #ffffff !important;
+  background-color: #f3f4f4 !important;
   transition: 0.5s;
   width: 95%;
+  cursor: pointer;
 }
 
 .box2train:hover {
-  box-shadow: 3px 3px 10px gainsboro;
+  box-shadow: 5px 0px 10px#B7BDB3;
 }
 
 .upper2 {
@@ -160,7 +162,7 @@
   color: white;
   position: absolute;
   top: 0rem;
-  right: 12.5rem;
+  right: 8.7rem;
 }
 
 .box200:hover {
@@ -169,6 +171,7 @@
   height: 347px;
   background: linear-gradient(to bottom, rgba(0, 0, 255, 0), rgb(0, 0, 0, 0.8));
   position: absolute;
+
   top: 0;
 }
 
@@ -186,8 +189,8 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  margin-right: 210px;
-  filter: opacity(0.5);
+  margin-right: 9rem;
+  filter: opacity(1);
 }
 
 .box200 {
@@ -195,6 +198,7 @@
   height: 347px;
   background: linear-gradient(to bottom, rgba(0, 0, 255, 0), rgb(0, 0, 0, 0));
   position: absolute;
+  transition: all 0.4s linear;
   top: 0;
 }
 
@@ -237,13 +241,14 @@
 
 .boxexhibition {
   overflow: hidden;
-  background-color: #ffffff !important;
+  background-color: #f3f4f4 !important;
   transition: 0.5s;
   width: 21.25rem;
+  cursor: pointer;
 }
 
 .boxexhibition:hover {
-  box-shadow: 3px 3px 10px gainsboro;
+  box-shadow: 5px 0px 10px#B7BDB3;
 }
 
 .word1exhibition h4 {
@@ -306,13 +311,23 @@
 
 .box5worker {
   overflow: hidden;
-  background-color: #ffffff !important;
+  background-color: #f3f4f4 !important;
   transition: 0.5s;
   width: 95%;
+  cursor: pointer;
 }
 
 .box5worker:hover {
-  box-shadow: 3px 3px 10px gainsboro;
+  box-shadow: 5px 0px 10px#B7BDB3;
+}
+
+.box5worker img {
+  filter: blur(2px) grayscale(50%);
+  transition: all 0.5s ease 0s;
+}
+
+.box5worker img:hover {
+  filter: blur(0px) grayscale(0%);
 }
 
 .upper5 {
@@ -344,15 +359,27 @@
 /*文章特集*/
 .box6title {
   overflow: hidden;
-  background-color: #ffffff !important;
+  background-color: #f3f4f4 !important;
   transition: 0.5s;
   width: 100%;
   height: 211px;
   width: 95%;
+  cursor: pointer;
 }
 
 .box6title:hover {
-  box-shadow: 3px 3px 10px gainsboro;
+  box-shadow: 5px 0px 10px#B7BDB3;
+}
+
+.box6title img {
+  transform: scale(1);
+  filter: brightness(70%);
+  transition: all 0.5s ease 0s;
+}
+
+.box6title img:hover {
+  transform: scale(1.1);
+  filter: brightness(100%);
 }
 
 .word1title h4 {
@@ -442,7 +469,7 @@
 .a_date_filter {
   position: absolute;
 
-  top: 45%;
+  top: 40%;
   left: 10%;
   z-index: 20;
 }
@@ -492,10 +519,15 @@
   margin-right: 10px;
   margin-left: 10px;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .upper1filter img {
   max-width: 100%;
+}
+
+.upper1filter:hover + h4 {
+  color: red;
 }
 
 .wordonedayfilter {

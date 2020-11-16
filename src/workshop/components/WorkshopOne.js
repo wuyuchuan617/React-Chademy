@@ -101,24 +101,27 @@ function WorkshopOne(props) {
         <div className="col">
           <div className="d-flex workshop-name justify-content-between">
             <div>{item.activitie_name}</div>
-            <div className="heart justify-content-end">
-              <BsFillHeartFill
-                onClick={() => {
-                  setHeart(!heart)
-                }}
-                style={heart ? heartFill : ''}
-              />
-            </div>
+          </div>
+
+          <div className="heart justify-content-end">
+            <BsFillHeartFill
+              onClick={() => {
+                setHeart(!heart)
+              }}
+              style={heart ? heartFill : ''}
+            />
           </div>
 
           <div className="workshop-desc">
             <p>{item.introduction}</p>
+            <p>開課日期:2020/11/21 - 2020/01/03 </p>
+            <p>地點:台北市 </p>
             <h6>剩餘名額1</h6>
-            <h1>課程價格_NT{item.sale_price}</h1>
+            <h1>課程價格_${item.sale_price}</h1>
           </div>
 
           <button
-            className="cart-btn"
+            className="a_cart-btn"
             onClick={() => {
               setCartAmount(cartamount + 1)
               updateCartToLocalStorage({

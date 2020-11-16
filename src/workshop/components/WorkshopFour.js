@@ -10,13 +10,24 @@ import '../styles/workshoplist.css'
 import imagemainten from '../images/38.png'
 import imagemaineleven from '../images/39.png'
 import imagemaintwe from '../images/33.png'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function WorkshopFour(props) {
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
   return (
-    <div className="container">
+    <div className="annie_wrapper1000">
       <div className="row post-abs">
         <div className="a-top-area"></div>
-        <div className="a-top-area">
+        <div
+          className="a-top-area"
+          data-aos="fade-down"
+          data-aos-delay="50000"
+          data-aos-duration="2400"
+        >
           <h3>Calvin 專業師資</h3>
           <p>
             自家經營專業技術師父，給您有保障的服務，我們注重每一個施工品質及工作細節，並且要求做到最好，以自已要居住的心理為出發點，把每一個裝潢的個案，都當作自己的家。
@@ -27,7 +38,12 @@ function WorkshopFour(props) {
           <img src={imagemaineleven} />
         </div>
 
-        <div className="a-designer-photo">
+        <div
+          className="a-designer-photo"
+          data-aos="fade-right"
+          data-aos-delay="50000"
+          data-aos-duration="2400"
+        >
           <img src={imagemaintwe} />
         </div>
       </div>

@@ -19,193 +19,185 @@ import '../styles/workshop.css'
 function WorkshopEight(props) {
   return (
     <>
-      <div className="wrapper2">
+      <div className="annie_wrapper100">
         <div className="title01">
-          <h2>猜你喜歡</h2>
+          <div className="titlech noto-serif text-center">相關課程</div>
+          <div className="titleEN lora text-center">Correlated Course</div>
         </div>
         <div className="row justify-content-center">
           <Carousel itemsToScroll={3} itemsToShow={3}>
-            <div className="boxoneday">
-              <div className="upper1">
+            <div className="boxonedayfilter">
+              <div className="upper1filter">
                 <img alt="" src={imagetwo} />
 
-                <div className="box100">
+                <div className="box100filter">
                   <img alt="" id="image" src={heart} />
                 </div>
               </div>
 
-              <div className="wordoneday">
-                <div className="word1oneday">
+              <div className="wordonedayfilter">
+                <div className="word1onedayfilter">
                   <h4>一日竹編籃工作坊</h4>
-                  <h6>開課日期:2020-09-12</h6>
-                  <h6>地點:台北市</h6>
+                  <h6>開課日期:2020/11/21</h6>
                 </div>
-                <div className="price">
+                <div className="pricefilter">
                   <h4>$599</h4>
                 </div>
               </div>
             </div>
 
-            <div className="boxoneday">
-              <div className="upper1">
+            <div className="boxonedayfilter">
+              <div className="upper1filter">
                 <img alt="" src={imagethree} />
                 <p>HOT</p>
-                <div className="box100">
+                <div className="box100filter">
                   <img alt="" id="image" src={heart} />
                 </div>
               </div>
 
-              <div className="wordoneday">
-                <div className="word1oneday">
+              <div className="wordonedayfilter">
+                <div className="word1onedayfilter">
                   <h4>一日木湯匙工作坊</h4>
-                  <h6>開課日期:2020-09-15</h6>
-                  <h6>地點:台北市</h6>
+                  <h6>開課日期:2020/11/21</h6>
                 </div>
-                <div className="price">
+                <div className="pricefilter">
                   <h4>$599</h4>
                 </div>
               </div>
             </div>
 
-            <div className="boxoneday">
-              <div className="upper1">
+            <div className="boxonedayfilter">
+              <div className="upper1filter">
                 <img alt="" src={imagefour} />
                 <p>HOT</p>
-                <div className="box100">
+                <div className="box100filter">
                   <img alt="" id="image" src={heart} />
                 </div>
               </div>
 
-              <div className="wordoneday">
-                <div className="word1oneday">
+              <div className="wordonedayfilter">
+                <div className="word1onedayfilter">
                   <h4>菊花紋竹編墊課程</h4>
-                  <h6>開課日期:2020-11-21</h6>
-                  <h6>地點:台北市</h6>
+                  <h6>開課日期:2020/11/21</h6>
                 </div>
-                <div className="price">
+                <div className="pricefilter">
                   <h4>$599</h4>
                 </div>
               </div>
             </div>
 
-            <div className="boxoneday">
-              <div className="upper1">
+            <div className="boxonedayfilter">
+              <div className="upper1filter">
                 <img alt="" src={imagefive} />
 
-                <div className="box100">
+                <div className="box100filter">
                   <img alt="" id="image" src={heart} />
                 </div>
               </div>
 
-              <div className="wordoneday">
-                <div className="word1oneday">
-                  <h4>一日玫瑰花體驗</h4>
-                  <h6>開課日期:2020/09/15</h6>
-                  <h6>地點:台灣/台北市</h6>
+              <div className="wordonedayfilter">
+                <div className="word1onedayfilter">
+                  <h4>寵物營養學講座&寵物餐桌DIY</h4>
+                  <h6>開課日期:2020/11/21</h6>
                 </div>
-                <div className="price">
+                <div className="pricefilter">
                   <h4>$599</h4>
                 </div>
               </div>
             </div>
 
-            <div className="boxoneday">
-              <div className="upper1">
+            <div className="boxonedayfilter">
+              <div className="upper1filter">
                 <img alt="" src={imagesix} />
 
-                <div className="box100">
+                <div className="box100filter">
                   <img alt="" id="image" src={heart} />
                 </div>
               </div>
 
-              <div className="wordoneday">
-                <div className="word1oneday">
-                  <h4>一日玫瑰花體驗</h4>
-                  <h6>開課日期:2020/09/15</h6>
-                  <h6>地點:台灣/台北市</h6>
+              <div className="wordonedayfilter">
+                <div className="word1onedayfilter">
+                  <h4>木趣彈珠台</h4>
+                  <h6>開課日期:2020/11/21</h6>
                 </div>
-                <div className="price">
+                <div className="pricefilter">
                   <h4>$599</h4>
                 </div>
               </div>
             </div>
 
-            <div className="boxoneday">
-              <div className="upper1">
+            <div className="boxonedayfilter">
+              <div className="upper1filter">
                 <img alt="" src={imageseven} />
 
-                <div className="box100">
+                <div className="box100filter">
                   <img alt="" id="image" src={heart} />
                 </div>
               </div>
 
-              <div className="wordoneday">
-                <div className="word1oneday">
-                  <h4>一日玫瑰花體驗</h4>
-                  <h6>開課日期:2020/09/15</h6>
-                  <h6>地點:台灣/台北市</h6>
+              <div className="wordonedayfilter">
+                <div className="word1onedayfilter">
+                  <h4>多功能旋轉收納架DIY</h4>
+                  <h6>開課日期:2020/11/21</h6>
                 </div>
-                <div className="price">
+                <div className="pricefilter">
                   <h4>$599</h4>
                 </div>
               </div>
             </div>
-            <div className="boxoneday">
-              <div className="upper1">
+            <div className="boxonedayfilter">
+              <div className="upper1filter">
                 <img alt="" src={imageeight} />
                 <p>HOT</p>
-                <div className="box100">
+                <div className="box100filter">
                   <img alt="" id="image" src={heart} />
                 </div>
               </div>
 
-              <div className="wordoneday">
-                <div className="word1oneday">
-                  <h4>一日玫瑰花體驗</h4>
-                  <h6>開課日期:2020/09/15</h6>
-                  <h6>地點:台灣/台北市</h6>
+              <div className="wordonedayfilter">
+                <div className="word1onedayfilter">
+                  <h4>木趣彈珠台</h4>
+                  <h6>開課日期:2020/11/21</h6>
                 </div>
-                <div className="price">
+                <div className="pricefilter">
                   <h4>$599</h4>
                 </div>
               </div>
             </div>
-            <div className="boxoneday">
-              <div className="upper1">
+            <div className="boxonedayfilter">
+              <div className="upper1filter">
                 <img alt="" src={imagenine} />
 
-                <div className="box100">
+                <div className="box100filter">
                   <img alt="" id="image" src={heart} />
                 </div>
               </div>
 
-              <div className="wordoneday">
-                <div className="word1oneday">
-                  <h4>一日玫瑰花體驗</h4>
-                  <h6>開課日期:2020/09/15</h6>
-                  <h6>地點:台灣/台北市</h6>
+              <div className="wordonedayfilter">
+                <div className="word1onedayfilter">
+                  <h4>多功能旋轉收納架DIY</h4>
+                  <h6>開課日期:2020/11/21</h6>
                 </div>
-                <div className="price">
+                <div className="pricefilter">
                   <h4>$599</h4>
                 </div>
               </div>
             </div>
-            <div className="boxoneday">
-              <div className="upper1">
+            <div className="boxonedayfilter">
+              <div className="upper1filter">
                 <img alt="" src={imageten} />
 
-                <div className="box100">
+                <div className="box100filter">
                   <img alt="" id="image" src={heart} />
                 </div>
               </div>
 
-              <div className="wordoneday">
-                <div className="word1oneday">
-                  <h4>一日玫瑰花體驗</h4>
-                  <h6>開課日期:2020/09/15</h6>
-                  <h6>地點:台灣/台北市</h6>
+              <div className="wordonedayfilter">
+                <div className="word1onedayfilter">
+                  <h4>起司杯墊多種功能一次滿足</h4>
+                  <h6>開課日期:2020/11/21</h6>
                 </div>
-                <div className="price">
+                <div className="pricefilter">
                   <h4>$599</h4>
                 </div>
               </div>

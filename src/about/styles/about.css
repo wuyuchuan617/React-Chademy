@@ -10,7 +10,7 @@ header {
 
 .a_slogan {
   width: 100%;
-  padding: 0 390px;
+  padding: 0 350px;
   text-align: center;
   color: white;
   position: absolute;
@@ -19,7 +19,8 @@ header {
 
 .a_banner {
   color: #707070;
-  font-size: 16px;
+  font-size: 17px;
+  letter-spacing: 0.2rem;
   text-align: center;
   line-height: 30px;
 }

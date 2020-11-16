@@ -9,6 +9,7 @@ import imagework from '../images/11.jpg'
 import imageworker from '../images/12.jpg'
 import imageworkerthree from '../images/11-1.png'
 import imageworkerfour from '../images/11-2.png'
+
 import '../styles/slider.css'
 import Carousel from 'react-elastic-carousel'
 

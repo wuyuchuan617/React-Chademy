@@ -45,7 +45,6 @@
 }
 
 .workshop-desc p {
-  margin-top: 60px;
   color: #707070;
   letter-spacing: 0.2rem;
 }
@@ -61,11 +60,28 @@
   color: #707070;
   letter-spacing: 0.2rem;
   font-size: 24px;
-  margin-bottom: 115px;
-  margin-top: 70px;
+  margin-bottom: 45px;
+  margin-top: 45px;
+  transition: 0.5s;
+  cursor: crosshair;
 }
 
-.cart-btn {
+.workshop-desc h1:hover {
+  color: #c77334;
+  font-size: 28px;
+}
+
+.a_cart-btn {
+  width: 395px;
+  height: 50px;
+  border: none;
+  background-color: #ded5c6;
+  margin: auto;
+  color: white;
+  transition: 0.5s;
+}
+
+.a_cart-btn:hover {
   width: 395px;
   height: 50px;
   border: none;
@@ -87,21 +103,21 @@
   width: 100%;
 }
 
-/*第三頁_豐富的木頭材料*/
-
-.wrapper3 {
-  padding-left: 7.5rem;
-  padding-right: 7.5rem;
-  margin-top: 3rem;
-  background-color: #edece8;
-  margin-bottom: 6rem;
+.annie_wrapper800 {
+  padding-right: 10rem;
+  padding-left: 10rem;
+  padding-top: 4rem;
+  background-color: #deddda;
 }
 
-.title01 h2 {
-  font-size: 2.25rem;
-  margin-bottom: 4.375rem;
-  margin-top: 6.25rem;
-  letter-spacing: 0.2rem;
+/*第三頁_豐富的木頭材料*/
+
+.annie_wrapper900 {
+  padding-left: 10rem;
+  padding-right: 10rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  background-color: #edece8;
 }
 
 .title01 {
@@ -129,7 +145,7 @@ img {
   background-color: none;
   transition: 0.5s;
   width: 100%;
-  margin-bottom: 3.3125rem;
+  margin-bottom: 1rem;
 }
 
 .word2 {
@@ -142,6 +158,13 @@ img {
 }
 
 /*第四頁_師資*/
+
+.annie_wrapper1000 {
+  padding-left: 10rem;
+  padding-right: 10rem;
+  margin-top: -6rem;
+  margin-bottom: 4rem;
+}
 .a-top-area {
   height: 500px;
   background-color: transparent;
@@ -150,7 +173,7 @@ img {
 }
 
 .a-top-area h3 {
-  font-size: 36px;
+  font-size: 32px;
   margin-top: 0.2rem;
   letter-spacing: 0.2rem;
   margin-top: 150px;
@@ -202,7 +225,7 @@ img {
   padding-right: 7.5rem;
   margin-top: 3rem;
   background-color: #edece8;
-  margin-bottom: 6rem;
+  margin-bottom: 3rem;
 }
 
 .boxtrain {
@@ -237,6 +260,15 @@ img {
   border-radius: 0% !important;
 }
 
+.more-btn:hover {
+  color: #c77334;
+  border-top: 1.5px solid #c77334;
+  border-bottom: 1.5px solid #c77334;
+  background-color: #edece8;
+  letter-spacing: 0.5rem;
+  text-align: center;
+}
+
 .title01evaluation {
   text-align: center;
 }
@@ -254,20 +286,36 @@ img {
   align-items: center;
   line-height: 25px;
   font-size: 14px;
-  margin-bottom: 67px;
+  margin-bottom: 40px;
   color: #707070;
   font-size: 14px;
   letter-spacing: 0.2rem;
   font-family: 'Noto Sans TC', sans-serif;
 }
 
+.word1evaluation span {
+  align-items: center;
+  line-height: 25px;
+  font-size: 14px;
+  margin-bottom: 40px;
+  color: #c77334;
+  font-size: 14px;
+  letter-spacing: 0.2rem;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
 .boxevaluation {
-  padding: 2.5rem;
+  padding: 0.5rem;
+  transition: all 0.5s ease 0s;
+}
+
+.boxevaluation:hover {
+  transform: translateY(-15px);
 }
 
 .upperevaluation {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.3rem;
 }
 
 /*第八頁_課程推薦*/
