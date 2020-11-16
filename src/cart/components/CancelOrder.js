@@ -1,4 +1,5 @@
 /* eslint-disable no-lone-blocks */
+/* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
@@ -8,26 +9,21 @@ import Aside from '../../common_components/Aside/index'
 import { GrMore } from 'react-icons/gr'
 import { BsPen } from 'react-icons/bs'
 import { Menu, Dropdown } from 'antd'
-import { DownOutlined } from '@ant-design/icons'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import { Modal, Button } from 'antd'
 import { withRouter } from 'react-router-dom'
-import { useRouteMatch, useLocation } from 'react-router-dom'
 
 function CancelOrder(props) {
-  const {
-    setMyPO_NO,
-    setMyDate,
-    getAll,
-    getFinish,
-    getPending,
-    getCancel,
-  } = props
+  const { setMyPO_NO, setMyDate, getAll } = props
   const [member, setMember] = useState('')
   const [PO_NO, setPO_NO] = useState('')
   const [data, setData] = useState([])
   const [imgdata, setImgData] = useState([])
   const [productData, setProductData] = useState([])
+  const [secondhandData, setSecondhandData] = useState([])
+  const [fundData, setFundData] = useState([])
+  const [bidData, setBidData] = useState([])
+  const [experienceData, setExperienceData] = useState([])
   const [detailData, setDetailData] = useState([])
   const [visible, setVisible] = useState(false)
   function getNameFromLocalStorage() {
@@ -35,6 +31,23 @@ function CancelOrder(props) {
       .name
 
     setMember(newMember)
+  }
+  //拿會員的取消訂單
+  async function getAllorderFromServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = `http://localhost:3001/j_cart/listcancel?member=${member}`
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    const response = await fetch(request)
+    const data = await response.json()
+    setData(data)
   }
   //拿商品資訊
   async function getProductFromServer(value) {
@@ -54,6 +67,76 @@ function CancelOrder(props) {
     // console.log('hi', data)
     setProductData(data)
   }
+  async function getSecondhandFromServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = `http://localhost:3001/j_cart/secondhandlist`
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    const response = await fetch(request)
+    const data = await response.json()
+    console.log('second', data)
+    setSecondhandData(data)
+  }
+  //募資
+  async function getFundFromServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = `http://localhost:3001/j_cart/fundlist`
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    const response = await fetch(request)
+    const data = await response.json()
+    console.log('fund', data)
+    setFundData(data)
+  }
+  //體驗
+  async function getExperienceFromServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = `http://localhost:3001/j_cart/experiencelist`
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    const response = await fetch(request)
+    const data = await response.json()
+    console.log('Experience', data)
+    setExperienceData(data)
+  }
+  async function getBidFromServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = `http://localhost:3001/j_cart/bidlist`
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    const response = await fetch(request)
+    const data = await response.json()
+    console.log('bid', data)
+    setBidData(data)
+  }
   //拿產品圖片
   async function getProductImgFromServer(value) {
     // const newTotal = { total: total + value }
@@ -72,74 +155,6 @@ function CancelOrder(props) {
     setImgData(data)
   }
 
-  //拿會員的全部訂單
-  async function getAllorderFromServer(value) {
-    // const newTotal = { total: total + value }
-
-    const url = `http://localhost:3001/j_cart/list?member=${member}`
-
-    const request = new Request(url, {
-      method: 'GET',
-      headers: new Headers({
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      }),
-    })
-    const response = await fetch(request)
-    const data = await response.json()
-    setData(data)
-  }
-  //拿會員取消訂單
-  async function getCancelOrderFromServer(value) {
-    // const newTotal = { total: total + value }
-
-    const url = `http://localhost:3001/j_cart/listcancel?member=${member}`
-
-    const request = new Request(url, {
-      method: 'GET',
-      headers: new Headers({
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      }),
-    })
-    const response = await fetch(request)
-    const data = await response.json()
-    setData(data)
-  }
-  //拿會員運送中訂單
-  async function getPendingOrderFromServer(value) {
-    // const newTotal = { total: total + value }
-
-    const url = `http://localhost:3001/j_cart/listpending?member=${member}`
-
-    const request = new Request(url, {
-      method: 'GET',
-      headers: new Headers({
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      }),
-    })
-    const response = await fetch(request)
-    const data = await response.json()
-    setData(data)
-  }
-  //拿會員完成訂單
-  async function getFinishedOrderFromServer(value) {
-    // const newTotal = { total: total + value }
-
-    const url = `http://localhost:3001/j_cart//listfinish?member=${member}`
-
-    const request = new Request(url, {
-      method: 'GET',
-      headers: new Headers({
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      }),
-    })
-    const response = await fetch(request)
-    const data = await response.json()
-    setData(data)
-  }
   async function getOrderDetailFromServer(value) {
     // const newTotal = { total: total + value }
 
@@ -160,6 +175,10 @@ function CancelOrder(props) {
   useEffect(() => {
     getProductFromServer()
     getProductImgFromServer()
+    getSecondhandFromServer()
+    getFundFromServer()
+    getExperienceFromServer()
+    getBidFromServer()
     getNameFromLocalStorage()
   }, [])
 
@@ -167,8 +186,8 @@ function CancelOrder(props) {
     getOrderDetailFromServer()
   }, [PO_NO])
   useEffect(() => {
-    getCancelOrderFromServer()
-  }, [member])
+    getAllorderFromServer()
+  }, [member, getAll])
 
   const menu = (
     <Menu>
@@ -190,6 +209,28 @@ function CancelOrder(props) {
                 thisimg = productData[j].photo
               }
             }
+            for (let k = 0; k < bidData.length; k++) {
+              if (imgdata[i].product_name === bidData[k].productName) {
+                thisimg = bidData[k].pic
+              }
+            }
+            for (let l = 0; l < secondhandData.length; l++) {
+              if (imgdata[i].product_name === secondhandData[l].product_name) {
+                thisimg = secondhandData[l].photo
+              }
+            }
+            for (let m = 0; m < fundData.length; m++) {
+              if (imgdata[i].product_name === fundData[m].e_proname) {
+                thisimg = fundData[m].e_pic
+              }
+            }
+            for (let o = 0; o < experienceData.length; o++) {
+              if (
+                imgdata[i].product_name === experienceData[o].activitie_name
+              ) {
+                thisimg = experienceData[o].images
+              }
+            }
           }
         }
 
@@ -205,9 +246,9 @@ function CancelOrder(props) {
         }
         return (
           <div
+            key={item.sid}
             className="j_myorderbox"
             style={{ marginBottom: '15px' }}
-            key={item.sid}
           >
             <div className="j_wrapspace">
               <h5>訂單編號:{item.PO_NO}</h5>
@@ -273,18 +314,32 @@ function CancelOrder(props) {
         {detailData.map((item) => {
           let link = '/review/' + item.PO_NO + '&' + item.product_name
           for (let i = 0; i < productData.length; i++) {
-            {
-              /* console.log('hi') */
-            }
             if (item.product_name === productData[i].product_name) {
               boximg = productData[i].photo
-              {
-                /* console.log('showimg') */
-              }
+            }
+          }
+          for (let j = 0; j < bidData.length; j++) {
+            if (item.product_name === bidData[j].productName) {
+              boximg = bidData[j].pic
+            }
+          }
+          for (let k = 0; k < secondhandData.length; k++) {
+            if (item.product_name === secondhandData[k].product_name) {
+              boximg = secondhandData[k].photo
+            }
+          }
+          for (let l = 0; l < fundData.length; l++) {
+            if (item.product_name === fundData[l].e_proname) {
+              boximg = fundData[l].e_pic
+            }
+          }
+          for (let m = 0; m < experienceData.length; m++) {
+            if (item.product_name === experienceData[m].activitie_name) {
+              boximg = experienceData[m].images
             }
           }
           return (
-            <div className="j_commitbox" key={item.sid}>
+            <div className="j_commitbox">
               <img
                 style={{
                   width: '300px',

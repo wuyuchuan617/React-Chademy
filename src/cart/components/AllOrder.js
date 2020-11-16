@@ -32,6 +32,23 @@ function AllOrder(props) {
 
     setMember(newMember)
   }
+  //拿會員的全部訂單
+  async function getAllorderFromServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = `http://localhost:3001/j_cart/list?member=${member}`
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    const response = await fetch(request)
+    const data = await response.json()
+    setData(data)
+  }
   //拿商品資訊
   async function getProductFromServer(value) {
     // const newTotal = { total: total + value }
@@ -138,23 +155,6 @@ function AllOrder(props) {
     setImgData(data)
   }
 
-  //拿會員的全部訂單
-  async function getAllorderFromServer(value) {
-    // const newTotal = { total: total + value }
-
-    const url = `http://localhost:3001/j_cart/list?member=${member}`
-
-    const request = new Request(url, {
-      method: 'GET',
-      headers: new Headers({
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      }),
-    })
-    const response = await fetch(request)
-    const data = await response.json()
-    setData(data)
-  }
   async function getOrderDetailFromServer(value) {
     // const newTotal = { total: total + value }
 
@@ -215,8 +215,8 @@ function AllOrder(props) {
               }
             }
             for (let l = 0; l < secondhandData.length; l++) {
-              if (imgdata[i].product_name === secondhandData[l].productName) {
-                thisimg = secondhandData[l].pic
+              if (imgdata[i].product_name === secondhandData[l].product_name) {
+                thisimg = secondhandData[l].photo
               }
             }
             for (let m = 0; m < fundData.length; m++) {
