@@ -5,11 +5,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect } from 'react'
 import Bid from './Bid'
 import Desc from './Desc'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import { withRouter, useParams } from 'react-router-dom'
+
 
 function Pages(props) {
   const { setCartAmount, cartamount } = props
@@ -59,6 +59,7 @@ function Pages(props) {
             setPname={setPname}
             data={data}
             setData={setData}
+            initBidData={initBidData}
             s_date={s_date}
             e_date={e_date}
           />

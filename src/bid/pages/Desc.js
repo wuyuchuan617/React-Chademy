@@ -24,7 +24,10 @@ import Counter from '../component/Counter'
 import ScrollParallax from 'rc-scroll-anim/lib/ScrollParallax'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
-
+import useInterval from 'use-interval'
+// import { fadeInDown } from 'react-animations'
+//   import Radium, {StyleRoot} from 'radium';
+  // import fadeInDown from 'react-animations/lib/fade-in'
 function Desc(props) {
   let { id } = useParams()
 
@@ -62,14 +65,14 @@ function Desc(props) {
   const [noShowModel, setNoShowModel] = useState(false)
   const [changepage, setChangepage] = useState(2)
   const [inputValue, setInputValue] = useState('')
-
+  
   // 判斷登入的狀態
   const isLogged = useSelector((state) => state.user.logged)
   // 判斷 scrolltop
   const [lastOffset, setLastOffset] = useState(0)
   // 設定競標資料索引值
   let tempDataIndex = 0
-
+  
   async function initData() {
     const url = `http://localhost:3001/product/api/bid/${id}`
 
@@ -84,8 +87,7 @@ function Desc(props) {
 
     const response = await fetch(request)
     const data = await response.json()
-    // setBidsid(data[0].bid_sid)
-    // console.log('data', data)
+  
     setSid(data[0].sid)
     setSdate(data[0].sdate)
     setEdate(data[0].edate)
@@ -190,7 +192,7 @@ function Desc(props) {
     const response = await fetch(request)
     const data = await response.json()
     setPrice(+copyPrice + value * 1)
-    console.log('price', price)
+    // console.log('price', price)
   }
 
   const [chair, setChair] = useState(null)
@@ -198,37 +200,42 @@ function Desc(props) {
     initData()
     getDesigner()
     getMember()
+    
   }, [])
 
   //scroll event
   useEffect(() => {
     window.addEventListener('scroll', fixed)
     const fixpoint = document.querySelector('.bidinfo')
+    
 
     function fixed() {
-      // console.log('fixpoint.offsetTop', fixpoint.offsetTop)
-      // console.log('window.pageYOffset', window.pageYOffset)
-      // let lastO = lastOffset
-
-      // if (lastO > window.pageYOffset) {
-      //   // console.log('up')
-      // } else if (lastO < window.pageYOffset) {
-      //   // console.log('down')
-      // }
-
+  
       if (window.pageYOffset >= 297 && window.pageYOffset < 1370) {
         fixpoint.classList.add('g-fixed')
         fixpoint.classList.remove('g-unfixed')
+        
       } else if (window.pageYOffset < 297) {
         fixpoint.classList.remove('g-fixed')
       } else if (window.pageYOffset >= 1370) {
         fixpoint.classList.remove('g-fixed')
         fixpoint.classList.add('g-unfixed')
       }
-
+      
       setLastOffset(window.pageYOffset)
     }
   }, [lastOffset])
+
+  useEffect(()=>{
+    const picarea = document.querySelector('.picarea')
+    if(document.body.clientWidth <=1199){
+      picarea.classList.remove('border-right')
+
+    } else if(document.body.clientWidth >1199){
+      picarea.classList.add('border-right')
+    }
+
+  },[document.body.clientWidth])
 
   useEffect(() => {
     setChair(`http://localhost:3000/uploads/${productpic[0]}`)
@@ -261,20 +268,20 @@ function Desc(props) {
     } else {
       // Render a countdown
       return (
-        <div className="d-flex g-width align-items-center justify-content-center ">
-          <div className="col-2 days d-flex flex-column">
+        <div className="d-flex align-items-center justify-content-center ">
+          <div className=" days d-flex flex-column">
             {zeroPad(days)}
             <span>days</span>
           </div>
-          <div className="col-2 days d-flex flex-column">
+          <div className=" days d-flex flex-column">
             {zeroPad(hours)}
             <span>hours</span>
           </div>
-          <div className="col-2 days d-flex flex-column">
+          <div className=" days d-flex flex-column">
             {zeroPad(minutes)}
             <span>minutes</span>
           </div>
-          <div className="col-2 days d-flex flex-column">
+          <div className="days d-flex flex-column">
             {zeroPad(seconds)}
             <span>seconds</span>
           </div>
@@ -307,6 +314,26 @@ function Desc(props) {
   }
   const gnext = document.querySelector('.g-next')
 
+  async function getNewPrice() {
+    const url = `http://localhost:3001/product/api/bid/${id}`
+
+    const request = new Request(url, {
+      method: 'GET',
+
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    const response = await fetch(request)
+    const data = await response.json()
+    // console.log('data', data)
+    setPrice(data[0].current_price)
+  }
+  useInterval(()=>{
+    getNewPrice()
+  },1000)
+
   return (
     <>
       {/* countdown */}
@@ -315,7 +342,7 @@ function Desc(props) {
         <div className="row justify-content-center counter">
           {/* <Countdown date={Date.now() + (+total) } renderer={renderer}> */}
           {new Date(startdate).getTime() > Date.now() ? (
-            `將於 ${startdate}開始競標`
+            <div className="g-startbid">將於 {startdate}開始競標</div>
           ) : new Date(enddate).getTime() > Date.now() ? (
             <Countdown
               date={new Date(enddate).getTime()}
@@ -328,8 +355,8 @@ function Desc(props) {
 
         {/* Desc */}
 
-        <div className="row d-flex justify-content-between">
-          <div className="picarea border-right">
+        <div className="row d-flex g-main-area ">
+          <div className="picarea border-right g-main-border">
             <div className="mainpic">
               <img alt="" src={chair} />
             </div>
@@ -441,6 +468,7 @@ function Desc(props) {
                               />
                             )
                           })}
+                         
                         </tbody>
                       </table>
                     ) : (
@@ -463,7 +491,7 @@ function Desc(props) {
             </ScrollParallax>
           </div>
 
-          <div className="bidinfo">
+          <div className="bidinfo ml-2">
             {/* 動畫特效 */}
             {/* <ScrollParallax
               animation={[
@@ -601,7 +629,7 @@ function Desc(props) {
             opacity: 0,
           }}
         >
-          <div key="a" className="container">
+          <div key="a" className="container g-designer-con">
             <div className="d-flex align-items-center ">
               <div className="designer-des d-flex align-items-center px-5">
                 <div className="text-center">

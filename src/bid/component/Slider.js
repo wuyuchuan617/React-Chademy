@@ -1,13 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
-// import { connect } from 'react-redux'
-// import { IoIosArrowDropleft, IoIosArrowDropright } from 'react-icons/io'
-import Carousel from 'react-elastic-carousel'
 import '../styles/slider.scss'
 
 function Slider(props) {
   const { item } = props
-
+  console.log('item',item)
   let chair = `http://localhost:3000/uploads/${item.pic[1]}`
   const [comma4, setComma4] = useState(null)
   function numberWithCommas(x) {
@@ -22,9 +19,9 @@ function Slider(props) {
   return (
     <>
       <div className="col grace-wrap mx-1">
-        <div className="grace-pic">
+        {/* <div className="grace-pic"> */}
           <img alt="" src={chair} />
-        </div>
+        {/* </div> */}
         <div className="d-flex flex-column grace-slider-text">
           <span className="grace-slider-pname">{item.productName}</span>
           <span>${comma4}</span>
@@ -35,9 +32,4 @@ function Slider(props) {
   )
 }
 
-// export default connect(mapStateToProps, {
-//   swipeLeft,
-//   swipeRight,
-//   initAct,
-// })(Slider)
 export default Slider

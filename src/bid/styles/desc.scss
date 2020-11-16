@@ -29,7 +29,7 @@ $secondary: #707070;
             margin-bottom: 100px;
         }
         .picarea{
-         padding-right: 50px;
+         padding-right: 40px;
         }
         .mainpic{
             // background: url(./Fredericia-The-Canvas-Chair-Natural-Canvas-Soaped-Oak-Main.jpg) center no-repeat;
@@ -136,10 +136,11 @@ $secondary: #707070;
             border-radius: 0;
             margin-bottom: 40px;
         }
-        .bidinfo{
-            overflow: scroll;
-            background-attachment: local,local;
-        }
+        // .bidinfo{
+        //     height: 700px;
+
+        // }
+        
         .bidinfo table, th, tr, td{
             // border:1px solid #000;
             padding:10px;
@@ -179,7 +180,7 @@ $secondary: #707070;
             background-color: #DED5C6;
             color: #C77334;
             border-color: #fff;
-    box-shadow: 0 0 0 0 rgba(207, 136, 82, 0.5);
+            box-shadow: 0 0 0 0 rgba(207, 136, 82, 0.5);
         }
         .g-bidprice{
             margin: 0px ;
@@ -195,11 +196,11 @@ $secondary: #707070;
         }
         .g-fixed{
             position: fixed;
-            top:70px;
-            right:150px;
+            // top:70px;
+            // right:150px;
             // for window
-            // top:5%;
-            // right:20px;
+            top:70px;
+            right:390px;
         }
        
         .g-unfixed{
@@ -232,14 +233,90 @@ $secondary: #707070;
     width: 50%;
 
 }
+.g-main-area{
+    justify-content: space-between;
+}
+.g-startbid{
+    border: 1px solid #707070;
+    padding: 30px;
+    // color: #bdc5c7;
+    
+}
 @media (max-width: 1199px) { 
-
-.g-width{
-    width: 60%;
+    .g-fixed{
+        position: absolute;
+        // top:70px;
+        // right:150px;
+        // for window
+        top:2200px;
+        width: 720px;
+        // left:200px;
+    }
+    .g-unfixed{
+        position: absolute;
+        top:2200px;
+        // margin: auto;
+        left:inherit;
+        left:150px;
+        width: 720px;
+    }
+    .container.g-designer-con{
+        margin-top: 850px;
+    }
+    .row.g-main-area{
+        justify-content: center;
+    }
+   
+    .picarea{
+        flex-wrap: wrap;
+        padding-right: 0px;
+       }
 
 }
+@media (max-width: 320px) { 
+    .mainpic{
+        width:100px;
+        height: 100px;
+        overflow: hidden;
+    }
+    .days{
+        border: 1px solid black;
+        width: 70px;
+        height: 70px;
+        background-color:  #fff;
+        opacity: .4;
+        color: #000;
+        margin: 20px;
+        text-align: center;
+        font-family: Assistant;
+        font-size: 30px;
+        font-weight: 700;
+    }
+    .days span{
+        font-family: Assistant;
+        font-size: 12px;
+        font-weight: 400;
+        transform: translateY(-10px);
+    }
 
- }
+    .mainpic{
+        background-size: cover;
+        width: 722px;
+        height: 537px;
+        margin: 0px 20px;
+    }
+    .pic{
+        width: 150px;
+        height: 112.5px;
+        cursor: pointer;
+        background-size: cover;
+        margin: 25px 20px;
+
+    }
+    .picarea{
+        padding-right: 0px;
+       }
+}
 
  ::-webkit-scrollbar {
     display: none;

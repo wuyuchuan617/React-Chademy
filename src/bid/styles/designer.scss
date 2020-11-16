@@ -8,10 +8,12 @@ body{
 }
 .designer-img{
     width: 488px;
-    height: 600px;
+    height:600px;
     // background: url() center no-repeat;
-    background-size: contain;
+    background-size: cover;
+    overflow: hidden;
 }
+
 .design{
     font-family: Assistant;
     font-size: 16px;
@@ -42,4 +44,17 @@ body{
 }
 .designer-des a{
     color: #707070;
+}
+@media (max-width: 1199px) { 
+  
+.designer-des{
+    height: 400px;
+}
+.designer-img{
+    width: 488px;
+    height:500px;
+    // background: url() center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
 }

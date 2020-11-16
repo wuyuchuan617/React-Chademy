@@ -43,7 +43,10 @@ body {
   color: #1a1818;
   background-color: #f3f4f4;
 }
+/* .g-sidebarTop{
+  padding-top: 220px;
 
+} */
 .filterTag {
   text-align: start;
   margin: 0px 20px;
@@ -72,13 +75,19 @@ body {
 .seats1 {
   display: none;
   margin: 10px -10px 10px 40px;
+  color: #707070;
 }
-
+.seats1 p{
+  color: #707070;
+}
 .seats2 {
   display: none;
-  margin: 10px 0px 10px 20px;
+  color: #707070;
+  margin: 10px -10px 10px 40px;
 }
-
+.seats2 p {
+  color: #707070;
+}
 #seats1 li {
   list-style-type: none;
   margin-left: 30px;

@@ -19,10 +19,11 @@ function BpCard(props) {
   //   const total = e_time - s_time
   //   return total
   // }
-  const [show, setShow] = useState(false)
+  
+  // const [show, setShow] = useState(false)
 
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
+  // const handleClose = () => setShow(false)
+  // const handleShow = () => setShow(true)
 
   useEffect(() => {
     let a = new Date(item.bidDate).getTime() - Date.now()

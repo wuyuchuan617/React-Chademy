@@ -11,17 +11,15 @@ import '../styles/bid.scss'
 import Banner from '../component/Banner'
 import Filter from '../component/Filter'
 import ScrollParallax from 'rc-scroll-anim/lib/ScrollParallax'
+import useInterval from 'use-interval'
 
 function Bid(props) {
   const {
     setPrice,
     data,
+    initBidData,
   } = props
-  // const [product, setProduct] = useState([])
-  // const [viewProduct, setViewProduct] = useState(8)
-  // const [lastProductId, setLastProductId] = useState(0)
   const [viewfilter, setViewfilter] = useState(11)
-
   async function getNewPrice() {
     const url = 'http://localhost:3001/product/api/record/list'
 
@@ -35,12 +33,17 @@ function Bid(props) {
     })
     const response = await fetch(request)
     const data = await response.json()
-    setPrice(data[0].current_price)
+    // setPrice(data.current_price)
   }
 
   useEffect(() => {
-    getNewPrice()
+    // getNewPrice()
+    initBidData()
   }, [])
+
+  // useInterval(()=>{
+  //   getNewPrice()
+  // },1000)
 
   return (
     <>
@@ -131,9 +134,10 @@ function Bid(props) {
                 if (viewfilter === 8 && item.designer_sid !== 1) return
                 if (viewfilter === 9 && item.designer_sid !== 2) return
                 if (viewfilter === 10 && item.designer_sid !== 3) return
-
+                
                 return (
                   <>
+                  
                     <BpCard key={index} item={item} {...props} />
                   </>
                 )

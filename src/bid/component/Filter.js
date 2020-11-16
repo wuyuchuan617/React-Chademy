@@ -92,7 +92,7 @@ function Filter(props) {
         style={viewFilter === 1 ? sidebarShow : sidebarHide}
       >
         <div
-          className="sidebarContent"
+          className="sidebarContent  g-sidebarTop"
           style={viewFilter === 1 ? sidebarContentShow : sidebarContentHide}
         >
           <div className="justify-content-end">
@@ -101,12 +101,12 @@ function Filter(props) {
             </p>
 
             <p
-              className="g-clearFilter"
+              className="refinement-title text-center"
               onClick={() => {
                 setViewfilter(12)
               }}
             >
-              Restart your filter
+              所有商品
             </p>
           </div>
 
@@ -116,6 +116,7 @@ function Filter(props) {
               data-toggle-element="#seats"
               data-toggle-duration="800"
             >
+            
               <div
                 className="plus d-flex justify-content-between"
                 onClick={() => {
