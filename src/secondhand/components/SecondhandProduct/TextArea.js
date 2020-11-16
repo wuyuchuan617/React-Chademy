@@ -68,7 +68,7 @@ function TextArea(props) {
           setCartAmount(cartamount + 1)
           updateCartToLocalStorage({
             product_no: item.product_no,
-            id: item.productname,
+            id: item.product_name,
             img: item.photo,
             amount: 1,
             price: item.price,
