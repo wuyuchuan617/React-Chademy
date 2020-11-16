@@ -504,6 +504,9 @@ img {
 
 .w_video {
   position: relative;
+  max-width: 100%;
+  height: 900px;
+  object-fit: cover;
 }
 
 .Slideshow--fullscreen .Slideshow__ScrollButton {
@@ -513,7 +516,7 @@ img {
 .Slideshow__ScrollButton {
   position: absolute;
   left: calc(50% - 25px);
-  bottom: 35px;
+  bottom: 80px;
 }
 
 .RoundButton--medium {
@@ -918,4 +921,28 @@ button:focus {
   border-radius: 5px;
   text-align: center;
   line-height: 30px;
+}
+
+.Heading.u-h6,
+.Rte h6.Heading {
+  font-family: "The Wave Blood Regular", sans-serif;
+  font-style: normal;
+  letter-spacing: 3px;
+  line-height: 20px;
+}
+
+.SectionHeader__SubHeading {
+  text-transform: uppercase;
+  color: white;
+  font-size: 10px;
+  position: absolute;
+  left: 40%;
+  bottom:90px;
+}
+
+.w_hand_write{
+  width: 200px;
+  position: absolute;
+  left: 43%;
+  bottom:140px;
 }

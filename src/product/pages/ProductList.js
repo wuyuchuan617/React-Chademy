@@ -275,10 +275,11 @@ function ProductList(props) {
       <ProductPopular />
       <div id="w_custom_link">
         <CustomCard />
-        <ListNew />
-
-        <ProductSeries setSeries={setSeries} />
       </div>
+      <ListNew />
+
+      <ProductSeries setSeries={setSeries} />
+
       <div className="context1">
         <div className="container productCards" id="productCards">
           <div className="row">
