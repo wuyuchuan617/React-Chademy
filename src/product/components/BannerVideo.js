@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import bannerVideo from '../images/The-Passion-of-Making.mp4'
 
 function BannerVideo(props) {
+  const { handleClick2 } = props
   // const handleClick2 = () => {
   //   setTimeout(() => {
   //     document
@@ -9,7 +10,6 @@ function BannerVideo(props) {
   //       .scrollIntoView({ behavior: 'smooth', block: 'center' })
   //   }, 500)
   // }
-  const { handleClick2 } = props
 
   useEffect(() => {
     const w_video = document.querySelector('.w_video')
@@ -33,7 +33,6 @@ function BannerVideo(props) {
         alt=""
         src={require('../images/handwriting.svg')}
         class="w_hand_write"
-        alt=""
       ></img>
       <button
         data-href="#section-1600160888360-end"

@@ -169,8 +169,28 @@ function Custom(props) {
                       setStep(2)
                     }}
                   >
-                    <Select.Option value="white">White Oak</Select.Option>
-                    <Select.Option value="fumed">Fumed Oak</Select.Option>
+                    <Select.Option value="white">
+                      <span className="w_material">
+                        <img
+                          src={
+                            'https://www.brdr-kruger.com/wp-content/uploads/2019/06/09-ash-white-oiled.jpg'
+                          }
+                          alt=""
+                        />
+                      </span>
+                      白櫟木
+                    </Select.Option>
+                    <Select.Option value="fumed">
+                      <span className="w_material">
+                        <img
+                          src={
+                            'https://www.brdr-kruger.com/wp-content/uploads/2019/08/03-oak-fumed.jpg'
+                          }
+                          alt=""
+                        />
+                      </span>
+                      古銅橡
+                    </Select.Option>
                   </Select>
                 </Form.Item>
               </div>
@@ -185,9 +205,39 @@ function Custom(props) {
                       setStep(3)
                     }}
                   >
-                    <Select.Option value="weaved">編織</Select.Option>
-                    <Select.Option value="gray">灰色</Select.Option>
-                    <Select.Option value="brown">深咖啡色</Select.Option>
+                    <Select.Option value="weaved">
+                      <span className="w_material">
+                        <img
+                          src={
+                            'https://www.brdr-kruger.com/wp-content/uploads/2019/06/paper-weaved.jpg'
+                          }
+                          alt=""
+                        />
+                      </span>
+                      編織
+                    </Select.Option>
+                    <Select.Option value="gray">
+                      <span className="w_material">
+                        <img
+                          src={
+                            'https://www.brdr-kruger.com/wp-content/uploads/2019/05/Grey-f-7833-c0158.jpg'
+                          }
+                          alt=""
+                        />
+                      </span>
+                      灰色
+                    </Select.Option>
+                    <Select.Option value="brown">
+                      <span className="w_material">
+                        <img
+                          src={
+                            'https://www.brdr-kruger.com/wp-content/uploads/2019/06/leather-brown.jpg'
+                          }
+                          alt=""
+                        />
+                      </span>
+                      深咖啡
+                    </Select.Option>
                   </Select>
                 </Form.Item>
               </div>
