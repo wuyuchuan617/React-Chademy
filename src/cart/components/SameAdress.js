@@ -3,7 +3,7 @@ import React from 'react'
 import { countries, townships, postcodes } from '../components/Data'
 
 function SameAdress(props) {
-  const { name, phone, city, area, adress } = props
+  const { samename, phone, city, area, adress } = props
   return (
     <>
       <input
@@ -14,7 +14,7 @@ function SameAdress(props) {
           marginBottom: '30px',
         }}
         placeholder="姓名"
-        value={name}
+        value={samename}
         readOnly
       />
       <input
