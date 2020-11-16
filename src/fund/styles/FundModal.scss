@@ -43,7 +43,7 @@
 .ant-radio-checked {
   // border-color: #c77334 !important ;
   color: #c77334;
-  background: #c77334;
+  // background: #c77334;
 
 }
 
@@ -80,10 +80,26 @@
 
 .ant-radio {
   color: #c77334;
-  background: #c77334;
+  // background: #c77334;
+}
+
+.ant-radio-checked .ant-radio-inner {
+  border-color: #c77334 !important;
+}
+
+.ant-radio-checked .ant-radio-inner:after {
+  background-color: #c77334;
+}
+
+.ant-radio-checked .ant-radio-inner:focus{
+  border-color: #c77334;
+}
+
+.ant-radio:hover .ant-radio-inner {
+  border-color: #c77334 ;
 }
 
 .ant-radio-button-wrapper-checked {
   background-color: #c77334 !important;
- 
+
 }
