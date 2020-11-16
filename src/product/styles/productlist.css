@@ -4,6 +4,8 @@ body {
   background-color: #edece8;
 }
 
+
+
 .context1 {
   width: calc(100% - 80px);
   margin-left: 80px;
@@ -689,7 +691,7 @@ img {
   margin-top: 16px;
   /* border: 1px dashed #e9e9e9; */
   border-radius: 2px;
-  background-color: #ded5c6;
+  background-color: #e0dfdb;
   height: 450px;
   text-align: center;
   padding-top: 40px 20px;
@@ -937,12 +939,12 @@ button:focus {
   font-size: 10px;
   position: absolute;
   left: 40%;
-  bottom:90px;
+  bottom: 90px;
 }
 
-.w_hand_write{
+.w_hand_write {
   width: 200px;
   position: absolute;
   left: 43%;
-  bottom:140px;
+  bottom: 140px;
 }

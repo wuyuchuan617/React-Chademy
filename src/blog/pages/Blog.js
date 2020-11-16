@@ -11,6 +11,7 @@ import BreadcrumbTwo from '../components/BreadcrumbTwo'
 
 function Blog(props) {
   useEffect(() => {
+    getTotalFromSQL()
     AOS.init()
     AOS.refresh()
   }, [])
@@ -34,9 +35,9 @@ function Blog(props) {
     console.log(Array.isArray(data))
     setoneBlog(newData)
   }
-  useEffect(() => {
-    getTotalFromSQL()
-  }, [])
+  // useEffect(() => {
+  //   getTotalFromSQL()
+  // }, [])
   return (
     <>
       <BlogBanner />

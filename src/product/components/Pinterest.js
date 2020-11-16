@@ -111,6 +111,17 @@ function Pinterest(props) {
                         <img src={require('../images/ps5.jpg')} alt="" />
                       </div>
                     </div>
+                    <div className="row reviewNO justify-content-between d-flex">
+                      <div className="review-photo justify-content-center col">
+                        <img src={require('../images/ps6.jpg')} alt="" />
+                      </div>
+                      <div className="review-photo justify-content-center col">
+                        <img src={require('../images/ps7.jpg')} alt="" />
+                      </div>
+                      <div className="review-photo justify-content-center col">
+                        <img src={require('../images/ps8.jpg')} alt="" />
+                      </div>
+                    </div>
                   </span>
                 </span>
               </span>

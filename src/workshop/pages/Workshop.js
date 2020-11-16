@@ -38,9 +38,6 @@ function Workshop(props) {
     console.log(Array.isArray(data))
     setoneWorkShop(newData)
   }
-  useEffect(() => {
-    getTotalFromSQL()
-  }, [])
 
   const [threeWorkShop, setthreeWorkShop] = useState([])
 
@@ -88,6 +85,7 @@ function Workshop(props) {
     setFilterResult(data)
   }
   useEffect(() => {
+    getTotalFromSQL()
     getTotalFromSQL2()
   }, [])
 
