@@ -109,6 +109,14 @@ function ProductList(props) {
 
   // ---------------以下開始component內function-----------------
 
+  const handleClick2 = () => {
+    // setTimeout(() => {
+    document
+      .getElementById('w_custom_link')
+      .scrollIntoView({ behavior: 'smooth', block: 'center' })
+    // }, 500)
+  }
+
   // onClick load more btn 增加15比顯示資料
   const handleClick = () => {
     let preViewProduct = viewProduct
@@ -270,12 +278,12 @@ function ProductList(props) {
         getTotalFromSQL={getTotalFromSQL}
       />
 
-      <BannerVideo />
+      <BannerVideo handleClick2={handleClick2} />
 
       <ProductPopular />
-      <div id="w_custom_link">
-        <CustomCard />
-      </div>
+      {/* <div id="w_custom_link"> */}
+      <CustomCard />
+      {/* </div> */}
       <ListNew />
 
       <ProductSeries setSeries={setSeries} />

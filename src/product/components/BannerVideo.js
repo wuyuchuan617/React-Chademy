@@ -2,11 +2,14 @@ import React, { useEffect } from 'react'
 import bannerVideo from '../images/The-Passion-of-Making.mp4'
 
 function BannerVideo(props) {
-  const handleClick = () => {
-    document
-      .getElementById('w_custom_link')
-      .scrollIntoView({ behavior: 'smooth', block: 'center' })
-  }
+  // const handleClick2 = () => {
+  //   setTimeout(() => {
+  //     document
+  //       .getElementById('w_custom_link')
+  //       .scrollIntoView({ behavior: 'smooth', block: 'center' })
+  //   }, 500)
+  // }
+  const { handleClick2 } = props
 
   useEffect(() => {
     const w_video = document.querySelector('.w_video')
@@ -30,6 +33,7 @@ function BannerVideo(props) {
         alt=""
         src={require('../images/handwriting.svg')}
         class="w_hand_write"
+        alt=""
       ></img>
       <button
         data-href="#section-1600160888360-end"
@@ -37,7 +41,7 @@ function BannerVideo(props) {
         aria-label="Scroll to content"
         data-animate-bottom=""
         onClick={() => {
-          handleClick()
+          handleClick2()
         }}
       >
         <svg
