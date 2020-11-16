@@ -16,7 +16,6 @@ $secondary: #707070;
             margin: 20px;
             text-align: center;
             font-family: Assistant;
-            // font-size: 300%;
             font-size: 60px;
             font-weight: 700;
         }
@@ -198,6 +197,9 @@ $secondary: #707070;
             position: fixed;
             top:70px;
             right:150px;
+            // for window
+            // top:5%;
+            // right:20px;
         }
        
         .g-unfixed{
@@ -226,3 +228,19 @@ $secondary: #707070;
     overflow: hidden;
     margin-bottom: 10px;
 }
+.g-width{
+    width: 50%;
+
+}
+@media (max-width: 1199px) { 
+
+.g-width{
+    width: 60%;
+
+}
+
+ }
+
+ ::-webkit-scrollbar {
+    display: none;
+  }

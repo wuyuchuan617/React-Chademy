@@ -261,8 +261,8 @@ function Desc(props) {
     } else {
       // Render a countdown
       return (
-        <div className="d-flex w-50 align-items-center justify-content-center ">
-          <div key="a" className="col-sm-2 days d-flex flex-column">
+        <div className="d-flex g-width align-items-center justify-content-center ">
+          <div className="col-2 days d-flex flex-column">
             {zeroPad(days)}
             <span>days</span>
           </div>
