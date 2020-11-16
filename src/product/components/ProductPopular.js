@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import '../styles/productlist.css'
 // import popularImg from '../images/777.jpg'
 // import AOS from 'aos'

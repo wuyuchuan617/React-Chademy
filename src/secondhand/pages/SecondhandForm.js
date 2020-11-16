@@ -8,12 +8,12 @@ import '../../member/MemberCenter/index.scoped.scss'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
 import { Radio } from 'antd'
-import { Select } from 'antd'
+// import { Select } from 'antd'
 function SecondhandForm() {
   const [value, setValue] = useState(0)
   const [value2, setValue2] = useState(0)
   const [value3, setValue3] = useState(0)
-  const { Option } = Select
+  // const { Option } = Select
   const onChange = (e) => {
     setValue(e.target.value)
   }

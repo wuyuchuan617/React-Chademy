@@ -27,6 +27,7 @@ function BannerVideo(props) {
         New Launches November 2020
       </h3>
       <img
+        alt=""
         src={require('../images/handwriting.svg')}
         class="w_hand_write"
       ></img>

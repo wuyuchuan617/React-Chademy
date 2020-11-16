@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import PurchaseInfo from '../components/PurchaseInfo'
+// import PurchaseInfo from '../components/PurchaseInfo'
 function TabW(props) {
   const [tab, setTab] = useState(1)
 

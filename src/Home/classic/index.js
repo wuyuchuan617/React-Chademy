@@ -3,7 +3,7 @@ import './Classic.css'
 import Img from '../img/Cover_CircleDiningChairs_OvergaardDyrman_studio.jpg'
 import Img11 from '../img/11.jpg'
 import Img22 from '../img/22.jpg'
-import Img33 from '../img/33.jpg'
+// import Img33 from '../img/33.jpg'
 import 'aos/dist/aos.css'
 import { useHistory, withRouter } from 'react-router-dom'
 

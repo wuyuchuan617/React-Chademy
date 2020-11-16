@@ -13,8 +13,8 @@ import { Spin } from 'antd'
 import { LoadingOutlined } from '@ant-design/icons'
 import { Steps, Input } from 'antd'
 import { Parallax } from 'rc-scroll-anim'
-import Pinterest from '../components/Pinterest'
-import PurchaseInfo from '../components/PurchaseInfo'
+// import Pinterest from '../components/Pinterest'
+// import PurchaseInfo from '../components/PurchaseInfo'
 const { Step } = Steps
 
 function Custom(props) {
