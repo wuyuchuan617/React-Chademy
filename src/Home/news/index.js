@@ -36,18 +36,18 @@ function About() {
         </div>
         <hr />
         <div className="newsset d-flex  mt-4 ">
-          <p className="mr-5 noto-sans p14">2020.09.21</p>
-          <p className="noto-sans p14">官網改版更新，新視覺全新亮相</p>
+          <p className="mr-5 noto-sans p14">2020.03.15</p>
+          <p className="noto-sans p14">新型冠狀病毒防疫公告相</p>
         </div>
         <hr />
         <div className="newsset d-flex mt-4">
-          <p className="mr-5 noto-sans p14">2020.09.21</p>
-          <p className="noto-sans p14">官網改版更新，新視覺全新亮相</p>
+          <p className="mr-5 noto-sans p14">2020.02.01</p>
+          <p className="noto-sans p14">周年官方活動-紐約家具設計中心</p>
         </div>
         <hr />
         <div className="newsset d-flex mt-4 ">
-          <p className="mr-5 noto-sans p14">2020.09.21</p>
-          <p className="noto-sans p14">官網改版更新，新視覺全新亮相</p>
+          <p className="mr-5 noto-sans p14">2019.09.18</p>
+          <p className="noto-sans p14"> 木工創客新設計中心</p>
         </div>
       </div>
     </div>
