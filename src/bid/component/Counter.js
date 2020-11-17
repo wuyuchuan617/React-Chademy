@@ -5,7 +5,7 @@ import Countdown, {
 } from 'react-countdown'
 import '../styles/counter.scss'
 const Counter = (props) => {
-  const { enddate, total } = props
+  const { enddate, total ,startdate} = props
   // const Completionist = () => <span>Sold Out!</span>
   const renderer = ({  hours, minutes, seconds, completed }) => {
     if (completed) {
@@ -24,14 +24,17 @@ const Counter = (props) => {
 
   return (
     <>
-      {total ? (
+    {new Date(startdate).getTime() > Date.now() ? null : new Date(
+                enddate
+              ).getTime() < Date.now() ? null : (
+      total ? (
         <Countdown
           date={new Date(enddate).getTime()}
           renderer={renderer}
         ></Countdown>
       ) : (
         ''
-      )}
+              ))}
     </>
   )
 }

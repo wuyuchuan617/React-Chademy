@@ -3,6 +3,7 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React, { useEffect, useState } from 'react'
 import { Modal, Button } from 'react-bootstrap'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
 function Win(props) {
   const {
@@ -67,6 +68,7 @@ function Win(props) {
           </div>
         </Modal.Body>
         <Modal.Footer>
+        <Link to="/cartbid" className="mx-auto">
           <Button
             className="w_cart-btn rounded-0"
             onClick={() => {
@@ -84,6 +86,7 @@ function Win(props) {
           >
             加入購物車
           </Button>
+          </Link>
         </Modal.Footer>
       </Modal>
     </>

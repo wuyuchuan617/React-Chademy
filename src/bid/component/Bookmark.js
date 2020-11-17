@@ -12,7 +12,6 @@ function Bookmark(props) {
 
   const addcolor = (event) => {
     const a = document.querySelectorAll('.g_activelable')
-    // const t = event.target.closest('.grace1').querySelector('g_activelable2')
     if (event.target.closest('.grace1').querySelector('.g_activelable2'))
       event.target
         .closest('.grace1')

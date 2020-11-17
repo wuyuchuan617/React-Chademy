@@ -25,9 +25,7 @@ import ScrollParallax from 'rc-scroll-anim/lib/ScrollParallax'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
 import useInterval from 'use-interval'
-// import { fadeInDown } from 'react-animations'
-//   import Radium, {StyleRoot} from 'radium';
-  // import fadeInDown from 'react-animations/lib/fade-in'
+
 function Desc(props) {
   let { id } = useParams()
 
@@ -65,14 +63,16 @@ function Desc(props) {
   const [noShowModel, setNoShowModel] = useState(false)
   const [changepage, setChangepage] = useState(2)
   const [inputValue, setInputValue] = useState('')
-  
+  const [recordComponent, setRecordComponent] = useState('')
+  const [comma3, setComma3] = useState(null)
+
   // 判斷登入的狀態
   const isLogged = useSelector((state) => state.user.logged)
   // 判斷 scrolltop
   const [lastOffset, setLastOffset] = useState(0)
   // 設定競標資料索引值
   let tempDataIndex = 0
-  
+
   async function initData() {
     const url = `http://localhost:3001/product/api/bid/${id}`
 
@@ -87,7 +87,7 @@ function Desc(props) {
 
     const response = await fetch(request)
     const data = await response.json()
-  
+
     setSid(data[0].sid)
     setSdate(data[0].sdate)
     setEdate(data[0].edate)
@@ -140,6 +140,41 @@ function Desc(props) {
     const data = await response.json()
 
     setMember(data)
+  }
+
+  const doSetRecordCompnent = () => {
+    return (
+      member.length > 0 &&
+      member.map((item, index) => {
+        if (item.bid_sid !== +id) return
+        if (tempDataIndex > 5) return
+        tempDataIndex++
+        if (changeColorStatus && index == 0) {
+          {
+            /* gnext.classList.add('g-color') */
+          }
+          {
+            /* setGnextAddClass(true) */
+          }
+          {
+            /* setChangeColorStatus(false) */
+          }
+        }
+        return (
+          <Record
+            key={index}
+            index={index}
+            item={item}
+            price={price}
+            comma={comma}
+            {...props}
+            getMember={getMember}
+            changepage={changepage}
+            changeColorStatus={changeColorStatus}
+          />
+        )
+      })
+    )
   }
 
   async function subscribe(inputValue) {
@@ -200,42 +235,36 @@ function Desc(props) {
     initData()
     getDesigner()
     getMember()
-    
   }, [])
 
   //scroll event
   useEffect(() => {
     window.addEventListener('scroll', fixed)
     const fixpoint = document.querySelector('.bidinfo')
-    
 
     function fixed() {
-  
       if (window.pageYOffset >= 297 && window.pageYOffset < 1370) {
         fixpoint.classList.add('g-fixed')
         fixpoint.classList.remove('g-unfixed')
-        
       } else if (window.pageYOffset < 297) {
         fixpoint.classList.remove('g-fixed')
       } else if (window.pageYOffset >= 1370) {
         fixpoint.classList.remove('g-fixed')
         fixpoint.classList.add('g-unfixed')
       }
-      
+
       setLastOffset(window.pageYOffset)
     }
   }, [lastOffset])
 
-  useEffect(()=>{
+  useEffect(() => {
     const picarea = document.querySelector('.picarea')
-    if(document.body.clientWidth <=1199){
+    if (document.body.clientWidth <= 1199) {
       picarea.classList.remove('border-right')
-
-    } else if(document.body.clientWidth >1199){
+    } else if (document.body.clientWidth > 1199) {
       picarea.classList.add('border-right')
     }
-
-  },[document.body.clientWidth])
+  }, [document.body.clientWidth])
 
   useEffect(() => {
     setChair(`http://localhost:3000/uploads/${productpic[0]}`)
@@ -301,18 +330,19 @@ function Desc(props) {
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
   }
-  const [comma3, setComma3] = useState(null)
+
   useEffect(() => {
     const c = numberWithCommas(price)
     setComma(c)
     const d = numberWithCommas(startprice)
     setComma3(d)
+    getNewPrice()
+    getMember()
   }, [price])
   const [changeColorStatus, setChangeColorStatus] = useState(false)
   function showRecord() {
     setChangeColorStatus(true)
   }
-  const gnext = document.querySelector('.g-next')
 
   async function getNewPrice() {
     const url = `http://localhost:3001/product/api/bid/${id}`
@@ -330,9 +360,10 @@ function Desc(props) {
     // console.log('data', data)
     setPrice(data[0].current_price)
   }
-  useInterval(()=>{
-    getNewPrice()
-  },1000)
+
+  useEffect(() => {
+    setRecordComponent(doSetRecordCompnent())
+  }, [member])
 
   return (
     <>
@@ -349,7 +380,7 @@ function Desc(props) {
               renderer={renderer}
             ></Countdown>
           ) : (
-            '已結標'
+            <div className="g-startbid">已結標</div>
           )}
         </div>
 
@@ -450,26 +481,7 @@ function Desc(props) {
                             <th className="w-25">時間</th>
                           </tr>
                         </thead>
-                        <tbody>
-                          {member.map((item, index) => {
-                            if (item.bid_sid !== +id) return
-                            if (tempDataIndex > 5) return
-                            tempDataIndex++
-                            if (changeColorStatus && index == 0)
-                              gnext.classList.add('g-color')
-
-                            return (
-                              <Record
-                                key={index}
-                                item={item}
-                                {...props}
-                                getMember={getMember}
-                                changepage={changepage}
-                              />
-                            )
-                          })}
-                         
-                        </tbody>
+                        <tbody>{recordComponent}</tbody>
                       </table>
                     ) : (
                       <Setprice
@@ -602,17 +614,19 @@ function Desc(props) {
               </tbody>
             </table>
             <h2 className="g-smalltime text-center pt-4">
-              <Counter total={total} enddate={enddate} />
+              <Counter total={total} enddate={enddate} startdate={startdate}/>
             </h2>
-
-            {/* <button className="chat"></button> */}
-            <Button
-              className="chat mt-0"
-              variant="primary"
-              onClick={() => setModalShow(true)}
-            >
-              直接購買
-            </Button>
+            {new Date(startdate).getTime() > Date.now() ? null : new Date(
+                enddate
+              ).getTime() < Date.now() ? null : (
+              <Button
+                className="chat mt-0"
+                variant="primary"
+                onClick={() => setModalShow(true)}
+              >
+                直接購買
+              </Button>
+            )}
           </div>
         </div>
 

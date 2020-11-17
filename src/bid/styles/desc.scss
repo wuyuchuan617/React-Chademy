@@ -196,11 +196,11 @@ $secondary: #707070;
         }
         .g-fixed{
             position: fixed;
-            // top:70px;
-            // right:150px;
-            // for window
             top:70px;
-            right:390px;
+            right:150px;
+            // for window
+            // top:70px;
+            // right:390px;
         }
        
         .g-unfixed{
@@ -237,9 +237,13 @@ $secondary: #707070;
     justify-content: space-between;
 }
 .g-startbid{
-    border: 1px solid #707070;
-    padding: 30px;
-    // color: #bdc5c7;
+    // border: 1px solid #707070;
+    padding: 20px;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 18px;
+    background-color:#979083;
+    color: #fff;
     
 }
 @media (max-width: 1199px) { 
@@ -250,13 +254,13 @@ $secondary: #707070;
         // for window
         top:2200px;
         width: 720px;
-        // left:200px;
+        left:200px;
     }
     .g-unfixed{
         position: absolute;
         top:2200px;
         // margin: auto;
-        left:inherit;
+        // left:inherit;
         left:150px;
         width: 720px;
     }

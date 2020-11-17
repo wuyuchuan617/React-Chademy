@@ -4,7 +4,6 @@ import '../styles/slider.scss'
 
 function Slider(props) {
   const { item } = props
-  console.log('item',item)
   let chair = `http://localhost:3000/uploads/${item.pic[1]}`
   const [comma4, setComma4] = useState(null)
   function numberWithCommas(x) {

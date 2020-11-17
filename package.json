@@ -32,6 +32,7 @@
     "moment": "^2.29.1",
     "node-sass": "4.14.1",
     "prettier": "2.1.2",
+    "radium": "^0.26.1",
     "rc-animate": "^3.1.1",
     "rc-banner-anim": "^2.4.4",
     "rc-queue-anim": "^1.8.5",
