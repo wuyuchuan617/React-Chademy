@@ -29,7 +29,7 @@ import dt3 from '../images/dt3.jpeg'
 import dt4 from '../images/dt4-1.jpeg'
 import dt5 from '../images/Image 32.png'
 import ItemModal from '../components/ItemModal'
-import Breadcrumbw from '../components/Breadcrumbw'
+import BreadcrumbwTwo from '../components/BreadcrumbwTwo'
 
 function FundIFirst(props) {
   const { item, sid, cartamount, setCartAmount } = props
@@ -181,6 +181,7 @@ function FundIFirst(props) {
     <>
       <FundModal visible={visible} setVisible={setVisible} photo={photo} />
       <div className="container firstTop">
+        <BreadcrumbwTwo item={item}/>
         <div className="row justify-content-between">
           <div className="col-8">
             <div className="product_photo" onClick={() => setVisible(true)}>

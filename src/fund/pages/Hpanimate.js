@@ -90,7 +90,7 @@ function Hpanimate() {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 500 500"
-        style={{ width: '100vw', height: '80vh' }}
+        style={{ width: '45vw', height: '80vh' }}
       >
         <g fill="#D9C7AA" stroke="#d68b51" strokeWidth="10">
           <circle cx="250" cy="250" r={r} />
@@ -113,7 +113,9 @@ function Hpanimate() {
           <polygon points="250,70 230,30 270,30" />
         </g>
       </svg>
+      <div className="e_pbtn">
       <PressButton setPower={setPower} style={{ height: '20vh' }} />
+      </div>
     </div>
   )
 }

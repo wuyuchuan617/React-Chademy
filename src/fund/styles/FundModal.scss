@@ -1,5 +1,5 @@
 .e_par {
-  background-image: url('../images/bg1.png');
+  // background-image: url('../images/bg1.png');
   // min-height: 500px;
 
   background-attachment: fixed;
@@ -73,33 +73,33 @@
   font-family: Noto Sans TC;
 }
 
-.ant-radio-input {
-  color: #c77334;
-  background: #c77334;
+.ant-input-number-input {
+  // width: 200px !important;
 }
 
-.ant-radio {
-  color: #c77334;
-  // background: #c77334;
+.ant-input-number {
+  width: 152px !important;
+  box-shadow: 0 0 0px 0px #C77334 !important;
 }
 
-.ant-radio-checked .ant-radio-inner {
-  border-color: #c77334 !important;
+
+
+.ant-input-number-handler-wrap {
+  // background-color: #C77334;
+  // color: #fff;
+  // margin-left: 10px !important;
+  box-shadow: 0 0 0px 0px #C77334 !important;
 }
 
-.ant-radio-checked .ant-radio-inner:after {
-  background-color: #c77334;
+.ant-input-number-handler-up {
+  background-color: #C77334;
+  // color: #fff;
+  box-shadow: 0 0 0px 0px #C77334 !important;
 }
 
-.ant-radio-checked .ant-radio-inner:focus{
-  border-color: #c77334;
-}
+.ant-input-number-input {
+  width: 150px !important;
 
-.ant-radio:hover .ant-radio-inner {
-  border-color: #c77334 ;
-}
-
-.ant-radio-button-wrapper-checked {
-  background-color: #c77334 !important;
 
 }
+

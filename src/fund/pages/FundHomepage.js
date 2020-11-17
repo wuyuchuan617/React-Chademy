@@ -19,7 +19,11 @@ import CarouselE from '../components/CarouselE'
 import CarouselETwo from '../components/CarouselETwo'
 import CarouselEThree from '../components/CarouselEThree'
 import Edesign from '../components/Edesign'
-import Hpanimate from './Hpanimate'
+import Img from '../images/bg.jpg'
+import Img2 from '../images/Img2.png'
+import Img3 from '../images/Img3.png'
+import Img4 from '../images/Img4.png'
+
 import { useHistory } from 'react-router-dom'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
@@ -35,9 +39,10 @@ function FundHomepage() {
     <>
       <header>
         <h1 className="e_slogan">椅子是佈置藝術更是生活的代表</h1>
-        <div className="video">
+        <div className="e_video">
           <video
             width="100%"
+            // height="900px"
             loop="true"
             autoplay="autoplay"
             muted="true"
@@ -63,6 +68,7 @@ function FundHomepage() {
       </Container>
       <BookMarkhp setFilterMark={setFilterMark} />
       <BookIconhp setFilterIcon={setFilterIcon} />
+      <div className="iconbg"></div>
       {filterMark === 0 && filterIcon === 0 ? <CarouselE /> : ''}
       {filterMark === 0 && filterIcon === 1 ? <CarouselE /> : ''}
       {filterMark === 0 && filterIcon === 2 ? <CarouselE /> : ''}
@@ -85,10 +91,33 @@ function FundHomepage() {
       {showProject === 1 ? <PopBmarkTwo /> : ''}
       {showProject === 2 ? <PopBmarkThree /> : ''}
       {showProject === 3 ? <PopBmarkFour /> : ''}
+
+      <div className="container">
+        <div className="row d-flex">
+          <div className="col-7 bgcolor">
+            <img src={Img} alt="" className="bgimg" />
+            <p className="imgp2">
+              I don't know your dreams...but I know you have them.
+            </p>
+          </div>
+
+          <div className="col-5">
+            <img src={Img2} alt="" className="bgimg2" />
+            <img src={Img3} alt="" className="bgimg3" />
+            <img src={Img4} alt="" className="bgimg4" />
+            <p className="imgp3">
+            Launching a crowdfunding campaign can be scary.
+            </p>
+            <p className="imgp4">
+            The strategies in Fund Your Dream eased my fear and helped me confidently plan.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <h1 className="e_popular">設計學院</h1>
       <Edesign />
 
-      <Hpanimate/>
       <BackTop
         visibilityHeight="2000"
         style={{

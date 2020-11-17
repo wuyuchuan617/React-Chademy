@@ -1,3 +1,7 @@
+.e_video {
+  height: 900px;
+}
+
 .e_slogan {
   position: absolute;
   font-family: Noto Serif TC;
@@ -26,15 +30,15 @@
 
 .explore {
   position: absolute;
-  top: -200px;
+  top: -270px;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 200px;
   // height: 40px;
-  background-color: #c77334;
+  background-color: #D9C7AA;
   font-family: Noto Sans TC;
   font-size: 16px;
-  color: #eef3f5;
+  color: #707070;
   text-align: center;
   vertical-align: middle;
   line-height: 40px;
@@ -93,10 +97,21 @@
 
 // 椅子圖示頁籤
 
+.iconbg {
+  width: 80vw;
+  height: 5vh;
+  background-color: #b7bdb395;
+  z-index: -20;
+  text-align: center;
+  margin: auto;
+
+  margin-top: -50px;
+}
+
 .e_icon {
   margin: auto;
   justify-content: center;
-  // z-index: 5;
+  z-index: 5;
   padding-top: 15px;
   cursor: pointer
 }
@@ -106,7 +121,7 @@
   padding-top: 15px;
   margin: auto;
   justify-content: center;
-  // z-index: 5;
+  z-index: 5;
   cursor: pointer
 }
 
@@ -115,19 +130,19 @@
   justify-content: center;
   text-align: center;
   transition: 0.5;
-  // z-index: 5;
+  z-index: 5;
 }
 
 .icon_img:hover {
   transform: translateY(-8px);
-  // z-index: 5;
+  z-index: 5;
 }
 
 .chair_icon {
   width: 10%;
   height: 35%;
   // margin-top: 50px;
-  // z-index: 5;
+  z-index: 5;
   cursor: pointer
 }
 
@@ -136,7 +151,7 @@
   height: 25%;
   // margin-top: 70px;
   // text-align: center;
-  // z-index: 5;
+  z-index: 5;
 }
 
 .chair_p {
@@ -145,7 +160,7 @@
   color: #222222;
   font-size: 14px;
   padding-top: 7px;
-  // z-index: 5;
+  z-index: 5;
 }
 
 .chair_p2 {
@@ -181,7 +196,7 @@
 // 卡牌
 .e_card {
 
-  height: 560px;
+  // height: 560px;
   position: relative;
   margin-top: 3rem;
 
@@ -197,12 +212,31 @@
 .e_wrap {
   width: 100%;
   margin: 5px auto;
-  height: 230px;
+  max-height: 230px;
 }
 
+
+
 .e_wrap img {
-  background-size: cover;
-  max-width: 100%;
+  // background-size: cover;
+  width: 100%;
+  max-height: 230px;
+  object-fit: cover; 
+  overflow: hidden;
+}
+
+.e_draw{
+  text-align: right;
+  margin-right: 70px;
+  margin-bottom: 50px;
+  opacity: .6;
+}
+.e_img1{
+  width: 15%;
+}
+
+.e_img2{
+  width: 10%;
 }
 
 .e_card_title {
@@ -251,13 +285,13 @@
   color: #403e3e;
   padding: 0 10px;
   margin-top: 1rem;
-  margin-bottom: -10px;
+  // margin-bottom: -10px;
 
 }
 
 .btn_div {
   text-align: right;
-  margin-top: 0;
+  margin-top: -40px;
 
 
 }
@@ -272,7 +306,7 @@
   text-align: center;
   color: #707070;
   transition: .2s;
-  margin-top: -100px;
+  // margin-top: -100px;
 
 
 
@@ -310,7 +344,7 @@
 }
 
 .e_more_div {
-  padding-left:900px ;
+  padding-left: 900px;
   text-align: right;
   // height:80px;
   margin-top: -155px;
@@ -396,4 +430,72 @@
   background-color: #9caab2;
   opacity: 0.76;
   text-align: center;
+}
+
+
+.bgcolor {
+  width: 90%;
+  background-color: #153b5f;
+  height: 50vh;
+}
+
+.bgimg {
+  margin-top: 50px;
+  margin-left: 40px;
+}
+
+.bgimg2 {
+  // margin-top: -350px;
+  margin-left: 20px;
+  width: 100%;
+  opacity: .2;
+  position: relative;
+}
+
+.bgimg3 {
+  // margin-top: -350px;
+  margin-left: -49px;
+  width: 80%;
+  margin-top: -360px;
+  position: absolute;
+  // opacity: .2;
+}
+
+.bgimg4 {
+  // margin-top: -350px;
+  margin-left: 175px;
+  width: 80%;
+  margin-top: -650px;
+  position: absolute;
+  // opacity: .2;
+}
+
+.imgp2 {
+  font-family: lora;
+  font-size: 32px;
+  text-align: center;
+  color: #474745;
+  margin-top: 40px;
+}
+
+.imgp3 {
+  font-family: lora;
+  font-size: 16px;
+  text-align: left;
+  width: 200px;
+  color: #313130;
+  margin-top: -550px;
+  margin-left: 50px;
+  position: absolute;
+}
+
+.imgp4 {
+  font-family: lora;
+  font-size: 16px;
+  text-align: left;
+  width: 200px;
+  color: #313130;
+  margin-top: -220px;
+  margin-left: 250px;
+  position: absolute;
 }

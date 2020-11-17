@@ -13,6 +13,9 @@ import BookMark from '../components/BookMark'
 import BookIcon from '../components/BookIcon'
 import Dropdowna from '../components/Dropdowna'
 import Img from '../images/christmas.jpg'
+import LuckyModal from '../components/LuckyModal '
+import Img1 from '../images/draw11.png'
+import Img2 from '../images/draw22.png'
 
 import Button from 'antd/lib/button'
 import QueueAnim from 'rc-queue-anim'
@@ -287,16 +290,21 @@ function FundList(props) {
 
   return (
     <>
-      <div className="container" id="productCards">
-        <div className="i_fv">
-          <img src={Img} alt="" />
-          <div className="i_fv_text text-center">
-            <p className="i_slogan_form">Thinking learning and design.</p>
-            <p className="i_subslogan_form lora">
-              Create your own fascinating masterpiece.
-            </p>
-          </div>
+      {/* <div className="container"> */}
+      <LuckyModal visible={visible} setVisible={setVisible} />
+      <div className="e_fv">
+        <img src={Img} alt="" />
+        <div className="e_fv_text text-center">
+          <p className="i_slogan_form">
+            聖誕好禮 白金會員試手氣 為暖窩新增色彩
+          </p>
+          <p className="i_subslogan_form " onClick={() => setVisible(true)}>
+            點我試試
+          </p>
         </div>
+      </div>
+      {/* </div> */}
+      <div className="container" id="productCards">
         <div className="context1">
           {/* <BannerE/> */}
           {/* {product.map((item, index) => { */}
@@ -334,6 +342,11 @@ function FundList(props) {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="e_draw">
+        <img src={Img2} alt="" className="e_img2" />
+        <img src={Img1} alt="" className="e_img1" />
       </div>
       <BackTop
         visibilityHeight="2000"

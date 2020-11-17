@@ -30,6 +30,7 @@ function FundItem(props) {
   // 瀏覽紀錄
   const [viewrecord, setViewRecord] = useState([])
   const [productName, setProductName] = useState('')
+  
 
   const [view, setView] = useState([])
 

@@ -99,7 +99,7 @@ function ItemModal(props) {
             }}
           >
             想對設計師說的話：
-            <Input placeholder="此欄非必填" />
+            <Input placeholder="此欄非必填" width="200px" />
           </div>
         </Modal.Body>
         <Modal.Footer>

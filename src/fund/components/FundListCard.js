@@ -6,6 +6,7 @@ import '../styles/FundHomepage.scss'
 import ProgressE from '../components/ProgressE'
 import { withRouter } from 'react-router-dom'
 
+
 function FundListCard(props) {
   const { item } = props
   return (
@@ -57,7 +58,12 @@ function FundListCard(props) {
             <button className="fund">贊助</button>
           </div>
         </div>
+        <div className="e_wrappp">
+            <img src={`http://localhost:3001/img/` + item.e_pic} alt="" />
+          </div>
+        
       </div>
+
     </>
   )
 }

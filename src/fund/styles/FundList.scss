@@ -9,7 +9,7 @@
     display: block;
     margin: auto;
     margin-top: 70px;
-    margin-bottom: 50px;
+    // margin-bottom: 20px;
 }
 
 .context1 {
@@ -30,3 +30,44 @@
 .ant-dropdown-link{
     font-size: 18px;
 }
+
+.e_fv {
+    width: 100%;
+    position: relative;
+  }
+
+
+.e_fv img {
+    width: 100%;
+  }
+
+
+.e_fv_text {
+    color: #436464;
+    font-family: Noto Serif TC;
+    width: 100%;
+    position: absolute;
+    top: 40%;
+    left: 0%;
+  }
+
+  .i_slogan_form {
+    font-size: 44px;
+    color: #436464;
+  }
+
+  .i_subslogan_form {
+    font-size: 18px;
+    line-height: 40px;
+    border: 1px solid rgb(201, 94, 12) ;
+    color: rgb(201, 94, 12);
+    width: 200px;
+    margin: auto;
+    font-family: Noto Sans TC ;
+    margin-top: 40px;
+  }
+
+  .i_subslogan_form:hover{
+      background-color: rgb(201, 94, 12);
+      color: white;
+  }

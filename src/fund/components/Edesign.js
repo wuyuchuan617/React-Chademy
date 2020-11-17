@@ -42,8 +42,8 @@ function Edesign() {
             </div>
             <div className="orange">
               <p className="p_stu">
-                本學院培育之新銳設計師，大膽之作 <br />
-                敬邀您一同欣賞
+                努力不懈，青出於藍 <br />
+                創意令人嘖嘖稱奇
               </p>
             </div>
           </Col>
@@ -56,8 +56,8 @@ function Edesign() {
             </div>
             <div className="blue">
               <p className="p_stu">
-                本學院培育之新銳設計師，大膽之作 <br />
-                敬邀您一同欣賞
+                每項設計，皆為獨特 <br />
+                別出心裁
               </p>
             </div>
             <div className="wrap1">

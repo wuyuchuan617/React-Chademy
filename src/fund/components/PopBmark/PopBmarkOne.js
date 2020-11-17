@@ -19,10 +19,11 @@ function PopBmarkOne(props) {
     <>
       <div className="container ">
         <div className="row e_pop justify-content-between d-flex">
-          <div className="review-photo justify-content-center col-4">
+          <div className="review-photo  col-4">
             <img src={pop1} alt="" width="100%" />
-            <p className="e_pimg">$92,000</p>
+            <figcaption className="e_pimgg">$92,000</figcaption>
           </div>
+          
 
           <div className="col-7">
             <div className="d-flex justify-content-between ">

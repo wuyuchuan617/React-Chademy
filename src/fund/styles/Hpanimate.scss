@@ -1,16 +1,16 @@
-// body {
-//   margin: auto;
-//   // background-color: #282c34;
-//   text-align: center;
-//   min-height: 100vh;
-//   display: block;
-//   -webkit-touch-callout: none; /* iOS Safari */
-//   -webkit-user-select: none; /* Safari */
-//   -khtml-user-select: none; /* Konqueror HTML */
-//   -moz-user-select: none; /* Old versions of Firefox */
-//   -ms-user-select: none; /* Internet Explorer/Edge */
-//   user-select: none;
-// }
+body {
+  margin: auto;
+  // background-color: #282c34;
+  text-align: center;
+  min-height: 100vh;
+  display: block;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
 
 .main {
   position: relative;
@@ -52,4 +52,9 @@ button{
   font-size: 14px;
   font-weight: 500;
   color: white;
+}
+
+.e_pbtn{
+  margin: auto;
+  text-align: center;
 }
