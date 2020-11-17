@@ -285,7 +285,7 @@ function ProductFirst(props) {
               {/* )
               })} */}
               <Anchor affix={false} onChange={onChange}>
-                <Link href="#w_review" title={`（ ${review.length}則評論 ）`}>
+                <Link href="#w_review" title={` ${review.length}則評論 `}>
                   {/* <p> （ {review.length}則評論 ）</p> */}
                 </Link>
               </Anchor>

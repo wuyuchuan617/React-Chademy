@@ -4,12 +4,12 @@ function NewsLetter() {
   return (
     <>
       <div className="container-fluid">
-        <div className="row">
+        {/* <div className="row">
           <div className="w_title1">
             <div className="titlech noto-serif text-center">訂閱</div>
             <div className="titleEN lora text-center">Newsletter</div>
           </div>
-        </div>
+        </div> */}
         <div className="row justify-content-start w_new_row">
           <div className="col-8 w_newsletter">
             <img src={require('../images/newsletter.png')} alt="" />

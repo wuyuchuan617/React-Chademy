@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React, { useState } from 'react'
 import { Drawer } from 'antd'
+import { withRouter } from 'react-router-dom'
 function News(props) {
   const [drawerw, setDrawerw] = useState(false)
 
@@ -74,7 +75,7 @@ function News(props) {
                   className="btn_lessmargin more w_online-btn "
                   style={{ width: '200px' }}
                   onClick={() => {
-                    setDrawerw(true)
+                    props.history.push('/register')
                   }}
                 >
                   現在就加入會員
@@ -88,4 +89,4 @@ function News(props) {
   )
 }
 
-export default News
+export default withRouter(News)
