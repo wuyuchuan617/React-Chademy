@@ -5,7 +5,7 @@
   background-color: rgba(255, 255, 255, 0);
 
   top: 0;
-  transition: all ease-out .5s;
+  transition: all ease-out 0.5s;
   // navbar 有選項時的顏色
   &.show_bg {
     background-color: #dbd9d5;
@@ -67,5 +67,39 @@
   .logo_brand {
     margin-left: 0;
     width: 50px;
+  }
+}
+// logo_brand navbar-brand active
+// 992px 以下
+@media screen and (max-width: 992px) {
+  .navbar_container /deep/ {
+    // 取消透明
+    background-color: #dbd9d5;
+    opacity: 0.9;
+
+    .logo_brand {
+      margin-left: 0px;
+      max-width: 30px;
+    }
+  }
+
+  // 調整購物車會員中心位置
+  .icon_con {
+    flex-direction: row;
+
+    > * + * {
+      margin-left: 15px;
+    }
+  }
+}
+
+// 576 以下
+@media screen and (max-width: 576px) {
+  .navbar_container {
+    width: 100%;
+
+    position: fixed;
+    left: 0;
+    right: 0;
   }
 }
