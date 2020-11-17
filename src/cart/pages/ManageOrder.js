@@ -18,6 +18,10 @@ function ManagerOrder(props) {
   const [address, setAddress] = useState('')
   const [thisPO_NO, setThisPO_NO] = useState('')
   const [reload, setReload] = useState(0)
+  const [secondhandData, setSecondhandData] = useState([])
+  const [fundData, setFundData] = useState([])
+  const [bidData, setBidData] = useState([])
+  const [experienceData, setExperienceData] = useState([])
 
   async function getProductFromServer(value) {
     // const newTotal = { total: total + value }
@@ -35,6 +39,76 @@ function ManagerOrder(props) {
     const data = await response.json()
     console.log('hi', data)
     setProductData(data)
+  }
+  async function getSecondhandFromServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = `http://localhost:3001/j_cart/secondhandlist`
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    const response = await fetch(request)
+    const data = await response.json()
+    console.log('second', data)
+    setSecondhandData(data)
+  }
+  //募資
+  async function getFundFromServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = `http://localhost:3001/j_cart/fundlist`
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    const response = await fetch(request)
+    const data = await response.json()
+    console.log('fund', data)
+    setFundData(data)
+  }
+  //體驗
+  async function getExperienceFromServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = `http://localhost:3001/j_cart/experiencelist`
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    const response = await fetch(request)
+    const data = await response.json()
+    console.log('Experience', data)
+    setExperienceData(data)
+  }
+  async function getBidFromServer(value) {
+    // const newTotal = { total: total + value }
+
+    const url = `http://localhost:3001/j_cart/bidlist`
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      }),
+    })
+    const response = await fetch(request)
+    const data = await response.json()
+    console.log('bid', data)
+    setBidData(data)
   }
 
   async function getOrderDetailFromServer(value) {
@@ -217,6 +291,38 @@ function ManagerOrder(props) {
             if (item.product_name === productData[i].product_name) {
               price = productData[i].price
               boximg = productData[i].photo
+              console.log('showimg')
+            }
+          }
+          for (let j = 0; j < experienceData.length; j++) {
+            console.log('hi')
+            if (item.product_name === experienceData[j].activitie_name) {
+              price = experienceData[j].sale_price
+              boximg = experienceData[j].images
+              console.log('showimg')
+            }
+          }
+          for (let k = 0; k < fundData.length; k++) {
+            console.log('hi')
+            if (item.product_name === fundData[k].e_proname) {
+              price = fundData[k].e_progress_money
+              boximg = fundData[k].e_pic
+              console.log('showimg')
+            }
+          }
+          for (let l = 0; l < secondhandData.length; l++) {
+            console.log('hi')
+            if (item.product_name === secondhandData[l].product_name) {
+              price = secondhandData[l].price
+              boximg = secondhandData[l].photo
+              console.log('showimg')
+            }
+          }
+          for (let m = 0; m < bidData.length; m++) {
+            console.log('hi')
+            if (item.product_name === productData[m].productName) {
+              price = productData[m].price
+              boximg = productData[m].pic
               console.log('showimg')
             }
           }
