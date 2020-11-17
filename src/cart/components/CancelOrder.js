@@ -253,54 +253,57 @@ function CancelOrder(props) {
             style={{ marginBottom: '15px' }}
           >
             <div className="j_wrapspace">
-              <h5>訂單編號:{item.PO_NO}</h5>
-              <Dropdown
-                overlay={menu}
-                trigger={['click']}
-                placement={'bottomRight'}
-                onClick={() => {
-                  setMyPO_NO(item.PO_NO)
-                  setMyDate(item.order_date)
-                }}
-              >
-                <a
-                  className="ant-dropdown-link"
-                  onClick={(e) => e.preventDefault()}
-                >
-                  <h4>
-                    <GrMore />
-                  </h4>
-                </a>
-              </Dropdown>
-            </div>
-            <h6 style={{ marginTop: '30px' }}>
-              訂購日期:
-              {item.order_date}
-            </h6>
-            <h6 style={{ marginTop: '30px' }}>訂單狀況:{nowstatus}</h6>
-            <div className="j_wrapspace" style={{ marginTop: '40px' }}>
-              <img
-                style={{
-                  width: '270px',
-                  height: '175px',
-                  objectFit: 'cover',
-                }}
-                src={'http://localhost:3001/img/' + thisimg}
-                alt=""
-              />
-              <h6 style={{ lineHeight: '175px' }}>訂單金額:{item.total}</h6>
-
-              <h6
-                style={{ lineHeight: '175px', cursor: 'pointer' }}
-                onClick={() => {
-                  setVisible(true)
-                  setTypeofProduct(item.category)
-                  setPO_NO(item.PO_NO)
-                }}
-              >
-                我要評論
-                <BsPen />
-              </h6>
+              <div style={{ display: 'flex' }}>
+                <img
+                  style={{
+                    width: '450px',
+                    height: '293px',
+                    objectFit: 'cover',
+                  }}
+                  src={'http://localhost:3001/img/' + thisimg}
+                  alt=""
+                />
+                <div style={{ marginLeft: '20px' }}>
+                  <h5 style={{ marginTop: '10px' }}>訂單編號:{item.PO_NO}</h5>
+                  <h6 style={{ marginTop: '50px' }}>
+                    訂購日期:
+                    {item.order_date}
+                  </h6>
+                  <h6 style={{ marginTop: '30px' }}>訂單狀況:{nowstatus}</h6>
+                  <h6 style={{ marginTop: '30px' }}>訂單金額:{item.total}</h6>
+                </div>
+                <div className="j_box1">
+                  <Dropdown
+                    overlay={menu}
+                    trigger={['click']}
+                    placement={'bottomRight'}
+                    onClick={() => {
+                      setMyPO_NO(item.PO_NO)
+                      setMyDate(item.order_date)
+                    }}
+                  >
+                    <a
+                      className="ant-dropdown-link"
+                      onClick={(e) => e.preventDefault()}
+                    >
+                      <h4>
+                        <GrMore />
+                      </h4>
+                    </a>
+                  </Dropdown>
+                  <h6
+                    style={{ marginTop: '200px', cursor: 'pointer' }}
+                    onClick={() => {
+                      setVisible(true)
+                      setTypeofProduct(item.category)
+                      setPO_NO(item.PO_NO)
+                    }}
+                  >
+                    我要評論
+                    <BsPen />
+                  </h6>
+                </div>
+              </div>
             </div>
           </div>
         )

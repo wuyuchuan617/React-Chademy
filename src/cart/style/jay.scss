@@ -621,9 +621,10 @@ ul {
   border: none !important;
 }
 .j_box1 {
-  position: absolute;
-  text-align: right;
-  right: 130px;
+  width: 100px;
+  // position: absolute;
+  // text-align: right;
+  // right: 130px;
 }
 .j_box1 h6 {
   text-align: center;
@@ -635,7 +636,7 @@ ul {
   line-height: 50px;
   font-family: 'Noto Sans TC';
 }
-.ant-dropdown-menu {
-  position: absolute !important;
-  right: -100px !important;
-}
+// .j_myorderbox > .ant-dropdown-menu {
+//   position: absolute !important;
+//   right: -200px !important;
+// }
