@@ -177,8 +177,9 @@ function CommentEdit(props) {
         onSubmit={handleSubmit}
       >
         <div className="form_inside_container">
-          <div className="col-lg-5 col-sm-12">
-            <div className="w_upload">
+          {/* <div className="col-lg-5 col-sm-12"> */}
+          <div className="left_wrapper">
+            <div className="upload_block">
               <div
                 className="btn2 text-center"
                 onClick={() => {
@@ -217,7 +218,7 @@ function CommentEdit(props) {
               />
             </div>
           </div>
-          <div className="col-lg-5 col-sm-12">
+          <div className="right_wrapper">
             {/* <form className="formcss" action=""> */}
             <div className="d-flex justify-content-between">
               <div className="formset reviewInput">
@@ -228,6 +229,7 @@ function CommentEdit(props) {
                   value={reviewComment.buy_product}
                   id="productname"
                   name="buy_product"
+                  readOnly
                 />
               </div>
               <div className="formset reviewInput">
@@ -235,9 +237,10 @@ function CommentEdit(props) {
                 <input
                   type="text"
                   className="formstyle formwidthw1"
-                  value={poNO}
+                  value={reviewComment.order_no}
                   name="order_no"
                   id="productname"
+                  readOnly
                 />
               </div>
             </div>
@@ -283,9 +286,9 @@ function CommentEdit(props) {
               <label htmlFor="description">商品評論</label>
               <textarea
                 rows="10"
-                style={{ resize: 'none' }}
+                style={{ resize: 'none', width: '100%', maxWidth: '368px' }}
                 cols="44"
-                className="formstyle"
+                className="formstyle comment_text_area"
                 value={reviewComment.review_comment}
                 onChange={(e) => setReviewComment(e.target.value)}
                 name="review_comment"

@@ -4,10 +4,49 @@
 
   .form_inside_container {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
+
+    .left_wrapper {
+      width: 50%;
+      max-width: 400px;
+      margin-right: 60px;
+    }
+
+    .right_wrapper {
+      width: 50%;
+      max-width: 445px;
+    }
+
+    .upload_block {
+      max-width: 400px;
+      height: 270px;
+      background-color: #f3f4f4;
+      position: relative;
+      // margin-right: 100px;
+    }
+
+    .comment_text_area {
+      width: 100%;
+    }
 
     .upload_img {
+      width: 100%;
       margin-top: 40px;
     }
   }
 }
+
+// // 576 以下
+// @media screen and (max-width: 576px) {
+//   .navbar_container {
+//     // 取消透明
+//     // background-color: #dbd9d5;
+//     // opacity: 0.9;
+
+//     width: 100%;
+
+//     position: fixed;
+//     left: 0;
+//     right: 0;
+//   }
+// }
