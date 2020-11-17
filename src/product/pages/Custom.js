@@ -4,10 +4,10 @@ import React, { useState, useEffect } from 'react'
 import { Form, Select } from 'antd'
 import '../styles/custom.css'
 import { useSelector } from 'react-redux'
-// import CustomBanner from '../components/CustomBanner'
+import CustomBanner from '../components/CustomBanner'
 import BreadcrumCustom from '../components/BreadcrumCustom'
 import TabW from '../components/TabW'
-// import Cicle from '../components/Cicle'
+import Cicle from '../components/Cicle'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
 import { Spin } from 'antd'
@@ -83,8 +83,8 @@ function Custom(props) {
 
   return (
     <>
-      {/* <CustomBanner /> */}
-      <div class=" ww_footer"></div>
+      <CustomBanner />
+      {/* <div class=" ww_footer"></div> */}
       <div className="container firstTop">
         <div className="row  mt-1 wbread">
           <BreadcrumCustom />
@@ -487,7 +487,7 @@ function Custom(props) {
       </Form>
 
       <TabW />
-      {/* <Cicle /> */}
+      <Cicle />
       {/* <div className="container">
         <div className="row">
           <div className="w_title1">
