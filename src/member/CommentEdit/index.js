@@ -1,25 +1,22 @@
-/* eslint-disable array-callback-return */
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable react/jsx-no-target-blank */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-unused-vars */
-
-// ------------------------------以下引入套件----------------------------
+// ------------------------------ 以下引入套件 ----------------------------
 import React, { useState, useEffect } from 'react'
 import { Rate, message } from 'antd'
-
-// ------------------------以下引入樣式----------------------------
-import './index.scoped.scss'
-import request from '../../utils/request'
 import { useParams } from 'react-router-dom'
-// import '../styles/review.css'
+
+// ------------------------ 以下引入樣式 ----------------------------
+import './index.scoped.scss'
+
+// ------------------------ 以下引入輔助函式 ----------------------------
+import request from '../../utils/request'
 import { userInfo } from '../../utils'
-// -----------------------以下開始Component Product-----------------
+// import '../styles/review.css'
+// ----------------------- 以下開始 CommentEdit Component -----------------
 
 function CommentEdit(props) {
   const { reviewSid } = useParams()
+  const { name } = userInfo()
 
+  // ----------------------- 以下開始useState狀態設定 -----------------
   const [previewPhotoUrl, setPreviewPhotoUrl] = useState('')
   const [reviewComment, setReviewComment] = useState({
     avatar: '',
@@ -29,36 +26,10 @@ function CommentEdit(props) {
     review_comment: '',
     review_sid: 0,
     review_time: '',
-    stars: 0,
+    stars: 5,
   })
 
-  const { name } = userInfo()
-
-  let poNO = ''
-  let productNO = ''
-  // -----------------------以下開始useState狀態設定-----------------
-
-  // 以下六個為demo btn 預設文字
-  const [orderProductNo, setOrderProductNo] = useState('')
-  const [orderProduct, setOrderProduct] = useState('')
-  const [orderNo, setOrderNo] = useState('')
-  const [orderDate, setOrderDate] = useState('')
-  const [reviewTitle, setReviewTitle] = useState('')
-  // const [reviewComment, setReviewComment] = useState('')
-  // const [photoReturn, setPhotoReturn] = useState({})
-
-  //  存圖片上傳file檔，要fetch form Data
-  const [photo, setPhoto] = useState(null)
-
-  //  存圖片回傳後編碼後檔名
-  const [previewPhoto, setPreviewPhoto] = useState({})
-  console.log('photo' + JSON.stringify(photo))
-
-  //  存星星數字
-  const [stars, setStars] = useState(5)
-
-  // ---------------以下開始fetch SQL get data function-----------------
-
+  // --------------- 以下開始 fetch data -----------------
   useEffect(() => {
     async function getCommentt() {
       const response = await request({
@@ -71,94 +42,52 @@ function CommentEdit(props) {
         setReviewComment(data) // 設定評論資料
         setPreviewPhotoUrl(data.photo) // 設定評論圖片
       }
-      console.log(reviewComment)
     }
 
     getCommentt()
-  }, [])
+  }, [reviewSid])
 
   // 拿訂單資料
 
   // 圖片預覽
-  async function updateReviewToServer() {
-    // const newTotal = { total: total + value }
-    const fd = new FormData()
-    fd.append('myfile', photo)
-    console.log('fd' + JSON.stringify(fd))
-    console.log('photo' + JSON.stringify(photo))
-    const url = 'http://localhost:3001/man_product/try-upload/'
+  async function updateReviewToServer(photo) {
+    const formData = new FormData()
+    formData.append('myfile', photo)
 
-    const request = new Request(url, {
-      method: 'POST',
-      body: fd,
-      // headers: new Headers({
-      //   'Content-Type': 'multipart/form-data',
-      //   Accept: 'application/json',
-      // }),
-    })
-
-    // try {
-    const response = await fetch(request)
+    const response = await fetch(
+      'http://localhost:3001/man_product/try-upload/',
+      {
+        method: 'POST',
+        body: formData,
+      }
+    )
     const data = await response.json()
-    // data會是一個物件值
-    const newData = data
-    console.log(data)
-    console.log(newData.newFileName)
 
-    setPreviewPhoto(newData)
+    // 如果為真則設定評論圖片
+    data.newFileName && setPreviewPhotoUrl(data.newFileName)
   }
 
-  // useEffect(() => {
-  //   updateReviewToServer()
-  // }, [photo])
+  async function updateCommentt(comment) {
+    const response = await request({
+      url: `/members/updateCommentt`,
+      method: 'POST',
+      data: { ...comment, photo: previewPhotoUrl }, // 傳送評論資料(預覽的圖片放進去)
+    })
+    const { success } = response
 
-  // get member
-  // function getCartFromLocalStorage() {
-  //   const newMember = JSON.parse(localStorage.getItem('reduxState')).user.users
-  //     .sid
-  //   const newMemberName = JSON.parse(localStorage.getItem('reduxState')).user
-  //     .users.name
+    success ? message.success(response.msg) : message.error(response.msg)
 
-  //   console.log('newMember', newMember)
-  //   console.log(typeof newMember)
-  //   setMember(newMember)
-  //   setMemberName(newMemberName)
-  // }
-
-  // useEffect(() => {
-  //   getCartFromLocalStorage()
-  // }, [])
+    // if (!success) {
+    //   message.error(response.msg)
+    // } else {
+    //   message.success(response.msg)
+    // }
+  }
 
   // 送出表單
   async function handleSubmit(e) {
     e.preventDefault()
-
-    if (!reviewTitle) return message.warn('請輸入評論標題')
-    if (!reviewComment) return message.warn('請輸入評論內容')
-
-    const fd = new FormData(document.form1)
-    const url = 'http://localhost:3001/man_product/addreview'
-
-    const request = new Request(url, {
-      method: 'POST',
-      body: fd,
-      // headers: new Headers({
-      //   'Content-Type': 'multipart/form-data',
-      //   Accept: 'application/json',
-      // }),
-    })
-
-    // try {
-    const response = await fetch(request)
-    const data = await response.json()
-    // data會是一個物件值
-    const newData = data
-    console.log(data)
-    console.log(newData.newFileName)
-  }
-
-  const handleClick = () => {
-    document.getElementById('file_input').click()
+    updateCommentt(reviewComment)
   }
 
   // -----------------------------以下開始 JSX 畫面-----------------
@@ -183,7 +112,7 @@ function CommentEdit(props) {
               <div
                 className="btn2 text-center"
                 onClick={() => {
-                  handleClick()
+                  document.getElementById('file_input').click()
                 }}
               >
                 上傳照片
@@ -192,13 +121,6 @@ function CommentEdit(props) {
             {/* <p className="text-center notice">＊可以點選或拖曳上傳圖片</p> */}
 
             <div className="upload_img">
-              <input
-                type="hidden"
-                id="photo"
-                name="photo"
-                value={previewPhoto.newFileName}
-                className="form-control"
-              />
               <img
                 src={`${window.location.origin}/img/${previewPhotoUrl}`}
                 alt="previewPhotoUrl"
@@ -209,11 +131,8 @@ function CommentEdit(props) {
                 // name="myfile"
                 style={{ display: 'none' }}
                 onChange={(e) => {
-                  console.log(e.target.files[0])
-                  const newPhoto = e.target.files[0]
-
-                  setPhoto(newPhoto)
-                  // await updateReviewToServer()
+                  if (e.target.files.length > 0)
+                    updateReviewToServer(e.target.files[0])
                 }}
               />
             </div>
@@ -247,11 +166,12 @@ function CommentEdit(props) {
 
             <div className="reviewStars d-flex">
               <Rate
-                style={{ color: '#C77334' }}
-                value={Number(reviewComment.stars)}
-                onChange={(e) => {
-                  console.log(4444, e)
-                  setStars(e)
+                value={reviewComment.stars}
+                onChange={(number) => {
+                  setReviewComment({
+                    ...reviewComment,
+                    stars: number,
+                  })
                 }}
               />
             </div>
@@ -267,11 +187,17 @@ function CommentEdit(props) {
               <label htmlFor="price">評論標題</label>
               <input
                 type="text"
+                style={{ width: '100%', maxWidth: '500px' }}
                 className="formstyle formwidthw cus_input"
-                value={reviewTitle}
+                value={reviewComment.review_title}
                 id="price"
                 name="review_title"
-                onChange={(e) => setReviewTitle(e.target.value)}
+                onChange={(event) =>
+                  setReviewComment({
+                    ...reviewComment,
+                    review_title: event.target.value,
+                  })
+                }
               />
             </div>
 
@@ -286,17 +212,22 @@ function CommentEdit(props) {
               <label htmlFor="description">商品評論</label>
               <textarea
                 rows="10"
-                style={{ resize: 'none', width: '100%', maxWidth: '368px' }}
+                style={{ resize: 'none', width: '100%', maxWidth: '500px' }}
                 cols="44"
                 className="formstyle comment_text_area"
                 value={reviewComment.review_comment}
-                onChange={(e) => setReviewComment(e.target.value)}
+                onChange={(event) =>
+                  setReviewComment({
+                    ...reviewComment,
+                    review_comment: event.target.value,
+                  })
+                }
                 name="review_comment"
               ></textarea>
             </div>
             <input
               type="submit"
-              value="新增評論"
+              value="編輯評論"
               className="btnReview text-center mt-4"
             />
           </div>

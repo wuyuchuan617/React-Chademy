@@ -191,13 +191,10 @@ hr {
   border-color: #c77334;
   outline: 0;
   -webkit-box-shadow: 0 0 0 1px #c77334;
-  box-shadow: 0 0 0 .5px #c77334;
+  box-shadow: 0 0 0 0.5px #c77334;
 }
 
 .ant-input:hover {
   border-color: #c77334;
   border-right-width: 1px !important;
 }
-
-
-

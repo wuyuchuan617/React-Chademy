@@ -6,6 +6,9 @@
 */
 .memberCenter_container {
   padding: 100px;
+  margin-top: 50px;
+  max-width: 1440px;
+  justify-content: center;
 
   /deep/ {
     .row_list {
@@ -19,6 +22,7 @@
     .hander_container {
       padding-left: $asideWidth;
       padding-right: 0;
+      // margin-top: 50px;
     }
 
     // 表單

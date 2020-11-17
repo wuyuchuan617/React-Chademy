@@ -238,12 +238,12 @@ function MyNavbar(props) {
                   <Menu>
                     <Menu.Item>
                       <Nav.Link as={NavLink} to="/member-center">
-                        <AiOutlineUser />
+                        {/* <AiOutlineUser /> */}
                         會員中心
                       </Nav.Link>
                     </Menu.Item>
                     <Menu.Item onClick={handleLogout}>
-                      <LogoutOutlined />
+                      {/* <LogoutOutlined /> */}
                       登出
                     </Menu.Item>
                   </Menu>

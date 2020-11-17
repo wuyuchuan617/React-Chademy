@@ -2,15 +2,28 @@ import React, { useState, useEffect } from 'react'
 import './index.scoped.scss'
 
 import request from '../../utils/request'
-import { Comment, Tooltip, Avatar, Rate, Image, Menu, Dropdown } from 'antd'
+import {
+  Comment,
+  Tooltip,
+  Avatar,
+  Rate,
+  Image,
+  Menu,
+  message,
+  Dropdown,
+  Modal,
+} from 'antd'
 import { GrMore } from 'react-icons/gr'
 import moment from 'moment'
 import { useHistory } from 'react-router-dom'
+import { ExclamationCircleOutlined } from '@ant-design/icons'
 import { noImage } from '../../utils'
+
+const { confirm } = Modal
 
 // 防止噴錯卡住 ref: https://www.c-sharpcorner.com/blogs/error-handling-while-use-image-render-in-react-js-application
 function CustomImg(props) {
-  const { src, alt = 'imaghe', ...otherProps } = props
+  const { src, alt = 'image', ...otherProps } = props
   let imagePath = ''
   try {
     // 由前端撈圖
@@ -52,6 +65,41 @@ function Commentt() {
     getCommentt()
   }, [])
 
+  // 確認提示
+  function showConfirm(review) {
+    confirm({
+      title: 'Do you Want to delete these items?',
+      icon: <ExclamationCircleOutlined />,
+      content: 'Some descriptions',
+      onOk() {
+        const { review_sid } = review
+        deleteCommentt(review_sid)
+      },
+      onCancel() {
+        console.log('Cancel')
+      },
+    })
+  }
+
+  // 刪除
+  const deleteCommentt = async (review_sid) => {
+    const response = await request({
+      url: '/members/deleteCommentt',
+      method: 'POST',
+      data: { review_sid },
+    })
+
+    const { success, msg } = response
+
+    if (!success) {
+      message.error(msg)
+    } else {
+      message.success(msg)
+
+      getCommentt() // 重抓資料
+    }
+  }
+
   return (
     <>
       {commentt.length > 0 ? (
@@ -67,10 +115,10 @@ function Commentt() {
                     <Rate disabled defaultValue={item.stars} />
                   </div>
                 }
-                avatar={
-                  <>
-                    <CustomImg src={item.avatar} />
-                    <div>
+                avatar={<CustomImg src={item.avatar} />}
+                content={
+                  <div>
+                    <div className="edit_btn">
                       <Dropdown
                         trigger={['click']}
                         placement={'bottomRight'}
@@ -79,18 +127,16 @@ function Commentt() {
                             <Menu.Item onClick={() => goToEdit(item)}>
                               編輯
                             </Menu.Item>
+                            <Menu.Item onClick={() => showConfirm(item)}>
+                              刪除
+                            </Menu.Item>
                           </Menu>
                         }
                       >
-                        <h4>
-                          <GrMore />
-                        </h4>
+                        <GrMore />
                       </Dropdown>
                     </div>
-                  </>
-                }
-                content={
-                  <div>
+
                     <p>{item.review_comment}</p>
                     <div style={{ marginTop: '15px' }}>
                       <Image
