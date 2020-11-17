@@ -7,9 +7,61 @@ import { Modal, Upload, Button, Form, Input, DatePicker, message } from 'antd'
 import moment from 'moment'
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons'
 
+import io from 'socket.io-client'
+
+console.log(' => io ', io)
+
 function MemberCenter(props) {
   const [previewPhotoUrl, setPreviewPhotoUrl] = useState('')
   const [loading, setLoading] = useState(false)
+
+  const [ws, setWs] = useState(null)
+
+  // useEffect(() => {
+  //   if (ws) {
+  //     //連線成功在 console 中打印訊息
+  //     console.log('success connect!', ws)
+  //     //設定監聽
+  //     initWebSocket()
+  //   }
+  // }, [ws])
+
+  const connectWebSocket = () => {
+    //開啟
+    setWs(
+      io('http://localhost:3001', {
+        // path: '/ws',
+        transports: ['websocket'],
+        // or [ 'websocket', 'polling' ], which is the same thing
+      })
+    )
+  }
+
+  const initWebSocket = () => {
+    //對 getMessage 設定監聽，如果 server 有透過 getMessage 傳送訊息，將會在此被捕捉
+    ws.on('getMessage', (message) => {
+      console.log(message)
+    })
+  }
+
+  const sendMessage = () => {
+    //以 emit 送訊息，並以 getMessage 為名稱送給 server 捕捉
+
+    console.log(' ws ', ws)
+    ws.emit('getMessage', '只回傳給發送訊息的 client')
+  }
+
+  // sending sockets
+  const send = () => {
+    const socket = io('localhost:3001')
+    socket.emit('change color', 'scascascacasc') // change 'red' to this.state.color
+  }
+  ///
+
+  // useEffect(() => {
+  //   console.log(' initiateSocket  ')
+  //   initiateSocket()
+  // }, [])
 
   const [form] = Form.useForm()
 
@@ -121,6 +173,13 @@ function MemberCenter(props) {
           </div>
         )}
       </Upload>
+
+      <div>
+        <input type="button" value="連線" onClick={connectWebSocket} />
+        <input type="button" value="送出訊息" onClick={sendMessage} />
+        <input type="button" value="Send" onClick={send} />
+      </div>
+
       <Form
         form={form}
         layout="vertical"

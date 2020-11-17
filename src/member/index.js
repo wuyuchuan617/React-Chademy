@@ -7,6 +7,8 @@ import { Layout } from 'antd'
 
 import Aside from '../common_components/Aside'
 
+import WheelExample from './WheelExample'
+
 // --------------------- 以下 import 會員頁面 --------------------
 
 import MemberCenter from './MemberCenter'
@@ -94,6 +96,10 @@ function MemberIndex({ cartamount, setCartAmount }) {
               {/* 會員中心 首頁 */}
               <Route exact path={path}>
                 <MemberCenter />
+              </Route>
+
+              <Route path={`${path}/wheel`}>
+                <WheelExample></WheelExample>
               </Route>
 
               <Route path={`${path}/coupon`}>
