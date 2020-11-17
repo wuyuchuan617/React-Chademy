@@ -20,6 +20,9 @@ function Bid(props) {
     initBidData,
   } = props
   const [viewfilter, setViewfilter] = useState(11)
+  const [scrollY, setScrollY] = useState(0)
+  const [lastOffset2, setLastOffset2] = useState(0) // 判斷 scrolltop
+
   async function getNewPrice() {
     const url = 'http://localhost:3001/product/api/record/list'
 
@@ -45,6 +48,17 @@ function Bid(props) {
   //   getNewPrice()
   // },1000)
 
+  useEffect(() => {
+    window.addEventListener('scroll', fixed)
+
+    function fixed() {
+      setScrollY(window.pageYOffset)
+      console.log('window.pageYOffset', window.pageYOffset)}
+      
+      setLastOffset2(window.pageYOffset)
+    
+  }, [lastOffset2])
+
   return (
     <>
       <Banner />
@@ -57,10 +71,10 @@ function Bid(props) {
                 animation={[
                   { x: 0, opacity: 1, playScale: [0, 1] },
                   // { y: 100, playScale: [0, 0.3] },
-                  { blur: '10px', playScale: [0, 0.3] },
+                  // { blur: '10px', playScale: [0, 0.3] },
                 ]}
                 style={{
-                  transform: 'translateX(-20px)',
+                  transform: 'translateX(-50px)',
                   filter: 'blur(0px)',
                   opacity: 0.5,
                 }}
@@ -72,7 +86,7 @@ function Bid(props) {
                 />
               </ScrollParallax>
             </div>
-            <div className="grace-text text-center mx-auto">
+            <div className="grace-text text-center mx-auto g-show">
               {/* <QueueAnim delay={300} duration={2000} type={['right', 'left']} leaveReverse> */}
               
               <ScrollParallax
@@ -102,13 +116,16 @@ function Bid(props) {
           </div>
         </div>
         <div className="row">
+        
+          {scrollY >=600?
           <Filter
             data={data}
             viewfilter={viewfilter}
             setViewfilter={setViewfilter}
             // searchProduct={searchProduct}
           />
-     
+          :null}
+      
           <ScrollParallax
             animation={[
               { x: 0, opacity: 1, playScale: [0, 1] },

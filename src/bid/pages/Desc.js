@@ -65,11 +65,19 @@ function Desc(props) {
   const [inputValue, setInputValue] = useState('')
   const [recordComponent, setRecordComponent] = useState('')
   const [comma3, setComma3] = useState(null)
+  const [changeColorStatus, setChangeColorStatus] = useState(false)
+  const [show, setShow] = useState(false)
+  const [addmoney, setAddmoney] = useState(0)
+  const [chair, setChair] = useState(null) //for pic src
+  const [lastOffset, setLastOffset] = useState(0) // 判斷 scrolltop
 
+  const handleClose = () => {
+    setShow(false)
+    setNoShowModel(true)
+  }
+  const handleShow = () => setShow(true)
   // 判斷登入的狀態
   const isLogged = useSelector((state) => state.user.logged)
-  // 判斷 scrolltop
-  const [lastOffset, setLastOffset] = useState(0)
   // 設定競標資料索引值
   let tempDataIndex = 0
 
@@ -149,17 +157,7 @@ function Desc(props) {
         if (item.bid_sid !== +id) return
         if (tempDataIndex > 5) return
         tempDataIndex++
-        if (changeColorStatus && index == 0) {
-          {
-            /* gnext.classList.add('g-color') */
-          }
-          {
-            /* setGnextAddClass(true) */
-          }
-          {
-            /* setChangeColorStatus(false) */
-          }
-        }
+
         return (
           <Record
             key={index}
@@ -227,10 +225,7 @@ function Desc(props) {
     const response = await fetch(request)
     const data = await response.json()
     setPrice(+copyPrice + value * 1)
-    // console.log('price', price)
   }
-
-  const [chair, setChair] = useState(null)
   useEffect(() => {
     initData()
     getDesigner()
@@ -282,7 +277,6 @@ function Desc(props) {
     const a = getTimeRemaining(enddate)
     setTotal(a)
   }, [enddate])
-  //countdown
 
   const renderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
@@ -318,14 +312,6 @@ function Desc(props) {
       )
     }
   }
-  const [show, setShow] = useState(false)
-
-  const handleClose = () => {
-    setShow(false)
-    setNoShowModel(true)
-  }
-  const handleShow = () => setShow(true)
-  const [addmoney, setAddmoney] = useState(0)
 
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
@@ -339,7 +325,7 @@ function Desc(props) {
     getNewPrice()
     getMember()
   }, [price])
-  const [changeColorStatus, setChangeColorStatus] = useState(false)
+
   function showRecord() {
     setChangeColorStatus(true)
   }
@@ -614,7 +600,7 @@ function Desc(props) {
               </tbody>
             </table>
             <h2 className="g-smalltime text-center pt-4">
-              <Counter total={total} enddate={enddate} startdate={startdate}/>
+              <Counter total={total} enddate={enddate} startdate={startdate} />
             </h2>
             {new Date(startdate).getTime() > Date.now() ? null : new Date(
                 enddate

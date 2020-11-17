@@ -48,7 +48,7 @@ function Filter(props) {
   let sidebarContentHide = {
     display: 'none',
   }
-
+ 
   // // seats1
   // let seats1Show = {
   //   display: 'block',
@@ -88,7 +88,8 @@ function Filter(props) {
         <p className="g-hand">FILTER</p>
       </div>
       <div
-        className="sidebar"
+        className="sidebar g-hand"
+        // onClick={() => setViewFilter(1)}
         style={viewFilter === 1 ? sidebarShow : sidebarHide}
       >
         <div
