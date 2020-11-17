@@ -73,9 +73,9 @@
 // 992px 以下
 @media screen and (max-width: 992px) {
   .navbar_container /deep/ {
-    // 取消透明
-    background-color: #dbd9d5;
-    opacity: 0.9;
+    // // 取消透明
+    // background-color: #dbd9d5;
+    // opacity: 0.9;
 
     .logo_brand {
       margin-left: 0px;
@@ -96,6 +96,10 @@
 // 576 以下
 @media screen and (max-width: 576px) {
   .navbar_container {
+    // 取消透明
+    background-color: #dbd9d5;
+    opacity: 0.9;
+
     width: 100%;
 
     position: fixed;
