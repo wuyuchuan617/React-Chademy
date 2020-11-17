@@ -12,11 +12,11 @@ function DashBoardAside(props) {
   return (
     <>
       <div className="dashboard">
-        <div style={{ textAlign: 'center', marginTop: '40px' }}>
+        <div style={{ textAlign: 'center', marginTop: '50px' }}>
           <h4>管理後台</h4>
         </div>
 
-        <h6>會員管理</h6>
+        <h6 style={{ marginTop: '40px', marginBottom: '15px' }}>會員管理</h6>
         <p>資料編輯</p>
         <p>產品保固</p>
         <p>折價券</p>

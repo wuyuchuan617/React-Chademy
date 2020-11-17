@@ -20,7 +20,7 @@ function OrderToFund(props) {
               objectFit: 'cover',
             }}
             src={
-              'http://localhost:3001/img/0cdc95af85269592688c630e45502d3c.ac0037b8.png'
+              'http://localhost:3001/img/0cdc95af85269592688c630e45502d3c.png'
             }
             alt=""
           />

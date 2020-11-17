@@ -466,10 +466,10 @@ ul {
   display: flex;
   justify-content: space-between;
 }
-.j_wrapspace h6 {
-  line-height: 200px;
-  margin: 0;
-}
+// .j_wrapspace h6 {
+//   line-height: 200px;
+//   margin: 0;
+// }
 .j_wrap2 {
   display: flex;
   // justify-content: space-between;
@@ -485,9 +485,9 @@ ul {
 }
 .j_myorderbox {
   width: 100%;
-  height: 400px;
+  height: 330px;
   background-color: #f3f4f4;
-  padding: 15px;
+  padding: 20px;
 }
 .j_myorderbox h4 {
   cursor: pointer;
@@ -532,12 +532,12 @@ ul {
 
 .dashboard h6 {
   position: relative;
-  left: 30px;
+  left: 40px;
   cursor: pointer;
 }
 .dashboard p {
   position: relative;
-  left: 55px;
+  left: 65px;
   font-size: 14px;
   font-family: 'Noto Serif TC';
   cursor: pointer;
@@ -610,4 +610,32 @@ ul {
 }
 .jspan1 {
   font-size: 20px;
+}
+.j_text_center {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.ant-btn-primary {
+  background-color: #c77334 !important;
+  border: none !important;
+}
+.j_box1 {
+  position: absolute;
+  text-align: right;
+  right: 130px;
+}
+.j_box1 h6 {
+  text-align: center;
+  width: 120px;
+  height: 50px;
+  padding: 15 20 15 20;
+  background-color: #c77334;
+  color: white;
+  line-height: 50px;
+  font-family: 'Noto Sans TC';
+}
+.ant-dropdown-menu {
+  position: absolute !important;
+  right: -100px !important;
 }

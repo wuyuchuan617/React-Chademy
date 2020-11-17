@@ -10,7 +10,7 @@ import { Modal, Button } from 'antd'
 import DashBoardAside from '../components/DashBoardAside'
 
 function ManagerOrder(props) {
-  const { setDashboard } = props
+  // const { setDashboard } = props
   const [data, setData] = useState([])
   const [visible, setVisible] = useState(false)
   const [detailData, setDetailData] = useState([])
@@ -103,7 +103,7 @@ function ManagerOrder(props) {
         case 1:
           status = (
             <div
-              style={{ color: 'red', cursor: 'pointer' }}
+              style={{ color: '#c77334', cursor: 'pointer' }}
               onClick={() => {
                 setVisible(true)
                 setAddress(data[i].delivery_adress)
@@ -115,10 +115,10 @@ function ManagerOrder(props) {
           )
           break
         case 3:
-          status = <div style={{ color: 'green' }}>已完成</div>
+          status = <div style={{ color: '#436464' }}>已完成</div>
           break
         default:
-          status = <div style={{ color: 'grey' }}>已取消</div>
+          status = <div style={{ color: '#b7bdb3' }}>已取消</div>
       }
       let object = {
         key: key,
@@ -134,11 +134,11 @@ function ManagerOrder(props) {
     setData(newArray)
   }
   useEffect(() => {
-    setDashboard(true)
+    // setDashboard(true)
     getAllorderFromServer()
   }, [])
   useEffect(() => {
-    setDashboard(true)
+    // setDashboard(true)
     getAllorderFromServer()
   }, [reload])
 
@@ -183,13 +183,19 @@ function ManagerOrder(props) {
     <>
       <div style={{ display: 'flex' }}>
         <DashBoardAside />
-        <div style={{ paddingLeft: '15px', paddingTop: '15px' }}>
-          <Table
-            dataSource={data}
-            columns={columns}
-            size="large"
-            pagination={{ position: ['bottomCenter'] }}
-          />
+        <div>
+          <div style={{ paddingLeft: '30px', paddingTop: '15px' }}>
+            <div className="j_text_center">
+              <h3>全部訂單</h3>
+            </div>
+
+            <Table
+              dataSource={data}
+              columns={columns}
+              size="large"
+              pagination={{ position: ['bottomCenter'] }}
+            />
+          </div>
         </div>
       </div>
       <Modal
