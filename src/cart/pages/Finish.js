@@ -18,32 +18,32 @@ function Finish(props) {
           <div className="layoutcircle">
             <div
               className="defaultcircle"
-              style={{ backgroundColor: '#436464' }}
+              style={{ backgroundColor: '#c77334' }}
             ></div>
           </div>
           <div className="layoutcircle">
             <div
               className="defaultcircle"
-              style={{ backgroundColor: '#436464' }}
+              style={{ backgroundColor: '#c77334' }}
             ></div>
           </div>
           <div className="layoutcircle">
             <div
               className="defaultcircle"
-              style={{ backgroundColor: '#436464' }}
+              style={{ backgroundColor: '#c77334' }}
             ></div>
           </div>
           <div className="activecircle"></div>
         </div>
         <div className="progresstitle">
           <div className="titlecenter1">
-            <h5>購物車</h5>
+            <h5 style={{ color: '#707070' }}>購物車</h5>
           </div>
           <div className="titlecenter2">
-            <h5>物流資訊</h5>
+            <h5 style={{ color: '#707070' }}>物流資訊</h5>
           </div>
           <div className="titlecenter3">
-            <h5>付款資訊</h5>
+            <h5 style={{ color: '#707070' }}>付款資訊</h5>
           </div>
           <div className="titlecenter4">
             <h5>成功付款</h5>
@@ -52,12 +52,18 @@ function Finish(props) {
       </div>
 
       <div className="j_showbox">
-        <h2>訂單已寄送您的信箱</h2>
+        <img
+          alt=""
+          src="http://localhost:3001/img/check-mark01.svg"
+          style={{ width: '200px', height: '200px' }}
+        />
+        <h2 style={{ marginTop: '20px' }}>訂單成立</h2>
+        <br />
+        <h3>
+          訂單編號:<span style={{ color: '#c77334' }}>{orderNo}</span>
+        </h3>
         <h3>我們將為您儘快出貨</h3>
-        <br />
-        <br />
-        <br />
-        <h3>{orderNo}</h3>
+
         <div className="j_wrap">
           <Link to="/productlist" className="j_btn6">
             <div className="j_btn6">繼續購物</div>

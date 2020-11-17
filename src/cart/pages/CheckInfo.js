@@ -130,13 +130,13 @@ function CheckInfo(props) {
           <div className="layoutcircle">
             <div
               className="defaultcircle"
-              style={{ backgroundColor: '#436464' }}
+              style={{ backgroundColor: '#c77334' }}
             ></div>
           </div>
           <div className="layoutcircle">
             <div
               className="defaultcircle"
-              style={{ backgroundColor: '#436464' }}
+              style={{ backgroundColor: '#c77334' }}
             ></div>
           </div>
           <div className="activecircle"></div>
@@ -146,16 +146,16 @@ function CheckInfo(props) {
         </div>
         <div className="progresstitle">
           <div className="titlecenter1">
-            <h5>購物車</h5>
+            <h5 style={{ color: '#707070' }}>購物車</h5>
           </div>
           <div className="titlecenter2">
-            <h5>物流資訊</h5>
+            <h5 style={{ color: '#707070' }}>物流資訊</h5>
           </div>
           <div className="titlecenter3">
             <h5>付款資訊</h5>
           </div>
           <div className="titlecenter4">
-            <h5>成功付款</h5>
+            <h5 style={{ color: '#707070' }}>成功付款</h5>
           </div>
         </div>
       </div>

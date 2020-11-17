@@ -34,6 +34,7 @@ function SameAdress(props) {
           height: '40px',
           marginBottom: '30px',
           marginRight: '20px',
+          padding: '10px',
         }}
         value={city}
         readOnly
@@ -50,6 +51,7 @@ function SameAdress(props) {
           width: '290px',
           height: '40px',
           marginBottom: '30px',
+          padding: '10px',
         }}
         value={area}
         readOnly

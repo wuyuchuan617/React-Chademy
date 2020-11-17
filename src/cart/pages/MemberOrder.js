@@ -73,7 +73,9 @@ function MemberOrder(props) {
   )
   return (
     <>
-      <h3>我的訂單/訂單狀況({filiterState})</h3>
+      <h3>
+        <span className="jspan1">訂單狀況({filiterState})</span>
+      </h3>
       <hr />
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <Dropdown overlay={menu}>

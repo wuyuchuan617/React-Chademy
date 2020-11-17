@@ -37,22 +37,23 @@ function CartArea(props) {
       ></div>
       <div className={showCart ? 'showcartbox' : 'closecartbox'}>
         <div className="j_justify">
-          <h4 style={{ marginTop: '8px' }}>購物車</h4>
+          <h4 style={{ marginTop: '15px', marginLeft: '25px' }}>購物車</h4>
           <hr style={{ marginBottom: '8px' }} />
         </div>
 
         <div className="containercart">
-          <ul style={{ marginTop: '65px' }}>
+          <ul style={{ marginTop: '70px' }}>
             {cartList.map((item) => {
               return (
                 <li>
                   <div
                     style={{
-                      width: '550px',
+                      width: '500px',
                       height: '130px',
                       display: 'flex',
-                      marginTop: '5px',
-                      marginBottom: '5px',
+                      // marginTop: '5px',
+                      // marginBottom: '5px',
+                      margin: '25px auto 25px auto',
                     }}
                   >
                     <div
@@ -84,6 +85,7 @@ function CartArea(props) {
                         style={{
                           display: 'flex',
                           justifyContent: 'space-between',
+                          marginTop: '10px',
                         }}
                       >
                         <h5>{item.id}</h5>
@@ -92,7 +94,7 @@ function CartArea(props) {
                         style={{
                           display: 'flex',
                           justifyContent: 'space-between',
-                          marginTop: '10px',
+                          marginTop: '15px',
                         }}
                       >
                         <h6>價格</h6>
@@ -106,7 +108,7 @@ function CartArea(props) {
                           position: 'relative',
                           display: 'flex',
                           justifyContent: 'space-between',
-                          marginTop: '15px',
+                          marginTop: '0px',
                         }}
                       >
                         <h6>數量</h6>
@@ -119,7 +121,7 @@ function CartArea(props) {
                           position: 'relative',
                           display: 'flex',
                           justifyContent: 'space-between',
-                          marginTop: '10px',
+                          marginTop: '0px',
                         }}
                       >
                         <h6>小計</h6>
@@ -148,7 +150,7 @@ function CartArea(props) {
             setTypeofProduct(1)
           }}
         >
-          前往購物車
+          <h5>前往購物車</h5>
         </Link>
       </div>
     </>

@@ -8,6 +8,7 @@ import React, { useState, useEffect } from 'react'
 import CartList from '../components/CartList'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import img1 from '../../product/images/777.jpg'
+import { Form, Select } from 'antd'
 // import './style/jay.scss'
 
 function CartProduct(props) {
@@ -93,13 +94,13 @@ function CartProduct(props) {
             <h5>購物車</h5>
           </div>
           <div className="titlecenter2">
-            <h5>物流資訊</h5>
+            <h5 style={{ color: '#707070' }}>物流資訊</h5>
           </div>
           <div className="titlecenter3">
-            <h5>付款資訊</h5>
+            <h5 style={{ color: '#707070' }}>付款資訊</h5>
           </div>
           <div className="titlecenter4">
-            <h5>成功付款</h5>
+            <h5 style={{ color: '#707070' }}>成功付款</h5>
           </div>
         </div>
       </div>
@@ -142,11 +143,14 @@ function CartProduct(props) {
       </div>
       <hr className="jhr" />
       <div className="wrap">
-        <h6 style={{ left: '780px' }}>單價</h6>
-        <h6 style={{ left: '940px' }}>數量</h6>
+        <h6 style={{ left: '240px' }}>商品圖片</h6>
+        <h6 style={{ left: '500px' }}>商品名稱</h6>
+        <h6 style={{ left: '700px' }}>單價</h6>
+        <h6 style={{ left: '900px' }}>數量</h6>
         <h6 style={{ left: '1100px' }}>總計</h6>
         <h6 style={{ left: '1210px' }}>操作</h6>
       </div>
+      <hr className="jhr" />
       <CartList
         myCart={myCart}
         setMyCart={setMyCart}
@@ -159,7 +163,6 @@ function CartProduct(props) {
         cartamount={cartamount}
         setCartAmount={setCartAmount}
       />
-      <hr className="jhr" />
       <div className="submit">
         <div
           style={{
@@ -216,11 +219,13 @@ function CartProduct(props) {
             marginBottom: '30px',
           }}
         >
-          <select
+          <Select
+            placeholder="寄送方式"
             style={{
-              fontSize: '18px',
+              //   fontSize: '18px',
               width: '275px',
-              height: '40px',
+              marginTop: '0',
+              //   height: '40px',
             }}
             onChange={() => {
               if (deliveryCharge === 0) {
@@ -230,12 +235,16 @@ function CartProduct(props) {
               }
             }}
           >
-            <option onClick={() => setDeliveryCharge(0)}>到店取貨(Free)</option>
-            <option onClick={() => setDeliveryCharge(500)}>
+            <Select.Option onClick={() => setDeliveryCharge(0)}>
+              到店取貨(Free)
+            </Select.Option>
+            <Select.Option onClick={() => setDeliveryCharge(500)}>
               宅配到府(+$500)
-            </option>
-          </select>
-          <h6 style={{ color: '#C67334' }}>${deliveryCharge}</h6>
+            </Select.Option>
+          </Select>
+          <h6 style={{ color: '#C67334', marginTop: '35px' }}>
+            ${deliveryCharge}
+          </h6>
         </div>
 
         <div
@@ -249,8 +258,10 @@ function CartProduct(props) {
           <div></div>
           <div
             style={{
+              marginTop: '40px',
+              marginBottom: '30px',
               backgroundColor: 'black',
-              width: '250px',
+              width: '1200px',
               height: '1px',
             }}
           ></div>
@@ -260,14 +271,13 @@ function CartProduct(props) {
             display: 'flex',
             letterSpacing: '3px',
             justifyContent: 'space-between',
-            // marginTop: '30px',
           }}
         >
           <div></div>
-          <h6 style={{ color: '#C67334' }}>${totalPrice}</h6>
+          <h6 className="jtotal">${totalPrice}</h6>
         </div>
         <Link to="deliveryinfo" className="btn3">
-          買單
+          <h5>結帳</h5>
         </Link>
       </div>
     </>

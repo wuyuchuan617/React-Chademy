@@ -86,69 +86,87 @@ function App() {
   const [totalPrice, setTotalPrice] = useState(0)
   const [subtotal, setSubtoal] = useState(0)
   const [resetShow, setResetShow] = useState(0)
-  const [showDashBoard, setDashboard] = useState(false)
   const [typeofProduct, setTypeofProduct] = useState(1)
   //-----------------------------------------------------------
-  return showDashBoard ? (
+  return (
     <Router>
       <>
-        <Switch>
-          {/* 404找不到網頁，需要放在switch路由表最後一個 */}
-          <Route path="/dashboard">
-            <ManagerOrder
-              showDashBoard={showDashBoard}
-              setDashboard={setDashboard}
-            />
-          </Route>
-        </Switch>
-      </>
-    </Router>
-  ) : (
-    <Router>
-      <>
-        <CHNavbar
-          cartamount={cartamount}
-          setCartAmount={setCartAmount}
-          resetShow={resetShow}
-          setTypeofProduct={setTypeofProduct}
-        />
-
         <ScrollToTop>
           <Switch>
             {/* 首頁頁面 */}
             <Route exact path="/">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <Home />
             </Route>
-
+            {/* 管理後台 */}
+            <Route path="/dashboard">
+              <ManagerOrder />
+            </Route>
             {/* 登入 */}
             <Route path="/login">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <Login />
             </Route>
-
             {/* 註冊 */}
             <Route path="/register">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <Register />
             </Route>
-
             <Route path="/reset-password">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <Resetpassword />
             </Route>
-
             {/* 會員中心 */}
             <Route path="/member-center">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <MemberIndex
                 cartamount={cartamount}
                 setCartAmount={setCartAmount}
               />
             </Route>
-
             {/* 品牌故事頁面 */}
             <Route path="/brand">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <Brand />
             </Route>
-
             {/* 產品頁面 */}
             <Route exact path="/productlist">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <ProductList
                 cartamount={cartamount}
                 setCartAmount={setCartAmount}
@@ -156,32 +174,68 @@ function App() {
                 setResetShow={setResetShow}
               />
             </Route>
-
             <Route path="/product/:sid?">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <Product cartamount={cartamount} setCartAmount={setCartAmount} />
             </Route>
-
             <Route path="/review/:po?">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <Review />
             </Route>
-
             <Route path="/custom">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <Custom />
             </Route>
-
             {/* 二手頁面 */}
             <Route path="/secondhand_form_edit/:sid?">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <SecondhandFormEdit />
             </Route>
             <Route path="/secondhand_form">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <SecondhandForm />
             </Route>
-
             <Route path="/secondhand_list">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <SecondhandList footer={footer} setFooter={setFooter} />
             </Route>
-
             <Route path="/secondhand_product/:sid?">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <SecondhandProduct
                 cartamount={cartamount}
                 setCartAmount={setCartAmount}
@@ -189,35 +243,69 @@ function App() {
                 setResetShow={setResetShow}
               />
             </Route>
-
             <Route path="/review_member">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <ReviewMember />
             </Route>
-
             <Route path="/member-center/myproduct">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <Myproduct />
             </Route>
-
             {/* 募資頁面 */}
             <Route path="/fundhomepage">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <FundHomepage />
             </Route>
-
             <Route path="/fundlist">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <FundList />
             </Route>
-
             <Route path="/funditem/:sid?">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <FundItem cartamount={cartamount} setCartAmount={setCartAmount} />
             </Route>
-
             <Route path="/fundform">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <FundForm />
             </Route>
-
             {/* 競標頁面 */}
-
             <Route path="/pages">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <Pages
                 cartamount={cartamount}
                 setCartAmount={setCartAmount}
@@ -227,13 +315,23 @@ function App() {
                 setMyCart={setMyCart}
               />
             </Route>
-
             {/* 課程頁面 */}
             <Route exact path="/Workshop">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <Workshop />
             </Route>
-
             <Route exact path="/WorkshopList/:sid?">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <WorkshopList
                 cartamount={cartamount}
                 setCartAmount={setCartAmount}
@@ -242,23 +340,43 @@ function App() {
                 setMyCart={setMyCart}
               />
             </Route>
-
             {/* 部落格頁面 */}
             <Route exact path="/blog">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <Blog />
             </Route>
-
             <Route exact path="/BlogList/:sid?">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <BlogList />
             </Route>
-
             {/* 會員頁面 */}
             <Route path="/about">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <Home />
             </Route>
-
             {/* 購物車頁面 */}
             <Route path="/cartproduct">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <CartProduct
                 myCart={myCart}
                 cartamount={cartamount}
@@ -276,8 +394,13 @@ function App() {
                 setCartAmount={setCartAmount}
               />
             </Route>
-
             <Route path="/cartbid">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <CartBid
                 myCart={myCart}
                 cartamount={cartamount}
@@ -295,8 +418,13 @@ function App() {
                 setCartAmount={setCartAmount}
               />
             </Route>
-
             <Route path="/cartsecondhand">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <CartSecondHand
                 myCart={myCart}
                 cartamount={cartamount}
@@ -314,8 +442,13 @@ function App() {
                 setCartAmount={setCartAmount}
               />
             </Route>
-
             <Route path="/cartclass">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <CartClass
                 myCart={myCart}
                 cartamount={cartamount}
@@ -333,8 +466,13 @@ function App() {
                 setTypeofProduct={setTypeofProduct}
               />
             </Route>
-
             <Route path="/cartfund">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <CartFund
                 myCart={myCart}
                 cartamount={cartamount}
@@ -352,8 +490,13 @@ function App() {
                 setCartAmount={setCartAmount}
               />
             </Route>
-
             <Route path="/deliveryinfo">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <DeliveryInfo
                 name={name}
                 setName={setName}
@@ -367,8 +510,13 @@ function App() {
                 setAdress={setAdress}
               />
             </Route>
-
             <Route path="/checkinfo">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <CheckInfo
                 totalPrice={totalPrice}
                 myCart={myCart}
@@ -383,17 +531,27 @@ function App() {
                 setTypeofProduct={setTypeofProduct}
               />
             </Route>
-
             <Route path="/checkfinish">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <Finish
                 orderNo={orderNo}
                 cartamount={cartamount}
                 setCartAmount={setCartAmount}
               />
             </Route>
-
             {/* 404找不到網頁，需要放在switch路由表最後一個 */}
             <Route path="*">
+              <CHNavbar
+                cartamount={cartamount}
+                setCartAmount={setCartAmount}
+                resetShow={resetShow}
+                setTypeofProduct={setTypeofProduct}
+              />
               <NotFoundPage />
             </Route>
           </Switch>

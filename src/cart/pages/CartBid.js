@@ -139,13 +139,13 @@ function CartBid(props) {
             <h5>購物車</h5>
           </div>
           <div className="titlecenter2">
-            <h5>物流資訊</h5>
+            <h5 style={{ color: '#707070' }}>物流資訊</h5>
           </div>
           <div className="titlecenter3">
-            <h5>付款資訊</h5>
+            <h5 style={{ color: '#707070' }}>付款資訊</h5>
           </div>
           <div className="titlecenter4">
-            <h5>成功付款</h5>
+            <h5 style={{ color: '#707070' }}>成功付款</h5>
           </div>
         </div>
       </div>
@@ -188,11 +188,14 @@ function CartBid(props) {
       </div>
       <hr className="jhr" />
       <div className="wrap">
-        <h6 style={{ left: '780px' }}>單價</h6>
-        <h6 style={{ left: '940px' }}>數量</h6>
+        <h6 style={{ left: '240px' }}>商品圖片</h6>
+        <h6 style={{ left: '500px' }}>商品名稱</h6>
+        <h6 style={{ left: '700px' }}>單價</h6>
+        <h6 style={{ left: '900px' }}>數量</h6>
         <h6 style={{ left: '1100px' }}>總計</h6>
         {/* <h6 style={{ left: '1210px' }}>操作</h6> */}
       </div>
+      <hr className="jhr" />
       <div className="cartlist">
         <ul>
           {myCart.map((item, i) => {
@@ -223,6 +226,7 @@ function CartBid(props) {
                       </h6> */}
                     </Link>
                   </div>
+                  <hr className="jhr" />
                 </li>
               )
             }
@@ -241,7 +245,6 @@ function CartBid(props) {
         cartamount={cartamount}
         setCartAmount={setCartAmount}
       /> */}
-      <hr className="jhr" />
       <div className="submit">
         <div
           style={{

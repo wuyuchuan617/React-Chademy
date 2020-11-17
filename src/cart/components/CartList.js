@@ -110,8 +110,8 @@ function CartList(props) {
                   <div className="listitem">
                     {/* src={require('../../img/' + item.photo)} */}
                     <img src={'http://localhost:3001/img/' + item.img} alt="" />
-                    <h6 style={{ left: '450px' }}>{item.id}</h6>
-                    <h6 style={{ left: '750px' }}>${item.price}</h6>
+                    <h6 style={{ left: '500px' }}>{item.id}</h6>
+                    <h6 style={{ left: '700px' }}>${item.price}</h6>
                     <div className="listqty">
                       <h6
                         style={{ left: '10px', cursor: 'pointer' }}
@@ -125,7 +125,8 @@ function CartList(props) {
 
                       <h6 style={{ left: '50px' }}>{item.amount}</h6>
                       <h6
-                        style={{ left: '80px', cursor: 'pointer' }}
+                        className="j_add"
+                        style={{ left: '80px' }}
                         onClick={() => updateCartToLocalStorage(item)}
                       >
                         <MdAdd />
@@ -142,11 +143,12 @@ function CartList(props) {
                           : ''
                       }
                     >
-                      <h6 style={{ left: '1220px' }}>
+                      <h6 style={{ left: '1220px', fontSize: '20px' }}>
                         <BsTrash />
                       </h6>
                     </Link>
                   </div>
+                  <hr />
                 </li>
               )
             }

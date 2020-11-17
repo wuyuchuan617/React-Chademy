@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom'
 import SameAdress from '../components/SameAdress'
 import DefaultAddress from '../components/DefualtAddress'
 import PhoneDrive from '../components/PhoneDrive'
-
+import { Checkbox } from 'antd'
 import { countries, townships } from '../components/Data'
 import Donated from '../components/Donated'
+
 // import './style/jay.scss'
 
 function DeliveryInfo(props) {
@@ -47,7 +48,7 @@ function DeliveryInfo(props) {
           <div className="layoutcircle">
             <div
               className="defaultcircle"
-              style={{ backgroundColor: '#436464' }}
+              style={{ backgroundColor: '#c77334' }}
             ></div>
           </div>
           <div className="activecircle"></div>
@@ -60,16 +61,16 @@ function DeliveryInfo(props) {
         </div>
         <div className="progresstitle">
           <div className="titlecenter1">
-            <h5>購物車</h5>
+            <h5 style={{ color: '#707070' }}>購物車</h5>
           </div>
           <div className="titlecenter2">
             <h5>物流資訊</h5>
           </div>
           <div className="titlecenter3">
-            <h5>付款資訊</h5>
+            <h5 style={{ color: '#707070' }}>付款資訊</h5>
           </div>
           <div className="titlecenter4">
-            <h5>成功付款</h5>
+            <h5 style={{ color: '#707070' }}>成功付款</h5>
           </div>
         </div>
       </div>
@@ -114,6 +115,7 @@ function DeliveryInfo(props) {
             height: '40px',
             marginTop: '30px',
             marginRight: '20px',
+            padding: '10px',
           }}
           value={city}
           onChange={(e) => {
@@ -133,6 +135,7 @@ function DeliveryInfo(props) {
             width: '290px',
             height: '40px',
             marginTop: '30px',
+            padding: '10px',
           }}
           onChange={(e) => {
             setArea(+e.target.value)
@@ -160,8 +163,8 @@ function DeliveryInfo(props) {
         <label>
           <h5>發票地址</h5>
         </label>
-        <input
-          type="checkbox"
+        <Checkbox
+          // type="checkbox"
           name="sameabove"
           style={{
             marginLeft: '10px',
@@ -178,13 +181,15 @@ function DeliveryInfo(props) {
             }
           }}
           checked={showadress}
-        />
-        同寄送地址
+        >
+          同寄送地址
+        </Checkbox>
         <input
           type="radio"
           name="sameabove"
           style={{
             marginLeft: '10px',
+            marginRight: '5px',
           }}
           checked={phoneDrive}
           onClick={(e) => {
@@ -202,6 +207,7 @@ function DeliveryInfo(props) {
           name="sameabove"
           style={{
             marginLeft: '10px',
+            marginRight: '5px',
           }}
           checked={donated}
           onClick={(e) => {
