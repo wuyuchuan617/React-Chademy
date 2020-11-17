@@ -263,7 +263,7 @@ function PendingOrder(props) {
                   src={'http://localhost:3001/img/' + thisimg}
                   alt=""
                 />
-                <div style={{ marginLeft: '20px' }}>
+                <div style={{ marginLeft: '20px', width: '350px' }}>
                   <h5 style={{ marginTop: '10px' }}>訂單編號:{item.PO_NO}</h5>
                   <h6 style={{ marginTop: '50px' }}>
                     訂購日期:
@@ -273,24 +273,27 @@ function PendingOrder(props) {
                   <h6 style={{ marginTop: '30px' }}>訂單金額:{item.total}</h6>
                 </div>
                 <div className="j_box1">
-                  <Dropdown
-                    overlay={menu}
-                    trigger={['click']}
-                    placement={'bottomRight'}
-                    onClick={() => {
-                      setMyPO_NO(item.PO_NO)
-                      setMyDate(item.order_date)
-                    }}
-                  >
-                    <a
-                      className="ant-dropdown-link"
-                      onClick={(e) => e.preventDefault()}
+                  <div style={{ marginLeft: '90px' }}>
+                    <Dropdown
+                      overlay={menu}
+                      trigger={['click']}
+                      placement={'bottomRight'}
+                      onClick={() => {
+                        setMyPO_NO(item.PO_NO)
+                        setMyDate(item.order_date)
+                      }}
                     >
-                      <h4>
-                        <GrMore />
-                      </h4>
-                    </a>
-                  </Dropdown>
+                      <a
+                        className="ant-dropdown-link"
+                        onClick={(e) => e.preventDefault()}
+                      >
+                        <h4>
+                          <GrMore />
+                        </h4>
+                      </a>
+                    </Dropdown>
+                  </div>
+
                   <h6
                     style={{ marginTop: '200px', cursor: 'pointer' }}
                     onClick={() => {

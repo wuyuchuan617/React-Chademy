@@ -13,7 +13,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import { Modal, Button } from 'antd'
 import { withRouter } from 'react-router-dom'
 
-function FinishOrder(props) {
+function FinishedOrder(props) {
   const { setMyPO_NO, setMyDate, getAll } = props
   const [member, setMember] = useState('')
   const [PO_NO, setPO_NO] = useState('')
@@ -37,7 +37,7 @@ function FinishOrder(props) {
   async function getAllorderFromServer(value) {
     // const newTotal = { total: total + value }
 
-    const url = `http://localhost:3001/j_cart/listpending?member=${member}`
+    const url = `http://localhost:3001/j_cart/listfinish?member=${member}`
 
     const request = new Request(url, {
       method: 'GET',
@@ -263,7 +263,7 @@ function FinishOrder(props) {
                   src={'http://localhost:3001/img/' + thisimg}
                   alt=""
                 />
-                <div style={{ marginLeft: '20px' }}>
+                <div style={{ marginLeft: '20px', width: '350px' }}>
                   <h5 style={{ marginTop: '10px' }}>訂單編號:{item.PO_NO}</h5>
                   <h6 style={{ marginTop: '50px' }}>
                     訂購日期:
@@ -273,24 +273,27 @@ function FinishOrder(props) {
                   <h6 style={{ marginTop: '30px' }}>訂單金額:{item.total}</h6>
                 </div>
                 <div className="j_box1">
-                  <Dropdown
-                    overlay={menu}
-                    trigger={['click']}
-                    placement={'bottomRight'}
-                    onClick={() => {
-                      setMyPO_NO(item.PO_NO)
-                      setMyDate(item.order_date)
-                    }}
-                  >
-                    <a
-                      className="ant-dropdown-link"
-                      onClick={(e) => e.preventDefault()}
+                  <div style={{ marginLeft: '90px' }}>
+                    <Dropdown
+                      overlay={menu}
+                      trigger={['click']}
+                      placement={'bottomRight'}
+                      onClick={() => {
+                        setMyPO_NO(item.PO_NO)
+                        setMyDate(item.order_date)
+                      }}
                     >
-                      <h4>
-                        <GrMore />
-                      </h4>
-                    </a>
-                  </Dropdown>
+                      <a
+                        className="ant-dropdown-link"
+                        onClick={(e) => e.preventDefault()}
+                      >
+                        <h4>
+                          <GrMore />
+                        </h4>
+                      </a>
+                    </Dropdown>
+                  </div>
+
                   <h6
                     style={{ marginTop: '200px', cursor: 'pointer' }}
                     onClick={() => {
@@ -389,4 +392,4 @@ function FinishOrder(props) {
     </>
   )
 }
-export default withRouter(FinishOrder)
+export default withRouter(FinishedOrder)
