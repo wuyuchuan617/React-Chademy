@@ -7,13 +7,17 @@ import '../../common_components/Aside/index.scoped.scss'
 import '../../member/MemberCenter/index.scoped.scss'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
-import { Radio } from 'antd'
-// import { Select } from 'antd'
+import { Radio, Form } from 'antd'
+
+import { Select } from 'antd'
 function SecondhandForm() {
   const [value, setValue] = useState(0)
   const [value2, setValue2] = useState(0)
   const [value3, setValue3] = useState(0)
-  // const { Option } = Select
+  const { Option } = Select
+  // function handleChange(value) {
+  //   console.log(`selected ${value}`)
+  // }
   const onChange = (e) => {
     setValue(e.target.value)
   }
@@ -227,6 +231,19 @@ function SecondhandForm() {
               </div>
               <div className="i_formset">
                 <label htmlFor="categories">商品種類</label>
+                {/* <Form.Item name="categories_sid">
+                  <Select
+                    defaultValue="lucy"
+                    style={{ width: 120 }}
+                    onChange={handleChange}
+                  >
+                    <Option value="1">Jack</Option>
+                    <Option value="2">Lucy</Option>
+                    <Option value="3">Lucy</Option>
+                    <Option value="4">Lucy</Option>
+                    <Option value="5">Lucy</Option>
+                  </Select>
+                </Form.Item> */}
                 <select
                   id="categories"
                   className="i_formstyle i_formwidth"

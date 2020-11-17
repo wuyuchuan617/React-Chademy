@@ -260,3 +260,54 @@
   top: 330px;
   left: 563px;
 }
+
+@media screen and (max-width: 375px) {
+  .pot {
+    width: 10px;
+    height: 10px;
+    top: 245px;
+    left: 45px;
+  }
+  .pot2 {
+    top: 232px;
+    left: 32px;
+  }
+
+  .pot2.active {
+    top: 223px;
+    left: 18px;
+  }
+
+  .pod {
+    display: none;
+  }
+
+  .pod2 {
+    display: none;
+  }
+
+  .styles_container__2pRR5 {
+    width: 360px !important;
+    height: 200px !important;
+  }
+
+  .pox {
+    display: none;
+  }
+
+  .pox2 {
+    display: none;
+  }
+
+  .hover_card2 {
+    display: none;
+  }
+
+  .pod3 {
+    display: none;
+  }
+
+  .styles_wrapper__3KXDn {
+    width: 100%;
+  }
+}

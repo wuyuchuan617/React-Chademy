@@ -36,6 +36,7 @@ body {
   letter-spacing: 2px;
   font-size: 14px;
   cursor: pointer;
+  transition: 0.5s;
 }
 
 .i_product_set {
@@ -80,6 +81,7 @@ body {
 
 .i_like {
   color: #475050;
+  cursor: pointer;
 }
 /* fiter css */
 .i_detail {
@@ -173,7 +175,7 @@ body {
 }
 
 .i_box a:hover {
-  color: #f87d09;
+  color: #c77334;
 }
 
 .i_num a {
@@ -193,5 +195,34 @@ body {
 }
 
 .ant-breadcrumb a:hover {
-  color: #f87d09;
+  color: #c77334;
+}
+
+.i_info_img {
+  display: inline;
+}
+
+.i_info_img img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+.i_inline {
+  display: inline !important;
+}
+
+.i_text_p12 {
+  font-size: 12px;
+}
+
+.i_block {
+  display: block;
+}
+
+.i_btn5:hover {
+  background-color: #c77334;
+  color: white;
 }

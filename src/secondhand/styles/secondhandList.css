@@ -7,10 +7,10 @@ body {
   margin: 0;
   padding: 0;
 }
-.i_fix{
+.i_fix {
   position: sticky;
-  display:block;
-  top:200px;
+  display: block;
+  top: 200px;
 }
 .i_fv {
   width: 100%;
@@ -222,4 +222,3 @@ body {
 .i_li li:hover {
   color: rgb(199, 115, 52);
 }
-

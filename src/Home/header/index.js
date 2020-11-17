@@ -8,9 +8,11 @@ function Header() {
 
   useEffect(() => {
     const iw_video = document.querySelector('.iw_video')
+
     setTimeout(() => {
+      iw_video.currentTime = 15
       iw_video.play()
-    }, 7000)
+    }, 7800)
   }, [])
   return (
     <header>

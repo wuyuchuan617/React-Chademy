@@ -7,6 +7,11 @@ import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 
 function TextArea(props) {
+  const [heart1, setHeart1] = useState(false)
+  const heartFill = {
+    color: '#C77334',
+    transition: '.5s',
+  }
   const isLogged = useSelector((state) => state.user.logged)
 
   const {
@@ -44,7 +49,15 @@ function TextArea(props) {
       <div className="i_product_set">
         <div className="i_product_name">{item.product_name}</div>
         <div className="i_product_no">{item.product_no}</div>
-        <div className="i_like">♥︎</div>
+        <div
+          className="i_like"
+          onClick={() => {
+            setHeart1(!heart1)
+          }}
+          style={heart1 ? heartFill : null}
+        >
+          ♥︎
+        </div>
       </div>
       <div className="i_product_description mt-5">
         <p>

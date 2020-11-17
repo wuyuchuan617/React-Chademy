@@ -3,14 +3,81 @@ import React, { useState } from 'react'
 
 function Filter() {
   const [show, setShow] = useState(false)
+  const [show2, setShow2] = useState(false)
   return (
     <div className="row">
       <div className="i_detail">
         <div className="i_filter">
-          <div className="i_list d-flex justify-content-between align-items-center pl-3 ">
-            <p className="mr-5 mt-3">賣家資訊</p>
+          <div
+            className="i_list d-flex justify-content-between align-items-center pl-3 "
+            onClick={() => {
+              setShow2(!show2)
+            }}
+          >
+            <p className="mr-5 mt-3">賣家評價</p>
             <p className="mr-3 mt-3">＋</p>
           </div>
+          {show2 && (
+            <div className="i_info ml-3">
+              <div className="mb-4">
+                <div className="mb-3 mt-3">
+                  <div className="i_info_img mr-1">
+                    <img
+                      src={
+                        'https://i.epochtimes.com/assets/uploads/2011/02/1102180609161487_1.jpg'
+                      }
+                      alt=""
+                    />
+                  </div>
+                  <div className="i_title mb-3 mt-5 i_inline ">Henry</div>
+                </div>
+
+                <div className="i_text i_block">
+                  商品狀況維持得很好, 服務態度親切友善，是個好賣家👍👍👍
+                  <div className=" mb-3 mt-1  i_text_p12">2020-08-16 14:27</div>
+                </div>
+              </div>
+              <div className="mb-4">
+                <div className="mb-3 mt-3">
+                  <div className="i_info_img mr-1">
+                    <img
+                      src={
+                        'https://s2.lookernew.com/imgs/201904/23/3/15560032883384.jpg'
+                      }
+                      alt=""
+                    />
+                  </div>
+                  <div className="i_title mb-3 mt-5 i_inline ">Ann</div>
+                </div>
+
+                <div className="i_text i_block">
+                  ❤❤❤以這麼優惠的價格買到這麼經典的椅子真是賺到了!!!謝謝良心賣家，下次還有購買椅子的需求絕對首先找這位賣家的❤❤❤
+                  <div className=" mb-3 mt-1  i_text_p12">2020-03-16 08:27</div>
+                </div>
+              </div>
+              <div className="mb-4">
+                <div className="mb-3 mt-3">
+                  <div className="i_info_img mr-1">
+                    <img
+                      src={
+                        'https://i1.wp.com/popbee.com/image/2020/10/8-outfits-from-emily-in-paris.jpg?quality=95&'
+                      }
+                      alt=""
+                    />
+                  </div>
+                  <div className="i_title mb-3 mt-5 i_inline ">Emily</div>
+                </div>
+
+                <div className="i_text i_block">
+                  出貨速度快，價格優惠，商品品質好，值得信賴的賣家💪💪💪💪
+                  服務態度好 解說詳細 謝謝老闆細心解說商品 細心解說 商品完整
+                  使用中 後續沒有問題會推薦朋友 老闆人很熱心🙏
+                  解說十分詳細有機會會回購
+                  <div className=" mb-3 mt-1  i_text_p12">2019-11-25 22:48</div>
+                </div>
+              </div>
+            </div>
+          )}
 
           <div
             className="i_list d-flex justify-content-between align-items-center pr-3 pl-3"
@@ -21,6 +88,7 @@ function Filter() {
             <p className="mr-5 mt-3">購買須知</p>
             <p className="ml-5 mt-3">＋</p>
           </div>
+
           {show && (
             <div className="i_info ml-3">
               <div className="i_title mb-3 mt-5">配送費</div>

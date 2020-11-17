@@ -292,7 +292,7 @@ function ProductList(props) {
       <div className="i_card_info mt-4 d-flex justify-content-between">
         <div className="i_user">
           <div className="i_user_name">
-            <img src={memberImg} alt="" />
+            <img src={memberImg} alt="" className="mr-1" />
             <p>{memberName}</p>
           </div>
           <div className="i_user_star mt-2">
