@@ -7,7 +7,7 @@ import { Layout } from 'antd'
 
 import Aside from '../common_components/Aside'
 
-import WheelExample from './WheelExample'
+import WinWheel from './WinWheel'
 
 // --------------------- 以下 import 會員頁面 --------------------
 
@@ -99,7 +99,7 @@ function MemberIndex({ cartamount, setCartAmount }) {
               </Route>
 
               <Route path={`${path}/wheel`}>
-                <WheelExample></WheelExample>
+                <WinWheel></WinWheel>
               </Route>
 
               <Route path={`${path}/coupon`}>

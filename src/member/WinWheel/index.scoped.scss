@@ -1,0 +1,32 @@
+
+#canvasContainer {
+  position: relative;
+  width: 300px;
+}
+
+#canvas {
+  z-index: 1;
+}
+
+#prizePointer {
+  position: absolute;
+  left: 125px;
+  top: -50px;
+  z-index: 999;
+}
+
+
+.wheel_container {
+  // display: inline-block;
+  min-height: 500px;
+
+  display: grid;
+  place-items: center;
+
+  position: relative;
+  
+  .start_button {
+    position: absolute;
+    bottom: 0;
+  }
+}
