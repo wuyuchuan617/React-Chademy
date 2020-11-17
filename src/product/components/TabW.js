@@ -45,7 +45,10 @@ function TabW(props) {
                 </div>
               </div>
               {tab === 1 ? (
-                <div class="intro">
+                <div
+                  class="intro"
+                  style={{ backgroundColor: 'white', transition: '1s' }}
+                >
                   <p
                     style={{ opacity: 1 }}
                     className="titleEN noto-serif text-center"
@@ -105,9 +108,9 @@ function TabW(props) {
               )}
 
               {tab === 3 ? (
-                <div class="intro">
+                <div class="intro" style={{ backgroundColor: '#5f6b6b' }}>
                   <p
-                    style={{ opacity: 1 }}
+                    style={{ opacity: 1, color: 'white' }}
                     className="titleEN noto-serif text-center"
                   >
                     看得見的自由、舒適。 感受與家人好友相聚的單純喜悅。
