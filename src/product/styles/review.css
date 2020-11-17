@@ -183,7 +183,7 @@ hr {
 /* .ant-rate-star.ant-rate-star-full i svg {
   color: #C77334;
 } */
-.ant-rate-star.ant-rate-star-zero {
+.ant-rate-star.ant-rate-star-zero svg{
   color: #ded5c6 !important;
 }
 

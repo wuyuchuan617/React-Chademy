@@ -315,12 +315,20 @@ function ProductFirst(props) {
             <div className="bigDesc">
               <div className="product-desc">
                 <p className="w_comP">
-                  Adelaide是一款優雅的小傑作，無論從哪個角度看都美貌不減，而且無比舒適。纖細的有機線條營造了輕盈有機外觀，邀請您坐下來欣賞精緻的丹麥設計。
+                  60年前的老孔雀椅 ，路力重新詮釋，保留經典，老椅新生。 2017IFDA
+                  旭川國際家具競賽入選肯定。 ​
                 </p>
               </div>
               <div className="product-desc">
                 <p className="w_comP">
-                  Adelaide是一款優雅的小傑作，無論從哪個角度看都美貌不減，而且無比舒適。纖細的有機線條營造了輕盈有機外觀，邀請您坐下來欣賞精緻的丹麥設計。
+                  新的燕椅承襲老椅的台、和、洋混血基因，讓它能自由自在地身處於各式各樣的風格空間。輕盈而敞開的後背，迎接日光灑落家中，悠遊在現代與復古之間。​
+                </p>
+              </div>
+              <div className="product-desc">
+                <p className="w_comP">
+                  Inherit the fusion characters with Taiwanese, Japanese and
+                  European from the old chair, Hirundo Chair fits well in all
+                  styles of places. With the minimalist design on the back.
                 </p>
               </div>
               {/* <div className="choose-area">

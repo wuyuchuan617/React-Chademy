@@ -5,6 +5,11 @@ function RecommendResult(props) {
 
   return (
     <>
+      {/* <div className=" productCard col-lg-4 col-md-6 col-sm-12">
+        <div className="productCardImg_recom">
+          <img src={require('../images/recommend.jpg')} alt="" />
+        </div>
+      </div> */}
       <div className=" productCard col-lg-4 col-md-6 col-sm-12">
         <div className="productCardImg_recom">
           <img

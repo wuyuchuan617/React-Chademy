@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Button } from 'antd'
+import React, { useState, useEffect } from 'react'
+// import { Button } from 'antd'
 import RecommendResult from '../components/RecommendResult'
 
 // const { Step } = Steps
@@ -63,6 +63,10 @@ function ProductRecommend(props) {
     setReturnFilter(data)
   }
 
+  useEffect(() => {
+    getClassFilterFromSQL()
+  }, [recommendColor])
+
   return (
     <>
       <div className="container ">
@@ -79,62 +83,67 @@ function ProductRecommend(props) {
         <div className="row justify-content-center steps-content d-flex">
           {/* <div className="steps-content "> */}
           {current === 0 ? (
-            <div className="col-6 w_recom_start">
-              <img src={require('../images/newbg.jpg')} alt="" />
+            <div className="col w_recom_start">
+              <img src={require('../images/start.jpg')} alt="" />
             </div>
           ) : (
             ''
           )}
 
           {current === 1 ? (
-            <div className="d-flex">
-              <div className=" productCard col-lg-4 col-md-6 col-sm-12">
-                <div
-                  className="productCardImg_recom"
-                  onClick={() => {
-                    setRecommendCate('lounge')
-                    setCurrent(current + 1)
-                  }}
-                >
-                  <img
-                    src={require('../images/newbg.jpg')}
-                    alt=""
+            <div>
+              <p className="noto-serif text-center rec_text">
+                請選擇擺設環境牆壁顏色風格
+              </p>
+              <div className="d-flex">
+                <div className=" productCard col-lg-4 col-md-6 col-sm-12">
+                  <div
+                    className="productCardImg_recom"
                     onClick={() => {
-                      // props.history.push('/product/' + item.sid)
-                    }}
-                  />
-                </div>
-
-                <p>Home</p>
-              </div>
-
-              <div className="productCard col-lg-4 col-md-6 col-sm-12">
-                <div className="productCardImg_recom">
-                  <img
-                    src={require('../images/newbg.jpg')}
-                    alt=""
-                    onClick={() => {
-                      setRecommendCate('stool')
+                      setRecommendCate('lounge')
                       setCurrent(current + 1)
                     }}
-                  />
+                  >
+                    <img
+                      src={require('../images/homee.jpg')}
+                      alt=""
+                      onClick={() => {
+                        // props.history.push('/product/' + item.sid)
+                      }}
+                    />
+                  </div>
+
+                  <p>Home</p>
                 </div>
 
-                <p>Restaurant</p>
-              </div>
-              <div className="productCard col-lg-4 col-md-6 col-sm-12">
-                <div className="productCardImg_recom">
-                  <img
-                    src={require('../images/newbg.jpg')}
-                    alt=""
-                    onClick={() => {
-                      setRecommendCate('armchair')
-                      setCurrent(current + 1)
-                    }}
-                  />
-                </div>
+                <div className="productCard col-lg-4 col-md-6 col-sm-12">
+                  <div className="productCardImg_recom">
+                    <img
+                      src={require('../images/kitchen.jpg')}
+                      alt=""
+                      onClick={() => {
+                        setRecommendCate('stool')
+                        setCurrent(current + 1)
+                      }}
+                    />
+                  </div>
 
-                <p>Office</p>
+                  <p>Restaurant</p>
+                </div>
+                <div className="productCard col-lg-4 col-md-6 col-sm-12">
+                  <div className="productCardImg_recom">
+                    <img
+                      src={require('../images/office.jpg')}
+                      alt=""
+                      onClick={() => {
+                        setRecommendCate('armchair')
+                        setCurrent(current + 1)
+                      }}
+                    />
+                  </div>
+
+                  <p>Office</p>
+                </div>
               </div>
             </div>
           ) : (
@@ -142,64 +151,69 @@ function ProductRecommend(props) {
           )}
 
           {current === 2 ? (
-            <div className="d-flex">
-              <div className=" productCard col-lg-4 col-md-6 col-sm-12">
-                <div
-                  className="productCardImg_recom"
-                  onClick={() => {
-                    setRecommendColor('米')
-                    setCurrent(current + 1)
-                  }}
-                >
-                  <img
-                    src={require('../images/newbg.jpg')}
-                    alt=""
-                    onClick={() => {
-                      // props.history.push('/product/' + item.sid)
+            <div>
+              <p className=" noto-serif text-center rec_text">
+                請選擇擺設環境牆壁顏色風格
+              </p>
+              <div className="d-flex">
+                <div className=" productCard col-lg-4 col-md-6 col-sm-12">
+                  <div
+                    className="productCardImg_recom"
+                    onClick={async () => {
+                      setRecommendColor('白')
+                      setCurrent(current + 1)
                     }}
-                  />
+                  >
+                    <img
+                      src={require('../images/cold.jpg')}
+                      alt=""
+                      onClick={() => {
+                        // props.history.push('/product/' + item.sid)
+                      }}
+                    />
+                  </div>
+
+                  <p>淺色系</p>
                 </div>
 
-                <p>淺色系</p>
-              </div>
-
-              <div className="productCard col-lg-4 col-md-6 col-sm-12">
-                <div
-                  className="productCardImg_recom"
-                  onClick={() => {
-                    setRecommendColor('綠')
-                    setCurrent(current + 1)
-                  }}
-                >
-                  <img
-                    src={require('../images/newbg.jpg')}
-                    alt=""
+                <div className="productCard col-lg-4 col-md-6 col-sm-12">
+                  <div
+                    className="productCardImg_recom"
                     onClick={() => {
-                      // props.history.push('/product/' + item.sid)
+                      setRecommendColor('綠')
+                      setCurrent(current + 1)
                     }}
-                  />
-                </div>
+                  >
+                    <img
+                      src={require('../images/warm.jpg')}
+                      alt=""
+                      onClick={() => {
+                        // props.history.push('/product/' + item.sid)
+                      }}
+                    />
+                  </div>
 
-                <p>彩色係</p>
-              </div>
-              <div className="productCard col-lg-4 col-md-6 col-sm-12">
-                <div
-                  className="productCardImg_recom"
-                  onClick={() => {
-                    setRecommendColor('褐')
-                    setCurrent(current + 1)
-                  }}
-                >
-                  <img
-                    src={require('../images/newbg.jpg')}
-                    alt=""
+                  <p>彩色係</p>
+                </div>
+                <div className="productCard col-lg-4 col-md-6 col-sm-12">
+                  <div
+                    className="productCardImg_recom"
                     onClick={() => {
-                      // props.history.push('/product/' + item.sid)
+                      setRecommendColor('橘')
+                      setCurrent(current + 1)
                     }}
-                  />
-                </div>
+                  >
+                    <img
+                      src={require('../images/whitec.jpg')}
+                      alt=""
+                      onClick={() => {
+                        // props.history.push('/product/' + item.sid)
+                      }}
+                    />
+                  </div>
 
-                <p>深色系</p>
+                  <p>深色系</p>
+                </div>
               </div>
             </div>
           ) : (
@@ -215,27 +229,45 @@ function ProductRecommend(props) {
         {/* </div> */}
 
         <div className="row justify-content-center">
-          <div className="steps-action">
+          <div className="steps-action col text-center w_com_real">
             {current === 0 && (
-              <Button type="primary" onClick={() => next()}>
-                Start
-              </Button>
+              <div
+                type="primary"
+                onClick={() => next()}
+                style={{
+                  margin: '0 0px',
+                  width: '39.5%',
+                  letterSpacing: '12px',
+                }}
+                className="btn_lessmargin more w_cart-btn w_recom"
+              >
+                開始
+              </div>
             )}
             {current > 0 && (
-              <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
-                Previous
-              </Button>
+              <div
+                style={{
+                  margin: '0 0px',
+                  width: '39.5%',
+                  letterSpacing: '12px',
+                }}
+                // type="primary"
+                onClick={() => prev()}
+                className="btn_lessmargin more w_cart-btn w_recom"
+              >
+                回上一步
+              </div>
             )}
-            {current > 0 && current < 3 && (
+            {/* {current > 0 && current < 2 && (
               <Button type="primary" onClick={() => next()}>
                 Next
               </Button>
-            )}
-            {current === 3 && (
+            )} */}
+            {/* {current === 3 && (
               <Button type="primary" onClick={() => getClassFilterFromSQL()}>
                 Done
               </Button>
-            )}
+            )} */}
           </div>
         </div>
       </div>

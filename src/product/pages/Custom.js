@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux'
 import CustomBanner from '../components/CustomBanner'
 import BreadcrumCustom from '../components/BreadcrumCustom'
 import TabW from '../components/TabW'
-import Cicle from '../components/Cicle'
+import Demo from '../components/Cicle'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
 import { Spin } from 'antd'
@@ -173,23 +173,13 @@ function Custom(props) {
                   >
                     <Select.Option value="white">
                       <span className="w_material">
-                        <img
-                          src={
-                            'https://www.brdr-kruger.com/wp-content/uploads/2019/06/09-ash-white-oiled.jpg'
-                          }
-                          alt=""
-                        />
+                        <img src={require('../images/white.jpg')} alt="" />
                       </span>
                       白櫟木
                     </Select.Option>
                     <Select.Option value="fumed">
                       <span className="w_material">
-                        <img
-                          src={
-                            'https://www.brdr-kruger.com/wp-content/uploads/2019/08/03-oak-fumed.jpg'
-                          }
-                          alt=""
-                        />
+                        <img src={require('../images/fumed.jpg')} alt="" />
                       </span>
                       古銅橡
                     </Select.Option>
@@ -209,34 +199,19 @@ function Custom(props) {
                   >
                     <Select.Option value="weaved">
                       <span className="w_material">
-                        <img
-                          src={
-                            'https://www.brdr-kruger.com/wp-content/uploads/2019/06/paper-weaved.jpg'
-                          }
-                          alt=""
-                        />
+                        <img src={require('../images/weaved.jpg')} alt="" />
                       </span>
                       編織
                     </Select.Option>
                     <Select.Option value="gray">
                       <span className="w_material">
-                        <img
-                          src={
-                            'https://www.brdr-kruger.com/wp-content/uploads/2019/05/Grey-f-7833-c0158.jpg'
-                          }
-                          alt=""
-                        />
+                        <img src={require('../images/gray.jpg')} alt="" />
                       </span>
                       灰色
                     </Select.Option>
                     <Select.Option value="brown">
                       <span className="w_material">
-                        <img
-                          src={
-                            'https://www.brdr-kruger.com/wp-content/uploads/2019/06/leather-brown.jpg'
-                          }
-                          alt=""
-                        />
+                        <img src={require('../images/brown.jpg')} alt="" />
                       </span>
                       深咖啡
                     </Select.Option>
@@ -487,7 +462,7 @@ function Custom(props) {
       </Form>
 
       <TabW />
-      <Cicle />
+      <Demo />
       {/* <div className="container">
         <div className="row">
           <div className="w_title1">
