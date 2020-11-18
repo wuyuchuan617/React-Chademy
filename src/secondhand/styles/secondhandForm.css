@@ -44,6 +44,8 @@ body {
 
 .i_subslogan_form {
   font-size: 24px;
+  width: 100% !important;
+  border: none !important;
 }
 
 .i_title h1 {
@@ -220,19 +222,6 @@ select:focus {
 ::selection {
   background: #c77334;
   color: #fff;
-}
-
-select:focus option:checked {
-  background: #c77334;
-  color: #fff;
-}
-option:hover {
-  -webkit-appearance: none;
-}
-
-option:hover {
-  background: #c77334 !important;
-  color: #fff !important;
 }
 
 .i_formset label {
