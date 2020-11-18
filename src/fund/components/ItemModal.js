@@ -78,7 +78,7 @@ function ItemModal(props) {
             </div>
           </div>
           <div className="e_check">
-            <Radio>以詳閱募資條款</Radio>
+            <Radio>我已詳閱與同意募資條款</Radio>
           </div>
           <div className="e_my">
             欲贊助金額：
@@ -89,6 +89,7 @@ function ItemModal(props) {
               }
               parser={(value) => value.replace(/\$\s?|(,*)/g, '')}
               onChange={onChange}
+              step={100}
               // value={setInputPrice}
             />
           </div>

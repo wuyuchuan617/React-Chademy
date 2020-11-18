@@ -17,6 +17,7 @@ import LuckyModal from '../components/LuckyModal '
 import Img1 from '../images/draw11.png'
 import Img2 from '../images/draw22.png'
 
+
 import Button from 'antd/lib/button'
 import QueueAnim from 'rc-queue-anim'
 import Hpanimate from './Hpanimate'
