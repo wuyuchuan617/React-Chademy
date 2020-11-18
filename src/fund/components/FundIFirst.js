@@ -168,9 +168,10 @@ function FundIFirst(props) {
     console.log(data)
   }
 
-  useEffect(() => {
-    updateTotalToServer()
-  }, [heartItem.follow_status])
+  // useEffect(() => {
+  //   if (!heart) return
+  //   updateTotalToServer()
+  // }, [heart])
 
   useEffect(() => {
     getHeartFromServer()
@@ -270,6 +271,7 @@ function FundIFirst(props) {
                       e_follow_status: 1,
                     }
                     await setHeartItem(newHeartItem)
+                    updateTotalToServer()
                   } else {
                     deleteHeartToServer()
                     setHeart(false)
@@ -494,7 +496,6 @@ function FundIFirst(props) {
                 <span className="emdayp"> 一天前</span>
               </h4>
             </div>
-
 
             <div className="small_card">
               <h4 className="e_account">
