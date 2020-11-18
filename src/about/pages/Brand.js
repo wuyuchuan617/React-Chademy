@@ -14,6 +14,8 @@ import { UpOutlined } from '@ant-design/icons'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
+import Testfooter from '../components/Testfooter'
+
 function Brand(props) {
   useEffect(() => {
     AOS.init()
@@ -29,7 +31,6 @@ function Brand(props) {
       <Virtual />
       <PhysicalStore />
       <Partner />
-
       <BackTop
         visibilityHeight="2000"
         style={{

@@ -50,6 +50,7 @@ function Blog(props) {
       <BlogNewsSlider />
       <BookArticles />
       <BlogMasonry oneBlog={oneBlog} />
+
       <BackTop
         visibilityHeight="2000"
         style={{

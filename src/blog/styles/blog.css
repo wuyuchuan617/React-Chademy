@@ -6,13 +6,13 @@ header {
   margin-left: 8.5rem;
   margin-bottom: 50px;
 }
+.a_video {
+  width: 100% !important;
+}
 
 .wrap1100 {
   margin-left: 14.5rem;
   margin-bottom: 50px;
-}
-.a_video {
-  width: 100% !important;
 }
 
 .a_homeslogan {
