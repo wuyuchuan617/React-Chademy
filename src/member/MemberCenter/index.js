@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import request from '../../utils/request'
+import { useDispatch } from 'react-redux'
 
 import '../index.scoped.scss'
 import { Modal, Upload, Button, Form, Input, DatePicker, message } from 'antd'
@@ -10,6 +11,7 @@ import { LoadingOutlined, PlusOutlined } from '@ant-design/icons'
 function MemberCenter(props) {
   const [previewPhotoUrl, setPreviewPhotoUrl] = useState('')
   const [loading, setLoading] = useState(false)
+  const dispatch = useDispatch()
 
   const [form] = Form.useForm()
 
@@ -23,33 +25,38 @@ function MemberCenter(props) {
 
       success ? message.success(msg) : message.error(msg)
 
-      form.setFieldsValue(data) // 設定初始值去表單上
+      const { user: { users = {} } = {} } = JSON.parse(
+        localStorage['reduxState'] || '{}'
+      )
+
+      dispatch({ type: 'RENAME', payload: { ...users, ...data } })
+
+      getUserInfo()
     } catch (error) {
       console.warn(error)
     }
   }
 
+  async function getUserInfo() {
+    try {
+      const { data } = await request({
+        url: 'members/getUserInfo',
+        method: 'POST',
+      })
+
+      // 需要轉換為 Moment 物件，不然組件會噴錯而畫面卡住
+      if (data && data.birthday) {
+        data.birthday = moment(data.birthday)
+      }
+
+      form.setFieldsValue(data) // 設定初始值去表單上
+      setPreviewPhotoUrl(data.avatar) // 設定頭像
+    } catch (error) {
+      console.warn(error)
+    }
+  }
   // didmount拿所有資料
   useEffect(() => {
-    async function getUserInfo() {
-      try {
-        const { data } = await request({
-          url: 'members/getUserInfo',
-          method: 'POST',
-        })
-
-        // 需要轉換為 Moment 物件，不然組件會噴錯而畫面卡住
-        if (data && data.birthday) {
-          data.birthday = moment(data.birthday)
-        }
-
-        form.setFieldsValue(data) // 設定初始值去表單上
-        setPreviewPhotoUrl(data.avatar) // 設定頭像
-      } catch (error) {
-        console.warn(error)
-      }
-    }
-
     getUserInfo()
     console.log(' useEffect')
     // eslint-disable-next-line react-hooks/exhaustive-deps

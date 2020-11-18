@@ -25,6 +25,14 @@ function userReducer(state = initialState, action) {
         users: action.payload,
         error: '',
       }
+
+    // rename
+    case 'RENAME':
+      return {
+        logged: true, // 使用者非登入的
+        users: action.payload,
+        error: '',
+      }
     default:
       return state
   }
