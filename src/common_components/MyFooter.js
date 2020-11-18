@@ -5,7 +5,6 @@ import instagram from './images/instagram-brands.svg'
 import linkedin from './images/linkedin-brands.svg'
 import line from './images/line-brands.svg'
 import pinterest from './images/pinterest-brands.svg'
-import youtube from './images/youtube-brands.svg'
 
 function MyFooter() {
   return (
@@ -26,7 +25,6 @@ function MyFooter() {
               <img src={linkedin} alt="" />
               <img src={line} alt="" />
               <img src={pinterest} alt="" />
-              <img src={youtube} alt="" />
             </div>
           </div>
           <div className="row">

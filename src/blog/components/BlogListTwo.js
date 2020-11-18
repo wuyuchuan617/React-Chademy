@@ -6,8 +6,7 @@
 import React, { useEffect, useState } from 'react'
 
 import '../styles/bloglist.css'
-import imagewriter from '../images/48.png'
-import imagedemo from '../images/40.png'
+import imagedemo from '../images/48.png'
 
 import AOS from 'aos'
 import 'aos/dist/aos.css'

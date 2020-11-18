@@ -17,7 +17,7 @@ import imageblogfif from '../images/18_blog.jpeg'
 import imageblogfarmer from '../images/20_blog.jpeg'
 import imageblogstone from '../images/21_blog.jpeg'
 import imageblognature from '../images/22_blog.jpeg'
-import imagewriter from '../images/48.png'
+import imagewriter from '../images/40.png'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 

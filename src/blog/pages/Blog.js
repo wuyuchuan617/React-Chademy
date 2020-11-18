@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import BlogBanner from '../components/BlogBanner'
+import BookArticles from '../components/BookArticles'
 import BlogNewsSlider from '../components/BlogNewsSlider'
 import BlogMasonry from '../components/BlogMasonry'
 import { BackTop } from 'antd'
@@ -47,6 +48,7 @@ function Blog(props) {
         </div>
       </div>
       <BlogNewsSlider />
+      <BookArticles />
       <BlogMasonry oneBlog={oneBlog} />
       <BackTop
         visibilityHeight="2000"

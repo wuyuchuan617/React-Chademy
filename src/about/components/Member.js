@@ -7,6 +7,12 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/about.css'
 import imagemember from '../images/48.png'
+import imagemember1 from '../images/48-1.png'
+import imagemember2 from '../images/48-2.png'
+import imagemember3 from '../images/48-3.png'
+import imagemember4 from '../images/48-4.png'
+import imagemember5 from '../images/48-5.png'
+import imagemember6 from '../images/48-6.png'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
@@ -33,10 +39,10 @@ function Member() {
             >
               <p className="col-3 a_member2">
                 <img src={imagemember} />
-                EVA CHANG
+                Alice Chen
               </p>
               <p className="col-9 a_member3">
-                台北人，現居新竹，喜歡新竹比台北多，在古董裡慢慢生活的女子。興趣是做料理、烘焙、電影和音樂，最喜歡的動物是米克斯犬。認為理想人生是過不苟且、不將就、不隨波逐流的生活。享受在遙遠的國度做尋常的小事，環遊世界的古董旅行至今累積30幾個國家，未完待續。
+                台北人，現居台北，喜歡新竹比台北多，在古董裡慢慢生活的女子。興趣是做料理、烘焙、電影和音樂，最喜歡的動物是米克斯犬。認為理想人生是過不苟且、不將就、不隨波逐流的生活。享受在遙遠的國度做尋常的小事，環遊世界的古董旅行至今累積30幾個國家，未完待續。
               </p>
             </div>
 
@@ -49,11 +55,11 @@ function Member() {
                 data-aos-once="true"
               >
                 <p className="col-3 a_member2">
-                  <img src={imagemember} />
-                  EVA CHANG
+                  <img src={imagemember1} />
+                  John Chang
                 </p>
                 <p className="col-9 a_member3">
-                  台北人，現居新竹，喜歡新竹比台北多，在古董裡慢慢生活的女子。興趣是做料理、烘焙、電影和音樂，最喜歡的動物是米克斯犬。認為理想人生是過不苟且、不將就、不隨波逐流的生活。享受在遙遠的國度做尋常的小事，環遊世界的古董旅行至今累積30幾個國家，未完待續。
+                  德國人，現居台北，喜歡新竹比台北多，在古董裡慢慢生活的男子。興趣是做料理、烘焙、電影和音樂，最喜歡的動物是米克斯犬。認為理想人生是過不苟且、不將就、不隨波逐流的生活。享受在遙遠的國度做尋常的小事，環遊世界的古董旅行至今累積30幾個國家，未完待續。
                 </p>
               </div>
 
@@ -66,11 +72,11 @@ function Member() {
                   data-aos-once="true"
                 >
                   <p className="col-3 a_member2">
-                    <img src={imagemember} />
-                    EVA CHANG
+                    <img src={imagemember2} />
+                    Max Chang
                   </p>
                   <p className="col-9 a_member3">
-                    台北人，現居新竹，喜歡新竹比台北多，在古董裡慢慢生活的女子。興趣是做料理、烘焙、電影和音樂，最喜歡的動物是米克斯犬。認為理想人生是過不苟且、不將就、不隨波逐流的生活。享受在遙遠的國度做尋常的小事，環遊世界的古董旅行至今累積30幾個國家，未完待續。
+                    德國人，現居台北，喜歡新竹比台北多，在古董裡慢慢生活的男子。興趣是做料理、烘焙、電影和音樂，最喜歡的動物是米克斯犬。認為理想人生是過不苟且、不將就、不隨波逐流的生活。享受在遙遠的國度做尋常的小事，環遊世界的古董旅行至今累積30幾個國家，未完待續。
                   </p>
                 </div>
               </div>
@@ -87,11 +93,11 @@ function Member() {
               data-aos-once="true"
             >
               <p className="col-3 a_member2">
-                <img src={imagemember} />
-                EVA CHANG
+                <img src={imagemember3} />
+                David Wang
               </p>
               <p className="col-9 a_member3">
-                台北人，現居新竹，喜歡新竹比台北多，在古董裡慢慢生活的女子。興趣是做料理、烘焙、電影和音樂，最喜歡的動物是米克斯犬。認為理想人生是過不苟且、不將就、不隨波逐流的生活。享受在遙遠的國度做尋常的小事，環遊世界的古董旅行至今累積30幾個國家，未完待續。
+                英國人，現居台北，喜歡新竹比台北多，在古董裡慢慢生活的男子。興趣是做料理、烘焙、電影和音樂，最喜歡的動物是米克斯犬。認為理想人生是過不苟且、不將就、不隨波逐流的生活。享受在遙遠的國度做尋常的小事，環遊世界的古董旅行至今累積30幾個國家，未完待續。
               </p>
             </div>
             <div className="a_boxmemberfive">
@@ -103,11 +109,11 @@ function Member() {
                 data-aos-once="true"
               >
                 <p className="col-3 a_member2">
-                  <img src={imagemember} />
-                  EVA CHANG
+                  <img src={imagemember4} />
+                  Ann Wang
                 </p>
                 <p className="col-9 a_member3">
-                  台北人，現居新竹，喜歡新竹比台北多，在古董裡慢慢生活的女子。興趣是做料理、烘焙、電影和音樂，最喜歡的動物是米克斯犬。認為理想人生是過不苟且、不將就、不隨波逐流的生活。享受在遙遠的國度做尋常的小事，環遊世界的古董旅行至今累積30幾個國家，未完待續。
+                  土生土長的台北人，在古董裡慢慢生活的女子。興趣是做料理、烘焙、電影和音樂，最喜歡的動物是米克斯犬。認為理想人生是過不苟且、不將就、不隨波逐流的生活。享受在遙遠的國度做尋常的小事，環遊世界的古董旅行至今累積30幾個國家，未完待續。
                 </p>
               </div>
               <div className="a_boxmembersix">
@@ -119,11 +125,11 @@ function Member() {
                   data-aos-once="true"
                 >
                   <p className="col-3 a_member2">
-                    <img src={imagemember} />
-                    EVA CHANG
+                    <img src={imagemember5} />
+                    Jeff Lin
                   </p>
                   <p className="col-9 a_member3">
-                    台北人，現居新竹，喜歡新竹比台北多，在古董裡慢慢生活的女子。興趣是做料理、烘焙、電影和音樂，最喜歡的動物是米克斯犬。認為理想人生是過不苟且、不將就、不隨波逐流的生活。享受在遙遠的國度做尋常的小事，環遊世界的古董旅行至今累積30幾個國家，未完待續。
+                    土生土長的台北人，，在古董裡慢慢生活的男子。興趣是做料理、烘焙、電影和音樂，最喜歡的動物是米克斯犬。認為理想人生是過不苟且、不將就、不隨波逐流的生活。享受在遙遠的國度做尋常的小事，環遊世界的古董旅行至今累積30幾個國家，未完待續。
                   </p>
                 </div>
                 <div className="a_boxmemberseven">
@@ -135,11 +141,11 @@ function Member() {
                     data-aos-once="true"
                   >
                     <p className="col-3 a_member2">
-                      <img src={imagemember} />
-                      EVA CHANG
+                      <img src={imagemember6} />
+                      Cute Boy
                     </p>
                     <p className="col-9 a_member3">
-                      台北人，現居新竹，喜歡新竹比台北多，在古董裡慢慢生活的女子。興趣是做料理、烘焙、電影和音樂，最喜歡的動物是米克斯犬。認為理想人生是過不苟且、不將就、不隨波逐流的生活。享受在遙遠的國度做尋常的小事，環遊世界的古董旅行至今累積30幾個國家，未完待續。
+                      Chademy的吉祥物。興趣是做料理、烘焙、電影和音樂，最喜歡的動物是米克斯犬。認為理想人生是過不苟且、不將就、不隨波逐流的生活。享受在遙遠的國度做尋常的小事，環遊世界的古董旅行至今累積30幾個國家，未完待續。
                     </p>
                   </div>
                 </div>

@@ -282,8 +282,8 @@
   width: 9.375rem;
   height: 2.5rem;
   border: none;
-  background-color: #c77334;
-  color: #deddda;
+  background-color: #ded5c6;
+  color: #707070;
   letter-spacing: 0.2rem;
   margin-top: 0.5rem;
   margin-right: 15px;
@@ -293,12 +293,9 @@
 }
 
 .message-btn:hover {
-  color: #c77334;
-  border-top: 1.5px solid #c77334;
-  border-bottom: 1.5px solid #c77334;
-  background-color: #edece8;
-  letter-spacing: 0.5rem;
-  text-align: center;
+  color: white;
+
+  background-color: #c77334;
 }
 
 /*相關文章*/

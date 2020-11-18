@@ -5,7 +5,6 @@
 /* eslint-disable no-unused-vars */
 
 import React, { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux'
 import { BsFillHeartFill } from 'react-icons/bs'
 import '../styles/workshoplist.css'
 import imagemainone from '../images/34-1.png'
@@ -13,6 +12,8 @@ import imagemaintwo from '../images/34-2.png'
 import imagemainthree from '../images/34-3.png'
 import imagemainfour from '../images/34-4.png'
 import imagemainfive from '../images/34-5.png'
+
+import { useSelector } from 'react-redux'
 
 function WorkshopOne(props) {
   const { item, cartamount, setCartAmount } = props
