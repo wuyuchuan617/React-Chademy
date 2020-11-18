@@ -14,6 +14,7 @@ import Record from '../component/Record'
 import Setprice from '../component/Setprice'
 import Carousel from 'react-elastic-carousel'
 import Sidepic from '../component/Sidepic'
+import Breadcrumb2 from '../component/Breadcrumb2'
 import '../styles/desc.scss'
 import { useParams } from 'react-router-dom'
 import '../styles/designer.scss'
@@ -38,6 +39,7 @@ function Desc(props) {
     setMyCart,
     setCartAmount,
     cartamount,
+    setTypeofProduct,
   } = props
   const [comma, setComma] = useState(null)
   const [startdate, setStartdate] = useState('')
@@ -230,7 +232,7 @@ function Desc(props) {
     initData()
     getDesigner()
     getMember()
-  }, [])
+  }, [id])
 
   //scroll event
   useEffect(() => {
@@ -374,6 +376,7 @@ function Desc(props) {
 
         <div className="row d-flex g-main-area ">
           <div className="picarea border-right g-main-border">
+            <Breadcrumb2 sid={sid} pname={pname}/>
             <div className="mainpic">
               <img alt="" src={chair} />
             </div>
@@ -665,7 +668,7 @@ function Desc(props) {
             <Carousel itemsToScroll={3} itemsToShow={3}>
               {data.map((item, index) => {
                 if (data.length > 8) return (data.length = 8)
-                return <Slider key={index} item={item} {...props} />
+                return <Slider key={index} item={item} {...props} sid={sid} />
               })}
             </Carousel>
           </div>
@@ -707,6 +710,7 @@ function Desc(props) {
         chair={chair}
         comma={comma}
         setNoShowModel={setNoShowModel}
+        setTypeofProduct={setTypeofProduct}
         {...props}
       />
     </>

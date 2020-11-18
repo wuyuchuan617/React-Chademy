@@ -12,6 +12,7 @@ import Banner from '../component/Banner'
 import Filter from '../component/Filter'
 import ScrollParallax from 'rc-scroll-anim/lib/ScrollParallax'
 import useInterval from 'use-interval'
+import Breadcrumb from '../component/Breadcrumb'
 
 function Bid(props) {
   const {
@@ -67,6 +68,8 @@ function Bid(props) {
         <div className="row my-2">
           <div className="col flex-column text-center justify-content-center grace-chairs">
             <div>
+            <Breadcrumb/>
+
               <ScrollParallax
                 animation={[
                   { x: 0, opacity: 1, playScale: [0, 1] },
@@ -86,6 +89,7 @@ function Bid(props) {
                 />
               </ScrollParallax>
             </div>
+            
             <div className="grace-text text-center mx-auto g-show">
               {/* <QueueAnim delay={300} duration={2000} type={['right', 'left']} leaveReverse> */}
               

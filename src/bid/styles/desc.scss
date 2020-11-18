@@ -246,6 +246,42 @@ $secondary: #707070;
     color: #fff;
     
 }
+
+
+// @media (max-width: 1440px) { 
+//     .g-fixed{
+//         position: fixed;
+//         top:70px;
+//         right:150px;
+//         // for window
+//         // top:70px;
+//         // right:390px;
+//     }
+   
+//     .g-unfixed{
+//         position: relative;
+//         top:1070px;
+//         right:0px;
+//     }
+// }
+// @media (max-width: 1920px) { 
+//     .g-fixed{
+//         position: fixed;
+//         // top:70px;
+//         // right:150px;
+//         // for window
+//         top:70px;
+//         right:390px;
+//     }
+   
+//     .g-unfixed{
+//         position: relative;
+//         top:1070px;
+//         right:0px;
+//     }
+// }
+
+
 @media (max-width: 1199px) { 
     .g-fixed{
         position: absolute;

@@ -74,6 +74,13 @@ body {
   background-color: #fff;
   text-decoration: none;
 }
+.g-bread{
+  transform: translate(50px,110px);
+}
+.g-bread2{
+  transform: translate(20px,-20px);
+
+}
 
 .grace:hover{
   text-decoration: none;
@@ -90,7 +97,7 @@ body {
   color: #707070;
 }
 .grace-chairs{
-    margin-top: -150px;
+    margin-top: -120px;
 }
 
 .grace-btn2:hover {

@@ -35,7 +35,7 @@ function Record(props) {
       >
         <td className="d-flex align-items-center justify-content-cen">
           <div className="g-b-pic">
-            <img alt="" src={pic} />
+            <img alt="" src={item.avatar} />
           </div>
           <span className="g-b-name"> {item.name}</span>
         </td>

@@ -10,9 +10,8 @@ import Bid from './Bid'
 import Desc from './Desc'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
-
 function Pages(props) {
-  const { setCartAmount, cartamount } = props
+  const { setCartAmount, cartamount, setTypeofProduct } = props
   const [price, setPrice] = useState(99)
   const [pname, setPname] = useState('')
   // const [sid, setSid] = useState('')
@@ -73,6 +72,7 @@ function Pages(props) {
             data={data}
             setCartAmount={setCartAmount}
             cartamount={cartamount}
+            setTypeofProduct={setTypeofProduct}
           />
         </Route>
         <Route path="/pages/desc/setprice/:id?">

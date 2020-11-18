@@ -15,6 +15,7 @@ function Win(props) {
     cartamount,
     productpic,
     setNoShowModel,
+    setTypeofProduct,
   } = props
   //add to cart fn
   const [myCart, setMyCart] = useState([])
@@ -60,7 +61,9 @@ function Win(props) {
         </Modal.Header>
         <Modal.Body>
           <h4 className="text-center">
-            恭喜您用最優惠的價格<span style={{ color: '#c77334' }}>${comma}</span>成功競標以以下商品，請至購物車結帳！
+            恭喜您用最優惠的價格
+            <span style={{ color: '#c77334' }}>${comma}</span>
+            成功競標以以下商品，請至購物車結帳！
           </h4>
           <p className="text-center">{pname}</p>
           <div className="g-modal-pic mx-auto">
@@ -68,24 +71,25 @@ function Win(props) {
           </div>
         </Modal.Body>
         <Modal.Footer>
-        <Link to="/cartbid" className="mx-auto">
-          <Button
-            className="w_cart-btn rounded-0"
-            onClick={() => {
-              setNoShowModel(true)
-              props.onHide()
-              setCartAmount(cartamount + 1)
-              updateCartToLocalStorage({
-                id: pname,
-                img: pc,
-                amount: 1,
-                price: price,
-                category: 4,
-              })
-            }}
-          >
-            加入購物車
-          </Button>
+          <Link to="/cartbid" className="mx-auto">
+            <Button
+              className="w_cart-btn rounded-0"
+              onClick={() => {
+                setNoShowModel(true)
+                setTypeofProduct(4)
+                props.onHide()
+                setCartAmount(cartamount + 1)
+                updateCartToLocalStorage({
+                  id: pname,
+                  img: pc,
+                  amount: 1,
+                  price: price,
+                  category: 4,
+                })
+              }}
+            >
+              加入購物車
+            </Button>
           </Link>
         </Modal.Footer>
       </Modal>

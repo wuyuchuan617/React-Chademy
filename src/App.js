@@ -313,6 +313,7 @@ function App() {
                 setResetShow={setResetShow}
                 myCart={myCart}
                 setMyCart={setMyCart}
+                setTypeofProduct={setTypeofProduct}
               />
             </Route>
             {/* 課程頁面 */}
