@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 // import { Button } from 'antd'
 import RecommendResult from '../components/RecommendResult'
-
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 // const { Step } = Steps
 
 // const steps = [
@@ -62,6 +63,10 @@ function ProductRecommend(props) {
     console.log('data: ' + data)
     setReturnFilter(data)
   }
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
 
   useEffect(() => {
     getClassFilterFromSQL()
@@ -69,7 +74,7 @@ function ProductRecommend(props) {
 
   return (
     <>
-      <div className="container ">
+      <div className="container " data-aos="fade-up" data-aos-duration="2500">
         <div className="row">
           <div className="w_title1">
             <div className="titlech noto-serif text-center">專屬推薦</div>

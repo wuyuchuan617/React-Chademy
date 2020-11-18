@@ -213,6 +213,7 @@ function ProductFirst(props) {
   useEffect(() => {
     getHeartFromServer()
     getCartFromLocalStorage()
+    setPhoto(`http://localhost:3001/img/${item.photo}`)
   }, [])
 
   return (
@@ -278,8 +279,11 @@ function ProductFirst(props) {
                 return ( */}
               <Rate
                 disabled
-                allowHalf
-                style={{ fontSize: 24 + 'px' }}
+                style={{
+                  fontSize: 16 + 'px',
+                  lineHeight: '40px',
+                  color: '#C77334',
+                }}
                 count={avgStar}
               />
               {/* )
@@ -312,6 +316,7 @@ function ProductFirst(props) {
                 style={heart ? heartFill : ''}
               />
             </div>
+
             <div className="bigDesc">
               <div className="product-desc">
                 <p className="w_comP">
@@ -324,12 +329,8 @@ function ProductFirst(props) {
                   新的燕椅承襲老椅的台、和、洋混血基因，讓它能自由自在地身處於各式各樣的風格空間。輕盈而敞開的後背，迎接日光灑落家中，悠遊在現代與復古之間。​
                 </p>
               </div>
-              <div className="product-desc">
-                <p className="w_comP">
-                  Inherit the fusion characters with Taiwanese, Japanese and
-                  European from the old chair, Hirundo Chair fits well in all
-                  styles of places. With the minimalist design on the back.
-                </p>
+              <div className="product-desc2">
+                <p className="w_comP"></p>
               </div>
               {/* <div className="choose-area">
                 <p>選擇木頭：</p>

@@ -1,10 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Carousel from 'react-elastic-carousel'
 import '../styles/slider.scss'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
 function NoReviewCard(props) {
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
   return (
     <>
-      <div className="container section">
+      <div
+        className="container section"
+        data-aos="fade-up"
+        data-aos-duration="2500"
+      >
         <div className="row">
           <div className="w_title1">
             <div className="titlech noto-serif text-center">新品上市</div>

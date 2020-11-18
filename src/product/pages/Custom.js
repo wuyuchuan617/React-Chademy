@@ -14,6 +14,8 @@ import { Spin } from 'antd'
 import { LoadingOutlined } from '@ant-design/icons'
 import { Steps, Input } from 'antd'
 import { Parallax } from 'rc-scroll-anim'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 // import Pinterest from '../components/Pinterest'
 // import PurchaseInfo from '../components/PurchaseInfo'
 const { Step } = Steps
@@ -71,6 +73,8 @@ function Custom(props) {
 
   useEffect(() => {
     getCustomFromSQL()
+    AOS.init()
+    AOS.refresh()
   }, [])
 
   useEffect(() => {
@@ -278,7 +282,11 @@ function Custom(props) {
           </div>
         </div> */}
 
-        <div className="container-fluid w_container_fluid">
+        <div
+          className="container-fluid w_container_fluid"
+          data-aos="fade-up"
+          data-aos-duration="3000"
+        >
           <div className="row">
             <div className="w_title1">
               <div className="titlech noto-serif text-center">經典工藝</div>
@@ -335,7 +343,7 @@ function Custom(props) {
           </div>
         </div>
 
-        <div className="container">
+        <div className="container" data-aos="fade-up" data-aos-duration="2500">
           <div className="row">
             <div className="w_title1">
               <div className="titlech noto-serif text-center">參考作品</div>

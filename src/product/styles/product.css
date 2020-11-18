@@ -874,7 +874,7 @@ body {
   color: #5f6b6b;
 }
 
-.w_online-btn2:hover  a{
+.w_online-btn2:hover a {
   color: white;
 }
 
@@ -955,4 +955,17 @@ body {
 
 .ShareButtons {
   margin-top: 30px;
+}
+
+.ant-anchor-ink::before {
+
+  background-color: transparent !important;
+}
+
+.ant-anchor-link a:hover {
+  color: #c77334
+}
+
+.product-desc2{
+  height: 50px;
 }

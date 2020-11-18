@@ -1,6 +1,8 @@
 // ------------------------------以下引入套件--------------------------
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 // ------------------以下引入images---------------------------
 
@@ -9,9 +11,17 @@ import React, { useState } from 'react'
 function ProductSeries(props) {
   const { setSeries } = props
   const [statusPhoto, setStatusPhoto] = useState(1)
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
   return (
     <>
-      <div className="container section">
+      <div
+        className="container section"
+        data-aos="fade-up"
+        data-aos-duration="2500"
+      >
         <div className="row">
           <div className="w_title1">
             <div className="titlech noto-serif text-center">產品系列</div>
