@@ -19,6 +19,7 @@ import '../styles/review.css'
 import '../../common_components/Aside/index.scoped.scss'
 import '../../member/MemberCenter/index.scoped.scss'
 import { useParams } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 const { Header, Sider, Content } = Layout
 
 // -----------------------以下開始Component Product-----------------
@@ -324,11 +325,13 @@ function Review(props) {
                       name="review_comment"
                     ></textarea>
                   </div>
-                  <input
-                    type="submit"
-                    value="新增評論"
-                    className="btnReview text-center mt-4"
-                  />
+                  <Link to="/member-center/myorder">
+                    <input
+                      type="submit"
+                      value="新增評論"
+                      className="btnReview text-center mt-4"
+                    />
+                  </Link>
                 </div>
               </div>
             </form>
