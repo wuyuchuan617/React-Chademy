@@ -181,7 +181,7 @@ function FundIFirst(props) {
     <>
       <FundModal visible={visible} setVisible={setVisible} photo={photo} />
       <div className="container firstTop">
-        <BreadcrumbwTwo item={item}/>
+        <BreadcrumbwTwo item={item} />
         <div className="row justify-content-between">
           <div className="col-8">
             <div className="product_photo" onClick={() => setVisible(true)}>
@@ -419,7 +419,7 @@ function FundIFirst(props) {
             <img className="details-pic" src={dt5} alt="" />
           </div>
 
-          <div className="col-5">
+          <div className="col-5 e_co">
             <div className="small_card">
               <h4 className="e_account">
                 <FaChessQueen />
@@ -462,6 +462,52 @@ function FundIFirst(props) {
               <h4 className="emday">
                 <FaHandHoldingHeart />
                 <span className="emdayp"> 兩天前</span>
+              </h4>
+            </div>
+
+            <div className="small_card">
+              <h4 className="e_account">
+                <FaChessQueen />
+                <span className="e_name">Nike</span>
+              </h4>
+
+              <h3 className="em">熱情贊助：＄313,500</h3>
+
+              <h3 className="emp">希望品質優良</h3>
+              <h4 className="emday">
+                <FaHandHoldingHeart />
+                <span className="emdayp"> 兩天前</span>
+              </h4>
+            </div>
+
+            <div className="small_card">
+              <h4 className="e_account">
+                <FaChessQueen />
+                <span className="e_name">Momo</span>
+              </h4>
+
+              <h3 className="em">熱情贊助：＄508,000</h3>
+
+              <h3 className="emp">力挺朋友</h3>
+              <h4 className="emday">
+                <FaHandHoldingHeart />
+                <span className="emdayp"> 一天前</span>
+              </h4>
+            </div>
+
+
+            <div className="small_card">
+              <h4 className="e_account">
+                <FaChessQueen />
+                <span className="e_name">Linda</span>
+              </h4>
+
+              <h3 className="em">熱情贊助：＄613,000</h3>
+
+              <h3 className="emp">力挺朋友+1</h3>
+              <h4 className="emday">
+                <FaHandHoldingHeart />
+                <span className="emdayp">一天前</span>
               </h4>
             </div>
 

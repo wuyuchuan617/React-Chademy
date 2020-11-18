@@ -14,6 +14,12 @@ import SliderE from '../components/SliderE'
 // import BreadcrumbwTwo from '../components/BreadcrumbwTwo'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
+import Img from '../images/big.jpeg'
+import Img1 from '../images/big2.jpeg'
+import Img2 from '../images/big3.jpeg'
+import Img3 from '../images/out.jpeg'
+import Img4 from '../images/luxu.jpg'
+import Img5 from '../images/moed.jpg'
 
 function FundItem(props) {
   const [localData, setLocalData] = useState([])
@@ -30,7 +36,6 @@ function FundItem(props) {
   // 瀏覽紀錄
   const [viewrecord, setViewRecord] = useState([])
   const [productName, setProductName] = useState('')
-  
 
   const [view, setView] = useState([])
 
@@ -127,7 +132,69 @@ function FundItem(props) {
         )
       })}
 
-      <div className="container">
+      {/* <div className="container"> */}
+      <img alt="" src={Img} className="containerimg" />
+
+      <article className="e_range">
+        <div className="parallax">
+          <div className="bg__foo"></div>
+          <div className="bg__bar"></div>
+          <div className="bg__baz"></div>
+          <div className="bg__bazz"></div>
+        </div>
+        <header className="bgih">
+          <h1 className="bgi">​I want YOU to Fund Your Dream.</h1>
+        </header>
+        <section>
+          <div class="container">
+            <p>
+              My goal is for you to be successful….is for you to live the life
+              you want to live.…and you’ve got something inside of you.
+            </p>
+          </div>
+        </section>
+        <section class="parallax">
+          <div class="bg__break">
+            <div class="capture">
+              Caption for this beautiful break image, Caption for this beautiful
+              break image, Caption for this beautiful break image, Caption for
+              this beautiful break image.
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="container">
+            <p>
+              Now imagine that you had a personal crowdfunding team in your
+              pocket, and you were on a step-by-step 8-week plan to learn
+              exactly how to plan, build, launch, promote and successfully FUND
+              YOUR DREAM -- using skills you already have.
+            </p>
+          </div>
+        </section>
+      </article>
+
+      <div className="container dfn">
+        <div className="row justify-content-between d-flex  dtt ">
+          <div className="e_img_wrap">
+            <img alt="" src={Img3} className="cimg" />
+            <p className="e_st1">OUTDOOR</p>
+          </div>
+          <div className="e_img_wrap">
+            <img alt="" src={Img4} className="cimg" />
+            <p className="e_st2">LUXURY</p>
+          </div>
+          <div className="e_img_wrap">
+            <img alt="" src={Img5} className="cimg" />
+            <p className="e_st3">MORDERN</p>
+          </div>
+        </div>
+      </div>
+
+
+      {/* </div> */}
+
+      <div className="container mt-5 vp">
         <div className="row">
           <div className="e-related-product ">
             <h2 className="grace-related-product text-center ">瀏覽紀錄</h2>
