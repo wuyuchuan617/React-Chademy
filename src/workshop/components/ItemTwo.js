@@ -26,7 +26,6 @@ function ItemTwo(props) {
           <div className="box2train">
             <div className="upper2">
               <img src={imagefour} />
-              <p>HOT</p>
               <div className="box200">
                 <img id="image" src={heart} />
               </div>
