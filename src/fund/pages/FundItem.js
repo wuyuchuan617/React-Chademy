@@ -21,6 +21,9 @@ import Img3 from '../images/out.jpeg'
 import Img4 from '../images/luxu.jpg'
 import Img5 from '../images/moed.jpg'
 
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
 function FundItem(props) {
   const [localData, setLocalData] = useState([])
   const isLogged = useSelector((state) => state.user.logged)
@@ -32,6 +35,10 @@ function FundItem(props) {
 
   let { sid } = useParams()
   console.log('sid' + sid)
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
 
   // 瀏覽紀錄
   const [viewrecord, setViewRecord] = useState([])
@@ -177,20 +184,40 @@ function FundItem(props) {
       <div className="container dfn">
         <div className="row justify-content-between d-flex  dtt ">
           <div className="e_img_wrap">
-            <img alt="" src={Img3} className="cimg" />
+            <img
+              alt=""
+              src={Img3}
+              className="cimg"
+              data-aos="zoom-in-up"
+              data-aos-delay="50000"
+              data-aos-duration="2400"
+            />
             <p className="e_st1">OUTDOOR</p>
           </div>
           <div className="e_img_wrap">
-            <img alt="" src={Img4} className="cimg" />
+            <img
+              alt=""
+              src={Img4}
+              className="cimg"
+              data-aos="zoom-in-up"
+              data-aos-delay="50000"
+              data-aos-duration="2400"
+            />
             <p className="e_st2">LUXURY</p>
           </div>
           <div className="e_img_wrap">
-            <img alt="" src={Img5} className="cimg" />
+            <img
+              alt=""
+              src={Img5}
+              className="cimg"
+              data-aos="zoom-in-up"
+              data-aos-delay="50000"
+              data-aos-duration="2400"
+            />
             <p className="e_st3">MORDERN</p>
           </div>
         </div>
       </div>
-
 
       {/* </div> */}
 

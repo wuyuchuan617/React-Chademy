@@ -6,9 +6,17 @@ import '../styles/FundHomepage.scss'
 import ProgressE from '../components/ProgressE'
 import { withRouter } from 'react-router-dom'
 
+import { useEffect } from 'react'
+
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function FundListCard(props) {
   const { item } = props
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
   return (
     <>
       <div
@@ -23,6 +31,9 @@ function FundListCard(props) {
           // onClick={() => {
           //   props.history.push('/funditem/' + item.sid)
           // }}
+          data-aos="zoom-in-up"
+          data-aos-delay="50000"
+          data-aos-duration="2400"
         >
           <div className="e_wrap">
             <img src={`http://localhost:3001/img/` + item.e_pic} alt="" />
@@ -59,11 +70,9 @@ function FundListCard(props) {
           </div>
         </div>
         <div className="e_wrappp">
-            <img src={`http://localhost:3001/img/` + item.e_pic} alt="" />
-          </div>
-        
+          <img src={`http://localhost:3001/img/` + item.e_pic} alt="" />
+        </div>
       </div>
-
     </>
   )
 }

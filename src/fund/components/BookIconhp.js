@@ -15,9 +15,16 @@ function BookIconhp(props) {
   const [changeword, setChangeWord] = useState(0)
   const { filterIcon, setFilterIcon } = props
 
+ 
+
   return (
     <>
-      <div className="container">
+      <div
+        className="container"
+        data-aos="zoom-in-up"
+        data-aos-delay="50000"
+        data-aos-duration="2400"
+      >
         <div className="row">
           <div className="col">
             <div

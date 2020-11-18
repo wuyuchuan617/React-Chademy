@@ -13,6 +13,10 @@ import stu1 from '../images/stu1.png'
 import stu2 from '../images/stu2.png'
 import stu3 from '../images/stu3.jpeg'
 import stu4 from '../images/stu4.png'
+import { useEffect } from 'react'
+
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 import { Carousel } from 'antd'
 import 'antd/dist/antd.css'
@@ -25,6 +29,10 @@ function Edesign() {
     // textAlign: 'center',
     // background: '#364d79',
   }
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
 
   return (
     <>
@@ -38,7 +46,13 @@ function Edesign() {
               </p>
             </div>
             <div className="wrap1">
-              <img src={stu3} alt="" />
+              <img
+                src={stu3}
+                alt=""
+                data-aos="zoom-in-up"
+                data-aos-delay="50000"
+                data-aos-duration="2400"
+              />
             </div>
             <div className="orange">
               <p className="p_stu">
@@ -52,7 +66,14 @@ function Edesign() {
             <div className="wrap1">
               {/* <img src={stu4} alt="" className="stu4" /> */}
 
-              <img src={stu1} alt="" className="stu1" />
+              <img
+                src={stu1}
+                alt=""
+                className="stu1"
+                data-aos="zoom-in-up"
+                data-aos-delay="50000"
+                data-aos-duration="2400"
+              />
             </div>
             <div className="blue">
               <p className="p_stu">
@@ -61,7 +82,13 @@ function Edesign() {
               </p>
             </div>
             <div className="wrap1">
-              <img src={stu2} alt="" />
+              <img
+                src={stu2}
+                alt=""
+                data-aos="zoom-in-up"
+                data-aos-delay="50000"
+                data-aos-duration="2400"
+              />
             </div>
           </Col>
         </Row>

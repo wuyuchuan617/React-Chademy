@@ -48,7 +48,7 @@ function FundHomepage() {
       <header>
         <h1
           className="e_slogan"
-          data-aos="fade-up"
+          data-aos="zoom-in-up"
           data-aos-delay="50000"
           data-aos-duration="2400"
         >
@@ -68,7 +68,7 @@ function FundHomepage() {
         </div>
         <p
           className="p_video"
-          data-aos="fade-up"
+          data-aos="zoom-in-up"
           data-aos-delay="50000"
           data-aos-duration="2400"
         >
@@ -92,18 +92,18 @@ function FundHomepage() {
       </Container>
       <BookMarkhp setFilterMark={setFilterMark} />
       <BookIconhp setFilterIcon={setFilterIcon} />
-      <div className="iconbg"></div>
-      {filterMark === 0 && filterIcon === 0 ? <CarouselE /> : ''}
-      {filterMark === 0 && filterIcon === 1 ? <CarouselE /> : ''}
-      {filterMark === 0 && filterIcon === 2 ? <CarouselE /> : ''}
-      {filterMark === 0 && filterIcon === 3 ? <CarouselEThree /> : ''}
-      {filterMark === 0 && filterIcon === 4 ? <CarouselE /> : ''}
-      {filterMark === 1 && filterIcon === 0 ? <CarouselE /> : ''}
-      {filterMark === 1 && filterIcon === 1 ? <CarouselE /> : ''}
-      {filterMark === 1 && filterIcon === 2 ? <CarouselETwo /> : ''}
-      {filterMark === 1 && filterIcon === 3 ? <CarouselE /> : ''}
-      {filterMark === 1 && filterIcon === 4 ? <CarouselE /> : ''}
-
+      <div className="tye" data-aos="fade-up" data-aos-duration="2000">
+        {filterMark === 0 && filterIcon === 0 ? <CarouselE /> : ''}
+        {filterMark === 0 && filterIcon === 1 ? <CarouselE /> : ''}
+        {filterMark === 0 && filterIcon === 2 ? <CarouselE /> : ''}
+        {filterMark === 0 && filterIcon === 3 ? <CarouselEThree /> : ''}
+        {filterMark === 0 && filterIcon === 4 ? <CarouselE /> : ''}
+        {filterMark === 1 && filterIcon === 0 ? <CarouselE /> : ''}
+        {filterMark === 1 && filterIcon === 1 ? <CarouselE /> : ''}
+        {filterMark === 1 && filterIcon === 2 ? <CarouselETwo /> : ''}
+        {filterMark === 1 && filterIcon === 3 ? <CarouselE /> : ''}
+        {filterMark === 1 && filterIcon === 4 ? <CarouselE /> : ''}
+      </div>
       <div className="e_more_div" z-index="10">
         <div className="e_more" onClick={() => history.push('/fundlist')}>
           more
@@ -111,15 +111,21 @@ function FundHomepage() {
       </div>
       <h1 className="e_popular">熱門募資專案</h1>
       <BookMarkTwo setShowProject={setShowProject} />
-      {showProject === 0 ? <PopBmarkOne /> : ''}
-      {showProject === 1 ? <PopBmarkTwo /> : ''}
-      {showProject === 2 ? <PopBmarkThree /> : ''}
-      {showProject === 3 ? <PopBmarkFour /> : ''}
+      <div
+        data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000"
+      >
+        {showProject === 0 ? <PopBmarkOne /> : ''}
+        {showProject === 1 ? <PopBmarkTwo /> : ''}
+        {showProject === 2 ? <PopBmarkThree /> : ''}
+        {showProject === 3 ? <PopBmarkFour /> : ''}
+      </div>
 
       <div className="container">
         <div className="row d-flex">
           <div className="col-7 bgcolor">
-            <img src={Img} alt="" className="bgimg" />
+            <img src={Img} alt="" className="bgimg" data-aos="zoom-out-right"/>
             <p className="imgp2">
               I don't know your dreams...but I know you have them.
             </p>
@@ -127,8 +133,18 @@ function FundHomepage() {
 
           <div className="col-5">
             <img src={Img2} alt="" className="bgimg2" />
-            <img src={Img3} alt="" className="bgimg3" />
-            <img src={Img4} alt="" className="bgimg4" />
+            <img
+              src={Img3}
+              alt=""
+              className="bgimg3"
+              data-aos="zoom-out-left"
+            />
+            <img
+              src={Img4}
+              alt=""
+              className="bgimg4"
+              data-aos="zoom-out-left"
+            />
             <p className="imgp3">
               Launching a crowdfunding campaign can be scary.
             </p>

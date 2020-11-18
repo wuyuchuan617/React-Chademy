@@ -26,6 +26,9 @@ import Breadcrumbw from '../components/Breadcrumbw'
 import { BackTop } from 'antd'
 import { UpOutlined } from '@ant-design/icons'
 
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
 function FundList(props) {
   const [showFilter, setShowFilter] = useState(false)
 
@@ -55,6 +58,10 @@ function FundList(props) {
   const [orderBy, setOrderBy] = useState(0)
   const [orderBy2, setOrderBy2] = useState(0)
   // const [desc, setDesc] = useState('')
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
 
   // ---------------以下開始component內變數-----------------
 
@@ -295,10 +302,19 @@ function FundList(props) {
       <div className="e_fv">
         <img src={Img} alt="" />
         <div className="e_fv_text text-center">
-          <p className="i_slogan_form">
+          <p
+            className="i_slogan_form"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+          >
             聖誕好禮 白金會員試手氣 為暖窩新增色彩
           </p>
-          <p className="i_subslogan_form " onClick={() => setVisible(true)}>
+          <p
+            className="e_subslogan_form "
+            data-aos="fade-up"
+            data-aos-duration="2000"
+            onClick={() => setVisible(true)}
+          >
             點我試試
           </p>
         </div>
@@ -331,7 +347,14 @@ function FundList(props) {
 
           <div className="row  justify-content-center">
             {product.slice(0, viewProduct).map((item, index) => {
-              return <FundListCard key={index} item={item} />
+              return (
+                <FundListCard
+                  key={index}
+                  item={item}
+                  data-aos="fade-up"
+                  data-aos-duration="2000"
+                />
+              )
             })}
           </div>
           <div className="container">

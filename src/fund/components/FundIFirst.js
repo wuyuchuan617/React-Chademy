@@ -23,6 +23,8 @@ import { FaFacebookMessenger } from 'react-icons/fa'
 import { FaShareAlt } from 'react-icons/fa'
 import { FaChessQueen } from 'react-icons/fa'
 import { FaHandHoldingHeart } from 'react-icons/fa'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 import dt2 from '../images/dt2.jpeg'
 import dt3 from '../images/dt3.jpeg'
@@ -39,6 +41,10 @@ function FundIFirst(props) {
     price: item.e_lowprice,
     amount: 1,
   }
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
 
   const isLogged = useSelector((state) => state.user.logged)
 
@@ -289,7 +295,13 @@ function FundIFirst(props) {
               <p className="e_price">${item.e_lowprice}</p>
 
               <div className="e_target">
-                <p className="e_tar">目標金額：${item.e_goal}</p>
+                <p
+                  className="e_tar"
+                  data-aos="fade-up"
+                  data-aos-duration="2000"
+                >
+                  目標金額：${item.e_goal}
+                </p>
               </div>
 
               <div className="barwrapper">
@@ -301,6 +313,8 @@ function FundIFirst(props) {
                     aria-valuenow="42"
                     aria-valuemin="0"
                     aria-valuemax="100"
+                    data-aos="fade-up"
+                    data-aos-duration="2000"
                   >
                     <ProgressE item={item} />
                   </div>
@@ -308,7 +322,13 @@ function FundIFirst(props) {
               </div>
 
               <div className="e_ptarget">
-                <p className="e_ptar">募資進度：${item.e_progress_money}</p>
+                <p
+                  className="e_ptar"
+                  data-aos="fade-up"
+                  data-aos-duration="2000"
+                >
+                  募資進度：${item.e_progress_money}
+                </p>
               </div>
 
               <hr />
@@ -317,10 +337,7 @@ function FundIFirst(props) {
                 <p className="e_leff">
                   <span>剩餘時間 : {item.e_day} 天</span>
                   <br />
-                  {item.e_start_time}
-                  <br />
-                  <div className="e_lefff">至</div>
-                  {item.e_end_time}
+                  {item.e_start_time}至{item.e_end_time}
                 </p>
               </div>
 
@@ -373,17 +390,36 @@ function FundIFirst(props) {
       <div className="container">
         <div className="row">
           <div className="col-7">
-            <h3 className="p_title">Easy Seat</h3>
+            <h3
+              className="p_title"
+              data-aos="zoom-in-up"
+              data-aos-delay="50000"
+              data-aos-duration="2400"
+            >
+              Easy Seat
+            </h3>
             <p className="intro_p">
               柔軟的設計、細微的細節以及曲線造型使其不存在視覺欣賞的死角。Henrik
               Pedersen
               的有機設計通過精美的工藝設計加以呈現，將成為您起居室中的標誌性家居。
             </p>
 
-            <img className="inner-pic" src={dt2} alt="" />
+            <img
+              className="inner-pic"
+              data-aos="zoom-in-up"
+              data-aos-delay="50000"
+              data-aos-duration="2400"
+              src={dt2}
+              alt=""
+            />
 
             <div className="ip2 d-flex">
-              <img className="inner-pic2 d-flex" src={dt3} alt="" />
+              <img
+                className="inner-pic2 d-flex"
+                src={dt3}
+                
+                alt=""
+              />
 
               <h4 className="pic2-h4 d-flex">Feast for the eyes</h4>
             </div>
@@ -394,7 +430,14 @@ function FundIFirst(props) {
             </p>
 
             <div className="pic3">
-              <img className="inner-pic3" src={dt4} alt="" />
+              <img
+                className="inner-pic3"
+                src={dt4}
+                data-aos="zoom-in-up"
+                data-aos-delay="50000"
+                data-aos-duration="2400"
+                alt=""
+              />
             </div>
 
             <h4 className="pic3-h4">Genuine comfort</h4>
@@ -418,11 +461,23 @@ function FundIFirst(props) {
               </p>
             </div>
 
-            <img className="details-pic" src={dt5} alt="" />
+            <img
+              className="details-pic"
+              data-aos="zoom-in-up"
+              data-aos-delay="50000"
+              data-aos-duration="2400"
+              src={dt5}
+              alt=""
+            />
           </div>
 
           <div className="col-5 e_co">
-            <div className="small_card">
+            <div
+              className="small_card"
+              data-aos="zoom-in-up"
+              data-aos-delay="50000"
+              data-aos-duration="2400"
+            >
               <h4 className="e_account">
                 <FaChessQueen />
                 <span className="e_name">Eva</span>
@@ -437,7 +492,12 @@ function FundIFirst(props) {
               </h4>
             </div>
 
-            <div className="small_card">
+            <div
+              className="small_card"
+              data-aos="zoom-in-up"
+              data-aos-delay="50000"
+              data-aos-duration="2400"
+            >
               <h4 className="e_account">
                 <FaChessQueen />
                 <span className="e_name">Abby</span>
@@ -452,7 +512,12 @@ function FundIFirst(props) {
               </h4>
             </div>
 
-            <div className="small_card">
+            <div
+              className="small_card"
+              data-aos="zoom-in-up"
+              data-aos-delay="50000"
+              data-aos-duration="2400"
+            >
               <h4 className="e_account">
                 <FaChessQueen />
                 <span className="e_name">Gaby</span>
@@ -467,7 +532,12 @@ function FundIFirst(props) {
               </h4>
             </div>
 
-            <div className="small_card">
+            <div
+              className="small_card"
+              data-aos="zoom-in-up"
+              data-aos-delay="50000"
+              data-aos-duration="2400"
+            >
               <h4 className="e_account">
                 <FaChessQueen />
                 <span className="e_name">Nike</span>
@@ -482,7 +552,12 @@ function FundIFirst(props) {
               </h4>
             </div>
 
-            <div className="small_card">
+            <div
+              className="small_card"
+              data-aos="zoom-in-up"
+              data-aos-delay="50000"
+              data-aos-duration="2400"
+            >
               <h4 className="e_account">
                 <FaChessQueen />
                 <span className="e_name">Momo</span>
@@ -497,7 +572,12 @@ function FundIFirst(props) {
               </h4>
             </div>
 
-            <div className="small_card">
+            <div
+              className="small_card"
+              data-aos="zoom-in-up"
+              data-aos-delay="50000"
+              data-aos-duration="2400"
+            >
               <h4 className="e_account">
                 <FaChessQueen />
                 <span className="e_name">Linda</span>
@@ -512,7 +592,12 @@ function FundIFirst(props) {
               </h4>
             </div>
 
-            <div className={changeshow === 0 ? 'small_card1' : 'small_card'}>
+            <div
+              className={changeshow === 0 ? 'small_card1' : 'small_card'}
+              data-aos="zoom-in-up"
+              data-aos-delay="50000"
+              data-aos-duration="2400"
+            >
               <h4 className="e_account">
                 <FaChessQueen />
                 <span className="e_name">Ian</span>
