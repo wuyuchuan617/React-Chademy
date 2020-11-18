@@ -13,7 +13,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import { Modal, Button } from 'antd'
 import { withRouter } from 'react-router-dom'
 
-function CancelOrder(props) {
+function AllOrder(props) {
   const { setMyPO_NO, setMyDate, getAll } = props
   const [member, setMember] = useState('')
   const [PO_NO, setPO_NO] = useState('')
@@ -392,4 +392,4 @@ function CancelOrder(props) {
     </>
   )
 }
-export default withRouter(CancelOrder)
+export default withRouter(AllOrder)

@@ -8,6 +8,7 @@ import React, { useState, useEffect } from 'react'
 import CartList from '../components/CartList'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import img1 from '../../product/images/777.jpg'
+import { Form, Select } from 'antd'
 // import './style/jay.scss'
 
 function CartClass(props) {
@@ -219,11 +220,13 @@ function CartClass(props) {
             marginBottom: '30px',
           }}
         >
-          <select
+          <Select
+            placeholder="寄送方式"
             style={{
-              fontSize: '18px',
+              //   fontSize: '18px',
               width: '275px',
-              height: '40px',
+              marginTop: '0',
+              //   height: '40px',
             }}
             onChange={() => {
               if (deliveryCharge === 0) {
@@ -233,12 +236,16 @@ function CartClass(props) {
               }
             }}
           >
-            <option onClick={() => setDeliveryCharge(0)}>到店取貨(Free)</option>
-            <option onClick={() => setDeliveryCharge(500)}>
+            <Select.Option onClick={() => setDeliveryCharge(0)}>
+              到店取貨(Free)
+            </Select.Option>
+            <Select.Option onClick={() => setDeliveryCharge(500)}>
               宅配到府(+$500)
-            </option>
-          </select>
-          <h6 style={{ color: '#C67334' }}>${deliveryCharge}</h6>
+            </Select.Option>
+          </Select>
+          <h6 style={{ color: '#C67334', marginTop: '35px' }}>
+            ${deliveryCharge}
+          </h6>
         </div>
 
         <div
@@ -252,8 +259,10 @@ function CartClass(props) {
           <div></div>
           <div
             style={{
+              marginTop: '40px',
+              marginBottom: '30px',
               backgroundColor: 'black',
-              width: '250px',
+              width: '1200px',
               height: '1px',
             }}
           ></div>
@@ -263,14 +272,13 @@ function CartClass(props) {
             display: 'flex',
             letterSpacing: '3px',
             justifyContent: 'space-between',
-            // marginTop: '30px',
           }}
         >
           <div></div>
-          <h6 style={{ color: '#C67334' }}>${totalPrice}</h6>
+          <h6 className="jtotal">${totalPrice}</h6>
         </div>
         <Link to="deliveryinfo" className="btn3">
-          買單
+          <h5>結帳</h5>
         </Link>
       </div>
     </>

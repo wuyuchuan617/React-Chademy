@@ -78,7 +78,7 @@ function ReturnDetail(props) {
         }
         return (
           <div className="j_myorderbox1">
-            <div className="j_wrapspace">
+            <div className="j_wrapspace1">
               <img
                 style={{
                   width: '300px',
