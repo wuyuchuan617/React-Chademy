@@ -20,7 +20,7 @@ function BookMarkhp(props) {
   return (
     <>
       <div
-        className="e_lablebox mt-9"
+        className="e_lablebox "
         data-aos="zoom-in-up"
         data-aos-delay="50000"
         data-aos-duration="2400"
