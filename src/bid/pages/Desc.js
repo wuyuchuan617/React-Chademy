@@ -714,6 +714,7 @@ function Desc(props) {
         productpic={productpic}
         chair={chair}
         comma={comma}
+        total={total}
         setNoShowModel={setNoShowModel}
         setTypeofProduct={setTypeofProduct}
         {...props}

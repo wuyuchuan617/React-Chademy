@@ -16,6 +16,7 @@ function Win(props) {
     productpic,
     setNoShowModel,
     setTypeofProduct,
+    total
   } = props
   //add to cart fn
   const [myCart, setMyCart] = useState([])
@@ -75,6 +76,7 @@ function Win(props) {
             <Button
               className="w_cart-btn rounded-0"
               onClick={() => {
+           
                 setNoShowModel(true)
                 setTypeofProduct(4)
                 props.onHide()

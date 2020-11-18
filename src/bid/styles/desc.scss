@@ -218,11 +218,19 @@ $secondary: #707070;
   }
 .g-price {   
     cursor: pointer;
-    transition: .5 ease-in;
+    transition: .5s ease-in-out;
 }
 .g-price:hover{
     background-color:#C77334;
     color: #DED5C6;
+    transition: .5s ease-in-out;
+
+}
+.g-price:focus{
+    background-color: #DED5C6;
+    color: #C77334;
+    border-color: #fff;
+    box-shadow: 0 0 0 0 rgba(207, 136, 82, 0.5);
 }
 .g-material{
     height: 210px;
@@ -297,7 +305,7 @@ $secondary: #707070;
         top:2200px;
         // margin: auto;
         // left:inherit;
-        left:150px;
+        left:80px;
         width: 720px;
     }
     .container.g-designer-con{
