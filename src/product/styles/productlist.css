@@ -964,3 +964,10 @@ button:focus {
   left: 43%;
   bottom: 140px;
 }
+
+
+.ant-badge-count {
+  color: white;
+  -webkit-box-shadow: 0 0 0 0px #fff;
+
+}

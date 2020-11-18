@@ -218,7 +218,14 @@ function MyNavbar(props) {
             >
               <AiOutlineShoppingCart className="icon" />
             </Nav.Link>
-            <Badge count={cartamount} style={{ backgroundColor: '#c77334' }}>
+            <Badge
+              count={cartamount}
+              style={{
+                backgroundColor: '#c77334',
+                border: '1px solid #c77334',
+                color: 'white',
+              }}
+            >
               <Nav.Link
                 as={NavLink}
                 to="#"
