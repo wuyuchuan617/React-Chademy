@@ -254,7 +254,7 @@ function Filter(props) {
               </div>
             </div>
             <ul
-              className="refinement-list scrollable seats2"
+              className="refinement-list scrollable g-seats2"
               id="seats2"
               aria-hidden="false"
               style={viewSpread2 ? sidebarContentShow : sidebarContentHide}

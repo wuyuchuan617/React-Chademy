@@ -80,12 +80,12 @@ body {
 .seats1 p{
   color: #707070;
 }
-.seats2 {
+.g-seats2 {
   display: none;
   color: #707070;
   margin: 10px -10px 10px 40px;
 }
-.seats2 p {
+.g-seats2 p {
   color: #707070;
 }
 #seats1 li {

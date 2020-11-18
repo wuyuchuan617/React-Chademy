@@ -331,7 +331,7 @@ function Desc(props) {
   useInterval(()=>{
     getNewPrice()
     getMember()
-  },2000)
+  },1000)
 
   function showRecord() {
     setChangeColorStatus(true)
