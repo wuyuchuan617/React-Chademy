@@ -52,7 +52,7 @@ function BlogListTwo(props) {
   }
 
   useEffect(() => {
-    if (!!saveMessage) return
+    if (!saveMessage) return
     updateTotalToServer()
   }, [saveMessage])
 
