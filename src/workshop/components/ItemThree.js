@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import '../styles/workshop.css'
 import ThreeWorkShop from '../components/ThreeWorkShop'
 import '../styles/slider.css'
 import Carousel from 'react-elastic-carousel'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function ItemThree(props) {
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
   const { threeWorkShop } = props
   return (
     <div className="annie_wrapper100">
@@ -12,7 +18,12 @@ function ItemThree(props) {
         <div className="titlech noto-serif text-center">展覽活動</div>
         <div className="titleEN lora text-center">Exhibition & Show</div>
       </div>
-      <div className="row justify-content-center">
+      <div
+        className="row justify-content-center"
+        data-aos="fade-down"
+        data-aos-delay="50000"
+        data-aos-duration="2400"
+      >
         <Carousel itemsToScroll={3} itemsToShow={3}>
           {threeWorkShop.map((item2, index) => {
             return <ThreeWorkShop key={index} item2={item2} />

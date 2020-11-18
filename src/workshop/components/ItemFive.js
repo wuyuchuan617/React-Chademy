@@ -16,8 +16,14 @@ import imageg from '../images/12-6.png'
 import imageh from '../images/12-7.png'
 import '../styles/slider.css'
 import Carousel from 'react-elastic-carousel'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function ItemFive(props) {
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
   return (
     <div className="annie_wrapper100">
       <div className="title01">
@@ -26,7 +32,12 @@ function ItemFive(props) {
       </div>
       <div className="row justify-content-center">
         <Carousel itemsToScroll={2} itemsToShow={2}>
-          <div className="box6title row no-gutters">
+          <div
+            className="box6title row no-gutters"
+            data-aos="fade-left"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+          >
             <div className="col-md-5">
               <img src={imagea} />
             </div>
@@ -44,7 +55,12 @@ function ItemFive(props) {
             </div>
           </div>
 
-          <div className="box6title row no-gutters">
+          <div
+            className="box6title row no-gutters"
+            data-aos="fade-left"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+          >
             <div className="col-md-5">
               <img src={imageb} />
             </div>

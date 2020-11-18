@@ -13,15 +13,27 @@ import imageseven from '../images/09-6.png'
 import heart from '../images/heart.svg'
 import '../styles/slider.css'
 import Carousel from 'react-elastic-carousel'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function ItemTwo(props) {
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
+
   return (
     <div className="annie_wrapper200">
       <div className="title01">
         <div className="titlech noto-serif text-center">職人養成班</div>
         <div className="titleEN lora text-center">Professional Class</div>
       </div>
-      <div className="row justify-content-center">
+      <div
+        className="row justify-content-center"
+        data-aos="fade-down"
+        data-aos-delay="50000"
+        data-aos-duration="2400"
+      >
         <Carousel itemsToScroll={2} itemsToShow={2}>
           <div className="box2train">
             <div className="upper2">

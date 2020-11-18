@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import '../styles/workshop.css'
 // import imageone from '../images/03.png'
 // import imagetwo from '../images/03-1.png'
@@ -7,8 +7,14 @@ import '../styles/workshop.css'
 import OneWorkShop from '../components/OneWorkShop'
 import '../styles/slider.css'
 import Carousel from 'react-elastic-carousel'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function ItemOne(props) {
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
   const { oneWorkShop } = props
   return (
     <div className="annie_wrapper100">
@@ -16,7 +22,12 @@ function ItemOne(props) {
         <div className="titlech noto-serif text-center">一日木工體驗</div>
         <div className="titleEN lora text-center">One day Workshop</div>
       </div>
-      <div className="row justify-content-center">
+      <div
+        className="row justify-content-center"
+        data-aos="fade-down"
+        data-aos-delay="50000"
+        data-aos-duration="2400"
+      >
         <Carousel itemsToScroll={3} itemsToShow={3}>
           {oneWorkShop.map((item, index) => {
             return <OneWorkShop key={index} item={item} />

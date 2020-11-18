@@ -13,7 +13,14 @@ import imageworkerfour from '../images/11-2.png'
 import '../styles/slider.css'
 import Carousel from 'react-elastic-carousel'
 
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
 function ItemFour(props) {
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
   return (
     <div className="annie_wrapper200">
       <div className="title01">
@@ -22,7 +29,12 @@ function ItemFour(props) {
       </div>
       <div className="row justify-content-center">
         <Carousel itemsToScroll={2} itemsToShow={2}>
-          <div className="box5worker">
+          <div
+            className="box5worker"
+            data-aos="fade-right"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+          >
             <div className="upper5">
               <img alt="" src={imagework} />
             </div>
@@ -36,7 +48,12 @@ function ItemFour(props) {
             </div>
           </div>
 
-          <div className="box5worker">
+          <div
+            className="box5worker"
+            data-aos="fade-right"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+          >
             <div className="upper5">
               <img alt="" src={imageworker} />
             </div>
@@ -50,7 +67,12 @@ function ItemFour(props) {
             </div>
           </div>
 
-          <div className="box5worker">
+          <div
+            className="box5worker"
+            data-aos="fade-right"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+          >
             <div className="upper5">
               <img alt="" src={imageworkerthree} />
             </div>
@@ -64,7 +86,12 @@ function ItemFour(props) {
             </div>
           </div>
 
-          <div className="box5worker">
+          <div
+            className="box5worker"
+            data-aos="fade-right"
+            data-aos-delay="50000"
+            data-aos-duration="2400"
+          >
             <div className="upper5">
               <img alt="" src={imageworkerfour} />
             </div>
