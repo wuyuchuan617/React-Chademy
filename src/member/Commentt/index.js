@@ -112,7 +112,11 @@ function Commentt() {
                 author={
                   <div>
                     <div>{item.buy_product}</div>
-                    <Rate disabled defaultValue={item.stars} />
+                    <Rate
+                      style={{ color: '#C77334' }}
+                      disabled
+                      defaultValue={item.stars}
+                    />
                   </div>
                 }
                 avatar={<CustomImg src={item.avatar} />}

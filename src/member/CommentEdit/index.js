@@ -166,6 +166,7 @@ function CommentEdit(props) {
 
             <div className="reviewStars d-flex">
               <Rate
+                style={{ color: '#C77334' }}
                 value={reviewComment.stars}
                 onChange={(number) => {
                   setReviewComment({
