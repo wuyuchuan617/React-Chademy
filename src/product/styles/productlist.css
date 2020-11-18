@@ -155,7 +155,7 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-object-position: center;
+  object-position: center;
 }
 
 .productCardImgHover {
@@ -442,7 +442,7 @@ img {
 .w_news2 {
   position: absolute;
   top: 30%;
-  left: 41.2%;
+  left: 39.5%;
   color: white;
   font-size: 12px;
 }
@@ -463,7 +463,7 @@ img {
 
 .titleh-line.l1 {
   position: absolute;
-  left: 550px;
+  left: 410px;
   top: 114px;
   -webkit-transform-origin: left;
   -ms-transform-origin: left;
@@ -475,7 +475,7 @@ img {
 
 .titleh-line.l2 {
   position: absolute;
-  left: 705px;
+  left: 555px;
   top: 114px;
   -webkit-transform-origin: right;
   -ms-transform-origin: right;
