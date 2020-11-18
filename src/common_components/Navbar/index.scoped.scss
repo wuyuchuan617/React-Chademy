@@ -107,3 +107,12 @@
     right: 0;
   }
 }
+
+.member_menu_container {
+  /deep/ {
+    .damn {
+      // outline: 1px dashed orange;
+      font-size: 14px;
+    }
+  }
+}

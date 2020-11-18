@@ -235,14 +235,18 @@ function MyNavbar(props) {
             {isLogged ? (
               <Dropdown
                 overlay={
-                  <Menu>
+                  <Menu className="member_menu_container">
                     <Menu.Item>
-                      <Nav.Link as={NavLink} to="/member-center">
+                      <Nav.Link
+                        className="damn"
+                        as={NavLink}
+                        to="/member-center"
+                      >
                         {/* <AiOutlineUser /> */}
                         會員中心
                       </Nav.Link>
                     </Menu.Item>
-                    <Menu.Item onClick={handleLogout}>
+                    <Menu.Item className="damn" onClick={handleLogout}>
                       {/* <LogoutOutlined /> */}
                       登出
                     </Menu.Item>

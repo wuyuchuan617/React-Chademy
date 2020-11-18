@@ -7,8 +7,7 @@
 .memberCenter_container {
   padding: 100px;
   margin-top: 50px;
-  max-width: 1440px;
-  justify-content: center;
+  // max-width: 1440px;
 
   /deep/ {
     .row_list {
@@ -54,6 +53,10 @@
         flex: 1;
         padding: 20px 10px;
         margin-left: 30px;
+
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
         // outline: purple 3px dashed;
 
         li + li {
