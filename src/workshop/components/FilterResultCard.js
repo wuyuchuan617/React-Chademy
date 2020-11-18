@@ -14,7 +14,7 @@ function FilterResultCard(props) {
   const { item } = props
   return (
     <>
-      <div className="annie_wrapper400">
+      <div className="col-4">
         <div
           className="boxonedayfilter"
           onClick={() => {
