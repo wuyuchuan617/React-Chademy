@@ -221,9 +221,9 @@ function ProductList(props) {
   }, [scrollFilter])
 
   // 系列
-  useEffect(() => {
-    getSeriesFromSQL()
-  }, [series])
+  // useEffect(() => {
+  //   getSeriesFromSQL()
+  // }, [series])
 
   // didmount拿所有資料
   useEffect(
@@ -254,7 +254,7 @@ function ProductList(props) {
     setTimeout(() => {
       console.log('This will run after 1 second!')
       setVisible(true)
-    }, 100000)
+    }, 50000)
   }, [])
 
   // ---------------以下開始 JSX 畫面-----------------

@@ -23,8 +23,8 @@ function ProductRecommend(props) {
   // const { item } = props
 
   const [current, setCurrent] = React.useState(0)
-  const [recommendCate, setRecommendCate] = useState('')
-  const [recommendColor, setRecommendColor] = useState('')
+  const [recommendCate, setRecommendCate] = useState('chair')
+  const [recommendColor, setRecommendColor] = useState('橘')
   const [returnFilter, setReturnFilter] = useState([])
 
   console.log('recommendCate', recommendCate)
