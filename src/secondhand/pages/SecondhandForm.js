@@ -15,6 +15,12 @@ function SecondhandForm() {
   const [value2, setValue2] = useState(0)
   const [value3, setValue3] = useState(0)
   const { Option } = Select
+  const [productName, setProctName] = useState('')
+  const [productNumber, setProctNumber] = useState('')
+  const [price, setPrice] = useState('')
+  const [stock, setStock] = useState('')
+  const [description, setDescription] = useState('')
+  const [categories, setCategories] = useState(0)
   // function handleChange(value) {
   //   console.log(`selected ${value}`)
   // }
@@ -169,6 +175,21 @@ function SecondhandForm() {
                 id="myimg"
               />
             </div>
+            <div
+              className="btnDemo text-center mt-4 i_demo"
+              onClick={() => {
+                setProctName('Tellor')
+                setProctNumber('ch073')
+                setPrice('2680')
+                setStock('10')
+                setDescription(
+                  ' 文森特·皮爾在過去曾經講過，改變你的想法，你就改變了自己的世界。這似乎解答了我的疑惑一般來講，我們都必須務必慎重的考慮考慮。商品外觀良好，發生了會如何，不發生又會如何。'
+                )
+                setCategories(5)
+              }}
+            >
+              DEMO
+            </div>
           </div>
           <div className="col-lg-6 col-sm-12">
             <div className="i_formcss">
@@ -191,6 +212,7 @@ function SecondhandForm() {
                   className="i_formstyle i_formwidth"
                   id="product_name"
                   name="product_name"
+                  value={productName}
                 />
               </div>
               <div className="i_formset">
@@ -200,6 +222,7 @@ function SecondhandForm() {
                   className="i_formstyle i_formwidth"
                   id="product_no"
                   name="product_no"
+                  value={productNumber}
                 />
               </div>
               <div className="i_formset">
@@ -209,6 +232,7 @@ function SecondhandForm() {
                   className="i_formstyle i_formwidth"
                   id="price"
                   name="price"
+                  value={price}
                 />
               </div>
               <div className="i_formset">
@@ -218,6 +242,7 @@ function SecondhandForm() {
                   className="i_formstyle i_formwidth"
                   id="stock"
                   name="stock"
+                  value={stock}
                 />
               </div>
               <div className="i_formset">
@@ -227,6 +252,7 @@ function SecondhandForm() {
                   cols="65"
                   className="i_formstyle"
                   name="description"
+                  value={description}
                 ></textarea>
               </div>
               <div className="i_formset">
@@ -248,6 +274,7 @@ function SecondhandForm() {
                   id="categories"
                   className="i_formstyle i_formwidth"
                   name="categories_sid"
+                  value={categories}
                 >
                   <option value="1">高腳椅</option>
                   <option value="2">單椅</option>
