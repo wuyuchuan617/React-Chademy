@@ -120,9 +120,9 @@ function ItemFive(props) {
             <div className="col-md-5">
               <img src={imagef} />
             </div>
-            <div class="col-md-7">
-              <div class="wordtitle">
-                <div class="word1title">
+            <div className="col-md-7">
+              <div className="wordtitle">
+                <div className="word1title">
                   <h4>文創傳情-</h4>
                   <h4>一日工作坊之成果</h4>
                   <h6>發表時間:2020/10/22</h6>
