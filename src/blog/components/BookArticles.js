@@ -19,7 +19,7 @@ function BookArticles(props) {
   }, [])
 
   return (
-    <div className="annie_wrapper8000">
+    <div className="container">
       <div className="title01">
         <div className="titlech noto-serif text-center">訂閱方案</div>
         <div className="titleEN lora text-center">
