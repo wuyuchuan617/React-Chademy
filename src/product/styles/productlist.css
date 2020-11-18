@@ -161,7 +161,7 @@ a {
 .productCardImgHover {
   filter: opacity(0);
   width: 350px;
-  height: 250px;
+  height: 300px;
   overflow: hidden;
   position: absolute;
   left: 15px;
@@ -171,7 +171,7 @@ a {
 
 .productCardImgHover img {
   width: 350px;
-  height: 250px;
+  height: 300px;
   object-fit: cover;
 }
 
@@ -179,7 +179,7 @@ a {
   filter: opacity(1);
   z-index: 10;
   width: 350px;
-  height: 250px;
+  height: 300px;
   overflow: hidden;
   position: absolute;
   left: 15px;
