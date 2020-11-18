@@ -163,6 +163,7 @@ body {
   font-size: 14px;
   cursor: pointer;
   margin: 0 auto;
+  transition: 0.5s;
 }
 .ant-rate-star-second {
   color: rgb(199, 115, 52);
@@ -221,4 +222,8 @@ body {
 }
 .i_li li:hover {
   color: rgb(199, 115, 52);
+}
+.i_btn1:hover {
+  background-color: rgb(199, 115, 52);
+  color: white;
 }
