@@ -962,10 +962,10 @@ body {
   background-color: transparent !important;
 }
 
-.ant-anchor-link a:hover {
+/* .ant-anchor-link a:hover {
   color: #c77334
-}
+} */
 
-.product-desc2{
+.product-desc2 {
   height: 50px;
 }
