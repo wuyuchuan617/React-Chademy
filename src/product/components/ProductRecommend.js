@@ -97,9 +97,7 @@ function ProductRecommend(props) {
 
           {current === 1 ? (
             <div>
-              <p className="noto-serif text-center rec_text">
-                請選擇擺設環境牆壁顏色風格
-              </p>
+              <p className="noto-serif text-center rec_text">請選擇擺設環境</p>
               <div className="d-flex">
                 <div className=" productCard col-lg-4 col-md-6 col-sm-12">
                   <div
@@ -178,7 +176,7 @@ function ProductRecommend(props) {
                     />
                   </div>
 
-                  <p>淺色系</p>
+                  <p>深色系</p>
                 </div>
 
                 <div className="productCard col-lg-4 col-md-6 col-sm-12">
@@ -217,7 +215,7 @@ function ProductRecommend(props) {
                     />
                   </div>
 
-                  <p>深色系</p>
+                  <p>淺色系</p>
                 </div>
               </div>
             </div>

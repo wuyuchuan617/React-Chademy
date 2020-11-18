@@ -116,14 +116,20 @@ function TabW(props) {
                     看得見的自由、舒適。 感受與家人好友相聚的單純喜悅。
                     給自己更多時間享受生活!
                   </p>
-                  <p style={{ opacity: 1 }} className="titleEN lora ">
+                  <p
+                    style={{ opacity: 1, color: 'white' }}
+                    className="titleEN lora "
+                  >
                     B
                     是一系列消光釉色處理的容器，我們與位於台灣的陶瓷鎮-鶯歌的陶瓷廠協作，用最安靜的器型，在不影響釉藥呈色的白瓷之上，給美麗的釉表現各自微妙的細節。
                     2種大小適當的容量：120ml /
                     330ml。基本的器型，滿足基本需求，比一般的容器矮一些，更穩重。釉色選自大自然的天藍、卵石灰、雪及石黑。
                     每一種釉色都來自於天然礦物的發色，給予容器各自獨特的質感與細節。適合於輕鬆的下午盛裝點心與飲品享用。
                   </p>
-                  <p style={{ opacity: 1 }} className="titleEN lora ">
+                  <p
+                    style={{ opacity: 1, color: 'white' }}
+                    className="titleEN lora "
+                  >
                     B is a series of porcelain vessels finished with semi-gloss
                     glaze handcrafted by a pottery workshop in Yinge Town, North
                     Taiwan. Made with porcelain to prevent the clay from
