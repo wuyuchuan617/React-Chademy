@@ -9,6 +9,7 @@ body {
 .grace-text {
   width: 70%;
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 .grace-text h5 {
   font-size: 18px;
@@ -75,7 +76,12 @@ body {
   text-decoration: none;
 }
 .g-bread{
-  transform: translate(50px,110px);
+  transform: translate(100px,280px);
+  text-decoration: none;
+
+}
+.g-bread span a{
+  text-decoration: none;
 }
 .g-bread2{
   transform: translate(20px,-20px);

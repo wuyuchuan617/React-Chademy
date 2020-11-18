@@ -645,7 +645,7 @@ function Desc(props) {
                   <h1 className="name">{name}</h1>
                   <h3 className="brief">{intro}</h3>
                   <span>
-                    <Link to="#">Learn more</Link>
+                    <Link to="#" className="uline">Learn more</Link>
                   </span>
                 </div>
               </div>
