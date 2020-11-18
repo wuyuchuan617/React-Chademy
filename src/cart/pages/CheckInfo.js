@@ -121,6 +121,7 @@ function CheckInfo(props) {
   }
   useEffect(() => {
     getLocalStorage()
+    console.log(myCart)
   }, [])
   return (
     <>

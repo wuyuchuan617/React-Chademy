@@ -205,12 +205,12 @@ function CartBid(props) {
                   <div className="listitem">
                     {/* src={require('../../img/' + item.photo)} */}
                     <img src={'http://localhost:3001/img/' + item.img} alt="" />
-                    <h6 style={{ left: '450px' }}>{item.id}</h6>
-                    <h6 style={{ left: '750px' }}>${item.price}</h6>
+                    <h6 style={{ left: '500px' }}>{item.id}</h6>
+                    <h6 style={{ left: '700px' }}>${item.price}</h6>
 
-                    <h6 style={{ left: '958px' }}>{item.amount}</h6>
+                    <h6 style={{ left: '905px' }}>{item.amount}</h6>
 
-                    <h6 style={{ left: '1100px', color: '#C67334' }}>
+                    <h6 style={{ left: '1080px', color: '#C67334' }}>
                       ${item.price * item.amount}
                     </h6>
                     <Link

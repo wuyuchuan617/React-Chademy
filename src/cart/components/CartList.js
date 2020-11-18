@@ -61,8 +61,10 @@ function CartList(props) {
   }, [reload])
 
   const updateCartToLocalStorage = (item, isAdded = true) => {
-    console.log(item, isAdded)
-    const currentCart = JSON.parse(localStorage.getItem('cart')) || []
+    // console.log(item, isAdded)
+    let putArray = tempCart
+    // const currentCart = JSON.parse(localStorage.getItem('cart')) || []
+    const currentCart = myCart || []
 
     // find if the product in the localstorage with its id
     const index = currentCart.findIndex((v) => v.id === item.id)
@@ -72,10 +74,13 @@ function CartList(props) {
     if (index > -1) {
       isAdded ? currentCart[index].amount++ : currentCart[index].amount--
     }
-
-    localStorage.setItem('cart', JSON.stringify(currentCart))
+    for (let i = 0; i < currentCart.length; i++) {
+      putArray.push(currentCart[i])
+    }
+    localStorage.setItem('cart', JSON.stringify(putArray))
 
     // 設定資料
+    setReload(reload + 1)
     setMyCart(currentCart)
   }
 
@@ -126,7 +131,7 @@ function CartList(props) {
                       <h6 style={{ left: '50px' }}>{item.amount}</h6>
                       <h6
                         className="j_add"
-                        style={{ left: '80px' }}
+                        style={{ left: '80px', cursor: 'pointer' }}
                         onClick={() => updateCartToLocalStorage(item)}
                       >
                         <MdAdd />
