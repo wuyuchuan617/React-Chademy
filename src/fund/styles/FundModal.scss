@@ -22,7 +22,6 @@
   font-weight: 600;
   font-size: 18px;
   margin-bottom: 20px;
-
 }
 
 .tb {
@@ -37,16 +36,22 @@
   font-family: Noto Sans TC;
 }
 
-
-
-
 .ant-radio-checked {
   // border-color: #c77334 !important ;
   color: #c77334;
   // background: #c77334;
-
+}
+.ant-radio-checked .ant-radio-inner {
+  border-color: #c77334 !important ;
 }
 
+.ant-radio-checked .ant-radio-inner:after {
+  background-color: #c77334;
+}
+
+.ant-radio:hover .ant-radio-inner {
+  border-color: #c77334;
+}
 
 .e_my {
   // text-align: center;
@@ -79,27 +84,22 @@
 
 .ant-input-number {
   width: 152px !important;
-  box-shadow: 0 0 0px 0px #C77334 !important;
+  box-shadow: 0 0 0px 0px #c77334 !important;
 }
-
-
 
 .ant-input-number-handler-wrap {
   // background-color: #C77334;
   // color: #fff;
   // margin-left: 10px !important;
-  box-shadow: 0 0 0px 0px #C77334 !important;
+  box-shadow: 0 0 0px 0px #c77334 !important;
 }
 
 .ant-input-number-handler-up {
-  background-color: #C77334;
+  background-color: #c77334;
   // color: #fff;
-  box-shadow: 0 0 0px 0px #C77334 !important;
+  box-shadow: 0 0 0px 0px #c77334 !important;
 }
 
 .ant-input-number-input {
   width: 150px !important;
-
-
 }
-
