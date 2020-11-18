@@ -209,7 +209,7 @@ function ProductFirst(props) {
   useEffect(() => {
     if (!heart) return
     updateTotalToServer()
-  }, [heart])
+  }, [heartItem.product_type])
 
   useEffect(() => {
     getHeartFromServer()
