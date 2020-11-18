@@ -42,11 +42,11 @@ const Classic = () => {
         <div className="pox2"></div>
         <div
           className="pot3 "
-          onClick={() => history.push('/product/157')}
+          onClick={() => history.push('/product/280')}
         ></div>
 
         <div className="hover_card">
-          <img alt="" src={Img11} />
+          <img alt="" src={Img22} />
           <div className="text">
             <p>經典高腳椅</p>
             <p>永恆追求品質與質感，手工製作，每一個小細節淬煉出獨一無二。</p>
