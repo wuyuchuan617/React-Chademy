@@ -414,12 +414,7 @@ function FundIFirst(props) {
             />
 
             <div className="ip2 d-flex">
-              <img
-                className="inner-pic2 d-flex"
-                src={dt3}
-                
-                alt=""
-              />
+              <img className="inner-pic2 d-flex" src={dt3} alt="" />
 
               <h4 className="pic2-h4 d-flex">Feast for the eyes</h4>
             </div>
