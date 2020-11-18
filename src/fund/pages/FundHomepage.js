@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
+import { useEffect } from 'react'
 
 import e_video from '../images/oljn5-343em.mp4'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
@@ -23,6 +24,8 @@ import Img from '../images/bg.jpg'
 import Img2 from '../images/Img2.png'
 import Img3 from '../images/Img3.png'
 import Img4 from '../images/Img4.png'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 import { useHistory } from 'react-router-dom'
 import { BackTop } from 'antd'
@@ -33,12 +36,24 @@ function FundHomepage() {
   const [filterMark, setFilterMark] = useState(0)
   const [filterIcon, setFilterIcon] = useState(0)
 
+  useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
+
   let history = useHistory()
 
   return (
     <>
       <header>
-        <h1 className="e_slogan">椅子是佈置藝術更是生活的代表</h1>
+        <h1
+          className="e_slogan"
+          data-aos="fade-up"
+          data-aos-delay="50000"
+          data-aos-duration="2400"
+        >
+          椅子是佈置藝術更是生活的代表
+        </h1>
         <div className="e_video">
           <video
             width="100%"
@@ -51,7 +66,12 @@ function FundHomepage() {
             alt=""
           />
         </div>
-        <p className="p_video">
+        <p
+          className="p_video"
+          data-aos="fade-up"
+          data-aos-delay="50000"
+          data-aos-duration="2400"
+        >
           本學院培育之新銳設計師，大膽之作
           <br />
           敬邀您一同欣賞
@@ -60,7 +80,11 @@ function FundHomepage() {
       <Container>
         <Col>
           <Row>
-            <Link to="/fundlist" className="explore">
+            <Link
+              to="/fundlist"
+              className="e_explore"
+              style={{ color: '#707070' }}
+            >
               探索
             </Link>
           </Row>
@@ -106,10 +130,11 @@ function FundHomepage() {
             <img src={Img3} alt="" className="bgimg3" />
             <img src={Img4} alt="" className="bgimg4" />
             <p className="imgp3">
-            Launching a crowdfunding campaign can be scary.
+              Launching a crowdfunding campaign can be scary.
             </p>
             <p className="imgp4">
-            The strategies in Fund Your Dream eased my fear and helped me confidently plan.
+              The strategies in Fund Your Dream eased my fear and helped me
+              confidently plan.
             </p>
           </div>
         </div>

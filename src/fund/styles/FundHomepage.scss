@@ -9,7 +9,7 @@
 
   /* text-align: center; */
   top: 275px;
-  left: 50%;
+  left: 33%;
   transform: translate(-50%, -50%);
   margin: auto;
   color: #eef3f5;
@@ -22,13 +22,13 @@
   font-weight: 300;
   color: #ffffff;
   top: 350px;
-  left: 50%;
+  left: 40%;
   transform: translate(-50%, -50%);
   margin: auto;
   text-align: center;
 }
 
-.explore {
+.e_explore {
   position: absolute;
   top: -270px;
   left: 50%;
@@ -53,9 +53,10 @@
   width: 600px;
   height: 40px;
   margin: auto;
-  margin-top: -50px;
+  margin-top: 90px;
   display: flex;
   margin-bottom: -30px;
+  padding-top: 120px;
   // border: 1px solid #BDC5C7;
   cursor: pointer
 }
@@ -221,21 +222,22 @@
   // background-size: cover;
   width: 100%;
   max-height: 230px;
-  object-fit: cover; 
+  object-fit: cover;
   overflow: hidden;
 }
 
-.e_draw{
+.e_draw {
   text-align: right;
   margin-right: 70px;
   margin-bottom: 50px;
   opacity: .6;
 }
-.e_img1{
+
+.e_img1 {
   width: 15%;
 }
 
-.e_img2{
+.e_img2 {
   width: 10%;
 }
 
@@ -355,12 +357,12 @@
 }
 
 .e_more:hover {
-  // height:40px;
-  max-width: 200px;
+  height: 40px;
+  // max-width: 200px;
 
-  line-height: 40px;
+  // line-height: 40px;
   background-color: #D9C7AA;
-  border: none;
+  border: transparent;
   // z-index: 10;
   cursor: pointer
 }
@@ -369,8 +371,12 @@
 // 熱門募資專案
 
 .e_popular {
-  font-family: Noto Serif TC;
+  font-family: 'Noto Serif TC', serif;
+  letter-spacing: 2px;
   font-size: 32px;
+
+  font-weight: 400;
+
   text-align: center;
   color: #474745;
   padding-top: 8rem;

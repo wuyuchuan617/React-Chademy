@@ -11,7 +11,7 @@ function BookMarkhp(props) {
 
   return (
     <>
-      <div className="e_lablebox">
+      <div className="e_lablebox mt-9">
         <div
           className={changecolor === 0 ? 'e_activelable' : 'e_defaultlable'}
           onClick={() => {
