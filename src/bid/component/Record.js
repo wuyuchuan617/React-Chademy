@@ -7,6 +7,7 @@ import useInterval from 'use-interval'
 function Record(props) {
   const { item, getMember, price, comma } = props
   const [comma8, setComma8] = useState(0)
+  const [comma9, setComma9] = useState(0)
   const [isAddClass, setAddClass] = useState(false)
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
@@ -21,6 +22,7 @@ function Record(props) {
     const newprice = item.price
     const c = numberWithCommas(newprice)
     setComma8(c)
+    setComma9(item.total_price)
   }, [item.price])
 
   // item.avatar
@@ -40,7 +42,7 @@ function Record(props) {
           <span className="g-b-name"> {item.name}</span>
         </td>
         <td>${comma8}</td>
-        <td>${comma}</td>
+        <td>${comma9}</td>
         <td>{item.time}</td>
       </tr>
     </>

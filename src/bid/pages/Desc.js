@@ -324,9 +324,14 @@ function Desc(props) {
     setComma(c)
     const d = numberWithCommas(startprice)
     setComma3(d)
+    // getNewPrice()
+    // getMember()
+  }, [price])
+
+  useInterval(()=>{
     getNewPrice()
     getMember()
-  }, [price])
+  },2000)
 
   function showRecord() {
     setChangeColorStatus(true)
