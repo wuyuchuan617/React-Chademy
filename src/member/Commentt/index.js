@@ -30,7 +30,9 @@ function CustomImg(props) {
     // imagePath = require('../../img/' + src)
 
     // 由後端撈圖
-    imagePath = `${window.location.origin}/img/${src}`
+    imagePath = src.startsWith('http')
+      ? src
+      : `${window.location.origin}/img/${src}`
   } catch (err) {
     imagePath = noImage //set default image path
   }
