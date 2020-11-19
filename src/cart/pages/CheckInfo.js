@@ -172,7 +172,7 @@ function CheckInfo(props) {
               setShowValue(true)
             }}
           >
-            <h6>一鍵輸入</h6>
+            <h6>DEMO</h6>
           </div>
           <Cards
             cvc={cvc}
