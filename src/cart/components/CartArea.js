@@ -16,7 +16,7 @@ function CartArea(props) {
     setTypeofProduct,
   } = props
   function getCartFromLocalStorage() {
-    const newCart = localStorage.getItem('cart') || []
+    const newCart = localStorage.getItem('cart') || '[]'
     // console.log(newCart)
     setCartList(JSON.parse(newCart))
     // console.log(JSON.parse(newCart))
