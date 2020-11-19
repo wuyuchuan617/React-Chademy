@@ -19,19 +19,19 @@ function Banner(props) {
         <Element
           prefixCls="banner-user-elem"
           key="0"
-          followParallax={{
-            delay: 1000,
-            data: [
-              {
-                id: 'bg',
-                value: 20,
-                bgPosition: '50%',
-                type: ['backgroundPositionX'],
-              },
-              { id: 'title', value: 50, type: 'x' },
-              { id: 'content', value: -30, type: 'x' },
-            ],
-          }}
+          // followParallax={{
+          //   delay: 1000,
+          //   data: [
+          //     {
+          //       id: 'bg',
+          //       value: 20,
+          //       bgPosition: '50%',
+          //       type: ['backgroundPositionX'],
+          //     },
+          //     { id: 'title', value: 50, type: 'x' },
+          //     { id: 'content', value: -30, type: 'x' },
+          //   ],
+          // }}
         >
           <BgElement
             key="bg"
