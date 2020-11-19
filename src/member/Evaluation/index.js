@@ -13,7 +13,9 @@ function CustomImg(props) {
   const { src, alt = 'imaghe', ...otherProps } = props
   let imagePath = ''
   try {
-    imagePath = require('../../img/' + src)
+    imagePath = src.startsWith('http')
+      ? src
+      : `${window.location.origin}/img/${src}`
   } catch (err) {
     imagePath = noImage //set default image path
   }
