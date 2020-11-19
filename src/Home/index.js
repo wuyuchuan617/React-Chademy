@@ -20,8 +20,6 @@ function Home(props) {
   useEffect(() => {
     AOS.init()
     AOS.refresh()
-    const localStorageData = localStorage.getItem('cart') || '[]'
-    if (localStorageData === '[]') localStorage.setItem('cart', '[]')
   }, [])
   return (
     <>
