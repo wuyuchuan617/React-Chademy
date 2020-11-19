@@ -78,11 +78,7 @@ function ItemModal(props) {
             </div>
           </div>
           <div className="e_check">
-<<<<<<< Updated upstream
             <Radio>我已詳閱與同意募資條款</Radio>
-=======
-            <Radio>以詳閱募資條款</Radio>
->>>>>>> Stashed changes
           </div>
           <div className="e_my">
             欲贊助金額：
