@@ -79,7 +79,8 @@ function MyNavbar(props) {
     // 登出
     const logout = () => {
       dispatch({ type: 'SIGN_OUT' })
-
+      setCartAmount(0)
+      localStorage.clear()
       setTimeout(() => {
         history.push('/')
       }, 300)
