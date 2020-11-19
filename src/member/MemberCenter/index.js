@@ -116,7 +116,11 @@ function MemberCenter(props) {
       >
         {previewPhotoUrl ? (
           <img
-            src={`${window.location.origin}/img/${previewPhotoUrl}`}
+            src={`${
+              previewPhotoUrl.startsWith('http')
+                ? previewPhotoUrl
+                : `${window.location.origin}/img/${previewPhotoUrl}`
+            }`}
             alt="avatar"
             style={{ width: '100%' }}
           />
