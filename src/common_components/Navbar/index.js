@@ -80,7 +80,7 @@ function MyNavbar(props) {
     const logout = () => {
       dispatch({ type: 'SIGN_OUT' })
       setCartAmount(0)
-      localStorage.clear()
+      localStorage.setItem('cart', '[]')
       setTimeout(() => {
         history.push('/')
       }, 300)
