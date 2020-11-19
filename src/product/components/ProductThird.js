@@ -48,7 +48,7 @@ function ProductThird(props) {
                     setViewSpread2(false)
                   }}
                 >
-                  <div className="refinement-title">產品類別</div>
+                  <div className="refinement-title">產品敘述</div>
                   <div className="spreadPlus">+</div>
                 </div>
               </div>
@@ -83,7 +83,7 @@ function ProductThird(props) {
                     setViewSpread2(false)
                   }}
                 >
-                  <div className="refinement-title">產品類別</div>
+                  <div className="refinement-title">產品規格</div>
                   <div className="spreadPlus">+</div>
                 </div>
               </div>
@@ -118,7 +118,7 @@ function ProductThird(props) {
                     setViewSpread1(false)
                   }}
                 >
-                  <div className="refinement-title">產品類別</div>
+                  <div className="refinement-title">產品產地</div>
                   <div className="spreadPlus">+</div>
                 </div>
               </div>
