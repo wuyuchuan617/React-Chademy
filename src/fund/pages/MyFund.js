@@ -96,23 +96,23 @@ const Myproduct = () => {
       }
     }
 
-    async function fetchDataByPost() {
-      // 封裝的 axios，請求會帶上 token，因此前端不用多帶 user_sid
-      // 後端直接可以透過 req.session.sid 知道誰登入
-      const response = await request({
-        url: `/man_fund/fundlistnode`,
-        method: 'POST',
-      })
-      const { success, data } = response
+    // async function fetchDataByPost() {
+    //   // 封裝的 axios，請求會帶上 token，因此前端不用多帶 user_sid
+    //   // 後端直接可以透過 req.session.sid 知道誰登入
+    //   const response = await request({
+    //     url: `/man_fund/fundlistnode`,
+    //     method: 'POST',
+    //   })
+    //   const { success, data } = response
 
-      console.log('success, data fetchDataByPost => ', success, data)
-      if (success) {
-        // setMyprdouct(data)
-      }
-    }
+    //   console.log('success, data fetchDataByPost => ', success, data)
+    //   if (success) {
+    //     // setMyprdouct(data)
+    //   }
+    // }
 
     fetchDataByGet()
-    fetchDataByPost()
+    // fetchDataByPost()
   }, [name, sid])
 
   return (
