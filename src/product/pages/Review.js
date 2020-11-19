@@ -9,6 +9,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { Rate, Layout, message } from 'antd'
+import { notification } from 'antd'
 // ------------------以下引入Components----------------------------
 
 import Aside from '../../common_components/Aside/index'
@@ -148,8 +149,21 @@ function Review(props) {
     const data = await response.json()
     // data會是一個物件值
     const newData = data
-    console.log(data)
+    console.log('data', data)
     console.log(newData.newFileName)
+
+    const openNotification = () => {
+      notification.open({
+        message: '提醒',
+        description: '謝謝您，已完成評價',
+        onClick: () => {
+          console.log('Notification Clicked!')
+        },
+      })
+    }
+    if (data.success) {
+      openNotification()
+    }
   }
 
   const handleClick = () => {
@@ -325,13 +339,13 @@ function Review(props) {
                       name="review_comment"
                     ></textarea>
                   </div>
-                  <Link to="/member-center/myorder">
-                    <input
-                      type="submit"
-                      value="新增評論"
-                      className="btnReview text-center mt-4"
-                    />
-                  </Link>
+                  {/* <Link to="/member-center/myorder"> */}
+                  <input
+                    type="submit"
+                    value="新增評論"
+                    className="btnReview text-center mt-4"
+                  />
+                  {/* </Link> */}
                 </div>
               </div>
             </form>
