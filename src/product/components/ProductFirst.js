@@ -243,7 +243,10 @@ function ProductFirst(props) {
               </div>
               <div className="product_photo_small">
                 <img
-                  src={`http://localhost:3001/img/` + item.photo2}
+                  src={
+                    `http://localhost:3001/img/` +
+                    (item.photo2 ? item.photo2 : item.photo)
+                  }
                   alt=""
                   onClick={(e) => {
                     setPhoto(e.target.src)
@@ -252,7 +255,10 @@ function ProductFirst(props) {
               </div>
               <div className="product_photo_small">
                 <img
-                  src={`http://localhost:3001/img/` + item.photo3}
+                  src={
+                    `http://localhost:3001/img/` +
+                    (item.photo3 ? item.photo3 : item.photo)
+                  }
                   alt=""
                   onClick={(e) => {
                     setPhoto(e.target.src)
@@ -261,7 +267,10 @@ function ProductFirst(props) {
               </div>
               <div className="product_photo_small">
                 <img
-                  src={`http://localhost:3001/img/` + item.photo4}
+                  src={
+                    `http://localhost:3001/img/` +
+                    (item.photo4 ? item.photo4 : item.photo)
+                  }
                   alt=""
                   onClick={(e) => {
                     setPhoto(e.target.src)
