@@ -203,7 +203,7 @@ function MyNavbar(props) {
           </Nav>
 
           <Nav className="icon_con">
-            <Nav.Link
+            {/* <Nav.Link
               style={{ display: 'none' }}
               as={NavLink}
               to="#"
@@ -218,7 +218,7 @@ function MyNavbar(props) {
               }}
             >
               <AiOutlineShoppingCart className="icon" />
-            </Nav.Link>
+            </Nav.Link> */}
             <Badge
               count={cartamount}
               style={{
