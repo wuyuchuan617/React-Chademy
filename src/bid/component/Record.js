@@ -23,7 +23,7 @@ function Record(props) {
     const c = numberWithCommas(newprice)
     setComma8(c)
     setComma9(numberWithCommas(item.total_price))
-  }, [item.price])
+  }, [price])
 
   // item.avatar
 
