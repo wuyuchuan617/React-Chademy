@@ -12,6 +12,7 @@ function CartSecondHand(props) {
   const [myDiscount, setMyDiscount] = useState(0)
   const [inputDiscount, setInputDiscount] = useState('')
   const [deliveryCharge, setDeliveryCharge] = useState(0)
+  const [myproduct, setMyproduct] = useState(false)
   const {
     subtotal,
     setSubtoal,
@@ -158,6 +159,7 @@ function CartSecondHand(props) {
         setTypeofProduct={setTypeofProduct}
         cartamount={cartamount}
         setCartAmount={setCartAmount}
+        setMyproduct={setMyproduct}
       />
       <div className="submit">
         <div
@@ -272,9 +274,15 @@ function CartSecondHand(props) {
           <div></div>
           <h6 className="jtotal">${totalPrice}</h6>
         </div>
-        <Link to="deliveryinfo" className="btn3">
-          <h5>結帳</h5>
-        </Link>
+        {myproduct ?(
+          <Link to="deliveryinfo" className="btn3">
+            <h5>結帳</h5>
+          </Link>
+        )  :(
+          <div className="btn3">
+            <h5>沒有商品</h5>
+          </div>
+        ) }
       </div>
     </>
   )

@@ -21,6 +21,7 @@ function CartList(props) {
     typeofProduct,
     cartamount,
     setCartAmount,
+    setMyproduct,
   } = props
   const [tempCart, setTempCart] = useState([])
   const [reload, setReload] = useState(0)
@@ -46,7 +47,7 @@ function CartList(props) {
         console.log('hello')
       }
     }
-
+    if(putArray.length>0)setMyproduct(true)
     // console.log(newCart)
     setMyCart(putArray)
     setTempCart(putArray1)

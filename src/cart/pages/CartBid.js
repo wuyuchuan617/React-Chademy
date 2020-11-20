@@ -20,6 +20,7 @@ function CartBid(props) {
   const [deliveryCharge, setDeliveryCharge] = useState(0)
   const [tempCart, setTempCart] = useState([])
   const [reload, setReload] = useState(0)
+  const [myproduct, setMyproduct] = useState(false)
   const {
     subtotal,
     setSubtoal,
@@ -43,6 +44,7 @@ function CartBid(props) {
         newArray.push(newCart[i])
       }
     }
+    if(newArray.length>0)setMyproduct(true)
     console.log('jhh', newArray)
     setMyCart(newArray)
   }
@@ -359,9 +361,15 @@ function CartBid(props) {
           <div></div>
           <h6 className="jtotal">${totalPrice}</h6>
         </div>
-        <Link to="deliveryinfo" className="btn3">
-          <h5>結帳</h5>
-        </Link>
+        {myproduct ?(
+          <Link to="deliveryinfo" className="btn3">
+            <h5>結帳</h5>
+          </Link>
+        )  :(
+          <div className="btn3">
+            <h5>沒有商品</h5>
+          </div>
+        ) }
       </div>
     </>
   )
