@@ -148,7 +148,7 @@ function Setprice(props) {
           <p>
             在 <span style={{ color: '#c77334' }}>{pname}</span>
             商品競標金額超過<span style={{ color: '#c77334' }}>${comma5}</span>
-            時，將對您進行通知
+            時，將對您進行通知！
           </p>
         </Modal.Body>
         <Modal.Footer>
@@ -180,7 +180,7 @@ function Setprice(props) {
             恭喜您已開啟訂閱小鈴鐺🔔！
             <span style={{ color: '#c77334' }}>{pname}</span>
             商品競標金額將在超過
-            <span style={{ color: '#c77334' }}>${comma5}</span>時，對您進行通知
+            <span style={{ color: '#c77334' }}>${comma5}</span>時，對您進行通知！
           </p>
         </Modal.Body>
         <Modal.Footer>

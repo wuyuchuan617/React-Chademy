@@ -538,7 +538,7 @@ function Desc(props) {
                 {/* 確定加價modal */}
                 <Modal show={show} onHide={handleClose}>
                   <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+                    <Modal.Title>確認加價</Modal.Title>
                   </Modal.Header>
                   <Modal.Body>確定要加價嗎？</Modal.Body>
                   <Modal.Footer>
